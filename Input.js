@@ -1490,7 +1490,7 @@ function doCastSpell(command) {
 
   if (found == null) {
     state.show = "none"
-    return `\n[${character.name} ${tryWord} to cast the spell ${spellName}, but ${character.name == "You" ? "you" : character.name} ${dontWord} know it.]\n`
+    return `\n[${character.name} ${tryWord} to cast the spell ${spell}, but ${character.name == "You" ? "you" : character.name} ${dontWord} know it.]\n`
   }
 
   var text = `${character.name} cast the spell ${spell}${advantage != "normal" ? " with " + advantage : ""}${target == null ? "" : " " + target}.`
@@ -1513,7 +1513,7 @@ function doCastSpell(command) {
   else state.prefix = `\n[Difficulty: ${difficulty}. Roll: ${dieText}. ${roll + modifier >= difficulty ? "Success!" : "Failure!"}]\n`
   
   if (roll == 20) text += ` Critical success!`
-  else if (roll == 1) ` Critical failure! The spell ${target != null ? "misses" : "fails"} in a spectacular way.`
+  else if (roll == 1) text += ` Critical failure! The spell ${target != null ? "misses" : "fails"} in a spectacular way.`
   else if (roll + modifier >= difficulty) text += ` The spell ${target != null ? "hits the target" : "is successful"}!`
   else text += ` The spell ${target != null ? "misses" : "fails"}!`
 
