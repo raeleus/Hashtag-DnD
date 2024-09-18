@@ -231,10 +231,11 @@ function addXpToAll(experience) {
   if (experience == 0) return ""
   var leveledUp = `\n[The party has gained ${experience} experience!]`
   state.characters.forEach(x => {
+    var haveWord = x.name == "You" ? "have" : "has"
     const oldLevel = getLevel(x.experience)
     x.experience += experience
     const newLevel = getLevel(x.experience)
-    if (newLevel > oldLevel) leveledUp += `\n[${x.name} has leveled up to ${newLevel}!]`
+    if (newLevel > oldLevel) leveledUp += `\n[${x.name} ${haveWord} leveled up to ${newLevel}!]`
   })
   return leveledUp
 }
