@@ -1481,11 +1481,15 @@ function doCastSpell(command) {
       if (!/^((at)|(on))\s+.*/.test(target)) target = "at " + target
     }
   } else {
-    var remainder = getArgumentRemainder(command, spellIndex)
-    spell = remainder.replace(/\s+((at)|(on)).*/i, "").trim()
+    if (/.*\s((at)|(on))\s.*/i.test(spell)) {
+      var remainder = getArgumentRemainder(command, spellIndex)
+      spell = remainder.replace(/\s+((at)|(on)).*/i, "").trim()
+      target = remainder.replace(/^.*\s+(?=(at)|(on))/i, "").trim()
+    } else {
+      spell = getArgumentRemainder(command, spellIndex).trim()
+    }
+
     found = character.spells.find(x => x.toLowerCase() == spell.toLowerCase())
-    
-    target = remainder.replace(/^.*\s+(?=(at)|(on))/i, "").trim()
   }
 
   if (found == null) {
