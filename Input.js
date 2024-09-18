@@ -1028,8 +1028,8 @@ function doAttack(command) {
   else state.prefix = `\n[Enemy AC: ${targetRoll}. Attack roll: ${dieText}. ${score >= targetRoll ? "Success!" : "Failure!"}]\n`
 
   var text
-  if (score + modifier >= targetRoll) text = `\n${character.name} successfully hit the ${targetText}!`
-  else text = `\n${character.name} ${tryWord} to hit the ${targetText}. ${character.name} ${missWord}!`
+  if (score + modifier >= targetRoll) text = `\n${character.name} successfully hit ${targetText}!`
+  else text = `\n${character.name} ${tryWord} to hit ${targetText}. ${character.name} ${missWord}!`
 
   if (score == 20) text += " Critical success! Your attack is exceptionally damaging!"
   else if (score == 1) text += " Critical failure! Your attack missed in a spectacular way!"
