@@ -882,10 +882,10 @@ function doCheck(command) {
   var dieText = arg1 == "advantage" || arg1 == "disadvantage" ? `${arg1}(${die1},${die2})` : die1
 
   var text
-  if (score == 20) text = `\n[${arg0} check: ${target}. roll: ${dieText}. Critical Success!]\n`
-  else if (score == 1) text = `\n[${arg0} check: ${target}. roll: ${dieText}. Critical Failure!]\n`
-  else if (modifier != 0) text = `\n[${arg0} check: ${target}. roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= target ? "Success!" : "Failure!"}]\n`
-  else text = `\n[${arg0} check: ${target}. roll: ${dieText}. ${score >= target ? "Success!" : "Failure!"}]\n`
+  if (score == 20) text = `\n[${arg0} check DC: ${target}. roll: ${dieText}. Critical Success!]\n`
+  else if (score == 1) text = `\n[${arg0} check DC: ${target}. roll: ${dieText}. Critical Failure!]\n`
+  else if (modifier != 0) text = `\n[${arg0} check DC: ${target}. roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= target ? "Success!" : "Failure!"}]\n`
+  else text = `\n[${arg0} check DC: ${target}. roll: ${dieText}. ${score >= target ? "Success!" : "Failure!"}]\n`
   return text
 }
 
@@ -952,10 +952,10 @@ function doTry(command) {
   var dieText = arg1 == "advantage" || arg1 == "disadvantage" ? `${arg1}(${die1},${die2})` : die1
 
   state.show = "prefix"
-  if (score == 20) state.prefix = `\n[${arg0} check: ${target}. roll: ${dieText}]\n`
-  else if (score == 1) state.prefix = `\n[${arg0} check: ${target}. roll: ${dieText}]\n`
-  else if (modifier != 0) state.prefix = `\n[${arg0} check: ${target}. roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= target ? "Success!" : "Failure!"}]\n`
-  else state.prefix = `\n[${arg0} check: ${target}. roll: ${dieText}. ${score >= target ? "Success!" : "Failure!"}]\n`
+  if (score == 20) state.prefix = `\n[${arg0} check DC: ${target}. roll: ${dieText}]\n`
+  else if (score == 1) state.prefix = `\n[${arg0} check DC: ${target}. roll: ${dieText}]\n`
+  else if (modifier != 0) state.prefix = `\n[${arg0} check DC: ${target}. roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= target ? "Success!" : "Failure!"}]\n`
+  else state.prefix = `\n[${arg0} check DC: ${target}. roll: ${dieText}. ${score >= target ? "Success!" : "Failure!"}]\n`
   var text = `\n${character.name} ${score + modifier >= target ? "successfully" : failword + " to"} ${arg3}`
   if (score == 20) text += " Critical success! Your action was extremely effective."
   else if (score == 1) text += " Critical failure! There are dire consequences of your action."
@@ -1511,10 +1511,11 @@ function doCastSpell(command) {
 
   state.show = "prefix"
   var dieText = advantage == "advantage" || advantage == "disadvantage" ? `${advantage}(${roll1},${roll2})` : roll1
-  if (roll == 20) state.prefix = `\n[Difficulty: ${difficulty}. Roll: ${dieText}. Critcal Success!]\n`
-  else if (roll == 1) state.prefix = `\n[Difficulty: ${difficulty}. Roll: ${dieText}. Critcal Failure!]\n`
-  else if (modifier != 0) state.prefix = `\n[Difficulty: ${difficulty}. Roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${roll + modifier}. ${roll + modifier >= difficulty ? "Success!" : "Failure!"}]\n`
-  else state.prefix = `\n[Difficulty: ${difficulty}. Roll: ${dieText}. ${roll + modifier >= difficulty ? "Success!" : "Failure!"}]\n`
+  var difficultyWord = target == null ? "Difficulty" : "Armor"
+  if (roll == 20) state.prefix = `\n[${difficultyWord} Class: ${difficulty}. Roll: ${dieText}. Critcal Success!]\n`
+  else if (roll == 1) state.prefix = `\n[${difficultyWord} Class: ${difficulty}. Roll: ${dieText}. Critcal Failure!]\n`
+  else if (modifier != 0) state.prefix = `\n[${difficultyWord} Class: ${difficulty}. Roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${roll + modifier}. ${roll + modifier >= difficulty ? "Success!" : "Failure!"}]\n`
+  else state.prefix = `\n[${difficultyWord} Class: ${difficulty}. Roll: ${dieText}. ${roll + modifier >= difficulty ? "Success!" : "Failure!"}]\n`
   
   if (roll == 20) text += ` Critical success!`
   else if (roll == 1) text += ` Critical failure! The spell ${target != null ? "misses" : "fails"} in a spectacular way.`
