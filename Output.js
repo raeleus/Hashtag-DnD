@@ -247,8 +247,8 @@ const modifier = (text) => {
       text += "\n    Sets the character's ability modifier that affects ranged attacks."
 
       text += "\n\n--Skills--"
-      text += "\n#setskill skill ability value"
-      text += "\n    Adds the skill to the character if necessary, and associates it with the specified ability and value."
+      text += "\n#setskill skill (ability) value"
+      text += "\n    Adds the skill to the character if necessary, and associates it with the specified ability and value. The ability is optional only if this is an existing skill. New skills need an ability specified."
       text += "\n#showskills"
       text += "\n    Shows the character's list of skills"
       text += "\n#removeskill"

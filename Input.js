@@ -655,10 +655,11 @@ function doSetSkill(command) {
 
   var arg2 = getArgument(command, 2)
   if (arg2 == null) {
-    state.show = "none"
-    return "\n[Error: Not enough parameters. See #help]\n"
+    arg2 = (clamp(parseInt(arg1, 1, 100)))
+    arg1 = null
+  } else {
+    arg2 = clamp(parseInt(arg2), 1, 100)
   }
-  arg2 = clamp(parseInt(arg2), 1, 100)
 
   var possessiveName = getPossessiveName(character.name)
 
@@ -670,14 +671,20 @@ function doSetSkill(command) {
 
   var index = character.skills.findIndex((element) => element.name.toLowerCase() == skill.name.toLowerCase())
   if (index == -1) {
+    if (arg1 == null) {
+      state.show = "none"
+      return "\n[Error: New skills must have an ability specified. See #help]\n"
+    }
+    
     character.skills.push(skill)
   } else {
     var existingSkill = character.skills[index]
     existingSkill.modifier = parseInt(skill.modifier)
+    if (arg1 != null) existingSkill.stat = skill.stat
   }
 
   state.show = "none"
-  return `\n[${possessiveName} ${arg0} skill is now ${arg1}.]\n`
+  return `\n[${possessiveName} ${arg0} skill is now ${arg2 >= 0 ? "+" + arg2 : "-" + arg2} and based on ${arg1}.]\n`
 }
 
 function doSetExperience(command) {
