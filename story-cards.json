@@ -1,0 +1,154 @@
+[
+  {
+    "keys": "Thunderwave",
+    "value": "Creates a wave of force that thrusts everything within a short range in front of you away. This can push friend and foe alike, causing them to topple over.",
+    "type": "spell",
+    "title": "Thunderwave",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Witch Bolt",
+    "value": "Creates a sustained arc of lightning between the caster and the target. It causes constant lightning damage, but requires the user to concentrate on the spell. The spell is broken when the caster is injured or loses concentration in any way.",
+    "type": "spell",
+    "title": "Witch Bolt",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Eldritch Blast",
+    "value": "Casts a beam of pure energy at a creature, causing magical force damage.",
+    "type": "spell",
+    "title": "Eldritch Blast",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Minor Illusion",
+    "value": "Creates an illusion of a sound or image of an object within range. The spell is broken if a physical interaction with the item reveals it to be a hoax.",
+    "type": "spell",
+    "title": "Minor Illusion",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shield",
+    "value": "The shield spell creates an invisible barrier that protects the user from some physical damage.",
+    "type": "spell",
+    "title": "Shield",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ray of Frost",
+    "value": "Casts a beam of blue-white light that causes cold damage on a given target within range. The target is then slowed for a short period of time.",
+    "type": "spell",
+    "title": "Ray of Frost",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Magic Missile",
+    "value": "Summon a number of darts comprised of pure magical force that can each target a creature that you can see within range, striking all at once.",
+    "type": "spell",
+    "title": "Magic Missile",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mage Hand",
+    "value": "Creates an ethereal hand within range that will obey the commands of its caster. It must remain within range or it will disappear.",
+    "type": "spell",
+    "title": "Mage Hand",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cure Wounds",
+    "value": "Heals a creature you can touch.",
+    "type": "spell",
+    "title": "Cure Wounds",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Fire Bolt",
+    "value": "Summons a mote of fire and casts it at a creature within range. It causes a moderate amount of fire damage.",
+    "type": "spell",
+    "title": "Fire Bolt",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Divine Favor",
+    "value": "A prayer that calls on divinity and gives the caster divine radiance. Subsequent attacks will cause radiant damage.",
+    "type": "spell",
+    "title": "Divine Favor",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Thunderous Smite",
+    "value": "Adds lightning damage to your attack and amplifies the attack's effectiveness.",
+    "type": "spell",
+    "title": "Thunderous Smite",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Animal Friendship",
+    "value": "Compels a beast to see that you mean no harm to it. The spell is ended if the beast is harmed.",
+    "type": "spell",
+    "title": "Animal Friendship",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Druidcraft",
+    "value": "Allows the caster to predict the weather, make plants bloom, or create a harmless sensory effect like a puff of wind or the smell of a dead animal.",
+    "type": "spell",
+    "title": "Druidcraft",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Healing Word",
+    "value": "Heal a creature within range.",
+    "type": "spell",
+    "title": "Healing Word",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Charm Person",
+    "value": "Enchant a humanoid within range to consider the caster as a friend for a time or until it is injured. After the spell ends, the target will know that it was charmed.",
+    "type": "spell",
+    "title": "Charm Person",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Vicious Mockery",
+    "value": "Insult the target with a barrage of abusive language and subtle enchantments. If it can hear you, it will receive psychic damage and will be at a disadvantage for the next attack.",
+    "type": "spell",
+    "title": "Vicious Mockery",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mass Healing Word",
+    "value": "Heals up to six creatures, including yourself, within a given range.",
+    "type": "spell",
+    "title": "Mass Healing Word",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Spiritual Weapon",
+    "value": "Creates a floating, spectral weapon that obeys the caster's commands. It can move independently and attack opponents. It can take the shape of any form of any melee weapon.",
+    "type": "spell",
+    "title": "Spiritual Weapon",
+    "description": "",
+    "useForCharacterCreation": false
+  }
+]
