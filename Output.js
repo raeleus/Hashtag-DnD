@@ -51,7 +51,7 @@ const modifier = (text) => {
       text += `-ABILITIES-\n`
 
       character.stats.forEach(function(x) {
-        text += `* ${x.name} ${x.value}\n`
+        text += `* ${toTitleCase(x.name)} ${x.value}\n`
       })
 
       text += `----\n\n`
@@ -62,7 +62,7 @@ const modifier = (text) => {
         const stat = character.stats.find(y => y.name.toLowerCase() == x.stat.toLowerCase())
         var modifier = x.modifier + (stat != null ? getModifier(stat.value): 0)
         if (modifier >= 0) modifier = `+${modifier}`
-        text += `* ${toTitleCase(x.name)} (${x.stat}) ${modifier}\n`
+        text += `* ${toTitleCase(x.name)} (${toTitleCase(x.stat)}) ${modifier}\n`
       })
 
       text += `----\n\n`
@@ -75,7 +75,7 @@ const modifier = (text) => {
         text += `-SPELLS-\n`
         
         character.spells.forEach(function(x) {
-          text += `* ${x}\n`
+          text += `* ${toTitleCase(x)}\n`
         })
 
         text += `----\n\n`
@@ -119,7 +119,7 @@ const modifier = (text) => {
       text += `*** CHARACTERS ***`
       if (state.characters.length > 0) {
         state.characters.forEach(function(x) {
-          text += `\n* ${x.name} the ${x.className}: ${x.summary}`
+          text += `\n* ${toTitleCase(x.name)} the ${toTitleCase(x.className)}: ${x.summary}`
         })
       } else {
         text += `\n${possessiveName} inventory is empty!`
@@ -130,7 +130,7 @@ const modifier = (text) => {
       text += `*** ${possessiveName.toUpperCase()} SPELLBOOK ***`
       if (character.spells.length > 0) {
         character.spells.forEach(function(x) {
-          text += "\n* " + x
+          text += "\n* " + toTitleCase(x)
         })
       } else {
         text += `\n${possessiveName} spellbook is empty!`
@@ -141,7 +141,7 @@ const modifier = (text) => {
       text += `*** ${possessiveName.toUpperCase()} ABILITIES ***\n`
       if (character.stats.length > 0) {
         character.stats.forEach(function(x) {
-          text += `* ${x.name} ${x.value}\n`
+          text += `* ${toTitleCase(x.name)} ${x.value}\n`
         })
       } else {
         text += `${character.name} has no abilities!\n`
@@ -155,7 +155,7 @@ const modifier = (text) => {
         const stat = character.stats.find(y => y.name.toLowerCase() == x.stat.toLowerCase())
         var modifier = x.modifier + (stat != null ? getModifier(stat.value): 0)
         if (modifier >= 0) modifier = `+${modifier}`
-        text += `* ${toTitleCase(x.name)} (${x.stat}) ${modifier}\n`
+        text += `* ${toTitleCase(x.name)} (${toTitleCase(x.stat)}) ${toTitleCase(modifier)}\n`
       })
       } else {
         text += `${character.name} has no skills!\n`

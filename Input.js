@@ -572,7 +572,7 @@ function doSetStat(command) {
   }
 
   state.show = "none"
-  return `\n[${possessiveName} ${arg0} stat is now ${arg1}.]\n`
+  return `\n[${possessiveName} ${toTitleCase(arg0)} ability is now ${arg1}.]\n`
 }
 
 function doSetSpellStat(command) {
@@ -684,7 +684,7 @@ function doSetSkill(command) {
   }
 
   state.show = "none"
-  return `\n[${possessiveName} ${arg0} skill is now ${arg2 >= 0 ? "+" + arg2 : "-" + arg2} and based on ${arg1}.]\n`
+  return `\n[${possessiveName} ${toTitleCase(arg0)} skill is now ${arg2 >= 0 ? "+" + arg2 : "-" + arg2} and based on ${toTitleCase(arg1)}.]\n`
 }
 
 function doSetExperience(command) {
