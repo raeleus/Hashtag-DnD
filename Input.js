@@ -1,6 +1,6 @@
 const rollSynonyms = ["roll"]
 const createSynonyms = ["create", "generate", "start", "begin", "setup", "party", "member", "new"]
-const bioSynonyms = ["bio", "biography", "summary", "character", "charactersheet", "statsheet", "abilities", "showabilities"]
+const bioSynonyms = ["bio", "biography", "summary", "character", "charactersheet", "statsheet"]
 const setClassSynonyms = ["setclass", "class"]
 const setSummarySynonyms = ["setsummary", "summary"]
 const trySynonyms = ["try", "tryto", "tries", "triesto", "attempt", "attemptto", "attemptsto", "do"]
