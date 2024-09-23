@@ -1406,7 +1406,7 @@ function doLearnSpell(command) {
   character.spells.push(arg0)
   addStoryCard(arg0, "", "spell")
 
-  return `\n${character.name} learned the spell ${arg0}.\n`
+  return `\n${character.name} learned the spell ${toTitleCase(arg0)}.\n`
 }
 
 function doForgetSpell(command) {
