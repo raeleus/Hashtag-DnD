@@ -1,10 +1,6 @@
 const modifier = (text) => {
   if (state.show == null) return { text }
 
-  if (state.characterName == null) {
-    text = " "
-    return { text }
-  }
   var character = getCharacter()
   var possessiveName = character == null ? null : getPossessiveName(character.name)
   var type = history[history.length - 1].type

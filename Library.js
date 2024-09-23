@@ -159,6 +159,7 @@ function calculateRoll(rolltext) {
 
 function getCharacter(characterName) {
   if (characterName == null) characterName = state.characterName
+  if (characterName == null) return null
   return state.characters.find((element) => element.name.toLowerCase() == characterName.toLowerCase())
 }
 
