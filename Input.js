@@ -858,7 +858,7 @@ function doFlipCommandAbility(command) {
   if (arg0 == null) return;
   var remainder = getArgumentRemainder(command, 1)
 
-  command = `${arg0} "${ability}"${remainder == null ? "" : " remainder"}`
+  command = `${arg0} "${ability}"${remainder == null ? "" : ` ${remainder}`}`
   text = processCommandSynonyms(command, arg0, checkSynonyms, doCheck)
   if (text == null) text = processCommandSynonyms(command, arg0, trySynonyms, doTry)
   return text
