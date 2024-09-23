@@ -67,7 +67,7 @@ const modifier = (text) => {
   text = sanitizeText(text)
   
   command = text.substring(text.search(/#/) + 1)
-  var commandName = getCommandName(command).toLowerCase().replaceAll(/[^a-z0-9]*/gi, "")
+  var commandName = getCommandName(command).toLowerCase().replaceAll(/[^a-z0-9\s]*/gi, "")
   
   if (state.characterName == null || !hasCharacter(state.characterName)) {
     var found = processCommandSynonyms(command, commandName, createSynonyms, function () {return true})
@@ -151,7 +151,7 @@ const modifier = (text) => {
       statNames.push(x.name.toLowerCase())
     })
 
-    text = processCommandSynonyms(command, commandName, statNames, doTest)
+    text = processCommandSynonyms(command, commandName, statNames, doFlipCommandAbility)
   }
 
   return { text }
@@ -852,13 +852,13 @@ function doRest(command) {
   return `\n[All characters have rested and feel rejuvinated]\n`
 }
 
-function doTest(command) {
+function doFlipCommandAbility(command) {
   var ability = getCommandName(command)
   var arg0 = getArgument(command, 0)
   if (arg0 == null) return;
   var remainder = getArgumentRemainder(command, 1)
 
-  command = `${arg0} ${ability} ${remainder}`
+  command = `${arg0} "${ability}"${remainder == null ? "" : " remainder"}`
   text = processCommandSynonyms(command, arg0, checkSynonyms, doCheck)
   if (text == null) text = processCommandSynonyms(command, arg0, trySynonyms, doTry)
   return text
@@ -1065,8 +1065,6 @@ function doAttack(command) {
   if (score == 20) text += " Critical success! Your attack is exceptionally damaging!"
   else if (score == 1) text += " Critical failure! Your attack missed in a spectacular way!"
 
-  log(`targetRoll:${targetRoll}`)
-  log(`autoXp:${state.autoXp}`)
   if (score + modifier >= targetRoll || score == 20) text += addXpToAll(Math.floor(state.autoXp * clamp(targetRoll, 1, 20) / 20))
   return text + "\n"
 }
