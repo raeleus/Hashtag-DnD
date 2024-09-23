@@ -1031,7 +1031,7 @@ function doAttack(command) {
   var targetText = getArgumentRemainder(command, textIndex)
   var toMatches = targetText.match(/^to\s+/gi)
   if (toMatches != null) targetText = targetText.substring(toMatches[0].length)
-  if (!/^.*(\.|!|\?)$/gi.test(targetText)) targetText += "."
+  targetText = stripPunctuation(targetText)
 
   var die1 = calculateRoll("1d20")
   var die2 = calculateRoll("1d20")

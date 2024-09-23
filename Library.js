@@ -401,3 +401,7 @@ function toTitleCase(str) {
     text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
   );
 }
+
+function stripPunctuation(str) {
+  return str.replaceAll(/((\.)|(!))\s*$/g, "")
+}
