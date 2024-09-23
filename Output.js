@@ -60,9 +60,16 @@ const modifier = (text) => {
 
       character.skills.forEach(function(x) {
         const stat = character.stats.find(y => y.name.toLowerCase() == x.stat.toLowerCase())
-        var modifier = x.modifier + (stat != null ? getModifier(stat.value): 0)
+
+        var statModifier = stat != null ? getModifier(stat.value): 0
+        var totalModifier = x.modifier + statModifier
+        var modifier = x.modifier
+
+        if (statModifier >= 0) statModifier = `+${statModifier}`
+        if (totalModifier >= 0) totalModifier = `+${totalModifier}`
         if (modifier >= 0) modifier = `+${modifier}`
-        text += `* ${toTitleCase(x.name)} (${toTitleCase(x.stat)}) ${modifier}\n`
+
+        text += `* ${toTitleCase(x.name)} ${totalModifier} = ${toTitleCase(x.stat)} ${statModifier} Proficiency ${modifier}\n`
       })
 
       text += `----\n\n`
@@ -152,11 +159,18 @@ const modifier = (text) => {
       text += `*** ${possessiveName.toUpperCase()} SKILLS ***\n`
       if (character.skills.length > 0) {
         character.skills.forEach(function(x) {
-        const stat = character.stats.find(y => y.name.toLowerCase() == x.stat.toLowerCase())
-        var modifier = x.modifier + (stat != null ? getModifier(stat.value): 0)
-        if (modifier >= 0) modifier = `+${modifier}`
-        text += `* ${toTitleCase(x.name)} (${toTitleCase(x.stat)}) ${toTitleCase(modifier)}\n`
-      })
+          const stat = character.stats.find(y => y.name.toLowerCase() == x.stat.toLowerCase())
+          
+          var statModifier = stat != null ? getModifier(stat.value): 0
+          var totalModifier = x.modifier + statModifier
+          var modifier = x.modifier
+
+          if (statModifier >= 0) statModifier = `+${statModifier}`
+          if (totalModifier >= 0) totalModifier = `+${totalModifier}`
+          if (modifier >= 0) modifier = `+${modifier}`
+
+          text += `* ${toTitleCase(x.name)} ${totalModifier} = ${toTitleCase(x.stat)} ${statModifier} Proficiency ${modifier}\n`
+        })
       } else {
         text += `${character.name} has no skills!\n`
       }
