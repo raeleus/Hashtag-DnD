@@ -141,6 +141,18 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, setAutoXpSynonyms, doSetAutoXp)
   if (text == null) text = processCommandSynonyms(command, commandName, showAutoXpSynonyms, doShowAutoXp)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
+  if (text == null) {
+    var character = getCharacter()
+    var statNames = []
+    character.stats.forEach(x => {
+      statNames.push(x.name.toLowerCase())
+    })
+    character.skills.forEach(x => {
+      statNames.push(x.name.toLowerCase())
+    })
+
+    text = processCommandSynonyms(command, commandName, statNames, doTest)
+  }
 
   return { text }
 }
@@ -838,6 +850,18 @@ function doRest(command) {
     state.show = "none"
   })
   return `\n[All characters have rested and feel rejuvinated]\n`
+}
+
+function doTest(command) {
+  var ability = getCommandName(command)
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) return;
+  var remainder = getArgumentRemainder(command, 1)
+
+  command = `${arg0} ${ability} ${remainder}`
+  text = processCommandSynonyms(command, arg0, checkSynonyms, doCheck)
+  if (text == null) text = processCommandSynonyms(command, arg0, trySynonyms, doTry)
+  return text
 }
 
 function doCheck(command) {

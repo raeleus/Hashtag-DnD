@@ -70,7 +70,9 @@ function getArgumentRemainder(command, index) {
   const pattern = new RegExp(argumentPattern)
   while ((match = pattern.exec(command)) != null) {
     if (counter++ == index + 1) {
-       return command.substring(match.index).replace(/^"/, "").replace(/"$/, "").replaceAll(/\\"/g, '"')
+      var result = command.substring(match.index)
+      if (/^".*"$/g.test(result)) result = result.replace(/^"/, "").replace(/"$/, "")
+      return result.replaceAll(/\\"/g, '"')
     }
   }
 }
