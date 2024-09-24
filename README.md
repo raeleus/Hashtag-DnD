@@ -28,7 +28,7 @@ The hashtags allow for as much immersion and complexity as you want:<br>
 Use quotes when you have spaces in a parameter. This isn't always necessary, but it is advised when multiple parameters make the phrase ambiguous:<br>
 `#buy 2 "red herrings" with 3 gold`<br>
 
-You should start by creating a character:<br>
+You should start by creating a character in do mode:<br>
 `#setup`<br>
 
 You can create multiple characters in your party. In story mode, type the following:<br>
