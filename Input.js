@@ -657,17 +657,22 @@ function doShowAutoXp(command) {
 }
 
 function doSetDefaultDifficulty(command) {
-  var arg0 = getArgument(command, 0)
-  if (arg0 == null) {
+  const difficultyNames = ["impossible", "extreme", "hard", "medium", "easy", "effortless"]
+  const difficultyScores = [30, 25, 20, 15, 10, 5]
+
+  const difficultyPatternNames = [...new Set(difficultyNames)]
+  difficultyPatternNames.push("\\d+")
+  var difficulty = getArgument(command, 0)
+  if (difficulty == null) {
     state.show = "none"
     return "\n[Error: Not enough parameters. See #help]\n"
   }
-  if (isNaN(arg0)) {
-    state.show = "none"
-    return "\n[Error: Expected a number. See #help]\n"
+  var difficultyIndex = difficultyNames.indexOf(difficulty)
+  if (difficultyIndex >= 0 && difficultyIndex < difficultyNames.length) {
+    difficulty = difficultyScores[difficultyIndex]
   }
 
-  state.defaultDifficulty = Math.max(0, arg0)
+  state.defaultDifficulty = Math.max(0, difficulty)
 
   state.show = "none"
   return `\n[The default difficulty is set to ${state.defaultDifficulty}]\n`

@@ -225,7 +225,7 @@ const modifier = (text) => {
       text += "\n    Shows the value of the auto xp."
       text += "\n#levelup"
       text += "\n    Increases the character's experience by the exact amount needed to reach the next level."
-      text += "\n#setdefaultdifficulty value"
+      text += "\n#setdefaultdifficulty (difficulty_class or effortless|easy|medium|hard|impossible)"
       text += "\n    Sets the default difficulty for #check, #try, #attack, and #cast when a difficulty is not specified. The normal default is 10 (easy)"
       text += "\n#showdefaultdifficulty"
       text += "\n    Shows the default difficulty for #check, #try, #attack, and #cast when a difficulty is not specified. The normal default is 10 (easy)"
