@@ -43,11 +43,15 @@ If the scenario is having trouble responding to your hashtags, use Story mode. T
 
 The provided scenario is very bare bones. This is intended to be the base for your own story development. Look out for future scenarios based on Hashtag DnD!
 
+v. 0.0.3
+* Added #setdefaultdifficulty to set the default difficulty of #check, #try, #attack, #cast
+
 v. 0.0.2
 * Fixed incorrect synonyms
 * You may use #pay as a synonym for #drop
 * You may inverse skill/ability with the hashtag. ie. `#intelligence check` instead of `#check intelligence`
 * Adjusted #showskills to display both the proficiency and ability modifier
 * Minor improvements and bug fixes
+
 v. 0.0.1
 * Initial release
