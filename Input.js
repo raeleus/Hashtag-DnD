@@ -46,6 +46,8 @@ const showCharactersSynonyms = ["showcharacters", "showparty", "showteam", "char
 const removeCharacterSynonyms = ["removecharacter", "deletecharacter", "erasecharacter", ""]
 const setAutoXpSynonyms = ["setautoxp", "autoxp"]
 const showAutoXpSynonyms = ["showautoxp"]
+const setDefaultDifficultySynonyms = ["setdefaultdifficulty", "defaultdifficulty", "setdefaultdc", "defaultdc", "setdefaultac", "defaultac"]
+const showDefaultDifficultySynonyms = ["showdefaultdifficulty", "showdefaultdc", "showdefaultac"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -140,6 +142,8 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, resetSynonyms, doReset)
   if (text == null) text = processCommandSynonyms(command, commandName, setAutoXpSynonyms, doSetAutoXp)
   if (text == null) text = processCommandSynonyms(command, commandName, showAutoXpSynonyms, doShowAutoXp)
+  if (text == null) text = processCommandSynonyms(command, commandName, setDefaultDifficultySynonyms, doSetDefaultDifficulty)
+  if (text == null) text = processCommandSynonyms(command, commandName, showDefaultDifficultySynonyms, doShowDefaultDifficulty)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -507,6 +511,7 @@ function init() {
   if (state.characters == null) state.characters = []
   if (state.notes == null) state.notes = []
   if (state.autoXp == null) state.autoXp = 0
+  if (state.defaultDifficulty == null) state.defaultDifficulty = 10
   state.show = null
   state.prefix = null
   state.critical = null
@@ -547,7 +552,7 @@ function doCreate(command) {
   state.tempCharacter.stats = []
   state.tempCharacter.spells = []
   state.tempCharacter.inventory = [{name: "Gold", quantity: 50}, {name: "Rope", quantity: 1}, {name: "Ration", quantity: 10}, {name: "Torch", quantity: 1}]
-  state.spellStat = null
+  state.tempCharacter.spellStat = null
   state.tempCharacter.meleeStat = "Strength"
   state.tempCharacter.rangedStat = "Dexterity"
   
@@ -649,6 +654,28 @@ function doSetAutoXp(command) {
 function doShowAutoXp(command) {
   state.show = "none"
   return state.autoXp <= 0 ? `\n[Auto XP is disabled]\n` : `\n[Auto XP is set to ${state.autoXp}]\n`
+}
+
+function doSetDefaultDifficulty(command) {
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+  if (isNaN(arg0)) {
+    state.show = "none"
+    return "\n[Error: Expected a number. See #help]\n"
+  }
+
+  state.defaultDifficulty = Math.max(0, arg0)
+
+  state.show = "none"
+  return `\n[The default difficulty is set to ${state.defaultDifficulty}]\n`
+}
+
+function doShowDefaultDifficulty(command) {
+  state.show = "none"
+  return `\n[The default difficulty is set to ${state.defaultDifficulty}]\n`
 }
 
 function doSetSkill(command) {
@@ -883,7 +910,7 @@ function doCheck(command) {
   const difficultyPatternNames = [...new Set(difficultyNames)]
   difficultyPatternNames.push("\\d+")
   var arg2 = searchArgument(command, arrayToOrPattern(difficultyPatternNames))
-  if (arg2 == null) arg2 = "easy"
+  if (arg2 == null) arg2 = state.defaultDifficulty
   else arg2 = arg2.toLowerCase()
 
   var die1 = calculateRoll("1d20")
@@ -948,7 +975,7 @@ function doTry(command) {
   difficultyPatternNames.push("\\d+")
   var arg2 = searchArgument(command, arrayToOrPattern(difficultyPatternNames))
   if (arg2 == null) {
-    arg2 = "easy"
+    arg2 = state.defaultDifficulty
     textIndex--
   }
   else arg2 = arg2.toLowerCase()
@@ -989,7 +1016,7 @@ function doTry(command) {
   else state.prefix = `\n[${arg0} check DC: ${target}. roll: ${dieText}. ${score >= target ? "Success!" : "Failure!"}]\n`
   var text = `\n${character.name} ${score + modifier >= target ? "successfully" : failword + " to"} ${arg3}`
   if (score == 20) text += " Critical success! Your action was extremely effective."
-  else if (score == 1) text += " Critical failure! There are dire consequences of your action."
+  else if (score == 1) text += " Critical failure! There are dire consequences for your action."
   
   if (score + modifier >= target || score == 20) text += addXpToAll(Math.floor(state.autoXp * clamp(target, 1, 20) / 20)) + "\n"
   return text
@@ -1023,7 +1050,7 @@ function doAttack(command) {
   difficultyPatternNames.push("\\d+")
   var difficultyText = searchArgument(command, arrayToOrPattern(difficultyPatternNames))
   if (difficultyText == null) {
-    difficultyText = "easy"
+    difficultyText = state.defaultDifficulty
     textIndex--
   }
   else difficultyText = difficultyText.toLowerCase()
@@ -1486,7 +1513,7 @@ function doCastSpell(command) {
   difficultyPatternNames.push("\\d+")
   var difficulty = searchArgument(command, arrayToOrPattern(difficultyPatternNames))
   if (difficulty == null) {
-    difficulty = "easy"
+    difficulty = state.defaultDifficulty
     spellIndex--
   }
   var difficultyIndex = difficultyNames.indexOf(difficulty)
@@ -1646,6 +1673,8 @@ function doClearSkills(command) {
 function doReset(command) {
   state.notes = []
   state.characters = []
+  state.defaultDifficulty = null
+  state.autoXp = null
 
   state.show = "reset"
   return " "
