@@ -48,6 +48,7 @@ const setAutoXpSynonyms = ["setautoxp", "autoxp"]
 const showAutoXpSynonyms = ["showautoxp"]
 const setDefaultDifficultySynonyms = ["setdefaultdifficulty", "defaultdifficulty", "setdefaultdc", "defaultdc", "setdefaultac", "defaultac"]
 const showDefaultDifficultySynonyms = ["showdefaultdifficulty", "showdefaultdc", "showdefaultac"]
+const generateNameSynonyms = ["generatename", "name", "randomname", "makename", "createname"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -80,7 +81,7 @@ const modifier = (text) => {
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
@@ -144,6 +145,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, showAutoXpSynonyms, doShowAutoXp)
   if (text == null) text = processCommandSynonyms(command, commandName, setDefaultDifficultySynonyms, doSetDefaultDifficulty)
   if (text == null) text = processCommandSynonyms(command, commandName, showDefaultDifficultySynonyms, doShowDefaultDifficulty)
+  if (text == null) text = processCommandSynonyms(command, commandName, generateNameSynonyms, doGenerateName)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -1652,6 +1654,17 @@ function doRemoveCharacter(command) {
   }
 
   return `[Character ${arg0} was not found.]`
+}
+
+function doGenerateName(command) {
+  var gender = searchArgument(command, /^(male)|(female)$/gi)
+  if (gender == null) gender = "male"
+
+  var genre = searchArgument(command, /^(fantasy)|(modern)|(scifi)|(nordic)$/gi)
+  if (genre == null) genre = "fantasy"
+
+  state.show = "none"
+  return `[The character's name is ${generateName(genre, gender.toLowerCase() == "male")}]`
 }
 
 function doClearSpells(command) {
