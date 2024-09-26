@@ -1169,9 +1169,21 @@ function doDrop(command) {
   var haveWord = character.name == "You" ? "have" : "has"
   var tryWord = character.name == "You" ? "try" : "tries"
 
+  var itemArgIndex = 0
+  if (isNaN(arg0)) {
+    if (allSynonyms.indexOf(arg0.toLowerCase() > -1)) {
+      arg0 = Number.MAX_SAFE_INTEGER
+      itemArgIndex++
+    } else {
+      arg0 = 1
+    }
+  } else {
+    itemArgIndex++
+  }
+
   const item = {
-    quantity: !isNaN(arg0) ? arg0 : allSynonyms.indexOf(arg0) > - 1 ? Number.MAX_SAFE_INTEGER : 1,
-    name: getArgumentRemainder(command, isNaN(arg0) ? 0 : 1).replace(/^((the)|(a)|(an))\s/, "").plural(true)
+    quantity: arg0,
+    name: getArgumentRemainder(command, itemArgIndex).replace(/^((the)|(a)|(an))\s/, "").plural(true)
   }
 
   var displayItemName = item.name.plural(item.quantity == 1)
