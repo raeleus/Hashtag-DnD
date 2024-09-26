@@ -44,7 +44,7 @@ If the scenario is having trouble responding to your hashtags, use Story mode. T
 The provided scenario is very bare bones. This is intended to be the base for your own story development. Look out for future scenarios based on Hashtag DnD!
 
 v. 0.0.5
-* Fixed using the "all" keyword in the #drop hastag failing
+* Fixed using the "all" keyword in the #drop fails
 * Minor bug fixes and improvements
 
 v. 0.0.4
