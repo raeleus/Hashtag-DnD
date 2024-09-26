@@ -1199,7 +1199,7 @@ function doDrop(command) {
     var existingItem = character.inventory[index]
   
     if (item.quantity == 1) text = `\n${character.name} ${commandName} the ${displayItemName}.\n`
-    else if (parseInt(item.quantity) >= parseInt(existingItem.quantity)) text = `${character.name} ${commandName} all of the ${displayItemName}.`
+    else if (parseInt(item.quantity) >= parseInt(existingItem.quantity)) text = `${character.name} ${commandName} all ${existingItem.quantity} of the ${displayItemName}.`
     else text =  `\n${character.name} ${commandName} ${item.quantity} ${displayItemName}.\n`
 
     existingItem.quantity -= item.quantity
