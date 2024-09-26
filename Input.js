@@ -1466,7 +1466,10 @@ function doForgetSpell(command) {
   var tryWord = character.name == "You" ? "try" : "tries"
 
   var found = character.spells.find(x => x.toLowerCase() == arg0.toLowerCase())
-  if (found == null) return `\n[${character.name} ${tryWord} to forget the spell ${arg0}, but ${character.name} ${dontWord} even know it]\n`
+  if (found == null) {
+    state.show = "none"
+    return `\n[${character.name} ${tryWord} to forget the spell ${arg0}, but ${character.name} ${dontWord} even know it]\n`
+  }
   
   var index = character.spells.findIndex(x => x.toLowerCase() == arg0.toLowerCase())
   character.spells.splice(index, 1)
