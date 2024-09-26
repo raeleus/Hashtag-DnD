@@ -1471,6 +1471,7 @@ function doForgetSpell(command) {
   var index = character.spells.findIndex(x => x.toLowerCase() == arg0.toLowerCase())
   character.spells.splice(index, 1)
 
+  state.show = "none"
   return `\n[${character.name} forgot the spell ${arg0}]\n`
 }
 
