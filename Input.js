@@ -1202,7 +1202,7 @@ function doDrop(command) {
   } else {
     var existingItem = character.inventory[index]
   
-    if (item.quantity == 1) text = `\n${character.name} ${commandName} the ${displayItemName}.\n`
+    if (existingItem.quantity == 1) text = `\n${character.name} ${commandName} the ${displayItemName.plural(true)}.\n`
     else if (parseInt(item.quantity) >= parseInt(existingItem.quantity)) text = `${character.name} ${commandName} all ${existingItem.quantity} of the ${displayItemName}.`
     else text =  `\n${character.name} ${commandName} ${item.quantity} ${displayItemName}.\n`
 
@@ -1253,6 +1253,7 @@ function doGive(command) {
   var haveWord = character.name == "You" ? "have" : "has"
   var tryWord = character.name == "You" ? "try" : "tries"
   var otherHaveWord = otherCharacter.name == "You" ? "have" : "has"
+  var otherNameAdjustedCase = otherCharacter.name == "You" ? "you" : otherCharacter.name
   var displayItemName = item.name.plural(item.quantity == 1)
   var characterQuantityText = ""
 
@@ -1278,13 +1279,13 @@ function doGive(command) {
 
     if (existingItem.quantity > 0) {
       characterQuantityText = ` ${character.name} now ${haveWord} ${existingItem.quantity} ${existingItem.name.plural(existingItem.quantity == 1)}.`
-    } else {
+    } else if (item.quantity > 1) {
       characterQuantityText = ` ${character.name} ${dontWord} have any more.`
     }
   }
 
-  if (item.quantity == 1) text += `${character.name} ${commandName.plural(character.name == "You")} ${otherCharacter.name} the ${displayItemName}.`
-  else text += `${character.name} ${commandName.plural(character.name == "You")} ${otherCharacter.name} ${item.quantity} ${displayItemName}.`
+  if (item.quantity == 1) text += `${character.name} ${commandName.plural(character.name == "You")} ${otherNameAdjustedCase} the ${displayItemName}.`
+  else text += `${character.name} ${commandName.plural(character.name == "You")} ${otherNameAdjustedCase} ${item.quantity} ${displayItemName}.`
 
   var otherIndex = otherCharacter.inventory.findIndex((element) => element.name.toLowerCase() == item.name.toLowerCase())
   if (otherIndex == -1) {
