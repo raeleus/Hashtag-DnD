@@ -1063,6 +1063,10 @@ function doAttack(command) {
   else difficultyText = difficultyText.toLowerCase()
 
   var targetText = getArgumentRemainder(command, textIndex)
+  if (targetText == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
   var toMatches = targetText.match(/^to\s+/gi)
   if (toMatches != null) targetText = targetText.substring(toMatches[0].length)
   targetText = stripPunctuation(targetText)
