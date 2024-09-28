@@ -1142,7 +1142,7 @@ function doTake(command) {
   if (item.quantity < 0) item.quantity = 1
 
   var text = "\n"
-  if (item.quantity == 1) text += `${character.name} ${commandName} the ${displayItemName}.\n`
+  if (item.quantity == 1) text += `${character.name} ${commandName} ${displayItemName.toLowerCase().startsWith("the ") ? "" : "the "}${displayItemName}.\n`
   else text += `${character.name} ${commandName} ${item.quantity} ${displayItemName}.\n`
 
   var index = character.inventory.findIndex((element) => element.name.toLowerCase() == item.name.toLowerCase())
