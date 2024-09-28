@@ -947,10 +947,10 @@ function doCheck(command) {
   var dieText = arg1 == "advantage" || arg1 == "disadvantage" ? `${arg1}(${die1},${die2})` : die1
 
   var text
-  if (score == 20) text = `\n[${arg0} check DC: ${target}. roll: ${dieText}. Critical Success!]\n`
-  else if (score == 1) text = `\n[${arg0} check DC: ${target}. roll: ${dieText}. Critical Failure!]\n`
-  else if (modifier != 0) text = `\n[${arg0} check DC: ${target}. roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= target ? "Success!" : "Failure!"}]\n`
-  else text = `\n[${arg0} check DC: ${target}. roll: ${dieText}. ${score >= target ? "Success!" : "Failure!"}]\n`
+  if (score == 20) text = `\n[${arg0} check DC: ${target} roll: ${dieText}. Critical Success!]\n`
+  else if (score == 1) text = `\n[${arg0} check DC: ${target} roll: ${dieText}. Critical Failure!]\n`
+  else if (modifier != 0) text = `\n[${arg0} check DC: ${target} roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= target ? "Success!" : "Failure!"}]\n`
+  else text = `\n[${arg0} check DC: ${target} roll: ${dieText}. ${score >= target ? "Success!" : "Failure!"}]\n`
   return text
 }
 
@@ -1017,10 +1017,10 @@ function doTry(command) {
   var dieText = arg1 == "advantage" || arg1 == "disadvantage" ? `${arg1}(${die1},${die2})` : die1
 
   state.show = "prefix"
-  if (score == 20) state.prefix = `\n[${arg0} check DC: ${target}. roll: ${dieText}]\n`
-  else if (score == 1) state.prefix = `\n[${arg0} check DC: ${target}. roll: ${dieText}]\n`
-  else if (modifier != 0) state.prefix = `\n[${arg0} check DC: ${target}. roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= target ? "Success!" : "Failure!"}]\n`
-  else state.prefix = `\n[${arg0} check DC: ${target}. roll: ${dieText}. ${score >= target ? "Success!" : "Failure!"}]\n`
+  if (score == 20) state.prefix = `\n[${arg0} check DC: ${target} roll: ${dieText}]\n`
+  else if (score == 1) state.prefix = `\n[${arg0} check DC: ${target} roll: ${dieText}]\n`
+  else if (modifier != 0) state.prefix = `\n[${arg0} check DC: ${target} roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= target ? "Success!" : "Failure!"}]\n`
+  else state.prefix = `\n[${arg0} check DC: ${target} roll: ${dieText}. ${score >= target ? "Success!" : "Failure!"}]\n`
   var text = `\n${character.name} ${score + modifier >= target ? "successfully" : failword + " to"} ${arg3}`
   if (score == 20) text += " Critical success! Your action was extremely effective."
   else if (score == 1) text += " Critical failure! There are dire consequences for your action."
@@ -1091,14 +1091,14 @@ function doAttack(command) {
 
   state.show = "prefix"
   
-  if (score == 20) state.prefix = `\n[Enemy AC: ${targetRoll}. Attack roll: ${dieText}]\n`
-  else if (score == 1) state.prefix = `\n[Enemy AC: ${targetRoll}. Attack roll: ${dieText}]\n`
-  else if (modifier != 0) state.prefix = `\n[Enemy AC: ${targetRoll}. Attack roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= targetRoll ? "Success!" : "Failure!"}]\n`
-  else state.prefix = `\n[Enemy AC: ${targetRoll}. Attack roll: ${dieText}. ${score >= targetRoll ? "Success!" : "Failure!"}]\n`
+  if (score == 20) state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}]\n`
+  else if (score == 1) state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}]\n`
+  else if (modifier != 0) state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= targetRoll ? "Success!" : "Failure!"}]\n`
+  else state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}. ${score >= targetRoll ? "Success!" : "Failure!"}]\n`
 
   var text
   if (score + modifier >= targetRoll) text = `\n${character.name} successfully hit ${targetText}!`
-  else text = `\n${character.name} ${tryWord} to hit ${targetText}. ${character.name} ${missWord}!`
+  else text = `\n${character.name} ${tryWord} to hit ${targetText} ${character.name} ${missWord}!`
 
   if (score == 20) text += " Critical success! Your attack is exceptionally damaging!"
   else if (score == 1) text += " Critical failure! Your attack missed in a spectacular way!"
