@@ -1564,8 +1564,8 @@ function doCastSpell(command) {
       if (!/^((at)|(on))\s+.*/.test(target)) target = "at " + target
     }
   } else {
-    if (/.*\s((at)|(on))\s.*/i.test(spell)) {
-      var remainder = getArgumentRemainder(command, spellIndex)
+    var remainder = getArgumentRemainder(command, spellIndex)
+    if (/.*\s((at)|(on))\s.*/i.test(remainder)) {
       spell = remainder.replace(/\s+((at)|(on)).*/i, "").trim()
       target = remainder.replace(/^.*\s+(?=(at)|(on))/i, "").trim()
     } else {
