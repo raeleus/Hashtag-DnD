@@ -1,5 +1,7 @@
 const rollSynonyms = ["roll"]
 const createSynonyms = ["create", "generate", "start", "begin", "setup", "party", "member", "new"]
+const renameCharacterSynonyms = ["renamecharacter", "renameperson"]
+const cloneCharacterSynonyms = ["clonecharacter", "cloneperson", "copycharacter", "copyperson"]
 const bioSynonyms = ["bio", "biography", "summary", "character", "charactersheet", "statsheet"]
 const setClassSynonyms = ["setclass", "class"]
 const setSummarySynonyms = ["setsummary", "summary"]
@@ -82,7 +84,7 @@ const modifier = (text) => {
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
@@ -148,6 +150,8 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, setDefaultDifficultySynonyms, doSetDefaultDifficulty)
   if (text == null) text = processCommandSynonyms(command, commandName, showDefaultDifficultySynonyms, doShowDefaultDifficulty)
   if (text == null) text = processCommandSynonyms(command, commandName, generateNameSynonyms, doGenerateName)
+  if (text == null) text = processCommandSynonyms(command, commandName, renameCharacterSynonyms, doRenameCharacter)
+  // if (text == null) text = processCommandSynonyms(command, commandName, cloneCharacterSynonyms, doCloneCharacter)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -567,6 +571,23 @@ function doCreate(command) {
 function doBio(command) {
   state.show = "bio"
   return " "
+}
+
+function doRenameCharacter(command) {
+  var character = getCharacter()
+  var arg0 = getArgumentRemainder(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+  var possessiveName = getPossessiveName(character.name)
+
+  state.show = "none"
+  var text = `\n[${possessiveName} name has been changed to ${arg0}]\n`
+
+  character.name = arg0
+
+  return text
 }
 
 function doSetStat(command) {

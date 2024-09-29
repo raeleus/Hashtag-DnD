@@ -205,6 +205,8 @@ const modifier = (text) => {
       text += "\n    Launches the create character setup."
       text += "\n#bio"
       text += "\n    Shows the character's abilities, skills, spells, inventory, and everything else about this character."
+      text += "\n#renamecharacter new_name"
+      text += "\n    Renames the character to the new name. All abilities, skills, inventory, etc. will remain the same. Quotes are not necessary."
       text += "\n#setclass class"
       text += "\n    Sets the class of the character for player reference."
       text += "\n#setsummary summary"
