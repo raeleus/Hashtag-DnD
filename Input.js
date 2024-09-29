@@ -1177,16 +1177,17 @@ function doTake(command) {
     name: getArgumentRemainder(command, isNaN(arg0) ? 0 : 1).replace(/^((the)|(a)|(an))\s/, "").plural(true)
   }
 
-  var commandName = getCommandName(command)
   var character = getCharacter()
+  var commandName = getCommandName(command)
+  var commandNamePlural =  commandName.plural(character.name == "You") 
   var haveWord = character.name == "You" ? "have" : "has"
   var displayItemName = item.name.plural(item.quantity == 1)
 
   if (item.quantity < 0) item.quantity = 1
 
   var text = "\n"
-  if (item.quantity == 1) text += `${character.name} ${commandName} ${displayItemName.toLowerCase().startsWith("the ") ? "" : "the "}${displayItemName}.\n`
-  else text += `${character.name} ${commandName} ${item.quantity} ${displayItemName}.\n`
+  if (item.quantity == 1) text += `${character.name} ${commandNamePlural} ${displayItemName.toLowerCase().startsWith("the ") ? "" : "the "}${displayItemName}.\n`
+  else text += `${character.name} ${commandNamePlural} ${item.quantity} ${displayItemName}.\n`
 
   var index = character.inventory.findIndex((element) => element.name.toLowerCase() == item.name.toLowerCase())
   if (index == -1) {
