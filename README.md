@@ -15,7 +15,7 @@ Personalized note system that does not take up context space<br>
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 
 v. 0.1.0
-* Added #renameitem to rename an existing item
+* Added `#renameitem` to rename an existing item
 * Minor bug fixes and improvements
 
 v. 0.0.6
