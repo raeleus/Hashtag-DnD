@@ -283,6 +283,8 @@ const modifier = (text) => {
       text += "\n    Removes the specified quantity of item from the character's inventory. If a quantity is omitted, it's assumed to be 1. The words the, a, and an are ignored."
       text += "\n#give other_character (quantity or all|every) item"
       text += "\n    Removes the quantity of item from the character's inventory and adds it to the other_character's inventory. If a quantity is omitted, it's assumed to be 1. The words the, a, and an are ignored."
+      text += "\n#renameitem original_name new_name"
+      text += "\n    Renames the item indicated by original_name to the new_name. The quantity remains the same. Quotes are necessary for items with spaces in the name."
       text += "\n#inventory"
       text += "\n    Shows the items in the inventory of the character."
       text += "\n#clearinventory"

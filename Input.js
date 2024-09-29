@@ -30,6 +30,7 @@ const buySynonyms = ["buy", "purchase", "barter", "trade", "swap", "exchange"]
 const sellSynonyms = ["sell"]
 const dropSynonyms = ["remove", "discard", "drop", "leave", "dispose", "toss", "throw", "throwaway", "trash", "donate", "eat", "consume", "use", "drink", "pay"]
 const giveSynonyms = ["give", "handover", "hand", "gift"]
+const renameItemSynonyms = ["renameitem", "renameobject", "renamegear", "renameequipment"]
 const inventorySynonyms = ["inv", "inventory", "backpack", "gear", "showinv", "showinventory", "viewinventory", "viewinv"]
 const clearInventorySynonyms = ["clearinventory", "clearinv", "emptyinventory", "emptybackpack", "clearbackpack", "emptygear", "cleargear"]
 const learnSpellSynonyms = ["learnspell", "learnmagic", "learnincantation", "learnritual", "memorizespell", "memorizemagic", "memorizeincantation", "memorizeritual", "learnsspell", "learnsmagic", "learnsincantation", "learnsritual", "memorizesspell", "memorizesmagic", "memorizesincantation", "memorizesritual", "learn"]
@@ -124,6 +125,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, takeSynonyms, doTake)
   if (text == null) text = processCommandSynonyms(command, commandName, dropSynonyms, doDrop)
   if (text == null) text = processCommandSynonyms(command, commandName, giveSynonyms, doGive)
+  if (text == null) text = processCommandSynonyms(command, commandName, renameItemSynonyms, doRenameItem)
   if (text == null) text = processCommandSynonyms(command, commandName, inventorySynonyms, doInventory)
   if (text == null) text = processCommandSynonyms(command, commandName, clearInventorySynonyms, doClearInventory)
   if (text == null) text = processCommandSynonyms(command, commandName, learnSpellSynonyms, doLearnSpell)
@@ -1434,6 +1436,36 @@ function doSell(command) {
   var buyName = args[1]
 
   return doBuy(`buy ${buyQuantity} ${buyName} ${sellQuantity} ${sellName}`)
+}
+
+function doRenameItem(command) {
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  var arg1 = getArgument(command, 1)
+  if (arg1 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  var commandName = getCommandName(command)
+  var character = getCharacter()
+  var haveWord = character.name == "You" ? "have" : "has"
+  var possessiveName = getPossessiveName(character.name)
+
+  state.show = "none"
+  var text = `\n[${possessiveName} ${arg0} has been renamed to ${arg1}]\n`
+
+  var index = character.inventory.findIndex((element) => element.name.toLowerCase() == arg0.toLowerCase())
+  if (index >= 0 ) {
+    var existingItem = character.inventory[index]
+    existingItem.name = arg1
+  }
+
+  return text
 }
 
 function doInventory(command) {
