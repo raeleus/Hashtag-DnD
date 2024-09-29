@@ -1,7 +1,7 @@
 const rollSynonyms = ["roll"]
 const createSynonyms = ["create", "generate", "start", "begin", "setup", "party", "member", "new"]
 const renameCharacterSynonyms = ["renamecharacter", "renameperson"]
-const cloneCharacterSynonyms = ["clonecharacter", "cloneperson", "copycharacter", "copyperson"]
+const cloneCharacterSynonyms = ["clone", "clonecharacter", "cloneperson", "copycharacter", "copyperson", "duplicatecharacter", "duplicateperson", "dupecharacter", "dupeperson"]
 const bioSynonyms = ["bio", "biography", "summary", "character", "charactersheet", "statsheet"]
 const setClassSynonyms = ["setclass", "class"]
 const setSummarySynonyms = ["setsummary", "summary"]
@@ -151,7 +151,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, showDefaultDifficultySynonyms, doShowDefaultDifficulty)
   if (text == null) text = processCommandSynonyms(command, commandName, generateNameSynonyms, doGenerateName)
   if (text == null) text = processCommandSynonyms(command, commandName, renameCharacterSynonyms, doRenameCharacter)
-  // if (text == null) text = processCommandSynonyms(command, commandName, cloneCharacterSynonyms, doCloneCharacter)
+  if (text == null) text = processCommandSynonyms(command, commandName, cloneCharacterSynonyms, doCloneCharacter)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -586,6 +586,26 @@ function doRenameCharacter(command) {
   var text = `\n[${possessiveName} name has been changed to ${arg0}]\n`
 
   character.name = arg0
+
+  return text
+}
+
+function doCloneCharacter(command) {
+  var character = getCharacter()
+  var possessiveName = getPossessiveName(character.name)
+
+  var arg0 = getArgumentRemainder(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  if (!hasCharacter(arg0)) createCharacter(arg0)
+  var newCharacter = getCharacter(arg0)
+  copyCharacter(character, newCharacter)
+
+  state.show = "none"
+  var text = `\n[${character.name} has been cloned to a new character called ${newCharacter.name}]\n`
 
   return text
 }

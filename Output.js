@@ -207,6 +207,8 @@ const modifier = (text) => {
       text += "\n    Shows the character's abilities, skills, spells, inventory, and everything else about this character."
       text += "\n#renamecharacter new_name"
       text += "\n    Renames the character to the new name. All abilities, skills, inventory, etc. will remain the same. Quotes are not necessary."
+      text += "\n#clonecharacter new_name"
+      text += "\n    Copies the abilities, skills, inventory, etc. of the current character to a new character with the name new_name. Quotes are not necessary."
       text += "\n#setclass class"
       text += "\n    Sets the class of the character for player reference."
       text += "\n#setsummary summary"

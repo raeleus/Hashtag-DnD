@@ -218,6 +218,23 @@ function createCharacter(name) {
   return character
 }
 
+function copyCharacter(fromCharacter, toCharacter) {
+  if (toCharacter != null && fromCharacter != null) {
+    toCharacter.className = fromCharacter.className
+    toCharacter.summary = fromCharacter.summary
+    toCharacter.inventory = [...new Set(fromCharacter.inventory)]
+    toCharacter.spells = [...new Set(fromCharacter.spells)]
+    toCharacter.stats = [...new Set(fromCharacter.stats)]
+    toCharacter.spellStat = fromCharacter.spellStat
+    toCharacter.meleeStat = fromCharacter.meleeStat
+    toCharacter.rangedStat = fromCharacter.rangedStat
+    toCharacter.skills = [...new Set(fromCharacter.skills)]
+    toCharacter.experience = fromCharacter.experience
+    toCharacter.health = fromCharacter.health
+    return toCharacter
+  }
+}
+
 function deleteCharacter(name) {
   var index = state.characters.findIndex((element) => element.name == name)
   state.characters.splice(index, 1)

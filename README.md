@@ -17,6 +17,7 @@ See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 v. 0.1.0
 * Added `#renameitem` to rename an existing item
 * Added `#renamecharacter` to rename an existing character
+* Added `#clonecharacter` to copy an existing character
 * Minor bug fixes and improvements
 
 v. 0.0.6
