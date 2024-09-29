@@ -708,10 +708,8 @@ function doSetDefaultDifficulty(command) {
   const difficultyPatternNames = [...new Set(difficultyNames)]
   difficultyPatternNames.push("\\d+")
   var difficulty = getArgument(command, 0)
-  if (difficulty == null) {
-    state.show = "none"
-    return "\n[Error: Not enough parameters. See #help]\n"
-  }
+  if (difficulty == null) difficulty = "easy"
+  
   var difficultyIndex = difficultyNames.indexOf(difficulty)
   if (difficultyIndex >= 0 && difficultyIndex < difficultyNames.length) {
     difficulty = difficultyScores[difficultyIndex]
