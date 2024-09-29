@@ -102,6 +102,7 @@ const modifier = (text) => {
       state.notes.forEach(function(x) {
         text += `\n${counter++}. ${x}`
       })
+      if (state.notes.length == 0) text += "\nThere are no notes!"
       text += "\n**************\n\n"
       break
     case "clearNotes":
@@ -198,7 +199,7 @@ const modifier = (text) => {
       text += "\n#clearnotes"
       text += "\n    Removes all notes."
       text += "\n#removenote value"
-      text += "\n    Removes the specified note as indicated by the number listed in #shownotes."
+      text += "\n    Removes the specified note as indicated by the number listed in #shownotes. To delete multiple notes, type the numbers with spaces or commas between them. This is safer than calling #removenote multiple times because the numbers shift as notes are deleted."
 
       text += "\n\n--Characters--"
       text += "\n#setup"

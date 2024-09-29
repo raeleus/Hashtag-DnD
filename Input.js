@@ -709,7 +709,7 @@ function doSetDefaultDifficulty(command) {
   difficultyPatternNames.push("\\d+")
   var difficulty = getArgument(command, 0)
   if (difficulty == null) difficulty = "easy"
-  
+
   var difficultyIndex = difficultyNames.indexOf(difficulty)
   if (difficultyIndex >= 0 && difficultyIndex < difficultyNames.length) {
     difficulty = difficultyScores[difficultyIndex]
@@ -1716,18 +1716,28 @@ function doClearInventory(command) {
 }
 
 function doEraseNote(command) {
-  var arg0 = getArgument(command, 0)
+  var arg0 = getArgumentRemainder(command, 0)
   if (arg0 == null) arg0 = 1
 
-  arg0 = parseInt(arg0) - 1
-  if (arg0 >= state.notes.length) {
-    state.show = "none"
-    return "\n[Error: Note does not exist. Call #showNotes.]\n"
-  }
+  var list = arg0.split(/\D/)
+  list.sort(function(a, b) {
+    return b - a;
+  });
 
-  state.notes.splice(arg0, 1)
+  var text = "\n"
+  list.forEach(x => {
+    var num = parseInt(x) - 1
+    if (num >= state.notes.length) {
+      state.show = "none"
+      return `\n[Error: Note ${x} does not exist. Call #showNotes.]\n`
+    }
+
+    state.notes.splice(num, 1)
+    text += `[Note #${x} removed]\n`
+  })
+  
   state.show = "none"
-  return `[Note #${arg0 + 1} removed]`
+  return text
 }
 
 function doRemoveCharacter(command) {

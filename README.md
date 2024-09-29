@@ -18,6 +18,7 @@ v. 0.1.0
 * Added `#renameitem` to rename an existing item
 * Added `#renamecharacter` to rename an existing character
 * Added `#clonecharacter` to copy an existing character
+* `#removenote` can remove more than one note at a time
 * Minor bug fixes and improvements
 
 v. 0.0.6
