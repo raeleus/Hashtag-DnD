@@ -326,8 +326,12 @@ const modifier = (text) => {
       text += "\n    Makes the characters travel to the location specified by the coordinates or location_name. You must provide at least one or the other. If the location does not exist, it is created at your current coordinates. If you only specify coordinates, you will go to the first location at those coordinates. Quotes are not necessary."
       text += "\n#getlocation"
       text += "\n    Returns the coordinates that the player's party is at. It will also list a location if a location was specified when using #goto."
+      text += "\n#showlocations"
+      text += "\n    Shows a list of all discovered locations with their coordinates and their distance from the player's current location."
       text += "\n#removelocation location_name or location_number"
       text += "\n    Removes the specified location or location number as listed in #showlocations. Quotes are not necessary."
+      text += "\n#clearlocations"
+      text += "\n    Deletes all discovered locations."
 
       text += "\n\n--Danger Zone--"
       text += "\n#reset"
