@@ -17,6 +17,52 @@ function shuffle(array, seed) {
   }
 }
 
+function pointDistance(x1, y1, x2, y2) {
+  return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2))
+}
+
+function rotate(cx, cy, x, y, angle) {
+  var radians = (Math.PI / 180) * angle
+  var cos = Math.cos(radians)
+  var sin = Math.sin(radians)
+  var nx = (cos * (x - cx)) + (sin * (y - cy)) + cx
+  var ny = (cos * (y - cy)) - (sin * (x - cx)) + cy
+  return [nx, ny];
+}
+
+function createLocation(x, y, name) {
+  if (x == null || y == null) {
+    var cx = x == null ? state.x : x
+    var cy = y == null ? state.y : y
+    var coords = rotate(cx, cy, getRandomInteger(-10, 10) + cx, cy, Math.random() * 360)
+    x = coords[0]
+    y = coords[1]
+  }
+
+  x = Math.round(x)
+  y = Math.round(y)
+
+  var existingLocationIndex = state.locations.findIndex(element => element.name.toLowerCase() == name.toLowerCase())
+  var location
+  if (existingLocationIndex == -1) {
+    location = {
+      x: x,
+      y: y,
+      name: name
+    }
+    state.locations.push(location)
+  } else {
+    location = state.locations[existingLocationIndex]
+    location.x = x
+    location.y = y
+    location.name = name
+  }
+
+  addStoryCard(location.name, "", "location")
+
+  return location
+}
+
 function sanitizeText(text) {
   if (/^\s*>.*says? ".*/.test(text)) {
     text = text.replace(/^\s*>\s/, "")
@@ -175,7 +221,7 @@ function calculateRoll(rolltext) {
 function getCharacter(characterName) {
   if (characterName == null) characterName = state.characterName
   if (characterName == null) return null
-  return state.characters.find((element) => element.name.toLowerCase() == characterName.toLowerCase())
+  return state.characters.find(element => element.name.toLowerCase() == characterName.toLowerCase())
 }
 
 function hasCharacter(characterName) {

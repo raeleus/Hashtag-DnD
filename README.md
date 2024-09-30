@@ -15,6 +15,7 @@ Personalized note system that does not take up context space<br>
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 
 v. 0.1.0
+* Added `#createlocation`, `#goto`, `#removelocation`, `#clearlocations`, `#getlocation` and `#showlocations` to enable travelling.
 * Added `#renameitem` to rename an existing item
 * Added `#renamecharacter` to rename an existing character
 * Added `#clonecharacter` to copy an existing character

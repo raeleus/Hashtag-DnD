@@ -52,6 +52,12 @@ const showAutoXpSynonyms = ["showautoxp"]
 const setDefaultDifficultySynonyms = ["setdefaultdifficulty", "defaultdifficulty", "setdefaultdc", "defaultdc", "setdefaultac", "defaultac", "setdifficulty", "difficulty", "dc"]
 const showDefaultDifficultySynonyms = ["showdefaultdifficulty", "showdefaultdc", "showdefaultac"]
 const generateNameSynonyms = ["generatename", "name", "randomname", "makename", "createname"]
+const createLocationSynonyms = ["createlocation", "makelocation", "generatelocation", "createplace", "makeplace", "generateplace", "createtown", "maketown", "generatetown", "createvillage", "makevillage", "generatevillage", "createcity", "makecity", "generatecity", "updatelocation", "updateplace", "updatetown", "updatevillage", "updatecity"]
+const goToLocationSynonyms = ["gotolocation", "golocation", "movetolocation", "traveltolocation", "travellocation", "gotoplace", "goplace", "movetoplace", "traveltoplace", "travelplace", "gototown", "gotown", "movetotown", "traveltotown", "traveltown", "gotovillage", "govillage", "movetovillage", "traveltovillage", "travelvillage", "gotocity", "gocity", "movetocity", "traveltocity", "travelcity", "goto", "go", "moveto", "move", "travelto", "travel"]
+const removeLocationSynonyms = ["removelocation", "deletelocation", "eraselocation", "removeplace", "deleteplace", "eraseplace", "removetown", "deletetown", "erasetown", "removevillage", "deletevillage", "erasevillage", "removecity", "deletecity", "erasecity"]
+const showLocationsSynonyms = ["showlocations", "showplaces", "showtowns", "showvillages", "showcities", "locations", "places", "towns", "villages", "cities"]
+const getLocationSynonyms = ["getlocation", "location", "getcoordinates", "coordinates", "getcoords", "coords", "showlocation"]
+const clearLocationsSynonyms = ["clearlocations", "eraselocations", "deletelocations", "resetlocations"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -84,7 +90,7 @@ const modifier = (text) => {
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
@@ -150,6 +156,12 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, setDefaultDifficultySynonyms, doSetDefaultDifficulty)
   if (text == null) text = processCommandSynonyms(command, commandName, showDefaultDifficultySynonyms, doShowDefaultDifficulty)
   if (text == null) text = processCommandSynonyms(command, commandName, generateNameSynonyms, doGenerateName)
+  if (text == null) text = processCommandSynonyms(command, commandName, createLocationSynonyms, doCreateLocation)
+  if (text == null) text = processCommandSynonyms(command, commandName, goToLocationSynonyms, doGoToLocation)
+  if (text == null) text = processCommandSynonyms(command, commandName, clearLocationsSynonyms, doClearLocations)
+  if (text == null) text = processCommandSynonyms(command, commandName, removeLocationSynonyms, doRemoveLocation)
+  if (text == null) text = processCommandSynonyms(command, commandName, showLocationsSynonyms, doShowLocations)
+  if (text == null) text = processCommandSynonyms(command, commandName, getLocationSynonyms, doGetLocation)
   if (text == null) text = processCommandSynonyms(command, commandName, renameCharacterSynonyms, doRenameCharacter)
   if (text == null) text = processCommandSynonyms(command, commandName, cloneCharacterSynonyms, doCloneCharacter)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
@@ -518,6 +530,9 @@ function init() {
   }
   if (state.characters == null) state.characters = []
   if (state.notes == null) state.notes = []
+  if (state.locations == null) state.locations = []
+  if (state.x == null) state.x = 0
+  if (state.y == null) state.y = 0
   if (state.autoXp == null) state.autoXp = 0
   if (state.defaultDifficulty == null) state.defaultDifficulty = 10
   state.show = null
@@ -1163,6 +1178,134 @@ function doShowNotes(command) {
   return " "
 }
 
+function doCreateLocation(command) {
+  var locationArgIndex = 2
+
+  var arg0 = getArgument(command, 0)
+  var arg1 = getArgument(command, 1)
+  if (arg0 == null || isNaN(arg0)) {
+    arg0 = null 
+    arg1 = null
+    locationArgIndex = 0
+  }
+
+  if (arg0 != null && (arg1 == null || isNaN(arg1))) {
+    arg1 = null
+    locationArgIndex = 1
+  }
+
+  var arg2 = getArgumentRemainder(command, locationArgIndex)
+  if (arg2 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  var location = createLocation(arg0, arg1, arg2)
+  
+  state.show = "none"
+  return `\n[Location ${toTitleCase(arg2)} has been created at (${location.x},${location.y})]\n`
+}
+
+function doGoToLocation(command) {
+  var character = getCharacter()
+  var characterName = character == null ? "You" : character.name
+  var possessiveName = getPossessiveName(characterName)
+  var travelWord = characterName == "You" ? "travel" : "travels"
+  var locationArgIndex = 2
+
+  var arg0 = getArgument(command, 0)
+  var arg1 = getArgument(command, 1)
+
+  if (arg0 == null || isNaN(arg0)) {
+    arg0 = state.x 
+    arg1 = state.y
+    locationArgIndex = 0
+  }
+
+  if (arg0 != null && (arg1 == null || isNaN(arg1))) {
+    arg1 = state.y
+    locationArgIndex = 1
+  }
+
+  var distance = 0
+  var location
+  var locationName = getArgumentRemainder(command, locationArgIndex)
+  if (locationName == null && locationArgIndex == 0) {
+    state.show = none
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+  
+  if (locationName == null) {
+    var index = state.locations.findIndex(x => x.x == arg0 && x.y == arg1)
+    if (index != -1) location = state.locations[index]
+  } else {
+    var index = state.locations.findIndex(x => x.name.toLowerCase() == locationName.toLowerCase())
+    if (index != -1) location = state.locations[index]
+    else location = createLocation(arg0, arg1, locationName)
+  }
+  
+  if (location == null) {
+    distance = pointDistance(state.x, state.y, arg0, arg1)
+    state.x = arg0
+    state.y = arg1
+  } else {
+    distance = pointDistance(state.x, state.y, location.x, location.y)
+    state.x = location.x
+    state.y = location.y
+    state.location = location.name
+  }
+  distance = distance.toFixed(1)
+  
+  state.show = "none"
+  if (location == null) return `\n${characterName} ${travelWord} ${distance > 0 ? distance + " units " : ""} to (${arg0},${arg1})`
+  if (state.characters.length > 1) return `\n${possessiveName} party travels ${distance > 0 ? distance + " units " : ""}to ${toTitleCase(location.name)} at (${location.x},${location.y})\n`
+  return `\n${characterName} ${travelWord} ${distance > 0 ? distance + " units " : ""}to ${toTitleCase(location.name)} at (${location.x},${location.y})\n`
+}
+
+function doGetLocation(command) {
+  state.show = "none"
+  return `\n[You are at ${state.location == null ? "" : "the location " + state.location + " "}(${state.x},${state.y})]`
+}
+
+function doClearLocations(command) {
+  state.locations = []
+  state.location = null
+
+  state.show = "none"
+  return "\n[The locations have been cleared]\n"
+}
+
+function doRemoveLocation(command) {
+  var arg0 = getArgumentRemainder(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  var location
+  if (isNaN(arg0)) arg0 = state.locations.findIndex(x => x.name.toLowerCase() == arg0.toLowerCase())
+  else arg0--
+
+  if (arg0 == -1) {
+    state.show = "none"
+    return "\n[Error: Location not found. See #showlocations]\n"
+  } else if (arg0 >= state.locations.length || arg0 < 0) {
+    state.show = "none"
+    return "\n[Error: Location number out of bounds. See #showlocations]\n"
+  } else {
+    location = state.locations[arg0]
+    state.locations.splice(arg0, 1)
+  }
+
+  state.show = "none"
+  return `\n[The location ${toTitleCase(location.name)} has been removed]\n`
+}
+
+function doShowLocations(command) {
+  state.show = "locations"
+  return " "
+}
+
 function doTake(command) {
   var arg0 = getArgument(command, 0)
   if (arg0 == null) {
@@ -1794,6 +1937,10 @@ function doClearSkills(command) {
 function doReset(command) {
   state.notes = []
   state.characters = []
+  state.locations = []
+  state.location = null
+  state.x = 0
+  state.y = 0
   state.defaultDifficulty = null
   state.autoXp = null
 

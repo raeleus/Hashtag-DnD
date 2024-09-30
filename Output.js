@@ -173,6 +173,20 @@ const modifier = (text) => {
       }
       text += "******************\n\n"
       break
+    case "locations":
+      text += `Player location: ${state.location == null ? "" : state.location + " "}(${state.x},${state.y})\n`
+      text += `*** LOCATIONS ***\n`
+      if (state.locations.length > 0) {
+        var index = 0
+        state.locations.forEach(function(location) {
+          var distance = pointDistance(state.x, state.y, location.x, location.y).toFixed(1)
+          text += `${++index}. ${toTitleCase(location.name)} (${location.x},${location.y}) Distance: ${distance}\n`
+        })
+      } else {
+        text += `No locations have been discovered!`
+      }
+      text += "******************\n\n"
+      break
     case "none":
       text += " "
       break
@@ -304,6 +318,16 @@ const modifier = (text) => {
       text += "\n    Removes all spells from the character's spellbook."
       text += "\n#spellbook"
       text += "\n    Shows the list of spells that the character has learned."
+
+      text += "\n\n--Locations--"
+      text += "\n#createlocation (x) (y) location_name"
+      text += "\n    Creates a location at the given coordinates. If the coordinates are not provided, they are randomized within a range of 10 units from the player's current location. Multiple locations may exist at the same coordinates. A story card is created for the location. Quotes are not necessary."
+      text += "\n#goto (x) (y) or (location_name)"
+      text += "\n    Makes the characters travel to the location specified by the coordinates or location_name. You must provide at least one or the other. If the location does not exist, it is created at your current coordinates. If you only specify coordinates, you will go to the first location at those coordinates. Quotes are not necessary."
+      text += "\n#getlocation"
+      text += "\n    Returns the coordinates that the player's party is at. It will also list a location if a location was specified when using #goto."
+      text += "\n#removelocation location_name or location_number"
+      text += "\n    Removes the specified location or location number as listed in #showlocations. Quotes are not necessary."
 
       text += "\n\n--Danger Zone--"
       text += "\n#reset"
