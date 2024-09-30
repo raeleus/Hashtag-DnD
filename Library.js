@@ -1,5 +1,9 @@
 function getRandomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomFloat(min, max) {
+  return Math.random() * (max - min + 1) + min;
 }
 
 function getRandom(seed) {
@@ -31,15 +35,6 @@ function rotate(cx, cy, x, y, angle) {
 }
 
 function createLocation(x, y, name) {
-  log(`createlocation ${name}:${x},${y}`)
-  if (x == null || y == null) {
-    var cx = x == null ? state.x : x
-    var cy = y == null ? state.y : y
-    var coords = rotate(cx, cy, getRandomInteger(-10, 10) + cx, cy, Math.random() * 360)
-    x = coords[0]
-    y = coords[1]
-  }
-
   x = Math.round(x)
   y = Math.round(y)
 

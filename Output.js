@@ -190,10 +190,10 @@ const modifier = (text) => {
     case "map":
       text += `A 11x11 map of the area surrounding (${state.x},${state.y}):\n`
       var map = mapGenerate()
-      map = mapReplace(map, state.x, state.y, "@")
       state.locations.forEach(location => {
         map = mapReplace(map, location.x, location.y, location.name.substring(0, 1).toUpperCase())
       })
+      map = mapReplace(map, state.x, state.y, "@")
       text += map
       break
     case "none":
@@ -329,8 +329,8 @@ const modifier = (text) => {
       text += "\n    Shows the list of spells that the character has learned."
 
       text += "\n\n--Locations--"
-      text += "\n#createlocation (x) (y) location_name"
-      text += "\n    Creates a location at the given coordinates. The coordinates must be integers. If the coordinates are not provided, they are randomized within a range of 10 units from the player's current location. Multiple locations may exist at the same coordinates. A story card is created for the location. Quotes are not necessary."
+      text += "\n#createlocation [(x) (y) or (here|far) or (distance)] location_name"
+      text += "\n    Creates a location at the given coordinates. The coordinates must be integers. If the coordinates are not provided, they are randomized within a range of 10 units from the player's current location. You can also use \"here\" to indicate that the location is at party's coordinates. \"far\" indicates that the coordinates will be randomly generated 50-100 units away. You may also just specify a distance. Multiple locations may exist at the same coordinates. A story card is created for the location. Quotes are not necessary."
       text += "\n#goto (x) (y) or (location_name)"
       text += "\n    Makes the party travel to the location specified by the coordinates (as integers) or location_name. You must provide at least one or the other. If the location does not exist, it is created at your current coordinates. If you only specify coordinates, you will go to the first location at those coordinates. Quotes are not necessary."
       text += "\n#gonorth (distance)"

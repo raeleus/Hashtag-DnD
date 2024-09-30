@@ -1193,14 +1193,34 @@ function doCreateLocation(command) {
 
   var arg0 = getArgument(command, 0)
   var arg1 = getArgument(command, 1)
-  if (arg0 == null || isNaN(arg0)) {
-    arg0 = null 
-    arg1 = null
-    locationArgIndex = 0
-  }
 
-  if (arg0 != null && (arg1 == null || isNaN(arg1))) {
-    arg1 = null
+  if (arg0.toLowerCase() == "here") {
+    arg0 = state.x
+    arg1 = state.y
+    locationArgIndex = 1
+  } else if (arg0.toLowerCase() == "far") {
+    var cx = state.x
+    var cy = state.y
+    var coords = rotate(cx, cy, getRandomFloat(50, 100) + cx, cy, Math.random() * 360)
+
+    arg0 = coords[0]
+    arg1 = coords[1]
+    locationArgIndex = 1
+  } else if (arg0 == null || isNaN(arg0)) {
+    var cx = state.x
+    var cy = state.y
+    var coords = rotate(cx, cy, getRandomFloat(1, 10) + cx, cy, Math.random() * 360)
+
+    arg0 = coords[0]
+    arg1 = coords[1]
+    locationArgIndex = 0
+  } else if (arg1 == null || isNaN(arg1)) {
+    var cx = state.x
+    var cy = state.y
+    var coords = rotate(cx, cy, parseFloat(arg0) + cx, cy, Math.random() * 360)
+
+    arg0 = coords[0]
+    arg1 = coords[1]
     locationArgIndex = 1
   }
 
@@ -1330,7 +1350,7 @@ function doGoToLocation(command) {
 
 function doGetLocation(command) {
   state.show = "none"
-  return `\n[You are at ${state.location == null ? "" : "the location " + state.location + " "}(${state.x},${state.y})]`
+  return `\n[You are at ${state.location == null ? "" : "the location " + toTitleCase(state.location) + " "}(${state.x},${state.y})]`
 }
 
 function doClearLocations(command) {
