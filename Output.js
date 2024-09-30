@@ -187,6 +187,15 @@ const modifier = (text) => {
       }
       text += "******************\n\n"
       break
+    case "map":
+      text += `A 11x11 map of the area surrounding (${state.x},${state.y}):\n`
+      var map = mapGenerate()
+      map = mapReplace(map, state.x, state.y, "@")
+      state.locations.forEach(location => {
+        map = mapReplace(map, location.x, location.y, location.name.substring(0, 1).toUpperCase())
+      })
+      text += map
+      break
     case "none":
       text += " "
       break
@@ -346,6 +355,29 @@ const modifier = (text) => {
 
   state.show = null
   return { text }
+}
+
+const mapLineBreak = "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n"
+const mapLine = "|     *     *     *     *     *     *     *     *     *     *     *     |\n"
+
+function mapGenerate() {
+  var map = mapLineBreak
+  for (var i = 0; i < 11; i++) map += mapLine
+  map += mapLineBreak
+  return map
+}
+
+function mapReplace(map, x, y, character) {
+  x += 5 - state.x
+  y += 5 - state.y
+  
+  if (x < 0 || x > 10 || y < 0 || y > 10) return map
+
+  index = mapLineBreak.length + 6 + x * 6 + y * mapLine.length
+
+  map = map.replaceAt(index, character)
+
+  return map
 }
 
 modifier(text)

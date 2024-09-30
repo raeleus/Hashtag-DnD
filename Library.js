@@ -31,6 +31,7 @@ function rotate(cx, cy, x, y, angle) {
 }
 
 function createLocation(x, y, name) {
+  log(`createlocation ${name}:${x},${y}`)
   if (x == null || y == null) {
     var cx = x == null ? state.x : x
     var cy = y == null ? state.y : y
@@ -338,6 +339,10 @@ function getModifier(statValue) {
 
 function findSpellCardIndex(name) {
   return storyCards.findIndex((element) => element.type == "spell" && element.keys == name)
+}
+
+String.prototype.replaceAt = function(index, replacement) {
+  return this.substring(0, index) + replacement + this.substring(index + replacement.length);
 }
 
 String.prototype.plural = function(revert) {

@@ -52,12 +52,13 @@ const showAutoXpSynonyms = ["showautoxp"]
 const setDefaultDifficultySynonyms = ["setdefaultdifficulty", "defaultdifficulty", "setdefaultdc", "defaultdc", "setdefaultac", "defaultac", "setdifficulty", "difficulty", "dc"]
 const showDefaultDifficultySynonyms = ["showdefaultdifficulty", "showdefaultdc", "showdefaultac"]
 const generateNameSynonyms = ["generatename", "name", "randomname", "makename", "createname"]
-const createLocationSynonyms = ["createlocation", "makelocation", "generatelocation", "addlocation", "createplace", "makeplace", "generateplace", "addplace", "createtown", "maketown", "generatetown", "addtown", "createvillage", "makevillage", "generatevillage", "addvillage", "createcity", "makecity", "generatecity", "addcity", "updatelocation", "updateplace", "updatetown", "updatevillage", "updatecity"]
+const createLocationSynonyms = ["createlocation", "makelocation", "generatelocation", "addlocation", "setlocation", "createplace", "makeplace", "generateplace", "addplace", "setplace", "createtown", "maketown", "generatetown", "addtown", "settown", "createvillage", "makevillage", "generatevillage", "addvillage", "setvillage", "createcity", "makecity", "generatecity", "addcity", "setcity", "updatelocation", "updateplace", "updatetown", "updatevillage", "updatecity"]
 const goToLocationSynonyms = ["gotolocation", "golocation", "movetolocation", "traveltolocation", "travellocation", "gotoplace", "goplace", "movetoplace", "traveltoplace", "travelplace", "gototown", "gotown", "movetotown", "traveltotown", "traveltown", "gotovillage", "govillage", "movetovillage", "traveltovillage", "travelvillage", "gotocity", "gocity", "movetocity", "traveltocity", "travelcity", "goto", "go", "moveto", "move", "travelto", "travel"]
 const removeLocationSynonyms = ["removelocation", "deletelocation", "eraselocation", "removeplace", "deleteplace", "eraseplace", "removetown", "deletetown", "erasetown", "removevillage", "deletevillage", "erasevillage", "removecity", "deletecity", "erasecity"]
 const showLocationsSynonyms = ["showlocations", "showplaces", "showtowns", "showvillages", "showcities", "locations", "places", "towns", "villages", "cities"]
 const getLocationSynonyms = ["getlocation", "location", "getcoordinates", "coordinates", "getcoords", "coords", "showlocation"]
 const clearLocationsSynonyms = ["clearlocations", "eraselocations", "deletelocations", "resetlocations"]
+const mapSynonyms = ["map", "showmap"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -162,6 +163,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, removeLocationSynonyms, doRemoveLocation)
   if (text == null) text = processCommandSynonyms(command, commandName, showLocationsSynonyms, doShowLocations)
   if (text == null) text = processCommandSynonyms(command, commandName, getLocationSynonyms, doGetLocation)
+  if (text == null) text = processCommandSynonyms(command, commandName, mapSynonyms, doMap)
   if (text == null) text = processCommandSynonyms(command, commandName, renameCharacterSynonyms, doRenameCharacter)
   if (text == null) text = processCommandSynonyms(command, commandName, cloneCharacterSynonyms, doCloneCharacter)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
@@ -1246,8 +1248,8 @@ function doGoToLocation(command) {
   
   if (location == null) {
     distance = pointDistance(state.x, state.y, arg0, arg1)
-    state.x = arg0
-    state.y = arg1
+    state.x = parseInt(arg0)
+    state.y = parseInt(arg1)
   } else {
     distance = pointDistance(state.x, state.y, location.x, location.y)
     state.x = location.x
@@ -1371,6 +1373,11 @@ function doTake(command) {
   }
 
   return text
+}
+
+function doMap(command) {
+  state.show = "map"
+  return " "
 }
 
 function doDrop(command) {

@@ -16,6 +16,7 @@ See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 
 v. 0.1.0
 * Added `#createlocation`, `#goto`, `#removelocation`, `#clearlocations`, `#getlocation` and `#showlocations` to enable travelling.
+* Added `#map` to generate an ASCII map based on the locations and player location.
 * Added `#renameitem` to rename an existing item
 * Added `#renamecharacter` to rename an existing character
 * Added `#clonecharacter` to copy an existing character
