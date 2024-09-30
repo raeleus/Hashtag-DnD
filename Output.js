@@ -341,6 +341,8 @@ const modifier = (text) => {
       text += "\n    Removes the specified location by location_name or location_number as listed in #showlocations. To delete multiple locations, type the numbers with spaces or commas between them. This is safer than calling #removenote multiple times because the numbers shift as notes are deleted. Quotes are not necessary."
       text += "\n#clearlocations"
       text += "\n    Deletes all discovered locations."
+      text += "\n#map"
+      text += "\n    Generates an 11x11 ASCII map of the surrounding locations centered at the player location."
 
       text += "\n\n--Danger Zone--"
       text += "\n#reset"
