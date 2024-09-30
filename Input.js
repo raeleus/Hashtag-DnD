@@ -52,7 +52,7 @@ const showAutoXpSynonyms = ["showautoxp"]
 const setDefaultDifficultySynonyms = ["setdefaultdifficulty", "defaultdifficulty", "setdefaultdc", "defaultdc", "setdefaultac", "defaultac", "setdifficulty", "difficulty", "dc"]
 const showDefaultDifficultySynonyms = ["showdefaultdifficulty", "showdefaultdc", "showdefaultac"]
 const generateNameSynonyms = ["generatename", "name", "randomname", "makename", "createname"]
-const createLocationSynonyms = ["createlocation", "makelocation", "generatelocation", "createplace", "makeplace", "generateplace", "createtown", "maketown", "generatetown", "createvillage", "makevillage", "generatevillage", "createcity", "makecity", "generatecity", "updatelocation", "updateplace", "updatetown", "updatevillage", "updatecity"]
+const createLocationSynonyms = ["createlocation", "makelocation", "generatelocation", "addlocation", "createplace", "makeplace", "generateplace", "addplace", "createtown", "maketown", "generatetown", "addtown", "createvillage", "makevillage", "generatevillage", "addvillage", "createcity", "makecity", "generatecity", "addcity", "updatelocation", "updateplace", "updatetown", "updatevillage", "updatecity"]
 const goToLocationSynonyms = ["gotolocation", "golocation", "movetolocation", "traveltolocation", "travellocation", "gotoplace", "goplace", "movetoplace", "traveltoplace", "travelplace", "gototown", "gotown", "movetotown", "traveltotown", "traveltown", "gotovillage", "govillage", "movetovillage", "traveltovillage", "travelvillage", "gotocity", "gocity", "movetocity", "traveltocity", "travelcity", "goto", "go", "moveto", "move", "travelto", "travel"]
 const removeLocationSynonyms = ["removelocation", "deletelocation", "eraselocation", "removeplace", "deleteplace", "eraseplace", "removetown", "deletetown", "erasetown", "removevillage", "deletevillage", "erasevillage", "removecity", "deletecity", "erasecity"]
 const showLocationsSynonyms = ["showlocations", "showplaces", "showtowns", "showvillages", "showcities", "locations", "places", "towns", "villages", "cities"]
@@ -1268,6 +1268,11 @@ function doGetLocation(command) {
 }
 
 function doClearLocations(command) {
+  var arg0 = getArgument(0)
+  if (arg0 != null) {
+    return doRemoveLocation(command)
+  }
+
   state.locations = []
   state.location = null
 
@@ -1280,6 +1285,30 @@ function doRemoveLocation(command) {
   if (arg0 == null) {
     state.show = "none"
     return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  if (/\d+\D+(\d+\D*)+/gi.test(arg0)) {
+
+    var list = arg0.split(/\D/)
+    list.sort(function(a, b) {
+      return b - a;
+    });
+
+    var text = "\n"
+    list.forEach(x => {
+      var num = parseInt(x) - 1
+      if (num >= state.locations.length) {
+        state.show = "none"
+        return `\n[Error: Location ${x} does not exist. See #showlocations.]\n`
+      }
+
+      var location = state.locations[num]
+      state.locations.splice(num, 1)
+      text += `[The location ${toTitleCase(location.name)} has been removed]\n`
+    })
+
+    state.show = none
+    return text
   }
 
   var location
@@ -1872,7 +1901,7 @@ function doEraseNote(command) {
     var num = parseInt(x) - 1
     if (num >= state.notes.length) {
       state.show = "none"
-      return `\n[Error: Note ${x} does not exist. Call #showNotes.]\n`
+      return `\n[Error: Note ${x} does not exist. Call #shownotes.]\n`
     }
 
     state.notes.splice(num, 1)

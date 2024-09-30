@@ -183,7 +183,7 @@ const modifier = (text) => {
           text += `${++index}. ${toTitleCase(location.name)} (${location.x},${location.y}) Distance: ${distance}\n`
         })
       } else {
-        text += `No locations have been discovered!`
+        text += `No locations have been discovered!\n`
       }
       text += "******************\n\n"
       break
@@ -329,7 +329,7 @@ const modifier = (text) => {
       text += "\n#showlocations"
       text += "\n    Shows a list of all discovered locations with their coordinates and their distance from the player's current location."
       text += "\n#removelocation location_name or location_number"
-      text += "\n    Removes the specified location or location number as listed in #showlocations. Quotes are not necessary."
+      text += "\n    Removes the specified location by location_name or location_number as listed in #showlocations. To delete multiple locations, type the numbers with spaces or commas between them. This is safer than calling #removenote multiple times because the numbers shift as notes are deleted. Quotes are not necessary."
       text += "\n#clearlocations"
       text += "\n    Deletes all discovered locations."
 
