@@ -13,6 +13,7 @@ Multiplayer compatible<br>
 Personalized note system that does not take up context space<br>
 
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
+Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
 v. 0.1.0
 * Added `#createlocation`, `#goto`, `#gonorth`, `#gosouth`, `#goeast`, `#gowest`, `#removelocation`, `#clearlocations`, `#getlocation` and `#showlocations` to enable travelling.
