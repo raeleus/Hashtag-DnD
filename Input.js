@@ -59,6 +59,10 @@ const showLocationsSynonyms = ["showlocations", "showplaces", "showtowns", "show
 const getLocationSynonyms = ["getlocation", "location", "getcoordinates", "coordinates", "getcoords", "coords", "showlocation"]
 const clearLocationsSynonyms = ["clearlocations", "eraselocations", "deletelocations", "resetlocations"]
 const mapSynonyms = ["map", "showmap"]
+const goNorthSynonyms = ["gonorth", "north", "goup", "up", "n"]
+const goSouthSynonyms = ["gosouth", "south", "godown", "down", "s"]
+const goEastSynonyms = ["goeast", "east", "goright", "right", "e"]
+const goWestSynonyms = ["gowest", "west", "goleft", "left", "w"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -91,7 +95,7 @@ const modifier = (text) => {
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
@@ -164,6 +168,10 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, showLocationsSynonyms, doShowLocations)
   if (text == null) text = processCommandSynonyms(command, commandName, getLocationSynonyms, doGetLocation)
   if (text == null) text = processCommandSynonyms(command, commandName, mapSynonyms, doMap)
+  if (text == null) text = processCommandSynonyms(command, commandName, goNorthSynonyms, doGoNorth)
+  if (text == null) text = processCommandSynonyms(command, commandName, goSouthSynonyms, doGoSouth)
+  if (text == null) text = processCommandSynonyms(command, commandName, goEastSynonyms, doGoEast)
+  if (text == null) text = processCommandSynonyms(command, commandName, goWestSynonyms, doGoWest)
   if (text == null) text = processCommandSynonyms(command, commandName, renameCharacterSynonyms, doRenameCharacter)
   if (text == null) text = processCommandSynonyms(command, commandName, cloneCharacterSynonyms, doCloneCharacter)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
@@ -1206,6 +1214,62 @@ function doCreateLocation(command) {
   
   state.show = "none"
   return `\n[Location ${toTitleCase(arg2)} has been created at (${location.x},${location.y})]\n`
+}
+
+function doGoNorth(command) {
+  var commandName = getCommandName(command)
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) arg0 = 1
+  else {
+    if (isNaN(arg0)) {
+      state.show = none
+      return "\n[Error: Expected a number. See #help]\n"
+    }
+    arg0 = parseInt(arg0)
+  }
+  return doGoToLocation(`${commandName} ${state.x} ${state.y - arg0}`)
+}
+
+function doGoSouth(command) {
+  var commandName = getCommandName(command)
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) arg0 = 1
+  else {
+    if (isNaN(arg0)) {
+      state.show = none
+      return "\n[Error: Expected a number. See #help]\n"
+    }
+    arg0 = parseInt(arg0)
+  }
+  return doGoToLocation(`${commandName} ${state.x} ${state.y + arg0}`)
+}
+
+function doGoEast(command) {
+  var commandName = getCommandName(command)
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) arg0 = 1
+  else {
+    if (isNaN(arg0)) {
+      state.show = none
+      return "\n[Error: Expected a number. See #help]\n"
+    }
+    arg0 = parseInt(arg0)
+  }
+  return doGoToLocation(`${commandName} ${state.x + arg0} ${state.y}`)
+}
+
+function doGoWest(command) {
+  var commandName = getCommandName(command)
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) arg0 = 1
+  else {
+    if (isNaN(arg0)) {
+      state.show = none
+      return "\n[Error: Expected a number. See #help]\n"
+    }
+    arg0 = parseInt(arg0)
+  }
+  return doGoToLocation(`${commandName} ${state.x - arg0} ${state.y}`)
 }
 
 function doGoToLocation(command) {
