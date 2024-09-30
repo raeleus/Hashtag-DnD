@@ -2059,8 +2059,8 @@ function doReset(command) {
   state.characters = []
   state.locations = []
   state.location = null
-  state.x = 0
-  state.y = 0
+  state.x = null
+  state.y = null
   state.defaultDifficulty = null
   state.autoXp = null
 
