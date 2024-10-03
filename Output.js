@@ -333,6 +333,8 @@ const modifier = (text) => {
       text += "\n    Creates a location at the given coordinates. The coordinates must be integers. If the coordinates are not provided, they are randomized within a range of 10 units from the party's current location. You can also use \"here\" to indicate that the location is at party's coordinates. \"far\" indicates that the coordinates will be randomly generated 50-100 units away. You may also just specify a distance. Multiple locations may exist at the same coordinates. A story card is created for the location. Quotes are not necessary."
       text += "\n#goto (x) (y) or (location_name)"
       text += "\n    Makes the party travel to the location specified by the coordinates (as integers) or location_name. You must provide at least one or the other. If the location does not exist, it is created at your current coordinates. If you only specify coordinates, you will go to the first location at those coordinates. Quotes are not necessary."
+      text += "\n#goto distance location_name"
+      text += "\n    An alternative of the above. Travels the specified distance towards the location indicated by location name. Quotes are not necessary"
       text += "\n#gonorth (distance)"
       text += "\n    The party travels north the given distance (an integer). If distance is not specified, it is assumed to be 1."
       text += "\n#gosouth (distance)"

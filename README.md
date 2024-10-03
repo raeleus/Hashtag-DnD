@@ -18,6 +18,7 @@ Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
 v. 0.1.1
 * #note without parameters will store the last action text into the notes
+* #goto specified with a distance and location name will take you partially toward the target.
 * Minor bug fixes and improvements
 
 v. 0.1.0

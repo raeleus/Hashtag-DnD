@@ -1307,13 +1307,13 @@ function doGoToLocation(command) {
   var arg1 = getArgument(command, 1)
 
   if (arg0 == null || isNaN(arg0)) {
-    arg0 = state.x 
+    arg0 = state.x
     arg1 = state.y
     locationArgIndex = 0
   }
 
   if (arg0 != null && (arg1 == null || isNaN(arg1))) {
-    arg1 = state.y
+    arg1 = null
     locationArgIndex = 1
   }
 
@@ -1325,7 +1325,21 @@ function doGoToLocation(command) {
     return "\n[Error: Not enough parameters. See #help]\n"
   }
   
-  if (locationName == null) {
+  if (arg1 == null && locationName != null) {
+    var index = state.locations.findIndex(x => x.name.toLowerCase() == locationName.toLowerCase())
+    if (index != -1) {
+      location = state.locations[index]
+      var direction = pointDirection(state.x, state.y, location.x, location.y)
+      log(`direction:${direction}`)
+      var args = rotate(state.x, state.y, state.x + parseInt(arg0), state.y, direction)
+      arg0 = Math.round(args[0])
+      arg1 = Math.round(args[1])
+      location = null
+    } else {
+      arg1 = state.y
+      location = null
+    }
+  } else if (locationName == null) {
     var index = state.locations.findIndex(x => x.x == arg0 && x.y == arg1)
     if (index != -1) location = state.locations[index]
   } else {

@@ -25,6 +25,19 @@ function pointDistance(x1, y1, x2, y2) {
   return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2))
 }
 
+function pointDirection(x1, y1, x2, y2) {
+  Math.atn2
+  var a = Math.atan2(y2 - y1, x2 - x1);
+  if (a < 0) a += 2 * Math.PI;
+
+  if (a < 0) a += 2 * Math.PI;
+  if (a < 0) a += 2 * Math.PI;
+  a = Math.abs((Math.PI * 2) - a);
+  a *= 180 / Math.PI;
+
+  return a;
+}
+
 function rotate(cx, cy, x, y, angle) {
   var radians = (Math.PI / 180) * angle
   var cos = Math.cos(radians)
