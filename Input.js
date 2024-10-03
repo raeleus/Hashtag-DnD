@@ -24,7 +24,7 @@ const removeSkillSynonyms = ["removeskill", "deleteskill", "cancelskill"]
 const clearSkillsSynonyms = ["clearskills"]
 const checkSynonyms = ["check", "checkstat", "checkstatistic", "checkattribute", "checkability", "checkskill", "skillcheck", "abilitycheck"]
 const showNotesSynonyms = ["notes", "shownotes", "viewnotes"]
-const noteSynonyms = ["note", "takenote", "setnote", "createnote"]
+const noteSynonyms = ["note", "takenote", "setnote", "createnote", "remember"]
 const clearNotesSynonyms = ["clearnotes"]
 const eraseNoteSynonyms = ["erasenote", "removenote", "deletenote", "cancelnote"]
 const takeSynonyms = ["take", "steal", "get", "grab", "receive", "loot"]
@@ -1180,7 +1180,11 @@ function doNote(command) {
     state.notes.push(arg0)
     state.show = "none"
     return "\n[Note added successfully]\n"
-  } else return doShowNotes(command)
+  } else {
+    state.notes.push(history[history.length - 1].text)
+    state.show = "none"
+    return "\n[The last action was successfully added to the notes]"
+  }
 }
 
 function doShowNotes(command) {
