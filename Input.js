@@ -1193,6 +1193,7 @@ function doShowNotes(command) {
 }
 
 function doCreateLocation(command) {
+  command = command.replaceAll(/\s*,\s*/g, " ")
   var locationArgIndex = 2
 
   var arg0 = getArgument(command, 0)
@@ -1241,6 +1242,7 @@ function doCreateLocation(command) {
 }
 
 function doGoNorth(command) {
+  command = command.replaceAll(/\s*,\s*/g, " ")
   var commandName = getCommandName(command)
   var arg0 = getArgument(command, 0)
   if (arg0 == null) arg0 = 1
@@ -1255,6 +1257,7 @@ function doGoNorth(command) {
 }
 
 function doGoSouth(command) {
+  command = command.replaceAll(/\s*,\s*/g, " ")
   var commandName = getCommandName(command)
   var arg0 = getArgument(command, 0)
   if (arg0 == null) arg0 = 1
@@ -1269,6 +1272,7 @@ function doGoSouth(command) {
 }
 
 function doGoEast(command) {
+  command = command.replaceAll(/\s*,\s*/g, " ")
   var commandName = getCommandName(command)
   var arg0 = getArgument(command, 0)
   if (arg0 == null) arg0 = 1
@@ -1283,6 +1287,7 @@ function doGoEast(command) {
 }
 
 function doGoWest(command) {
+  command = command.replaceAll(/\s*,\s*/g, " ")
   var commandName = getCommandName(command)
   var arg0 = getArgument(command, 0)
   if (arg0 == null) arg0 = 1
@@ -1297,6 +1302,7 @@ function doGoWest(command) {
 }
 
 function doGoToLocation(command) {
+  command = command.replaceAll(/\s*,\s*/g, " ")
   var character = getCharacter()
   var characterName = character == null ? "You" : character.name
   var possessiveName = getPossessiveName(characterName)
