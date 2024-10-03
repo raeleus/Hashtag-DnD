@@ -11,6 +11,7 @@ Advanced dice rolling syntax allows you to set the precise odds<br>
 Unlimited party size with each character having their own inventory, stats, and biographies<br>
 Multiplayer compatible<br>
 Personalized note system that does not take up context space<br>
+Create locations to travel to and view them in a map
 
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
