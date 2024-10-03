@@ -16,6 +16,10 @@ Create locations to travel to and view them in a map
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
+v. 0.1.1
+* #note without parameters will store the last action text into the notes
+* Minor bug fixes and improvements
+
 v. 0.1.0
 * Added `#createlocation`, `#goto`, `#gonorth`, `#gosouth`, `#goeast`, `#gowest`, `#removelocation`, `#clearlocations`, `#getlocation` and `#showlocations` to enable travelling.
 * Added `#map` to generate an ASCII map based on the locations and player location.

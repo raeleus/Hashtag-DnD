@@ -1484,7 +1484,7 @@ function doDrop(command) {
 
   var itemArgIndex = 0
   if (isNaN(arg0)) {
-    if (allSynonyms.indexOf(arg0.toLowerCase() > -1)) {
+    if (allSynonyms.indexOf(arg0.toLowerCase()) > -1) {
       arg0 = Number.MAX_SAFE_INTEGER
       itemArgIndex++
     } else {
@@ -1511,9 +1511,9 @@ function doDrop(command) {
   } else {
     var existingItem = character.inventory[index]
   
-    if (existingItem.quantity == 1) text = `\n${character.name} ${commandName} the ${displayItemName.plural(true)}.\n`
-    else if (parseInt(item.quantity) >= parseInt(existingItem.quantity)) text = `${character.name} ${commandName} all ${existingItem.quantity} of the ${displayItemName}.`
-    else text =  `\n${character.name} ${commandName} ${item.quantity} ${displayItemName}.\n`
+    if (existingItem.quantity == 1) text = `\n${character.name} ${commandName.plural(character.name == "You")} the ${displayItemName.plural(true)}.\n`
+    else if (parseInt(item.quantity) >= parseInt(existingItem.quantity)) text = `${character.name} ${commandName.plural(character.name == "You")} all ${existingItem.quantity} of the ${displayItemName}.`
+    else text =  `\n${character.name} ${commandName.plural(character.name == "You")} ${item.quantity} ${displayItemName}.\n`
 
     existingItem.quantity -= item.quantity
     if (existingItem.quantity <= 0) {
