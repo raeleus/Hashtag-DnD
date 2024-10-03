@@ -63,6 +63,8 @@ const goNorthSynonyms = ["gonorth", "north", "goup", "up", "n"]
 const goSouthSynonyms = ["gosouth", "south", "godown", "down", "s"]
 const goEastSynonyms = ["goeast", "east", "goright", "right", "e"]
 const goWestSynonyms = ["gowest", "west", "goleft", "left", "w"]
+const showDaySynonyms = ["showday", "showdate", "day", "date"]
+const setDaySynonyms = ["setday", "setdate"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -174,6 +176,8 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, goWestSynonyms, doGoWest)
   if (text == null) text = processCommandSynonyms(command, commandName, renameCharacterSynonyms, doRenameCharacter)
   if (text == null) text = processCommandSynonyms(command, commandName, cloneCharacterSynonyms, doCloneCharacter)
+  if (text == null) text = processCommandSynonyms(command, commandName, showDaySynonyms, doShowDay)
+  if (text == null) text = processCommandSynonyms(command, commandName, setDaySynonyms, doSetDay)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -545,6 +549,7 @@ function init() {
   if (state.y == null) state.y = 0
   if (state.autoXp == null) state.autoXp = 0
   if (state.defaultDifficulty == null) state.defaultDifficulty = 10
+  if (state.day == null) state.day = 0
   state.show = null
   state.prefix = null
   state.critical = null
@@ -938,6 +943,7 @@ function doDamage(command) {
 
 function doRest(command) {
   var commandName = getCommandName(command)
+  state.day++
   state.characters.forEach(function(character) {
     if (commandName.toLowerCase() == "shortrest") {
       var max = getHealthMax(character)
@@ -949,7 +955,7 @@ function doRest(command) {
 
     state.show = "none"
   })
-  return `\n[All characters have rested and feel rejuvinated]\n`
+  return `\n[All characters have rested and feel rejuvinated. It's now day ${state.day}]\n`
 }
 
 function doFlipCommandAbility(command) {
@@ -1183,8 +1189,26 @@ function doNote(command) {
   } else {
     state.notes.push(history[history.length - 1].text)
     state.show = "none"
-    return "\n[The last action was successfully added to the notes]"
+    return "\n[The last action was successfully added to the notes]\n"
   }
+}
+
+function doShowDay(command) {
+  state.show = "none"
+  return `\n[It is day ${state.day}]\n`
+}
+
+function doSetDay(command) {
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null || isNaN(arg0)) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  state.day = parseInt(arg0)
+
+  state.show = "none"
+  return `\n[The day has been set to day ${state.day}]\n`
 }
 
 function doShowNotes(command) {
@@ -2087,6 +2111,7 @@ function doReset(command) {
   state.y = null
   state.defaultDifficulty = null
   state.autoXp = null
+  state.day = null
 
   state.show = "reset"
   return " "

@@ -18,8 +18,9 @@ Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
 v. 0.1.1
 * #note without parameters will store the last action text into the notes
-* #goto specified with a distance and location name will take you partially toward the target.
+* #goto specified with a distance and location name will take you partially toward the target
 * You may use commas in coordinates now
+* The scenario keeps track of how many days have passed since the adventure has started. See #rest, #showday, #setday.
 * Minor bug fixes and improvements
 
 v. 0.1.0
