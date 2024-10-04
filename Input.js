@@ -1355,7 +1355,18 @@ function doGoToLocation(command) {
     return "\n[Error: Not enough parameters. See #help]\n"
   }
   
-  if (arg1 == null && locationName != null) {
+  if (!isNaN(arg0) && arg1 == null && locationName == null) {
+    arg0 = parseInt(arg0) - 1
+
+    if (arg0 < 0 || arg0 >= state.locations.length) {
+      state.show = none
+      return "\n[Error: Incorrect location number. See #help]\n"
+    }
+
+    location = state.locations[arg0]
+    arg0 = null
+    arg1 = null
+  } else if (arg1 == null && locationName != null) {
     var index = state.locations.findIndex(x => x.name.toLowerCase() == locationName.toLowerCase())
     if (index != -1) {
       location = state.locations[index]
