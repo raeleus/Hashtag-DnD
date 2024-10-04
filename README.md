@@ -17,10 +17,12 @@ See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
 v. 0.1.1
-* #note without parameters will store the last action text into the notes
-* #goto specified with a distance and location name will take you partially toward the target
+* `#note` without parameters will store the last action text into the notes
+* `#goto` specified with a distance and location name will take you partially toward the target
+* `#goto` allows you to travel by typing a location number instead of a name
+* You may add flavor text to any hashtag by typing text after a line break after the hashtag (shift + enter on desktop). Thanks Xiron!
 * You may use commas in coordinates now
-* The scenario keeps track of how many days have passed since the adventure has started. See #rest, #showday, #setday.
+* The scenario keeps track of how many days have passed since the adventure has started. See `#rest`, `#showday`, `#setday`.
 * Minor bug fixes and improvements
 
 v. 0.1.0

@@ -84,6 +84,15 @@ const modifier = (text) => {
 
   state.characterName = getCharacterName(rawText)
   text = sanitizeText(text)
+
+  var lineBreakIndex = text.indexOf("\n")
+  if (lineBreakIndex > -1) {
+    state.flavorText = text.substring(lineBreakIndex + 1)
+    if (!state.flavorText.startsWith(" ")) state.flavorText = " " + state.flavorText
+    text = text.substring(0, lineBreakIndex)
+  } else {
+    state.flavorText = null
+  }
   
   command = text.substring(text.search(/#/) + 1)
   var commandName = getCommandName(command).toLowerCase().replaceAll(/[^a-z0-9\s]*/gi, "")
@@ -191,6 +200,8 @@ const modifier = (text) => {
 
     text = processCommandSynonyms(command, commandName, statNames, doFlipCommandAbility)
   }
+
+  if (state.flavorText != null) text += state.flavorText
 
   return { text }
 }
@@ -1371,7 +1382,6 @@ function doGoToLocation(command) {
     if (index != -1) {
       location = state.locations[index]
       var direction = pointDirection(state.x, state.y, location.x, location.y)
-      log(`direction:${direction}`)
       var args = rotate(state.x, state.y, state.x + parseInt(arg0), state.y, direction)
       arg0 = Math.round(args[0])
       arg1 = Math.round(args[1])
