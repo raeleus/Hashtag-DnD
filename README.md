@@ -16,7 +16,7 @@ Create locations to travel to and view them in a map
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
-v. 0.1.1
+v. 0.2.0
 * `#note` without parameters will store the last action text into the notes
 * `#goto` specified with a distance and location name will take you partially toward the target
 * `#goto` allows you to travel by typing a location number instead of a name
