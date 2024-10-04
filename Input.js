@@ -1466,6 +1466,9 @@ function doRemoveLocation(command) {
 }
 
 function doShowLocations(command) {
+  var arg0 = searchArgument(command, /^sort$/gi)
+  state.sortLocations = arg0 != null
+
   state.show = "locations"
   return " "
 }

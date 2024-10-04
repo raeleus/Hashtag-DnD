@@ -176,11 +176,22 @@ const modifier = (text) => {
     case "locations":
       text += `Player location: ${state.location == null ? "" : state.location + " "}(${state.x},${state.y})\n`
       text += `*** LOCATIONS ***\n`
-      if (state.locations.length > 0) {
+      locations = state.locations
+      if (state.sortLocations) {
+        locations = [...new Set(state.locations)]
+        locations.sort(function(a, b) {
+          var distanceA = pointDistance(state.x, state.y, a.x, a.y)
+          var distanceB = pointDistance(state.x, state.y, b.x, b.y)
+          return distanceA - distanceB;
+        });
+      
+      }
+
+      if (locations.length > 0) {
         var index = 0
-        state.locations.forEach(function(location) {
+        locations.forEach(function(location) {
           var distance = pointDistance(state.x, state.y, location.x, location.y).toFixed(1)
-          text += `${++index}. ${toTitleCase(location.name)} (${location.x},${location.y}) Distance: ${distance}\n`
+          text += `${state.sortLocations ? "" : ++index + ". "}${toTitleCase(location.name)} (${location.x},${location.y}) Distance: ${distance}\n`
         })
       } else {
         text += `No locations have been discovered!\n`
@@ -349,8 +360,8 @@ const modifier = (text) => {
       text += "\n    The party travels west the given distance (an integer). If distance is not specified, it is assumed to be 1."
       text += "\n#getlocation"
       text += "\n    Returns the coordinates that the party is at. It will also list a location if a location was specified when using #goto."
-      text += "\n#showlocations"
-      text += "\n    Shows a list of all discovered locations with their coordinates and their distance from the party's current location."
+      text += "\n#showlocations (sort)"
+      text += "\n    Shows a list of all discovered locations with their coordinates and their distance from the party's current location. If the parameter \"sort\" is added, the locations will be listed by their distance to the party. Note that the location numbers will only be displayed in the unsorted list."
       text += "\n#removelocation location_name or location_number"
       text += "\n    Removes the specified location by location_name or location_number as listed in #showlocations. To delete multiple locations, type the numbers with spaces or commas between them. This is safer than calling #removenote multiple times because the numbers shift as notes are deleted. Quotes are not necessary."
       text += "\n#clearlocations"
