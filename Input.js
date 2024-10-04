@@ -1382,6 +1382,7 @@ function doGoToLocation(command) {
     distance = pointDistance(state.x, state.y, arg0, arg1)
     state.x = parseInt(arg0)
     state.y = parseInt(arg1)
+    state.location = null
   } else {
     distance = pointDistance(state.x, state.y, location.x, location.y)
     state.x = location.x
