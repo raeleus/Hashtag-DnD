@@ -743,8 +743,8 @@ function doShowAutoXp(command) {
 }
 
 function doSetDefaultDifficulty(command) {
-  const difficultyNames = ["impossible", "extreme", "hard", "medium", "easy", "effortless"]
-  const difficultyScores = [30, 25, 20, 15, 10, 5]
+  const difficultyNames = ["impossible", "extreme", "hard", "medium", "easy", "effortless", "automatic"]
+  const difficultyScores = [30, 25, 20, 15, 10, 5, 0]
 
   const difficultyPatternNames = [...new Set(difficultyNames)]
   difficultyPatternNames.push("\\d+")
@@ -983,8 +983,8 @@ function doFlipCommandAbility(command) {
 
 function doCheck(command) {
   const advantageNames = ["normal", "advantage", "disadvantage"]
-  const difficultyNames = ["impossible", "extreme", "hard", "medium", "easy", "effortless"]
-  const difficultyScores = [30, 25, 20, 15, 10, 5]
+  const difficultyNames = ["impossible", "extreme", "hard", "medium", "easy", "effortless", "automatic"]
+  const difficultyScores = [30, 25, 20, 15, 10, 5, 0]
   var character = getCharacter()
 
   var arg0 = null
@@ -1039,8 +1039,8 @@ function doCheck(command) {
 
 function doTry(command) {
   const advantageNames = ["normal", "advantage", "disadvantage"]
-  const difficultyNames = ["impossible", "extreme", "hard", "medium", "easy", "effortless"]
-  const difficultyScores = [30, 25, 20, 15, 10, 5]
+  const difficultyNames = ["impossible", "extreme", "hard", "medium", "easy", "effortless", "automatic"]
+  const difficultyScores = [30, 25, 20, 15, 10, 5, 0]
   var character = getCharacter()
   var textIndex = 3
   var failword = character.name == "You" ? "fail" : "fails"
@@ -1114,8 +1114,8 @@ function doTry(command) {
 
 function doAttack(command) {
   const advantageNames = ["normal", "advantage", "disadvantage"]
-  const difficultyNames = ["impossible", "extreme", "hard", "medium", "easy", "effortless"]
-  const difficultyScores = [30, 25, 20, 15, 10, 5]
+  const difficultyNames = ["impossible", "extreme", "hard", "medium", "easy", "effortless", "automatic"]
+  const difficultyScores = [30, 25, 20, 15, 10, 5, 0]
   var character = getCharacter()
   var textIndex = 3
   var missWord = character.name == "You" ? "miss" : "misses"
@@ -1931,8 +1931,8 @@ function doRemoveSkill(command) {
 
 function doCastSpell(command) {
   const advantageNames = ["normal", "advantage", "disadvantage"]
-  const difficultyNames = ["impossible", "extreme", "hard", "medium", "easy", "effortless"]
-  const difficultyScores = [30, 25, 20, 15, 10, 5]
+  const difficultyNames = ["impossible", "extreme", "hard", "medium", "easy", "effortless", "automatic"]
+  const difficultyScores = [30, 25, 20, 15, 10, 5, 0]
   var character = getCharacter()
   const dontWord = character.name == "You" ? "don't" : "doesn't"
   const tryWord = character.name == "You" ? "try" : "tries"
