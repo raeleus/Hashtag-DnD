@@ -65,6 +65,14 @@ const goEastSynonyms = ["goeast", "east", "goright", "right", "e"]
 const goWestSynonyms = ["gowest", "west", "goleft", "left", "w"]
 const showDaySynonyms = ["showday", "showdate", "day", "date"]
 const setDaySynonyms = ["setday", "setdate"]
+const encounterSynonyms = ["encounter", "startencounter"]
+const showEnemiesSynonyms = ["showenemies", "enemies"]
+const addEnemySynonyms = ["addenemy"]
+const removeEnemySynonyms = ["removeenemy"]
+const initiativeSynonyms = ["initiative"]
+const setAcSynonyms = ["setac", "setarmorclass", "ac", "armorclass"]
+const turnSynonyms = ["turn", "doturn", "taketurn"]
+const fleeSynonyms = ["flee", "retreat", "runaway"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -106,7 +114,7 @@ const modifier = (text) => {
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
