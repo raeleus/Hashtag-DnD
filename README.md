@@ -25,6 +25,7 @@ v. 0.2.0
 * The scenario keeps track of how many days have passed since the adventure has started. See `#rest`, `#showday`, `#setday`.
 * Added automatic difficulty which is DC 0
 * Added `#version`
+* Allow adding a plus or minus number to `#roll`. ie. `#roll 5d20+6`
 * Minor bug fixes and improvements
 
 v. 0.1.0

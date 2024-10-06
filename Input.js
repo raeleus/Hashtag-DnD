@@ -591,9 +591,10 @@ function doRoll(command) {
   if (dice == null) dice = "d20"
   dice = formatRoll(dice)
 
-  var roll = calculateRoll(dice)
-  if (rollType == "advantage") roll = Math.max(roll, calculateRoll(dice))
-  if (rollType == "disadvantage") roll = Math.min(roll, calculateRoll(dice))
+  var addition = getAddition(dice)
+  var roll = calculateRoll(dice) - addition
+  if (rollType == "advantage") roll = Math.max(roll, calculateRoll(dice) - addition)
+  if (rollType == "disadvantage") roll = Math.min(roll, calculateRoll(dice) - addition)
   
   state.show = "none"
 
@@ -603,6 +604,7 @@ function doRoll(command) {
     
   if (roll == 20) text += " Critical Success!"
   else if (roll == 1) text += " Critical Failure!"
+  else if (addition > 0) text += ` + ${addition} = ${roll + addition}`
 
   text += "]\n"
   return text

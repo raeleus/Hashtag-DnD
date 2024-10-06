@@ -185,7 +185,7 @@ function statsToOrPattern(stats) {
 function getDice(rolltext) {
   var matches = rolltext.match(/\d+(?=d)/)
   if (matches != null) {
-    return matches[0]
+    return parseInt(matches[0])
   }
   return 1
 }
@@ -193,16 +193,25 @@ function getDice(rolltext) {
 function getSides(rolltext) {
   var matches = rolltext.match(/(?<=d)\d+/)
   if (matches != null) {
-    return matches[0]
+    return parseInt(matches[0])
   }
 
   return 20
 }
 
-function formatRoll(text) {
-  var matches = text.match(/(?<=.*)\d*d\d+(?=.*)/)
+function getAddition(rolltext) {
+  var matches = rolltext.match(/(?<=(\+|-)\s*)\d+/)
   if (matches != null) {
-    return matches[0]
+    return parseInt(matches[0])
+  }
+
+  return 0
+}
+
+function formatRoll(text) {
+  var matches = text.match(/(?<=.*)\d*d\d+(?=.*)(\s*\+\s*\d+)?/)
+  if (matches != null) {
+    return matches[0].replaceAll(/\s*\+\s*/g, "+").replaceAll(/\s*-\s*/g, "-")
   }
 
   matches = text.match(/\d+/)
@@ -218,13 +227,14 @@ function calculateRoll(rolltext) {
   
   var dice = getDice(rolltext)
   var sides = getSides(rolltext)
+  var addition = getAddition(rolltext)
 
-  var score = 0;
+  var score = addition;
   for (i = 0; i < dice; i++) {
     score += getRandomInteger(1, sides)
   }
 
-  return score
+  return Math.max(0, score)
 }
 
 function getCharacter(characterName) {

@@ -224,7 +224,7 @@ const modifier = (text) => {
 
       text += "--Basic Hashtags--"
       text += "\n#roll (advantage|disadvantage) (dice_value)"
-      text += "\n    Rolls a die/dice and shows the result. dice_value can be in the following formats 5d20 or d20 or 20. The parameters can be listed in any order."
+      text += "\n    Rolls a die/dice and shows the result. dice_value can be in the following formats 5d20+6 or 5d20 or d20 or 20. The parameters can be listed in any order."
       text += "\n#generatename (male|female) (fantasy|modern|scifi|nordic)"
       text += "\n    Retrieves a random name from a list of names in the specified gender and genre. The parameters can be listed in any order."
       text += "\n#shownotes"
