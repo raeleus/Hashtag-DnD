@@ -252,6 +252,7 @@ function createCharacter(name) {
     existingCharacter.skills = []
     existingCharacter.experience = 0
     existingCharacter.health = 10
+    existingCharacter.ac = 10
     return existingCharacter
   }
 
@@ -267,7 +268,8 @@ function createCharacter(name) {
     rangedStat: null,
     skills: [],
     experience: 0,
-    health: 10
+    health: 10,
+    ac: 10
   }
   state.characters.push(character)
   return character
@@ -286,6 +288,7 @@ function copyCharacter(fromCharacter, toCharacter) {
     toCharacter.skills = [...new Set(fromCharacter.skills)]
     toCharacter.experience = fromCharacter.experience
     toCharacter.health = fromCharacter.health
+    toCharacter.ac = fromCharacter.ac
     return toCharacter
   }
 }

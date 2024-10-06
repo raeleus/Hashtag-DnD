@@ -40,6 +40,7 @@ const modifier = (text) => {
       text += `*** ${possessiveName.toUpperCase()} BIO ***\n`
       text += `Class: ${character.className}\n`
       text += `Health: ${character.health}/${getHealthMax()}\n`
+      text += `Armor Class: ${character.ac}\n`
       text += `Experience: ${character.experience}\n`
       text += `Level: ${getLevel(character.experience)}\n`
       var nextLevel = getNextLevelXp(character.experience)

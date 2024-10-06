@@ -198,6 +198,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, showDaySynonyms, doShowDay)
   if (text == null) text = processCommandSynonyms(command, commandName, setDaySynonyms, doSetDay)
   if (text == null) text = processCommandSynonyms(command, commandName, versionSynonyms, doVersion)
+  if (text == null) text = processCommandSynonyms(command, commandName, setAcSynonyms, doSetAc)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -561,7 +562,8 @@ function init() {
       meleeStat: null,
       rangedStat: null,
       experience: 0,
-      health: 10
+      health: 10,
+      ac: 10
     }
   }
   if (state.characters == null) state.characters = []
@@ -575,6 +577,10 @@ function init() {
   state.show = null
   state.prefix = null
   state.critical = null
+
+  state.characters.forEach(x => {
+    if (x.ac == null) x.ac = 10
+  })
 }
 
 function doRoll(command) {
@@ -615,6 +621,7 @@ function doCreate(command) {
   state.tempCharacter.spellStat = null
   state.tempCharacter.meleeStat = "Strength"
   state.tempCharacter.rangedStat = "Dexterity"
+  state.tempCharacter.ac = 10
   
   state.show = "create"
   return " "
@@ -826,6 +833,27 @@ function doSetSkill(command) {
   return `\n[${possessiveName} ${toTitleCase(arg0)} skill is now ${arg2 >= 0 ? "+" + arg2 : "-" + arg2} and based on ${toTitleCase(arg1)}.]\n`
 }
 
+function doSetAc(command) {
+  var character = getCharacter()
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  if (isNaN(arg0)) {
+    state.show = "none"
+    return "\n[Error: Not a number. See #help]\n"
+  }
+
+  var possessiveName = getPossessiveName(character.name)
+
+  character.ac = parseInt(arg0)
+
+  state.show = "none"
+  return `\n[${possessiveName} armor class is set to ${character.ac}]\n`
+}
+
 function doSetExperience(command) {
   var character = getCharacter()
   var arg0 = getArgument(command, 0)
@@ -834,9 +862,14 @@ function doSetExperience(command) {
     return "\n[Error: Not enough parameters. See #help]\n"
   }
 
+  if (isNaN(arg0)) {
+    state.show = "none"
+    return "\n[Error: Not a number. See #help]\n"
+  }
+
   var possessiveName = getPossessiveName(character.name)
 
-  character.experience = arg0
+  character.experience = parseInt(arg0)
 
   state.show = "none"
   return `\n[${possessiveName} experience is set to ${character.experience}]\n`
