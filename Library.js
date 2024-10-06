@@ -200,16 +200,16 @@ function getSides(rolltext) {
 }
 
 function getAddition(rolltext) {
-  var matches = rolltext.match(/(?<=(\+|-)\s*)\d+/)
+  var matches = rolltext.match(/(\+|-)\s*\d+/)
   if (matches != null) {
-    return parseInt(matches[0])
+    return parseInt(matches[0].replaceAll(/\s*/g, ""))
   }
 
   return 0
 }
 
 function formatRoll(text) {
-  var matches = text.match(/(?<=.*)\d*d\d+(?=.*)(\s*\+\s*\d+)?/)
+  var matches = text.match(/(?<=.*)\d*d\d+(?=.*)(\s*(\+|-)\s*\d+)?/)
   if (matches != null) {
     return matches[0].replaceAll(/\s*\+\s*/g, "+").replaceAll(/\s*-\s*/g, "-")
   }

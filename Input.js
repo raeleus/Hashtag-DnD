@@ -605,6 +605,7 @@ function doRoll(command) {
   if (roll == 20) text += " Critical Success!"
   else if (roll == 1) text += " Critical Failure!"
   else if (addition > 0) text += ` + ${addition} = ${roll + addition}`
+  else if (addition < 0) text += ` - ${Math.abs(addition)} = ${roll + addition}`
 
   text += "]\n"
   return text
