@@ -392,6 +392,8 @@ const modifier = (text) => {
       text += "\n    Removes all characters, locations, and notes. Changes all settings to their defaults. Use with caution!"
       
       text += "\n\n--Other--"
+      text += "\n#version"
+      text += "\n    Returns the current version of this scenario."
       text += "\n#help"
       text += "\n    This long ass help menu. I am paid by lines of codes."
       

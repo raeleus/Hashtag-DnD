@@ -24,6 +24,7 @@ v. 0.2.0
 * You may use commas in coordinates now
 * The scenario keeps track of how many days have passed since the adventure has started. See `#rest`, `#showday`, `#setday`.
 * Added automatic difficulty which is DC 0
+* Added `#version`
 * Minor bug fixes and improvements
 
 v. 0.1.0

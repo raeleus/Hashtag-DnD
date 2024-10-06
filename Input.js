@@ -1,3 +1,4 @@
+const version = "Hashtag DnD v0.2.0"
 const rollSynonyms = ["roll"]
 const createSynonyms = ["create", "generate", "start", "begin", "setup", "party", "member", "new"]
 const renameCharacterSynonyms = ["renamecharacter", "renameperson"]
@@ -73,6 +74,7 @@ const initiativeSynonyms = ["initiative"]
 const setAcSynonyms = ["setac", "setarmorclass", "ac", "armorclass"]
 const turnSynonyms = ["turn", "doturn", "taketurn"]
 const fleeSynonyms = ["flee", "retreat", "runaway"]
+const versionSynonyms = ["version", "ver", "showversion"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -114,7 +116,7 @@ const modifier = (text) => {
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
@@ -195,6 +197,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, cloneCharacterSynonyms, doCloneCharacter)
   if (text == null) text = processCommandSynonyms(command, commandName, showDaySynonyms, doShowDay)
   if (text == null) text = processCommandSynonyms(command, commandName, setDaySynonyms, doSetDay)
+  if (text == null) text = processCommandSynonyms(command, commandName, versionSynonyms, doVersion)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -2133,6 +2136,11 @@ function doClearSkills(command) {
   character.skills = []
   state.show = "clearSkills"
   return " "
+}
+
+function doVersion(command) {
+  state.show = "none"
+  return version
 }
 
 function doReset(command) {
