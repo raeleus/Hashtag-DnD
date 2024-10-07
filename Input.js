@@ -201,7 +201,8 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, versionSynonyms, doVersion)
   if (text == null) text = processCommandSynonyms(command, commandName, setAcSynonyms, doSetAc)
   if (text == null) text = processCommandSynonyms(command, commandName, encounterSynonyms, doEncounter)
-    if (text == null) text = processCommandSynonyms(command, commandName, showEnemiesSynonyms, doShowEnemies)
+  if (text == null) text = processCommandSynonyms(command, commandName, showEnemiesSynonyms, doShowEnemies)
+  if (text == null) text = processCommandSynonyms(command, commandName, removeEnemySynonyms, doRemoveEnemy)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -1334,7 +1335,7 @@ function doGoNorth(command) {
   if (arg0 == null) arg0 = 1
   else {
     if (isNaN(arg0)) {
-      state.show = none
+      state.show = "none"
       return "\n[Error: Expected a number. See #help]\n"
     }
     arg0 = parseInt(arg0)
@@ -1349,7 +1350,7 @@ function doGoSouth(command) {
   if (arg0 == null) arg0 = 1
   else {
     if (isNaN(arg0)) {
-      state.show = none
+      state.show = "none"
       return "\n[Error: Expected a number. See #help]\n"
     }
     arg0 = parseInt(arg0)
@@ -1364,7 +1365,7 @@ function doGoEast(command) {
   if (arg0 == null) arg0 = 1
   else {
     if (isNaN(arg0)) {
-      state.show = none
+      state.show = "none"
       return "\n[Error: Expected a number. See #help]\n"
     }
     arg0 = parseInt(arg0)
@@ -1379,7 +1380,7 @@ function doGoWest(command) {
   if (arg0 == null) arg0 = 1
   else {
     if (isNaN(arg0)) {
-      state.show = none
+      state.show = "none"
       return "\n[Error: Expected a number. See #help]\n"
     }
     arg0 = parseInt(arg0)
@@ -1413,7 +1414,7 @@ function doGoToLocation(command) {
   var location
   var locationName = getArgumentRemainder(command, locationArgIndex)
   if (locationName == null && locationArgIndex == 0) {
-    state.show = none
+    state.show = "none"
     return "\n[Error: Not enough parameters. See #help]\n"
   }
   
@@ -1421,7 +1422,7 @@ function doGoToLocation(command) {
     arg0 = parseInt(arg0) - 1
 
     if (arg0 < 0 || arg0 >= state.locations.length) {
-      state.show = none
+      state.show = "none"
       return "\n[Error: Incorrect location number. See #help]\n"
     }
 
@@ -1496,7 +1497,7 @@ function doRemoveLocation(command) {
 
   if (/\d+\D+(\d+\D*)+/gi.test(arg0)) {
 
-    var list = arg0.split(/\D/)
+    var list = arg0.split(/\D+/)
     list.sort(function(a, b) {
       return b - a;
     });
@@ -1514,7 +1515,7 @@ function doRemoveLocation(command) {
       text += `[The location ${toTitleCase(location.name)} has been removed]\n`
     })
 
-    state.show = none
+    state.show = "none"
     return text
   }
 
@@ -1559,7 +1560,7 @@ function doEncounter(command) {
   if (encounter.enemies.length > 0) {
     state.prefix += "You encounter the following enemies:\n"
     for (var enemy of encounter.enemies) {
-      state.prefix += `${enemy.name} (Health: ${enemy.health} AC: ${enemy.ac} Initiative: ${enemy.initiative})\n`
+      state.prefix += `${toTitleCase(enemy.name)} (Health: ${enemy.health} AC: ${enemy.ac} Initiative: ${enemy.initiative})\n`
     }
   }
 
@@ -1572,6 +1573,56 @@ function doEncounter(command) {
 function doShowEnemies(command) {
   state.show = "showEnemies"
   return " "
+}
+
+function doRemoveEnemy(command) {
+  var arg0 = getArgumentRemainder(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  if (/\d+\D+(\d+\D*)+/gi.test(arg0)) {
+
+    var list = arg0.split(/\D+/)
+    list.sort(function(a, b) {
+      return b - a;
+    });
+
+    var text = "\n"
+    list.forEach(x => {
+      var num = parseInt(x) - 1
+      if (num >= state.enemies.length) {
+        state.show = "none"
+        return `\n[Error: Enemy ${x} does not exist. See #showenemies.]\n`
+      }
+
+      var enemy = state.enemies[num]
+      state.enemies.splice(num, 1)
+      text += `[The enemy ${toTitleCase(enemy.name)} has been removed]\n`
+    })
+
+    state.show = "none"
+    return text
+  }
+
+  var enemy
+  if (isNaN(arg0)) arg0 = state.enemies.findIndex(x => x.name.toLowerCase() == arg0.toLowerCase())
+  else arg0--
+
+  if (arg0 == -1) {
+    state.show = "none"
+    return "\n[Error: Enemy not found. See #showenemies]\n"
+  } else if (arg0 >= state.enemies.length || arg0 < 0) {
+    state.show = "none"
+    return "\n[Error: Location number out of bounds. See #showenemies]\n"
+  } else {
+    enemy = state.enemies[arg0]
+    state.enemies.splice(arg0, 1)
+  }
+
+  state.show = "none"
+  return `\n[The enemy ${toTitleCase(enemy.name)} has been removed]\n`
 }
 
 function doTake(command) {
@@ -2135,7 +2186,7 @@ function doEraseNote(command) {
   var arg0 = getArgumentRemainder(command, 0)
   if (arg0 == null) arg0 = 1
 
-  var list = arg0.split(/\D/)
+  var list = arg0.split(/\D+/)
   list.sort(function(a, b) {
     return b - a;
   });

@@ -225,7 +225,7 @@ const modifier = (text) => {
       } else {
         var index = 0
         for (var enemy of state.enemies) {
-          text += `${++index}. ${enemy.name} (Health: ${enemy.health} AC: ${enemy.ac} Initiative: ${enemy.initiative})\n`
+          text += `${++index}. ${toTitleCase(enemy.name)} (Health: ${enemy.health} AC: ${enemy.ac} Initiative: ${enemy.initiative})\n`
         }
       }
 
@@ -368,7 +368,7 @@ const modifier = (text) => {
       text += "\n#addenemy (ac) (damage_modifier) name"
       text += "\n    Adds the specified enemy to the list of enemies. It will automatically be assigned an inititiative. You can specify an armor class or both an armor class and damage modifier."
       text += "\n#removeenemy name or index"
-      text += "\n    Removes the enemy as specified by the name or index. "
+      text += "\n    Removes the enemy as specified by the name or index. To delete multiple enemies, type the numbers with spaces or commas between them. This is safer than calling #removenote multiple times because the numbers shift as enemies are deleted. Quotes are not necessary."
       text += "\n#initiative"
       text += "\n    Assigns initiative to all characters and enemies. This begins combat."
       text += "\n#turn"
@@ -396,7 +396,7 @@ const modifier = (text) => {
       text += "\n#showlocations (sort)"
       text += "\n    Shows a list of all discovered locations with their coordinates and their distance from the party's current location. If the parameter \"sort\" is added, the locations will be listed by their distance to the party. Note that the location numbers will only be displayed in the unsorted list."
       text += "\n#removelocation location_name or location_number"
-      text += "\n    Removes the specified location by location_name or location_number as listed in #showlocations. To delete multiple locations, type the numbers with spaces or commas between them. This is safer than calling #removenote multiple times because the numbers shift as notes are deleted. Quotes are not necessary."
+      text += "\n    Removes the specified location by location_name or location_number as listed in #showlocations. To delete multiple locations, type the numbers with spaces or commas between them. This is safer than calling #removenote multiple times because the numbers shift as locations are deleted. Quotes are not necessary."
       text += "\n#clearlocations"
       text += "\n    Deletes all discovered locations."
       text += "\n#map"
