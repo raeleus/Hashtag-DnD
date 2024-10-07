@@ -117,7 +117,7 @@ const modifier = (text) => {
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
@@ -201,6 +201,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, versionSynonyms, doVersion)
   if (text == null) text = processCommandSynonyms(command, commandName, setAcSynonyms, doSetAc)
   if (text == null) text = processCommandSynonyms(command, commandName, encounterSynonyms, doEncounter)
+    if (text == null) text = processCommandSynonyms(command, commandName, showEnemiesSynonyms, doShowEnemies)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -1558,7 +1559,7 @@ function doEncounter(command) {
   if (encounter.enemies.length > 0) {
     state.prefix += "You encounter the following enemies:\n"
     for (var enemy of encounter.enemies) {
-      state.prefix += `${enemy.name} (Health: ${enemy.health} AC: ${enemy.ac})\n`
+      state.prefix += `${enemy.name} (Health: ${enemy.health} AC: ${enemy.ac} Initiative: ${enemy.initiative})\n`
     }
   }
 
@@ -1566,6 +1567,11 @@ function doEncounter(command) {
 
   state.show = "prefix"
   return text
+}
+
+function doShowEnemies(command) {
+  state.show = "showEnemies"
+  return " "
 }
 
 function doTake(command) {

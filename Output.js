@@ -217,6 +217,19 @@ const modifier = (text) => {
     case "clearInventory":
       text += `[${possessiveName} inventory has been emptied]\n`
       break
+    case "showEnemies":
+      text += "*** ENEMIES ***\n"
+
+      if (state.enemies.length == 0) {
+        text += "There are no enemies present here. Call #encounter to generate a scripted set or #addenemy to add your own\n"
+      } else {
+        for (var enemy of state.enemies) {
+          text += `${enemy.name} (Health: ${enemy.health} AC: ${enemy.ac} Initiative: ${enemy.initiative})\n`
+        }
+      }
+
+      text += "******************\n\n"
+      break
     case "reset":
       text += "[All settings have been reset]\n"
       break
