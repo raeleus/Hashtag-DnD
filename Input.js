@@ -1708,16 +1708,28 @@ function doAddEnemy(command) {
 }
 
 function doInitiative(command) {
-  for (character of state.characters) {
+  var battleHasStarted = state.initiativeOrder.length != 0
+  
+  if (!battleHasStarted) for (character of state.characters) {
     var stat = character.stats.find(element => element.name.toLowerCase() == "dexterity")
     if (stat == null) character.initiative = calculateRoll("d20")
     else character.initiative = calculateRoll("d20") + getModifier(stat.value)
   }
 
-  createInitiativeOrder()
+  if (state.enemies.length == 0) {
+    state.show = "none"
+    return "\n[Error: No enemies! Call #addenemy or #generateencounter]\n"
+  }
+
+  if (!battleHasStarted)  createInitiativeOrder()
+
+  if (state.initiativeOrder.length == 0) {
+    state.show = "none"
+    return "\n[Error: No combatants! Ensure that your characters have health and you have added enemies. See #help]\n"
+  }
 
   state.show = "initiative"
-  return "\nBattle has commenced!\n"
+  return battleHasStarted ? " " : "\nBattle has commenced!\n"
 }
 
 function doTake(command) {
