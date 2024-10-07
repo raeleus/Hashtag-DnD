@@ -223,8 +223,9 @@ const modifier = (text) => {
       if (state.enemies.length == 0) {
         text += "There are no enemies present here. Call #encounter to generate a scripted set or #addenemy to add your own\n"
       } else {
+        var index = 0
         for (var enemy of state.enemies) {
-          text += `${enemy.name} (Health: ${enemy.health} AC: ${enemy.ac} Initiative: ${enemy.initiative})\n`
+          text += `${++index}. ${enemy.name} (Health: ${enemy.health} AC: ${enemy.ac} Initiative: ${enemy.initiative})\n`
         }
       }
 
