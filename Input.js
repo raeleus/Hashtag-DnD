@@ -206,6 +206,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, clearEnemiesSynonyms, doClearEnemies)
   if (text == null) text = processCommandSynonyms(command, commandName, addEnemySynonyms, doAddEnemy)
   if (text == null) text = processCommandSynonyms(command, commandName, initiativeSynonyms, doInitiative)
+  if (text == null) text = processCommandSynonyms(command, commandName, fleeSynonyms, doFlee)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -1730,6 +1731,39 @@ function doInitiative(command) {
 
   state.show = "initiative"
   return battleHasStarted ? " " : "\nBattle has commenced!\n"
+}
+
+function doFlee(command) {
+  if (state.initiativeOrder.length == 0) {
+    state.show = "none"
+    return "\n[Error: Not in combat. Call #initiative first]\n"
+  }
+
+  var difficulty = getArgument(command, 0)
+  if (difficulty != null) {
+    const difficultyNames = ["impossible", "extreme", "hard", "medium", "easy", "effortless", "automatic"]
+    const difficultyScores = [30, 25, 20, 15, 10, 5, 0]
+
+    const difficultyPatternNames = [...new Set(difficultyNames)]
+    difficultyPatternNames.push("\\d+")
+    var difficultyIndex = difficultyNames.indexOf(difficulty)
+    if (difficultyIndex >= 0 && difficultyIndex < difficultyNames.length) {
+      difficulty = difficultyScores[difficultyIndex]
+    }
+  } else {
+    difficulty = state.defaultDifficulty
+  }
+
+  var roll = calculateRoll("d20")
+
+  var text = ""
+  if (difficulty != 0) text += `\n[DC: ${difficulty} Roll: ${roll}]\n`
+  if (roll >= difficulty) {
+    state.initiativeOrder = []
+    text += `\nThe party successfuly flees from battle!\n`
+  } else text += `\nThe party tries to flee from battle, but fails!\n`
+
+  return text
 }
 
 function doTake(command) {

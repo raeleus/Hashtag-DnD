@@ -393,8 +393,8 @@ const modifier = (text) => {
       text += "\n    Assigns initiative to all characters. This begins combat."
       text += "\n#turn"
       text += "\n    Updates the turn to the next character in combat. If it is an enemy, the enemy will attack. If it's a player character, the system will allow the player to take their turn. If there are no enemies left or all the player characters are dead, combat ends."
-      text += "\n#flee (dc or automatic|effortless|easy|)"
-      text += "\n    Shows the list of current enemies."
+      text += "\n#flee (difficulty_class or automatic|effortless|easy|medium|hard|impossible)"
+      text += "\n    Attempt to flee from combat. If the difficulty is not specified, the automatic difficulty will be used instead."
 
       text += "\n\n--Locations--"
       text += "\n#createlocation [(x) (y) or (here|far) or (distance)] location_name"
