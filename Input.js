@@ -203,6 +203,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, encounterSynonyms, doEncounter)
   if (text == null) text = processCommandSynonyms(command, commandName, showEnemiesSynonyms, doShowEnemies)
   if (text == null) text = processCommandSynonyms(command, commandName, removeEnemySynonyms, doRemoveEnemy)
+  if (text == null) text = processCommandSynonyms(command, commandName, clearEnemiesSynonyms, doClearEnemies)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -1476,7 +1477,7 @@ function doGetLocation(command) {
 }
 
 function doClearLocations(command) {
-  var arg0 = getArgument(0)
+  var arg0 = getArgument(command, 0)
   if (arg0 != null) {
     return doRemoveLocation(command)
   }
@@ -1623,6 +1624,18 @@ function doRemoveEnemy(command) {
 
   state.show = "none"
   return `\n[The enemy ${toTitleCase(enemy.name)} has been removed]\n`
+}
+
+function doClearEnemies(command) {
+  var arg0 = getArgument(command, 0)
+  if (arg0 != null) {
+    return doRemoveEnemy(command)
+  }
+
+  state.enemies = []
+
+  state.show = "none"
+  return "\n[The enemies have been cleared]\n"
 }
 
 function doTake(command) {
@@ -2268,6 +2281,7 @@ function doReset(command) {
   state.characters = []
   state.locations = []
   state.location = null
+  state.enemies = null
   state.x = null
   state.y = null
   state.defaultDifficulty = null
