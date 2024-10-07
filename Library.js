@@ -885,10 +885,12 @@ function createInitiativeOrder() {
   state.initiativeOrder = []
 
   for (var character of state.characters) {
+    if (character.health <= 0) continue
     state.initiativeOrder.push(character)
   }
 
   for (var enemy of state.enemies) {
+    if (enemy.health <= 0) continue
     state.initiativeOrder.push(enemy)
   }
 
