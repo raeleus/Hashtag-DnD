@@ -2203,7 +2203,7 @@ function doClearSkills(command) {
 
 function doVersion(command) {
   state.show = "none"
-  return version
+  return `[${version}]`
 }
 
 function doReset(command) {
