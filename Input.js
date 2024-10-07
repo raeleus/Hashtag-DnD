@@ -70,10 +70,11 @@ const encounterSynonyms = ["encounter", "startencounter"]
 const showEnemiesSynonyms = ["showenemies", "enemies"]
 const addEnemySynonyms = ["addenemy"]
 const removeEnemySynonyms = ["removeenemy"]
+const clearEnemiesSynonyms = ["clearenemies", "resetenemies", "removeenemies"]
 const initiativeSynonyms = ["initiative"]
 const setAcSynonyms = ["setac", "setarmorclass", "ac", "armorclass"]
 const turnSynonyms = ["turn", "doturn", "taketurn"]
-const fleeSynonyms = ["flee", "retreat", "runaway"]
+const fleeSynonyms = ["flee", "retreat", "runaway", "endcombat"]
 const versionSynonyms = ["version", "ver", "showversion"]
 const helpSynonyms = ["help"]
 
@@ -199,6 +200,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, setDaySynonyms, doSetDay)
   if (text == null) text = processCommandSynonyms(command, commandName, versionSynonyms, doVersion)
   if (text == null) text = processCommandSynonyms(command, commandName, setAcSynonyms, doSetAc)
+  if (text == null) text = processCommandSynonyms(command, commandName, encounterSynonyms, doEncounter)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -574,6 +576,7 @@ function init() {
   if (state.autoXp == null) state.autoXp = 0
   if (state.defaultDifficulty == null) state.defaultDifficulty = 10
   if (state.day == null) state.day = 0
+  if (state.enemies == null) state.enemies = []
   state.show = null
   state.prefix = null
   state.critical = null
@@ -1539,6 +1542,30 @@ function doShowLocations(command) {
 
   state.show = "locations"
   return " "
+}
+
+function doEncounter(command) {
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) {
+    arg0 = "funny"
+  }
+
+  var encounter = createEncounter(arg0)
+  state.enemies = encounter.enemies
+  var text = `\n${encounter.text}\n`
+
+  state.prefix = "\n"
+  if (encounter.enemies.length > 0) {
+    state.prefix += "You encounter the following enemies:\n"
+    for (var enemy of encounter.enemies) {
+      state.prefix += `${enemy.name} (Health: ${enemy.health} AC: ${enemy.ac})\n`
+    }
+  }
+
+  state.prefix += "\n"
+
+  state.show = "prefix"
+  return text
 }
 
 function doTake(command) {
