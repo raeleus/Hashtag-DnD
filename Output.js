@@ -246,8 +246,8 @@ const modifier = (text) => {
       text += "******************\n\n"
       
       if (state.initiativeOrder.length > 0) {
-        var possesiveName = getPossessiveName(state.initiativeOrder[0].name)
-        if (possesiveName == "Your") possesiveName = "your"
+        var possessiveName = getPossessiveName(state.initiativeOrder[0].name)
+        if (possessiveName == "Your") possessiveName = "your"
         text += `It is ${possessiveName} turn`
       }
       break
