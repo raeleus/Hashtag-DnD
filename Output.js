@@ -231,6 +231,26 @@ const modifier = (text) => {
 
       text += "******************\n\n"
       break
+    case "initiative":
+      text += "*** INITIATIVE ORDER ***\n"
+
+      if (state.initiativeOrder.length == 0) {
+        text += "There is no one in the battle. This makes no sense!"
+      } else {
+        var index = 0
+        for (var character of state.initiativeOrder) {
+          text += `${++index}. ${character.name} (Initiative: ${character.initiative})\n`
+        }
+      }
+
+      text += "******************\n\n"
+      
+      if (state.initiativeOrder.length > 0) {
+        var possesiveName = getPossessiveName(state.initiativeOrder[0].name)
+        if (possesiveName == "Your") possesiveName = "your"
+        text += `It is ${possessiveName} turn`
+      }
+      break
     case "reset":
       text += "[All settings have been reset]\n"
       break

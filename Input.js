@@ -205,6 +205,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, removeEnemySynonyms, doRemoveEnemy)
   if (text == null) text = processCommandSynonyms(command, commandName, clearEnemiesSynonyms, doClearEnemies)
   if (text == null) text = processCommandSynonyms(command, commandName, addEnemySynonyms, doAddEnemy)
+  if (text == null) text = processCommandSynonyms(command, commandName, initiativeSynonyms, doInitiative)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -581,6 +582,7 @@ function init() {
   if (state.defaultDifficulty == null) state.defaultDifficulty = 10
   if (state.day == null) state.day = 0
   if (state.enemies == null) state.enemies = []
+  if (state.initiativeOrder == null) state.initiativeOrder = []
   state.show = null
   state.prefix = null
   state.critical = null
@@ -1705,6 +1707,19 @@ function doAddEnemy(command) {
   return `[Enemy ${enemy.name} has been created]`
 }
 
+function doInitiative(command) {
+  for (character of state.characters) {
+    var stat = character.stats.find(element => element.name.toLowerCase() == "dexterity")
+    if (stat == null) character.initiative = calculateRoll("d20")
+    else character.initiative = calculateRoll("d20") + getModifier(stat.value)
+  }
+
+  createInitiativeOrder()
+
+  state.show = "initiative"
+  return "\nBattle has commenced!\n"
+}
+
 function doTake(command) {
   var arg0 = getArgument(command, 0)
   if (arg0 == null) {
@@ -2349,6 +2364,7 @@ function doReset(command) {
   state.locations = []
   state.location = null
   state.enemies = null
+  state.initiativeOrder = []
   state.x = null
   state.y = null
   state.defaultDifficulty = null
