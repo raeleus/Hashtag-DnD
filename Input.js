@@ -204,6 +204,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, showEnemiesSynonyms, doShowEnemies)
   if (text == null) text = processCommandSynonyms(command, commandName, removeEnemySynonyms, doRemoveEnemy)
   if (text == null) text = processCommandSynonyms(command, commandName, clearEnemiesSynonyms, doClearEnemies)
+  if (text == null) text = processCommandSynonyms(command, commandName, addEnemySynonyms, doAddEnemy)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -1636,6 +1637,72 @@ function doClearEnemies(command) {
 
   state.show = "none"
   return "\n[The enemies have been cleared]\n"
+}
+
+function doAddEnemy(command) {
+  var name = getArgument(command, 0)
+  if (name == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  var health = getArgument(command, 1)
+  if (health == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  } else if (/^\d*d\d+((\+|-)\d+)?$/g.test(health)) {
+    health = calculateRoll(health)
+  } else if (isNaN(health)) {
+    state.show = "none"
+    return "\n[Error: Expected a number. See #help]\n"
+  }
+  health = parseInt(health)
+
+  var ac = getArgument(command, 2)
+  if (ac == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  } else if (/^\d*d\d+((\+|-)\d+)?$/g.test(ac)) {
+    ac = calculateRoll(ac)
+  } else if (isNaN(ac)) {
+    state.show = "none"
+    return "\n[Error: Expected a number. See #help]\n"
+  }
+  ac = parseInt(ac)
+
+  var damage = getArgument(command, 3)
+  if (damage == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  } else if (isNaN(damage) && !/^\d*d\d+((\+|-)\d+)?$/g.test(damage)) {
+    state.show = "none"
+    return "\n[Error: Expected a number. See #help]\n"
+  }
+
+  var initiative = getArgument(command, 4)
+  if (initiative == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  } else if (/^\d*d\d+((\+|-)\d+)?$/g.test(initiative)) {
+    initiative = calculateRoll(initiative)
+  } else if (isNaN(initiative)) {
+    state.show = "none"
+    return "\n[Error: Expected a number. See #help]\n"
+  }
+  initiative = parseInt(initiative)
+
+  var spells = []
+  var spell = null
+  var index = 5
+  do {
+    spell = getArgument(command, index++)
+    if (spell != null) spells.push(spell)
+  } while (spell != null)
+
+  var enemy = createEnemy(name, health, ac, damage, initiative, spells)
+  state.enemies.push(enemy)
+
+  return `[Enemy ${enemy.name} has been created]`
 }
 
 function doTake(command) {
