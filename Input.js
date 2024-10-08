@@ -1013,6 +1013,7 @@ function doDamage(command) {
 function doRest(command) {
   var commandName = getCommandName(command)
   state.day++
+  state.enemies = []
   state.characters.forEach(function(character) {
     if (commandName.toLowerCase() == "shortrest") {
       var max = getHealthMax(character)
@@ -2320,10 +2321,11 @@ function doCastSpell(command) {
   var character = getCharacter()
   const dontWord = character.name == "You" ? "don't" : "doesn't"
   const tryWord = character.name == "You" ? "try" : "tries"
+  var usingDefaultDifficulty = false
 
   var spellIndex = 2;
 
-  var advantage = searchArgument(command, arrayToOrPattern(advantageNames))
+  var advantage = searchArgument(command, arrayToOrPattern(advantageNames), spellIndex - 1)
   if (advantage == null) {
     advantage = "normal"
     spellIndex--
@@ -2331,9 +2333,10 @@ function doCastSpell(command) {
 
   const difficultyPatternNames = [...new Set(difficultyNames)]
   difficultyPatternNames.push("\\d+")
-  var difficulty = searchArgument(command, arrayToOrPattern(difficultyPatternNames))
+  var difficulty = searchArgument(command, arrayToOrPattern(difficultyPatternNames), spellIndex - 1)
   if (difficulty == null) {
     difficulty = state.defaultDifficulty
+    usingDefaultDifficulty = true
     spellIndex--
   }
   var difficultyIndex = difficultyNames.indexOf(difficulty)
@@ -2385,6 +2388,33 @@ function doCastSpell(command) {
   var roll2 = calculateRoll("d20")
   var roll = advantage == "advantage" ? Math.max(roll1, roll2) : advantage == "disadvantage" ? Math.min(roll1, roll2) : roll1
 
+  //add enemy damage here
+  var enemyString
+  if (target != null && state.initiativeOrder.length > 0) {
+    var damage = roll == 20 ? calculateRoll("2d6") + calculateRoll("2d6") : calculateRoll("2d6")
+
+    var damageMatches = target.match(/\d*d\d+((\+|-)d+)?/g)
+    if (damageMatches != null) damage = roll == 20 ? calculateRoll(damageMatches[0]) + calculateRoll(damageMatches[0]) : calculateRoll(damageMatches[0])
+    else {
+      damageMatches = target.match(/\d+/g)
+      if (damageMatches != null) damage = roll == 20 ? parseInt(damageMatches[damageMatches.length - 1]) * 2 : parseInt(damageMatches[damageMatches.length - 1])
+    }
+
+    for (var enemy of state.enemies) {
+      if (target.toLowerCase().includes(enemy.name.toLowerCase())) {
+        if (usingDefaultDifficulty) difficulty = enemy.ac
+        if (roll + modifier >= difficulty) {
+          if (roll == 20) enemyString += ` Critical Damage: ${damage}`
+          else enemyString += ` Damage: ${damage}`
+          enemy.health = Math.max(0, enemy.health - damage)
+          if (enemy.health == 0) enemyString = ` ${toTitleCase(enemy.name)} has been defeated!`
+          else enemyString = ` ${toTitleCase(enemy.name)} has ${enemy.health} health remaining!`
+        }
+        break
+      }
+    }
+  }
+
   state.show = "prefix"
   var dieText = advantage == "advantage" || advantage == "disadvantage" ? `${advantage}(${roll1},${roll2})` : roll1
   var difficultyWord = target == null ? "Difficulty" : "Armor"
@@ -2397,6 +2427,8 @@ function doCastSpell(command) {
   else if (roll == 1) text += ` Critical failure! The spell ${target != null ? "misses" : "fails"} in a spectacular way.`
   else if (roll + modifier >= difficulty) text += ` The spell ${target != null ? "hits the target" : "is successful"}!`
   else text += ` The spell ${target != null ? "misses" : "fails"}!`
+
+  if (enemyString != null) text += enemyString
 
   if (roll + modifier >= difficulty || roll == 20) text += addXpToAll(Math.floor(state.autoXp * clamp(difficulty, 1, 20) / 20))
   return `\n${text}\n`
