@@ -207,6 +207,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, addEnemySynonyms, doAddEnemy)
   if (text == null) text = processCommandSynonyms(command, commandName, initiativeSynonyms, doInitiative)
   if (text == null) text = processCommandSynonyms(command, commandName, fleeSynonyms, doFlee)
+  if (text == null) text = processCommandSynonyms(command, commandName, turnSynonyms, doTurn)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -1604,6 +1605,8 @@ function doRemoveEnemy(command) {
 
       var enemy = state.enemies[num]
       state.enemies.splice(num, 1)
+      var index = state.initiativeOrder.indexOf(enemy)
+      if (index >= 0) state.initiativeOrder.splice(index, 1)
       text += `[The enemy ${toTitleCase(enemy.name)} has been removed]\n`
     })
 
@@ -1637,6 +1640,7 @@ function doClearEnemies(command) {
   }
 
   state.enemies = []
+  state.initiativeOrder = []
 
   state.show = "none"
   return "\n[The enemies have been cleared]\n"
@@ -1702,7 +1706,8 @@ function doAddEnemy(command) {
     if (spell != null) spells.push(spell)
   } while (spell != null)
 
-  var enemy = createEnemy(name, health, ac, damage, initiative, spells)
+  var enemy = createEnemy(name, health, ac, damage, initiative)
+  enemy.spells = spells
   state.enemies.push(enemy)
 
   return `[Enemy ${enemy.name} has been created]`
@@ -1764,6 +1769,83 @@ function doFlee(command) {
   } else text += `\nThe party tries to flee from battle, but fails!\n`
 
   return text
+}
+
+function doTurn(command) {
+  if (state.initiativeOrder.length > 0) state.initiativeOrder.splice(0, 1)
+
+  var defeatedEnemies = 0
+  for (var enemy of state.enemies) {
+    if (enemy.health > 0) continue
+
+    defeatedEnemies++
+    var index = state.initiativeOrder.indexOf(enemy)
+    if (index >= 0) state.initiativeOrder.splice(index, 1)
+  }
+
+  var defeatedCharacters = 0
+  for (var character of state.characters) {
+    if (character.health > 0) continue
+
+    defeatedCharacters++
+    var index = state.initiativeOrder.indexOf(character)
+    if (index >= 0) state.initiativeOrder.splice(index, 1)
+  }
+
+  if (state.initiativeOrder.length == 0) createInitiativeOrder()
+  
+  if (state.initiativeOrder.length == 0) {
+    return "\nDraw! All combatants have been incapacitated.\n"
+  }
+
+  if (defeatedEnemies == state.enemies.length) {
+    state.initiativeOrder = []
+    return "\nVictory! The party has defeated all opponents.\n"
+  }
+
+  if (defeatedCharacters == state.characters.length) {
+    state.initiativeOrder = []
+    return "\nDefeat! The entire party has been incapacitated.\n"
+  }
+
+  var activeCharacter = state.initiativeOrder[0]
+  var activeCharacterName = toTitleCase(activeCharacter)
+  var possessiveName = getPossessiveName(activeCharacter.name)
+  if (possessiveName == "Your") possessiveName = "your"
+
+  if (activeCharacter.className != null) {
+    state.show = "none"
+    return `\nIt is ${possessiveName} turn\n`
+  } else {
+    var characters = state.characters.filter(x => x.health > 0)
+    var target = characters[getRandomInteger(0, characters.length - 1)]
+    var areWord = target.name == "You" ? "are" : "is"
+    var targetNameAdjustedCase = target.name == "You" ? "you" : toTitleCase(target.name)
+
+    var text = `\nIt is ${possessiveName} turn.\n`
+    if (getRandomBoolean() || activeCharacter.spells.length == 0) {
+      var damage = isNaN(activeCharacter.damage) ? calculateRoll(activeCharacter.damage) : activeCharacter.damage
+      target.health = Math.max(target.health - damage, 0)
+
+      text += `${activeCharacterName} attacks ${target.name} for ${damage} damage! \n`
+      if (target.health == 0) text += `${target.name} ${areWord} unconcious!\n`
+      else text += `${target.name} ${areWord} at ${target.health} health.\n`
+    } else {
+      var spell = activeCharacter.spells[getRandomInteger(0, activeCharacter.spells.length)]
+      var diceMatches = spell.match(/(?<=^.*)\d*d\d+((\+|-)\d+)?$/)
+      if (diceMatches == null) text += `${activeCharacterName} casts spell ${spell}!`
+      else {
+        var damage = calculateRoll(diceMatches[0])
+        var spell = spell.substring(0, spell.length - diceMatches[0].length)
+        target.health = Math.max(target.health - damage, 0)
+
+        text += `${activeCharacterName} casts spell ${spell} at ${targetNameAdjustedCase} for ${damage} damage!`
+        if (target.health == 0) text += `${target.name} ${areWord} unconcious!\n`
+        else text += `${target.name} ${areWord} at ${target.health} health.\n`
+      }
+    }
+    return text
+  }
 }
 
 function doTake(command) {

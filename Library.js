@@ -6,6 +6,11 @@ function getRandomFloat(min, max) {
   return Math.random() * (max - min + 1) + min;
 }
 
+function getRandomBoolean(chance) {
+  if (chance == null) chance = .5
+  return Math.random() <= chance
+}
+
 function getRandom(seed) {
   var x = Math.sin(seed) * 10000
   return x - Math.floor(x)

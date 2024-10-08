@@ -246,9 +246,8 @@ const modifier = (text) => {
       text += "******************\n\n"
       
       if (state.initiativeOrder.length > 0) {
-        var possessiveName = getPossessiveName(state.initiativeOrder[0].name)
-        if (possessiveName == "Your") possessiveName = "your"
-        text += `It is ${possessiveName} turn`
+        state.initiativeOrder = []
+        text += `[Call #turn to begin]\n`
       }
       break
     case "reset":
