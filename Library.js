@@ -152,9 +152,9 @@ function getArgumentRemainder(command, index) {
   }
 }
 
-function searchArgument(command, pattern) {
+function searchArgument(command, pattern, limit) {
   var index = searchArgumentIndex(command, pattern)
-  if (index == -1) return null
+  if (index == -1 || limit != null && index > limit) return null
   return getArgument(command, index)
 }
 

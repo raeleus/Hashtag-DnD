@@ -1178,16 +1178,17 @@ function doAttack(command) {
   var textIndex = 3
   var missWord = character.name == "You" ? "miss" : "misses"
   var tryWord = character.name == "You" ? "try" : "tries"
+  var usingDefaultDifficulty = false
 
   var statText = null
-  statText = searchArgument(command, /ranged/gi)
+  statText = searchArgument(command, /ranged/gi, textIndex - 1)
   if (statText == null) {
     statText = character.meleeStat
     textIndex--
   } else if (statText.toLowerCase() == "ranged") statText = character.rangedStat
   statText = toTitleCase(statText)
   
-  var advantageText = searchArgument(command, arrayToOrPattern(advantageNames))
+  var advantageText = searchArgument(command, arrayToOrPattern(advantageNames), textIndex - 1)
   if (advantageText == null) {
     advantageText = "normal"
     textIndex--
@@ -1196,9 +1197,10 @@ function doAttack(command) {
 
   const difficultyPatternNames = [...new Set(difficultyNames)]
   difficultyPatternNames.push("\\d+")
-  var difficultyText = searchArgument(command, arrayToOrPattern(difficultyPatternNames))
+  var difficultyText = searchArgument(command, arrayToOrPattern(difficultyPatternNames), textIndex - 1)
   if (difficultyText == null) {
     difficultyText = state.defaultDifficulty
+    usingDefaultDifficulty = true
     textIndex--
   }
   else difficultyText = difficultyText.toLowerCase()
@@ -1228,6 +1230,32 @@ function doAttack(command) {
     if (targetIndex >= 0 && targetIndex < difficultyNames.length) targetRoll = difficultyScores[targetIndex]
   }
 
+  var enemyString
+  if (state.initiativeOrder.length > 0) {
+    var damage = score == 20 ? calculateRoll("2d6") + calculateRoll("2d6") : calculateRoll("2d6")
+
+    var damageMatches = targetText.match(/\d*d\d+((\+|-)d+)?/g)
+    if (damageMatches != null) damage = score == 20 ? calculateRoll(damageMatches[0]) + calculateRoll(damageMatches[0]) : calculateRoll(damageMatches[0])
+    else {
+      damageMatches = targetText.match(/\d+/g)
+      if (damageMatches != null) damage = score == 20 ? parseInt(damageMatches[damageMatches.length - 1]) * 2 : parseInt(damageMatches[damageMatches.length - 1])
+    }
+
+    for (var enemy of state.enemies) {
+      if (targetText.toLowerCase().includes(enemy.name.toLowerCase())) {
+        if (usingDefaultDifficulty) targetRoll = enemy.ac
+        if (score + modifier >= targetRoll) {
+          if (score == 20) enemyString += ` Critical Damage: ${damage}`
+          else enemyString += ` Damage: ${damage}`
+          enemy.health = Math.max(0, enemy.health - damage)
+          if (enemy.health == 0) enemyString = ` ${toTitleCase(enemy.name)} has been defeated!`
+          else enemyString = ` ${toTitleCase(enemy.name)} has ${enemy.health} health remaining!`
+        }
+        break
+      }
+    }
+  }
+
   var dieText = advantageText == "advantage" || advantageText == "disadvantage" ? `${advantageText}(${die1},${die2})` : die1
 
   state.show = "prefix"
@@ -1243,6 +1271,8 @@ function doAttack(command) {
 
   if (score == 20) text += " Critical success! Your attack is exceptionally damaging!"
   else if (score == 1) text += " Critical failure! Your attack missed in a spectacular way!"
+
+  if (enemyString != null) text += enemyString
 
   if (score + modifier >= targetRoll || score == 20) text += addXpToAll(Math.floor(state.autoXp * clamp(targetRoll, 1, 20) / 20))
   return text + "\n"
@@ -1809,7 +1839,7 @@ function doTurn(command) {
   }
 
   var activeCharacter = state.initiativeOrder[0]
-  var activeCharacterName = toTitleCase(activeCharacter)
+  var activeCharacterName = toTitleCase(activeCharacter.name)
   var possessiveName = getPossessiveName(activeCharacter.name)
   if (possessiveName == "Your") possessiveName = "your"
 
