@@ -1001,13 +1001,57 @@ function doDamage(command) {
     return "\n[Error: Not enough parameters. See #help]\n"
   }
 
-  var haveWord = character.name == "You" ? "have" : "has"
+  var arg1 = getArgument(command, 1)
+  
+  if (arg1 == null) {
+    var damage
 
-  character.health -= arg0
-  character.health = clamp(character.health, 0, getHealthMax())
+    var damageMatches = arg0.match(/\d*d\d+((\+|-)d+)?/g)
+    if (damageMatches != null) damage = calculateRoll(damageMatches[0])
+    else {
+      damageMatches = arg0.match(/\d+/g)
+      if (damageMatches != null) damage = parseInt(damageMatches[damageMatches.length - 1])
+    }
 
-  state.show = "none"
-  return `\n[${character.name} ${haveWord} been damaged for ${arg0} hp with ${character.health} remaining].${character.health == 0 ? " You are unconcious" : ""}\n`
+    if (damage == null) {
+      state.show = "none"
+      return "\n[Error: Expected a number. See #help]\n"
+    }
+
+    var haveWord = character.name == "You" ? "have" : "has"
+
+    character.health -= damage
+    character.health = clamp(character.health, 0, getHealthMax())
+
+    state.show = "none"
+    return `\n[${character.name} ${haveWord} been damaged for ${damage} hp with ${character.health} remaining].${character.health == 0 ? " You are unconscious" : ""}\n`
+  } else {
+    if (arg1 == null) {
+      state.show = "none"
+      return "\n[Error: Not enough parameters. See #help]\n"
+    }
+
+    var damage
+
+    var damageMatches = arg1.match(/\d*d\d+((\+|-)d+)?/g)
+    if (damageMatches != null) damage = calculateRoll(damageMatches[0])
+    else {
+      damageMatches = arg1.match(/\d+/g)
+      if (damageMatches != null) damage = parseInt(damageMatches[damageMatches.length - 1])
+    }
+
+    if (damage == null) {
+      state.show = "none"
+      return "\n[Error: Expected a number. See #help]\n"
+    }
+
+    for (var enemy of state.enemies) {
+      if (enemy.name.toLowerCase() == arg0.toLowerCase()) {
+        enemy.health = Math.max(0, enemy.health - damage)
+        return `\n[${toTitleCase(enemy.name)} has been damaged for ${damage} hp with ${enemy.health} remaining].${enemy.health == 0 ? " " + toTitleCase(enemy.name) + " has been defeated!" : ""}\n`
+      }
+    }
+  }
 }
 
 function doRest(command) {
@@ -1864,7 +1908,7 @@ function doTurn(command) {
       target.health = Math.max(target.health - damage, 0)
 
       text += `${activeCharacterName} attacks ${target.name} for ${damage} damage! \n`
-      if (target.health == 0) text += `${target.name} ${areWord} unconcious!\n`
+      if (target.health == 0) text += `${target.name} ${areWord} unconscious!\n`
       else text += `${target.name} ${areWord} at ${target.health} health.\n`
     } else {
       var spell = activeCharacter.spells[getRandomInteger(0, activeCharacter.spells.length)]
@@ -1876,7 +1920,7 @@ function doTurn(command) {
         target.health = Math.max(target.health - damage, 0)
 
         text += `${activeCharacterName} casts spell ${spell} at ${targetNameAdjustedCase} for ${damage} damage!`
-        if (target.health == 0) text += `${target.name} ${areWord} unconcious!\n`
+        if (target.health == 0) text += `${target.name} ${areWord} unconscious!\n`
         else text += `${target.name} ${areWord} at ${target.health} health.\n`
       }
     }
