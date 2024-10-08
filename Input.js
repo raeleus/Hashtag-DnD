@@ -1737,11 +1737,16 @@ function doAddEnemy(command) {
     if (spell != null) spells.push(spell)
   } while (spell != null)
 
+  for (var i = state.enemies.length - 1; i >= 0; i--) {
+    var enemy = state.enemies[i]
+    if (enemy.name.toLowerCase() == name.toLowerCase()) state.enemies.splice(i, 1)
+  }
+  
   var enemy = createEnemy(name, health, ac, damage, initiative)
   enemy.spells = spells
   state.enemies.push(enemy)
 
-  return `[Enemy ${enemy.name} has been created]`
+  return `[Enemy ${toTitleCase(enemy.name)} has been created]`
 }
 
 function doInitiative(command) {
