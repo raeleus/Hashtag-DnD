@@ -68,7 +68,7 @@ const showDaySynonyms = ["showday", "showdate", "day", "date"]
 const setDaySynonyms = ["setday", "setdate"]
 const encounterSynonyms = ["encounter", "startencounter"]
 const showEnemiesSynonyms = ["showenemies", "enemies"]
-const addEnemySynonyms = ["addenemy"]
+const addEnemySynonyms = ["addenemy", "createEnemy"]
 const removeEnemySynonyms = ["removeenemy"]
 const clearEnemiesSynonyms = ["clearenemies", "resetenemies", "removeenemies"]
 const initiativeSynonyms = ["initiative"]
@@ -76,6 +76,7 @@ const setAcSynonyms = ["setac", "setarmorclass", "ac", "armorclass"]
 const turnSynonyms = ["turn", "doturn", "taketurn"]
 const fleeSynonyms = ["flee", "retreat", "runaway", "endcombat"]
 const versionSynonyms = ["version", "ver", "showversion"]
+const setupEnemySynonyms = ["setupenemy"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -85,6 +86,14 @@ const modifier = (text) => {
   if (state.createStep != null) {
     text = handleCreateStep(text)
     if (state.createStep != null) return { text }
+    else text = rawText
+  }
+
+  if (state.setupEnemyStep != null) {
+    log(`setupEnemyStep:${state.setupEnemyStep}`)
+    state.setupEnemyStep
+    text = handleSetupEnemyStep(text)
+    if (state.setupEnemyStep != null) return { text }
     else text = rawText
   }
 
@@ -117,7 +126,7 @@ const modifier = (text) => {
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, setupEnemySynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
@@ -208,6 +217,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, initiativeSynonyms, doInitiative)
   if (text == null) text = processCommandSynonyms(command, commandName, fleeSynonyms, doFlee)
   if (text == null) text = processCommandSynonyms(command, commandName, turnSynonyms, doTurn)
+  if (text == null) text = processCommandSynonyms(command, commandName, setupEnemySynonyms, doSetupEnemy)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -525,6 +535,197 @@ function handleCreateStep(text) {
   return text
 }
 
+function handleSetupEnemyStep(text) {
+  state.show = "setupEnemy"
+
+  if (/^\s*>.*says? ".*/.test(text)) {
+    text = text.replace(/^\s*>.*says? "/, "")
+    text = text.replace(/"\s*$/, "")
+  } else if (/^\s*>\s.*/.test(text)) {
+    text = text.replace(/\s*> /, "")
+    for (var i = 0; i < info.characters.length; i++) {
+      var matchString = info.characters[i] == "" ? "You " : `${info.characters[i]} `
+      if (text.startsWith(matchString)) {
+        text = text.replace(matchString, "")
+        break
+      }
+    }
+    text = text.replace(/\.?\s*$/, "")
+  } else {
+    text = text.replace(/^\s+/, "")
+  }
+
+  if (text.toLowerCase() == "q") {
+    state.setupEnemyStep = null
+    return text
+  }
+
+  switch (state.setupEnemyStep) {
+    case 0:
+      text = text.toLowerCase();
+      if (text.startsWith("y")) state.setupEnemyStep = 100
+      else if (text.startsWith("n")) state.setupEnemyStep++
+      break
+    case 1:
+      if (text.length > 0) {
+        state.tempEnemy.name = text
+        state.setupEnemyStep++
+      }
+      return text
+    case 2:
+      if (text.length > 0) {
+        if (/^\d*d\d+((\+|-)\d+)?$/gi.test(text)) {
+          state.tempEnemy.health = calculateRoll(text)
+          state.setupEnemyStep++
+        } else if (!isNaN(text)) {
+          state.tempEnemy.health = Math.max(0, parseInt(text))
+          state.setupEnemyStep++
+        }
+      }
+      return text
+    case 3:
+      if (/^\d*d\d+((\+|-)\d+)?$/gi.test(text)) {
+        state.tempEnemy.ac = calculateRoll(text)
+        state.setupEnemyStep++
+      } else if (!isNaN(text)) {
+        state.tempEnemy.ac = Math.max(0, parseInt(text))
+        state.setupEnemyStep++
+      }
+      return text
+    case 4:
+      if (/^\d*d\d+((\+|-)\d+)?$/gi.test(text)) {
+        state.tempEnemy.damage = text
+        state.setupEnemyStep++
+      } else if (!isNaN(text)) {
+        state.tempEnemy.damage = Math.max(0, parseInt(text))
+        state.setupEnemyStep++
+      }
+      return text
+    case 5:
+      if (/^\d*d\d+((\+|-)\d+)?$/gi.test(text)) {
+        state.tempEnemy.initiative = calculateRoll(text)
+        state.setupEnemyStep++
+      } else if (!isNaN(text)) {
+        state.tempEnemy.initiative = Math.max(0, parseInt(text))
+        state.setupEnemyStep++
+      }
+      return text
+    case 6:
+      if (text.toLowerCase() == "s") {
+        log(`case6: ${state.setupEnemyStep}`)
+        state.setupEnemyStep = 500
+      }
+      else if (text.length > 0) {
+        state.tempEnemy.spells.push(text)
+        state.setupEnemyStep++
+      }
+      return text
+    case 7:
+      if (text.toLowerCase() == "s") {
+        state.setupEnemyStep = 500
+        log(`case7: ${state.setupEnemyStep}`)
+      }
+      else if (text.length > 0) {
+        state.tempEnemy.spells.push(text)
+      }
+      return text
+    case 100:
+      if (!isNaN(text)) {
+        state.setupEnemyStep = 500
+        log(`case100: ${state.setupEnemyStep}`)
+
+        switch (parseInt(text)) {
+          case 1:
+            state.tempEnemy = createEnemy("Animated Armor", calculateRoll("6d8+6"), 18, "1d6+2", calculateRoll("d20"))
+            break
+          case 2:
+            state.tempEnemy = createEnemy("Awakened Shrub", calculateRoll("2d+6"), 9, "1d4-1", calculateRoll("d20-1"))
+            break
+          case 3:
+            state.tempEnemy = createEnemy("Brigand", calculateRoll("5d8+10"), 11, "1d6+2", calculateRoll("d20"))
+            break
+          case 4:
+            state.tempEnemy = createEnemy("Black Bear", calculateRoll("3d8+6"), 11, "2d4+2", calculateRoll("d20"))
+            break
+          case 5:
+            state.tempEnemy = createEnemy("Boar", calculateRoll("2d8+2"), 11, "1d6+1", calculateRoll("d20"))
+            break
+          case 6:
+            state.tempEnemy = createEnemy("Cockatrice", calculateRoll("6d6+6"), 11, "1d4+1", calculateRoll("d20+1"), "Petrifying Bite1d4+1")
+            break
+          case 7:
+            state.tempEnemy = createEnemy("Snake", calculateRoll("2d10+2"), 12, "1d8+2", calculateRoll("d20+2"), "Poison Bite2d4+1")
+            break
+          case 8:
+            state.tempEnemy = createEnemy("Dire Wolf", calculateRoll("5d10+10"), 14, "2d6+3", calculateRoll("d20+2"))
+            break
+          case 9:
+            state.tempEnemy = createEnemy("Ghoul", calculateRoll("5d8"), 12, "2d6+2", calculateRoll("d20+2"))
+            break
+          case 10:
+            state.tempEnemy = createEnemy("Giant Centipede", calculateRoll("1d6+1"), 13, "1d4+2", calculateRoll("d20+2"))
+            break
+          case 11:
+            state.tempEnemy = createEnemy("Giant Rat", calculateRoll("2d6"), 12, "1d4+2", calculateRoll("d20+2"))
+            break
+          case 12:
+            state.tempEnemy = createEnemy("Giant Wolf Spider", calculateRoll("2d8+2"), 13, "1d6+1", calculateRoll("d20+3"), "Poison Bite1d6+8")
+            break
+          case 13:
+            state.tempEnemy = createEnemy("Gnoll", calculateRoll("5d8"), 15, "1d8+2", calculateRoll("d20+1"))
+            break
+          case 14:
+            state.tempEnemy = createEnemy("Goblin", calculateRoll("2d6"), 15, "1d6+2", calculateRoll("d20+2"))
+            break
+          case 15:
+            state.tempEnemy = createEnemy("Harpy", calculateRoll("7d8+7"), 11, "2d4+1", calculateRoll("d20+1"), "Luring Song")
+            break
+          case 16:
+            state.tempEnemy = createEnemy("Hobgoblin", calculateRoll("2d8+2"), 18, "1d8+1", calculateRoll("d20+1"))
+            break
+          case 17:
+            state.tempEnemy = createEnemy("Kobold", calculateRoll("2d6-2"), 12, "1d4+2", calculateRoll("d20+2"))
+            break
+          case 18:
+            state.tempEnemy = createEnemy("Orc", calculateRoll("2d8+6"), 13, "1d12+3", calculateRoll("d20+1"))
+            break
+          case 19:
+            state.tempEnemy = createEnemy("Satyr", calculateRoll("5d8"), 15, "1d8+2", calculateRoll("d20+3"))
+            break
+          case 20:
+            state.tempEnemy = createEnemy("Skeleton", calculateRoll("2d8+4"), 13, "1d6+2", calculateRoll("d20+2"))
+            break
+          case 21:
+            state.tempEnemy = createEnemy("Strige", calculateRoll("1d4"), 14, "1d4+3", calculateRoll("d20+1"), "Blood Drain2d4+6")
+            break
+          case 22:
+            state.tempEnemy = createEnemy("Warhorse", calculateRoll("3d10+3"), 11, "2d6+4", calculateRoll("d20+1"), "Charge")
+            break
+          case 23:
+            state.tempEnemy = createEnemy("Wolf", calculateRoll("2d+2"), 13, "2d4+2", calculateRoll("d20+2"))
+            break
+          case 24:
+            state.tempEnemy = createEnemy("Worg", calculateRoll("4d10+4"), 13, "2d6+3", calculateRoll("d20+1"))
+            break
+          case 25:
+            state.tempEnemy = createEnemy("Zombie", calculateRoll("3d8+9"), 8, "1d6+1", calculateRoll("d20+-2"))
+            break
+        }
+      }
+      return text
+    case 500:
+      state.show = null
+      state.setupEnemyStep = null
+      log(`case500: ${state.setupEnemyStep}`)
+
+      var enemy = createEnemy(state.tempEnemy.name, state.tempEnemy.health, state.tempEnemy.ac, state.tempEnemy.damage, state.tempEnemy.initiative)
+      enemy.spells = [...state.tempEnemy.spells]
+      state.enemies.push(enemy)
+      break
+  }
+  return text
+}
+
 function resetTempCharacterSkills() {
   state.tempCharacter.skills = [
     {name: "Acrobatics", stat: "Dexterity", modifier: 0},
@@ -575,6 +776,8 @@ function init() {
       ac: 10
     }
   }
+
+  if (state.tempEnemy == null) state.tempEnemy = createEnemy("enemy", 10, 10, "2d6", 10)
   if (state.characters == null) state.characters = []
   if (state.notes == null) state.notes = []
   if (state.locations == null) state.locations = []
@@ -638,6 +841,13 @@ function doCreate(command) {
   state.tempCharacter.ac = 10
   
   state.show = "create"
+  return " "
+}
+
+function doSetupEnemy(command) {
+  state.setupEnemyStep = 0
+  state.tempEnemy = createEnemy("enemy", 20, 10, "2d6", 10)
+  state.show = "setupEnemy"
   return " "
 }
 

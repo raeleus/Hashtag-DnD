@@ -36,6 +36,48 @@ const modifier = (text) => {
           break
       }
       break
+    case "setupEnemy":
+      switch (state.setupEnemyStep) {
+        case 0:
+          text += `***ENEMY CREATION***\nWould you like to use a preset enemy? (y/n/q to quit)\n`
+          break
+        case 1:
+          text += `What is the enemy's name? This must be a unique name that has no duplicates in the current encounter. Type q to quit.\n`
+          break
+        case 2:
+          text += `What is the enemy's health? This can be any positive integer or a dice roll (ie. 3d6+5). Type q to quit.\n`
+          break
+        case 3:
+          text += `What is the enemy's armor class (AC)? This can be any positive integer with 10 being easy and 20 being incredibly difficult. It can also be a dice roll (ie. 2d4+5). Type q to quit\n`
+          break
+        case 4:
+          text += `What is the enemy's damage? This can be any positive integer or a dice roll (ie. 2d6+5). The dice roll is calculated at the time of each attack. Type q to quit.\n`
+          break
+        case 5:
+          text += `What is the enemy's initiative? Initiative controls turn order. This can be any positive integer with higher numbers going first in battle. This can also be a dice roll (ie. 1d20+3). Type q to quit.\n`
+          break
+        case 6:
+          text += "Enter the name of a spell that the enemy knows. If it can target this spell at a player character, add a dice roll for the damage calculation after it (ie. Ray of Frost3d6+2). Type s to stop entering spells or type q to quit.\n"
+          break
+        case 7:
+          text += "Enter the name of another spell that the enemy knows. If it can target this spell at a player character, add a dice roll for the damage calculation after it (ie. Ray of Frost3d6+2). Type s to stop entering spells or type q to quit.\n"
+          break
+        case 100:
+          text += `What enemy preset will you choose?\nLevel 1 or lesser\n1. Animated Armor\n2. Awakened Shrub\n3. Brigand\n4. Black Bear\n5. Boar\n6. Cockatrice\n7. Snake\n8. Dire Wolf\n9. Ghoul\n10. Giant Centipede\n11. Giant Rat\n12. Giant Wolf Spider\n13. Gnoll\n14. Goblin\n15. Harpy\n16. Hobgoblin\n17. Kobold\n18. Orc\n19. Satyr\n20. Skeleton\n21. Strige\n22. Warhorse\n23. Wolf\n24. Worg\n25. Zombie\n\nEnter the number or q to quit.\n`
+          break
+        case 500:
+          var hashtag = `#addenemy "${state.tempEnemy.name}" ${state.tempEnemy.health} ${state.tempEnemy.ac} ${state.tempEnemy.damage} ${state.tempEnemy.initiative}`
+          for (var spell of state.tempEnemy.spells) {
+            hashtag += ` "${spell}"`
+          }
+
+          text += `${state.tempEnemy.name} has been created.\nType #initiative to start the battle.\nType the following hashtag to create another identical enemy like this:\n${hashtag}\n***********\n`
+          break;
+        case null:
+          text += `[Enemy creation has been aborted!]\n`
+          break
+      }
+      break
     case "bio":
       text += `*** ${possessiveName.toUpperCase()} BIO ***\n`
       text += `Class: ${character.className}\n`
