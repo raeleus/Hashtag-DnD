@@ -704,7 +704,7 @@ function handleSetupEnemyStep(text) {
             state.tempEnemy = createEnemy("Worg", calculateRoll("4d10+4"), 13, "2d6+3", "d20+1")
             break
           case 25:
-            state.tempEnemy = createEnemy("Zombie", calculateRoll("3d8+9"), 8, "1d6+1", "d20+-2")
+            state.tempEnemy = createEnemy("Zombie", calculateRoll("3d8+9"), 8, "1d6+1", "d20-2")
             break
         }
       }
