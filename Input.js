@@ -1212,7 +1212,7 @@ function doDamage(command) {
   if (arg1 == null) {
     var damage
 
-    var damageMatches = arg0.match(/\d*d\d+((\+|-)d+)?/g)
+    var damageMatches = arg0.match(/\d*d\d+((\+|-)d+)?/gi)
     if (damageMatches != null) damage = calculateRoll(damageMatches[0])
     else {
       damageMatches = arg0.match(/\d+/g)
@@ -1239,7 +1239,7 @@ function doDamage(command) {
 
     var damage
 
-    var damageMatches = arg1.match(/\d*d\d+((\+|-)d+)?/g)
+    var damageMatches = arg1.match(/\d*d\d+((\+|-)d+)?/gi)
     if (damageMatches != null) damage = calculateRoll(damageMatches[0])
     else {
       damageMatches = arg1.match(/\d+/g)
@@ -1485,7 +1485,7 @@ function doAttack(command) {
   if (state.initiativeOrder.length > 0) {
     var damage = score == 20 ? calculateRoll("2d6") + calculateRoll("2d6") : calculateRoll("2d6")
 
-    var damageMatches = targetText.match(/\d*d\d+((\+|-)d+)?/g)
+    var damageMatches = targetText.match(/\d*d\d+((\+|-)d+)?/gi)
     if (damageMatches != null) damage = score == 20 ? calculateRoll(damageMatches[0]) + calculateRoll(damageMatches[0]) : calculateRoll(damageMatches[0])
     else {
       damageMatches = targetText.match(/\d+/g)
@@ -1938,7 +1938,7 @@ function doAddEnemy(command) {
   if (health == null) {
     state.show = "none"
     return "\n[Error: Not enough parameters. See #help]\n"
-  } else if (/^\d*d\d+((\+|-)\d+)?$/g.test(health)) {
+  } else if (/^\d*d\d+((\+|-)\d+)?$/gi.test(health)) {
     health = calculateRoll(health)
   } else if (isNaN(health)) {
     state.show = "none"
@@ -1950,7 +1950,7 @@ function doAddEnemy(command) {
   if (ac == null) {
     state.show = "none"
     return "\n[Error: Not enough parameters. See #help]\n"
-  } else if (/^\d*d\d+((\+|-)\d+)?$/g.test(ac)) {
+  } else if (/^\d*d\d+((\+|-)\d+)?$/gi.test(ac)) {
     ac = calculateRoll(ac)
   } else if (isNaN(ac)) {
     state.show = "none"
@@ -1962,7 +1962,7 @@ function doAddEnemy(command) {
   if (damage == null) {
     state.show = "none"
     return "\n[Error: Not enough parameters. See #help]\n"
-  } else if (isNaN(damage) && !/^\d*d\d+((\+|-)\d+)?$/g.test(damage)) {
+  } else if (isNaN(damage) && !/^\d*d\d+((\+|-)\d+)?$/gi.test(damage)) {
     state.show = "none"
     return "\n[Error: Expected a number. See #help]\n"
   }
@@ -1971,7 +1971,7 @@ function doAddEnemy(command) {
   if (initiative == null) {
     state.show = "none"
     return "\n[Error: Not enough parameters. See #help]\n"
-  } else if (/^\d*d\d+((\+|-)\d+)?$/g.test(initiative)) {
+  } else if (/^\d*d\d+((\+|-)\d+)?$/gi.test(initiative)) {
     initiative = calculateRoll(initiative)
   } else if (isNaN(initiative)) {
     state.show = "none"
@@ -2121,7 +2121,7 @@ function doTurn(command) {
       else text += `${target.name} ${areWord} at ${target.health} health.\n`
     } else {
       var spell = activeCharacter.spells[getRandomInteger(0, activeCharacter.spells.length)]
-      var diceMatches = spell.match(/(?<=^.*)\d*d\d+((\+|-)\d+)?$/)
+      var diceMatches = spell.match(/(?<=^.*)\d*d\d+((\+|-)\d+)?$/gi)
       if (diceMatches == null) text += `${activeCharacterName} casts spell ${spell}!`
       else {
         var damage = calculateRoll(diceMatches[0])
@@ -2651,7 +2651,7 @@ function doCastSpell(command) {
   if (target != null && state.initiativeOrder.length > 0) {
     var damage = roll == 20 ? calculateRoll("2d6") + calculateRoll("2d6") : calculateRoll("2d6")
 
-    var damageMatches = target.match(/\d*d\d+((\+|-)d+)?/g)
+    var damageMatches = target.match(/\d*d\d+((\+|-)d+)?/gi)
     if (damageMatches != null) damage = roll == 20 ? calculateRoll(damageMatches[0]) + calculateRoll(damageMatches[0]) : calculateRoll(damageMatches[0])
     else {
       damageMatches = target.match(/\d+/g)
