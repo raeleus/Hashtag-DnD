@@ -712,10 +712,19 @@ function handleSetupEnemyStep(text) {
     case 500:
       state.show = null
       state.setupEnemyStep = null
-      log(`case500: ${state.setupEnemyStep}`)
 
       var enemy = createEnemy(state.tempEnemy.name, state.tempEnemy.health, state.tempEnemy.ac, state.tempEnemy.damage, state.tempEnemy.initiative)
       enemy.spells = [...state.tempEnemy.spells]
+      
+      var enemyMatches = state.enemies.filter(x => x.name.toLowerCase() == enemy.name.toLowerCase() || x.name.toLowerCase() == `${enemy.name.toLowerCase()} a`)
+      if (enemyMatches.length > 0) {
+        enemy.name = getUniqueName(enemy.name)
+        if (enemy.name.endsWith("A")) {
+          enemyMatches[0].name = enemy.name
+          enemy.name = enemy.name.substring(0, enemy.name.length - 1) + "B"
+        }
+      }
+
       state.enemies.push(enemy)
       break
   }

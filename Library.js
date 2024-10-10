@@ -886,6 +886,20 @@ function createEnemy(name, health, ac, damage, initiative, ...spells) {
   return enemy
 }
 
+function getUniqueName(name) {
+  const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  var letterIndex = 0
+
+  var newName
+  var enemyMatches
+  do {
+    newName = `${name} ${letters[letterIndex++]}`
+    enemyMatches = state.enemies.filter(x => x.name.toLowerCase() == newName.toLowerCase())
+  } while (enemyMatches.length > 0 && letterIndex < letters.length)
+
+  return newName
+}
+
 function createInitiativeOrder() {
   state.initiativeOrder = []
 
