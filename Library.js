@@ -214,7 +214,7 @@ function getAddition(rolltext) {
 }
 
 function formatRoll(text) {
-  var matches = text.match(/(?<=.*)\d*d\d+(?=.*)(\s*(\+|-)\s*\d+)?/)
+  var matches = text.match(/(?<=.*)\d*d\d+(?=.*)(\s*(\+|-)\s*\d+)?/gi)
   if (matches != null) {
     return matches[0].replaceAll(/\s*\+\s*/g, "+").replaceAll(/\s*-\s*/g, "-")
   }
@@ -864,8 +864,8 @@ function createEncounter(listName) {
     enemy.initiative = Math.floor(enemy.initiative * multiplier)
     enemy.ac = Math.floor(enemy.ac * multiplier)
 
-    damagePrefix = enemy.damage.match(/^\d*d\d*/g)[0]
-    damageSuffix = enemy.damage.match(/(?<=^\d*d\d*).*$/g)
+    damagePrefix = enemy.damage.match(/^\d*d\d*/gi)[0]
+    damageSuffix = enemy.damage.match(/(?<=^\d*d\d*).*$/gi)
     damageSuffix = damageSuffix != null ? parseInt(damageSuffix[0]) : 0
     damageSuffix += Math.floor(3 * (multiplier - 1))
     enemy.damage = damagePrefix + damageSuffix
