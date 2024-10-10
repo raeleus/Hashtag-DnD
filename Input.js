@@ -1995,14 +1995,19 @@ function doAddEnemy(command) {
     spell = getArgument(command, index++)
     if (spell != null) spells.push(spell)
   } while (spell != null)
-
-  for (var i = state.enemies.length - 1; i >= 0; i--) {
-    var enemy = state.enemies[i]
-    if (enemy.name.toLowerCase() == name.toLowerCase()) state.enemies.splice(i, 1)
-  }
   
   var enemy = createEnemy(name, health, ac, damage, initiative)
   enemy.spells = spells
+
+  var enemyMatches = state.enemies.filter(x => x.name.toLowerCase() == enemy.name.toLowerCase() || x.name.toLowerCase() == `${enemy.name.toLowerCase()} a`)
+  if (enemyMatches.length > 0) {
+    enemy.name = getUniqueName(enemy.name)
+    if (enemy.name.endsWith("A")) {
+      enemyMatches[0].name = enemy.name
+      enemy.name = enemy.name.substring(0, enemy.name.length - 1) + "B"
+    }
+  }
+
   state.enemies.push(enemy)
 
   return `[Enemy ${toTitleCase(enemy.name)} has been created]`
