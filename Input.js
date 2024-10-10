@@ -90,7 +90,6 @@ const modifier = (text) => {
   }
 
   if (state.setupEnemyStep != null) {
-    log(`setupEnemyStep:${state.setupEnemyStep}`)
     state.setupEnemyStep
     text = handleSetupEnemyStep(text)
     if (state.setupEnemyStep != null) return { text }
@@ -612,7 +611,6 @@ function handleSetupEnemyStep(text) {
       return text
     case 6:
       if (text.toLowerCase() == "s") {
-        log(`case6: ${state.setupEnemyStep}`)
         state.setupEnemyStep = 500
       }
       else if (text.length > 0) {
@@ -623,7 +621,6 @@ function handleSetupEnemyStep(text) {
     case 7:
       if (text.toLowerCase() == "s") {
         state.setupEnemyStep = 500
-        log(`case7: ${state.setupEnemyStep}`)
       }
       else if (text.length > 0) {
         state.tempEnemy.spells.push(text)
@@ -632,83 +629,82 @@ function handleSetupEnemyStep(text) {
     case 100:
       if (!isNaN(text)) {
         state.setupEnemyStep = 500
-        log(`case100: ${state.setupEnemyStep}`)
 
         switch (parseInt(text)) {
           case 1:
-            state.tempEnemy = createEnemy("Animated Armor", calculateRoll("6d8+6"), 18, "1d6+2", calculateRoll("d20"))
+            state.tempEnemy = createEnemy("Animated Armor", calculateRoll("6d8+6"), 18, "1d6+2", "d20")
             break
           case 2:
-            state.tempEnemy = createEnemy("Awakened Shrub", calculateRoll("2d+6"), 9, "1d4-1", calculateRoll("d20-1"))
+            state.tempEnemy = createEnemy("Awakened Shrub", calculateRoll("2d+6"), 9, "1d4-1", "d20-1")
             break
           case 3:
-            state.tempEnemy = createEnemy("Brigand", calculateRoll("5d8+10"), 11, "1d6+2", calculateRoll("d20"))
+            state.tempEnemy = createEnemy("Brigand", calculateRoll("5d8+10"), 11, "1d6+2", "d20")
             break
           case 4:
-            state.tempEnemy = createEnemy("Black Bear", calculateRoll("3d8+6"), 11, "2d4+2", calculateRoll("d20"))
+            state.tempEnemy = createEnemy("Black Bear", calculateRoll("3d8+6"), 11, "2d4+2", "d20")
             break
           case 5:
-            state.tempEnemy = createEnemy("Boar", calculateRoll("2d8+2"), 11, "1d6+1", calculateRoll("d20"))
+            state.tempEnemy = createEnemy("Boar", calculateRoll("2d8+2"), 11, "1d6+1", "d20")
             break
           case 6:
-            state.tempEnemy = createEnemy("Cockatrice", calculateRoll("6d6+6"), 11, "1d4+1", calculateRoll("d20+1"), "Petrifying Bite1d4+1")
+            state.tempEnemy = createEnemy("Cockatrice", calculateRoll("6d6+6"), 11, "1d4+1", "d20+1", "Petrifying Bite1d4+1")
             break
           case 7:
-            state.tempEnemy = createEnemy("Snake", calculateRoll("2d10+2"), 12, "1d8+2", calculateRoll("d20+2"), "Poison Bite2d4+1")
+            state.tempEnemy = createEnemy("Snake", calculateRoll("2d10+2"), 12, "1d8+2", "d20+2", "Poison Bite2d4+1")
             break
           case 8:
-            state.tempEnemy = createEnemy("Dire Wolf", calculateRoll("5d10+10"), 14, "2d6+3", calculateRoll("d20+2"))
+            state.tempEnemy = createEnemy("Dire Wolf", calculateRoll("5d10+10"), 14, "2d6+3", "d20+2")
             break
           case 9:
-            state.tempEnemy = createEnemy("Ghoul", calculateRoll("5d8"), 12, "2d6+2", calculateRoll("d20+2"))
+            state.tempEnemy = createEnemy("Ghoul", calculateRoll("5d8"), 12, "2d6+2", "d20+2")
             break
           case 10:
-            state.tempEnemy = createEnemy("Giant Centipede", calculateRoll("1d6+1"), 13, "1d4+2", calculateRoll("d20+2"))
+            state.tempEnemy = createEnemy("Giant Centipede", calculateRoll("1d6+1"), 13, "1d4+2", "d20+2")
             break
           case 11:
-            state.tempEnemy = createEnemy("Giant Rat", calculateRoll("2d6"), 12, "1d4+2", calculateRoll("d20+2"))
+            state.tempEnemy = createEnemy("Giant Rat", calculateRoll("2d6"), 12, "1d4+2", "d20+2")
             break
           case 12:
-            state.tempEnemy = createEnemy("Giant Wolf Spider", calculateRoll("2d8+2"), 13, "1d6+1", calculateRoll("d20+3"), "Poison Bite1d6+8")
+            state.tempEnemy = createEnemy("Giant Wolf Spider", calculateRoll("2d8+2"), 13, "1d6+1", "d20+3", "Poison Bite1d6+8")
             break
           case 13:
-            state.tempEnemy = createEnemy("Gnoll", calculateRoll("5d8"), 15, "1d8+2", calculateRoll("d20+1"))
+            state.tempEnemy = createEnemy("Gnoll", calculateRoll("5d8"), 15, "1d8+2", "d20+1")
             break
           case 14:
-            state.tempEnemy = createEnemy("Goblin", calculateRoll("2d6"), 15, "1d6+2", calculateRoll("d20+2"))
+            state.tempEnemy = createEnemy("Goblin", calculateRoll("2d6"), 15, "1d6+2", "d20+2")
             break
           case 15:
-            state.tempEnemy = createEnemy("Harpy", calculateRoll("7d8+7"), 11, "2d4+1", calculateRoll("d20+1"), "Luring Song")
+            state.tempEnemy = createEnemy("Harpy", calculateRoll("7d8+7"), 11, "2d4+1", "d20+1", "Luring Song")
             break
           case 16:
-            state.tempEnemy = createEnemy("Hobgoblin", calculateRoll("2d8+2"), 18, "1d8+1", calculateRoll("d20+1"))
+            state.tempEnemy = createEnemy("Hobgoblin", calculateRoll("2d8+2"), 18, "1d8+1", "d20+1")
             break
           case 17:
-            state.tempEnemy = createEnemy("Kobold", calculateRoll("2d6-2"), 12, "1d4+2", calculateRoll("d20+2"))
+            state.tempEnemy = createEnemy("Kobold", calculateRoll("2d6-2"), 12, "1d4+2", "d20+2")
             break
           case 18:
-            state.tempEnemy = createEnemy("Orc", calculateRoll("2d8+6"), 13, "1d12+3", calculateRoll("d20+1"))
+            state.tempEnemy = createEnemy("Orc", calculateRoll("2d8+6"), 13, "1d12+3", "d20+1")
             break
           case 19:
-            state.tempEnemy = createEnemy("Satyr", calculateRoll("5d8"), 15, "1d8+2", calculateRoll("d20+3"))
+            state.tempEnemy = createEnemy("Satyr", calculateRoll("5d8"), 15, "1d8+2", "d20+3")
             break
           case 20:
-            state.tempEnemy = createEnemy("Skeleton", calculateRoll("2d8+4"), 13, "1d6+2", calculateRoll("d20+2"))
+            state.tempEnemy = createEnemy("Skeleton", calculateRoll("2d8+4"), 13, "1d6+2", "d20+2")
             break
           case 21:
-            state.tempEnemy = createEnemy("Strige", calculateRoll("1d4"), 14, "1d4+3", calculateRoll("d20+1"), "Blood Drain2d4+6")
+            state.tempEnemy = createEnemy("Strige", calculateRoll("1d4"), 14, "1d4+3", "d20+1", "Blood Drain2d4+6")
             break
           case 22:
-            state.tempEnemy = createEnemy("Warhorse", calculateRoll("3d10+3"), 11, "2d6+4", calculateRoll("d20+1"), "Charge")
+            state.tempEnemy = createEnemy("Warhorse", calculateRoll("3d10+3"), 11, "2d6+4", "d20+1", "Charge")
             break
           case 23:
-            state.tempEnemy = createEnemy("Wolf", calculateRoll("2d+2"), 13, "2d4+2", calculateRoll("d20+2"))
+            state.tempEnemy = createEnemy("Wolf", calculateRoll("2d+2"), 13, "2d4+2", "d20+2")
             break
           case 24:
-            state.tempEnemy = createEnemy("Worg", calculateRoll("4d10+4"), 13, "2d6+3", calculateRoll("d20+1"))
+            state.tempEnemy = createEnemy("Worg", calculateRoll("4d10+4"), 13, "2d6+3", "d20+1")
             break
           case 25:
-            state.tempEnemy = createEnemy("Zombie", calculateRoll("3d8+9"), 8, "1d6+1", calculateRoll("d20+-2"))
+            state.tempEnemy = createEnemy("Zombie", calculateRoll("3d8+9"), 8, "1d6+1", "d20+-2")
             break
         }
       }
@@ -2004,12 +2000,15 @@ function doAddEnemy(command) {
 }
 
 function doInitiative(command) {
-  var battleHasStarted = state.initiativeOrder.length != 0
-  
-  if (!battleHasStarted) for (character of state.characters) {
+  for (character of state.characters) {
     var stat = character.stats.find(element => element.name.toLowerCase() == "dexterity")
-    if (stat == null) character.initiative = calculateRoll("d20")
-    else character.initiative = calculateRoll("d20") + getModifier(stat.value)
+    if (stat == null) character.calculatedInitiative = calculateRoll("d20")
+    else character.calculatedInitiative = calculateRoll("d20") + getModifier(stat.value)
+  }
+
+  for (enemy of state.enemies) {
+    if (isNaN(enemy.initiative)) enemy.calculatedInitiative = calculateRoll(enemy.initiative)
+    else enemy.calculatedInitiative = enemy.initiative
   }
 
   if (state.enemies.length == 0) {
@@ -2025,7 +2024,7 @@ function doInitiative(command) {
   }
 
   state.show = "initiative"
-  return battleHasStarted ? " " : "\nBattle has commenced!\n"
+  return "\nBattle has commenced!\n"
 }
 
 function doFlee(command) {
@@ -2105,7 +2104,7 @@ function doTurn(command) {
 
   if (activeCharacter.className != null) {
     state.show = "none"
-    return `\nIt is ${possessiveName} turn\n`
+    return `\n[It is ${possessiveName} turn]\n`
   } else {
     var characters = state.characters.filter(x => x.health > 0)
     var target = characters[getRandomInteger(0, characters.length - 1)]
@@ -2117,7 +2116,7 @@ function doTurn(command) {
       var damage = isNaN(activeCharacter.damage) ? calculateRoll(activeCharacter.damage) : activeCharacter.damage
       target.health = Math.max(target.health - damage, 0)
 
-      text += `${activeCharacterName} attacks ${target.name} for ${damage} damage! \n`
+      text += `${activeCharacterName} attacks ${targetNameAdjustedCase} for ${damage} damage! \n`
       if (target.health == 0) text += `${target.name} ${areWord} unconscious!\n`
       else text += `${target.name} ${areWord} at ${target.health} health.\n`
     } else {

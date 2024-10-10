@@ -281,7 +281,7 @@ const modifier = (text) => {
       } else {
         var index = 0
         for (var character of state.initiativeOrder) {
-          text += `${++index}. ${character.name} (Initiative: ${character.initiative})\n`
+          text += `${++index}. ${character.name} (Initiative: ${character.calculatedInitiative})\n`
         }
       }
 
