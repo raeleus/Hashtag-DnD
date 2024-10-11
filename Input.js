@@ -2030,7 +2030,7 @@ function doInitiative(command) {
     return "\n[Error: No enemies! Call #addenemy or #generateencounter]\n"
   }
 
-  if (!battleHasStarted)  createInitiativeOrder()
+  createInitiativeOrder()
 
   if (state.initiativeOrder.length == 0) {
     state.show = "none"
