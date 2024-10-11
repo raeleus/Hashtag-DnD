@@ -844,6 +844,506 @@ function createEncounter(listName) {
       break
     case "easy":
       if (encounter.cr == null) encounter.cr = 1
+      multiplier = 1 + (encounter.cr - 1) / 10
+      switch (getRandomInteger(0, 99)) {
+        case 0:
+          encounter.text = "There is a curious contraption encasing what appears to be a small treasure chest."
+          break
+        case 1:
+          encounter.text = "A ruined wall lined with a series of holes runs parallel to you. The distinct outline of pressure plates mark the way ahead."
+          break
+        case 2:
+          encounter.text = "A rotting corpse lays here. It appears to be of an adventurer like you."
+          break
+        case 3:
+          encounter.text = "A hive of bees hangs not too far from your location."
+          break
+        case 4:
+          encounter.text = "A dog is sitting on its hind legs, looking at you quizzically."
+          break
+        case 5:
+          encounter.text = "A dog is sitting on its hind legs, looking at you quizzically."
+          break
+        case 6:
+          encounter.text = "You notice runes written in a spiralling pattern on the ground."
+          break
+        case 7:
+          encounter.text = "Bones are laid out in a geometric pattern. It appears to be a site of a mysterious ritual."
+          break
+        case 8:
+          encounter.text = "The unmistakable sound of ticking can be heard here."
+          break
+        case 9:
+          encounter.text = "You see a chest with a broken padlock placed conspicuously in the clearing."
+          break
+        case 10:
+          encounter.text = "A warrior close to death gestures for you to draw near."
+          break
+        case 11:
+          encounter.text = "A shrine built to honor a forgotten god has been erected here."
+          break
+        case 12:
+          encounter.text = "Evidence of a struggle is apparent. Marks line the ground followed by a splatter of blood."
+          break
+        case 13:
+          encounter.text = "Tracks lead away from you. Someone has been here before..."
+          break
+        case 14:
+          encounter.text = "An old suit of armor lies here. Nothing remains inside it except the distinct the smell of blood and charred meat."
+          break
+        case 15:
+          encounter.text = "A glittering in the distance catches your eye."
+          break
+        case 16:
+          encounter.text = "A spread of food is arranged on tables before you. An absolute feast! Though it is very out of place here..."
+          break
+        case 17:
+          encounter.text = "\"Oink oink!\" How did a pig get here?"
+          break
+        case 18:
+          encounter.text = "Gold coins are strewn about. Who do they belong to?"
+          break
+        case 19:
+          encounter.text = "A mysterious golden sprout is growing here."
+          break
+        case 20:
+          encounter.text = "A gnome merchant greets you with a sly smile."
+          break
+        case 21:
+          encounter.text = "A curious anvil and hammer are situated here. The markings in its cold metal must have some significance."
+          break
+        case 22:
+          encounter.text = "A sudden feeling of dread washes over you. A dark presence looms in this place."
+          break
+        case 23:
+          encounter.text = "A grave of what appears to be a great wizard is before you."
+          break
+        case 24:
+          encounter.text = "A cheap box has been thrown to the side. An apparent discard."
+          break
+        case 25:
+          encounter.text = "A sack of rotten fruit is stinking up the place."
+          break
+        case 26:
+          encounter.text = "The floor is covered with mushrooms. What are their properties?"
+          break
+        case 27:
+          encounter.text = "You hear the sound of flowing water."
+          break
+        case 28:
+          encounter.text = "Barrels of wine are gathered in rows."
+          break
+        case 29:
+          encounter.text = "The abandoned laboratory of an alchemist resides here."
+          break
+        case 30:
+          encounter.text = "Various herbs and alchemical ingredients are arranged in neat pouches. Vials with unknown ingredients are aligned across a tabletop."
+          break
+        case 31:
+          encounter.text = "A library of ancient texts resides in this place."
+          break
+        case 32:
+          encounter.text = "You encounter a frightened young girl who is incredibly lost."
+          break
+        case 33:
+          encounter.text = "An ornate chest is set on top of pedestal. The locking mechanism is unlike anything you've seen before."
+          break
+        case 34:
+          encounter.text = "The casket of a long dead king lays upon a mound. It's reinforced with steel and the lid looks incredibly heavy."
+          break
+        case 35:
+          encounter.text = "In the center of the open space before you is a glass orb. It seems to levitate by some other worldly power."
+          break
+        case 36:
+          encounter.text = "A traveling bard waves at you. \"Hello there!\""
+          break
+        case 37:
+          encounter.text = "A person of royal distinction is here. You recognize the crest."
+          break
+        case 38:
+          encounter.text = "A skeleton warrior is alerted by your presence. \"Wait!\" it pleads with its harsh, gravely voice."
+          break
+        case 39:
+          encounter.text = "A deer! It's a deer! And it's not afraid of you. How peculiar!"
+          break
+        case 40:
+          encounter.text = "A pool of water is at the center of this place."
+          break
+        case 41:
+          encounter.text = "You are approached by a royal souting party. \"What are you doing here?\""
+          break
+        case 42:
+          encounter.text = "You are ambushed by a group of forest elves! However, their serious faces soften when they realize who you are."
+          break
+        case 43:
+          encounter.text = "A demonic blacksmith suddenly appears before you in a puff of smoke. What does he want?"
+          break
+        case 44:
+          encounter.text = "A strange tree is growing right through the ground. It seems to be moving as if a silent wind is blowing through it."
+          break
+        case 45:
+          encounter.text = "A wild horse seems to be trapped here."
+          break
+        case 46:
+          encounter.text = "You think you hear the laughter of children, but you don't see anyone. It could just be your imagination."
+          break
+        case 47:
+          encounter.text = "Broken pottery is littered all over this place."
+          break
+        case 48:
+          encounter.text = "This was once a prison. Iron bars and the ruins of gated walls abound."
+          break
+        case 49:
+          encounter.text = "It looks like there was a cave in. Through the rubble you hear the faint sound of someone calling out."
+          break
+        case 50:
+          encounter.text = "A vengeful spirit is disturbed by your presence!"
+          encounter.enemies = [
+            createEnemy("Specter", calculateRoll("5d8"), 12, "1d10", "d20+2")
+          ]
+          break
+        case 51:
+          encounter.text = "An awakened shrub shifts towards you. It seems like it was guarding this place."
+          encounter.enemies = [
+            createEnemy("Awakened Shrub", calculateRoll("2d+6"), 9, "1d4-1", "d20-1")
+          ]
+          break
+        case 52:
+          encounter.text = "Brigands are attacking!"
+          encounter.enemies = [
+            createEnemy("Brigand A", calculateRoll("5d8+10"), 11, "1d6+2", "d20"),
+            createEnemy("Brigand B", calculateRoll("5d8+10"), 11, "1d6+2", "d20"),
+            createEnemy("Brigand C", calculateRoll("5d8+10"), 11, "1d6+2", "d20")
+          ]
+          break
+        case 53:
+          encounter.text = "A wounded black bear is here. Baring its teeth, it seems to consider you as a threat."
+          encounter.enemies = [
+            createEnemy("Black Bear", calculateRoll("3d8+6"), 11, "2d4+2", "d20")
+          ]
+          break
+        case 54:
+          encounter.text = "An angry boar is charging at you!"
+          encounter.enemies = [
+            createEnemy("Boar", calculateRoll("2d8+2"), 11, "1d6+1", "d20")
+          ]
+          break
+        case 55:
+          encounter.text = "Two cockatrices have somehow flanked you on both sides. Prepare for battle!"
+          encounter.enemies = [
+            createEnemy("Cockatrice A", calculateRoll("6d6+6"), 11, "1d4+1", "d20+1", "Petrifying Bite1d4+1"),
+            createEnemy("Cockatrice B", calculateRoll("6d6+6"), 11, "1d4+1", "d20+1", "Petrifying Bite1d4+1")
+          ]
+          break
+        case 56:
+          encounter.text = "You've fallen into a pit of snakes. A group of them slither up to you, winding up to strike."
+          encounter.enemies = [
+            createEnemy("Snake", calculateRoll("2d10+2"), 12, "1d8+2", "d20+2", "Poison Bite2d4+1")
+          ]
+          break
+        case 57:
+          encounter.text = "A dire wolf has caught your scent. It's going to make its move!"
+          encounter.enemies = [
+            createEnemy("Dire Wolf", calculateRoll("5d10+10"), 14, "2d6+3", "d20+2")
+          ]
+          break
+        case 58:
+          encounter.text = "The remarkable pattern on the skin of this giant frog is a clear indication that it's poisonous. Watch out!"
+          encounter.enemies = [
+            createEnemy("Giant Frog", calculateRoll("4d8"), 11, "1d6+1", "d20+1", "Poison2d4+1")
+          ]
+          break
+        case 59:
+          encounter.text = "A very intricate gargoyle statue has been placed here as a centerpiece in an altar. Without warning, it turns its head toward you and its lips turn upwards into an evil grin."
+          encounter.enemies = [
+            createEnemy("Gargoyle", calculateRoll("7d8+21"), 15, "1d6+2", "d20")
+          ]
+          break
+        case 60:
+          encounter.text = "You have disturbed an ancient burial ground! Ghouls have risen from their eternal sleep."
+          encounter.enemies = [
+            createEnemy("Ghoul A", calculateRoll("5d8"), 12, "2d6+2", "d20+2"),
+            createEnemy("Ghoul B", calculateRoll("5d8"), 12, "2d6+2", "d20+2"),
+            createEnemy("Ghoul C", calculateRoll("5d8"), 12, "2d6+2", "d20+2"),
+            createEnemy("Ghoul D", calculateRoll("5d8"), 12, "2d6+2", "d20+2")
+          ]
+          break
+        case 61:
+          encounter.text = "A giant badger has claimed this plot of land and he'll be damned if he lets the likes of you tread all over it."
+          encounter.enemies = [
+            createEnemy("Giant Badger", calculateRoll("2d8+4"), 10, "1d6+1", "d20")
+          ]
+          break
+        case 62:
+          encounter.text = "A giant centipede crawls into view. Its terrifying shriek makes your skin crawl. Prepare yourself!"
+          encounter.enemies = [
+            createEnemy("Giant Centipede", calculateRoll("1d6+1"), 13, "1d4+2", "d20+2")
+          ]
+          break
+        case 63:
+          encounter.text = "A feral pack of hyenas have nested here. They smell your blood..."
+          encounter.enemies = [
+            createEnemy("Hyena A", calculateRoll("1d8+1"), 11, "1d6", "d20+1"),
+            createEnemy("Hyena B", calculateRoll("1d8+1"), 11, "1d6", "d20+1"),
+            createEnemy("Giant Hyena", calculateRoll("6d10+12"), 12, "2d6+3", "d20+2")
+          ]
+          break
+        case 64:
+          encounter.text = "A swarm of rats are sweeping across the ground and heading toward you!"
+          encounter.enemies = [
+            createEnemy("Swarm of Rats", calculateRoll("7d8-7"), 10, "2d6", "d20")
+          ]
+          break
+        case 65:
+          encounter.text = "A group of gnolls have coalesced here. Your arrival has activated their senses."
+          encounter.enemies = [
+            createEnemy("Gnoll A", calculateRoll("5d8"), 15, "1d8+2", "d20+1"),
+            createEnemy("Gnoll B", calculateRoll("5d8"), 15, "1d8+2", "d20+1"),
+            createEnemy("Gnoll C", calculateRoll("5d8"), 15, "1d8+2", "d20+1")
+          ]
+          break
+        case 66:
+          encounter.text = "The group of goblins are as surprised to see you as you are to see them. Get ready!"
+          encounter.enemies = [
+            createEnemy("Goblin A", calculateRoll("2d6"), 15, "1d6+2", "d20+2"),
+            createEnemy("Goblin B", calculateRoll("2d6"), 15, "1d6+2", "d20+2"),
+            createEnemy("Goblin C", calculateRoll("2d6"), 15, "1d6+2", "d20+2"),
+            createEnemy("Goblin D", calculateRoll("2d6"), 15, "1d6+2", "d20+2")
+          ]
+          break
+        case 67:
+          encounter.text = "A sweet lullaby carries through the air. You are enchanted by its melody. But wait! It's a harpy's luring song. Resist!"
+          encounter.enemies = [
+            createEnemy("Harpy", calculateRoll("7d8+7"), 11, "2d4+1", "d20+1", "Luring Song")
+          ]
+          break
+        case 68:
+          encounter.text = "You spot a hobgoblin crouched over his battle axe. As he sharpens its blade, he menaces at you, \"You shouldn't have come here, meat.\""
+          encounter.enemies = [
+            createEnemy("Hobgoblin", calculateRoll("2d8+2"), 18, "1d8+1", "d20+1")
+          ]
+          break
+        case 69:
+          encounter.text = "A kobold sticks his head out from barrel. Aware of your presence, it signals to the rest of the pack."
+          encounter.enemies = [
+            createEnemy("Kobold A", calculateRoll("2d6-2"), 12, "1d4+2", "d20+2"),
+            createEnemy("Kobold B", calculateRoll("2d6-2"), 12, "1d4+2", "d20+2"),
+            createEnemy("Kobold C", calculateRoll("2d6-2"), 12, "1d4+2", "d20+2"),
+            createEnemy("Kobold D", calculateRoll("2d6-2"), 12, "1d4+2", "d20+2")
+          ]
+          break
+        case 70:
+          encounter.text = "A magically entranced Satyr has come into view. Some dark force is compelling it to attack you!"
+          encounter.enemies = [
+            createEnemy("Satyr", calculateRoll("5d8"), 15, "1d8+2", "d20+3")
+          ]
+          break
+        case 71:
+          encounter.text = "A skeleton archer has the drop on you! It looses a bolt that very narrowly misses its mark. Get ready for a fight!"
+          encounter.enemies = [
+            createEnemy("Skeleton", calculateRoll("2d8+4"), 13, "1d6+2", "d20+2")
+          ]
+          break
+        case 72:
+          encounter.text = "A group of stirge descend on you. Their stink should have given them away."
+          encounter.enemies = [
+            createEnemy("Strige A", calculateRoll("1d4"), 14, "1d4+3", "d20+1", "Blood Drain2d4+6"),
+            createEnemy("Strige B", calculateRoll("1d4"), 14, "1d4+3", "d20+1", "Blood Drain2d4+6"),
+            createEnemy("Strige C", calculateRoll("1d4"), 14, "1d4+3", "d20+1", "Blood Drain2d4+6")
+          ]
+          break
+        case 73:
+          encounter.text = "You have never seen a Worg this large before. Its snarling teeth glint in the light."
+          encounter.enemies = [
+            createEnemy("Worg", calculateRoll("4d10+4"), 13, "2d6+3", "d20+1")
+          ]
+          break
+        case 74:
+          encounter.text = "Everywhere you look... Zombies! You are surrounded as they shuffle towards you, drawn by the heat of your flesh."
+          encounter.enemies = [
+            createEnemy("Zombie A", calculateRoll("3d8+9"), 8, "1d6+1", "d20-2"),
+            createEnemy("Zombie B", calculateRoll("3d8+9"), 8, "1d6+1", "d20-2"),
+            createEnemy("Zombie C", calculateRoll("3d8+9"), 8, "1d6+1", "d20-2"),
+            createEnemy("Zombie D", calculateRoll("3d8+9"), 8, "1d6+1", "d20-2"),
+            createEnemy("Zombie E", calculateRoll("3d8+9"), 8, "1d6+1", "d20-2")
+          ]
+          break
+        case 75:
+          encounter.text = "Your arrival has interrupted a dark acolyte's ritual. His eyes go steely as he plans his retribution."
+          encounter.enemies = [
+            createEnemy("Dark Acolyte", calculateRoll("2d8"), 10, "1d4", "d20", "Sacred Flame2d6", "Bless")
+          ]
+          break
+        case 76:
+          encounter.text = "A bandit duo eyes your gear. A combination of greed and desperation drive them to attack you."
+          encounter.enemies = [
+            createEnemy("Bandit A", calculateRoll("5d8+10"), 11, "1d6+2", "d20"),
+            createEnemy("Bandit B", calculateRoll("5d8+10"), 11, "1d6+2", "d20")
+          ]
+          break
+        case 77:
+          encounter.text = "A crowd of cultists walk into view. Their aim is clear: to sacrifice you as an offering to their god. Attack before you are torn limb from limb!"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), 8, "damage", "d20+")
+          ]
+          break
+        case 78:
+          encounter.text = "A gnoll has strayed from its herd. You take the opportunity to attack before it alerts the others."
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), 8, "damage", "d20+")
+          ]
+          break
+        case 79:
+          encounter.text = "A majestic white wolf has been tracking you for some time. It can no longer ignore its hunger pangs and begins racing at you."
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), 8, "damage", "d20+")
+          ]
+          break
+        case 80:
+          encounter.text = "An orc looks up from his fire. You're spotted!"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), 8, "damage", "d20+")
+          ]
+          break
+        case 81:
+          encounter.text = "A wyrmling is spotted circling around you. It's coming in for an attack!"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), 8, "damage", "d20+")
+          ]
+          break
+        case 82:
+          encounter.text = "A pack of death dogs are directly ahead. There is no avoiding their dark gaze. Prepare for combat!"
+          encounter.enemies = [
+            createEnemy("Death Dog A", calculateRoll("6d8+12"), 12, "1d6+2", "d20+2", "Diseased Bite2d6+2"),
+            createEnemy("Death Dog B", calculateRoll("6d8+12"), 12, "1d6+2", "d20+2", "Diseased Bite2d6+2"),
+            createEnemy("Death Dog C", calculateRoll("6d8+12"), 12, "1d6+2", "d20+2", "Diseased Bite2d6+2"),
+            createEnemy("Death Dog D", calculateRoll("6d8+12"), 12, "1d6+2", "d20+2", "Diseased Bite2d6+2")
+          ]
+          break
+        case 83:
+          encounter.text = "The deep gnome mercenary looks at you with a sinister scowl. \"I don't very much like you.\" He brandishes a sword and prepares to attack you."
+          encounter.enemies = [
+            createEnemy("Deep Gnome Merc", calculateRoll("3d6+6"), 15, "1d8+2", "d20+2", "Poison Dart1d4+2", "Stone Camoflage")
+          ]
+          break
+        case 84:
+          encounter.text = "That stink! What is it? A dretch raises its head, clearly alarmed by your presence. It's going to rush you!"
+          encounter.enemies = [
+            createEnemy("Dretch", calculateRoll("4d6+4"), 11, "2d4", "d20")
+          ]
+          break
+        case 85:
+          encounter.text = "A drow raider! Take cover!"
+          encounter.enemies = [
+            createEnemy("Drow Raider", calculateRoll("3d8"), 15, "1d6+2", "d20+2")
+          ]
+          break
+        case 86:
+          encounter.text = "It's not your imagination: a gray ooze is seeping through the cracks. It coalesces into a hideous aberration before you."
+          encounter.enemies = [
+            createEnemy("Gray Ooze", calculateRoll("3d8+9"), 8, "1d6+1", "d20-2", "Corrode Metal")
+          ]
+          break
+        case 87:
+          encounter.text = "You catch a Grimlock tearing meat from the leg of some hapless victim. It drops it immediately once it spots you."
+          encounter.enemies = [
+            createEnemy("Grimlock", calculateRoll("2d8+2"), 11, "1d4+3", "d20+1")
+          ]
+          break
+        case 88:
+          encounter.text = "Who summoned these homunculi? They don't look friendly. Suddenly, a loud shriek!"
+          encounter.enemies = [
+            createEnemy("Homunculus A", calculateRoll("2d4"), 13, "1d10", "d20+2", "Poison Bite1d10"),
+            createEnemy("Homunculus B", calculateRoll("2d4"), 13, "1d10", "d20+2", "Poison Bite1d10"),
+            createEnemy("Homunculus C", calculateRoll("2d4"), 13, "1d10", "d20+2", "Poison Bite1d10"),
+            createEnemy("Homunculus D", calculateRoll("2d4"), 13, "1d10", "d20+2", "Poison Bite1d10")
+          ]
+          break
+        case 89:
+          encounter.text = "A group of lemures block the way. Their hideous forms disgust you."
+          encounter.enemies = [
+            createEnemy("Lemure", calculateRoll("3d8"), 7, "1d4", "d20-3")
+          ]
+          break
+        case 90:
+          encounter.text = "The sulfur stink reaches your nose first, then the sight of them: a group of Magmin are on approach."
+          encounter.enemies = [
+            createEnemy("Magmin A", calculateRoll("2d6+2"), 14, "2d6", "d20+2", "Fire Touch3d6"),
+            createEnemy("Magmin B", calculateRoll("2d6+2"), 14, "2d6", "d20+2", "Fire Touch3d6"),
+            createEnemy("Magmin C", calculateRoll("2d6+2"), 14, "2d6", "d20+2", "Fire Touch3d6")
+          ]
+          break
+        case 91:
+          encounter.text = "Out of the corner of your eye you spot a dark figure moving. \"Quasits!\" You prepare for the ambush."
+          encounter.enemies = [
+            createEnemy("Quasit A", calculateRoll("3d4"), 13, "1d4+3", "d20+", "Invisibility", "Scare"),
+            createEnemy("Quasit B", calculateRoll("3d4"), 13, "1d4+3", "d20+", "Invisibility", "Scare"),
+            createEnemy("Quasit C", calculateRoll("3d4"), 13, "1d4+3", "d20+", "Invisibility", "Scare"),
+            createEnemy("Quasit D", calculateRoll("3d4"), 13, "1d4+3", "d20+", "Invisibility", "Scare"),
+            createEnemy("Quasit E", calculateRoll("3d4"), 13, "1d4+3", "d20+", "Invisibility", "Scare")
+          ]
+          break
+        case 92:
+          encounter.text = "A rust monster! A killing blow will corrode any common weapons."
+          encounter.enemies = [
+            createEnemy("Rust Monster", calculateRoll("5d8+5"), 14, "1d8+1", "d20+1")
+          ]
+          break
+        case 93:
+          encounter.text = "An undead specter reveals itself. It's malevolence can be felt in your bones."
+          encounter.enemies = [
+            createEnemy("Specter", calculateRoll("5d8"), 12, "3d6", "d20+2", "Life Drain3d6", "Incorporeal Movement")
+          ]
+          break
+        case 94:
+          encounter.text = "Enchanted weasels are commanded to attack you. Oh god, they're everywhere!"
+          encounter.enemies = [
+            createEnemy("Weasel A", calculateRoll("1d4-1"), 13, "1", "d20+3"),
+            createEnemy("Weasel B", calculateRoll("1d4-1"), 13, "1", "d20+3"),
+            createEnemy("Weasel C", calculateRoll("1d4-1"), 13, "1", "d20+3"),
+            createEnemy("Weasel D", calculateRoll("1d4-1"), 13, "1", "d20+3"),
+            createEnemy("Weasel E", calculateRoll("1d4-1"), 13, "1", "d20+3"),
+            createEnemy("Weasel F", calculateRoll("1d4-1"), 13, "1", "d20+3"),
+            createEnemy("Weasel G", calculateRoll("1d4-1"), 13, "1", "d20+3"),
+            createEnemy("Weasel H", calculateRoll("1d4-1"), 13, "1", "d20+3"),
+            createEnemy("Weasel I", calculateRoll("1d4-1"), 13, "1", "d20+3"),
+            createEnemy("Weasel J", calculateRoll("1d4-1"), 13, "1", "d20+3")
+          ]
+          break
+        case 95:
+          encounter.text = "An awakened tree lumbers toward you. Apparently, this is sacred ground that you tarnish with your presence."
+          encounter.enemies = [
+            createEnemy("Awakened Tree", calculateRoll("7d12+14"), 13, "3d6+4", "d20-2")
+          ]
+          break
+        case 96:
+          encounter.text = "A centaur is leading up to you. It may have been tracking your for some time. Get ready!"
+          encounter.enemies = [
+            createEnemy("Centaur", calculateRoll("6d10+12"), 12, "2d6+4", "d20+2", "Charge3d6")
+          ]
+          break
+        case 97:
+          encounter.text = "A gelatinous cube occupies this space. It's wobbling hatefully toward you!"
+          encounter.enemies = [
+            createEnemy("Gelatinous Cube", calculateRoll("8d10+40"), 6, "3d6", "d20-4", "Engulf3d6")
+          ]
+          break
+        case 98:
+          encounter.text = "A ghast curls its disgusting tongue, tasting the air. Suddenly, it turns toward you!"
+          encounter.enemies = [
+            createEnemy("Ghast", calculateRoll("8d8"), 13, "2d8+3", "d20+3")
+          ]
+          break
+        case 99:
+          encounter.text = "An orc war party comes upon you!"
+          encounter.enemies = [
+            createEnemy("Orc A", calculateRoll("2d8+6"), 13, "1d12+3", "d20+1"),
+            createEnemy("Orc B", calculateRoll("2d8+6"), 13, "1d12+3", "d20+1"),
+            createEnemy("Orc C", calculateRoll("2d8+6"), 13, "1d12+3", "d20+1"),
+            createEnemy("Orc D", calculateRoll("2d8+6"), 13, "1d12+3", "d20+1")
+          ]
+          break
+      }
       break
     case "medium":
       if (encounter.cr == null) encounter.cr = 5
@@ -861,7 +1361,6 @@ function createEncounter(listName) {
 
   for (var enemy of encounter.enemies) {
     enemy.health = Math.floor(enemy.health * multiplier)
-    enemy.initiative = Math.floor(enemy.initiative * multiplier)
     enemy.ac = Math.floor(enemy.ac * multiplier)
 
     damagePrefix = enemy.damage.match(/^\d*d\d*/gi)[0]
@@ -869,6 +1368,12 @@ function createEncounter(listName) {
     damageSuffix = damageSuffix != null ? parseInt(damageSuffix[0]) : 0
     damageSuffix += Math.floor(3 * (multiplier - 1))
     enemy.damage = damagePrefix + damageSuffix
+
+    initiativePrefix = enemy.initiative.match(/^\d*d\d*/gi)[0]
+    initiativeSuffix = enemy.initiative.match(/(?<=^\d*d\d*).*$/gi)
+    initiativeSuffix = initiativeSuffix != null ? parseInt(initiativeSuffix[0]) : 0
+    initiativeSuffix += Math.floor(3 * (multiplier - 1))
+    enemy.initiative = initiativePrefix + initiativeSuffix
   }
 
   return encounter
