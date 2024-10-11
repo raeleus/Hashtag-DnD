@@ -82,6 +82,7 @@ function sanitizeText(text) {
     text = text.replace(/^\s*>\s/, "")
     text = text.replace(/says? "/, "")
     text = text.replace(/"\n$/, "")
+    if (text.split('"').length - 1 % 2 == 1)  text += '"'
   } else if (/^\s*>\s.*/.test(text)) {
     text = text.replace(/^\s*>\s/, "")
     text = text.replace(/\.?\n$/, "")
