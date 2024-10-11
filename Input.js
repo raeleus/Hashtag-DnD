@@ -2125,7 +2125,7 @@ function doTurn(command) {
     var areWord = target.name == "You" ? "are" : "is"
     var targetNameAdjustedCase = target.name == "You" ? "you" : toTitleCase(target.name)
 
-    var text = `\nIt is ${possessiveName} turn.\n`
+    var text = `\n[It is ${possessiveName} turn.]\n`
     if (getRandomBoolean() || activeCharacter.spells.length == 0) {
       var damage = isNaN(activeCharacter.damage) ? calculateRoll(activeCharacter.damage) : activeCharacter.damage
       target.health = Math.max(target.health - damage, 0)
