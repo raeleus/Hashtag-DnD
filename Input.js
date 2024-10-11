@@ -2802,7 +2802,7 @@ function doGenerateName(command) {
 function doClearSpells(command) {
   var character = getCharacter()
   character.spells = []
-  state.show = "clearInventory"
+  state.show = "clearSpells"
   return " "
 }
 
