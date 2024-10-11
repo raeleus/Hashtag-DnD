@@ -1356,6 +1356,11 @@ function doCheck(command) {
 }
 
 function doTry(command) {
+  if (getArguments(command).length <= 1) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
   const advantageNames = ["normal", "advantage", "disadvantage"]
   const difficultyNames = ["impossible", "extreme", "hard", "medium", "easy", "effortless", "automatic"]
   const difficultyScores = [30, 25, 20, 15, 10, 5, 0]
