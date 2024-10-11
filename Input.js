@@ -1982,7 +1982,9 @@ function doAddEnemy(command) {
   if (hitModifier == null) {
     state.show = "none"
     return "\n[Error: Not enough parameters. See #help]\n"
-  } else if (isNaN(hitModifier)) {
+  } else if (/^\d*d\d+((\+|-)\d+)?$/gi.test(hitModifier)) {
+    hitModifier = calculateRoll(hitModifier)
+  }  else if (isNaN(hitModifier)) {
     state.show = "none"
     return "\n[Error: Expected a number. See #help]\n"
   }

@@ -429,11 +429,11 @@ const modifier = (text) => {
 
       text += "\n\n--Combat--"
       text += "\n#encounter (funny|easy|medium|hard|boss|god or cr)"
-      text += "\n    Generate an encounter from the specified list. If a list is not specified, it will default to \"easy\" You can instead provide a number as a challenge rating which will scale encounters from the appropriate list."
+      text += "\n    Generate an encounter from the specified list. If a list is not specified, it will default to \"easy\" You can instead provide a number as a challenge rating which will scale encounters from the appropriate list and scale their difficulty."
       text += "\n#showenemies"
       text += "\n    Shows the list of current enemies."
-      text += "\n#addenemy name health ac damage initiative spells"
-      text += "\n    Adds the specified enemy to the list of enemies. health, ac, damage, and initiative can be numbers or dice rolls such as 3d6+5. Type the name in quotes if the name contains a space. The rest of the parameters can be a list of spells. Each spell must be typed in quotes if it has a space. If the spell does damage, write the name and damage roll in the following format: \"Ray of Frost5d10\""
+      text += "\n#addenemy name health ac hitModifier damage initiative spells"
+      text += "\n    Adds the specified enemy to the list of enemies. health, ac, hitModifier, damage, and initiative can be numbers or dice rolls such as 3d6+5. Type the name in quotes if the name contains a space. The rest of the parameters can be a list of spells. Each spell must be typed in quotes if it has a space. If the spell does damage, write the name and damage roll in the following format: \"Ray of Frost5d10\""
       text += "\n#removeenemy name or index"
       text += "\n    Removes the enemy as specified by the name or index. To delete multiple enemies, type the numbers with spaces or commas between them. This is safer than calling #removenote multiple times because the numbers shift as enemies are deleted. Quotes are not necessary."
       text += "\n#initiative"
@@ -441,7 +441,7 @@ const modifier = (text) => {
       text += "\n#turn"
       text += "\n    Updates the turn to the next character in combat. If it is an enemy, the enemy will attack. If it's a player character, the system will allow the player to take their turn. If there are no enemies left or all the player characters are dead, combat ends."
       text += "\n#flee (difficulty_class or automatic|effortless|easy|medium|hard|impossible)"
-      text += "\n    Attempt to flee from combat. If the difficulty is not specified, the automatic difficulty will be used instead."
+      text += "\n    Attempt to flee from combat. If the difficulty is not specified, the default difficulty will be used instead."
 
       text += "\n\n--Locations--"
       text += "\n#createlocation [(x) (y) or (here|far) or (distance)] location_name"
