@@ -259,7 +259,7 @@ const modifier = (text) => {
     case "clearInventory":
       text += `[${possessiveName} inventory has been emptied]\n`
       break
-    case "clearInventory":
+    case "clearSpells":
       text += `[${possessiveName} spells have been cleared]\n`
       break
     case "showEnemies":
