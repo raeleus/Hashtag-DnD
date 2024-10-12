@@ -1866,7 +1866,7 @@ function doShowLocations(command) {
 function doEncounter(command) {
   var arg0 = getArgument(command, 0)
   if (arg0 == null) {
-    arg0 = "funny"
+    arg0 = "easy"
   }
 
   var encounter = createEncounter(arg0)
