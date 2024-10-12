@@ -1353,15 +1353,1803 @@ function createEncounter(listName) {
       break
     case "medium":
       if (encounter.cr == null) encounter.cr = 5
+      multiplier = 1 + (encounter.cr - 5) / 10
+      switch (getRandomInteger(0, 99)) {
+        case 0:
+          encounter.text = "Text"
+          break
+        case 1:
+          encounter.text = "Text"
+          break
+        case 2:
+          encounter.text = "Text"
+          break
+        case 3:
+          encounter.text = "Text"
+          break
+        case 4:
+          encounter.text = "Text"
+          break
+        case 5:
+          encounter.text = "Text"
+          break
+        case 6:
+          encounter.text = "Text"
+          break
+        case 7:
+          encounter.text = "Text"
+          break
+        case 8:
+          encounter.text = "Text"
+          break
+        case 9:
+          encounter.text = "Text"
+          break
+        case 10:
+          encounter.text = "Text"
+          break
+        case 11:
+          encounter.text = "Text"
+          break
+        case 12:
+          encounter.text = "Text"
+          break
+        case 14:
+          encounter.text = "Text"
+          break
+        case 15:
+          encounter.text = "Text"
+          break
+        case 16:
+          encounter.text = "Text"
+          break
+        case 17:
+          encounter.text = "Text"
+          break
+        case 18:
+          encounter.text = "Text"
+          break
+        case 19:
+          encounter.text = "Text"
+          break
+        case 20:
+          encounter.text = "Text"
+          break
+        case 21:
+          encounter.text = "Text"
+          break
+        case 22:
+          encounter.text = "Text"
+          break
+        case 23:
+          encounter.text = "Text"
+          break
+        case 24:
+          encounter.text = "Text"
+          break
+        case 25:
+          encounter.text = "Text"
+          break
+        case 26:
+          encounter.text = "Text"
+          break
+        case 27:
+          encounter.text = "Text"
+          break
+        case 28:
+          encounter.text = "Text"
+          break
+        case 29:
+          encounter.text = "Text"
+          break
+        case 30:
+          encounter.text = "Text"
+          break
+        case 31:
+          encounter.text = "Text"
+          break
+        case 32:
+          encounter.text = "Text"
+          break
+        case 33:
+          encounter.text = "Text"
+          break
+        case 34:
+          encounter.text = "Text"
+          break
+        case 35:
+          encounter.text = "Text"
+          break
+        case 36:
+          encounter.text = "Text"
+          break
+        case 37:
+          encounter.text = "Text"
+          break
+        case 38:
+          encounter.text = "Text"
+          break
+        case 39:
+          encounter.text = "Text"
+          break
+        case 40:
+          encounter.text = "Text"
+          break
+        case 41:
+          encounter.text = "Text"
+          break
+        case 42:
+          encounter.text = "Text"
+          break
+        case 43:
+          encounter.text = "Text"
+          break
+        case 44:
+          encounter.text = "Text"
+          break
+        case 45:
+          encounter.text = "Text"
+          break
+        case 46:
+          encounter.text = "Text"
+          break
+        case 47:
+          encounter.text = "Text"
+          break
+        case 48:
+          encounter.text = "Text"
+          break
+        case 49:
+          encounter.text = "Text"
+          break
+        case 50:
+          encounter.text = "Text"
+          break
+        case 51:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 52:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 53:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 54:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 55:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 56:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 57:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 58:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 59:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 60:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 61:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 62:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 63:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 64:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 65:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 66:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 67:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 68:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 69:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 70:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 71:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 72:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 73:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 74:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 75:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 76:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 77:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 78:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 79:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 80:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 81:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 82:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 83:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 84:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 85:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 86:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 87:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 88:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 89:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 90:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 91:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 92:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 93:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 94:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 95:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 96:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 97:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 98:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 99:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+      }
       break
     case "hard":
       if (encounter.cr == null) encounter.cr = 9
+      multiplier = 1 + (encounter.cr - 9) / 10
+      switch (getRandomInteger(0, 99)) {
+        case 0:
+          encounter.text = "Text"
+          break
+        case 1:
+          encounter.text = "Text"
+          break
+        case 2:
+          encounter.text = "Text"
+          break
+        case 3:
+          encounter.text = "Text"
+          break
+        case 4:
+          encounter.text = "Text"
+          break
+        case 5:
+          encounter.text = "Text"
+          break
+        case 6:
+          encounter.text = "Text"
+          break
+        case 7:
+          encounter.text = "Text"
+          break
+        case 8:
+          encounter.text = "Text"
+          break
+        case 9:
+          encounter.text = "Text"
+          break
+        case 10:
+          encounter.text = "Text"
+          break
+        case 11:
+          encounter.text = "Text"
+          break
+        case 12:
+          encounter.text = "Text"
+          break
+        case 14:
+          encounter.text = "Text"
+          break
+        case 15:
+          encounter.text = "Text"
+          break
+        case 16:
+          encounter.text = "Text"
+          break
+        case 17:
+          encounter.text = "Text"
+          break
+        case 18:
+          encounter.text = "Text"
+          break
+        case 19:
+          encounter.text = "Text"
+          break
+        case 20:
+          encounter.text = "Text"
+          break
+        case 21:
+          encounter.text = "Text"
+          break
+        case 22:
+          encounter.text = "Text"
+          break
+        case 23:
+          encounter.text = "Text"
+          break
+        case 24:
+          encounter.text = "Text"
+          break
+        case 25:
+          encounter.text = "Text"
+          break
+        case 26:
+          encounter.text = "Text"
+          break
+        case 27:
+          encounter.text = "Text"
+          break
+        case 28:
+          encounter.text = "Text"
+          break
+        case 29:
+          encounter.text = "Text"
+          break
+        case 30:
+          encounter.text = "Text"
+          break
+        case 31:
+          encounter.text = "Text"
+          break
+        case 32:
+          encounter.text = "Text"
+          break
+        case 33:
+          encounter.text = "Text"
+          break
+        case 34:
+          encounter.text = "Text"
+          break
+        case 35:
+          encounter.text = "Text"
+          break
+        case 36:
+          encounter.text = "Text"
+          break
+        case 37:
+          encounter.text = "Text"
+          break
+        case 38:
+          encounter.text = "Text"
+          break
+        case 39:
+          encounter.text = "Text"
+          break
+        case 40:
+          encounter.text = "Text"
+          break
+        case 41:
+          encounter.text = "Text"
+          break
+        case 42:
+          encounter.text = "Text"
+          break
+        case 43:
+          encounter.text = "Text"
+          break
+        case 44:
+          encounter.text = "Text"
+          break
+        case 45:
+          encounter.text = "Text"
+          break
+        case 46:
+          encounter.text = "Text"
+          break
+        case 47:
+          encounter.text = "Text"
+          break
+        case 48:
+          encounter.text = "Text"
+          break
+        case 49:
+          encounter.text = "Text"
+          break
+        case 50:
+          encounter.text = "Text"
+          break
+        case 51:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 52:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 53:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 54:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 55:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 56:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 57:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 58:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 59:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 60:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 61:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 62:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 63:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 64:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 65:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 66:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 67:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 68:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 69:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 70:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 71:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 72:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 73:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 74:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 75:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 76:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 77:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 78:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 79:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 80:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 81:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 82:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 83:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 84:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 85:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 86:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 87:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 88:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 89:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 90:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 91:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 92:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 93:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 94:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 95:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 96:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 97:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 98:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 99:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+      }
       break
     case "boss":
       if (encounter.cr == null) encounter.cr = 13
+      multiplier = 1 + (encounter.cr - 13) / 10
+      switch (getRandomInteger(0, 99)) {
+        case 0:
+          encounter.text = "Text"
+          break
+        case 1:
+          encounter.text = "Text"
+          break
+        case 2:
+          encounter.text = "Text"
+          break
+        case 3:
+          encounter.text = "Text"
+          break
+        case 4:
+          encounter.text = "Text"
+          break
+        case 5:
+          encounter.text = "Text"
+          break
+        case 6:
+          encounter.text = "Text"
+          break
+        case 7:
+          encounter.text = "Text"
+          break
+        case 8:
+          encounter.text = "Text"
+          break
+        case 9:
+          encounter.text = "Text"
+          break
+        case 10:
+          encounter.text = "Text"
+          break
+        case 11:
+          encounter.text = "Text"
+          break
+        case 12:
+          encounter.text = "Text"
+          break
+        case 14:
+          encounter.text = "Text"
+          break
+        case 15:
+          encounter.text = "Text"
+          break
+        case 16:
+          encounter.text = "Text"
+          break
+        case 17:
+          encounter.text = "Text"
+          break
+        case 18:
+          encounter.text = "Text"
+          break
+        case 19:
+          encounter.text = "Text"
+          break
+        case 20:
+          encounter.text = "Text"
+          break
+        case 21:
+          encounter.text = "Text"
+          break
+        case 22:
+          encounter.text = "Text"
+          break
+        case 23:
+          encounter.text = "Text"
+          break
+        case 24:
+          encounter.text = "Text"
+          break
+        case 25:
+          encounter.text = "Text"
+          break
+        case 26:
+          encounter.text = "Text"
+          break
+        case 27:
+          encounter.text = "Text"
+          break
+        case 28:
+          encounter.text = "Text"
+          break
+        case 29:
+          encounter.text = "Text"
+          break
+        case 30:
+          encounter.text = "Text"
+          break
+        case 31:
+          encounter.text = "Text"
+          break
+        case 32:
+          encounter.text = "Text"
+          break
+        case 33:
+          encounter.text = "Text"
+          break
+        case 34:
+          encounter.text = "Text"
+          break
+        case 35:
+          encounter.text = "Text"
+          break
+        case 36:
+          encounter.text = "Text"
+          break
+        case 37:
+          encounter.text = "Text"
+          break
+        case 38:
+          encounter.text = "Text"
+          break
+        case 39:
+          encounter.text = "Text"
+          break
+        case 40:
+          encounter.text = "Text"
+          break
+        case 41:
+          encounter.text = "Text"
+          break
+        case 42:
+          encounter.text = "Text"
+          break
+        case 43:
+          encounter.text = "Text"
+          break
+        case 44:
+          encounter.text = "Text"
+          break
+        case 45:
+          encounter.text = "Text"
+          break
+        case 46:
+          encounter.text = "Text"
+          break
+        case 47:
+          encounter.text = "Text"
+          break
+        case 48:
+          encounter.text = "Text"
+          break
+        case 49:
+          encounter.text = "Text"
+          break
+        case 50:
+          encounter.text = "Text"
+          break
+        case 51:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 52:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 53:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 54:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 55:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 56:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 57:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 58:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 59:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 60:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 61:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 62:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 63:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 64:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 65:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 66:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 67:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 68:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 69:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 70:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 71:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 72:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 73:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 74:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 75:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 76:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 77:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 78:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 79:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 80:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 81:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 82:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 83:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 84:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 85:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 86:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 87:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 88:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 89:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 90:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 91:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 92:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 93:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 94:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 95:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 96:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 97:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 98:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 99:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+      }
       break
     case "god":
       if (encounter.cr == null) encounter.cr = 17
+      multiplier = 1 + (encounter.cr - 17) / 10
+      switch (getRandomInteger(0, 99)) {
+        case 0:
+          encounter.text = "Text"
+          break
+        case 1:
+          encounter.text = "Text"
+          break
+        case 2:
+          encounter.text = "Text"
+          break
+        case 3:
+          encounter.text = "Text"
+          break
+        case 4:
+          encounter.text = "Text"
+          break
+        case 5:
+          encounter.text = "Text"
+          break
+        case 6:
+          encounter.text = "Text"
+          break
+        case 7:
+          encounter.text = "Text"
+          break
+        case 8:
+          encounter.text = "Text"
+          break
+        case 9:
+          encounter.text = "Text"
+          break
+        case 10:
+          encounter.text = "Text"
+          break
+        case 11:
+          encounter.text = "Text"
+          break
+        case 12:
+          encounter.text = "Text"
+          break
+        case 14:
+          encounter.text = "Text"
+          break
+        case 15:
+          encounter.text = "Text"
+          break
+        case 16:
+          encounter.text = "Text"
+          break
+        case 17:
+          encounter.text = "Text"
+          break
+        case 18:
+          encounter.text = "Text"
+          break
+        case 19:
+          encounter.text = "Text"
+          break
+        case 20:
+          encounter.text = "Text"
+          break
+        case 21:
+          encounter.text = "Text"
+          break
+        case 22:
+          encounter.text = "Text"
+          break
+        case 23:
+          encounter.text = "Text"
+          break
+        case 24:
+          encounter.text = "Text"
+          break
+        case 25:
+          encounter.text = "Text"
+          break
+        case 26:
+          encounter.text = "Text"
+          break
+        case 27:
+          encounter.text = "Text"
+          break
+        case 28:
+          encounter.text = "Text"
+          break
+        case 29:
+          encounter.text = "Text"
+          break
+        case 30:
+          encounter.text = "Text"
+          break
+        case 31:
+          encounter.text = "Text"
+          break
+        case 32:
+          encounter.text = "Text"
+          break
+        case 33:
+          encounter.text = "Text"
+          break
+        case 34:
+          encounter.text = "Text"
+          break
+        case 35:
+          encounter.text = "Text"
+          break
+        case 36:
+          encounter.text = "Text"
+          break
+        case 37:
+          encounter.text = "Text"
+          break
+        case 38:
+          encounter.text = "Text"
+          break
+        case 39:
+          encounter.text = "Text"
+          break
+        case 40:
+          encounter.text = "Text"
+          break
+        case 41:
+          encounter.text = "Text"
+          break
+        case 42:
+          encounter.text = "Text"
+          break
+        case 43:
+          encounter.text = "Text"
+          break
+        case 44:
+          encounter.text = "Text"
+          break
+        case 45:
+          encounter.text = "Text"
+          break
+        case 46:
+          encounter.text = "Text"
+          break
+        case 47:
+          encounter.text = "Text"
+          break
+        case 48:
+          encounter.text = "Text"
+          break
+        case 49:
+          encounter.text = "Text"
+          break
+        case 50:
+          encounter.text = "Text"
+          break
+        case 51:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 52:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 53:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 54:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 55:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 56:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 57:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 58:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 59:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 60:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 61:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 62:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 63:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 64:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 65:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 66:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 67:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 68:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 69:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 70:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 71:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 72:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 73:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 74:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 75:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 76:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 77:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 78:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 79:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 80:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 81:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 82:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 83:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 84:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 85:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 86:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 87:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 88:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 89:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 90:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 91:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 92:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 93:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 94:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 95:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 96:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 97:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 98:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+        case 99:
+          encounter.text = "Text"
+          encounter.enemies = [
+            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+          ]
+          break
+      }
       break
   }
 
