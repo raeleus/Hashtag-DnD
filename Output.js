@@ -334,7 +334,7 @@ const modifier = (text) => {
       text += "\n    Sets the character's health to specified value. It's capped at the character's max health."
       text += "\n#heal value"
       text += "\n    Increases the character's health by the specified value. It's capped at the character's max health."
-      text += "\n#damage (enemy) damage or dice_roll"
+      text += "\n#damage value or dice_roll (enemy) "
       text += "\n    Decreases the enemy's health by the specified damage or dice_roll. If an enemy isn't specified, the character calling the command is damaged. Reaching 0 causes the character to become \"unconscious\"."
       text += "\n#setac value"
       text += "\n    Sets the armor class of the character. The default is 10"
