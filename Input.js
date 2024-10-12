@@ -1881,7 +1881,7 @@ function doEncounter(command) {
     }
   }
 
-  state.prefix += "\n"
+  state.prefix += "[Type #initiative to begin the battle]\n"
 
   state.show = "prefix"
   return text

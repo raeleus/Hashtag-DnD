@@ -295,7 +295,7 @@ const modifier = (text) => {
       
       if (state.initiativeOrder.length > 0) {
         state.initiativeOrder = []
-        text += `[Call #turn to begin]\n`
+        text += `[Call #turn]\n`
       }
       break
     case "reset":
