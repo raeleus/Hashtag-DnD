@@ -851,7 +851,8 @@ function createEncounter(listName) {
     case "easy":
       if (encounter.cr == null) encounter.cr = 1
       multiplier = 1 + (encounter.cr - 1) / 10
-      switch (getRandomInteger(0, 99)) {
+      // switch (getRandomInteger(0, 99)) {
+      switch (95) {
         case 0:
           encounter.text = "There is a curious contraption encasing what appears to be a small treasure chest."
           break
@@ -1370,16 +1371,19 @@ function createEncounter(listName) {
     enemy.ac = Math.floor(enemy.ac * multiplier)
 
     damagePrefix = enemy.damage.match(/^\d*d\d*/gi)[0]
-    damageSuffix = enemy.damage.match(/(?<=^\d*d\d*).*$/gi)
+    damageSuffix = enemy.damage.match(/(?<=^\d*d\d*)(\+|-).*$/gi)
     damageSuffix = damageSuffix != null ? parseInt(damageSuffix[0]) : 0
     damageSuffix += Math.floor(3 * (multiplier - 1))
-    enemy.damage = damagePrefix + damageSuffix
+    damageSuffix = `${damageSuffix > 0 ? "+" : ""}${damageSuffix}`
+    enemy.damage = `${damagePrefix}${damageSuffix == 0 ? "" : damageSuffix}`
 
     initiativePrefix = enemy.initiative.match(/^\d*d\d*/gi)[0]
-    initiativeSuffix = enemy.initiative.match(/(?<=^\d*d\d*).*$/gi)
+    initiativeSuffix = enemy.initiative.match(/(?<=^\d*d\d*)(\+|-).*$/gi)
     initiativeSuffix = initiativeSuffix != null ? parseInt(initiativeSuffix[0]) : 0
     initiativeSuffix += Math.floor(3 * (multiplier - 1))
-    enemy.initiative = initiativePrefix + initiativeSuffix
+    initiativeSuffix = `${initiativeSuffix > 0 ? "+" : ""}${initiativeSuffix}`
+    enemy.initiative = `${initiativePrefix}${initiativeSuffix == 0 ? "" : initiativeSuffix}`
+    log(enemy)
   }
 
   return encounter
