@@ -633,10 +633,13 @@ function handleSetupEnemyStep(text) {
       }
       return text
     case 100:
-      if (!isNaN(text)) {
+      if (/^\d+(\s.*)?$/gi.test(text)) {
         state.setupEnemyStep = 500
 
-        switch (parseInt(text)) {
+        var value = text.match(/^\d+/gi)[0]
+        var nameMatches = text.match(/(?<=\s).*/gi)
+
+        switch (parseInt(value)) {
           case 1:
             state.tempEnemy = createEnemy("Animated Armor", calculateRoll("6d8+6"), 18, 6, "1d6+2", "d20")
             break
@@ -713,6 +716,8 @@ function handleSetupEnemyStep(text) {
             state.tempEnemy = createEnemy("Zombie", calculateRoll("3d8+9"), 8, 4, "1d6+1", "d20-2")
             break
         }
+
+        if (nameMatches != null) state.tempEnemy.name = nameMatches[0]
       }
       return text
     case 500:

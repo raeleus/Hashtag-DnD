@@ -66,7 +66,7 @@ const modifier = (text) => {
           text += "Enter the name of another spell that the enemy knows. If it can target this spell at a player character, add a dice roll for the damage calculation after it (ie. Ray of Frost3d6+2). Type s to stop entering spells or type q to quit.\n"
           break
         case 100:
-          text += `What enemy preset will you choose?\nLevel 1 or lesser\n1. Animated Armor\n2. Awakened Shrub\n3. Brigand\n4. Black Bear\n5. Boar\n6. Cockatrice\n7. Constrictor Snake\n8. Dire Wolf\n9. Ghoul\n10. Giant Centipede\n11. Giant Rat\n12. Giant Wolf Spider\n13. Gnoll\n14. Goblin\n15. Harpy\n16. Hobgoblin\n17. Kobold\n18. Orc\n19. Satyr\n20. Skeleton\n21. Strige\n22. Warhorse\n23. Wolf\n24. Worg\n25. Zombie\n\nEnter the number or q to quit.\n`
+          text += `What enemy preset will you choose?\nLevel 1 or lesser\n1. Animated Armor\n2. Awakened Shrub\n3. Brigand\n4. Black Bear\n5. Boar\n6. Cockatrice\n7. Constrictor Snake\n8. Dire Wolf\n9. Ghoul\n10. Giant Centipede\n11. Giant Rat\n12. Giant Wolf Spider\n13. Gnoll\n14. Goblin\n15. Harpy\n16. Hobgoblin\n17. Kobold\n18. Orc\n19. Satyr\n20. Skeleton\n21. Strige\n22. Warhorse\n23. Wolf\n24. Worg\n25. Zombie\n\nEnter the number or q to quit. If you want to specify a name, add a space and type the name\n(ie. 25 Thuggish Zombie B)\n`
           break
         case 500:
           var hashtag = `#addenemy "${state.tempEnemy.name}" ${state.tempEnemy.health} ${state.tempEnemy.ac} ${state.tempEnemy.hitModifier} ${state.tempEnemy.damage} ${state.tempEnemy.initiative}`
