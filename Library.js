@@ -851,8 +851,7 @@ function createEncounter(listName) {
     case "easy":
       if (encounter.cr == null) encounter.cr = 1
       multiplier = 1 + (encounter.cr - 1) / 10
-      // switch (getRandomInteger(0, 99)) {
-      switch (95) {
+      switch (getRandomInteger(0, 99)) {
         case 0:
           encounter.text = "There is a curious contraption encasing what appears to be a small treasure chest."
           break
@@ -1365,6 +1364,14 @@ function createEncounter(listName) {
       if (encounter.cr == null) encounter.cr = 17
       break
   }
+
+  var characterName = toTitleCase(state.characters[getRandomInteger(0, state.characters.length-1)].name)
+  var characterNameAdjustedCase = characterName == "You" ? "you" : characterName
+  var possessiveName = getPossessiveName(characterName)
+  encounter.text = encounter.text.replaceAll("Character", characterName)
+  encounter.text = encounter.text.replaceAll("character", characterNameAdjustedCase)
+  encounter.text = encounter.text.replaceAll("character's", possessiveName)
+  encounter.text = encounter.text.replaceAll("Character's", toTitleCase(possessiveName))
 
   for (var enemy of encounter.enemies) {
     enemy.health = Math.floor(enemy.health * multiplier)
