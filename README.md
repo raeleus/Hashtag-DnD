@@ -26,6 +26,7 @@ v. 0.2.0
 * Added `automatic` difficulty which is DC 0
 * Added `#version`
 * Allow adding a plus or minus number to `#roll`. ie. `#roll 5d20+6`
+* Fixed `#buy` and `#sell` resulting in unusable items because of plural item names
 * Minor bug fixes and improvements
 
 v. 0.1.0
