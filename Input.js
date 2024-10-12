@@ -2392,7 +2392,7 @@ function doBuy(command) {
   }
 
   var buyName
-  buyName = args[0]
+  buyName = args[0].plural(true)
 
   var sellQuantity
   if (isNaN(args[1])) {
@@ -2402,7 +2402,7 @@ function doBuy(command) {
     args.splice(1, 1)
   }
 
-  var sellName = args[1]
+  var sellName = args[1].plural(true)
 
   var characterNameAdjustedCase = character.name == "You" ? "you" : character.name
   var dontWord = character.name == "You" ? "don't" : "doesn't"
