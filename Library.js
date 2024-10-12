@@ -1390,7 +1390,6 @@ function createEncounter(listName) {
     initiativeSuffix += Math.floor(3 * (multiplier - 1))
     initiativeSuffix = `${initiativeSuffix > 0 ? "+" : ""}${initiativeSuffix}`
     enemy.initiative = `${initiativePrefix}${initiativeSuffix == 0 ? "" : initiativeSuffix}`
-    log(enemy)
   }
 
   return encounter

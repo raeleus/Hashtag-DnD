@@ -1527,8 +1527,26 @@ function doAttack(command) {
     if (targetIndex >= 0 && targetIndex < difficultyNames.length) targetRoll = difficultyScores[targetIndex]
   }
 
-  var enemyString
+  var enemyString = ""
   if (state.initiativeOrder.length > 0) {
+    var foundEnemy
+
+    for (var enemy of state.enemies) {
+      if (targetText.toLowerCase().includes(enemy.name.toLowerCase())) {
+        foundEnemy = enemy
+        break
+      }
+    }
+
+    if (foundEnemy == null) {
+      var indexMatches = targetText.match(/(?<=enemy\s*)\d+/gi)
+      if (indexMatches != null) {
+        foundEnemy = state.enemies[parseInt(indexMatches[0]) - 1]
+        log(`foundEnemy:${foundEnemy}`)
+        targetText = targetText.replace(/enemy\s*d+/gi, foundEnemy.name)
+      }
+    }
+
     var damage
     if (/^\d*d\d+((\+|-)d+)?$/gi.test(character.damage)) damage = score == 20 ? calculateRoll(character.damage) + calculateRoll(character.damage) : calculateRoll(character.damage)
     else damage = parseInt(character.damage)
@@ -1540,17 +1558,14 @@ function doAttack(command) {
       if (damageMatches != null) damage = score == 20 ? parseInt(damageMatches[damageMatches.length - 1]) * 2 : parseInt(damageMatches[damageMatches.length - 1])
     }
 
-    for (var enemy of state.enemies) {
-      if (targetText.toLowerCase().includes(enemy.name.toLowerCase())) {
-        if (usingDefaultDifficulty) targetRoll = enemy.ac
-        if (score == 20 || score + modifier >= targetRoll) {
-          if (score == 20) enemyString += ` Critical Damage: ${damage}`
-          else enemyString += ` Damage: ${damage}`
-          enemy.health = Math.max(0, enemy.health - damage)
-          if (enemy.health == 0) enemyString = ` ${toTitleCase(enemy.name)} has been defeated!`
-          else enemyString = ` ${toTitleCase(enemy.name)} has ${enemy.health} health remaining!`
-        }
-        break
+    if (foundEnemy != null) {
+      if (usingDefaultDifficulty) targetRoll = foundEnemy.ac
+      if (score == 20 || score + modifier >= targetRoll) {
+        if (score == 20) enemyString += `\nCritical Damage: ${damage}\n`
+        else enemyString += `\nDamage: ${damage}\n`
+        foundEnemy.health = Math.max(0, foundEnemy.health - damage)
+        if (foundEnemy.health == 0) enemyString += ` ${toTitleCase(foundEnemy.name)} has been defeated!`
+        else enemyString += ` ${toTitleCase(foundEnemy.name)} has ${foundEnemy.health} health remaining!`
       }
     }
   }
@@ -1565,8 +1580,8 @@ function doAttack(command) {
   else state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}. ${score >= targetRoll ? "Success!" : "Failure!"}]\n`
 
   var text
-  if (score + modifier >= targetRoll) text = `\n${character.name} successfully hit ${targetText}!`
-  else text = `\n${character.name} ${tryWord} to hit ${targetText} ${character.name} ${missWord}!`
+  if (score + modifier >= targetRoll) text = `\n${toTitleCase(character.name)} successfully hit ${targetText}!`
+  else text = `\n${toTitleCase(character.name)} ${tryWord} to hit ${targetText} ${toTitleCase(character.name)} ${missWord}!`
 
   if (score == 20) text += " Critical success! Your attack is exceptionally damaging!"
   else if (score == 1) text += " Critical failure! Your attack missed in a spectacular way!"
@@ -2676,21 +2691,21 @@ function doCastSpell(command) {
     state.show = "none"
     return "\n[Error: Not enough parameters. See #help]\n"
   }
-  var target = null
+  var targetText = null
   var atWord = null
 
   var found = character.spells.find(x => x.toLowerCase() == spell.toLowerCase())
   if (found != null) {
-    target = getArgumentRemainder(command, spellIndex + 1)
-    if (target != null) {
-      target = target.trim()
-      if (!/^((at)|(on))\s+.*/.test(target)) target = "at " + target
+    targetText = getArgumentRemainder(command, spellIndex + 1)
+    if (targetText != null) {
+      targetText = targetText.trim()
+      if (!/^((at)|(on))\s+.*/.test(targetText)) targetText = "at " + targetText
     }
   } else {
     var remainder = getArgumentRemainder(command, spellIndex)
     if (/.*\s((at)|(on))\s.*/i.test(remainder)) {
       spell = remainder.replace(/\s+((at)|(on)).*/i, "").trim()
-      target = remainder.replace(/^.*\s+(?=(at)|(on))/i, "").trim()
+      targetText = remainder.replace(/^.*\s+(?=(at)|(on))/i, "").trim()
     } else {
       spell = getArgumentRemainder(command, spellIndex).trim()
     }
@@ -2700,10 +2715,10 @@ function doCastSpell(command) {
 
   if (found == null) {
     state.show = "none"
-    return `\n[${character.name} ${tryWord} to cast the spell ${spell}, but ${character.name == "You" ? "you" : character.name} ${dontWord} know it.]\n`
+    return `\n[${toTitleCase(character.name)} ${tryWord} to cast the spell ${spell}, but ${character.name == "You" ? "you" : toTitleCase(character.name)} ${dontWord} know it.]\n`
   }
 
-  var text = `${character.name} cast the spell ${spell}${advantage != "normal" ? " with " + advantage : ""}${target == null ? "" : " " + target}.`
+  var text = `${character.name} cast the spell ${spell}${advantage != "normal" ? " with " + advantage : ""}${targetText == null ? "" : " " + targetText}.`
 
   var modifier = 0
   if (character.spellStat != null) {
@@ -2715,45 +2730,58 @@ function doCastSpell(command) {
   var roll2 = calculateRoll("d20")
   var roll = advantage == "advantage" ? Math.max(roll1, roll2) : advantage == "disadvantage" ? Math.min(roll1, roll2) : roll1
 
-  //add enemy damage here
-  var enemyString
-  if (target != null && state.initiativeOrder.length > 0) {
+  var enemyString = ""
+  if (targetText != null && state.initiativeOrder.length > 0) {
+    var foundEnemy
+
+    for (var enemy of state.enemies) {
+      if (targetText.toLowerCase().includes(enemy.name.toLowerCase())) {
+        foundEnemy = enemy
+        break
+      }
+    }
+
+    if (foundEnemy == null) {
+      var indexMatches = targetText.match(/(?<=enemy\s*)\d+/gi)
+      if (indexMatches != null) {
+        foundEnemy = state.enemies[parseInt(indexMatches[0]) - 1]
+        targetText = targetText.replace(/enemy\s*d+/gi, foundEnemy.name)
+      }
+    }
+
     var damage = roll == 20 ? calculateRoll("2d6") + calculateRoll("2d6") : calculateRoll("2d6")
 
-    var damageMatches = target.match(/\d*d\d+((\+|-)d+)?/gi)
+    var damageMatches = targetText.match(/\d*d\d+((\+|-)d+)?/gi)
     if (damageMatches != null) damage = roll == 20 ? calculateRoll(damageMatches[0]) + calculateRoll(damageMatches[0]) : calculateRoll(damageMatches[0])
     else {
-      damageMatches = target.match(/\d+/g)
+      damageMatches = targetText.match(/\d+/g)
       if (damageMatches != null) damage = roll == 20 ? parseInt(damageMatches[damageMatches.length - 1]) * 2 : parseInt(damageMatches[damageMatches.length - 1])
     }
 
-    for (var enemy of state.enemies) {
-      if (target.toLowerCase().includes(enemy.name.toLowerCase())) {
-        if (usingDefaultDifficulty) difficulty = enemy.ac
-        if (roll + modifier >= difficulty) {
-          if (roll == 20) enemyString += ` Critical Damage: ${damage}`
-          else enemyString += ` Damage: ${damage}`
-          enemy.health = Math.max(0, enemy.health - damage)
-          if (enemy.health == 0) enemyString = ` ${toTitleCase(enemy.name)} has been defeated!`
-          else enemyString = ` ${toTitleCase(enemy.name)} has ${enemy.health} health remaining!`
-        }
-        break
+    if (foundEnemy != null) {
+      if (usingDefaultDifficulty) difficulty = foundEnemy.ac
+      if (roll == 20 || roll + modifier >= difficulty) {
+        if (roll == 20) enemyString += `\nCritical Damage: ${damage}\n`
+        else enemyString += `\nDamage: ${damage}\n`
+        foundEnemy.health = Math.max(0, foundEnemy.health - damage)
+        if (foundEnemy.health == 0) enemyString += `${toTitleCase(foundEnemy.name)} has been defeated!\n`
+        else enemyString = `${toTitleCase(foundEnemy.name)} has ${foundEnemy.health} health remaining!\n`
       }
     }
   }
 
   state.show = "prefix"
   var dieText = advantage == "advantage" || advantage == "disadvantage" ? `${advantage}(${roll1},${roll2})` : roll1
-  var difficultyWord = target == null ? "Difficulty" : "Armor"
+  var difficultyWord = targetText == null ? "Difficulty" : "Armor"
   if (roll == 20) state.prefix = `\n[${difficultyWord} Class: ${difficulty}. Roll: ${dieText}. Critcal Success!]\n`
   else if (roll == 1) state.prefix = `\n[${difficultyWord} Class: ${difficulty}. Roll: ${dieText}. Critcal Failure!]\n`
   else if (modifier != 0) state.prefix = `\n[${difficultyWord} Class: ${difficulty}. Roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${roll + modifier}. ${roll + modifier >= difficulty ? "Success!" : "Failure!"}]\n`
   else state.prefix = `\n[${difficultyWord} Class: ${difficulty}. Roll: ${dieText}. ${roll + modifier >= difficulty ? "Success!" : "Failure!"}]\n`
   
   if (roll == 20) text += ` Critical success!`
-  else if (roll == 1) text += ` Critical failure! The spell ${target != null ? "misses" : "fails"} in a spectacular way.`
-  else if (roll + modifier >= difficulty) text += ` The spell ${target != null ? "hits the target" : "is successful"}!`
-  else text += ` The spell ${target != null ? "misses" : "fails"}!`
+  else if (roll == 1) text += ` Critical failure! The spell ${targetText != null ? "misses" : "fails"} in a spectacular way.`
+  else if (roll + modifier >= difficulty) text += ` The spell ${targetText != null ? "hits the target" : "is successful"}!`
+  else text += ` The spell ${targetText != null ? "misses" : "fails"}!`
 
   if (enemyString != null) text += enemyString
 
