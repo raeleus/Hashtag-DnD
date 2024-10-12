@@ -77,6 +77,8 @@ const turnSynonyms = ["turn", "doturn", "taketurn"]
 const fleeSynonyms = ["flee", "retreat", "runaway", "endcombat"]
 const versionSynonyms = ["version", "ver", "showversion"]
 const setupEnemySynonyms = ["setupenemy"]
+const setDamageSynonyms = ["setdamage"]
+const setProficiencySynonyms = ["setproficiency", "setweaponproficiency"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -217,6 +219,8 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, fleeSynonyms, doFlee)
   if (text == null) text = processCommandSynonyms(command, commandName, turnSynonyms, doTurn)
   if (text == null) text = processCommandSynonyms(command, commandName, setupEnemySynonyms, doSetupEnemy)
+  if (text == null) text = processCommandSynonyms(command, commandName, setDamageSynonyms, doSetDamage)
+  if (text == null) text = processCommandSynonyms(command, commandName, setProficiencySynonyms, doSetProficiency)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -789,7 +793,9 @@ function init() {
       rangedStat: null,
       experience: 0,
       health: 10,
-      ac: 10
+      ac: 10,
+      damage: "1d6",
+      proficiency: 2
     }
   }
 
@@ -810,6 +816,8 @@ function init() {
 
   state.characters.forEach(x => {
     if (x.ac == null) x.ac = 10
+    if (x.damage == null) x.damage = "1d6"
+    if (x.proficiency == null) x.proficiency = 2
   })
 }
 
@@ -855,6 +863,8 @@ function doCreate(command) {
   state.tempCharacter.meleeStat = "Strength"
   state.tempCharacter.rangedStat = "Dexterity"
   state.tempCharacter.ac = 10
+  state.tempCharacter.damage = "1d6"
+  state.tempCharacter.proficiency = 2
   
   state.show = "create"
   return " "
@@ -1507,7 +1517,8 @@ function doAttack(command) {
   var modifier = 0
 
   var stat = character.stats.find(x => x.name.toLowerCase() == statText.toLowerCase())
-  if (stat != null) modifier = getModifier(stat.value)
+  modifier = character.proficiency
+  if (stat != null) modifier += getModifier(stat.value)
 
   var targetRoll = 15
   if (/^\d+$/.test(difficultyText)) targetRoll = difficultyText
@@ -1518,7 +1529,9 @@ function doAttack(command) {
 
   var enemyString
   if (state.initiativeOrder.length > 0) {
-    var damage = score == 20 ? calculateRoll("2d6") + calculateRoll("2d6") : calculateRoll("2d6")
+    var damage
+    if (/^\d*d\d+((\+|-)d+)?$/gi.test(character.damage)) damage = score == 20 ? calculateRoll(character.damage) + calculateRoll(character.damage) : calculateRoll(character.damage)
+    else damage = parseInt(character.damage)
 
     var damageMatches = targetText.match(/\d*d\d+((\+|-)d+)?/gi)
     if (damageMatches != null) damage = score == 20 ? calculateRoll(damageMatches[0]) + calculateRoll(damageMatches[0]) : calculateRoll(damageMatches[0])
@@ -1530,7 +1543,7 @@ function doAttack(command) {
     for (var enemy of state.enemies) {
       if (targetText.toLowerCase().includes(enemy.name.toLowerCase())) {
         if (usingDefaultDifficulty) targetRoll = enemy.ac
-        if (score + modifier >= targetRoll) {
+        if (score == 20 || score + modifier >= targetRoll) {
           if (score == 20) enemyString += ` Critical Damage: ${damage}`
           else enemyString += ` Damage: ${damage}`
           enemy.health = Math.max(0, enemy.health - damage)
@@ -2064,7 +2077,7 @@ function doInitiative(command) {
 
   if (state.enemies.length == 0) {
     state.show = "none"
-    return "\n[Error: No enemies! Call #addenemy or #generateencounter]\n"
+    return "\n[Error: No enemies! Call #addenemy or #encounter]\n"
   }
 
   createInitiativeOrder()
@@ -2168,13 +2181,12 @@ function doTurn(command) {
       if (hit) {
         var damage = isNaN(activeCharacter.damage) ? calculateRoll(activeCharacter.damage) : activeCharacter.damage
         target.health = Math.max(target.health - damage, 0)
-        text += `${activeCharacterName} attacks ${targetNameAdjustedCase} for ${damage} damage! \n`
-        
-        if (target.health == 0) text += `${toTitleCase(target.name)} ${areWord} unconscious!\n`
-        else text += `${toTitleCase(target.name)} ${areWord} at ${target.health} health.\n`
+        text += `${activeCharacterName} attacks ${targetNameAdjustedCase} for ${damage} damage!\n`
+        if (target.health == 0) text += ` ${toTitleCase(target.name)} ${areWord} unconscious! \n`
+        else text += ` ${toTitleCase(target.name)} ${areWord} at ${target.health} health.\n`
       } else text += `${activeCharacterName} attacks ${targetNameAdjustedCase} but misses!\n`
     } else {
-      var spell = activeCharacter.spells[getRandomInteger(0, activeCharacter.spells.length)]
+      var spell = activeCharacter.spells[getRandomInteger(0, activeCharacter.spells.length - 1)]
       var diceMatches = spell.match(/(?<=^.*)\d*d\d+((\+|-)\d+)?$/gi)
       if (diceMatches == null) text += `${activeCharacterName} casts spell ${spell}!`
       else {
@@ -2185,9 +2197,9 @@ function doTurn(command) {
 
           text += `${activeCharacterName} casts spell ${spell} at ${targetNameAdjustedCase} for ${damage} damage!`
           
-          if (target.health == 0) text += `${toTitleCase(target.name)} ${areWord} unconscious!\n`
-          else text += `${toTitleCase(target.name)} ${areWord} at ${target.health} health.\n`
-        } else text += `${activeCharacterName} casts spell ${spell} at ${targetNameAdjustedCase} but misses!`
+          if (target.health == 0) text += ` ${toTitleCase(target.name)} ${areWord} unconscious!\n`
+          else text += ` ${toTitleCase(target.name)} ${areWord} at ${target.health} health.\n`
+        } else text += `${activeCharacterName} casts spell ${spell} at ${targetNameAdjustedCase} but misses!\n`
       }
     }
     return text
@@ -2861,6 +2873,52 @@ function doClearSkills(command) {
 function doVersion(command) {
   state.show = "none"
   return `[${version}]`
+}
+
+function doSetDamage(command) {
+  var character = getCharacter()
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  if (/^\d*d\d+((\+|-)\d+)?$/gi.test(arg0)) {
+    character.damage = arg0
+  } else if (!isNaN(arg0)) {
+    character.damage = parseInt(arg0)
+  } else {
+    state.show = "none"
+    return "\n[Error: Not a number. See #help]\n"
+  }
+
+  var possessiveName = getPossessiveName(character.name)
+
+  state.show = "none"
+  return `\n[${possessiveName} attack damage is set to ${character.damage}]\n`
+}
+
+function doSetProficiency(command) {
+  var character = getCharacter()
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  if (/^\d*d\d+((\+|-)\d+)?$/gi.test(arg0)) {
+    character.hitModifier = calculateRoll(arg0)
+  } else if (!isNaN(arg0)) {
+    character.hitModifier = parseInt(arg0)
+  } else {
+    state.show = "none"
+    return "\n[Error: Not a number. See #help]\n"
+  }
+
+  var possessiveName = getPossessiveName(character.name)
+
+  state.show = "none"
+  return `\n[${possessiveName} proficiency is set to ${character.hitModifier}]\n`
 }
 
 function doReset(command) {

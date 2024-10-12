@@ -86,6 +86,8 @@ const modifier = (text) => {
       text += `Class: ${character.className}\n`
       text += `Health: ${character.health}/${getHealthMax()}\n`
       text += `Armor Class: ${character.ac}\n`
+      text += `Damage: ${character.damage}\n`
+      text += `Weapon Proficiency: ${character.proficiency}\n`
       text += `Experience: ${character.experience}\n`
       text += `Level: ${getLevel(character.experience)}\n`
       var nextLevel = getNextLevelXp(character.experience)
@@ -338,6 +340,10 @@ const modifier = (text) => {
       text += "\n    Decreases the enemy's health by the specified damage or dice_roll. If an enemy isn't specified, the character calling the command is damaged. Reaching 0 causes the character to become \"unconscious\"."
       text += "\n#setac value"
       text += "\n    Sets the armor class of the character. The default is 10"
+      text += "\n#setdamage value or dice_roll"
+      text += "\n    Sets the default damage that the character causes when attacking. If a dice_roll is specified, a randomized damage will be calculated at the time of the attack. The default is 1d6"
+      text += "\n#setweaponproficiency value or dice_roll"
+      text += "\n    Sets the weapon proficiency of the character which affects the chance to hit. If a dice_roll is specified, a randomized value is calculated. The default is 2"
       text += "\n#rest"
       text += "\n    Sets all of the characters' health to their maximums. Use #shortrest to only restore half health. This command increases the day counter and displays the number of days since your adventure began."
       text += "\n#showday"
