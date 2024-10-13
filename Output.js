@@ -434,6 +434,8 @@ const modifier = (text) => {
       text += "\n    Shows the list of spells that the character has learned."
 
       text += "\n\n--Combat--"
+      text += "\n#setupenemy"
+      text += "\nFollow prompts to create an enemy from a template or completely from scratch. It will be added to the existing encounter if there is one already specified."
       // text += "\n#encounter (funny|easy|medium|hard|boss|god or cr)"
       text += "\n#encounter (funny|easy|medium|hard or cr)"
       text += "\n    Generate an encounter from the specified list. If a list is not specified, it will default to \"easy\" You can instead provide a number as a challenge rating which will scale encounters from the appropriate list and scale their difficulty."
@@ -444,7 +446,7 @@ const modifier = (text) => {
       text += "\n#removeenemy name or index"
       text += "\n    Removes the enemy as specified by the name or index. To delete multiple enemies, type the numbers with spaces or commas between them. This is safer than calling #removenote multiple times because the numbers shift as enemies are deleted. Quotes are not necessary."
       text += "\n#initiative"
-      text += "\n    Assigns initiative to all characters. This begins combat."
+      text += "\n    Assigns initiative to all characters and enemies. This begins combat."
       text += "\n#turn"
       text += "\n    Updates the turn to the next character in combat. If it is an enemy, the enemy will attack. If it's a player character, the system will allow the player to take their turn. If there are no enemies left or all the player characters are dead, combat ends."
       text += "\n#flee (difficulty_class or automatic|effortless|easy|medium|hard|impossible)"
