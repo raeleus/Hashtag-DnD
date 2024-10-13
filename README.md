@@ -17,6 +17,7 @@ See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
 v. 0.2.0
+* Added combat hashtags: #setupenemy, #encounter, #showenemies, #addenemy, #removeenemy, #initiative, #turn, #flee
 * `#note` without parameters will store the last action's text into the notes
 * `#goto` specified with a distance and location name will take you partially toward the target
 * `#goto` allows you to travel by typing a location number instead of a name
