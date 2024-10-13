@@ -66,7 +66,7 @@ const modifier = (text) => {
           text += "Enter the name of another spell that the enemy knows. If it can target this spell at a player character, add a dice roll for the damage calculation after it (ie. Ray of Frost3d6+2). Type s to stop entering spells or type q to quit.\n"
           break
         case 100:
-          text += `What enemy preset will you choose?\nLevel 1 or lesser\n1. Animated Armor\n2. Awakened Shrub\n3. Brigand\n4. Black Bear\n5. Boar\n6. Cockatrice\n7. Constrictor Snake\n8. Dire Wolf\n9. Ghoul\n10. Giant Centipede\n11. Giant Rat\n12. Giant Wolf Spider\n13. Gnoll\n14. Goblin\n15. Harpy\n16. Hobgoblin\n17. Kobold\n18. Orc\n19. Satyr\n20. Skeleton\n21. Strige\n22. Warhorse\n23. Wolf\n24. Worg\n\nLevels 2-5\n25. Zombie\n26. Air Elemental\n27. Basilisk\n28. Berserker\n29. Chuul\n30. Doppelganger\n31. Druid\n32. Earth Elemental\n33. Fire Elemental\n34. Gorgon\n35. Green Hag\n36. Griffon\n37. Hell Hound\n38. Hill Giant\n39.  Manticore\n40. Minotaur\n41. Mimic\n42. Ogre\n43. Owlbear\n44. Red Dragon Wyrmling\n45. Spectator\n46. Troll\n47. Wererat\n48. Werewolf\n49. Vampire Spawn\n50. Wight\n\nLevels 6-10\n\nLevels 11-15\n\nLevels 16-20\n\nEnter the number or q to quit. If you want to specify a name, add a space and type the name\n(ie. 25 Thuggish Zombie B)\n`
+          text += `What enemy preset will you choose?\nLevel 1 or lesser\n1. Animated Armor\n2. Awakened Shrub\n3. Brigand\n4. Black Bear\n5. Boar\n6. Cockatrice\n7. Constrictor Snake\n8. Dire Wolf\n9. Ghoul\n10. Giant Centipede\n11. Giant Rat\n12. Giant Wolf Spider\n13. Gnoll\n14. Goblin\n15. Harpy\n16. Hobgoblin\n17. Kobold\n18. Orc\n19. Satyr\n20. Skeleton\n21. Strige\n22. Warhorse\n23. Wolf\n24. Worg\n\nLevels 2-5\n25. Zombie\n26. Air Elemental\n27. Basilisk\n28. Berserker\n29. Chuul\n30. Doppelganger\n31. Druid\n32. Earth Elemental\n33. Fire Elemental\n34. Gorgon\n35. Green Hag\n36. Griffon\n37. Hell Hound\n38. Hill Giant\n39.  Manticore\n40. Minotaur\n41. Mimic\n42. Ogre\n43. Owlbear\n44. Red Dragon Wyrmling\n45. Spectator\n46. Troll\n47. Wererat\n48. Werewolf\n49. Vampire Spawn\n50. Wight\n\nLevels 6-10\n51. Aboleth\n52. Assassin\n53. Chimera\n54. Cloud Giant\n55. Cyclops\n56. Deva\n57. Drider\n58. Frost Giant\n59. Hydra\n60. Insane Mage\n61. Medusa\n62. Shield Guardian\n63. Spirit Naga\n64. Stone Golem\n65. Treant\n66. Young Black Dragon\n67. Young Blue Dragon\n68. Young Brass Dragon\n69. Young Bronze Dragon\n70. Young Copper Dragon\n71. Young Gold Dragon\n72. Young Green Dragon\n73. Young Red Dragon\n74. Young Silver Dragon\n75. Young White Dragon\n\nLevels 11-15\n\nLevels 16-20\n\nEnter the number or q to quit. If you want to specify a name, add a space and type the name\n(ie. 25 Thuggish Zombie B)\n`
           break
         case 500:
           var hashtag = `#addenemy "${state.tempEnemy.name}" ${state.tempEnemy.health} ${state.tempEnemy.ac} ${state.tempEnemy.hitModifier} ${state.tempEnemy.damage} ${state.tempEnemy.initiative}`
@@ -434,7 +434,8 @@ const modifier = (text) => {
       text += "\n    Shows the list of spells that the character has learned."
 
       text += "\n\n--Combat--"
-      text += "\n#encounter (funny|easy|medium|hard|boss|god or cr)"
+      // text += "\n#encounter (funny|easy|medium|hard|boss|god or cr)"
+      text += "\n#encounter (funny|easy|medium|hard or cr)"
       text += "\n    Generate an encounter from the specified list. If a list is not specified, it will default to \"easy\" You can instead provide a number as a challenge rating which will scale encounters from the appropriate list and scale their difficulty."
       text += "\n#showenemies"
       text += "\n    Shows the list of current enemies."
