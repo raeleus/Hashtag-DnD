@@ -1190,31 +1190,31 @@ function createEncounter(listName) {
         case 77:
           encounter.text = "A crowd of cultists walk into view. Their aim is clear: to sacrifice you as an offering to their god. Attack before you are torn limb from limb!"
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), 8, 3, "damage", "d20+")
+            createEnemy("Cultist", calculateRoll("2d8"), 12, 3, "1d6+1", "d20+1")
           ]
           break
         case 78:
           encounter.text = "A gnoll has strayed from its herd. You take the opportunity to attack before it alerts the others."
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), 8, 6, "damage", "d20+")
+            createEnemy("Gnoll", calculateRoll("5d8"), 15, 4, "1d4+2", "d20+1")
           ]
           break
         case 79:
           encounter.text = "A majestic white wolf has been tracking you for some time. It can no longer ignore its hunger pangs and begins racing at you."
           encounter.enemies = [
-            createEnemy("White Wolf", calculateRoll("health"), 8, 6, "damage", "d20+")
+            createEnemy("White Wolf", calculateRoll("2d8+2"), 13, 7, "2d4+2", "d20+2")
           ]
           break
         case 80:
           encounter.text = "An orc looks up from his fire. You're spotted!"
           encounter.enemies = [
-            createEnemy("Orc", calculateRoll("health"), 8, 8, "damage", "d20+")
+            createEnemy("Orc", calculateRoll("2d8+6"), 13, 5, "1d12+3", "d20+1")
           ]
           break
         case 81:
           encounter.text = "A wyrmling is spotted circling around you. It's coming in for an attack!"
           encounter.enemies = [
-            createEnemy("Wyrmling", calculateRoll("health"), 8, 8, "damage", "d20+")
+            createEnemy("Wyrmling", calculateRoll("3d8+3"), 16, 4, "1d10+2", "d20")
           ]
           break
         case 82:
@@ -1690,7 +1690,7 @@ function createEncounter(listName) {
         case 80:
           encounter.text = "The Incubus is a shapechanger. It has selected a shape that is pleasing to your eye, but you should know better than to fall for its wiles. Attack!"
           encounter.enemies = [
-            createEnemy("Incubus", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Incubus", calculateRoll("12d8+12"), 15, 5, "1d6+3", "d20+3")
           ]
           break
         case 81:
@@ -1812,449 +1812,287 @@ function createEncounter(listName) {
     case "hard":
       if (encounter.cr == null) encounter.cr = 9
       multiplier = 1 + (encounter.cr - 9) / 10
-      switch (getRandomInteger(0, 99)) {
+      switch (getRandomInteger(0, 60)) {
         case 0:
-          encounter.text = "Text"
+          encounter.text = "\"What is the meaning of life?\" The stone demands to know the answer. It seems very serious about this."
           break
         case 1:
-          encounter.text = "Text"
+          encounter.text = "\"Kill.\" The thought races through your head. \"Kill!\" It's searing an image you murdering your allies. You must stop these dark urges at once. You are losing yourself. At any moment you're going to pop off...\"Kill!\""
           break
         case 2:
-          encounter.text = "Text"
+          encounter.text = "A pressure in character's chest is building. A cracking sound of some kind. \"Oh god no!\""
           break
         case 3:
-          encounter.text = "Text"
+          encounter.text = "The temperature in the local area is rising dramatically. Something must be done immediately!"
           break
         case 4:
-          encounter.text = "Text"
+          encounter.text = "You are caught in a dream. In this dream there is no escape. You must have triggered some magical safeguard and you need to find some way to escape the prison of your mind."
           break
         case 5:
-          encounter.text = "Text"
+          encounter.text = "You encounter a giant chest overflowing with coins and valuables."
           break
         case 6:
-          encounter.text = "Text"
+          encounter.text = "Through your mind's eye, you can see the sky. But it's not right. The stars are not of any constellation you can recognize. Indeed this is the night sky of some other world. But why are seeing these images?"
           break
         case 7:
-          encounter.text = "Text"
+          encounter.text = "Columns as far as the eye can see. What are they supposed to mean? There is no time to think about that as you realize that one is falling over, causing a chain reaction. Run!"
           break
         case 8:
-          encounter.text = "Text"
+          encounter.text = "An arsenal of anointed weapons are here. It seems to have been delivered by some divine intervention. You must have caught the favor of some god on this day."
           break
         case 9:
-          encounter.text = "Text"
+          encounter.text = "A ghostly butcher appears. He seems to have no ill-intent.\"Would you like a taste of my *special* meats?\""
           break
         case 10:
-          encounter.text = "Text"
+          encounter.text = "A devil steps through a portal and beckons toward you. It announces that it does not wish to fight. Instead, it has come to bargain. A contract is gripped tightly in its hand."
           break
         case 11:
-          encounter.text = "Text"
+          encounter.text = "A grave with an elaborate headstone and sarcophagus. You recognize the poetry of its words."
           break
         case 12:
-          encounter.text = "Text"
+          encounter.text = "The skull of vampire resides on a pedestal. What secrets does it hold?"
           break
         case 14:
-          encounter.text = "Text"
+          encounter.text = "A contraption unlike anything you've seen before is here. It appears to have chambers of liquids and gases along its surface."
           break
         case 15:
-          encounter.text = "Text"
+          encounter.text = "A giant mirror has been hoisted on a wall here. You start to hear an eerily familiar voice emanate from its image."
           break
         case 16:
-          encounter.text = "Text"
+          encounter.text = "A sudden rush of ennui washes over you."
           break
         case 17:
-          encounter.text = "Text"
+          encounter.text = "The floor is sinking beneath you! A hole appears before you and you do not want to know where it leads."
           break
         case 18:
-          encounter.text = "Text"
+          encounter.text = "A field of flowers. So many that you can't see the ground beneath them."
           break
         case 19:
-          encounter.text = "Text"
+          encounter.text = "A magical portal is here. Through it, you can see an endless library. All of the world's knowledge and then some could be captured in those tomes..."
           break
         case 20:
-          encounter.text = "Text"
+          encounter.text = "A curious book bound in the flesh of a man seems to have been discarded here. It starts quivering all of a sudden..."
           break
         case 21:
-          encounter.text = "Text"
+          encounter.text = "Gnomes have set up a taxation booth here. In order to pass, you must pay an outrageous price. \"NEXT!\""
           break
         case 22:
-          encounter.text = "Text"
+          encounter.text = "There is a supernatural rain here. But it's not just any rain. \"ACID!\""
           break
         case 23:
-          encounter.text = "Text"
+          encounter.text = "Remarkable frescoes and portraits line the ruined walls."
           break
         case 24:
-          encounter.text = "Text"
+          encounter.text = "A demonic artist resides here. Care for a portrait?"
           break
         case 25:
-          encounter.text = "Text"
+          encounter.text = "A friendly Stone Golem greets you. It cannot speak, but it's trying to communicate something to you."
           break
         case 26:
-          encounter.text = "Text"
+          encounter.text = "An intricate puzzle is presented to you."
           break
         case 27:
-          encounter.text = "Text"
+          encounter.text = "A great history is etched in the stone here. Some of the words are emboldened, possibly indicating a pattern."
           break
         case 28:
-          encounter.text = "Text"
+          encounter.text = "An automoton walks the perimeter of this place. It is powered by some unknown force. Its path is etched deeply into the ground. Who knows how long it has been doing this."
           break
         case 29:
-          encounter.text = "Text"
+          encounter.text = "A simple shrine is here. A chalice filled with blood is placed in front of it."
           break
         case 30:
-          encounter.text = "Text"
+          encounter.text = "A person is strung up on the wall. There are signs of life, but they are fading fast!"
           break
         case 31:
-          encounter.text = "Text"
+          encounter.text = "A chimera. Will you accept grim fate now that you have come across such a foe?"
+          encounter.enemies = [
+            createEnemy("Chimera", calculateRoll("12d10+48"), 14, 7, "2d6+4", "d20", "Fire Breath7d8")
+          ]
           break
         case 32:
-          encounter.text = "Text"
+          encounter.text = "The cyclops eyes you closely. It ponders for a time, but then finally decides that you must die."
+          encounter.enemies = [
+            createEnemy("Cyclops", calculateRoll("12d12+60"), 14, 9, "3d8+6", "d20")
+          ]
           break
         case 33:
-          encounter.text = "Text"
+          encounter.text = "You've walked right into the drider's web. This was her plan all along."
+          encounter.enemies = [
+            createEnemy("Drider", calculateRoll("13d10+52"), 19, 6, "3d8", "1d10+3", "Poison Bite2d8")
+          ]
           break
         case 34:
-          encounter.text = "Text"
+          encounter.text = "A group of cultists are gathering here. It appears that they are trying to open a portal through to the hells. They must be stopped!"
+          encounter.enemies = [
+            createEnemy("Insane Mage", calculateRoll("9d8"), 12, 5, "1d4+2", "d20+2", "Cone of Cold8d8", "Greater Invisibility", "Fireball8d6", "Shield"),
+            createEnemy("Cultist A", calculateRoll("2d8"), 12, 3, "1d6+1", "d20+1"),
+            createEnemy("Cultist B", calculateRoll("2d8"), 12, 3, "1d6+1", "d20+1")
+          ]
           break
         case 35:
-          encounter.text = "Text"
+          encounter.text = "The statues of men in terror, all cowering from some horrible sight. This can only mean one thing: Medusa."
+          encounter.enemies = [
+            createEnemy("Medusa", calculateRoll("17d8+51"), 15, 5, "1d6+2", "d20+2", "Petrifying Gaze", "Snake Hair5d6")
+          ]
           break
         case 36:
-          encounter.text = "Text"
+          encounter.text = "Dragon fight! A young brass dragon descends upon you."
+          encounter.enemies = [
+            createEnemy("Young Brass Dragon", calculateRoll("13d10+39"), 17, 7, "2d10+4", "d20", "Fire Breath12d6", "Sleep Breath")
+          ]
           break
         case 37:
-          encounter.text = "Text"
+          encounter.text = "The young white dragon has sized you up. It considers you a worth adversary"
+          encounter.enemies = [
+            createEnemy("Young White Dragon", calculateRoll("14d10+56"), 17, 7, "2d10+4", "d20", "Cold Breath10d8", "Ice Walk")
+          ]
           break
         case 38:
-          encounter.text = "Text"
+          encounter.text = "An orc death squad!"
+          encounter.enemies = [
+            createEnemy("Orc A", calculateRoll("2d8+6"), 13, 5, "1d12+3", "d20+1"),
+            createEnemy("Orc B", calculateRoll("2d8+6"), 13, 5, "1d12+3", "d20+1"),
+            createEnemy("Orc C", calculateRoll("2d8+6"), 13, 5, "1d12+3", "d20+1"),
+            createEnemy("Orc D", calculateRoll("2d8+6"), 13, 5, "1d12+3", "d20+1"),
+            createEnemy("Orc E", calculateRoll("2d8+6"), 13, 5, "1d12+3", "d20+1"),
+            createEnemy("Orc Leader", calculateRoll("5d8+6"), 13, 5, "3d12+3", "d20+1", "Rally Cry")
+          ]
           break
         case 39:
-          encounter.text = "Text"
+          encounter.text = "Drow raiders are in full force here!"
+          encounter.enemies = [
+            createEnemy("Drow Raider A", calculateRoll("3d8"), 15, 4, "1d6+2", "d20+2"),
+            createEnemy("Drow Raider B", calculateRoll("3d8"), 15, 4, "1d6+2", "d20+2"),
+            createEnemy("Drow Raider C", calculateRoll("3d8"), 15, 4, "1d6+2", "d20+2"),
+            createEnemy("Drow Raider D", calculateRoll("3d8"), 15, 4, "1d6+2", "d20+2"),
+            createEnemy("Drow Raider E", calculateRoll("3d8"), 15, 4, "1d6+2", "d20+2")
+          ]
           break
         case 40:
-          encounter.text = "Text"
+          encounter.text = "The stone giant has been building pillars of rocks and then watches them fall over. He's kinda pissed that you've interrupted his game."
+          encounter.enemies = [
+            createEnemy("Stone Giant", calculateRoll("11d12+55"), 17, 9, "3d8+6", "d20+2", "Throw Rock4d10+6")
+          ]
           break
         case 41:
-          encounter.text = "Text"
+          encounter.text = "The shield guardian is blocking path. Some mage from eons ago must have absent mindedly placed this here and forgot about it."
+          encounter.enemies = [
+            createEnemy("Shield Guardian", calculateRoll("15d10+60"), 17, 7, "4d6+4", "d20-1", "Shield")
+          ]
           break
         case 42:
-          encounter.text = "Text"
+          encounter.text = "You have caught the focus of a young black dragon. It's positioning itself for attack!"
+          encounter.enemies = [
+            createEnemy("Young Black Dragon", calculateRoll("15d10+45"), 18, 7, "4d6+8", "d20+2", "Acid Breath11d8")
+          ]
           break
         case 43:
-          encounter.text = "Text"
+          encounter.text = "You suddenly fall into a pit! This is no ordinary trap, for a Young Copper Dragon has been enslaved here."
+          encounter.enemies = [
+            createEnemy("Young Copper Dragon", calculateRoll("14d10+42"), 17, 7, "4d6+8", "d20+1", "Acid Breath9d8", "Slowing Breath")
+          ]
           break
         case 44:
-          encounter.text = "Text"
+          encounter.text = "The assassin finally reveals himself. \"You have no idea how long I have been waiting for this moment!\""
+          encounter.enemies = [
+            createEnemy("Assassin", calculateRoll("12d8+24"), 15, 6, "2d6+6", "d20+3")
+          ]
           break
         case 45:
-          encounter.text = "Text"
+          encounter.text = "You feel an unexpected cold wind. It can only be one thing: the frost giant approaches!"
+          encounter.enemies = [
+            createEnemy("Frost Giant", calculateRoll("12d12+60"), 15, 9, "6d12+12", "d20-1")
+          ]
           break
         case 46:
-          encounter.text = "Text"
+          encounter.text = "\"How do you actually kill a hydra?\" No one seems to know the answer, but here you are facing one anyway. Tough luck!"
+          encounter.enemies = [
+            createEnemy("Hydra", calculateRoll("15d12+75"), 15, 8, "3d10+15", "d20+1")
+          ]
           break
         case 47:
-          encounter.text = "Text"
+          encounter.text = "You've had no qualms killing its snake bretheren before. Perhaps that is why the Spirit Naga holds such malice towards you. Prepare for the fight of your life!"
+          encounter.enemies = [
+            createEnemy("Spirit Naga", calculateRoll("10d10+20"), 15, 7, "8d8+4", "d20+3", "Dominate Person", "Lightning Bolt9d6")
+          ]
           break
         case 48:
-          encounter.text = "Text"
+          encounter.text = "The hairs on your arm raise as if you've entered a static field. Yes, it's a young bronze dragon preparing to strike. Dodge out of the way if you can!"
+          encounter.enemies = [
+            createEnemy("Young Bronze Dragon", calculateRoll("15d10+60"), 18, 8, "4d6+10", "d20+1", "Lightning Breath10d10", "Repulsion Breath")
+          ]
           break
         case 49:
-          encounter.text = "Text"
+          encounter.text = "There was once a great forest here. It has all been destroyed by the ambition of man. All that is left is the vengeance of the young green dragon that stands in your way."
+          encounter.enemies = [
+            createEnemy("Young Green Dragon", calculateRoll("16d10+48"), 18, 7, "4d6+8", "d20+1", "Poison Breath12d6")
+          ]
           break
         case 50:
-          encounter.text = "Text"
+          encounter.text = "My god, that must be why they call them cloud giants. It's as if they can reach the clouds. Defend yourself!"
+          encounter.enemies = [
+            createEnemy("Cloud Giant", calculateRoll("16d12+96"), 14, 12, "6d8+16", "d20", "Throw Rock4d10+8", "Control Weather")
+          ]
           break
         case 51:
-          encounter.text = "Text"
+          encounter.text = "A treant has stationed itself here. It's the protector of the natural world. You upset the balance."
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Treant", calculateRoll("12d12+60"), 16, 10, "6d6+12", "d20-1"),
+            createEnemy("Awakened Tree", calculateRoll("7d12+14"), 13, 10, "3d6+4", "d20-2")
           ]
           break
         case 52:
-          encounter.text = "Text"
+          encounter.text = "A young blue dragon. What else can be said? You know you're in trouble now."
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Young Blue Dragon", calculateRoll("16d10+64"), 18, 9, "12d6+10", "d20", "Lightning Breath10d10")
           ]
           break
         case 53:
-          encounter.text = "Text"
+          encounter.text = "A young silver dragon. It's over for you. Make your peace."
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Young Silver Dragon", calculateRoll("16d10+8-"), 18, 10, "4d6+12", "d20", "Cold Breath12d8", "Paralyzing Breath")
           ]
           break
         case 54:
-          encounter.text = "Text"
+          encounter.text = "This is the lair of the Aboleth. You say your prayers to any god that would listen. It's time to prove your worth."
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Aboleth", calculateRoll("18d10"), 17, 9, "6d6+15", "d20-1", "Enslave", "Psychic Drain3d6")
           ]
           break
         case 55:
-          encounter.text = "Text"
+          encounter.text = "A deva is here. There must have been some mistake, but you are marked for death."
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Deva", calculateRoll("16d8+64"), 17, 8, "2d6+8", "d20+4")
           ]
           break
         case 56:
-          encounter.text = "Text"
+          encounter.text = "The stone golem is against the natural order. It does not fill any niche in the animal kingdom. It must be destroyed."
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Stone Golem", calculateRoll("17d10+85"), 17, 10, "6d8+12", "d20-1")
           ]
           break
         case 57:
-          encounter.text = "Text"
+          encounter.text = "You've gotten on the wrong side of the young gold dragon. Perhaps you should not have trespassed on its sovereign land."
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Young Gold Dragon", calculateRoll("17d10+85"), 18, 10, "4d6+12", "d20+2", "Fire Breath10d10", "Weakening Breath")
           ]
           break
         case 58:
-          encounter.text = "Text"
+          encounter.text = "The young red dragon wastes no time in its pursuit of victims. It has selected you for its next meal."
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Young Red Dragon", calculateRoll("17d10+85"), 18, 10, "4d6+12", "d20", "Fire Breath16d6")
           ]
           break
         case 59:
-          encounter.text = "Text"
+          encounter.text = "The guardian naga is against the natural order. It does not fill any niche in the animal kingdom. It must be destroyed."
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Guardian Naga", calculateRoll("15d10+45"), 18, 8, "1d8+4", "d20+4", "Spit Poison10d8", "Flame Strike4d6", "Bestow Curse", "Hold Person", "Geas")
           ]
           break
         case 60:
-          encounter.text = "Text"
+          encounter.text = "The fire giants were born in environments that would burn others to a crisp instantly. This means this one is immune to fire damage. It's ready to fight now."
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 61:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 62:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 63:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 64:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 65:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 66:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 67:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 68:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 69:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 70:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 71:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 72:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 73:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 74:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 75:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 76:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 77:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 78:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 79:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 80:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 81:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 82:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 83:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 84:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 85:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 86:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 87:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 88:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 89:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 90:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 91:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 92:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 93:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 94:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 95:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 96:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 97:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 98:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 99:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Fire Giant", calculateRoll("13d12+78"), 18, 11, "6d6+7", "d20-1", "Throw Rock4d10+7")
           ]
           break
       }
