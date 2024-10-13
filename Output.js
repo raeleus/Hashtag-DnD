@@ -74,7 +74,7 @@ const modifier = (text) => {
             hashtag += ` "${spell}"`
           }
 
-          text += `${state.tempEnemy.name} has been created.\nType #initiative to start the battle.\nType the following hashtag to create another identical enemy like this:\n${hashtag}\n***********\n`
+          text += `${state.tempEnemy.name} has been created.\nType #initiative to start the battle.\nCopy and paste the following hashtag to create another identical enemy like this:\n${hashtag}\n***********\n`
           break;
         case null:
           text += `[Enemy creation has been aborted!]\n`
