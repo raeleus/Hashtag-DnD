@@ -1449,23 +1449,24 @@ function doRest(command) {
   var commandName = getCommandName(command)
   state.day++
   state.enemies = []
+
+  var healingFactor = 1
+  var text
+  if (commandName.toLowerCase() == "shortrest") {
+    state.day--
+    healingFactor = .5
+    text = `\n[All characters have healed 50%.]\n`
+  } else {
+    text = `\n[All characters have rested and feel rejuvinated. It's now day ${state.day}]\n`
+  }
+
   state.characters.forEach(function(character) {
-    if (commandName.toLowerCase() == "shortrest") {
-      state.day--
-      var max = getHealthMax(character)
-      character.health += Math.floor(max / 2)
-      if (character.health > max) character.health = max
-
-      text = `\n[All characters have healed 50%.]\n`
-    } else {
-      character.health = getHealthMax(character)
-
-      text = `\n[All characters have rested and feel rejuvinated. It's now day ${state.day}]\n`
-    }
-
-    state.show = "none"
-    return text
+    var max = getHealthMax(character)
+    character.health += Math.floor(max * healingFactor)
+    if (character.health > max) character.health = max
   })
+  state.show = "none"
+  return text
 }
 
 function doFlipCommandAbility(command) {
