@@ -719,6 +719,81 @@ function handleSetupEnemyStep(text) {
           case 25:
             state.tempEnemy = createEnemy("Zombie", calculateRoll("3d8+9"), 8, 4, "1d6+1", "d20-2")
             break
+          case 26:
+            state.tempEnemy = createEnemy("Air Elemental", calculateRoll("12d10+24"), 15, 8, "2d8+5", "d20+5", "Whirlwind3d8+2")
+            break
+          case 27:
+            state.tempEnemy = createEnemy("Basilisk", calculateRoll("8d8+16"), 15, 5, "2d6+3", "d20-1")
+            break
+          case 28:
+            state.tempEnemy = createEnemy("Berserker", calculateRoll("9d8+27"), 13, 5, "1d12+3", "d20+1")
+            break
+          case 29:
+            state.tempEnemy = createEnemy("Chuul", calculateRoll("11d10+33"), 16, 6, "2d6+4", "d20", "Tentacles")
+            break
+          case 30:
+            state.tempEnemy = createEnemy("Doppelganger", calculateRoll("8d8+16"), 14, 6, "1d6+4", "d20+4", "Shapechange")
+            break
+          case 31:
+            state.tempEnemy = createEnemy("Druid", calculateRoll("5d8+5"), 11, 4, "1d8", "d20+1", "Produce Flame3d6", "Bark Skin", "Entangle")
+            break
+          case 32:
+            state.tempEnemy = createEnemy("Earth Elemental", calculateRoll("12d10+60"), 17, 8, "2d8+5", "d20-1", "Earth Glide")
+            break
+          case 33:
+            state.tempEnemy = createEnemy("Fire Elemental", calculateRoll("12d10+36"), 13, 6, "2d6+3", "d20+3", "Fire Form")
+            break
+          case 34:
+            state.tempEnemy = createEnemy("Gorgon", calculateRoll("12d8+48"), 19, 8, "2d12+5", "d20", "Petrifying Breath")
+            break
+          case 35:
+            state.tempEnemy = createEnemy("Green Hag", calculateRoll("11d8+33"), 17, 6, "2d8+4", "d20+1", "Minor Illusion", "Invisible Passage")
+            break
+          case 36:
+            state.tempEnemy = createEnemy("Griffon", calculateRoll("7d10+21"), 12, 6, "1d8+4", "d20+2")
+            break
+          case 37:
+            state.tempEnemy = createEnemy("Hell Hound", calculateRoll("7d8+14"), 15, 5, "1d8+3", "d20+1", "Fire Breath6d6")
+            break
+          case 38:
+            state.tempEnemy = createEnemy("Hill Giant", calculateRoll("10d12+40"), 13, 8, "3d8+5", "d20-1", "Throw Rock3d10+5")
+            break
+          case 39:
+            state.tempEnemy = createEnemy("Manticore", calculateRoll("8d10+24"), 14, 5, "1d8+3", "d20+3")
+            break
+          case 40:
+            state.tempEnemy = createEnemy("Minotaur", calculateRoll("9d10+27"), 14, 6, "2d12+4", "d20")
+            break
+          case 41:
+            state.tempEnemy = createEnemy("Mimic", calculateRoll("9d8+18"), 12, 5, "1d8+3", "d20+1", "Grapple")
+            break
+          case 42:
+            state.tempEnemy = createEnemy("Ogre", calculateRoll("7d10+21"), 11, 6, "2d8+4", "d20-1")
+            break
+          case 43:
+            state.tempEnemy = createEnemy("Owlbear", calculateRoll("7d10+21"), 13, 7, "1d10+5", "initiative")
+            break
+          case 44:
+            state.tempEnemy = createEnemy("Red Dragon Wyrmling", calculateRoll("10d8+30"), 17, 6, "1d10+4", "d20")
+            break
+          case 45:
+            state.tempEnemy = createEnemy("Spectator", calculateRoll("6d8+12"), 14, 1, "1d6-1", "d20+2", "Confusion Ray", "Paralyzing Ray", "Fear Ray", "Wounding Ray3d10")
+            break
+          case 46:
+            state.tempEnemy = createEnemy("Troll", calculateRoll("8d10+40"), 15, 7, "1d6+4", "d20+1")
+            break
+          case 47:
+            state.tempEnemy = createEnemy("Wererat", calculateRoll("6d8+6"), 12, 4, "1d4+2", "d20+2")
+            break
+          case 48:
+            state.tempEnemy = createEnemy("Werewolf", calculateRoll("9d8+18"), 12, 4, "18+2", "d20+1")
+            break
+          case 49:
+            state.tempEnemy = createEnemy("Vampire Spawn", calculateRoll("11d8+33"), 15, 6, "2d4+3", "d20+3", "Bite3d6+3")
+            break
+          case 50:
+            state.tempEnemy = createEnemy("Wight", calculateRoll("6d8+18"), 14, 4, "1d8+2", "d20+1", "Life Drain4d6+3")
+            break
         }
 
         if (nameMatches != null) state.tempEnemy.name = nameMatches[0]
