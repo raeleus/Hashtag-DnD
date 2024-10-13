@@ -2065,7 +2065,7 @@ function doEncounter(command) {
     }
   }
 
-  state.prefix += "[Type #initiative to begin the battle]\n"
+  state.prefix += encounter.enemies.length > 0 ? "[Type #initiative to begin the battle]\n" : ""
 
   state.show = "prefix"
   return text
