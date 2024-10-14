@@ -16,6 +16,10 @@ Create locations to travel to and view them in a map
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
+v. 0.2.1
+* Added places of interest to `#location`
+* Minor bug fixes and improvements
+
 v. 0.2.0
 * Added combat hashtags: #setupenemy, #encounter, #showenemies, #addenemy, #removeenemy, #initiative, #turn, #flee
 * `#note` without parameters will store the last action's text into the notes
