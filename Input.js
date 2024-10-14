@@ -2915,8 +2915,8 @@ function doCastSpell(command) {
         if (roll == 20) enemyString += `\nCritical Damage: ${damage}\n`
         else enemyString += `\nDamage: ${damage}\n`
         foundEnemy.health = Math.max(0, foundEnemy.health - damage)
-        if (foundEnemy.health == 0) enemyString += `${toTitleCase(foundEnemy.name)} has been defeated!\n`
-        else enemyString = `${toTitleCase(foundEnemy.name)} has ${foundEnemy.health} health remaining!\n`
+        if (foundEnemy.health == 0) enemyString += ` ${toTitleCase(foundEnemy.name)} has been defeated!\n`
+        else enemyString = ` ${toTitleCase(foundEnemy.name)} has ${foundEnemy.health} health remaining!\n`
       }
     }
   }
