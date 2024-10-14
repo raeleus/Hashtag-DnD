@@ -271,7 +271,7 @@ const modifier = (text) => {
       text += "*** ENEMIES ***\n"
 
       if (state.enemies.length == 0) {
-        text += "There are no enemies present here. Call #encounter to generate a scripted set or #addenemy to add your own\n"
+        text += "There are no enemies present here. Type #encounter to generate a scripted set or #addenemy to add your own\n"
       } else {
         var index = 0
         for (var enemy of state.enemies) {
@@ -297,7 +297,7 @@ const modifier = (text) => {
       
       if (state.initiativeOrder.length > 0) {
         state.initiativeOrder = []
-        text += `[Call #turn]\n`
+        text += `[Type #turn]\n`
       }
       break
     case "reset":

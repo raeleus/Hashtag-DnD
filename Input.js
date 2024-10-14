@@ -136,7 +136,7 @@ const modifier = (text) => {
         return { text }
       } else {
         state.show = "none"
-        text = `\n[Error: Character ${state.characterName} does not exist. Type #setup to create this character.]\n`
+        text = `\n[Error: Character ${state.characterName} does not exist. Type #setup to create this character]\n`
         return { text }
       }
     }
@@ -1093,7 +1093,7 @@ function doSetStat(command) {
   }
 
   state.show = "none"
-  return `\n[${possessiveName} ${toTitleCase(arg0)} ability is now ${arg1}.]\n`
+  return `\n[${possessiveName} ${toTitleCase(arg0)} ability is now ${arg1}]\n`
 }
 
 function doSetSpellStat(command) {
@@ -1230,7 +1230,7 @@ function doSetSkill(command) {
   }
 
   state.show = "none"
-  return `\n[${possessiveName} ${toTitleCase(arg0)} skill is now ${arg2 >= 0 ? "+" + arg2 : "-" + arg2} and based on ${toTitleCase(arg1)}.]\n`
+  return `\n[${possessiveName} ${toTitleCase(arg0)} skill is now ${arg2 >= 0 ? "+" + arg2 : "-" + arg2} and based on ${toTitleCase(arg1)}]\n`
 }
 
 function doSetAc(command) {
@@ -1296,7 +1296,7 @@ function doAddExperience(command) {
   }
 
   state.show = "none"
-  return `\n[${possessiveName} experience is increased to ${character.experience}.]\n`
+  return `\n[${possessiveName} experience is increased to ${character.experience}]\n`
 }
 
 function doLevelUp(command) {
@@ -1319,7 +1319,7 @@ function doSetClass(command) {
   character.className = arg0
 
   state.show = "none"
-  return `\n[${possessiveName} class is set to "${character.className}".]\n`
+  return `\n[${possessiveName} class is set to "${character.className}"]\n`
 }
 
 function doSetSummary(command) {
@@ -1335,7 +1335,7 @@ function doSetSummary(command) {
   character.summary = arg0
 
   state.show = "none"
-  return `\n[${possessiveName} summary is set.]\n`
+  return `\n[${possessiveName} summary is set]\n`
 }
 
 function doSetHealth(command) {
@@ -1455,7 +1455,7 @@ function doRest(command) {
   if (commandName.toLowerCase() == "shortrest") {
     state.day--
     healingFactor = .5
-    text = `\n[All characters have healed 50%.]\n`
+    text = `\n[All characters have healed 50%]\n`
   } else {
     text = `\n[All characters have rested and feel rejuvinated. It's now day ${state.day}]\n`
   }
@@ -2008,7 +2008,7 @@ function doRemoveLocation(command) {
       var num = parseInt(x) - 1
       if (num >= state.locations.length) {
         state.show = "none"
-        return `\n[Error: Location ${x} does not exist. See #showlocations.]\n`
+        return `\n[Error: Location ${x} does not exist. See #showlocations]\n`
       }
 
       var location = state.locations[num]
@@ -2095,7 +2095,7 @@ function doRemoveEnemy(command) {
       var num = parseInt(x) - 1
       if (num >= state.enemies.length) {
         state.show = "none"
-        return `\n[Error: Enemy ${x} does not exist. See #showenemies.]\n`
+        return `\n[Error: Enemy ${x} does not exist. See #showenemies]\n`
       }
 
       var enemy = state.enemies[num]
@@ -2243,7 +2243,7 @@ function doInitiative(command) {
 
   if (state.enemies.length == 0) {
     state.show = "none"
-    return "\n[Error: No enemies! Call #addenemy or #encounter]\n"
+    return "\n[Error: No enemies! Type #addenemy or #encounter]\n"
   }
 
   createInitiativeOrder()
@@ -2260,7 +2260,7 @@ function doInitiative(command) {
 function doFlee(command) {
   if (state.initiativeOrder.length == 0) {
     state.show = "none"
-    return "\n[Error: Not in combat. Call #initiative first]\n"
+    return "\n[Error: Not in combat. Type #initiative first]\n"
   }
 
   var difficulty = getArgument(command, 0)
@@ -2342,7 +2342,7 @@ function doTurn(command) {
     var targetNameAdjustedCase = target.name == "You" ? "you" : toTitleCase(target.name)
     var hit = calculateRoll(`1d20${activeCharacter.hitModifier > 0 ? "+" + activeCharacter.hitModifier : activeCharacter.hitModifier < 0 ? activeCharacter.hitModifier : ""}`) >= target.ac
 
-    var text = `\n[It is ${possessiveName} turn.]\n`
+    var text = `\n[It is ${possessiveName} turn]\n`
     if (getRandomBoolean() || activeCharacter.spells.length == 0) {
       if (hit) {
         var damage = isNaN(activeCharacter.damage) ? calculateRoll(activeCharacter.damage) : activeCharacter.damage
@@ -2738,7 +2738,7 @@ function doLearnSpell(command) {
   var tryWord = character.name == "You" ? "try" : "tries"
 
   var found = character.spells.find((element) => element == arg0)
-  if (found != null) return `\n[${character.name} ${tryWord} to learn the spell ${arg0}, but already knows it.]\n`
+  if (found != null) return `\n[${character.name} ${tryWord} to learn the spell ${arg0}, but already knows it]\n`
 
   character.spells.push(arg0)
   addStoryCard(arg0, "", "spell")
@@ -2866,7 +2866,7 @@ function doCastSpell(command) {
 
   if (found == null) {
     state.show = "none"
-    return `\n[${toTitleCase(character.name)} ${tryWord} to cast the spell ${spell}, but ${character.name == "You" ? "you" : toTitleCase(character.name)} ${dontWord} know it.]\n`
+    return `\n[${toTitleCase(character.name)} ${tryWord} to cast the spell ${spell}, but ${character.name == "You" ? "you" : toTitleCase(character.name)} ${dontWord} know it]\n`
   }
 
   var text = `${character.name} cast the spell ${spell}${advantage != "normal" ? " with " + advantage : ""}${targetText == null ? "" : " " + targetText}.`
@@ -2987,7 +2987,7 @@ function doEraseNote(command) {
     var num = parseInt(x) - 1
     if (num >= state.notes.length) {
       state.show = "none"
-      return `\n[Error: Note ${x} does not exist. Call #shownotes.]\n`
+      return `\n[Error: Note ${x} does not exist. Type #shownotes]\n`
     }
 
     state.notes.splice(num, 1)
@@ -3010,11 +3010,11 @@ function doRemoveCharacter(command) {
     if (character.name.toLowerCase() == arg0.toLowerCase()) {
       state.characters.splice(i, 1)
       state.show = "none"
-      return `[Character ${character.name} removed.]`
+      return `[Character ${character.name} removed]`
     }
   }
 
-  return `[Character ${arg0} was not found.]`
+  return `[Character ${arg0} was not found]`
 }
 
 function doGenerateName(command) {
