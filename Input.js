@@ -1972,7 +1972,7 @@ function doGoToLocation(command) {
 }
 
 function doGetLocation(command) {
-  state.show = "none"
+  state.show = "location"
   return `\n[You are at ${state.location == null ? "" : "the location " + toTitleCase(state.location) + " "}(${state.x},${state.y})]`
 }
 

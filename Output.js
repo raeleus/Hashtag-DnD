@@ -221,6 +221,21 @@ const modifier = (text) => {
       }
       text += "******************\n\n"
       break
+    case "location":
+      var localLocations = []
+      for (location of state.locations) {
+        if (location.x == state.x && location.y == state.y) localLocations.push(location)
+      }
+
+      if (localLocations.length > 0) {
+        text += "Places of interest here:\n"
+        for (location of localLocations) {
+          text += `* ${location.name}\n`
+        }
+      } else {
+        text += " "
+      }
+      break
     case "locations":
       text += `Player location: ${state.location == null ? "" : state.location + " "}(${state.x},${state.y})\n`
       text += `*** LOCATIONS ***\n`
