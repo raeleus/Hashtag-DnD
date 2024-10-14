@@ -123,16 +123,16 @@ const modifier = (text) => {
 
     if (state.characterName == null && found) {
       state.show = "none"
-      text = `\n[Error: Character name not specified. Use the "do" or "say" modes. Alternatively, use "story" mode with the following format without quotes: "charactername #hashtag"]\n`
+      text = `\n[Error: Character name not specified. Use the "do" or "say" modes. Alternatively, use "story" mode in the following format without quotes: "charactername #hashtag"]\n`
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, setupEnemySynonyms, damageSynonyms, restSynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, setupEnemySynonyms, damageSynonyms, restSynonyms, addExperienceSynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
         state.show = "none"
-        text = `\n[Error: Character name not specified. Use the "do" or "say" modes. Alternatively, use "story" mode with the following format without quotes: "charactername #hashtag"]\n`
+        text = `\n[Error: Character name not specified. Use the "do" or "say" modes. Alternatively, use "story" mode in the following format without quotes: "charactername #hashtag"]\n`
         return { text }
       } else {
         state.show = "none"
@@ -1282,21 +1282,41 @@ function doAddExperience(command) {
     state.show = "none"
     return "\n[Error: Not enough parameters. See #help]\n"
   }
+
+  arg0 = searchArgument(command, /\d+/gi)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Expected a number. See #help]\n"
+  }
   arg0 = parseInt(arg0)
 
-  var possessiveName = getPossessiveName(character.name)
+  var arg1 = searchArgument(command, /party/gi)
 
-  var level = getLevel(character.experience)
-  character.experience += arg0
-  var newLevel = getLevel(character.experience)
-
-  if (newLevel > level) {
+  if (arg1 == null && character == null) {
     state.show = "none"
-    return `\n[${possessiveName} experience is increased to ${character.experience}. LEVEL UP! Level: ${newLevel}, Health Max: ${getHealthMax()}]\n`
+    return `\n[Error: Character name not specified. Use the "do" or "say" modes. Alternatively, use "story" mode in the following format without quotes: "charactername #hashtag"]\n`
   }
 
-  state.show = "none"
-  return `\n[${possessiveName} experience is increased to ${character.experience}]\n`
+  if (state.characters.length == 0) {
+    state.show = "none"
+    return `\n[Error: There are no characters. Type #setup to create a character]\n`
+  }
+
+  state.prefix = "\n"
+  characters = arg1 == null ? [character] : state.characters
+  for (var c of characters) {
+    var possessiveName = getPossessiveName(c.name)
+
+    var level = getLevel(c.experience)
+    c.experience += arg0
+    var newLevel = getLevel(c.experience)
+
+    if (newLevel > level) state.prefix += `[${possessiveName} experience is increased to ${c.experience}. LEVEL UP! Level: ${newLevel}, Health Max: ${getHealthMax(c)}. Next level at ${getNextLevelXp(c.experience)}]\n`
+    else state.prefix += `[${possessiveName} experience is increased to ${c.experience}. Next level at ${getNextLevelXp(c.experience)}]\n`
+  }
+
+  state.show = "prefixOnly"
+  return " "
 }
 
 function doLevelUp(command) {

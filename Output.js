@@ -276,6 +276,9 @@ const modifier = (text) => {
     case "prefix":
       text = state.prefix + originalText
       break
+    case "prefixOnly":
+      text = state.prefix
+      break
     case "clearInventory":
       text += `[${possessiveName} inventory has been emptied]\n`
       break
@@ -367,8 +370,8 @@ const modifier = (text) => {
       text += "\n    Sets the number of days since your adventure began."
       text += "\n#setxp value"
       text += "\n    Sets the character's experience to the specified value."
-      text += "\n#addxp value"
-      text += "\n    Increases the character's experience by the specified value. The player is notified if there is a level up."
+      text += "\n#addxp (party) value"
+      text += "\n    Increases the character's experience by the specified value. The player is notified if there is a level up. If the parameter party is specified, xp will be added to the entire party instead. Parameters can be listed in any order."
       text += "\n#setautoxp value"
       text += "\n    Automatically increases the experience of all party members when a #try, #attack, or #cast is called. The amount of experience is scaled based on the difficulty class of the check with any check 20 or higher will result in the maximum specified by value. Set to 0 to disable."
       text += "\n#showautoxp"

@@ -17,6 +17,7 @@ See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
 v. 0.2.1
+* Call `#xp` with the parameter `party` to add xp to the entire group
 * Added places of interest to `#location`
 * Minor bug fixes and improvements
 
