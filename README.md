@@ -18,7 +18,7 @@ Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
 v. 0.2.1
 * Call `#xp` with the parameter `party` to add xp to the entire group
-* Added places of interest to `#location`
+* List places of interest at your current coordinates to `#location`
 * Minor bug fixes and improvements
 
 v. 0.2.0
