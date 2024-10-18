@@ -1437,18 +1437,14 @@ function doDamage(command) {
     state.show = "none"
     return `\n[${character.name} ${haveWord} been damaged for ${damage} hp with ${character.health} remaining].${character.health == 0 ? " You are unconscious" : ""}\n`
   } else {
-    if (arg1 == null) {
-      state.show = "none"
-      return "\n[Error: Not enough parameters. See #help]\n"
-    }
-
     var damage
 
-    var damageMatches = arg1.match(/\d*d\d+((\+|-)d+)?/gi)
+    var damageMatches = arg0.match(/\d*d\d+((\+|-)d+)?/gi)
     if (damageMatches != null) damage = calculateRoll(damageMatches[0])
     else {
-      damageMatches = arg1.match(/\d+/g)
-      if (damageMatches != null) damage = parseInt(damageMatches[damageMatches.length - 1])
+      damageMatches = arg0.match(/\d+/g)
+      log(damageMatches)
+      if (damageMatches != null) damage = parseInt(damageMatches[0])
     }
 
     if (damage == null) {
@@ -1457,11 +1453,14 @@ function doDamage(command) {
     }
 
     for (var enemy of state.enemies) {
-      if (enemy.name.toLowerCase() == arg0.toLowerCase()) {
+      if (enemy.name.toLowerCase() == arg1.toLowerCase()) {
         enemy.health = Math.max(0, enemy.health - damage)
         return `\n[${toTitleCase(enemy.name)} has been damaged for ${damage} hp with ${enemy.health} remaining].${enemy.health == 0 ? " " + toTitleCase(enemy.name) + " has been defeated!" : ""}\n`
       }
     }
+
+    state.show = "none"
+    return `\n[Error: Could not find an enemy matching the name ${enemy.name}. Type #enemies to see a list]`
   }
 }
 
