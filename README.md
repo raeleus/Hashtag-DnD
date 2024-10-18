@@ -16,10 +16,10 @@ Create locations to travel to and view them in a map
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
-v. 0.2.1
+v. 0.2.1 Hotfix 1
 * Call `#xp` with the parameter `party` to add xp to the entire group
 * List places of interest at your current coordinates to `#location`
-* Fixed being unable to use #damage to target enemies in combat. Thanks coryking!
+* Hotfix: Fixed being unable to use #damage to target enemies in combat. Thanks coryking!
 * Minor bug fixes and improvements
 
 v. 0.2.0
