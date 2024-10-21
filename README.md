@@ -16,6 +16,9 @@ Create locations to travel to and view them in a map
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
+v. 0.2.2
+* Minor bug fixes and improvements
+
 v. 0.2.1 Hotfix 1
 * Call `#xp` with the parameter `party` to add xp to the entire group
 * List places of interest at your current coordinates to `#location`
