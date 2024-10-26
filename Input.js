@@ -127,7 +127,7 @@ const modifier = (text) => {
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, setupEnemySynonyms, damageSynonyms, restSynonyms, addExperienceSynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, setupEnemySynonyms, healSynonyms, damageSynonyms, restSynonyms, addExperienceSynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
@@ -1585,8 +1585,16 @@ function doHeal(command) {
       }
     }
 
+    for (var character of state.characters) {
+      if (character.name.toLowerCase() == arg1.toLowerCase()) {
+        character.health += healing
+        character.health = clamp(character.health, 0, getHealthMax(character))
+        return `\n[${toTitleCase(character.name)} has been healed for ${healing} hp to a total of ${character.health}]\n`
+      }
+    }
+
     state.show = "none"
-    return `\n[Error: Could not find an enemy matching the name ${enemy.name}. Type #enemies to see a list]`
+    return `\n[Error: Could not find an enemy or character matching the name ${arg1}. Type #enemies or #characters to see a list]`
   }
 }
 
@@ -1650,8 +1658,15 @@ function doDamage(command) {
       }
     }
 
+    for (var character of state.characters) {
+      if (character.name.toLowerCase() == arg1.toLowerCase()) {
+        character.health = Math.max(0, character.health - damage)
+        return `\n[${toTitleCase(character.name)} has been damaged for ${damage} hp with ${character.health} remaining] ${character.health == 0 ? " " + toTitleCase(character.name) + " is unconcious!" : ""}\n`
+      }
+    }
+
     state.show = "none"
-    return `\n[Error: Could not find an enemy matching the name ${enemy.name}. Type #enemies to see a list]`
+    return `\n[Error: Could not find an enemy matching the name ${arg1}. Type #enemies  or #characters to see a list]`
   }
 }
 

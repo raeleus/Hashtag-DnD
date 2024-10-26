@@ -20,6 +20,7 @@ v. 0.2.2
 * Added Boss difficulty encounters
 * Added Humanoid Enemy Presets
 * Added optional enemy parameter to #heal
+* Tweaked #heal and #damage to allow targeting characters specified as a parameter
 * Minor bug fixes and improvements
 
 v. 0.2.1 Hotfix 1
