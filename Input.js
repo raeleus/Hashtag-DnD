@@ -795,154 +795,229 @@ function handleSetupEnemyStep(text) {
             state.tempEnemy = createEnemy("Wight", calculateRoll("6d8+18"), 14, 4, "1d8+2", "d20+1", "Life Drain4d6+3")
             break
           case 51:
-            createEnemy("Aboleth", calculateRoll("18d10"), 17, 9, "6d6+15", "d20-1", "Enslave", "Psychic Drain3d6")
+            state.tempEnemy = createEnemy("Aboleth", calculateRoll("18d10"), 17, 9, "6d6+15", "d20-1", "Enslave", "Psychic Drain3d6")
             break
           case 52:
-            createEnemy("Assassin", calculateRoll("12d8+24"), 15, 6, "2d6+6", "d20+3")
+            state.tempEnemy = createEnemy("Assassin", calculateRoll("12d8+24"), 15, 6, "2d6+6", "d20+3")
             break
           case 53:
-            createEnemy("Chimera", calculateRoll("12d10+48"), 14, 7, "2d6+4", "d20", "Fire Breath7d8")
+            state.tempEnemy = createEnemy("Chimera", calculateRoll("12d10+48"), 14, 7, "2d6+4", "d20", "Fire Breath7d8")
             break
           case 54:
-            createEnemy("Cloud Giant", calculateRoll("16d12+96"), 14, 12, "6d8+16", "d20", "Throw Rock4d10+8", "Control Weather")
+            state.tempEnemy = createEnemy("Cloud Giant", calculateRoll("16d12+96"), 14, 12, "6d8+16", "d20", "Throw Rock4d10+8", "Control Weather")
             break
           case 55:
-            createEnemy("Cyclops", calculateRoll("12d12+60"), 14, 9, "3d8+6", "d20")
+            state.tempEnemy = createEnemy("Cyclops", calculateRoll("12d12+60"), 14, 9, "3d8+6", "d20")
             break
           case 56:
-            createEnemy("Deva", calculateRoll("16d8+64"), 17, 8, "2d6+8", "d20+4")
+            state.tempEnemy = createEnemy("Deva", calculateRoll("16d8+64"), 17, 8, "2d6+8", "d20+4")
             break
           case 57:
-            createEnemy("Drider", calculateRoll("13d10+52"), 19, 6, "3d8", "1d10+3", "Poison Bite2d8")
+            state.tempEnemy = createEnemy("Drider", calculateRoll("13d10+52"), 19, 6, "3d8", "1d10+3", "Poison Bite2d8")
             break
           case 58:
-            createEnemy("Frost Giant", calculateRoll("12d12+60"), 15, 9, "6d12+12", "d20-1")
+            state.tempEnemy = createEnemy("Frost Giant", calculateRoll("12d12+60"), 15, 9, "6d12+12", "d20-1")
             break
           case 59:
-            createEnemy("Hydra", calculateRoll("15d12+75"), 15, 8, "3d10+15", "d20+1")
+            state.tempEnemy = createEnemy("Hydra", calculateRoll("15d12+75"), 15, 8, "3d10+15", "d20+1")
             break
           case 60:
-            createEnemy("Insane Mage", calculateRoll("9d8"), 12, 5, "1d4+2", "d20+2", "Cone of Cold8d8", "Greater Invisibility", "Fireball8d6", "Shield")
+            state.tempEnemy = createEnemy("Insane Mage", calculateRoll("9d8"), 12, 5, "1d4+2", "d20+2", "Cone of Cold8d8", "Greater Invisibility", "Fireball8d6", "Shield")
             break
           case 61:
-            createEnemy("Medusa", calculateRoll("17d8+51"), 15, 5, "1d6+2", "d20+2", "Petrifying Gaze", "Snake Hair5d6")
+            state.tempEnemy = createEnemy("Medusa", calculateRoll("17d8+51"), 15, 5, "1d6+2", "d20+2", "Petrifying Gaze", "Snake Hair5d6")
             break
           case 62:
-            createEnemy("Shield Guardian", calculateRoll("15d10+60"), 17, 7, "4d6+4", "d20-1", "Shield")
+            state.tempEnemy = createEnemy("Shield Guardian", calculateRoll("15d10+60"), 17, 7, "4d6+4", "d20-1", "Shield")
             break
           case 63:
-            createEnemy("Spirit Naga", calculateRoll("10d10+20"), 15, 7, "8d8+4", "d20+3", "Dominate Person", "Lightning Bolt9d6")
+            state.tempEnemy = createEnemy("Spirit Naga", calculateRoll("10d10+20"), 15, 7, "8d8+4", "d20+3", "Dominate Person", "Lightning Bolt9d6")
             break
           case 64:
-            createEnemy("Stone Golem", calculateRoll("17d10+85"), 17, 10, "6d8+12", "d20-1")
+            state.tempEnemy = createEnemy("Stone Golem", calculateRoll("17d10+85"), 17, 10, "6d8+12", "d20-1")
             break
           case 65:
-            createEnemy("Treant", calculateRoll("12d12+60"), 16, 10, "6d6+12", "d20-1")
+            state.tempEnemy = createEnemy("Treant", calculateRoll("12d12+60"), 16, 10, "6d6+12", "d20-1")
             break
           case 66:
-            createEnemy("Young Black Dragon", calculateRoll("15d10+45"), 18, 7, "4d6+8", "d20+2", "Acid Breath11d8")
+            state.tempEnemy = createEnemy("Young Black Dragon", calculateRoll("15d10+45"), 18, 7, "4d6+8", "d20+2", "Acid Breath11d8")
             break
           case 67:
-            createEnemy("Young Blue Dragon", calculateRoll("16d10+64"), 18, 9, "12d6+10", "d20", "Lightning Breath10d10")
+            state.tempEnemy = createEnemy("Young Blue Dragon", calculateRoll("16d10+64"), 18, 9, "12d6+10", "d20", "Lightning Breath10d10")
             break
           case 68:
-            createEnemy("Young Brass Dragon", calculateRoll("13d10+39"), 17, 7, "2d10+4", "d20", "Fire Breath12d6", "Sleep Breath")
+            state.tempEnemy = createEnemy("Young Brass Dragon", calculateRoll("13d10+39"), 17, 7, "2d10+4", "d20", "Fire Breath12d6", "Sleep Breath")
             break
           case 69:
-            createEnemy("Young Bronze Dragon", calculateRoll("15d10+60"), 18, 8, "4d6+10", "d20+1", "Lightning Breath10d10", "Repulsion Breath")
+            state.tempEnemy = createEnemy("Young Bronze Dragon", calculateRoll("15d10+60"), 18, 8, "4d6+10", "d20+1", "Lightning Breath10d10", "Repulsion Breath")
             break
           case 70:
-            createEnemy("Young Copper Dragon", calculateRoll("14d10+42"), 17, 7, "4d6+8", "d20+1", "Acid Breath9d8", "Slowing Breath")
+            state.tempEnemy = createEnemy("Young Copper Dragon", calculateRoll("14d10+42"), 17, 7, "4d6+8", "d20+1", "Acid Breath9d8", "Slowing Breath")
             break
           case 71:
-            createEnemy("Young Gold Dragon", calculateRoll("17d10+85"), 18, 10, "4d6+12", "d20+2", "Fire Breath10d10", "Weakening Breath")
+            state.tempEnemy = createEnemy("Young Gold Dragon", calculateRoll("17d10+85"), 18, 10, "4d6+12", "d20+2", "Fire Breath10d10", "Weakening Breath")
             break
           case 72:
-            createEnemy("Young Green Dragon", calculateRoll("16d10+48"), 18, 7, "4d6+8", "d20+1", "Poison Breath12d6")
+            state.tempEnemy = createEnemy("Young Green Dragon", calculateRoll("16d10+48"), 18, 7, "4d6+8", "d20+1", "Poison Breath12d6")
             break
           case 73:
-            createEnemy("Young Red Dragon", calculateRoll("17d10+85"), 18, 10, "4d6+12", "d20", "Fire Breath16d6")
+            state.tempEnemy = createEnemy("Young Red Dragon", calculateRoll("17d10+85"), 18, 10, "4d6+12", "d20", "Fire Breath16d6")
             break
           case 74:
-            createEnemy("Young Silver Dragon", calculateRoll("16d10+8-"), 18, 10, "4d6+12", "d20", "Cold Breath12d8", "Paralyzing Breath")
+            state.tempEnemy = createEnemy("Young Silver Dragon", calculateRoll("16d10+8-"), 18, 10, "4d6+12", "d20", "Cold Breath12d8", "Paralyzing Breath")
             break
           case 75:
-            createEnemy("Young White Dragon", calculateRoll("14d10+56"), 17, 7, "2d10+4", "d20", "Cold Breath10d8", "Ice Walk")
+            state.tempEnemy = createEnemy("Young White Dragon", calculateRoll("14d10+56"), 17, 7, "2d10+4", "d20", "Cold Breath10d8", "Ice Walk")
             break
           case 76:
-            createEnemy("Adult Black Dragon", calculateRoll("17d12+85"), 19, 11, "6d6+18", "d20+2", "Acid Breath12d8", "Frightful Presence", "Wing Attack2d6+6")
+            state.tempEnemy = createEnemy("Adult Black Dragon", calculateRoll("17d12+85"), 19, 11, "6d6+18", "d20+2", "Acid Breath12d8", "Frightful Presence", "Wing Attack2d6+6")
             break
           case 77:
-            createEnemy("Adult Bronze Dragon", calculateRoll("17d12+102"), 19, 12, "6d6+21", "d20", "Repulsion Breath", "Lightning Breath12d10", "Wing Attack2d6+6")
+            state.tempEnemy = createEnemy("Adult Bronze Dragon", calculateRoll("17d12+102"), 19, 12, "6d6+21", "d20", "Repulsion Breath", "Lightning Breath12d10", "Wing Attack2d6+6")
             break
           case 78:
-            createEnemy("Adult Copper Dragon", calculateRoll("16d12+80"), 18, 11, "6d6+18", "d20+1", "Acid Breath12d8", "Slowing Breath", "Wing Attack2d6+6")
+            state.tempEnemy = createEnemy("Adult Copper Dragon", calculateRoll("16d12+80"), 18, 11, "6d6+18", "d20+1", "Acid Breath12d8", "Slowing Breath", "Wing Attack2d6+6")
             break
           case 79:
-            createEnemy("Adult Green Dragon", calculateRoll("18d12+90"), 19, 11, "6d6+18", "d20+1", "Poison Breath16d6")
+            state.tempEnemy = createEnemy("Adult Green Dragon", calculateRoll("18d12+90"), 19, 11, "6d6+18", "d20+1", "Poison Breath16d6")
             break
           case 80:
-            createEnemy("Animated Statue", calculateRoll("10d12+20"), 17, 7, "2d10+4", "d20-2")
+            state.tempEnemy = createEnemy("Animated Statue", calculateRoll("10d12+20"), 17, 7, "2d10+4", "d20-2")
             break
           case 81:
-            createEnemy("Arch Mage", calculateRoll("18d8+18"), 12, 4, "1d4+2", "d20+14", "Time Stop", "Globe of Invulnerability", "Lightning Bolt8d6", "Banishment", "Cone of Cold8d8", "Teleport")
+            state.tempEnemy = createEnemy("Arch Mage", calculateRoll("18d8+18"), 12, 4, "1d4+2", "d20+14", "Time Stop", "Globe of Invulnerability", "Lightning Bolt8d6", "Banishment", "Cone of Cold8d8", "Teleport")
             break
           case 82:
-            createEnemy("Behir", calculateRoll("16d12+64"), 17, 10, "5d10+12", "d20+3", "Lightning Breath12d10", "Swallow6d6", "Constrict2d10+6")
+            state.tempEnemy = createEnemy("Behir", calculateRoll("16d12+64"), 17, 10, "5d10+12", "d20+3", "Lightning Breath12d10", "Swallow6d6", "Constrict2d10+6")
             break
           case 83:
-            createEnemy("Boneclaw", calculateRoll("17d10+34"), 16, 8, "6d10+8", "d20+3", "Shadow Jump5d12+2", "Deadly Reach")
+            state.tempEnemy = createEnemy("Boneclaw", calculateRoll("17d10+34"), 16, 8, "6d10+8", "d20+3", "Shadow Jump5d12+2", "Deadly Reach")
             break
           case 84:
-            createEnemy("Deathwolf", calculateRoll("18d8+72"), 15, 10, "6d8+15", "d20+3", "Phantom Deathwolf6d6")
+            state.tempEnemy = createEnemy("Deathwolf", calculateRoll("18d8+72"), 15, 10, "6d8+15", "d20+3", "Phantom Deathwolf6d6")
             break
           case 85:
-            createEnemy("Djinni", calculateRoll("14d10+84"), 17, 9, "2d6+8", "d20+2")
+            state.tempEnemy = createEnemy("Djinni", calculateRoll("14d10+84"), 17, 9, "2d6+8", "d20+2")
             break
           case 86:
-            createEnemy("Drow Inquisitor", calculateRoll("23d8+46"), 16, 10, "12d8+24", "d20+2", "Spectral Dagger1d8+5")
+            state.tempEnemy = createEnemy("Drow Inquisitor", calculateRoll("23d8+46"), 16, 10, "12d8+24", "d20+2", "Spectral Dagger1d8+5")
             break
           case 87:
-            createEnemy("Efreeti", calculateRoll("16d10+112"), 17, 10, "4d6+12", "d20+1", "Hurl Flame5d6")
+            state.tempEnemy = createEnemy("Efreeti", calculateRoll("16d10+112"), 17, 10, "4d6+12", "d20+1", "Hurl Flame5d6")
             break
           case 88:
-            createEnemy("Elder Brain", calculateRoll("20d10+100"), 10, 7, "5d8+7", "d20", "Mind Blast5d10+5")
+            state.tempEnemy = createEnemy("Elder Brain", calculateRoll("20d10+100"), 10, 7, "5d8+7", "d20", "Mind Blast5d10+5")
             break
           case 89:
-            createEnemy("Erinyes", calculateRoll("18d8+72"), 18, 8, "1d10+4", "d20+3")
+            state.tempEnemy = createEnemy("Erinyes", calculateRoll("18d8+72"), 18, 8, "1d10+4", "d20+3")
             break
           case 90:
-            createEnemy("Ice Devil", calculateRoll("19d10+76"), 18, 10, "6d4+15", "d20+2", "Wall of Ice")
+            state.tempEnemy = createEnemy("Ice Devil", calculateRoll("19d10+76"), 18, 10, "6d4+15", "d20+2", "Wall of Ice")
             break
           case 91:
-            createEnemy("Jabberwock", calculateRoll("10d12+50"), 18, 10, "6d10+10", "d20+1", "Regenderation")
+            state.tempEnemy = createEnemy("Jabberwock", calculateRoll("10d12+50"), 18, 10, "6d10+10", "d20+1", "Regenderation")
             break
           case 92:
-            createEnemy("Megapede", calculateRoll("13d20+39"), 15, 10, "6d10+12", "d20", "LifeDrain3d10", "Psychic Bomb5d8")
+            state.tempEnemy = createEnemy("Megapede", calculateRoll("13d20+39"), 15, 10, "6d10+12", "d20", "LifeDrain3d10", "Psychic Bomb5d8")
             break
           case 93:
-            createEnemy("Mummy Lord", calculateRoll("13d8+39"), 17, 9, "3d6+4", "d20", "Hold Person", "Silence", "Harm14d6", "Blinding Dust", "Whirlwind of Sand")
+            state.tempEnemy = createEnemy("Mummy Lord", calculateRoll("13d8+39"), 17, 9, "3d6+4", "d20", "Hold Person", "Silence", "Harm14d6", "Blinding Dust", "Whirlwind of Sand")
             break
           case 94:
-            createEnemy("Purple Worm", calculateRoll("15d20+90"), 18, 14, "6d6+18", "d20-2", "Tail Stinger12d6+19")
+            state.tempEnemy = createEnemy("Purple Worm", calculateRoll("15d20+90"), 18, 14, "6d6+18", "d20-2", "Tail Stinger12d6+19")
             break
           case 95:
-            createEnemy("Remorhaz", calculateRoll("17d12+85"), 17, 11, "6d10+7", "d20+1", "Swallow6d6")
+            state.tempEnemy = createEnemy("Remorhaz", calculateRoll("17d12+85"), 17, 11, "6d10+7", "d20+1", "Swallow6d6")
             break
           case 96:
-            createEnemy("Skull Lord", calculateRoll("15d8+45"), 18, 8, "24d6", "d20+3", "Deathly Ray5d8+5")
+            state.tempEnemy = createEnemy("Skull Lord", calculateRoll("15d8+45"), 18, 8, "24d6", "d20+3", "Deathly Ray5d8+5")
             break
           case 97:
-            createEnemy("Spider Dragon", calculateRoll("15d10+5"), 23, 9, "3d12+12", "d20+8", "Silk Spit", "Spider Breath7d10")
+            state.tempEnemy = createEnemy("Spider Dragon", calculateRoll("15d10+5"), 23, 9, "3d12+12", "d20+8", "Silk Spit", "Spider Breath7d10")
             break
           case 98:
-            createEnemy("Storm Giant", calculateRoll("20d12+100"), 16, 14, "12d6+18", "d20+2", "Control Weather", "Lightning Strike12d8")
+            state.tempEnemy = createEnemy("Storm Giant", calculateRoll("20d12+100"), 16, 14, "12d6+18", "d20+2", "Control Weather", "Lightning Strike12d8")
             break
           case 99:
-            createEnemy("Vampire", calculateRoll("17d8+68"), 16, 9, "3d8+8", "d20+4", "Charm", "Shape Change")
+            state.tempEnemy = createEnemy("Vampire", calculateRoll("17d8+68"), 16, 9, "3d8+8", "d20+4", "Charm", "Shape Change")
             break
           case 100:
-            createEnemy("Zikran", calculateRoll("18d8+18"), 12, 6, "1d4+2", "d20+2", "Time Stop", "Mind Blank", "Cone of Cold 8d8", "Lightning Bolt 8d6")
+            state.tempEnemy = createEnemy("Zikran", calculateRoll("18d8+18"), 12, 6, "1d4+2", "d20+2", "Time Stop", "Mind Blank", "Cone of Cold 8d8", "Lightning Bolt 8d6")
+            break
+          case 126:
+            state.tempEnemy = createEnemy("Commoner", calculateRoll("1d8"), 10, 2, "1d4", "d20")
+            break
+          case 127:
+            state.tempEnemy = createEnemy("Bandit", calculateRoll("2d8+2"), 12, 3, "1d6+1", "d20+1")
+            break
+          case 128:
+            state.tempEnemy = createEnemy("Guard", calculateRoll("2d8+2"), 16, 3, "1d6+1", "d20+1")
+            break
+          case 129:
+            state.tempEnemy = createEnemy("Cultist", calculateRoll("2d8"), 12, 3, "1d6+1", "d20+1", "Dark Devotion")
+            break
+          case 130:
+            state.tempEnemy = createEnemy("Acolyte", calculateRoll("2d8"), 10, 2, "1d4", "d20", "Sacred Flame1d8", "Cure Wounds")
+            break
+          case 131:
+            state.tempEnemy = createEnemy("Apprentice", calculateRoll("3d8"), 10, 4, "1d10+2", "d20", "Burning Hands3d6")
+            break
+          case 132:
+            state.tempEnemy = createEnemy("Witch", calculateRoll("3d8+3"), 10, 3, "1d6+2", "d20", "Ray of Sickness2d8", "Tashas Hideous Laughter", "Invisibility", "Ray of Frost2d8")//
+            break
+          case 133:
+            state.tempEnemy = createEnemy("Buccaneer", calculateRoll("8d8+24"), 14, 5, "1d6+3", "d20+2", "Invade")
+            break
+          case 134:
+            state.tempEnemy = createEnemy("Spy", calculateRoll("6d8"), 12, 4, "1d6+2", "d20+2", "Sneak Attack2d6+2")
+            break
+          case 135:
+            state.tempEnemy = createEnemy("Captain", calculateRoll("10d8+20"), 15, 5, "3d6+9", "initiative")
+            break
+          case 136:
+            state.tempEnemy = createEnemy("Bard", calculateRoll("8d8+8"), 15, 4, "1d6+2", "d20+2", "Charm Person", "Shatter3d8", "Thunderwave2d8", "Vicious Mockery1d4")
+            break
+          case 137:
+            state.tempEnemy = createEnemy("Berserker", calculateRoll("9d8+27"), 13, 5, "1d12+3", "d20+1")
+            break
+          case 138:
+            state.tempEnemy = createEnemy("Priest", calculateRoll("5d8+5"), 13, 2, "1d6", "d20", "Spirit Guardians3d8", "Spiritual Weapon1d8", "Guiding Bolt4d6", "Cure Wounds")
+            break
+          case 139:
+            state.tempEnemy = createEnemy("Knight", calculateRoll("8d8+16"), 18, 5, "4d6+6", "d20", "Leadership")
+            break
+          case 140:
+            state.tempEnemy = createEnemy("Archer", calculateRoll("10d8+30"), 16, 6, "2d8+8", "d20+4")
+            break
+          case 141:
+            state.tempEnemy = createEnemy("Warrior", calculateRoll("6d8+12"), 16, 6, "1d8+3", "d20+1")
+            break
+          case 142:
+            state.tempEnemy = createEnemy("Conjurer", calculateRoll("9d8"), 12, 5, "1d4+2", "d20+2", "Conjure Elemental", "Cloud Kill5d8", "Cloud of Daggers5d8", "Poison Spray1d12")
+            break
+          case 143:
+            state.tempEnemy = createEnemy("Mage", calculateRoll("9d8"), 12, 5, "1d4+2", "d20+2", "Greater Invisibility", "Ice Storm4d6", "Fireball8d6", "Magic Missile3d4+3")
+            break
+          case 144:
+            state.tempEnemy = createEnemy("Assassin", calculateRoll("12d8+24"), 15, 6, "2d6+6", "d20+3", "Sneak Attack6d6+6")
+            break
+          case 145:
+            state.tempEnemy = createEnemy("Evoker", calculateRoll("12d8+12"), 12, 3, "1d6-1", "d20+2", "Chain Lightning10d8", "Wall of Ice", "Counter Spell", "Shatter3d8", "Magic Missile6d4+6")
+            break
+          case 146:
+            state.tempEnemy = createEnemy("Necromancer", calculateRoll("12d8+12"), 12, 7, "2d4", "d20+2", "Circle of Death8d6", "Blight8d8", "Cloudkill5d8", "Animate Dead", "Chill Touch1d8")
+            break
+          case 147:
+            state.tempEnemy = createEnemy("Champion", calculateRoll("22d8+44"), 18, 9, "6d6+15", "d20+2", "Second Wind")
+            break
+          case 148:
+            state.tempEnemy = createEnemy("Warlord", calculateRoll("27d8+108"), 18, 9, "4d6+10", "d20+3", "Command Ally", "Frighten Foe")
+            break
+          case 149:
+            state.tempEnemy = createEnemy("Archmage", calculateRoll("18d8+18"), 12, 6, "1d4+2", "d20+2", "Time Stop", "Mind Blank", "Lightning Bolt8d6", "Cone of Cold8d8", "Shocking Grasp1d8")
+            break
+          case 150:
+            state.tempEnemy = createEnemy("Archdruid", calculateRoll("24d8+24"), 16, 6, "1d6+2", "d20+2", "Fire Storm7d10", "Sunbeam6d8", "Wall of Fire", "Beast Sense", "Conjure Animals")
             break
         }
 
