@@ -19,6 +19,7 @@ Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 v. 0.2.2
 * Added Boss difficulty encounters
 * Added Humanoid Enemy Presets
+* Added optional enemy parameter to #heal
 * Minor bug fixes and improvements
 
 v. 0.2.1 Hotfix 1

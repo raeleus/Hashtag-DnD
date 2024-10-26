@@ -1532,21 +1532,62 @@ function doHeal(command) {
     state.show = "none"
     return "\n[Error: Not enough parameters. See #help]\n"
   }
-  arg0 = parseInt(arg0)
 
-  var haveWord = character.name == "You" ? "have" : "has"
-  var areWord = character.name == "You" ? "are" : "is"
+  var arg1 = getArgumentRemainder(command, 1)
+  
+  if (arg1 == null) {
+    if (character == null) {
+      state.show = "none"
+      return "\n[Error: Character must be specified. See #help]\n"
+    }
 
-  if (character.health >= getHealthMax()) {
+    var healing
+
+    var healingMatches = arg0.match(/\d*d\d+((\+|-)d+)?/gi)
+    if (healingMatches != null) healing = calculateRoll(healingMatches[0])
+    else {
+      healingMatches = arg0.match(/\d+/g)
+      if (healingMatches != null) healing = parseInt(healingMatches[healingMatches.length - 1])
+    }
+
+    if (healing == null) {
+      state.show = "none"
+      return "\n[Error: Expected a number. See #help]\n"
+    }
+
+    var haveWord = character.name == "You" ? "have" : "has"
+
+    character.health += healing
+    character.health = clamp(character.health, 0, getHealthMax())
+
     state.show = "none"
-    return `\n[${character.name} ${areWord} at maximum health]\n`
+    return `\n[${character.name} ${haveWord} been healed for ${healing} hp to a total of ${character.health}]\n`
+  } else {
+    var healing
+
+    var healingMatches = arg0.match(/\d*d\d+((\+|-)d+)?/gi)
+    if (healingMatches != null) healing = calculateRoll(healingMatches[0])
+    else {
+      healingMatches = arg0.match(/\d+/g)
+      log(healingMatches)
+      if (healingMatches != null) healing = parseInt(healingMatches[0])
+    }
+
+    if (healing == null) {
+      state.show = "none"
+      return "\n[Error: Expected a number. See #help]\n"
+    }
+
+    for (var enemy of state.enemies) {
+      if (enemy.name.toLowerCase() == arg1.toLowerCase()) {
+        enemy.health = Math.max(0, enemy.health + healing)
+        return `\n[${toTitleCase(enemy.name)} has been healed for ${healing} hp to a total of ${enemy.health}]\n`
+      }
+    }
+
+    state.show = "none"
+    return `\n[Error: Could not find an enemy matching the name ${enemy.name}. Type #enemies to see a list]`
   }
-
-  character.health = character.health + arg0
-  character.health = clamp(character.health, 0, getHealthMax())
-
-  state.show = "none"
-  return `\n[${character.name} ${haveWord} been healed by ${arg0} hp to ${character.health} health]\n`
 }
 
 function doDamage(command) {
@@ -1585,7 +1626,7 @@ function doDamage(command) {
     character.health = clamp(character.health, 0, getHealthMax())
 
     state.show = "none"
-    return `\n[${character.name} ${haveWord} been damaged for ${damage} hp with ${character.health} remaining].${character.health == 0 ? " You are unconscious" : ""}\n`
+    return `\n[${character.name} ${haveWord} been damaged for ${damage} hp with ${character.health} remaining] ${character.health == 0 ? " You are unconscious" : ""}\n`
   } else {
     var damage
 
@@ -1605,7 +1646,7 @@ function doDamage(command) {
     for (var enemy of state.enemies) {
       if (enemy.name.toLowerCase() == arg1.toLowerCase()) {
         enemy.health = Math.max(0, enemy.health - damage)
-        return `\n[${toTitleCase(enemy.name)} has been damaged for ${damage} hp with ${enemy.health} remaining].${enemy.health == 0 ? " " + toTitleCase(enemy.name) + " has been defeated!" : ""}\n`
+        return `\n[${toTitleCase(enemy.name)} has been damaged for ${damage} hp with ${enemy.health} remaining] ${enemy.health == 0 ? " " + toTitleCase(enemy.name) + " has been defeated!" : ""}\n`
       }
     }
 
