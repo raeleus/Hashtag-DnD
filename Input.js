@@ -1957,7 +1957,7 @@ function doAttack(command) {
 
   var text
   if (score + modifier >= targetRoll) text = `\n${toTitleCase(character.name)} successfully hit ${targetText}!`
-  else text = `\n${toTitleCase(character.name)} ${tryWord} to hit ${targetText} ${toTitleCase(character.name)} ${missWord}!`
+  else text = `\n${toTitleCase(character.name)} ${tryWord} to hit ${targetText}. ${toTitleCase(character.name)} ${missWord}!`
 
   if (score == 20) text += " Critical success! Your attack is exceptionally damaging!"
   else if (score == 1) text += " Critical failure! Your attack missed in a spectacular way!"
