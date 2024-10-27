@@ -2451,6 +2451,7 @@ function doAddEnemy(command) {
 
   state.enemies.push(enemy)
 
+  state.show = "none"
   return `[Enemy ${toTitleCase(enemy.name)} has been created]`
 }
 
