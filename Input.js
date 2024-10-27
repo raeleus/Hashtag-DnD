@@ -3197,7 +3197,7 @@ function doCastSpell(command) {
         else enemyString += `\nDamage: ${damage}\n`
         foundEnemy.health = Math.max(0, foundEnemy.health - damage)
         if (foundEnemy.health == 0) enemyString += ` ${toTitleCase(foundEnemy.name)} has been defeated!\n`
-        else enemyString = ` ${toTitleCase(foundEnemy.name)} has ${foundEnemy.health} health remaining!\n`
+        else enemyString += ` ${toTitleCase(foundEnemy.name)} has ${foundEnemy.health} health remaining!\n`
       }
     }
   }
