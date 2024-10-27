@@ -81,6 +81,7 @@ const setDamageSynonyms = ["setdamage"]
 const setProficiencySynonyms = ["setproficiency", "setweaponproficiency"]
 const healPartySynonyms = ["healparty", "healcharacters"]
 const blockSynonyms = ["block", "parry", "nullify", "invalidate"]
+const repeatTurnSynonyms = ["repeatturn", "repeat"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -129,7 +130,7 @@ const modifier = (text) => {
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, setupEnemySynonyms, healSynonyms, damageSynonyms, restSynonyms, addExperienceSynonyms, healPartySynonyms, blockSynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, setupEnemySynonyms, healSynonyms, damageSynonyms, restSynonyms, addExperienceSynonyms, healPartySynonyms, blockSynonyms, repeatTurnSynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
@@ -225,6 +226,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, setProficiencySynonyms, doSetProficiency)
   if (text == null) text = processCommandSynonyms(command, commandName, healPartySynonyms, doHealParty)
   if (text == null) text = processCommandSynonyms(command, commandName, blockSynonyms, doBlock)
+    if (text == null) text = processCommandSynonyms(command, commandName, repeatTurnSynonyms, doRepeatTurn)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -2671,57 +2673,11 @@ function doTurn(command) {
     return "\nDefeat! The entire party has been incapacitated.\n"
   }
 
-  var activeCharacter = state.initiativeOrder[0]
-  var activeCharacterName = toTitleCase(activeCharacter.name)
-  var possessiveName = getPossessiveName(activeCharacter.name)
-  if (possessiveName == "Your") possessiveName = "your"
+  return executeTurn(state.initiativeOrder[0])
+}
 
-  if (activeCharacter.className != null) {
-    state.show = "none"
-    return `\n[It is ${possessiveName} turn]\n`
-  } else {
-    var characters = state.characters.filter(x => x.health > 0)
-    var target = characters[getRandomInteger(0, characters.length - 1)]
-    var areWord = target.name == "You" ? "are" : "is"
-    var targetNameAdjustedCase = target.name == "You" ? "you" : toTitleCase(target.name)
-    var attack = calculateRoll(`1d20${activeCharacter.hitModifier > 0 ? "+" + activeCharacter.hitModifier : activeCharacter.hitModifier < 0 ? activeCharacter.hitModifier : ""}`)
-    var hit = attack >= target.ac
-
-    var text = `\n[It is ${possessiveName} turn]\n`
-    if (getRandomBoolean() || activeCharacter.spells.length == 0) {
-      if (hit) {
-        state.blockCharacter = target
-        state.blockPreviousHealth = target.health
-        var damage = isNaN(activeCharacter.damage) ? calculateRoll(activeCharacter.damage) : activeCharacter.damage
-        target.health = Math.max(target.health - damage, 0)
-
-        text += `\n[Character AC: ${target.ac} Attack roll: ${attack}]\n`
-
-        text += `${activeCharacterName} attacks ${targetNameAdjustedCase} for ${damage} damage!\n`
-        if (target.health == 0) text += ` ${toTitleCase(target.name)} ${areWord} unconscious! \n`
-        else text += ` ${toTitleCase(target.name)} ${areWord} at ${target.health} health.\n`
-      } else text += `${activeCharacterName} attacks ${targetNameAdjustedCase} but misses!\n`
-    } else {
-      var spell = activeCharacter.spells[getRandomInteger(0, activeCharacter.spells.length - 1)]
-      var diceMatches = spell.match(/(?<=^.*)\d*d\d+((\+|-)\d+)?$/gi)
-      if (diceMatches == null) text += `${activeCharacterName} casts spell ${spell}!`
-      else {
-        if (hit) {
-          var damage = calculateRoll(diceMatches[0])
-          var spell = spell.substring(0, spell.length - diceMatches[0].length)
-          target.health = Math.max(target.health - damage, 0)
-
-          text += `\n[Character AC: ${target.ac} Attack roll: ${attack}]\n`
-
-          text += `${activeCharacterName} casts spell ${spell} at ${targetNameAdjustedCase} for ${damage} damage!`
-          
-          if (target.health == 0) text += ` ${toTitleCase(target.name)} ${areWord} unconscious!\n`
-          else text += ` ${toTitleCase(target.name)} ${areWord} at ${target.health} health.\n`
-        } else text += `${activeCharacterName} casts spell ${spell} at ${targetNameAdjustedCase} but misses!\n`
-      }
-    }
-    return text
-  }
+function doRepeatTurn(command) {
+  return executeTurn(state.initiativeOrder[0])
 }
 
 function doBlock(command) {

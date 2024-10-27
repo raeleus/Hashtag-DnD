@@ -475,6 +475,8 @@ const modifier = (text) => {
       text += "\n    Assigns initiative to all characters and enemies. This begins combat."
       text += "\n#turn"
       text += "\n    Updates the turn to the next character in combat. If it is an enemy, the enemy will attack. If it's a player character, the system will allow the player to take their turn. If there are no enemies left or all the player characters are dead, combat ends."
+      text += "\n#repeatTurn"
+      text += "\n    Repeats the turn. If it is currently an enemy's turn, it will attack or cast another spell again."
       text += "\n#block"
       text += "\n    Reverses the damage that has been inflicted in the last turn. This applies to damage on characters and enemies."
       text += "\n#flee (difficulty_class or automatic|effortless|easy|medium|hard|impossible)"
