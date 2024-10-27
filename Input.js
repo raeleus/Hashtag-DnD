@@ -79,6 +79,7 @@ const versionSynonyms = ["version", "ver", "showversion"]
 const setupEnemySynonyms = ["setupenemy", "createenemy"]
 const setDamageSynonyms = ["setdamage"]
 const setProficiencySynonyms = ["setproficiency", "setweaponproficiency"]
+const healPartySynonyms = ["healparty", "healcharacters"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -127,7 +128,7 @@ const modifier = (text) => {
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, setupEnemySynonyms, healSynonyms, damageSynonyms, restSynonyms, addExperienceSynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, setupEnemySynonyms, healSynonyms, damageSynonyms, restSynonyms, addExperienceSynonyms, healPartySynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
@@ -221,6 +222,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, setupEnemySynonyms, doSetupEnemy)
   if (text == null) text = processCommandSynonyms(command, commandName, setDamageSynonyms, doSetDamage)
   if (text == null) text = processCommandSynonyms(command, commandName, setProficiencySynonyms, doSetProficiency)
+  if (text == null) text = processCommandSynonyms(command, commandName, healPartySynonyms, doHealParty)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -1691,6 +1693,37 @@ function doRest(command) {
     var max = getHealthMax(character)
     character.health += Math.floor(max * healingFactor)
     if (character.health > max) character.health = max
+  })
+  state.show = "none"
+  return text
+}
+
+function doHealParty(command) {
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  var healing
+  var healingMatches = arg0.match(/\d*d\d+((\+|-)d+)?/gi)
+  if (healingMatches != null) healing = calculateRoll(healingMatches[0])
+  else {
+    healingMatches = arg0.match(/\d+/g)
+    if (healingMatches != null) healing = parseInt(healingMatches[healingMatches.length - 1])
+  }
+
+  if (healing == null) {
+    state.show = "none"
+    return "\n[Error: Expected a number. See #help]\n"
+  }
+
+  var text = `\n[All characters have been healed by ${healing}.]\n`
+  state.characters.forEach(function(character) {
+    var max = getHealthMax(character)
+    character.health += healing
+    if (character.health > max) character.health = max
+    text += `[${toTitleCase(character.name)}: ${character.health} / ${max} health]\n`
   })
   state.show = "none"
   return text
