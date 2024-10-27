@@ -2565,13 +2565,17 @@ function doTurn(command) {
     var target = characters[getRandomInteger(0, characters.length - 1)]
     var areWord = target.name == "You" ? "are" : "is"
     var targetNameAdjustedCase = target.name == "You" ? "you" : toTitleCase(target.name)
-    var hit = calculateRoll(`1d20${activeCharacter.hitModifier > 0 ? "+" + activeCharacter.hitModifier : activeCharacter.hitModifier < 0 ? activeCharacter.hitModifier : ""}`) >= target.ac
+    var attack = calculateRoll(`1d20${activeCharacter.hitModifier > 0 ? "+" + activeCharacter.hitModifier : activeCharacter.hitModifier < 0 ? activeCharacter.hitModifier : ""}`)
+    var hit = attack >= target.ac
 
     var text = `\n[It is ${possessiveName} turn]\n`
     if (getRandomBoolean() || activeCharacter.spells.length == 0) {
       if (hit) {
         var damage = isNaN(activeCharacter.damage) ? calculateRoll(activeCharacter.damage) : activeCharacter.damage
         target.health = Math.max(target.health - damage, 0)
+
+        text += `\n[Character AC: ${target.ac} Attack roll: ${attack}]\n`
+
         text += `${activeCharacterName} attacks ${targetNameAdjustedCase} for ${damage} damage!\n`
         if (target.health == 0) text += ` ${toTitleCase(target.name)} ${areWord} unconscious! \n`
         else text += ` ${toTitleCase(target.name)} ${areWord} at ${target.health} health.\n`
@@ -2585,6 +2589,8 @@ function doTurn(command) {
           var damage = calculateRoll(diceMatches[0])
           var spell = spell.substring(0, spell.length - diceMatches[0].length)
           target.health = Math.max(target.health - damage, 0)
+
+          text += `\n[Character AC: ${target.ac} Attack roll: ${attack}]\n`
 
           text += `${activeCharacterName} casts spell ${spell} at ${targetNameAdjustedCase} for ${damage} damage!`
           
