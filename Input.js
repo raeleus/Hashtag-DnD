@@ -1569,7 +1569,6 @@ function doHeal(command) {
     if (healingMatches != null) healing = calculateRoll(healingMatches[0])
     else {
       healingMatches = arg0.match(/\d+/g)
-      log(healingMatches)
       if (healingMatches != null) healing = parseInt(healingMatches[0])
     }
 
@@ -1642,7 +1641,6 @@ function doDamage(command) {
     if (damageMatches != null) damage = calculateRoll(damageMatches[0])
     else {
       damageMatches = arg0.match(/\d+/g)
-      log(damageMatches)
       if (damageMatches != null) damage = parseInt(damageMatches[0])
     }
 
@@ -1918,7 +1916,6 @@ function doAttack(command) {
       var indexMatches = targetText.match(/(?<=enemy\s*)\d+/gi)
       if (indexMatches != null) {
         foundEnemy = state.enemies[parseInt(indexMatches[0]) - 1]
-        log(`foundEnemy:${foundEnemy}`)
         targetText = targetText.replace(/enemy\s*d+/gi, foundEnemy.name)
       }
     }
@@ -1940,8 +1937,10 @@ function doAttack(command) {
         if (score == 20) enemyString += `\nCritical Damage: ${damage}\n`
         else enemyString += `\nDamage: ${damage}\n`
         foundEnemy.health = Math.max(0, foundEnemy.health - damage)
-        if (foundEnemy.health == 0) enemyString += ` ${toTitleCase(foundEnemy.name)} has been defeated!`
-        else enemyString += ` ${toTitleCase(foundEnemy.name)} has ${foundEnemy.health} health remaining!`
+        if (foundEnemy.health == 0) {
+          enemyString += ` ${toTitleCase(foundEnemy.name)} has been defeated!`
+          
+        } else enemyString += ` ${toTitleCase(foundEnemy.name)} has ${foundEnemy.health} health remaining!`
       }
     }
   }
@@ -2524,7 +2523,8 @@ function doTurn(command) {
     if (enemy.health > 0) continue
 
     defeatedEnemies++
-    var index = state.initiativeOrder.indexOf(enemy)
+    var index = state.initiativeOrder.findIndex(x => x.name.toLowerCase() == enemy.name.toLowerCase())
+    log(`index:${index}`)
     if (index >= 0) state.initiativeOrder.splice(index, 1)
   }
 
@@ -2533,7 +2533,7 @@ function doTurn(command) {
     if (character.health > 0) continue
 
     defeatedCharacters++
-    var index = state.initiativeOrder.indexOf(character)
+    var index = state.initiativeOrder.findIndex(x => x.name.toLowerCase() == character.name.toLowerCase())
     if (index >= 0) state.initiativeOrder.splice(index, 1)
   }
 

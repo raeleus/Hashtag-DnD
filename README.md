@@ -21,6 +21,7 @@ v. 0.2.2
 * Added Humanoid Enemy Presets
 * Added optional enemy parameter to #heal
 * Tweaked #heal and #damage to allow targeting characters specified as a parameter
+* Fixed defeated enemies not being removed from combat
 * Minor bug fixes and improvements
 
 v. 0.2.1 Hotfix 1
