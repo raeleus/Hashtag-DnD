@@ -2385,7 +2385,7 @@ function createEncounter(listName) {
     case "god":
       if (encounter.cr == null) encounter.cr = 17
       multiplier = 1 + (encounter.cr - 17) / 10
-      switch (getRandomInteger(0, 60)) {
+      switch (getRandomInteger(0, 61)) {
         case 0:
           encounter.text = "Text"
           break
@@ -2479,187 +2479,181 @@ function createEncounter(listName) {
         case 31:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Adult Blue Dragon", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Adult Blue Dragon", calculateRoll("18d12+108"), 19, 12, "6d10+21", "d20", "Lightning Breath12d10", "Wing Attack2d6+7")
           ]
           break
         case 32:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Adult Gold Dragon", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Adult Gold Dragon", calculateRoll("19d12+133"), 19, 12, "6d10+21", "d20+2", "Fire Breath 12d10", "Weakening Breath")
           ]
           break
         case 33:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Adult Red Dragon", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Adult Red Dragon", calculateRoll("19d12+133"), 19, 12, "6d10+21", "d20", "Fire Breath18d6", "Wing Attack2d6+8")
           ]
           break
         case 34:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Adult Silver Dragon", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Adult Silver Dragon", calculateRoll("18d12+126"), 19, 13, "6d10+24", "d20", "Cold Breath13d8", "Paralyzing Breath")
           ]
           break
         case 35:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Ancient Black Dragon", calculateRoll("21d20+147"), 22, 15, "6d10+24", "d20+2", "Acid Breath15d8", "Wing Attack2d6+8")
           ]
           break
         case 36:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Phoenix", calculateRoll("10d20+70"), 18, 13, "4d6+16", "d20+8", "Fiery Talons4d8+16", "Swoop4d8+16")
           ]
           break
         case 37:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Demogorgon", calculateRoll("32d12+256"), 22, 17, "6d12+18", "d20+2", "Beguiling Gaze", "Hypnotic Gaze")
           ]
           break
         case 38:
             encounter.text = "Text"
             encounter.enemies = [
-              createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+              createEnemy("Cosmic Horror", calculateRoll("16d20+112"), 15, 14, "6d6+16", "d20", "Poison Jet4d6", "Psychic Whispers6d10")
             ]
             break
           case 39:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Ancient Red Dragon", calculateRoll("21d20+147"), 22, 15, "6d8+30", "d20+2", "Fire Breath26d6", "Wing Attack2d6+10")
           ]
           break
         case 40:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Ancient Gold Dragon", calculateRoll("28d20+252"), 22, 15, "6d10+24", "d20+2", "Fire Breath13d10", "Weakening Breath")
           ]
           break
         case 41:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Zariel", calculateRoll("40d10+360"), 21, 16, "4d8+16", "d20+7", "Horrid Touch8d10", "Immolating Gaze4d10", "Teleport")
           ]
           break
         case 42:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Bael", calculateRoll("18d10+90"), 18, 13, "4d8+27", "d20+3", "Awaken Greed", "Teleport", "Regenerate", "Inflict Wounds4d8+27", "Invisibility")
           ]
           break
         case 43:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Baphomet", calculateRoll("22d12+176"), 22, 17, "3d10+30", "d20+2", "Curse of Brutality", "Desecration Breath20d8", "Gouging Toss2d8", "Raise Labyrinth")
           ]
           break
         case 44:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("name", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Leviathan", calculateRoll("16d20+160"), 17, 16, "4d10+40", "d20+7", "Tidal Wave6d10")
           ]
           break
         case 45:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Ancient White Dragon", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Flesh Colossus", calculateRoll("16d20+112"), 14, 13, "6d6+14", "d20-1", "Elemental Breath9d8")
           ]
           break
         case 46:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Androsphinx", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Androsphinx", calculateRoll("19d10+95"), 17, 12, "4d10+12", "d20", "Flame Strike8d6", "Roar", "Teleport")
           ]
           break
         case 47:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Balor", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Balor", calculateRoll("21d12+136"), 19, 14, "6d8+16", "d20+2", "Fire Whip 5d6+8", "Teleport")
           ]
           break
         case 48:
-          encounter.text = "Text"
+          encounter.text = "There is no explaining how you are face to face with a Dragon Turtle and yet... here you are. Fight!"
           encounter.enemies = [
-            createEnemy("Dragon Turtle", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Dragon Turtle", calculateRoll("22d20+110"), 20, 13, "6d8+21", "d20", "Steam Breath15d6")
           ]
           break
         case 49:
-          encounter.text = "Text"
+          encounter.text = "An echoing boom reverberates across the area, shaking you to your core. The Iron Golem is activated."
           encounter.enemies = [
-            createEnemy("Iron Golem", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Iron Golem", calculateRoll("20d10+100"), 20, 13, "6d8+14", "d20=1", "Poison Breath10d8", "Slam3d8+7")
           ]
           break
         case 50:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Kraken", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Kraken", calculateRoll("27d20+189"), 18, 17, "9d6+30", "d20", "Lightning Storm12d10", "Ink Cloud3d10", "Fling1d6")
           ]
           break
         case 51:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Lich", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Lich", calculateRoll("18d8+54"), 17, 12, "3d6", "Acid Arrow4d4", "Fireball8d6", "Dimension Door", "Animate Dead", "Ray of Frost3d8", "Disrupt Life6d6", "Frightening Gaze", "Paralyzing Touch")
           ]
           break
         case 52:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Marilth", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Marilth", calculateRoll("18d10+90"), 18, 9, "12d8+24", "d20+5", "Teleport", "Parry")
           ]
           break
         case 53:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Pit Fiend", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Pit Fiend", calculateRoll("24d10+168"), 19, 14, "8d8+32", "d20+2", "Fireball8d6", "Wall of Fire")
           ]
           break
         case 54:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Planetar", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Planetar", calculateRoll("16d10+112"), 19, 12, "4d6+7", "d20+5", "Insect Plague4d10", "Blade Barrier", )
           ]
           break
         case 55:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Solar", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Solar", calculateRoll("18d10+144"), 21, 15, "8d6+16", "d20+6", "Flying Sword", "Searing Burst8d6", "Blinding Gaze")
           ]
           break
         case 56:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Tarrasque", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Tarrasque", calculateRoll("33d20+330"), 25, 19, "20d8+50", "d20")
           ]
           break
         case 57:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Bore Worm", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Bore Worm", calculateRoll("15d20+90"), 18, 9, "6d8+18", "d20-2")
           ]
           break
         case 58:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Raeleus", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Raeleus", calculateRoll("19d12+190"), 22, 17, "6d6+10", "d20+5", "Musket Blast6d10+10", "Auto Pistolero10d6", "Canister Grenada4d10", "Stun Grenada", "Magic Chaff Grenada")
           ]
           break
         case 59:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Death Knight", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Death Knight", calculateRoll("19d8+95"), 20, 11, "3d8+15", "d20+2", "Hellfire Orb10d6", "Parry", "Destructive Wave5d6")
           ]
           break
         case 60:
           encounter.text = "Text"
           encounter.enemies = [
-            createEnemy("Drow Mother", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
-          ]
-          break
-        case 80:
-          encounter.text = "Text"
-          encounter.enemies = [
-            createEnemy("Leviathan", calculateRoll("health"), ac, hitModifier, "damage", "initiative")
+            createEnemy("Drow Matron Mother", calculateRoll("35d8+105"), 17, 10, "2d6+8", "d20+4", "Levitate", "Plane Shift", "Gate", "Geas5d10", "Guardian of Faith", "Tentacle Rod3d6", "Summon Servant")
           ]
           break
       }
