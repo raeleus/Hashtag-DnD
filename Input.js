@@ -1986,7 +1986,8 @@ function doAttack(command) {
 
   state.show = "prefix"
   
-  if (score == 20) state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}]\n`
+  if (targetRoll == 0) state.prefix = ""
+  else if (score == 20) state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}]\n`
   else if (score == 1) state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}]\n`
   else if (modifier != 0) state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= targetRoll ? "Success!" : "Failure!"}]\n`
   else state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}. ${score >= targetRoll ? "Success!" : "Failure!"}]\n`
@@ -2000,7 +2001,7 @@ function doAttack(command) {
 
   if (enemyString != null) text += enemyString
 
-  if (score + modifier >= targetRoll || score == 20) text += addXpToAll(Math.floor(state.autoXp * clamp(targetRoll, 1, 20) / 20))
+  if (targetRoll > 0 && (score + modifier >= targetRoll || score == 20)) text += addXpToAll(Math.floor(state.autoXp * clamp(targetRoll, 1, 20) / 20))
   return text + "\n"
 }
 
@@ -3204,7 +3205,8 @@ function doCastSpell(command) {
   state.show = "prefix"
   var dieText = advantage == "advantage" || advantage == "disadvantage" ? `${advantage}(${roll1},${roll2})` : roll1
   var difficultyWord = targetText == null ? "Difficulty" : "Armor"
-  if (roll == 20) state.prefix = `\n[${difficultyWord} Class: ${difficulty}. Roll: ${dieText}. Critcal Success!]\n`
+  if (difficulty == 0) state.prefix = ""
+  else if (roll == 20) state.prefix = `\n[${difficultyWord} Class: ${difficulty}. Roll: ${dieText}. Critcal Success!]\n`
   else if (roll == 1) state.prefix = `\n[${difficultyWord} Class: ${difficulty}. Roll: ${dieText}. Critcal Failure!]\n`
   else if (modifier != 0) state.prefix = `\n[${difficultyWord} Class: ${difficulty}. Roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${roll + modifier}. ${roll + modifier >= difficulty ? "Success!" : "Failure!"}]\n`
   else state.prefix = `\n[${difficultyWord} Class: ${difficulty}. Roll: ${dieText}. ${roll + modifier >= difficulty ? "Success!" : "Failure!"}]\n`
@@ -3216,7 +3218,7 @@ function doCastSpell(command) {
 
   if (enemyString != null) text += enemyString
 
-  if (roll + modifier >= difficulty || roll == 20) text += addXpToAll(Math.floor(state.autoXp * clamp(difficulty, 1, 20) / 20))
+  if (difficulty > 0 && (roll + modifier >= difficulty || roll == 20)) text += addXpToAll(Math.floor(state.autoXp * clamp(difficulty, 1, 20) / 20))
   return `\n${text}\n`
 }
 
