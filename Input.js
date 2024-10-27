@@ -2605,15 +2605,26 @@ function doTurn(command) {
 }
 
 function doTake(command) {
+  var itemIndex = 0
   var arg0 = getArgument(command, 0)
   if (arg0 == null) {
     state.show = "none"
     return "\n[Error: Not enough parameters. See #help]\n"
   }
 
+  if (arg0 == "the") {
+    var tempArg = getArgument(command, 1)
+    if (tempArg != null && !isNaN(tempArg)) {
+      arg0 = tempArg
+      itemIndex++
+    }
+  }
+
+  if (!isNaN(arg0)) itemIndex++
+
   const item = {
     quantity: isNaN(arg0) ? 1 : arg0,
-    name: getArgumentRemainder(command, isNaN(arg0) ? 0 : 1).replace(/^((the)|(a)|(an))\s/, "").plural(true)
+    name: getArgumentRemainder(command, itemIndex).replace(/^((the)|(a)|(an))\s/, "").plural(true)
   }
 
   var character = getCharacter()
