@@ -1,4 +1,4 @@
-const version = "Hashtag DnD v0.2.2"
+const version = "Hashtag DnD v0.3.0"
 const rollSynonyms = ["roll"]
 const createSynonyms = ["create", "generate", "start", "begin", "setup", "party", "member", "new"]
 const renameCharacterSynonyms = ["renamecharacter", "renameperson"]
@@ -80,6 +80,7 @@ const setupEnemySynonyms = ["setupenemy", "createenemy"]
 const setDamageSynonyms = ["setdamage"]
 const setProficiencySynonyms = ["setproficiency", "setweaponproficiency"]
 const healPartySynonyms = ["healparty", "healcharacters"]
+const blockSynonyms = ["block", "parry", "nullify", "invalidate"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -128,7 +129,7 @@ const modifier = (text) => {
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, setupEnemySynonyms, healSynonyms, damageSynonyms, restSynonyms, addExperienceSynonyms, healPartySynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, setupEnemySynonyms, healSynonyms, damageSynonyms, restSynonyms, addExperienceSynonyms, healPartySynonyms, blockSynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
@@ -223,6 +224,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, setDamageSynonyms, doSetDamage)
   if (text == null) text = processCommandSynonyms(command, commandName, setProficiencySynonyms, doSetProficiency)
   if (text == null) text = processCommandSynonyms(command, commandName, healPartySynonyms, doHealParty)
+  if (text == null) text = processCommandSynonyms(command, commandName, blockSynonyms, doBlock)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -1973,6 +1975,9 @@ function doAttack(command) {
       if (score == 20 || score + modifier >= targetRoll) {
         if (score == 20) enemyString += `\nCritical Damage: ${damage}\n`
         else enemyString += `\nDamage: ${damage}\n`
+
+        state.blockCharacter = foundEnemy
+        state.blockPreviousHealth = foundEnemy.health
         foundEnemy.health = Math.max(0, foundEnemy.health - damage)
         if (foundEnemy.health == 0) {
           enemyString += ` ${toTitleCase(foundEnemy.name)} has been defeated!`
@@ -2610,6 +2615,8 @@ function doTurn(command) {
     var text = `\n[It is ${possessiveName} turn]\n`
     if (getRandomBoolean() || activeCharacter.spells.length == 0) {
       if (hit) {
+        state.blockCharacter = target
+        state.blockPreviousHealth = target.health
         var damage = isNaN(activeCharacter.damage) ? calculateRoll(activeCharacter.damage) : activeCharacter.damage
         target.health = Math.max(target.health - damage, 0)
 
@@ -2640,6 +2647,27 @@ function doTurn(command) {
     }
     return text
   }
+}
+
+function doBlock(command) {
+  if (state.blockCharacter == null) {
+    state.show = "none"
+    return "\n[Error: No attack to block. See #help]\n"
+  }
+
+  var character = state.characters.find(x => x.name.toLowerCase() == state.blockCharacter.name.toLowerCase())
+  if (character == null) character = state.enemies.find(x => x.name.toLowerCase() == state.blockCharacter.name.toLowerCase())
+  if (character == null) {
+    state.show = "none"
+    return "\n[Error: Character no longer exists. See #help]\n"
+  }
+
+  character.health = state.blockPreviousHealth
+
+  var properName = toTitleCase(character.name)
+  state.show = "prefix"
+  state.prefix = `[${properName} has ${character.health} health]`
+  return `\nHowever, the damage to ${properName} was blocked!\n`
 }
 
 function doTake(command) {
@@ -3195,6 +3223,9 @@ function doCastSpell(command) {
       if (roll == 20 || roll + modifier >= difficulty) {
         if (roll == 20) enemyString += `\nCritical Damage: ${damage}\n`
         else enemyString += `\nDamage: ${damage}\n`
+
+        state.blockCharacter = foundEnemy
+        state.blockPreviousHealth = foundEnemy.health
         foundEnemy.health = Math.max(0, foundEnemy.health - damage)
         if (foundEnemy.health == 0) enemyString += ` ${toTitleCase(foundEnemy.name)} has been defeated!\n`
         else enemyString += ` ${toTitleCase(foundEnemy.name)} has ${foundEnemy.health} health remaining!\n`

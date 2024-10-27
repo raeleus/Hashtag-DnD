@@ -16,11 +16,12 @@ Create locations to travel to and view them in a map
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
-v. 0.2.2
+v. 0.3.0
 * Added Boss difficulty encounters
 * Added Humanoid Enemy Presets
 * Added optional enemy parameter to #heal
 * Added #healparty
+* Added #block which reverses damage inflicted in the last turn in combat
 * Tweaked #heal and #damage to allow targeting characters specified as a parameter
 * Fixed defeated enemies not being removed from combat
 * Minor bug fixes and improvements
