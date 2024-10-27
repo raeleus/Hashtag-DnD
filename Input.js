@@ -226,7 +226,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, setProficiencySynonyms, doSetProficiency)
   if (text == null) text = processCommandSynonyms(command, commandName, healPartySynonyms, doHealParty)
   if (text == null) text = processCommandSynonyms(command, commandName, blockSynonyms, doBlock)
-    if (text == null) text = processCommandSynonyms(command, commandName, repeatTurnSynonyms, doRepeatTurn)
+  if (text == null) text = processCommandSynonyms(command, commandName, repeatTurnSynonyms, doRepeatTurn)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
