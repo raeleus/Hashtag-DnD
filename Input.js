@@ -1580,6 +1580,7 @@ function doHeal(command) {
     for (var enemy of state.enemies) {
       if (enemy.name.toLowerCase() == arg1.toLowerCase()) {
         enemy.health = Math.max(0, enemy.health + healing)
+        state.show = "none"
         return `\n[${toTitleCase(enemy.name)} has been healed for ${healing} hp to a total of ${enemy.health}]\n`
       }
     }
@@ -1588,6 +1589,7 @@ function doHeal(command) {
       if (character.name.toLowerCase() == arg1.toLowerCase()) {
         character.health += healing
         character.health = clamp(character.health, 0, getHealthMax(character))
+        state.show = "none"
         return `\n[${toTitleCase(character.name)} has been healed for ${healing} hp to a total of ${character.health}]\n`
       }
     }
@@ -1652,6 +1654,7 @@ function doDamage(command) {
     for (var enemy of state.enemies) {
       if (enemy.name.toLowerCase() == arg1.toLowerCase()) {
         enemy.health = Math.max(0, enemy.health - damage)
+        state.show = "none"
         return `\n[${toTitleCase(enemy.name)} has been damaged for ${damage} hp with ${enemy.health} remaining] ${enemy.health == 0 ? " " + toTitleCase(enemy.name) + " has been defeated!" : ""}\n`
       }
     }
@@ -1659,6 +1662,7 @@ function doDamage(command) {
     for (var character of state.characters) {
       if (character.name.toLowerCase() == arg1.toLowerCase()) {
         character.health = Math.max(0, character.health - damage)
+        state.show = "none"
         return `\n[${toTitleCase(character.name)} has been damaged for ${damage} hp with ${character.health} remaining] ${character.health == 0 ? " " + toTitleCase(character.name) + " is unconcious!" : ""}\n`
       }
     }
