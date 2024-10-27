@@ -1870,8 +1870,8 @@ function doTry(command) {
   else if (modifier != 0) state.prefix = `\n[${arg0} check DC: ${target} roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= target ? "Success!" : "Failure!"}]\n`
   else state.prefix = `\n[${arg0} check DC: ${target} roll: ${dieText}. ${score >= target ? "Success!" : "Failure!"}]\n`
   var text = `\n${character.name} ${score + modifier >= target ? "successfully" : failword + " to"} ${arg3}`
-  if (score == 20) text += " Critical success! Your action was extremely effective."
-  else if (score == 1) text += " Critical failure! There are dire consequences for your action."
+  if (score == 20) text += " Critical success! The action was extremely effective."
+  else if (score == 1) text += " Critical failure! There are dire consequences for this action."
   
   if (score + modifier >= target || score == 20) text += addXpToAll(Math.floor(state.autoXp * clamp(target, 1, 20) / 20)) + "\n"
   return text
@@ -1995,8 +1995,8 @@ function doAttack(command) {
   if (score + modifier >= targetRoll) text = `\n${toTitleCase(character.name)} successfully hit ${targetText}!`
   else text = `\n${toTitleCase(character.name)} ${tryWord} to hit ${targetText}. ${toTitleCase(character.name)} ${missWord}!`
 
-  if (score == 20) text += " Critical success! Your attack is exceptionally damaging!"
-  else if (score == 1) text += " Critical failure! Your attack missed in a spectacular way!"
+  if (score == 20) text += " Critical success! The attack is exceptionally damaging!"
+  else if (score == 1) text += " Critical failure! The attack missed in a spectacular way!"
 
   if (enemyString != null) text += enemyString
 
