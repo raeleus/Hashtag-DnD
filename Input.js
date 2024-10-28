@@ -2644,7 +2644,6 @@ function doTurn(command) {
 
     defeatedEnemies++
     var index = state.initiativeOrder.findIndex(x => x.name.toLowerCase() == enemy.name.toLowerCase())
-    log(`index:${index}`)
     if (index >= 0) state.initiativeOrder.splice(index, 1)
   }
 
