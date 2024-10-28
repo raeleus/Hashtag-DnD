@@ -22,6 +22,7 @@ v. 0.3.0
 * Added optional enemy parameter to #heal
 * Added #healparty
 * Added #block which reverses damage inflicted in the last turn in combat
+* Added #repeatturn to allow an enemy to do another attack
 * Tweaked #heal and #damage to allow targeting characters specified as a parameter
 * Fixed defeated enemies not being removed from combat
 * Minor bug fixes and improvements
