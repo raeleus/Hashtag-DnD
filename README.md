@@ -17,7 +17,7 @@ See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
 v. 0.3.0
-* Added Boss difficulty encounters
+* Added Boss and God difficulty encounters
 * Added Humanoid Enemy Presets
 * Added optional enemy parameter to #heal
 * Added #healparty

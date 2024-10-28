@@ -2438,195 +2438,195 @@ function createEncounter(listName) {
     case "god":
       if (encounter.cr == null) encounter.cr = 17
       multiplier = 1 + (encounter.cr - 17) / 10
-      switch (getRandomInteger(0, 61)) {
+      switch (getRandomInteger(0, 60)) {
         case 0:
-          encounter.text = "Text"
+          encounter.text = "You have discovered a tunnel encased entirely with geodes and crystals of great value!"
           break
         case 1:
-          encounter.text = "Text"
+          encounter.text = "A mighty steed is spotted here. As it breathes, it exhales flames from its nostrils. Despite this, it looks friendly and comes up to you with a slightly tilted head. It presses against your arm cautiously."
           break
         case 2:
-          encounter.text = "Text"
+          encounter.text = "A thought enters your mind. A thought that no man should know. A thought that could change the world. And yet, it starts to escape you as fast as it came to you."
           break
         case 3:
-          encounter.text = "Text"
+          encounter.text = "The grand master of the martial way stands before you. He will teach you one technique, but it will cost you dearly. A cost that is worth much more than mere coin."
           break
         case 4:
-          encounter.text = "Text"
+          encounter.text = "An exceptional weapon is presented to you by one claiming to be your loyal servant. It lowers its eyes as you approach. \"Master, I do not aim to offend with such a paltry gift, but it is all I have.\""
           break
         case 5:
-          encounter.text = "Text"
+          encounter.text = "A portal is spotted. Through it, you see a vast library with shelves and shelves of books with no end. It is a truly spectacular sight."
           break
         case 6:
-          encounter.text = "Text"
+          encounter.text = "The way ahead is covered with fine sand. It shifts and twists, indicating that something resides underneath."
           break
         case 7:
-          encounter.text = "Text"
+          encounter.text = "Molten hot magma leaks through the walls of this place. You hear a sudden cracking and all hell breaks loose."
           break
         case 8:
-          encounter.text = "Text"
+          encounter.text = "Whatever is entombed here must be significantly important because there are various traps of unusual complexity laid through the path before you."
           break
         case 9:
-          encounter.text = "Text"
+          encounter.text = "Giant axes swing like pendulums. Each blocks your way and can destroy you in a single blow."
           break
         case 10:
-          encounter.text = "Text"
+          encounter.text = "A giant rock face is in front of you. It must be traversed in order for you to proceed. Unfortunately, the hand holds are incredibly unstable and will not hold your weight for long."
           break
         case 11:
-          encounter.text = "Text"
+          encounter.text = "A bridge in disrepair is before you. It was sabotaged to prevent passage through this way, but you must get through. There planks placed intermitentally across its length. You imagine that it could be crossed successfully with some focus and a lot of luck."
           break
         case 12:
-          encounter.text = "Text"
+          encounter.text = "\"You must choose wisely.\" An old sage presents two cups on a table before you. Their mouths are faced downward, hiding their contents. You can tell something is wrong from his snickering, mocking lips."
           break
         case 14:
-          encounter.text = "Text"
+          encounter.text = "An elaborate illusion is here, hiding the way forward. Pressing ahead cautiously with your foot, you can tell that there is a significant drop where the illusion is. Safe passage is obscured from your senses."
           break
         case 15:
-          encounter.text = "Text"
+          encounter.text = "A set of giant scales are ahead. Ball bearings of immense size are all placed on one side of the scale. They are too heavy to move by any normal person's strength. Suddenly, the walls start pushing in."
           break
         case 16:
-          encounter.text = "Text"
+          encounter.text = "Death is playing with a set of dice. He looks bored. Then he suddenly notices you..."
           break
         case 17:
-          encounter.text = "Text"
+          encounter.text = "A tablet is here. Written in large text, it seems to be the words to a curse or spell of some sort. At first glance, it makes no sense to you. Then you realize that each line is written in a differnt language found in the known world. That is when you started to smell the gas..."
           break
         case 18:
-          encounter.text = "Text"
+          encounter.text = "It's starting to rain, but you realize that this is no normal rain. Each drop sizzles as it strikes an object. Acid! It is truly the end times."
           break
         case 19:
-          encounter.text = "Text"
+          encounter.text = "The flesh wall demands a sacrifice! It quivers at you. \"Feeeeeeeed meeeeeeeeee\""
           break
         case 20:
-          encounter.text = "Text"
+          encounter.text = "A giant hedge maze! You do not wish to participate, however you notice a mystical blue flame follow your path. It does not move swiftly, but it does block the way back. You have no choice but to play this game."
           break
         case 21:
-          encounter.text = "Text"
+          encounter.text = "Bottles of an illuminated, golden liquid are strung up in something like a wire lattice. Upon further investigation, you can see that they are all interconnected and may fall easily if disturbed. It's too bad because this is the only way out."
           break
         case 22:
-          encounter.text = "Text"
+          encounter.text = "You keep walking forward, but the door ahead seems to remain ever distant. This goes on for awhile, so you assume something magical is at play here."
           break
         case 23:
-          encounter.text = "Text"
+          encounter.text = "\"Stop the rabbits! They're getting away!\" You hear somebody yell, but it's too late. Your party is surrounded by rabbits just hopping around aimlessly. Humorous at first, but it becomes dangerous as the number of rabbits increase to an unforseen number."
           break
         case 24:
-          encounter.text = "Text"
+          encounter.text = "All your actions are being judged by a mysterious figure sitting atop a dark throne. Only the sounds of disappointment can be heard as the shady figure flips through the pages of your exploits."
           break
         case 25:
-          encounter.text = "Text"
+          encounter.text = "You see a mirror, however its image is not a reflection of you but that of your past and possible futures."
           break
         case 26:
-          encounter.text = "Text"
+          encounter.text = "The sphinx asks you the unsolvable riddle. Your life hangs in the balance as you try to interpret its words."
           break
         case 27:
-          encounter.text = "Text"
+          encounter.text = "Your vision begins to blacken. All noises are muted. Your senses are ripped from you. You are completely cut off from the world. You are now trapped in the void."
           break
         case 28:
-          encounter.text = "Text"
+          encounter.text = "A pit seemingly with no bottom can be seen here. You look back: the entrance to this pace is gone! What will you do?"
           break
         case 29:
-          encounter.text = "Text"
+          encounter.text = "A test of faith. Prove your worth or be struck down by the power of the gods!"
           break
         case 30:
-          encounter.text = "Text"
+          encounter.text = "A sea of bones. You try to step in, but your feet have no purchase."
           break
         case 31:
-          encounter.text = "Text"
+          encounter.text = "The adult blue dragon claws at the ground just before it. It's bored. It has decided that you will be its new play thing."
           encounter.enemies = [
             createEnemy("Adult Blue Dragon", calculateRoll("18d12+108"), 19, 12, "6d10+21", "d20", "Lightning Breath12d10", "Wing Attack2d6+7")
           ]
           break
         case 32:
-          encounter.text = "Text"
+          encounter.text = "The gold dragon has deemed you unworthy. Prove it wrong."
           encounter.enemies = [
             createEnemy("Adult Gold Dragon", calculateRoll("19d12+133"), 19, 12, "6d10+21", "d20+2", "Fire Breath 12d10", "Weakening Breath")
           ]
           break
         case 33:
-          encounter.text = "Text"
+          encounter.text = "The adult red dragon has broken its chains and now stands before you. Whatever events have ocurred to bring it to this place, it places the blame on you for its centuries of torture."
           encounter.enemies = [
             createEnemy("Adult Red Dragon", calculateRoll("19d12+133"), 19, 12, "6d10+21", "d20", "Fire Breath18d6", "Wing Attack2d6+8")
           ]
           break
         case 34:
-          encounter.text = "Text"
+          encounter.text = "You didn't do anything wrong. The adult silver dragon just doesn't like you."
           encounter.enemies = [
             createEnemy("Adult Silver Dragon", calculateRoll("18d12+126"), 19, 13, "6d10+24", "d20", "Cold Breath13d8", "Paralyzing Breath")
           ]
           break
         case 35:
-          encounter.text = "Text"
+          encounter.text = "The ancient black dragon goads you into a fight."
           encounter.enemies = [
             createEnemy("Ancient Black Dragon", calculateRoll("21d20+147"), 22, 15, "6d10+24", "d20+2", "Acid Breath15d8", "Wing Attack2d6+8")
           ]
           break
         case 36:
-          encounter.text = "Text"
+          encounter.text = "From the ashes, the phoenix!"
           encounter.enemies = [
             createEnemy("Phoenix", calculateRoll("10d20+70"), 18, 13, "4d6+16", "d20+8", "Fiery Talons4d8+16", "Swoop4d8+16")
           ]
           break
         case 37:
-          encounter.text = "Text"
+          encounter.text = "The demogorgon is quite the curiosity. Your wish to study its biology is stymied by the fact that your life is in jeapodary."
           encounter.enemies = [
             createEnemy("Demogorgon", calculateRoll("32d12+256"), 22, 17, "6d12+18", "d20+2", "Beguiling Gaze", "Hypnotic Gaze")
           ]
           break
         case 38:
-            encounter.text = "Text"
+            encounter.text = "You stand there, mouth agape trying to understand it. You can't. The cosmic horror attacks!"
             encounter.enemies = [
               createEnemy("Cosmic Horror", calculateRoll("16d20+112"), 15, 14, "6d6+16", "d20", "Poison Jet4d6", "Psychic Whispers6d10")
             ]
             break
           case 39:
-          encounter.text = "Text"
+          encounter.text = "The ancient red dragon has lived to see entire civilizations rise and fall. You are nothing in its presence."
           encounter.enemies = [
             createEnemy("Ancient Red Dragon", calculateRoll("21d20+147"), 22, 15, "6d8+30", "d20+2", "Fire Breath26d6", "Wing Attack2d6+10")
           ]
           break
         case 40:
-          encounter.text = "Text"
+          encounter.text = "The ancient gold dragon holds on to a dark secret that jeopordizes everything that you know. Perhaps it will impart its knowledge onto you once you prove you're worthy. Many have tried and failed as evidenced by the bones laid asunder."
           encounter.enemies = [
             createEnemy("Ancient Gold Dragon", calculateRoll("28d20+252"), 22, 15, "6d10+24", "d20+2", "Fire Breath13d10", "Weakening Breath")
           ]
           break
         case 41:
-          encounter.text = "Text"
+          encounter.text = "Zariel, the arch duchess of Avernus, stands at the ready. You have displeased her and now she will exact her revenge on you personally. Burning crown above her head and wings red like fire, she is ready for you."
           encounter.enemies = [
             createEnemy("Zariel", calculateRoll("40d10+360"), 21, 16, "4d8+16", "d20+7", "Horrid Touch8d10", "Immolating Gaze4d10", "Teleport")
           ]
           break
         case 42:
-          encounter.text = "Text"
+          encounter.text = "Bael emerges from the deepest pits of the nine hells. You are stricken by his warrior-like, bovine appearance. A wicked grin betrays his truly diabolical plans for you."
           encounter.enemies = [
             createEnemy("Bael", calculateRoll("18d10+90"), 18, 13, "4d8+27", "d20+3", "Awaken Greed", "Teleport", "Regenerate", "Inflict Wounds4d8+27", "Invisibility")
           ]
           break
         case 43:
-          encounter.text = "Text"
+          encounter.text = "The demon lord of the abyss, Baphomet, has waited eons for his chance to lead his assault onto the material world. He does not see you as a threat. Only an inconvenience."
           encounter.enemies = [
             createEnemy("Baphomet", calculateRoll("22d12+176"), 22, 17, "3d10+30", "d20+2", "Curse of Brutality", "Desecration Breath20d8", "Gouging Toss2d8", "Raise Labyrinth")
           ]
           break
         case 44:
-          encounter.text = "Text"
+          encounter.text = "You're miles from the sea and yet its here: the leviathan. It charges at you across the water with full force!"
           encounter.enemies = [
             createEnemy("Leviathan", calculateRoll("16d20+160"), 17, 16, "4d10+40", "d20+7", "Tidal Wave6d10")
           ]
           break
         case 45:
-          encounter.text = "Text"
+          encounter.text = "Dripping. Disgusting. You are acosted by the flesh colossus! All is lost."
           encounter.enemies = [
             createEnemy("Flesh Colossus", calculateRoll("16d20+112"), 14, 13, "6d6+14", "d20-1", "Elemental Breath9d8")
           ]
           break
         case 46:
-          encounter.text = "Text"
+          encounter.text = "You've never seen a creature as beautiful or as regal as the androsphinx. Unfortunately, it regards you with disdain."
           encounter.enemies = [
             createEnemy("Androsphinx", calculateRoll("19d10+95"), 17, 12, "4d10+12", "d20", "Flame Strike8d6", "Roar", "Teleport")
           ]
           break
         case 47:
-          encounter.text = "Text"
+          encounter.text = "Balor is a fiend. A huge, demonic fiend bent on destroying you and all you represent."
           encounter.enemies = [
             createEnemy("Balor", calculateRoll("21d12+136"), 19, 14, "6d8+16", "d20+2", "Fire Whip 5d6+8", "Teleport")
           ]
@@ -2644,67 +2644,67 @@ function createEncounter(listName) {
           ]
           break
         case 50:
-          encounter.text = "Text"
+          encounter.text = "A lake with unkown depths is before you. The kraken's lair. It emerges, ready to strike out at you."
           encounter.enemies = [
             createEnemy("Kraken", calculateRoll("27d20+189"), 18, 17, "9d6+30", "d20", "Lightning Storm12d10", "Ink Cloud3d10", "Fling1d6")
           ]
           break
         case 51:
-          encounter.text = "Text"
+          encounter.text = "The lich commands an incredible army of the dead. Strike now for the good of the realm!"
           encounter.enemies = [
             createEnemy("Lich", calculateRoll("18d8+54"), 17, 12, "3d6", "Acid Arrow4d4", "Fireball8d6", "Dimension Door", "Animate Dead", "Ray of Frost3d8", "Disrupt Life6d6", "Frightening Gaze", "Paralyzing Touch")
           ]
           break
         case 52:
-          encounter.text = "Text"
+          encounter.text = "So many arms. The marilith slithers into view, waving its longswords all around."
           encounter.enemies = [
-            createEnemy("Marilth", calculateRoll("18d10+90"), 18, 9, "12d8+24", "d20+5", "Teleport", "Parry")
+            createEnemy("Marilith", calculateRoll("18d10+90"), 18, 9, "12d8+24", "d20+5", "Teleport", "Parry")
           ]
           break
         case 53:
-          encounter.text = "Text"
+          encounter.text = "The pit fiend is protecting something of great value. Put that out of your mind because you should be preparing for one hell of a fight."
           encounter.enemies = [
             createEnemy("Pit Fiend", calculateRoll("24d10+168"), 19, 14, "8d8+32", "d20+2", "Fireball8d6", "Wall of Fire")
           ]
           break
         case 54:
-          encounter.text = "Text"
+          encounter.text = "The planetar is a celestial in true form. This one, fallen and disgraced, shall now vanquish you in the name of some forgotten god."
           encounter.enemies = [
             createEnemy("Planetar", calculateRoll("16d10+112"), 19, 12, "4d6+7", "d20+5", "Insect Plague4d10", "Blade Barrier", )
           ]
           break
         case 55:
-          encounter.text = "Text"
+          encounter.text = "Angelic is the least you can say about the solar. Beautiful, powerful. All fear the mighty solar!"
           encounter.enemies = [
             createEnemy("Solar", calculateRoll("18d10+144"), 21, 15, "8d6+16", "d20+6", "Flying Sword", "Searing Burst8d6", "Blinding Gaze")
           ]
           break
         case 56:
-          encounter.text = "Text"
+          encounter.text = "The tarrasque laid dormant for unknowable eons. Your arrival, however, triggered a series of events leading to its awakening. Its massive form stirs, sending the earth crumbling before you."
           encounter.enemies = [
             createEnemy("Tarrasque", calculateRoll("33d20+330"), 25, 19, "20d8+50", "d20")
           ]
           break
         case 57:
-          encounter.text = "Text"
+          encounter.text = "The bore worm is much like the purple worm, yet it is much more dangerous. A construct made of nigh unbreakable metals, its singular goal is clear: your destruction."
           encounter.enemies = [
             createEnemy("Bore Worm", calculateRoll("15d20+90"), 18, 9, "6d8+18", "d20-2")
           ]
           break
         case 58:
-          encounter.text = "Text"
+          encounter.text = "The raeleus decides to finally make his presence known. He's been watching. Waiting. This half human, half zebra amalgamation is quite the inventor. It employs its grand arsenal on you. Run or fight, he's going to get you."
           encounter.enemies = [
             createEnemy("Raeleus", calculateRoll("19d12+190"), 22, 17, "6d6+10", "d20+5", "Musket Blast6d10+10", "Auto Pistolero10d6", "Canister Grenada4d10", "Stun Grenada", "Magic Chaff Grenada")
           ]
           break
         case 59:
-          encounter.text = "Text"
+          encounter.text = "The death knight is not one to toil with. It's too late for you, but consider this a warning to the next group of fools who think they could stand toe to toe with this undead warrior."
           encounter.enemies = [
             createEnemy("Death Knight", calculateRoll("19d8+95"), 20, 11, "3d8+15", "d20+2", "Hellfire Orb10d6", "Parry", "Destructive Wave5d6")
           ]
           break
         case 60:
-          encounter.text = "Text"
+          encounter.text = "This is getting out of hand. Demons, monsters, and now the Drow Matron Mother is on attack! She's a very powerful elven caster that commands a vast network of fiends and slaves."
           encounter.enemies = [
             createEnemy("Drow Matron Mother", calculateRoll("35d8+105"), 17, 10, "2d6+8", "d20+4", "Levitate", "Plane Shift", "Gate", "Geas5d10", "Guardian of Faith", "Tentacle Rod3d6", "Summon Servant")
           ]
