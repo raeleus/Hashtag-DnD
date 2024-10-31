@@ -16,6 +16,9 @@ Create locations to travel to and view them in a map
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
+v. 0.4.0
+*
+
 v. 0.3.0
 * Added Boss and God difficulty encounters
 * Added Humanoid Enemy Presets
