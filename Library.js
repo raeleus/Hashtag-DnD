@@ -16,6 +16,10 @@ function getRandom(seed) {
   return x - Math.floor(x)
 }
 
+function getRandomFromList(...choices) {
+  return choices[getRandomInteger(0, choices.length - 1)]
+}
+
 function shuffle(array, seed) {
   let currentIndex = array.length
   while (currentIndex != 0) {

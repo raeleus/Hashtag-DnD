@@ -87,6 +87,12 @@ const modifier = (text) => {
           break
       }
       break
+    case "stragedy":
+      text += handleStragedy()
+      break
+    case "stragedyShop":
+      text += handleStragedyShop()
+      break
     case "bio":
       text += `*** ${possessiveName.toUpperCase()} BIO ***\n`
       text += `Class: ${character.className}\n`
@@ -545,6 +551,84 @@ function mapReplace(map, x, y, character) {
   map = map.replaceAt(index, character)
 
   return map
+}
+
+function handleStragedy() {
+  var text = " "
+  switch (state.stragedyTurn) {
+    case "intro":
+      text = `**Stragedy**
+Welcome to Stragedy! A trading card game of wits, strategy, and tragic outcomes!
+Please see the game manual on github for rules, tactics, and a complete tutorial: github.com/raeleus/Hashtag-DnD/ 
+`
+      break
+  }
+
+  return text
+}
+
+function handleStragedyShop() {
+  var character = getCharacter()
+  var goldIndex = character.inventory.findIndex(x => x.name.toLowerCase() == "gold")
+  var gold = goldIndex == -1 ? 0 : character.inventory[goldIndex].quantity
+  var text = " "
+  var seed = state.day
+  if (state.cardDeals == null) {
+    state.cardDeals = ["2", "3", "4", "5", "6", "7", "8", "9"]
+    state.cardPrices = [400, 400, 400, 400, 400, 400, 400, 400, 2000]
+    var items = ["10", "Ace", "Jack"]
+    state.cardDeals.push(items[Math.floor(getRandom(seed) * 3)])
+    seed += 100
+    if (getRandom(seed) > .6) {
+      items = ["Queen", "King", "Joker"]
+      state.cardDeals.push(getRandomFromList(items[Math.floor(getRandom(seed) * 3)]))
+      seed += 100
+      state.cardPrices.push(5000)
+    }
+    if (getRandom(seed) > .9) {
+      items = ["Witch", "Priest", "Brigand"]
+      state.cardDeals.push(getRandomFromList(items[Math.floor(getRandom(seed) * 3)]))
+      seed += 100
+      state.cardPrices.push(12000)
+    }
+  }
+
+  switch (state.stragedyShopStep) {
+    case 0:
+      text = `**Welcome to the Stragedy Shop**
+Deals change every day!`
+      break
+    case 1:
+      text = "Card purchased!"
+      break
+    case 2:
+      text = "You do not have enough gold!"
+  }
+
+  switch (state.stragedyShopStep) {
+    case 0:
+    case 1:
+    case 2:
+      text += `
+Select a number from the list below to purchase a card:
+
+`
+      if (state.cardDeals.length == 0) text += "There are no cards left for sale!\n"
+      for (var i = 0; i < state.cardDeals.length; i++) {
+        text += `${i + 1}. Stragedy ${state.cardDeals[i]} Card for ${state.cardPrices[i]} gold\n`
+      }
+
+      text += `
+You have ${gold} gold
+Enter the number or q to quit:
+`
+      break
+    case 500:
+      text = "Thank you for shopping at the Stragedy Shop!"
+      break
+  }
+
+  return text
 }
 
 modifier(text)

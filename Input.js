@@ -82,6 +82,10 @@ const setProficiencySynonyms = ["setproficiency", "setweaponproficiency"]
 const healPartySynonyms = ["healparty", "healcharacters"]
 const blockSynonyms = ["block", "parry", "nullify", "invalidate"]
 const repeatTurnSynonyms = ["repeatturn", "repeat"]
+const basicDeckSynonyms = ["basicdeck"]
+const cardShopSynonyms = ["cardshop", "stragedyshop", "cardstore", "stragedystore"]
+const stragedySynonyms = ["stragedy", "playgame", "game", "startgame", "begingame", "playcards", "playstragedy", "startstragedy", "beginstragedy"]
+const addCardSynonyms = ["addcard"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -95,9 +99,14 @@ const modifier = (text) => {
   }
 
   if (state.setupEnemyStep != null) {
-    state.setupEnemyStep
     text = handleSetupEnemyStep(text)
     if (state.setupEnemyStep != null) return { text }
+    else text = rawText
+  }
+
+  if (state.stragedyShopStep != null) {
+    text = handleStragedyShopStep(text)
+    if (state.stragedyShopStep != null) return { text }
     else text = rawText
   }
 
@@ -227,6 +236,10 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, healPartySynonyms, doHealParty)
   if (text == null) text = processCommandSynonyms(command, commandName, blockSynonyms, doBlock)
   if (text == null) text = processCommandSynonyms(command, commandName, repeatTurnSynonyms, doRepeatTurn)
+  if (text == null) text = processCommandSynonyms(command, commandName, basicDeckSynonyms, doBasicDeck)
+  if (text == null) text = processCommandSynonyms(command, commandName, cardShopSynonyms, doCardShop)
+  if (text == null) text = processCommandSynonyms(command, commandName, stragedySynonyms, doStragedy)  
+  if (text == null) text = processCommandSynonyms(command, commandName, addCardSynonyms, doAddCard)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -1258,6 +1271,149 @@ function doSetupEnemy(command) {
   return " "
 }
 
+function doBasicDeck(command) {
+  var character = getCharacter()
+  var takeWord = character.name == "You" ? "take" : "takes"
+  doTake("take Stragedy Ace Card")
+  doTake("take Stragedy Ace Card")
+  doTake("take Stragedy 2 Card")
+  doTake("take Stragedy 2 Card")
+  doTake("take Stragedy 3 Card")
+  doTake("take Stragedy 3 Card")
+  doTake("take Stragedy 4 Card")
+  doTake("take Stragedy 4 Card")
+  doTake("take Stragedy 5 Card")
+  doTake("take Stragedy 5 Card")
+  doTake("take Stragedy 6 Card")
+  doTake("take Stragedy 6 Card")
+  doTake("take Stragedy 7 Card")
+  doTake("take Stragedy 7 Card")
+  doTake("take Stragedy 8 Card")
+  doTake("take Stragedy 8 Card")
+  doTake("take Stragedy 9 Card")
+  doTake("take Stragedy 9 Card")
+  doTake("take Stragedy Jack Card")
+  doTake("take Stragedy Jack Card")
+  return `${toTitleCase(character.name)} ${takeWord} the Stragedy Basic Deck`
+}
+
+function doCardShop(command) {
+  state.stragedyShopStep = 0
+  state.show = "stragedyShop"
+  return " "
+}
+
+function handleStragedyShopStep(text) {
+  state.show = "stragedyShop"
+
+  if (/^\s*>.*says? ".*/.test(text)) {
+    text = text.replace(/^\s*>.*says? "/, "")
+    text = text.replace(/"\s*$/, "")
+  } else if (/^\s*>\s.*/.test(text)) {
+    text = text.replace(/\s*> /, "")
+    for (var i = 0; i < info.characters.length; i++) {
+      var matchString = info.characters[i] == "" ? "You " : `${info.characters[i]} `
+      if (text.startsWith(matchString)) {
+        text = text.replace(matchString, "")
+        break
+      }
+    }
+    text = text.replace(/\.?\s*$/, "")
+  } else {
+    text = text.replace(/^\s+/, "")
+  }
+
+  if (text.toLowerCase() == "q") {
+    state.stragedyShopStep = 500
+    return text
+  }
+
+  switch (state.stragedyShopStep) {
+    case 0:
+    case 1:
+      if (isNaN(text)) return text
+      var index = parseInt(text) - 1
+      if (index < 0 || index >= state.cardDeals.length) return text
+
+      var item = state.cardDeals[index]
+      var price = state.cardPrices[index]
+
+      var character = getCharacter()
+      var goldIndex = character.inventory.findIndex(x => x.name.toLowerCase() == "gold")
+      var gold = goldIndex == -1 ? 0 : character.inventory[goldIndex].quantity
+
+      if (price > gold) {
+        state.stragedyShopStep = 2
+        return text
+      }
+
+      doTake(`take Stragedy ${item} Card`)
+      character.inventory[goldIndex].quantity -= price
+
+      state.cardDeals.splice(index, 1)
+      state.cardPrices.splice(index, 1)
+
+      state.stragedyShopStep = 1
+      break
+    case 500:
+      state.show = null
+      state.stragedyShopStep = null
+      break
+  }
+  return text
+}
+
+function doStragedy(command) {
+  state.stragedyTurn = "intro"
+  state.show = "stragedy"
+  return " "
+}
+
+function doAddCard(command) {
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) {
+    arg0 = ""
+  }
+
+  arg0 = arg0.toLowerCase()
+  switch(arg0) {
+    case "a":
+    case "ace":
+      return doTake("take Stragedy Ace Card")
+    case "j":
+    case "jack":
+      return doTake("take Stragedy Jack Card")
+    case "q":
+    case "queen":
+      return doTake("take Stragedy Queen Card")
+    case "k":
+    case "king":
+      return doTake("take Stragedy King Card")
+    case "?":
+    case "joker":
+      return doTake("take Stragedy Joker Card")
+    case "w":
+    case "witch":
+      return doTake("take Stragedy Witch Card")
+    case "p":
+    case "priest":
+      return doTake("take Stragedy Priest Card")
+    case "b":
+    case "brigand":
+      return doTake("take Stragedy Brigand Card")
+    case "common":
+      return doTake(`take Stragedy ${getRandomFromList("2", "3", "4", "5", "6", "7", "8", "9")} Card`)
+    case "rare":
+      return doTake(`take Stragedy ${getRandomFromList("10", "Ace", "Jack")} Card`)
+    case "epic":
+      return doTake(`take Stragedy ${getRandomFromList("Queen", "King", "Joker")} Card`)
+    case "legendary":
+      return doTake(`take Stragedy ${getRandomFromList("Witch", "Priest", "Brigand")} Card`)
+    default:
+      return doTake(`take Stragedy ${getRandomFromList("2", "3", "4", "5", "6", "7", "8", "9", "10", "Ace", "Jack", "Queen", "King", "Joker", "Witch", "Priest", "Brigand")} Card`)
+  }
+}
+
 function doBio(command) {
   state.show = "bio"
   return " "
@@ -1757,6 +1913,8 @@ function doRest(command) {
   var commandName = getCommandName(command)
   state.day++
   state.enemies = []
+  state.cardDeals = null
+  state.cardPrices = null
 
   var healingFactor = 1
   var text

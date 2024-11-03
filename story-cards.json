@@ -150,5 +150,77 @@
     "title": "Spiritual Weapon",
     "description": "",
     "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy",
+    "value": "A trading card game passed down through the generations. The magical cards are rare and have incredible value. Players use the cards to have friendly battles.",
+    "type": "item",
+    "title": "Stragedy Card Game",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Ace",
+    "value": "Sends all cards that have the number that this card is played on to the discard pile.",
+    "type": "item",
+    "title": "Stragedy Ace Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Jack",
+    "value": "Sends the targeted card back to the discard pile. The player can then draw a card from the discard pile and take another turn.",
+    "type": "item",
+    "title": "Stragedy Jack Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Queen",
+    "value": "Removes the value of the numbered card that this is played on and adds it to the opponent.",
+    "type": "item",
+    "title": "Stragedy Queen Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy King",
+    "value": "Doubles the value of the numbered card that this is played on both sides of the battlefield.",
+    "type": "item",
+    "title": "Stragedy King Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Joker",
+    "value": "Increases the total of the numbered card that this is placed on to get a score of 30. It cannot subtract points if you bust, however.",
+    "type": "item",
+    "title": "Stragedy Joker Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Witch",
+    "value": "Forces the opponent to play a card directly from their draw pile or a random one chosen from their hand. If it can't be played, they must discard their hand.",
+    "type": "item",
+    "title": "Stragedy Witch Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Priest",
+    "value": "Prevents the numbered card that this is played on from causing you to bust. It subtracts down to 30.",
+    "type": "item",
+    "title": "Stragedy Priest Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Brigand",
+    "value": "Your opponent must discard 5 cards from their draw pile.",
+    "type": "item",
+    "title": "Stragedy Brigand Card",
+    "description": "",
+    "useForCharacterCreation": false
   }
 ]
