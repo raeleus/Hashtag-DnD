@@ -554,13 +554,91 @@ function mapReplace(map, x, y, character) {
 }
 
 function handleStragedy() {
+  var character = getCharacter()
+  var haveWord = character.name == "You" ? "have" : "has"
+  var possessiveName = getPossessiveName(character.name)
+
   var text = " "
   switch (state.stragedyTurn) {
     case "intro":
       text = `**Stragedy**
 Welcome to Stragedy! A trading card game of wits, strategy, and tragic outcomes!
-Please see the game manual on github for rules, tactics, and a complete tutorial: github.com/raeleus/Hashtag-DnD/ 
+Please see the game manual on github for rules, tactics, and a complete tutorial:
+github.com/raeleus/Hashtag-DnD/
+Type d to deal the cards or press f to forfeit.
 `
+      break
+    case "game":
+      var enemyBattlefield = state.stragedyEnemyBattlefield.length > 0 ? "" : "No cards!"
+      for (card of state.stragedyEnemyBattlefield) {
+        enemyBattlefield += `${card}, `
+      }
+      if (state.stragedyEnemyBattlefield.length > 0) enemyBattlefield = enemyBattlefield.substring(0, enemyBattlefield.length - 2)
+
+      var enemyDeckCount = state.stragedyEnemyDeck.length
+      var enemyDiscardCount = state.stragedyEnemyDiscard.length
+      var enemyHandCount = state.stragedyEnemyHand.length
+
+      var playerBattlefield = state.stragedyPlayerBattlefield.length > 0 ? "" : "No cards!"
+      for (card of state.stragedyPlayerBattlefield) {
+        playerBattlefield += `${card}, `
+      }
+      if (state.stragedyPlayerBattlefield.length > 0) playerBattlefield = playerBattlefield.substring(0, playerBattlefield.length - 2)
+
+      var playerHand = state.stragedyPlayerHand.length > 0 ? "" : "No cards!"
+      for (card of state.stragedyPlayerHand) {
+        playerHand += `${card}, `
+      }
+      if (state.stragedyPlayerHand.length > 0) playerHand = playerHand.substring(0, playerHand.length - 2)
+
+      var playerDeckCount = state.stragedyPlayerDeck.length
+      var playerDiscardCount = state.stragedyPlayerDiscard.length
+
+      if (state.stragedyEnemySkipTurn) text = `-----The Opponent's Turn-----
+The cpu does something.
+
+`
+      else text = ""
+
+      text += `-----The Opponent's Cards-----
+The opponent has ${enemyDeckCount} cards in the deck, ${enemyDiscardCount} in the discard pile, and ${enemyHandCount} in their hand.
+
+-----The Battlefield-----
+Opponent's cards on the battlefield: ${enemyBattlefield} = ${state.stragedyEnemyScore} points
+${possessiveName} cards on the battlefield: ${playerBattlefield} = ${state.stragedyPlayerScore} points
+
+-----${possessiveName} cards-----
+${possessiveName} hand: ${playerHand}
+${toTitleCase(character.name)} ${haveWord} ${playerDeckCount} cards in the deck and ${playerDiscardCount} in the discard pile.
+
+-----${possessiveName} Turn-----`
+
+      if (state.stragedyPlayerHand.length > 0) text += `
+Play a number card to the battlefield by typing its number.
+Play a letter card onto a card in the battlefield by typing the letter followed by the card you want to play it on.
+Witches and Brigands are played directly to the discard pile. Simply type w or b.
+Type d and the number or letter of a card in your hand to discard it. You will then draw 2 cards.
+Type r to retire. This forces the opponent to make their last move.
+Type f to forfeit. This quits the game immediately.
+`
+      else text += `
+Type d to draw a card.
+Type r to retire. This forces the opponent to make their last move.
+Type f to forfeit. This quits the game immediately.
+`
+      if (state.stragedyPlayerScore > 30) text += `WARNING: You must lower your score below 30 or you will bust!\n`
+      break
+    case "gameOver":
+      text = ""
+
+      if (state.stragedyEnemyTurnText != null) text += "\n" + state.stragedyEnemyTurnText
+
+      text += `
+The battle has concluded.${state.stragedyWinner != "forfeit" ? `\nFinal scores:\n${character.name}: ${state.stragedyPlayerScore}\nOpponent: ${state.stragedyEnemyScore}`: ""}
+`
+      if (state.stragedyWinner == "player" || state.stragedyWinner == "forfeit") text += `${toTitleCase(character.name)} ${haveWord} won! Congratulations.`
+      else if (state.stragedyWinner == "enemy") text += `${toTitleCase(character.name)} ${haveWord} lost! Better luck next time.`
+      else text += `${toTitleCase(character.name)} and the opponent have tied! Try again.`
       break
   }
 

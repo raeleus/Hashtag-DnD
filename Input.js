@@ -110,6 +110,12 @@ const modifier = (text) => {
     else text = rawText
   }
 
+  if (state.stragedyTurn != null) {
+    text = handleStragedyTurn(text)
+    if (state.stragedyTurn != null) return { text }
+    else text = rawText
+  }
+
   if (state.initialized == null || !text.includes("#")) {
     state.initialized = true;
     return { text }
@@ -1364,9 +1370,100 @@ function handleStragedyShopStep(text) {
 }
 
 function doStragedy(command) {
+  var character = getCharacter()
   state.stragedyTurn = "intro"
   state.show = "stragedy"
+
+  state.stragedyPlayerScore = 0
+  state.stragedyPlayerHand = []
+  state.stragedyPlayerBattlefield = []
+  
+  state.stragedyPlayerDeck = []
+  for (item of character.inventory) {
+    if (/stragedy ace card/gi.test(item.name)) state.stragedyPlayerDeck.push("a")
+    else if (/stragedy jack card/gi.test(item.name)) state.stragedyPlayerDeck.push("j")
+    else if (/stragedy queen card/gi.test(item.name)) state.stragedyPlayerDeck.push("q")
+    else if (/stragedy king card/gi.test(item.name)) state.stragedyPlayerDeck.push("k")
+    else if (/stragedy joker card/gi.test(item.name)) state.stragedyPlayerDeck.push("?")
+    else if (/stragedy witch card/gi.test(item.name)) state.stragedyPlayerDeck.push("w")
+    else if (/stragedy priest card/gi.test(item.name)) state.stragedyPlayerDeck.push("p")
+    else if (/stragedy brigand card/gi.test(item.name)) state.stragedyPlayerDeck.push("b")
+    else if (/stragedy \d+ card/gi.test(item.name)) {
+      for (var i = 0; i < item.quantity; i++) {
+        state.stragedyPlayerDeck.push(item.name.match(/(?<=stragedy )\d+(?= card)/gi)[0])
+      }
+    }
+  }
+
+  shuffle(state.stragedyPlayerDeck)
+  state.stragedyPlayerDeck.splice(20)
+  state.stragedyPlayerDiscard = []
+  state.stragedyPlayerCursed = false
+
+  state.stragedyEnemyScore = 0
+  state.stragedyEnemyHand = []
+  state.stragedyEnemyBattlefield = []
+  state.stragedyEnemyDeck = ["5", "6", "7", "8", "a", "a", "9", "9", "10", "5", "5", "5", "2", "3", "4", "6", "7", "8", "9", "10"]
+  shuffle(state.stragedyEnemyDeck)
+  state.stragedyEnemyDiscard = []
+  state.stragedyEnemyCursed = false
+  state.stragedyEnemySkipTurn = getRandomBoolean(.5)
+
   return " "
+}
+
+function handleStragedyTurn(text) {
+  state.show = "stragedy"
+
+  if (/^\s*>.*says? ".*/.test(text)) {
+    text = text.replace(/^\s*>.*says? "/, "")
+    text = text.replace(/"\s*$/, "")
+  } else if (/^\s*>\s.*/.test(text)) {
+    text = text.replace(/\s*> /, "")
+    for (var i = 0; i < info.characters.length; i++) {
+      var matchString = info.characters[i] == "" ? "You " : `${info.characters[i]} `
+      if (text.startsWith(matchString)) {
+        text = text.replace(matchString, "")
+        break
+      }
+    }
+    text = text.replace(/\.?\s*$/, "")
+  } else {
+    text = text.replace(/^\s+/, "")
+  }
+
+  text = text.toLowerCase()
+  if (text == "f") {
+    state.stragedyTurn = "gameOver"
+    state.stragedyWinner = "forfeit"
+    return "You forfeit the game."
+  }
+
+  switch (state.stragedyTurn) {
+    case "intro":
+      if (text == "d") {
+        if (state.stragedyPlayerDeck.length < 20) return "\nYou cannot play if you don't have at least 20 Stragedy cards.\n"
+
+        state.stragedyTurn = "game"
+        var drawCards = state.stragedyPlayerDeck.splice(state.stragedyPlayerDeck.length - 4)
+        state.stragedyPlayerHand.push(...drawCards)
+
+        drawCards = state.stragedyEnemyDeck.splice(state.stragedyEnemyDeck.length - 4)
+        state.stragedyEnemyHand.push(...drawCards)
+
+        stragedyCalculateScores()
+        if (!state.stragedyEnemySkipTurn) stragedyEnemyTurn()
+      }
+      return "You deal the cards."
+    case "game":
+      return stragedyPlayerTurn(text)
+    case "gameOver":
+      state.show = null
+      state.stragedyTurn = null
+      return text
+  }
+
+  return `\nUnexpected stragedy state. Input text: ${text}`
 }
 
 function doAddCard(command) {

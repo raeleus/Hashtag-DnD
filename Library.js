@@ -21,6 +21,7 @@ function getRandomFromList(...choices) {
 }
 
 function shuffle(array, seed) {
+  if (seed == null) seed = getRandomInteger(Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)
   let currentIndex = array.length
   while (currentIndex != 0) {
     let randomIndex = Math.floor(getRandom(seed + currentIndex) * currentIndex)
@@ -2844,6 +2845,300 @@ function getModifier(statValue) {
 
 function findSpellCardIndex(name) {
   return storyCards.findIndex((element) => element.type == "spell" && element.keys == name)
+}
+
+function stragedyCalculateScores() {
+  state.stragedyEnemyScore = 0
+  state.stragedyPlayerScore = 0
+  var playerHasJoker = false
+  var enemyHasJoker = false
+  var playerBlessedPoints = 0
+  var enemyBlessedPoints = 0
+  var doubledPoints = []
+
+  //check for kings
+  for(card of state.stragedyPlayerBattlefield) {
+    var points = parseInt(card.match(/(?<=.*)\d+/gi)[0])
+
+    if (card.includes("k")) {
+      doubledPoints.push(points)
+    }
+  }
+
+  for(card of state.stragedyEnemyBattlefield) {
+    var points = parseInt(card.match(/(?<=.*)\d+/gi)[0])
+
+    if (card.includes("k")) {
+      doubledPoints.push(points)
+    }
+  }
+
+  //enemy
+  for(card of state.stragedyEnemyBattlefield) {
+    var points = parseInt(card.match(/(?<=.*)\d+/gi)[0])
+
+    if (doubledPoints.includes(points)) {
+      points *= 2
+    }
+
+    if (card.includes("q")) {
+      state.stragedyPlayerScore += points
+      points = 0
+    }
+
+    if (card.includes("?")) {
+      enemyHasJoker = true
+    }
+
+    if (card.includes("p")) {
+      enemyBlessedPoints += points
+    }
+
+    state.stragedyEnemyScore += points
+  }
+
+  if (enemyHasJoker && state.stragedyEnemyScore < 30) {
+    state.stragedyEnemyScore = 30
+  } else if (state.stragedyEnemyScore > 30) {
+    state.stragedyEnemyScore = Math.max(30, state.stragedyEnemyScore - enemyBlessedPoints)
+  }
+
+  //player
+  for(card of state.stragedyPlayerBattlefield) {
+    var points = parseInt(card.match(/(?<=.*)\d+/gi)[0])
+
+    if (doubledPoints.includes(points)) {
+      points *= 2
+    }
+
+    if (card.includes("q")) {
+      state.stragedyEnemyScore += points
+      points = 0
+    }
+
+    if (card.includes("?")) {
+      playerHasJoker = true
+    }
+
+    if (card.includes("p")) {
+      playerBlessedPoints += points
+    }
+
+    state.stragedyPlayerScore += points
+  }
+
+  if (playerHasJoker && state.stragedyPlayerScore < 30) {
+    state.stragedyPlayerScore = 30
+  } else if (state.stragedyPlayerScore > 30) {
+    state.stragedyPlayerScore = Math.max(30, state.stragedyPlayerScore - playerBlessedPoints)
+  }
+}
+
+function stragedyEnemyTurn() {
+  state.stragedyEnemySkipTurn = false
+  state.stragedyEnemyTurnText = ""
+  if (state.stragedyPlayerScore > 30) {
+    state.stragedyEnemyTurnText = null
+    stragedyCheckForWin()
+    state.stragedyTurn = "gameOver"
+    return
+  }
+
+  //enemy turn here
+
+  if (state.stragedyEnemyScore > 30) {
+    stragedyCheckForWin()
+    state.stragedyTurn = "gameOver"
+    return
+  }
+}
+
+function stragedyPlayerTurn(text) {
+  var character = getCharacter()
+  var playedWord = character.name == "You" ? "played" : "play"
+
+  if (text.startsWith("d") && state.stragedyPlayerHand.length > 0) {
+    if (state.stragedyPlayerDeck.length == 0) return "\nYou cannot discard if you have 0 cards in your deck.\n"
+
+    var targetCard = text.substring(1).toLowerCase()
+    if (targetCard.length == 0) return "\nYou must specify the card you wish to discard\n"
+
+    var handIndex = state.stragedyPlayerHand.findIndex(x => x.toLowerCase() == targetCard)
+    if (handIndex == -1) return "\nYou cannot discard a card that is not in your hand.\n"
+
+    state.stragedyPlayerHand.splice(handIndex, 1);
+    state.stragedyPlayerDiscard.push(targetCard)
+
+    var newCards = state.stragedyPlayerDeck.splice(state.stragedyPlayerDeck.length - 2)
+    state.stragedyPlayerHand.push(...newCards)
+
+    text = `You discard the "${targetCard}" card. You draw `
+    if (newCards.length == 1) text += `a "${newCards[0]}" card.`
+    else text += `the "${newCards[0]}" and "${newCards[1]}" cards.`
+
+    stragedyCalculateScores()
+    stragedyEnemyTurn()
+    return text
+  } else if (text.startsWith("d") && state.stragedyPlayerHand.length == 0) {
+    if (state.stragedyPlayerDeck.length == 0) return "\nYou cannot draw if you have 0 cards in your deck.\n"
+
+    var drawCard = state.stragedyPlayerDeck.pop()
+    state.stragedyPlayerHand.push(drawCard)
+
+    stragedyCalculateScores()
+    stragedyEnemyTurn()
+    return `You draw a ${drawCard}`
+  } else {
+    var isNumberedCard = /^\d+$/.test(text)
+    var handCard = isNumberedCard ? text : text.substring(0, 1).toLowerCase()
+    var targetCard = text.substring(1).toLowerCase()
+
+    var handIndex = state.stragedyPlayerHand.findIndex(x => x.toLowerCase() == handCard)
+    if (handIndex == -1) return "\nYou can only play cards that are in your hand\n"
+
+    var targetIndex = targetCard == "" ? -1 : state.stragedyPlayerBattlefield.findIndex(x => x.toLowerCase() == targetCard)
+    if (targetCard != "" && targetIndex == -1) return "\nYou must specify a target that is placed on your side of the battlefield.\n"
+
+    state.stragedyEnemySkipTurn = true
+    switch (handCard) {
+      case "a":
+        if (targetCard == "") return "\nYou must specify a target to use the Ace (ie. a2)\n"
+
+        state.stragedyPlayerHand.splice(handIndex, 1)
+
+        while (targetIndex != -1) {
+          var discardGroups = state.stragedyPlayerBattlefield.splice(targetIndex, 1)
+          var discardCards = []
+          for (var group of discardGroups) {
+            discardCards.push(...group)
+          }
+          state.stragedyPlayerDiscard.push(...discardCards)
+          targetIndex = state.stragedyPlayerBattlefield.findIndex(x => x.toLowerCase().endsWith(targetCard.substring(targetCard.length - 1, targetCard.length)))
+        }
+
+        targetIndex = state.stragedyEnemyBattlefield.findIndex(x => x.toLowerCase().endsWith(targetCard.substring(targetCard.length - 1, targetCard.length)))
+        while (targetIndex != -1) {
+          var discardGroups = state.stragedyPlayerBattlefield.splice(targetIndex, 1)
+          var discardCards = []
+          for (var group of discardGroups) {
+            discardCards.push(...group)
+          }
+          state.stragedyPlayerDiscard.push(...discardCards)
+          targetIndex = state.stragedyEnemyBattlefield.findIndex(x => x.toLowerCase().endsWith(targetCard.substring(targetCard.length - 1, targetCard.length)))
+        }
+
+        stragedyCalculateScores()
+        stragedyEnemyTurn()
+        return `\n${toTitleCase(character.name)} ${playedWord} a ${handCard}. All ${targetCard}s are removed.\n`
+      case "j":
+        if (targetCard == "") return "\nYou must specify a target to use the Jack (ie. j2)\n"
+        
+        state.stragedyPlayerBattlefield.splice(targetIndex, 1)
+        var discardCards = [...targetCard]
+
+        state.stragedyPlayerHand.splice(handIndex, 1)
+        discardCards.push(handCard)
+
+        state.stragedyPlayerDiscard.push(...discardCards)
+
+        shuffle(state.stragedyPlayerDiscard)
+        var addCard = state.stragedyPlayerDiscard.pop()
+        state.stragedyPlayerHand.push(addCard)
+
+        stragedyCalculateScores()
+        stragedyEnemyTurn()
+        return `\n${toTitleCase(character.name)} ${playedWord} a jack on the ${targetCard}. The ${targetCard} is removed. You drew a ${addCard} from the discard pile\n`
+      case "q":
+        if (targetCard == "") return "\nYou must specify a target to use the Queen (ie. q2)\n"
+
+        state.stragedyPlayerHand.splice(handIndex, 1)
+        state.stragedyPlayerBattlefield.splice(targetIndex, 1)
+
+        state.stragedyPlayerBattlefield.push(handCard + targetCard)
+
+        stragedyCalculateScores()
+        stragedyEnemyTurn()
+        return `\n${toTitleCase(character.name)} ${playedWord} a queen on the ${targetCard}. The value is added to the opponent.\n`
+      case "k":
+        if (targetCard == "") return "\nYou must specify a target to use the King (ie. k2)\n"
+        
+        state.stragedyPlayerHand.splice(handIndex, 1)
+        state.stragedyPlayerBattlefield.splice(targetIndex, 1)
+
+        state.stragedyPlayerBattlefield.push(handCard + targetCard)
+
+        stragedyCalculateScores()
+        stragedyEnemyTurn()
+        return `\n${toTitleCase(character.name)} ${playedWord} a king on the ${targetCard}. All ${targetCard.match(/\d+/g)} values are doubled.\n`
+      case "?":
+        if (targetCard == "") return "\nYou must specify a target to use the Joker (ie. ?2)\n"
+
+        state.stragedyPlayerHand.splice(handIndex, 1)
+        state.stragedyPlayerBattlefield.splice(targetIndex, 1)
+
+        state.stragedyPlayerBattlefield.push(handCard + targetCard)
+
+        stragedyCalculateScores()
+        stragedyEnemyTurn()
+        return `\n${toTitleCase(character.name)} ${playedWord} a joker on the ${targetCard}. The card's value is increased to make the total score 30.\n`
+      case "w":
+        state.stragedyPlayerHand.splice(handIndex, 1)
+        state.stragedyPlayerDiscard.push(handCard)
+
+        state.stragedyEnemyCursed = true
+        stragedyCalculateScores()
+        stragedyEnemyTurn()
+        return `\n${toTitleCase(character.name)} ${playedWord} a witch on the opponent.\n`
+      case "p":
+        if (targetCard == "") return "\nYou must specify a target to use the Priest (ie. p2)\n"
+
+        state.stragedyPlayerHand.splice(handIndex, 1)
+        state.stragedyPlayerBattlefield.splice(targetIndex, 1)
+
+        state.stragedyPlayerBattlefield.push(handCard + targetCard)
+
+        stragedyCalculateScores()
+        stragedyEnemyTurn()
+        return `\n${toTitleCase(character.name)} ${playedWord} a priest on the ${targetCard}. This card is prevented from causing you to bust.\n`
+      case "b":
+        state.stragedyPlayerHand.splice(handIndex, 1)
+        state.stragedyPlayerDiscard.push(handCard)
+
+        var i
+        for (i = 0; i < 5 && state.stragedyEnemyDeck.length > 0; i++) {
+          var card = state.stragedyEnemyDeck.pop()
+          state.stragedyEnemyDiscard.push(...card)
+        }
+        stragedyCalculateScores()
+        stragedyEnemyTurn()
+        return `\n${toTitleCase(character.name)} ${playedWord} a brigand on the opponent. They are forced to discard ${i} cards from their deck\n`
+      case "2":
+      case "3":
+      case "4":
+      case "5":
+      case "6":
+      case "7":
+      case "8":
+      case "9":
+      case "10":
+        state.stragedyPlayerBattlefield.push(handCard)
+        state.stragedyPlayerHand.splice(handIndex, 1)
+        stragedyCalculateScores()
+        stragedyEnemyTurn()
+        return `\n${toTitleCase(character.name)} ${playedWord} a ${handCard}.\n`
+      default:
+        return "\nUnrecognized card specified. Stop playing with counterfit cards!\n"
+    }
+  }
+}
+
+function stragedyCheckForWin() {
+  if (state.stragedyEnemyScore > 30 && state.stragedyPlayerScore > 30) state.stragedyWinner = "tie"
+  else if (state.stragedyEnemyScore > 30) state.stragedyWinner = "player"
+  else if (state.stragedyPlayerScore > 30) state.stragedyWinner = "enemy"
+  else if (state.stragedyPlayerScore > state.stragedyEnemyScore) state.stragedyWinner = "player"
+  else if (state.stragedyEnemyScore > state.stragedyPlayerScore) state.stragedyWinner = "enemy"
+  else state.stragedyWinner = "tie"
 }
 
 String.prototype.replaceAt = function(index, replacement) {
