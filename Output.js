@@ -570,6 +570,7 @@ Type d to deal the cards or press f to forfeit.
       break
     case "game":
       var enemyBattlefield = state.stragedyEnemyBattlefield.length > 0 ? "" : "No cards!"
+      state.stragedyEnemyBattlefield.sort()
       for (card of state.stragedyEnemyBattlefield) {
         enemyBattlefield += `${card}, `
       }
@@ -580,12 +581,14 @@ Type d to deal the cards or press f to forfeit.
       var enemyHandCount = state.stragedyEnemyHand.length
 
       var playerBattlefield = state.stragedyPlayerBattlefield.length > 0 ? "" : "No cards!"
+      state.stragedyPlayerBattlefield.sort()
       for (card of state.stragedyPlayerBattlefield) {
         playerBattlefield += `${card}, `
       }
       if (state.stragedyPlayerBattlefield.length > 0) playerBattlefield = playerBattlefield.substring(0, playerBattlefield.length - 2)
 
       var playerHand = state.stragedyPlayerHand.length > 0 ? "" : "No cards!"
+      state.stragedyPlayerHand.sort()
       for (card of state.stragedyPlayerHand) {
         playerHand += `${card}, `
       }
@@ -594,9 +597,8 @@ Type d to deal the cards or press f to forfeit.
       var playerDeckCount = state.stragedyPlayerDeck.length
       var playerDiscardCount = state.stragedyPlayerDiscard.length
 
-      if (state.stragedyEnemySkipTurn) text = `-----The Opponent's Turn-----
-The cpu does something.
-
+      if (!state.stragedyEnemySkipTurn) text = `-----The Opponent's Turn-----
+${state.stragedyEnemyTurnText}
 `
       else text = ""
 
@@ -631,13 +633,13 @@ Type f to forfeit. This quits the game immediately.
     case "gameOver":
       text = ""
 
-      if (state.stragedyEnemyTurnText != null) text += "\n" + state.stragedyEnemyTurnText
+      if (state.stragedyWinner != "forfeit" && state.stragedyEnemyTurnText != null) text += "\n" + state.stragedyEnemyTurnText
 
       text += `
 The battle has concluded.${state.stragedyWinner != "forfeit" ? `\nFinal scores:\n${character.name}: ${state.stragedyPlayerScore}\nOpponent: ${state.stragedyEnemyScore}`: ""}
 `
-      if (state.stragedyWinner == "player" || state.stragedyWinner == "forfeit") text += `${toTitleCase(character.name)} ${haveWord} won! Congratulations.`
-      else if (state.stragedyWinner == "enemy") text += `${toTitleCase(character.name)} ${haveWord} lost! Better luck next time.`
+      if (state.stragedyWinner == "player") text += `${toTitleCase(character.name)} ${haveWord} won! Congratulations.`
+      else if (state.stragedyWinner == "enemy" || state.stragedyWinner == "forfeit") text += `${toTitleCase(character.name)} ${haveWord} lost! Better luck next time.`
       else text += `${toTitleCase(character.name)} and the opponent have tied! Try again.`
       break
   }

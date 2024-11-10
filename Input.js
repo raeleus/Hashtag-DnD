@@ -1380,25 +1380,21 @@ function doStragedy(command) {
   
   state.stragedyPlayerDeck = []
   for (item of character.inventory) {
-    if (/stragedy ace card/gi.test(item.name)) state.stragedyPlayerDeck.push("a")
-    else if (/stragedy jack card/gi.test(item.name)) state.stragedyPlayerDeck.push("j")
-    else if (/stragedy queen card/gi.test(item.name)) state.stragedyPlayerDeck.push("q")
-    else if (/stragedy king card/gi.test(item.name)) state.stragedyPlayerDeck.push("k")
-    else if (/stragedy joker card/gi.test(item.name)) state.stragedyPlayerDeck.push("?")
-    else if (/stragedy witch card/gi.test(item.name)) state.stragedyPlayerDeck.push("w")
-    else if (/stragedy priest card/gi.test(item.name)) state.stragedyPlayerDeck.push("p")
-    else if (/stragedy brigand card/gi.test(item.name)) state.stragedyPlayerDeck.push("b")
-    else if (/stragedy \d+ card/gi.test(item.name)) {
-      for (var i = 0; i < item.quantity; i++) {
-        state.stragedyPlayerDeck.push(item.name.match(/(?<=stragedy )\d+(?= card)/gi)[0])
-      }
-    }
+    if (/stragedy ace card/gi.test(item.name)) for (var i = 0; i < item.quantity; i++) state.stragedyPlayerDeck.push("a")
+    else if (/stragedy jack card/gi.test(item.name)) for (var i = 0; i < item.quantity; i++) state.stragedyPlayerDeck.push("j")
+    else if (/stragedy queen card/gi.test(item.name)) for (var i = 0; i < item.quantity; i++) state.stragedyPlayerDeck.push("q")
+    else if (/stragedy king card/gi.test(item.name)) for (var i = 0; i < item.quantity; i++) state.stragedyPlayerDeck.push("k")
+    else if (/stragedy joker card/gi.test(item.name)) for (var i = 0; i < item.quantity; i++) state.stragedyPlayerDeck.push("?")
+    else if (/stragedy witch card/gi.test(item.name)) for (var i = 0; i < item.quantity; i++) state.stragedyPlayerDeck.push("w")
+    else if (/stragedy priest card/gi.test(item.name)) for (var i = 0; i < item.quantity; i++) state.stragedyPlayerDeck.push("p")
+    else if (/stragedy brigand card/gi.test(item.name)) for (var i = 0; i < item.quantity; i++) state.stragedyPlayerDeck.push("b")
+    else if (/stragedy \d+ card/gi.test(item.name)) for (var i = 0; i < item.quantity; i++) state.stragedyPlayerDeck.push(item.name.match(/(?<=stragedy )\d+(?= card)/gi)[0])
   }
 
   shuffle(state.stragedyPlayerDeck)
   state.stragedyPlayerDeck.splice(20)
   state.stragedyPlayerDiscard = []
-  state.stragedyPlayerCursed = false
+  state.stragedyPlayerRetire = false
 
   state.stragedyEnemyScore = 0
   state.stragedyEnemyHand = []
@@ -1406,8 +1402,9 @@ function doStragedy(command) {
   state.stragedyEnemyDeck = ["5", "6", "7", "8", "a", "a", "9", "9", "10", "5", "5", "5", "2", "3", "4", "6", "7", "8", "9", "10"]
   shuffle(state.stragedyEnemyDeck)
   state.stragedyEnemyDiscard = []
-  state.stragedyEnemyCursed = false
   state.stragedyEnemySkipTurn = getRandomBoolean(.5)
+  state.stragedyEnemyRetired = false
+  state.stragedyEnemyTurnText = null
 
   return " "
 }
