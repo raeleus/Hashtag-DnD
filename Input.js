@@ -1370,6 +1370,11 @@ function handleStragedyShopStep(text) {
 }
 
 function doStragedy(command) {
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) {
+    arg0 = "easy"
+  }
+
   var character = getCharacter()
   state.stragedyTurn = "intro"
   state.show = "stragedy"
@@ -1394,12 +1399,30 @@ function doStragedy(command) {
   shuffle(state.stragedyPlayerDeck)
   state.stragedyPlayerDeck.splice(20)
   state.stragedyPlayerDiscard = []
-  state.stragedyPlayerRetire = false
+  state.stragedyPlayerRetired = false
 
   state.stragedyEnemyScore = 0
   state.stragedyEnemyHand = []
   state.stragedyEnemyBattlefield = []
-  state.stragedyEnemyDeck = ["5", "6", "7", "8", "a", "a", "9", "9", "10", "5", "5", "5", "2", "3", "4", "6", "7", "8", "9", "10"]
+  
+  switch(arg0) {
+    case "impossible":
+      state.stragedyEnemyDeck = ["?", "?", "a", "q", "q", "k", "k", "w", "p", "2", "3", "4", "5", "6", "7", "7", "8", "10", "10", "10"]
+    case "hard":
+      state.stragedyEnemyDeck = ["j", "?", "a", "q", "q", "k", "k", "2", "3", "4", "5", "5", "6", "6", "7", "7", "8", "8", "10", "10"]
+    case "medium":
+      state.stragedyEnemyDeck = ["j", "j", "a", "q", "q", "k", "k", "2", "3", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "10"]
+      break
+    case "very easy":
+      state.stragedyEnemyDeck = ["2", "2", "2", "3", "3", "3", "4", "4", "4", "5", "5", "5", "6", "6", "6", "7", "7", "8", "8", "9"]
+    case "automatic":
+      state.stragedyEnemyDeck = ["2", "2", "2", "3", "3", "3", "4", "4", "4", "5", "5", "5", "6", "6", "6", "6", "7", "7", "7", "7"]
+    case "easy":
+    default:
+      state.stragedyEnemyDeck = ["j", "j", "a", "a", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9"]
+      break
+  }
+
   shuffle(state.stragedyEnemyDeck)
   state.stragedyEnemyDiscard = []
   state.stragedyEnemySkipTurn = getRandomBoolean(.5)
@@ -1451,7 +1474,7 @@ function handleStragedyTurn(text) {
         stragedyCalculateScores()
         if (!state.stragedyEnemySkipTurn) stragedyEnemyTurn()
       }
-      return "You deal the cards."
+      return `You deal the cards. ${state.stragedyEnemySkipTurn ? "You go first." : "The opponent goes first."}`
     case "game":
       return stragedyPlayerTurn(text)
     case "gameOver":
@@ -1470,6 +1493,8 @@ function doAddCard(command) {
   }
 
   arg0 = arg0.toLowerCase()
+  if (arg0.startsWith("w")) arg0 = "w"
+  if (arg0.startsWith("b")) arg0 = "b"
   switch(arg0) {
     case "a":
     case "ace":

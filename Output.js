@@ -597,8 +597,7 @@ Type d to deal the cards or press f to forfeit.
       var playerDeckCount = state.stragedyPlayerDeck.length
       var playerDiscardCount = state.stragedyPlayerDiscard.length
 
-      if (!state.stragedyEnemySkipTurn) text = `-----The Opponent's Turn-----
-${state.stragedyEnemyTurnText}
+      if (!state.stragedyEnemySkipTurn) text = `-----The Opponent's Turn-----${state.stragedyEnemyTurnText}
 `
       else text = ""
 
@@ -617,8 +616,7 @@ ${toTitleCase(character.name)} ${haveWord} ${playerDeckCount} cards in the deck 
 
       if (state.stragedyPlayerHand.length > 0) text += `
 Play a number card to the battlefield by typing its number.
-Play a letter card onto a card in the battlefield by typing the letter followed by the card you want to play it on.
-Witches and Brigands are played directly to the discard pile. Simply type w or b.
+Play a letter card by typing the letter followed by the card you want to play it on.
 Type d and the number or letter of a card in your hand to discard it. You will then draw 2 cards.
 Type r to retire. This forces the opponent to make their last move.
 Type f to forfeit. This quits the game immediately.

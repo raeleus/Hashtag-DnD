@@ -2939,6 +2939,7 @@ function stragedyCalculateScores() {
 }
 
 function stragedyEnemyTurn() {
+  log(`enemy turn: ${state.stragedyEnemyHand}`)
   state.stragedyEnemySkipTurn = false
   state.stragedyEnemyTurnText = ""
   if (state.stragedyPlayerScore > 30) {
@@ -3010,7 +3011,7 @@ function stragedyEnemyTurn() {
   var hasJack = hand.filter(x => /^.*j.*$/gi.test(x)).length > 0
   var hasQueen = hand.filter(x => /^.*q.*$/gi.test(x)).length > 0
   var hasKing = hand.filter(x => /^.*k.*$/gi.test(x)).length > 0
-  var hasJoker = hand.filter(x => /^.*?.*$/gi.test(x)).length > 0
+  var hasJoker = hand.filter(x => /^.*\?.*$/gi.test(x)).length > 0
   var hasWitch = hand.filter(x => /^.*w.*$/gi.test(x)).length > 0
   var hasPriest = hand.filter(x => /^.*p.*$/gi.test(x)).length > 0
   var hasBrigand = hand.filter(x => /^.*b.*$/gi.test(x)).length > 0
@@ -3066,52 +3067,59 @@ function stragedyEnemyTurn() {
     }
   }
 
-  state.stragedyEnemyTurnText = stragedyEnemyRandom()
-
-  // if (hand.length == 0) {
-  //   if (deck.length == 0) state.stragedyEnemyTurnText = stragedyEnemyRetire()
-  //   else state.stragedyEnemyTurnText = stragedyEnemyDrawCard()
-  // } else if (playerRetired && score < playerScore) {
-  //   if (hasJoker) {
-  //     state.stragedyEnemyTurnText = stragedyPlayCard(false, lowestNumberedBattlefieldCard)
-  //   } else if (hasQueen && highestNumberedBattlefieldCard != null) {
-  //     state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
-  //   } else if (hasAce && bestAceNumber != null) {
-  //     state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceNumber)
-  //   } else if (hasKing && bestKingCard != null) {
-  //     state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCard)
-  //   } else {
-  //     state.stragedyEnemyTurnText = stragedyEnemyRandom()
-  //   }
-  // } else if (playerRetired && score > playerScore) {
-  //   state.stragedyEnemyTurnText = stragedyEnemyRetire()
-  // } else if (playerRetired && score == playerScore) {
-  //   if (highestNumberedHandCardAddUpTo30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardAddUpTo30)
-  //   else state.stragedyEnemyTurnText = stragedyEnemyRetire()
-  // } else if (score - playerScore > 20) {
-  //   state.stragedyEnemyTurnText = stragedyEnemyRetire()
-  // } else if (hasNumberedCards && score < playerScore) {
-  //   if (score < 20) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardAddUpTo20)
-  //   else state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCard)
-  // } else if (score > 30 && battlefield.length > 0) {
-  //   if (hasQueen && highestNumberedBattlefieldCard != null) {
-  //     state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
-  //   } else if (hasPriest && highestNumberedBattlefieldCard != null) {
-  //     state.stragedyEnemyTurnText = stragedyPlayCard(false, "p" + highestNumberedBattlefieldCard)
-  //   } else if (hasJack && highestNumberedBattlefieldCardSubtractDownTo30 != null) {
-  //     state.stragedyEnemyTurnText = stragedyPlayCard(false, "j" + highestNumberedBattlefieldCardSubtractDownTo30)
-  //   } else if (hasAce && bestAceNumber != null) {
-  //     state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceNumber)
-  //   } else if (kingCards.length > 0 && kingNumberedCardsInHand.length > 0) {
-  //     state.stragedyEnemyTurnText = stragedyPlayCard(false, kingNumberedCardsInHand[kingNumberedCardsInHand.length - 1])
-  //   } else {
-  //     state.stragedyEnemyTurnText = stragedyEnemyRetire()
-  //   }
-  // } else if (highestNumberedHandCardAddUpTo20 == null && hand.length > 0) {
-  //   state.stragedyEnemyTurnText = stragedyEnemyDiscardCard()
-  // } else {
-  //   state.stragedyEnemyTurnText = stragedyEnemyRandom()
-  // }
+  if (hand.length == 0) {
+    log(1)
+    if (deck.length == 0) state.stragedyEnemyTurnText = stragedyEnemyRetire()
+    else state.stragedyEnemyTurnText = stragedyEnemyDrawCard()
+  } else if (playerRetired && score < playerScore) {
+    log(2)
+    if (hasJoker) state.stragedyEnemyTurnText = stragedyPlayCard(false, "?" + lowestNumberedBattlefieldCard)
+    else if (hasQueen && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
+    else if (hasAce && bestAceNumber != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceNumber)
+    else if (hasKing && bestKingCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCard)
+    else if (highestNumberedHandCardAddUpTo30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardAddUpTo30)
+    else state.stragedyEnemyTurnText = stragedyEnemyRetire()
+  } else if (playerRetired && score > playerScore) {
+    log(3)
+    state.stragedyEnemyTurnText = stragedyEnemyRetire()
+  } else if (playerRetired && score == playerScore) {
+    log(4)
+    if (highestNumberedHandCardAddUpTo30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardAddUpTo30)
+    else state.stragedyEnemyTurnText = stragedyEnemyRetire()
+  } else if (score - playerScore > 20) {
+    log(5)
+    state.stragedyEnemyTurnText = stragedyEnemyRetire()
+  } else if (hasNumberedCards && score < playerScore) {
+    log(6)
+    if (score < 20 && highestNumberedHandCardAddUpTo20 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardAddUpTo20)
+    else if (highestNumberedHandCardAddUpTo30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardAddUpTo30)
+    else if (deck.length > 0) state.stragedyEnemyTurnText = stragedyEnemyDiscardCard()
+    else if (hasQueen && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
+    else if (hasAce && bestAceNumber != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceNumber)
+    else if (hasKing && bestKingCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCard)
+    else stragedyEnemyRandom()
+  } else if (score > 30 && battlefield.length > 0) {
+    log(7)
+    if (hasQueen && highestNumberedBattlefieldCard != null) {
+      state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
+    } else if (hasPriest && highestNumberedBattlefieldCard != null) {
+      state.stragedyEnemyTurnText = stragedyPlayCard(false, "p" + highestNumberedBattlefieldCard)
+    } else if (hasJack && highestNumberedBattlefieldCardSubtractDownTo30 != null) {
+      state.stragedyEnemyTurnText = stragedyPlayCard(false, "j" + highestNumberedBattlefieldCardSubtractDownTo30)
+    } else if (hasAce && bestAceNumber != null) {
+      state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceNumber)
+    } else if (kingCards.length > 0 && kingNumberedCardsInHand.length > 0) {
+      state.stragedyEnemyTurnText = stragedyPlayCard(false, kingNumberedCardsInHand[kingNumberedCardsInHand.length - 1])
+    } else {
+      state.stragedyEnemyTurnText = stragedyEnemyRetire()
+    }
+  } else if (highestNumberedHandCardAddUpTo20 == null && hand.length > 0) {
+    log(8)
+    state.stragedyEnemyTurnText = stragedyEnemyDiscardCard()
+  } else {
+    log(9)
+    state.stragedyEnemyTurnText = stragedyEnemyRandom()
+  }
   
   stragedyCalculateScores()
   if (state.stragedyEnemyScore > 30) {
@@ -3121,25 +3129,29 @@ function stragedyEnemyTurn() {
 }
 
 function stragedyEnemyDrawCard() {
+  log(`Enemy draw a card`)
   var card = state.stragedyEnemyDeck.pop()
   state.stragedyEnemyHand.push(card)
-  return `The opponent has drawn a card.`
+  return `\nThe opponent has drawn a card.\n`
 }
 
 function stragedyEnemyDiscardCard() {
+  log(`Enemy discard a card`)
   var card = state.stragedyEnemyHand.splice(getRandomInteger(0, state.stragedyEnemyHand.length - 1), 1)
   state.stragedyEnemyDiscard.push(card)
-  var newCards = state.stragedyEnemyDeck.splice(getRandomInteger(0, state.stragedyEnemyHand.length - 2), 2)
+  var newCards = state.stragedyEnemyDeck.splice(state.stragedyEnemyDeck.length - 2, 2)
   state.stragedyEnemyHand.push(...newCards)
-  return `The opponent has discarded a card and drawn ${newCards.length} cards.`
+  return `\nThe opponent has discarded a card and drawn ${newCards.length} cards.\n`
 }
 
 function stragedyEnemyRetire() {
+  log(`Enemy retire`)
   state.stragedyEnemyRetired = true
-  return `The opponent has retired at ${state.stragedyEnemyScore} points.`
+  return `\nThe opponent has retired at ${state.stragedyEnemyScore} points.\n`
 }
 
 function stragedyEnemyRandom() {
+  log(`Enemy random`)
   var hand = [...state.stragedyEnemyHand]
 
   if (hand.length == 0) {
@@ -3171,6 +3183,7 @@ function stragedyEnemyRandom() {
 }
 
 function stragedyPlayerTurn(text) {
+  log(`player turn`)
   if (text.startsWith("d") && state.stragedyPlayerHand.length > 0) {
     if (state.stragedyPlayerDeck.length == 0) return "\nYou cannot discard if you have 0 cards in your deck.\n"
 
@@ -3210,6 +3223,11 @@ function stragedyPlayerTurn(text) {
     return `You draw a ${drawCard}`
   } else if (text == "r") {
     state.stragedyPlayerRetired = true
+    stragedyEnemyTurn()
+    stragedyCalculateScores()
+    stragedyCheckForWin()
+    state.stragedyTurn = "gameOver"
+    return `You retire at ${state.stragedyPlayerScore}.`
   } else {
     var text = stragedyPlayCard(true, text)
     if (state.stragedyEnemyRetired) {
@@ -3222,6 +3240,7 @@ function stragedyPlayerTurn(text) {
 }
 
 function stragedyPlayCard(player, text) {
+  log(`${player ? "Player" : "Enemy"} play card ${text}`)
   var character = getCharacter()
   if (player) {
     var battlefield = state.stragedyPlayerBattlefield
