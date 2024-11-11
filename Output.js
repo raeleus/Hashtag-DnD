@@ -608,7 +608,7 @@ The opponent has ${enemyDeckCount} cards in the deck, ${enemyDiscardCount} in th
 Opponent's cards on the battlefield: ${enemyBattlefield} = ${state.stragedyEnemyScore} points
 ${possessiveName} cards on the battlefield: ${playerBattlefield} = ${state.stragedyPlayerScore} points
 
------${possessiveName} cards-----
+-----${possessiveName} Cards-----
 ${possessiveName} hand: ${playerHand}
 ${toTitleCase(character.name)} ${haveWord} ${playerDeckCount} cards in the deck and ${playerDiscardCount} in the discard pile.
 
@@ -631,7 +631,7 @@ Type f to forfeit. This quits the game immediately.
     case "gameOver":
       text = ""
 
-      if (state.stragedyWinner != "forfeit" && state.stragedyEnemyTurnText != null) text += "\n" + state.stragedyEnemyTurnText
+      if (state.stragedyWinner != "forfeit" && state.stragedyEnemyTurnText != null) text += state.stragedyEnemyTurnText
 
       text += `
 The battle has concluded.${state.stragedyWinner != "forfeit" ? `\nFinal scores:\n${character.name}: ${state.stragedyPlayerScore}\nOpponent: ${state.stragedyEnemyScore}`: ""}

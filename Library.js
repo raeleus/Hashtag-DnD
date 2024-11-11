@@ -3025,46 +3025,39 @@ function stragedyEnemyTurn() {
   var has3 = hand.filter(x => /^.*3.*$/gi.test(x)).length > 0
   var has2 = hand.filter(x => /^.*2.*$/gi.test(x)).length > 0
 
+  var faceCardHandCount = hand.filter(x => /.*\D.*/gi.test(x)).length
+
   var kingNumberedCardsInHand = []
   for (var card of hand) {
     if (kingCards.has(card)) kingNumberedCardsInHand.push(card)
   }
   kingNumberedCardsInHand.sort((a, b) => parseInt(a) - parseInt(b))
 
-  var aceNumberCards = []
-  var aceNumberSet = new Set()
-  for (var myCard of hand) {
-    for (var card of playerHand) {
-      if (myCard == card) {
-        aceNumberCards.push(card)
-        aceNumberSet.add(card)
-      }
+  var bestAceCard = null
+  var bestAceCardTotal = 0
+  for (var card of battlefield) {
+    var number = card.replaceAll(/\D/gi, "")
+    var playerTotal = 0
+    for (var playerCard of playerBattlefield) {
+      var playerNumber = card.replaceAll(/\D/gi, "")
+      if (playerNumber == number) playerTotal += parseInt(playerNumber)
     }
+    if (playerTotal > bestAceCardTotal) bestAceCard = card
   }
-  var bestAceNumber = aceNumberSet.length > 0  ? aceNumberSet[0] : null
-  var bestAceTotal
-  for (var aceCard of aceNumberCards) {
-    var total = 0
-    if (aceCard == bestAceNumber) total += parseInt(aceCard)
-    bestAceTotal = total
-  }
-  for (var card of aceNumberSet) {
-    for (var aceCard of aceNumberCards) {
-      var total = 0
-      if (aceCard == card) total += parseInt(aceCard)
-      if (total > bestAceTotal) {
-        bestAceTotal = total
-        bestAceNumber = card
-      }
+
+  var bestKingCardToBustPlayer = null
+  for (var playerCard of playerBattlefield) {
+    for (var card of battlefield) {
+      var playerNumber = playerCard.replaceAll(/\D/gi, "")
+      var number = card.replaceAll(/\D/gi, "")
+      if (number == playerNumber && (bestKingCardToBustPlayer == null || parseInt(number) > parseInt(bestKingCardToBustPlayer))) bestKingCardToBustPlayer = card
     }
   }
 
-  var bestKingCard = null
-  for (var playerCard of playerBattlefield) {
-    for (var card of hand) {
-      var playerNumber = playerCard.replaceAll(/\D/gi, "")
-      if (card == playerNumber && kingCards.has(playerNumber) && (bestKingCard == null || parseInt(card) > parseInt(bestKingCard))) bestKingCard = card
-    }
+  var bestKingCardToSave = null
+  for (var card of battlefield) {
+    var number = card.replaceAll(/\D/gi, "")
+    if ((bestKingCardToSave == null || parseInt(number) > parseInt(bestKingCardToSave)) && parseInt(number) + score < 30) bestKingCardToSave = card
   }
 
   if (hand.length == 0) {
@@ -3075,8 +3068,9 @@ function stragedyEnemyTurn() {
     log(2)
     if (hasJoker) state.stragedyEnemyTurnText = stragedyPlayCard(false, "?" + lowestNumberedBattlefieldCard)
     else if (hasQueen && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
-    else if (hasAce && bestAceNumber != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceNumber)
-    else if (hasKing && bestKingCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCard)
+    else if (hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
+    else if (hasKing && bestKingCardToBustPlayer != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCardToBustPlayer)
+    else if (hasKing && bestKingCardToSave != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCardToSave)
     else if (highestNumberedHandCardAddUpTo30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardAddUpTo30)
     else state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else if (playerRetired && score > playerScore) {
@@ -3093,31 +3087,38 @@ function stragedyEnemyTurn() {
     log(6)
     if (score < 20 && highestNumberedHandCardAddUpTo20 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardAddUpTo20)
     else if (highestNumberedHandCardAddUpTo30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardAddUpTo30)
+    else if (faceCardHandCount > 1 && hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
+    else if (faceCardHandCount > 1 && hasKing && bestKingCardToBustPlayer != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCardToBustPlayer)
+    else if (faceCardHandCount > 1 && hasQueen && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
     else if (deck.length > 0) state.stragedyEnemyTurnText = stragedyEnemyDiscardCard()
     else if (hasQueen && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
-    else if (hasAce && bestAceNumber != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceNumber)
-    else if (hasKing && bestKingCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCard)
+    else if (hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
+    else if (hasKing && bestKingCardToBustPlayer != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCardToBustPlayer)
     else stragedyEnemyRandom()
   } else if (score > 30 && battlefield.length > 0) {
     log(7)
-    if (hasQueen && highestNumberedBattlefieldCard != null) {
-      state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
-    } else if (hasPriest && highestNumberedBattlefieldCard != null) {
-      state.stragedyEnemyTurnText = stragedyPlayCard(false, "p" + highestNumberedBattlefieldCard)
-    } else if (hasJack && highestNumberedBattlefieldCardSubtractDownTo30 != null) {
-      state.stragedyEnemyTurnText = stragedyPlayCard(false, "j" + highestNumberedBattlefieldCardSubtractDownTo30)
-    } else if (hasAce && bestAceNumber != null) {
-      state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceNumber)
-    } else if (kingCards.length > 0 && kingNumberedCardsInHand.length > 0) {
-      state.stragedyEnemyTurnText = stragedyPlayCard(false, kingNumberedCardsInHand[kingNumberedCardsInHand.length - 1])
-    } else {
-      state.stragedyEnemyTurnText = stragedyEnemyRetire()
-    }
-  } else if (highestNumberedHandCardAddUpTo20 == null && hand.length > 0) {
+    if (hasQueen && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
+    else if (hasPriest && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "p" + highestNumberedBattlefieldCard)
+    else if (hasJack && highestNumberedBattlefieldCardSubtractDownTo30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "j" + highestNumberedBattlefieldCardSubtractDownTo30)
+    else if (hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
+    else if (kingCards.length > 0 && kingNumberedCardsInHand.length > 0) state.stragedyEnemyTurnText = stragedyPlayCard(false, kingNumberedCardsInHand[kingNumberedCardsInHand.length - 1])
+    else state.stragedyEnemyTurnText = stragedyEnemyRetire()
+  } else if (score >= playerScore && hasWitch) {
     log(8)
-    state.stragedyEnemyTurnText = stragedyEnemyDiscardCard()
+    state.stragedyEnemyTurnText = stragedyPlayCard(false, "w")
+  } else if (score >= playerScore && hasBrigand) {
+    log(10)
+    state.stragedyEnemyTurnText = stragedyPlayCard(false, "b")
+  } else if (highestNumberedHandCardAddUpTo20 == null && hand.length > 0) {
+    log(11)
+    if (score >= 20 && score < playerScore && faceCardHandCount > 1 && hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
+    else if (score >= 20 && score < playerScore && faceCardHandCount > 1 && hasKing && bestKingCardToBustPlayer != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCardToBustPlayer)
+    else if (score >= 20 && score < playerScore && faceCardHandCount > 1 && hasQueen && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
+    else if (deck.length > 0) state.stragedyEnemyTurnText = stragedyEnemyDiscardCard()
+    else if (hand.length  > 0) state.stragedyEnemyTurnText = stragedyEnemyRandom()
+    else state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else {
-    log(9)
+    log(12)
     state.stragedyEnemyTurnText = stragedyEnemyRandom()
   }
   
@@ -3137,7 +3138,31 @@ function stragedyEnemyDrawCard() {
 
 function stragedyEnemyDiscardCard() {
   log(`Enemy discard a card`)
-  var card = state.stragedyEnemyHand.splice(getRandomInteger(0, state.stragedyEnemyHand.length - 1), 1)
+  var hand = [...state.stragedyEnemyHand]
+  var score = state.stragedyEnemyScore
+
+  var hasAce = hand.filter(x => /^.*a.*$/gi.test(x)).length > 0
+  var hasJack = hand.filter(x => /^.*j.*$/gi.test(x)).length > 0
+  var hasQueen = hand.filter(x => /^.*q.*$/gi.test(x)).length > 0
+  var hasKing = hand.filter(x => /^.*k.*$/gi.test(x)).length > 0
+  var hasJoker = hand.filter(x => /^.*\?.*$/gi.test(x)).length > 0
+  var hasWitch = hand.filter(x => /^.*w.*$/gi.test(x)).length > 0
+  var hasPriest = hand.filter(x => /^.*p.*$/gi.test(x)).length > 0
+  var sortedNumberedHandCardsToAddUpTo30 = hand.filter(x => /^\d+$/gi.test(x) && parseInt(x) <= 30 - score).sort((a, b) => parseInt(a) - parseInt(b))
+  var highestNumberedHandCardAddUpTo30 = sortedNumberedHandCardsToAddUpTo30.length > 0 ? sortedNumberedHandCardsToAddUpTo30[sortedNumberedHandCardsToAddUpTo30.length - 1] : null
+
+  if (hand.length > 1) {
+    if (hasQueen) hand.splice(hand.indexOf("q"))
+    else if (hasPriest) hand.splice(hand.indexOf("p"))
+    else if (hasKing) hand.splice(hand.indexOf("k"))
+    else if (hasWitch) hand.splice(hand.indexOf("w"))
+    else if (hasJoker) hand.splice(hand.indexOf("?"))
+    else if (hasJack) hand.splice(hand.indexOf("j"))
+    else if (hasAce) hand.splice(hand.indexOf("a"))
+    else if (highestNumberedHandCardAddUpTo30 != null) hand.splice(hand.indexOf(highestNumberedHandCardAddUpTo30))
+  }
+
+  var card = state.stragedyEnemyHand.splice(state.stragedyEnemyHand.indexOf(getRandomInteger(0, hand.length - 1)), 1)
   state.stragedyEnemyDiscard.push(card)
   var newCards = state.stragedyEnemyDeck.splice(state.stragedyEnemyDeck.length - 2, 2)
   state.stragedyEnemyHand.push(...newCards)
@@ -3223,11 +3248,13 @@ function stragedyPlayerTurn(text) {
     return `You draw a ${drawCard}`
   } else if (text == "r") {
     state.stragedyPlayerRetired = true
+    stragedyCalculateScores()
+    var text = `You retire at ${state.stragedyPlayerScore}.`
     stragedyEnemyTurn()
     stragedyCalculateScores()
     stragedyCheckForWin()
     state.stragedyTurn = "gameOver"
-    return `You retire at ${state.stragedyPlayerScore}.`
+    return text
   } else {
     var text = stragedyPlayCard(true, text)
     if (state.stragedyEnemyRetired) {
@@ -3273,42 +3300,47 @@ function stragedyPlayCard(player, text) {
   var targetCard = isNumberedCard ? null : text.substring(1).toLowerCase()
 
   var handIndex = hand.findIndex(x => x.toLowerCase() == handCard)
-  if (handIndex == -1) return "\nYou can only play cards that are in your hand\n"
+  if (handIndex == -1) {
+    if (player) state.stragedyEnemySkipTurn = true
+    return "\nYou can only play cards that are in your hand\n"
+  }
 
   var targetIndex = targetCard == "" ? -1 : battlefield.findIndex(x => x.toLowerCase() == targetCard)
-  if (!isNumberedCard && targetCard != "" && targetIndex == -1) return "\nYou must specify a target that is placed on your side of the battlefield.\n"
+  if (!isNumberedCard && targetCard != "" && targetIndex == -1) {
+    if (player) state.stragedyEnemySkipTurn = true
+    return "\nYou must specify a target that is placed on your side of the battlefield.\n"
+  }
 
   switch (handCard) {
     case "a":
-      if (targetCard == "") return "\nYou must specify a target to use the Ace (ie. a2)\n"
+      if (targetCard == "") {
+        if (player) state.stragedyEnemySkipTurn = true
+        return "\nYou must specify a target to use the Ace (ie. a2)\n"
+      }
 
       hand.splice(handIndex, 1)
 
-      while (targetIndex != -1) {
-        var discardGroups = battlefield.splice(targetIndex, 1)
-        var discardCards = []
-        for (var group of discardGroups) {
-          discardCards.push(...group)
+      for (var i = battlefield.length - 1; i >= 0; i--) {
+        if (battlefield[i].endsWith(targetCard)) {
+          discard.push(...battlefield[i])
+          battlefield.splice(i, 1)
         }
-        discard.push(...discardCards)
-        targetIndex = battlefield.findIndex(x => x.toLowerCase().endsWith(targetCard.substring(targetCard.length - 1, targetCard.length)))
       }
 
-      targetIndex = enemyBattlefield.findIndex(x => x.toLowerCase().endsWith(targetCard.substring(targetCard.length - 1, targetCard.length)))
-      while (targetIndex != -1) {
-        var discardGroups = battlefield.splice(targetIndex, 1)
-        var discardCards = []
-        for (var group of discardGroups) {
-          discardCards.push(...group)
+      for (var i = enemyBattlefield.length - 1; i >= 0; i--) {
+        if (enemyBattlefield[i].endsWith(targetCard)) {
+          enemyDiscard.push(...enemyBattlefield[i])
+          enemyBattlefield.splice(i, 1)
         }
-        discard.push(...discardCards)
-        targetIndex = enemyBattlefield.findIndex(x => x.toLowerCase().endsWith(targetCard.substring(targetCard.length - 1, targetCard.length)))
       }
 
       stragedyCalculateScores()
       return `\n${characterName} ${playedWord} an ace on ${targetCard}. All ${targetCard}s are removed.\n`
     case "j":
-      if (targetCard == "") return "\nYou must specify a target to use the Jack (ie. j2)\n"
+      if (targetCard == "") {
+        if (player) state.stragedyEnemySkipTurn = true
+        return "\nYou must specify a target to use the Jack (ie. j2)\n"
+      }
       
       battlefield.splice(targetIndex, 1)
       var discardCards = [...targetCard]
@@ -3323,9 +3355,12 @@ function stragedyPlayCard(player, text) {
       hand.push(addCard)
 
       stragedyCalculateScores()
-      return `\n${characterName} ${playedWord} a jack on the ${targetCard}. The ${targetCard} is removed. ${characterName} drew a ${addCard} from the discard pile\n`
+      return `\n${characterName} ${playedWord} a jack on the ${targetCard}. The ${targetCard} is removed. ${player ? `${characterName} drew a ${addCard} from the discard pile.` : ""}\n`
     case "q":
-      if (targetCard == "") return "\nYou must specify a target to use the Queen (ie. q2)\n"
+      if (targetCard == "") {
+        if (player) state.stragedyEnemySkipTurn = true
+        return "\nYou must specify a target to use the Queen (ie. q2)\n"
+      }
 
       hand.splice(handIndex, 1)
       battlefield.splice(targetIndex, 1)
@@ -3335,7 +3370,10 @@ function stragedyPlayCard(player, text) {
       stragedyCalculateScores()
       return `\n${characterName} ${playedWord} a queen on the ${targetCard}. The value is added to the opponent.\n`
     case "k":
-      if (targetCard == "") return "\nYou must specify a target to use the King (ie. k2)\n"
+      if (targetCard == "") {
+        if (player) state.stragedyEnemySkipTurn = true
+        return "\nYou must specify a target to use the King (ie. k2)\n"
+      }
       
       hand.splice(handIndex, 1)
       battlefield.splice(targetIndex, 1)
@@ -3345,7 +3383,10 @@ function stragedyPlayCard(player, text) {
       stragedyCalculateScores()
       return `\n${characterName} ${playedWord} a king on the ${targetCard}. All ${targetCard.match(/\d+/g)} values are doubled.\n`
     case "?":
-      if (targetCard == "") return "\nYou must specify a target to use the Joker (ie. ?2)\n"
+      if (targetCard == "") {
+        if (player) state.stragedyEnemySkipTurn = true
+        return "\nYou must specify a target to use the Joker (ie. ?2)\n"
+      }
 
       hand.splice(handIndex, 1)
       battlefield.splice(targetIndex, 1)
@@ -3363,7 +3404,10 @@ function stragedyPlayCard(player, text) {
       stragedyCalculateScores()
       return `\n${characterName} ${playedWord} a witch on the opponent.\n`
     case "p":
-      if (targetCard == "") return "\nYou must specify a target to use the Priest (ie. p2)\n"
+      if (targetCard == "") {
+        if (player) state.stragedyEnemySkipTurn = true
+        return "\nYou must specify a target to use the Priest (ie. p2)\n"
+      }
 
       hand.splice(handIndex, 1)
       battlefield.splice(targetIndex, 1)
@@ -3397,6 +3441,7 @@ function stragedyPlayCard(player, text) {
       stragedyCalculateScores()
       return `\n${characterName} ${playedWord} a ${handCard}.\n`
     default:
+      if (player) state.stragedyEnemySkipTurn = true
       return "\nUnrecognized card specified. Stop playing with counterfit cards!\n"
   }
 }
