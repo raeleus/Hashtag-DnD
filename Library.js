@@ -2991,14 +2991,14 @@ function stragedyEnemyTurn() {
   var sortedNumberedHandCards = hand.filter(x => /^\d+$/gi.test(x)).sort((a, b) => parseInt(a) - parseInt(b))
   var highestNumberedHandCard = sortedNumberedHandCards.length > 0 ? sortedNumberedHandCards[sortedNumberedHandCards.length - 1] : null
 
-  var sortedNumberedHandCardsToAddUpTo30 = hand.filter(x => /^\d+$/gi.test(x) && parseInt(x) <= 30 - score).sort((a, b) => parseInt(a) - parseInt(b))
-  var highestNumberedHandCardAddUpTo30 = sortedNumberedHandCardsToAddUpTo30.length > 0 ? sortedNumberedHandCardsToAddUpTo30[sortedNumberedHandCardsToAddUpTo30.length - 1] : null
+  // var sortedNumberedHandCardsToAddUpTo30 = hand.filter(x => /^\d+$/gi.test(x) && parseInt(x) <= 30 - score).sort((a, b) => parseInt(a) - parseInt(b))
+  // var highestNumberedHandCardAddUpTo30 = sortedNumberedHandCardsToAddUpTo30.length > 0 ? sortedNumberedHandCardsToAddUpTo30[sortedNumberedHandCardsToAddUpTo30.length - 1] : null
 
   var sortedNumberedHandCardsToSubtractDownTo30 = hand.filter(x => /^\d+$/gi.test(x) && parseInt(x) <= 30 + score).sort((a, b) => parseInt(a) - parseInt(b))
   var highestNumberedHandCardSubtractDownTo30 = sortedNumberedHandCardsToSubtractDownTo30.length > 0 ? sortedNumberedHandCardsToSubtractDownTo30[sortedNumberedHandCardsToSubtractDownTo30.length - 1] : null
 
-  var sortedNumberedHandCardsToAddUpTo20 = hand.filter(x => /^\d+$/gi.test(x) && parseInt(x) <= 20 - score).sort((a, b) => parseInt(a) - parseInt(b))
-  var highestNumberedHandCardAddUpTo20 = sortedNumberedHandCardsToAddUpTo20.length > 0 ? sortedNumberedHandCardsToAddUpTo20[sortedNumberedHandCardsToAddUpTo20.length - 1] : null
+  // var sortedNumberedHandCardsToAddUpTo20 = hand.filter(x => /^\d+$/gi.test(x) && parseInt(x) <= 20 - score).sort((a, b) => parseInt(a) - parseInt(b))
+  // var highestNumberedHandCardToReach20 = sortedNumberedHandCardsToAddUpTo20.length > 0 ? sortedNumberedHandCardsToAddUpTo20[sortedNumberedHandCardsToAddUpTo20.length - 1] : null
 
   var sortedNumberedBattlefieldCards = battlefield.filter(x => /^[kpw\?]*\d+$/gi.test(x)).sort((a, b) => parseInt(a.replaceAll(/\D/gi, "")) - parseInt(b.replaceAll(/\D/gi, "")))
   var highestNumberedBattlefieldCard = sortedNumberedBattlefieldCards.length > 0 ? sortedNumberedBattlefieldCards[sortedNumberedBattlefieldCards.length - 1] : null
@@ -3027,6 +3027,30 @@ function stragedyEnemyTurn() {
 
   var faceCardHandCount = hand.filter(x => /.*\D.*/gi.test(x)).length
 
+  var highestNumberedHandCardToReach30 = null
+  var highestNumberedHandCardToReach30Value = 0
+  for (var card of hand) {
+    if (isNaN(card)) continue
+    var value = parseInt(card)
+    if (kingCards.has(value.toString())) value *= 2
+    if (value > highestNumberedHandCardToReach30Value && score + value <= 30) {
+      highestNumberedHandCardToReach30 = card
+      highestNumberedHandCardToReach30Value = value
+    }
+  }
+
+  var highestNumberedHandCardToReach20 = null
+  var highestNumberedHandCardToReach20Value = 0
+  for (var card of hand) {
+    if (isNaN(card)) continue
+    var value = parseInt(card)
+    if (kingCards.has(value.toString())) value *= 2
+    if (value > highestNumberedHandCardToReach20Value && score + value <= 20) {
+      highestNumberedHandCardToReach20 = card
+      highestNumberedHandCardToReach20Value = value
+    }
+  }
+
   var kingNumberedCardsInHand = []
   for (var card of hand) {
     if (kingCards.has(card)) kingNumberedCardsInHand.push(card)
@@ -3046,47 +3070,129 @@ function stragedyEnemyTurn() {
   }
 
   var bestKingCardToBustPlayer = null
-  for (var playerCard of playerBattlefield) {
-    for (var card of battlefield) {
-      var playerNumber = playerCard.replaceAll(/\D/gi, "")
-      var number = card.replaceAll(/\D/gi, "")
-      if (number == playerNumber && (bestKingCardToBustPlayer == null || parseInt(number) > parseInt(bestKingCardToBustPlayer))) bestKingCardToBustPlayer = card
+  var bestKingCardToBustPlayerValue = 0
+  for (var card of battlefield) {
+    var number = card.replaceAll(/\D/gi, "")
+    var value = parseInt(number)
+
+    if (/.*q.*/gi.test(card)) continue
+    if (kingCards.has(number)) continue
+
+    var count = 0
+    for (var testCard of battlefield) {
+      if (testCard.replaceAll(/\D/gi, "") == number) count++
+    }
+
+    if (value * count > bestKingCardToBustPlayerValue && score + value * count <= 30) {
+      bestKingCardToBustPlayer = card
+      bestKingCardToBustPlayerValue = value
     }
   }
 
-  var bestKingCardToSave = null
+  var bestKingCardToReach30 = null
+  var bestKingCardToReach30Value = 0
   for (var card of battlefield) {
     var number = card.replaceAll(/\D/gi, "")
-    if ((bestKingCardToSave == null || parseInt(number) > parseInt(bestKingCardToSave)) && parseInt(number) + score < 30) bestKingCardToSave = card
+    var value = parseInt(number)
+
+    if (/.*q.*/gi.test(card)) continue
+    if (kingCards.has(number)) continue
+
+    var count = 0
+    for (var testCard of battlefield) {
+      if (testCard.replaceAll(/\D/gi, "") == number) count++
+    }
+
+    if (value * count > bestKingCardToReach30Value && score + value * count <= 30) {
+      bestKingCardToReach30 = card
+      bestKingCardToReach30Value = value
+    }
+  }
+
+  var bestJackCardToSave = null
+  var bestJackCardToSaveValue = 0
+  for (var card of battlefield) {
+    var value = parseInt(card.replaceAll(/\D/gi, ""))
+    if (kingCards.has(value.toString())) value *= 2
+    if (value > bestJackCardToSaveValue && score - value <= 30) {
+      bestJackCardToSave = card
+      bestJackCardToSaveValue = value
+    }
+  }
+
+  var bestQueenCardToBustPlayer = null
+  var bestQueenCardToBustPlayerValue = 0
+  for (var card of battlefield) {
+    var value = parseInt(card.replaceAll(/\D/gi, ""))
+    if (kingCards.has(value.toString())) value *= 2
+    if (value > bestQueenCardToBustPlayerValue && playerScore + value > 30) {
+      bestQueenCardToBustPlayer = card
+      bestQueenCardToBustPlayerValue = value
+    }
+  }
+
+  var bestQueenCardToSave = null
+  var bestQueenCardToSaveValue = 0
+  for (var card of battlefield) {
+    var value = parseInt(card.replaceAll(/\D/gi, ""))
+    if (kingCards.has(value.toString())) value *= 2
+    if (value > bestQueenCardToSaveValue && score - value <= 30) {
+      bestQueenCardToSave = card
+      bestQueenCardToSaveValue = value
+    }
+  }
+
+  var bestPriestCardToSave = null
+  var bestPriestCardToSaveValue = 0
+  for (var card of battlefield) {
+    var value = parseInt(card.replaceAll(/\D/gi, ""))
+    if (kingCards.has(value.toString())) value *= 2
+    if (value > bestPriestCardToSaveValue && score - value <= 30) {
+      bestPriestCardToSave = card
+      bestPriestCardToSaveValue = value
+    }
   }
 
   if (hand.length == 0) {
-    log(1)
+    log("Enemy has no cards in hand")
     if (deck.length == 0) state.stragedyEnemyTurnText = stragedyEnemyRetire()
+    else if (hand.length == 0 && score > 30) state.stragedyEnemyTurnText = stragedyEnemyRetire()
     else state.stragedyEnemyTurnText = stragedyEnemyDrawCard()
+  } else if (score > 30 && battlefield.length > 0) {
+    log("Enemy is going to bust")
+    if (hasQueen && bestQueenCardToSave != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + bestQueenCardToSave)
+    else if (hasPriest && bestPriestCardToSave != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "p" + bestPriestCardToSave)
+    else if (hasJack && bestJackCardToSave != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "j" + bestJackCardToSave)
+    else if (hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
+    else if (kingCards.length > 0 && kingNumberedCardsInHand.length > 0) state.stragedyEnemyTurnText = stragedyPlayCard(false, kingNumberedCardsInHand[kingNumberedCardsInHand.length - 1])
+    else state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else if (playerRetired && score < playerScore) {
-    log(2)
-    if (hasJoker) state.stragedyEnemyTurnText = stragedyPlayCard(false, "?" + lowestNumberedBattlefieldCard)
-    else if (hasQueen && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
+    log("Enemy is reacting to the player retiring while behind")
+    if (hasJoker && playerScore < 30) state.stragedyEnemyTurnText = stragedyPlayCard(false, "?" + lowestNumberedBattlefieldCard)
+    else if (hasQueen && bestQueenCardToBustPlayer != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + bestQueenCardToBustPlayer)
     else if (hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
     else if (hasKing && bestKingCardToBustPlayer != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCardToBustPlayer)
-    else if (hasKing && bestKingCardToSave != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCardToSave)
-    else if (highestNumberedHandCardAddUpTo30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardAddUpTo30)
+    else if (hasKing && bestKingCardToReach30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCardToReach30)
+    else if (highestNumberedHandCardToReach30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardToReach30)
+    else if (hasJoker && playerScore == 30) state.stragedyEnemyTurnText = stragedyPlayCard(false, "?" + lowestNumberedBattlefieldCard)
     else state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else if (playerRetired && score > playerScore) {
-    log(3)
+    log("Enemy is reacting to the player retiring while ahead")
     state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else if (playerRetired && score == playerScore) {
-    log(4)
-    if (highestNumberedHandCardAddUpTo30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardAddUpTo30)
+    log("Enemy is reacting to the player retiring while tied")
+    if (highestNumberedHandCardToReach30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardToReach30)
     else state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else if (score - playerScore > 20) {
-    log(5)
+    log("Enemy has a significant lead")
     state.stragedyEnemyTurnText = stragedyEnemyRetire()
-  } else if (hasNumberedCards && score < playerScore) {
-    log(6)
-    if (score < 20 && highestNumberedHandCardAddUpTo20 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardAddUpTo20)
-    else if (highestNumberedHandCardAddUpTo30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardAddUpTo30)
+  } else if (deck.length > 0 && hand.length == 1) {
+    log("Enemy only has one card in hand")
+    state.stragedyEnemyTurnText = stragedyEnemyDiscardCard()
+  } else if (hasNumberedCards && (score < playerScore || score < 15)) {
+    log("Enemy is behind or needs to reach at least 15")
+    if (score < 20 && highestNumberedHandCardToReach20 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardToReach20)
+    else if (highestNumberedHandCardToReach30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardToReach30)
     else if (faceCardHandCount > 1 && hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
     else if (faceCardHandCount > 1 && hasKing && bestKingCardToBustPlayer != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCardToBustPlayer)
     else if (faceCardHandCount > 1 && hasQueen && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
@@ -3095,22 +3201,14 @@ function stragedyEnemyTurn() {
     else if (hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
     else if (hasKing && bestKingCardToBustPlayer != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCardToBustPlayer)
     else stragedyEnemyRandom()
-  } else if (score > 30 && battlefield.length > 0) {
-    log(7)
-    if (hasQueen && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
-    else if (hasPriest && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "p" + highestNumberedBattlefieldCard)
-    else if (hasJack && highestNumberedBattlefieldCardSubtractDownTo30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "j" + highestNumberedBattlefieldCardSubtractDownTo30)
-    else if (hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
-    else if (kingCards.length > 0 && kingNumberedCardsInHand.length > 0) state.stragedyEnemyTurnText = stragedyPlayCard(false, kingNumberedCardsInHand[kingNumberedCardsInHand.length - 1])
-    else state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else if (score >= playerScore && hasWitch) {
-    log(8)
+    log("Enemy has lead and has a witch")
     state.stragedyEnemyTurnText = stragedyPlayCard(false, "w")
   } else if (score >= playerScore && hasBrigand) {
-    log(10)
+    log("Enemy has lead and has a brigand")
     state.stragedyEnemyTurnText = stragedyPlayCard(false, "b")
-  } else if (highestNumberedHandCardAddUpTo20 == null && hand.length > 0) {
-    log(11)
+  } else if (highestNumberedHandCardToReach20 == null && hand.length > 0) {
+    log("Enemy can't reach 20 and has cards in hand")
     if (score >= 20 && score < playerScore && faceCardHandCount > 1 && hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
     else if (score >= 20 && score < playerScore && faceCardHandCount > 1 && hasKing && bestKingCardToBustPlayer != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCardToBustPlayer)
     else if (score >= 20 && score < playerScore && faceCardHandCount > 1 && hasQueen && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
@@ -3118,7 +3216,7 @@ function stragedyEnemyTurn() {
     else if (hand.length  > 0) state.stragedyEnemyTurnText = stragedyEnemyRandom()
     else state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else {
-    log(12)
+    log("Enemy has ran out of options and is doing random stuff")
     state.stragedyEnemyTurnText = stragedyEnemyRandom()
   }
   

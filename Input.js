@@ -82,7 +82,7 @@ const setProficiencySynonyms = ["setproficiency", "setweaponproficiency"]
 const healPartySynonyms = ["healparty", "healcharacters"]
 const blockSynonyms = ["block", "parry", "nullify", "invalidate"]
 const repeatTurnSynonyms = ["repeatturn", "repeat"]
-const basicDeckSynonyms = ["basicdeck"]
+const basicDeckSynonyms = ["basicdeck", "stragedybasicdeck"]
 const cardShopSynonyms = ["cardshop", "stragedyshop", "cardstore", "stragedystore"]
 const stragedySynonyms = ["stragedy", "playgame", "game", "startgame", "begingame", "playcards", "playstragedy", "startstragedy", "beginstragedy"]
 const addCardSynonyms = ["addcard"]
@@ -1281,7 +1281,7 @@ function doBasicDeck(command) {
   var character = getCharacter()
   var takeWord = character.name == "You" ? "take" : "takes"
   doTake("take Stragedy Ace Card")
-  doTake("take Stragedy Ace Card")
+  doTake("take Stragedy Queen Card")
   doTake("take Stragedy 2 Card")
   doTake("take Stragedy 2 Card")
   doTake("take Stragedy 3 Card")
@@ -1298,7 +1298,7 @@ function doBasicDeck(command) {
   doTake("take Stragedy 8 Card")
   doTake("take Stragedy 9 Card")
   doTake("take Stragedy 9 Card")
-  doTake("take Stragedy Jack Card")
+  doTake("take Stragedy King Card")
   doTake("take Stragedy Jack Card")
   return `${toTitleCase(character.name)} ${takeWord} the Stragedy Basic Deck`
 }
@@ -1414,12 +1414,12 @@ function doStragedy(command) {
       state.stragedyEnemyDeck = ["j", "j", "a", "q", "q", "k", "k", "2", "3", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "10"]
       break
     case "very easy":
-      state.stragedyEnemyDeck = ["2", "2", "2", "3", "3", "3", "4", "4", "4", "5", "5", "5", "6", "6", "6", "7", "7", "8", "8", "9"]
+      state.stragedyEnemyDeck = ["j", "j", "a", "a", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "6", "7", "7", "8", "8", "9"]
     case "automatic":
       state.stragedyEnemyDeck = ["2", "2", "2", "3", "3", "3", "4", "4", "4", "5", "5", "5", "6", "6", "6", "6", "7", "7", "7", "7"]
     case "easy":
     default:
-      state.stragedyEnemyDeck = ["j", "j", "a", "a", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9"]
+      state.stragedyEnemyDeck = ["j", "q", "k", "a", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9"]
       break
   }
 
