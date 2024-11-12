@@ -587,6 +587,41 @@ Type d to deal the cards or press f to forfeit.
         }
       }
 
+      var kingCards = new Set()
+      for(var card of state.stragedyPlayerBattlefield) {
+        if (card.includes("k")) {
+          kingCards.add(card.match(/(?<=.*)\d+/gi)[0])
+        }
+      }
+
+      for(var card of state.stragedyEnemyBattlefield) {
+        if (card.includes("k")) {
+          kingCards.add(card.match(/(?<=.*)\d+/gi)[0])
+        }
+      }
+
+      var priestPoints = 0
+      for (var card of state.stragedyPlayerBattlefield) {
+        if (card.includes("p")) {
+          var number = card.replaceAll(/\D/gi, "")
+          var value = parseInt(number)
+          if (kingCards.has(number)) value *= 2
+
+          priestPoints += value
+        }
+      }
+
+      var enemyPriestPoints = 0
+      for (var card of state.stragedyEnemyBattlefield) {
+        if (card.includes("p")) {
+          var number = card.replaceAll(/\D/gi, "")
+          var value = parseInt(number)
+          if (kingCards.has(number)) value *= 2
+
+          enemyPriestPoints += value
+        }
+      }
+
       var enemyBattlefield = state.stragedyEnemyBattlefield.length > 0 ? "" : "No cards!"
       state.stragedyEnemyBattlefield.sort()
       for (card of state.stragedyEnemyBattlefield) {
@@ -621,8 +656,8 @@ Type d to deal the cards or press f to forfeit.
       text += `The opponent has ${enemyDeckCount} cards in the deck, ${enemyDiscardCount} in the discard pile, and ${enemyHandCount} in their hand.
 
 -----The Battlefield-----
-Opponent's cards on the battlefield: ${enemyBattlefield} = ${state.stragedyEnemyScore} points
-${possessiveName} cards on the battlefield: ${playerBattlefield} = ${state.stragedyPlayerScore} points
+Opponent's cards on the battlefield: ${enemyBattlefield} = ${state.stragedyEnemyScore} points${enemyPriestPoints > 0 ? `. Blessed points: ${enemyPriestPoints}` : ""}
+${possessiveName} cards on the battlefield: ${playerBattlefield} = ${state.stragedyPlayerScore} points${priestPoints > 0 ? `. Blessed points: ${priestPoints}` : ""}
 
 -----${possessiveName} Cards-----
 ${possessiveName} hand: ${playerHand}

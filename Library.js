@@ -2984,13 +2984,13 @@ function stragedyEnemyTurn() {
 
   for(var card of state.stragedyPlayerBattlefield) {
     if (card.includes("k")) {
-      kingCards.add(parseInt(card.match(/(?<=.*)\d+/gi)[0]))
+      kingCards.add(card.match(/(?<=.*)\d+/gi)[0])
     }
   }
 
   for(var card of state.stragedyEnemyBattlefield) {
     if (card.includes("k")) {
-      kingCards.add(parseInt(card.match(/(?<=.*)\d+/gi)[0]))
+      kingCards.add(card.match(/(?<=.*)\d+/gi)[0])
     }
   }
 
