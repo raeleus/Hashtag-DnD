@@ -17,7 +17,7 @@ See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
 v. 0.4.0
-*
+* Added Stragedy Trading Card Game
 
 v. 0.3.0
 * Added Boss and God difficulty encounters
