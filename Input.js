@@ -1413,7 +1413,7 @@ function doStragedy(command) {
     case "medium":
       state.stragedyEnemyDeck = ["j", "j", "a", "q", "q", "k", "k", "2", "3", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "10"]
       break
-    case "very easy":
+    case "effortless":
       state.stragedyEnemyDeck = ["j", "j", "a", "a", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "6", "7", "7", "8", "8", "9"]
     case "automatic":
       state.stragedyEnemyDeck = ["2", "2", "2", "3", "3", "3", "4", "4", "4", "5", "5", "5", "6", "6", "6", "6", "7", "7", "7", "7"]

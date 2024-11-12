@@ -2988,24 +2988,9 @@ function stragedyEnemyTurn() {
 
   var hasNumberedCards = hand.filter(x => /^\d+$/gi.test(x)).length > 0
 
-  var sortedNumberedHandCards = hand.filter(x => /^\d+$/gi.test(x)).sort((a, b) => parseInt(a) - parseInt(b))
-  var highestNumberedHandCard = sortedNumberedHandCards.length > 0 ? sortedNumberedHandCards[sortedNumberedHandCards.length - 1] : null
-
-  // var sortedNumberedHandCardsToAddUpTo30 = hand.filter(x => /^\d+$/gi.test(x) && parseInt(x) <= 30 - score).sort((a, b) => parseInt(a) - parseInt(b))
-  // var highestNumberedHandCardAddUpTo30 = sortedNumberedHandCardsToAddUpTo30.length > 0 ? sortedNumberedHandCardsToAddUpTo30[sortedNumberedHandCardsToAddUpTo30.length - 1] : null
-
-  var sortedNumberedHandCardsToSubtractDownTo30 = hand.filter(x => /^\d+$/gi.test(x) && parseInt(x) <= 30 + score).sort((a, b) => parseInt(a) - parseInt(b))
-  var highestNumberedHandCardSubtractDownTo30 = sortedNumberedHandCardsToSubtractDownTo30.length > 0 ? sortedNumberedHandCardsToSubtractDownTo30[sortedNumberedHandCardsToSubtractDownTo30.length - 1] : null
-
-  // var sortedNumberedHandCardsToAddUpTo20 = hand.filter(x => /^\d+$/gi.test(x) && parseInt(x) <= 20 - score).sort((a, b) => parseInt(a) - parseInt(b))
-  // var highestNumberedHandCardToReach20 = sortedNumberedHandCardsToAddUpTo20.length > 0 ? sortedNumberedHandCardsToAddUpTo20[sortedNumberedHandCardsToAddUpTo20.length - 1] : null
-
   var sortedNumberedBattlefieldCards = battlefield.filter(x => /^[kpw\?]*\d+$/gi.test(x)).sort((a, b) => parseInt(a.replaceAll(/\D/gi, "")) - parseInt(b.replaceAll(/\D/gi, "")))
   var highestNumberedBattlefieldCard = sortedNumberedBattlefieldCards.length > 0 ? sortedNumberedBattlefieldCards[sortedNumberedBattlefieldCards.length - 1] : null
   var lowestNumberedBattlefieldCard = sortedNumberedBattlefieldCards.length > 0 ? sortedNumberedBattlefieldCards[0] : null
-
-  var sortedNumberedBattlefieldCardsToSubtractDownTo30 = battlefield.filter(x => /^[kpw\?]*\d+$/gi.test(x) && parseInt(x) <= 30 + score).sort((a, b) => parseInt(a) - parseInt(b))
-  var highestNumberedBattlefieldCardSubtractDownTo30 = sortedNumberedBattlefieldCardsToSubtractDownTo30.length > 0 ? sortedNumberedBattlefieldCardsToSubtractDownTo30[sortedNumberedBattlefieldCardsToSubtractDownTo30.length - 1] : null
 
   var hasAce = hand.filter(x => /^.*a.*$/gi.test(x)).length > 0
   var hasJack = hand.filter(x => /^.*j.*$/gi.test(x)).length > 0
@@ -3015,15 +3000,6 @@ function stragedyEnemyTurn() {
   var hasWitch = hand.filter(x => /^.*w.*$/gi.test(x)).length > 0
   var hasPriest = hand.filter(x => /^.*p.*$/gi.test(x)).length > 0
   var hasBrigand = hand.filter(x => /^.*b.*$/gi.test(x)).length > 0
-  var has10 = hand.filter(x => /^.*10.*$/gi.test(x)).length > 0
-  var has9 = hand.filter(x => /^.*9.*$/gi.test(x)).length > 0
-  var has8 = hand.filter(x => /^.*8.*$/gi.test(x)).length > 0
-  var has7 = hand.filter(x => /^.*7.*$/gi.test(x)).length > 0
-  var has6 = hand.filter(x => /^.*6.*$/gi.test(x)).length > 0
-  var has5 = hand.filter(x => /^.*5.*$/gi.test(x)).length > 0
-  var has4 = hand.filter(x => /^.*4.*$/gi.test(x)).length > 0
-  var has3 = hand.filter(x => /^.*3.*$/gi.test(x)).length > 0
-  var has2 = hand.filter(x => /^.*2.*$/gi.test(x)).length > 0
 
   var faceCardHandCount = hand.filter(x => /.*\D.*/gi.test(x)).length
 
@@ -3273,11 +3249,12 @@ function stragedyEnemyRetire() {
   return `\nThe opponent has retired at ${state.stragedyEnemyScore} points.\n`
 }
 
-function stragedyEnemyRandom() {
+function stragedyEnemyRandom(punish) {
   log(`Enemy random`)
   var hand = [...state.stragedyEnemyHand]
 
   if (hand.length == 0) {
+    if (punish) return "\nThe enemy has no cards to play.\n"
     if (state.stragedyEnemyDeck.length > 0) return stragedyEnemyDrawCard()
     return stragedyEnemyRetire()
   }
@@ -3300,6 +3277,49 @@ function stragedyEnemyRandom() {
       } while (battlefield.length > 0)
     }
   } while (hand.length > 0)
+
+  if (punish) {
+    state.stragedyEnemyDiscard.push(...state.stragedyEnemyHand)
+    state.stragedyEnemyHand = []
+    return "\nThe enemy could not play any cards and therfore discarded their entire hand.\n"
+  }
+
+  if (state.stragedyEnemyDeck.length > 0) return stragedyEnemyDrawCard()
+  return stragedyEnemyRetire()
+}
+
+function stragedyPlayerRandom(punish) {
+  log(`Player random`)
+  var hand = [...state.stragedyPlayerHand]
+
+  if (hand.length == 0) {
+    return "\nThe player has no cards to play.\n"
+  }
+
+  do {
+    var index = getRandomInteger(0, hand.length - 1)
+    var card = hand.splice(index, 1)[0]
+
+    if (/\d+/gi.test(card)) {
+      return stragedyPlayCard(true, card)
+    } else if (state.stragedyPlayerBattlefield.length > 0) {
+      var battlefield = [...new Set(state.stragedyPlayerBattlefield)]
+      do {
+        var battlefieldIndex = getRandomInteger(0, battlefield.length - 1)
+        var battlefieldCard = battlefield.splice(battlefieldIndex, 1)[0]
+
+        if (!battlefieldCard.includes(card)) {
+          return stragedyPlayCard(true, card + battlefieldCard)
+        }
+      } while (battlefield.length > 0)
+    }
+  } while (hand.length > 0)
+
+  if (punish) {
+    state.stragedyPlayerDiscard.push(...state.stragedyEnemyHand)
+    state.stragedyPlayerHand = []
+    return "\nThe player could not play any cards and therfore discarded their entire hand.\n"
+  }
 
   if (state.stragedyEnemyDeck.length > 0) return stragedyEnemyDrawCard()
   return stragedyEnemyRetire()
@@ -3492,15 +3512,14 @@ function stragedyPlayCard(player, text) {
       battlefield.push(handCard + targetCard)
 
       stragedyCalculateScores()
-      stragedyEnemyTurn()
       return `\n${characterName} ${playedWord} a joker on the ${targetCard}. The card's value is increased to make the total score 30.\n`
     case "w":
       hand.splice(handIndex, 1)
       discard.push(handCard)
 
-      //todo:handlecursing
+      var enemyMove = !player ? stragedyPlayerRandom(true) : stragedyEnemyRandom(true)
       stragedyCalculateScores()
-      return `\n${characterName} ${playedWord} a witch on the opponent.\n`
+      return `\n${characterName} ${playedWord} a witch on ${enemyName}. ${enemyMove}\n`
     case "p":
       if (targetCard == "") {
         if (player) state.stragedyEnemySkipTurn = true

@@ -513,6 +513,16 @@ const modifier = (text) => {
       text += "\n#map"
       text += "\n    Generates an 11x11 ASCII map of the surrounding locations centered at the party location. The @ symbol is the party location."
 
+      text += "\n\n--Stragedy Card Game--"
+      text += "\n#basicdeck"
+      text += "\n    The basic cards necessary to enjoy the Stragedy card game are added to the character's inventory."
+      text += "\n#cardshop"
+      text += "\n    This opens the stragedy card shop where characters can spend gold to purchase cards. The inventory is randomized based on the day."
+      text += "\n#addcard (card_name or card_rarity)"
+      text += "\n    Adds the specified card or randomly generates a card and adds it to the character's inventory. Specifying a rarity (common, rare, epic, legendary) will choose a random card from those lists. Valid card names are a, ace, j, jack, q, queen, k, king, ?, joker, w, witch, p, priest, b, brigand, and any number 2-10"
+      text += "\n#stragedy (automatic|effortless|easy|medium|hard|impossible)"
+      text += "\n    Initiates a game of Stragedy, a card game played against an AI opponent. Specifying a difficulty (default is easy) grants the opponent a corresponding deck. Please see the game manual on github for rules, tactics, and a complete tutorial: github.com/raeleus/Hashtag-DnD/"
+
       text += "\n\n--Danger Zone--"
       text += "\n#reset"
       text += "\n    Removes all characters, locations, and notes. Changes all settings to their defaults. Use with caution!"
@@ -628,8 +638,7 @@ Type f to forfeit. This quits the game immediately.
 
       if (state.stragedyWinner != "forfeit" && state.stragedyEnemyTurnText != null) text += state.stragedyEnemyTurnText
 
-      text += `
-The battle has concluded.${state.stragedyWinner != "forfeit" ? `\nFinal scores:\n${character.name}: ${state.stragedyPlayerScore}\nOpponent: ${state.stragedyEnemyScore}`: ""}
+      text += `The battle has concluded.${state.stragedyWinner != "forfeit" ? `\nFinal scores:\n${character.name}: ${state.stragedyPlayerScore}\nOpponent: ${state.stragedyEnemyScore}`: ""}
 `
       if (state.stragedyWinner == "player") text += `${toTitleCase(character.name)} ${haveWord} won! Congratulations.`
       else if (state.stragedyWinner == "enemy" || state.stragedyWinner == "forfeit") text += `${toTitleCase(character.name)} ${haveWord} lost! Better luck next time.`
