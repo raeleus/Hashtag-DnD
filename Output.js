@@ -579,6 +579,14 @@ Type d to deal the cards or press f to forfeit.
 `
       break
     case "game":
+      var hasJokerOnBattlefield = false
+      for (var card of state.stragedyPlayerBattlefield) {
+        if (card.includes("?")) {
+          hasJokerOnBattlefield = true
+          break
+        }
+      }
+
       var enemyBattlefield = state.stragedyEnemyBattlefield.length > 0 ? "" : "No cards!"
       state.stragedyEnemyBattlefield.sort()
       for (card of state.stragedyEnemyBattlefield) {
@@ -624,12 +632,10 @@ ${toTitleCase(character.name)} ${haveWord} ${playerDeckCount} cards in the deck 
 
       if (state.stragedyPlayerHand.length > 0) text += `
 Play a number card by typing its number. Play a letter card by typing the letter and target card.
-Type d and a number/letter to discard. Type r to retire. Type f to forfeit.
+Type d and a number/letter to discard. ${!hasJokerOnBattlefield ? "Type r to retire. " : ""}Type f to forfeit.
 `
       else text += `
-Type d to draw a card.
-Type r to retire. This forces the opponent to make their last move.
-Type f to forfeit. This quits the game immediately.
+Type d to draw a card. ${!hasJokerOnBattlefield ? "Type r to retire. " : ""}Type f to forfeit.
 `
       if (state.stragedyPlayerScore > 30) text += `WARNING: You must lower your score below 30 or you will bust!\n`
       break
