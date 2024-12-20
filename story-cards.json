@@ -1,25 +1,857 @@
 [
   {
+    "keys": "Acid Splash",
+    "value": "Spell that creates a five foot acid bubble within fifty feet. It explodes, causing acid damage.",
+    "type": "spell",
+    "title": "Acid Splash",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Aid spell, cast Aid",
+    "value": "Spell that increases the health and maximum health of up to 3 different creatures.",
+    "type": "spell",
+    "title": "Aid",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Alarm spell, cast Alarm",
+    "value": "Spell that creates a magical alarm that alerts the caster that there is an intrusion in a twenty foot area.",
+    "type": "spell",
+    "title": "Alarm",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Alter Self",
+    "value": "Spell that changes the caster to be able to breath underwater, change their appearance, or grow natural weapons like claws or fangs.",
+    "type": "spell",
+    "title": "Alter Self",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Animal Friendship",
-    "value": "Compels a beast to see that you mean no harm to it. The spell is ended if the beast is harmed.",
+    "value": "Spell that compels a beast to see that you mean no harm to it. The spell is ended if the beast is harmed.",
     "type": "spell",
     "title": "Animal Friendship",
     "description": "",
     "useForCharacterCreation": false
   },
   {
+    "keys": "Animal Messenger",
+    "value": "Spell that allows the caster to choose a tiny beast that will travel and communicate a simple message to a person of their choosing.",
+    "type": "spell",
+    "title": "Animal Messenger",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Animal Shapes",
+    "value": "Spell that transforms any willing creatures into beasts of the caster's choosing.",
+    "type": "spell",
+    "title": "Animal Shapes",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Animate Dead",
+    "value": "Spell that tranforms a dead corpse or pile of bones into an undead creature. This could be a zombie or skeleton, respectively.",
+    "type": "spell",
+    "title": "Animate Dead",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Animate Objects",
+    "value": "Spell that transforms an inanimate object into a living creature that follows your commands.",
+    "type": "spell",
+    "title": "Animate Objects",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Antilife Shell",
+    "value": "Spell that prevents living creatures from entering a 10 foot sphere emanating from the caster. It has no affect on constructs or undead.",
+    "type": "spell",
+    "title": "Antilife Shell",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Antimagic Field",
+    "value": "Spell that creates a ten foot antimagic emanation from the caster which prevents magic effects from working inside it.",
+    "type": "spell",
+    "title": "Antimagic Field",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Antipathy",
+    "value": "Spell that causes a creature to be frightened. It must move as far away from the caster as possible.",
+    "type": "spell",
+    "title": "Antipathy",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Arcane Eye",
+    "value": "Spell creates an invisible eye which allows the caster to see from that eye in every direction. The eye can be moved.",
+    "type": "spell",
+    "title": "Arcane Eye",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Arcane Gate",
+    "value": "Spell creates two connecting portals. One within ten feet and the other up to five hundred feet within visual range. Misty glowing rings floating above ground.",
+    "type": "spell",
+    "title": "Arcane Gate",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Arcane Lock",
+    "value": "Spell creates a magic lock that cannot be lockpicked or opened in any nonmagical way.",
+    "type": "spell",
+    "title": "Arcane Lock",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Arcane Vigor",
+    "value": "Spell allows the caster to heal a minor amount of health.",
+    "type": "spell",
+    "title": "Arcane Vigor",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Armor of Agathys",
+    "value": "Spell creates magical frost armor for the caster. Any melee attackers will take cold damage.",
+    "type": "spell",
+    "title": "Armor of Agathys",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Arms of Hadar",
+    "value": "Spell creates tendrils emanating from the caster up to ten feet in length. Each tendril causes necrotic damage.",
+    "type": "spell",
+    "title": "Arms of Hadar",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Astral Projection",
+    "value": "Spell projects the caster and other companions to the astral plane. Their real bodies are in a state of suspended animation.",
+    "type": "spell",
+    "title": "Astral Projection",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Augury",
+    "value": "Spell allows caster to receive an omen from an otherworldly entity about an action you are about to take within thirty minutes.",
+    "type": "spell",
+    "title": "Augury",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Aura of Life",
+    "value": "Spell creates a thirty foot emanation that gives resistance to necrotic damage.",
+    "type": "spell",
+    "title": "Aura of Life",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Aura of Purity",
+    "value": "Spell creates a thirty foot emanation that gives resistance to poison damage.",
+    "type": "spell",
+    "title": "Aura of Purity",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Aura of Vitality",
+    "value": "Spell creates a thirty foot emanation that heals an ally for a minor amount repeatedly for a period of time.",
+    "type": "spell",
+    "title": "Aura of Vitality",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Awaken spell, cast Awaken",
+    "value": "Spell that can be casted on a beast or a plant which gives it intelligence enough to speak and move. The target is charmed towards the caster.",
+    "type": "spell",
+    "title": "Awaken",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bane spell, cast Bane",
+    "value": "Spell that causes the target to miss their attacks more often.",
+    "type": "spell",
+    "title": "Bane",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Banishing Smite",
+    "value": "Spell that causes an attack to cause extra force damage. A sufficiently damaged target is sent to a demiplane where they are incapacitated for a time.",
+    "type": "spell",
+    "title": "Banishing Smite",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Banishment",
+    "value": "Spell that causes the target to be transported to a demiplane where they are incapacitated for a time.",
+    "type": "spell",
+    "title": "Banishment",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Barkskin",
+    "value": "Spell that causes the target's skin to transform into a barklike appearance. This increases their ability to prevent damage.",
+    "type": "spell",
+    "title": "Barkskin",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Beacon of Hope",
+    "value": "Spell that causes any number of targets in range to be wiser and more resiliant when fallen in battle.",
+    "type": "spell",
+    "title": "Beacon of Hope",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Beast Sense",
+    "value": "Spell that allows you to see through eyes of a beast you can touch and use any senses it has.",
+    "type": "spell",
+    "title": "Beast Sense",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Befuddlement",
+    "value": "Spell that causes the target is unable to cast spells and takes incredible psychic damage.",
+    "type": "spell",
+    "title": "Befuddlement",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bestow Curse",
+    "value": "Spell when target is touched, it is cursed with disadvantage in one ability.",
+    "type": "spell",
+    "title": "Bestow Curse",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bigby's Hand",
+    "value": "Spell that creates a magical hand that moves and attacks at your will. It is able to grab, push, punch, and provide cover.",
+    "type": "spell",
+    "title": "Bigby's Hand",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Blade Barrier",
+    "value": "Spell that creates a wall of whirling blades that damage opponents that enter its space.",
+    "type": "spell",
+    "title": "Blade Barrier",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Blade Ward",
+    "value": "Spell that causes attackers to have difficulty targeting the caster.",
+    "type": "spell",
+    "title": "Blade Ward",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bless spell, cast Bless",
+    "value": "Spell that causes up to three targets have better ability to target enemies and resist the enemies' effects.",
+    "type": "spell",
+    "title": "Bless",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Blight spell, cast Blight",
+    "value": "Spell that causes the target to take necrotic damage. Nonmagical plant targets instantly wither and die.",
+    "type": "spell",
+    "title": "Blight",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Blinding Smite",
+    "value": "Spell that causes radiant damage and blinds the target.",
+    "type": "spell",
+    "title": "Blinding Smite",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Blindness spell, cast Blindness",
+    "value": "Spell that blinds the target.",
+    "type": "spell",
+    "title": "Blindness",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Blink spell, cast Blink",
+    "value": "Spell with a chance to cause the caster to enter the ethereal plane at the end of their turn, preventing them from being targeted by attacks.",
+    "type": "spell",
+    "title": "Blink",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Blur spell, cast Blur",
+    "value": "Spell that causes you to appear blurred to others. This helps prevent the caster from being targeted by attacks.",
+    "type": "spell",
+    "title": "Blur",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Burning Hand",
+    "value": "Spell that causes flames to shoot from your hands causing damage in a cone in front of the caster.",
+    "type": "spell",
+    "title": "Burning Hand",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Call Lightning",
+    "value": "Spell that causes a lighting bolt to strike within a 60 foot radius once at the end of every turn.",
+    "type": "spell",
+    "title": "Call Lightning",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Calm Emotions",
+    "value": "Spell that causes the target to no longer be hostile towards creatures of the caster's choosing.",
+    "type": "spell",
+    "title": "Calm Emotions",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Chain Lightning",
+    "value": "Spell that shoots a lightning bolt that travels from one target to another in close range.",
+    "type": "spell",
+    "title": "Chain Lightning",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Charm Monster",
+    "value": "Spell that causes any sort of creature to be friendly to you.",
+    "type": "spell",
+    "title": "Charm Monster",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Charm Person",
-    "value": "Enchant a humanoid within range to consider the caster as a friend for a time or until it is injured. After the spell ends, the target will know that it was charmed.",
+    "value": "Spell to enchant a humanoid within range to consider the caster as a friend for a time or until it is injured. After the spell ends, the target will know that it was charmed.",
     "type": "spell",
     "title": "Charm Person",
     "description": "",
     "useForCharacterCreation": false
   },
   {
+    "keys": "Chill Touch",
+    "value": "Spell casted when the caster takes a melee attack against a target. It causes necrotic damage.",
+    "type": "spell",
+    "title": "Chill Touch",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Chromatic Orb",
+    "value": "Spell that launches a magical orb of acid, cold, fire, lightning, poison, or thunder damage at a target. It has a chance to leap to other targets in close range.",
+    "type": "spell",
+    "title": "Chromatic Orb",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Circle of Death",
+    "value": "Spell that causes necrotic damage in a sixty foot radius.",
+    "type": "spell",
+    "title": "Circle of Death",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Circle of Power",
+    "value": "Spell that causes allies to have advantage on all magical effects while within range.",
+    "type": "spell",
+    "title": "Circle of Power",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Clairvoyance spell, cast Clairvoyance",
+    "value": "Spell that creates an invisible sensor in a space. The target is able to see or hear through that sensor as if they were there.",
+    "type": "spell",
+    "title": "Clairvoyance",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Clone spell, cast Clone",
+    "value": "Spell that creates a duplicate of another creature. It is grown in an expensive vessel and takes a long time to produce. If the target ever dies, their soul is transferred to the clone.",
+    "type": "spell",
+    "title": "Clone",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cloudkill",
+    "value": "Spell that creates a sphere of yellowish green fog that causes poison damage. It moves away from the caster by 10 feet per turn.",
+    "type": "spell",
+    "title": "Cloudkill",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cloud of Daggers",
+    "value": "Spell that creates a cloud of spinning daggers that causes slashing damage to any creatures that enter the space.",
+    "type": "spell",
+    "title": "Cloud of Daggers",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Color Spray",
+    "value": "Spell that creates a magical display of lights in a cone in front of the caster. It may blind enemies.",
+    "type": "spell",
+    "title": "Color Spray",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Command spell, cast Command",
+    "value": "Spell that causes the target to either approach, drop what they're holding, flee, grovel, or halt immediately.",
+    "type": "spell",
+    "title": "Command",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Commune spell, cast Commune",
+    "value": "Spell that allows the caster to speak to a divine entity to ask up to three questions.",
+    "type": "spell",
+    "title": "Commune",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Commune with Nature",
+    "value": "Spell that allows the caster to speak with the nature spirits to gain knowledge. Reveals locations, portals, prevalent plants beasts, bodies of water, and celestial, elemental, fey, fiend, or undead.",
+    "type": "spell",
+    "title": "Commune with Nature",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Compelled Duel",
+    "value": "Spell that causes enemy to target the caster specifically. It has disadvantage targeting anything else.",
+    "type": "spell",
+    "title": "Compelled Duel",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Comprehend Languages",
+    "value": "Spell that allows the caster to understand any language seen or heard. The caster must be touching the surface of a written word to understand it. It does not decode cipher.",
+    "type": "spell",
+    "title": "Comprehend Languages",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Compulsion spell, cast Compulsion",
+    "value": "Spell that charms a target, allowing the caster to compel them to move safely left or right.",
+    "type": "spell",
+    "title": "Compulsion",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cone of Cold",
+    "value": "Spell that causes cold damage in a cone in front of the caster.",
+    "type": "spell",
+    "title": "Cone of Cold",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Confusion spell, cast Confusion",
+    "value": "Spell that causes enemies in a ten foot area to do random things such as move in a random direction, stand still, or attack a random creature.",
+    "type": "spell",
+    "title": "Confusion",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Conjure Animals",
+    "value": "Spell that creates an intangible pack of animals. Whenever an enemy enters this area they take slashing damage.",
+    "type": "spell",
+    "title": "Conjure Animals",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Conjure Barrage",
+    "value": "Spell that creates spectral weapons or ammunition that assaults creatures in a 60 foot cone with force damage.",
+    "type": "spell",
+    "title": "Conjure Barrage",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Conjure Celestial",
+    "value": "Spell that summons a celestial that appears as a pillar of light. It can heal allies or sear enemies with radiant damage.",
+    "type": "spell",
+    "title": "Conjure Celestial",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Conjure Elemental",
+    "value": "Spell that summons an elemental spirit. An enemy entering its space takes specific damage of lightning, thunder, fire, or water and is restrained.",
+    "type": "spell",
+    "title": "Conjure Elemental",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Conjure Fey",
+    "value": "Spell that summons a fey spirit. It can attack causing the target to take psychic damage and become frightened. It can teleport and attack another target.",
+    "type": "spell",
+    "title": "Conjure Fey",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Conjure Minor Elemntals",
+    "value": "Spell that summons elemental spirits that surround the caster in a range of fifteen feet. They cause acid, cold, fire, or lightning damage to enemies in this area.",
+    "type": "spell",
+    "title": "Conjure Minor Elemntals",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Conjure Volley",
+    "value": "Spell that creates spectral weapons or ammunition in a volley that causes force damage.",
+    "type": "spell",
+    "title": "Conjure Volley",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Conjure Woodland Beings",
+    "value": "Spell that summons nature spirits in a ten foot range that causes force damage as enemies enter the area.",
+    "type": "spell",
+    "title": "Conjure Woodland Beings",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Contact Other Plane",
+    "value": "Spell that allows the caster to speak to a demigod, long-dead sage, or an entity from another plane to ask five yes or no questions but at the risk of recieving psychic damage.",
+    "type": "spell",
+    "title": "Contact Other Plane",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Contagion spell, cast Contagion",
+    "value": "Spell that inflicts necrotic damage when the caster touches an enemy. The enemy is poisoned and is at a disadvantage.",
+    "type": "spell",
+    "title": "Contagion",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Contingency spell, cast Contingency",
+    "value": "Spell that triggers another spell when certain conditions are met.",
+    "type": "spell",
+    "title": "Contingency",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Continual Flame",
+    "value": "Spell that ignites a flame from an object. That object then casts light. The flame consumes no fuel, creates no heat, and can't be smothered.",
+    "type": "spell",
+    "title": "Continual Flame",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Control Water",
+    "value": "Spell that allows the caster to control water allowing it to create a flood, part a path through the water, redirect the flow, or create a whirlpool.",
+    "type": "spell",
+    "title": "Control Water",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Control Weather",
+    "value": "Spell that allows the caster to change the weather, create clouds, fog, rain, hail, snow, or blizzard. The caster must be outdoors and it takes time to affect the climate.",
+    "type": "spell",
+    "title": "Control Weather",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cordon of Arrows",
+    "value": "Spell that plants four arrows or bolts into the ground. As an enemy enters in a range of thirty feet, the arrow flies up and strikes it.",
+    "type": "spell",
+    "title": "Cordon of Arrows",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Counterspell",
+    "value": "A spell that attempts to interrupt a spell casted by an opponent.",
+    "type": "spell",
+    "title": "Counterspell",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Create Water",
+    "value": "Spell that creates up to ten gallons of clean water in a container or by raining down in an area.",
+    "type": "spell",
+    "title": "Create or Destroy Water",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Create Undead",
+    "value": "Spell that can only be cast at night. The caster can transform up to three corpses into ghouls that they control that follow their orders. It takes time to cast this completely.",
+    "type": "spell",
+    "title": "Create Undead",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Creation spell, cast Creation",
+    "value": "Spell that summons shadow material and creates a small object made out of vegetable or mineral matter like a rope or key. It dissapates into shadow when the spell ends.",
+    "type": "spell",
+    "title": "Creation",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Crown of Madness",
+    "value": "Spell that charms a creature. It must attack a creature of the caster's choosing each turn before it can move away.",
+    "type": "spell",
+    "title": "Crown of Madness",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Crusader's Mantle",
+    "value": "Spell that creates a thirty foot magical emanation that causes the caster and their allies to cause additional radiant damage with their attacks.",
+    "type": "spell",
+    "title": "Crusader's Mantle",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Cure Wounds",
-    "value": "Heals a creature you can touch.",
+    "value": "Spell that heals a creature the caster can touch.",
     "type": "spell",
     "title": "Cure Wounds",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dancing Lights",
+    "value": "Spell that creates four dancing lights that can be moved by the caster.",
+    "type": "spell",
+    "title": "Dancing Lights",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Darkness spell, cast Darkness",
+    "value": "Spell that creates a darkness emanation from a point or an object that can't be seen through and light cannot penetrate.",
+    "type": "spell",
+    "title": "Darkness",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Darkvision spell, cast Darkvision",
+    "value": "Spell that grants the target the ability to see in dim light for up to 150 feet.",
+    "type": "spell",
+    "title": "Darkvision",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Daylight spell, cast Daylight",
+    "value": "Spell that creates bright light at a point or to emanate from an object.",
+    "type": "spell",
+    "title": "Daylight",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Death Ward",
+    "value": "Spell that grants the target protection from death. At the moment where damage would bring it completely to death, the target would instead have a single sliver of health.",
+    "type": "spell",
+    "title": "Death Ward",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Deafness spell, cast Deafness",
+    "value": "Spell that deafens the target.",
+    "type": "spell",
+    "title": "Deafness",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Delayed Blast Fireball",
+    "value": "Spell that creates a glowing bead that eventually explodes with the force of a powerful fireball when it is dispelled.",
+    "type": "spell",
+    "title": "Delayed Blast Fireball",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Demiplane",
+    "value": "Spell that creates a magical doorway that leads to a demiplane where items and creatures can be stored.",
+    "type": "spell",
+    "title": "Demiplane",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Destroy Water",
+    "value": "Spell that destroys fog or up to ten gallons of water.",
+    "type": "spell",
+    "title": "Create or Destroy Water",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Destructive Wave",
+    "value": "Spell that causes necrotic or thunderous damage in a wave.",
+    "type": "spell",
+    "title": "Destructive Wave",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Detect Good and Evil",
+    "value": "Spell that allows the caster to sense celestials, elementals, fey, fiends, or undead and their location.",
+    "type": "spell",
+    "title": "Detect Good and Evil",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Detect Magic",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Detect Magic",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Detect Poison and Disease",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Detect Poison and Disease",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Detect Thoughts",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Detect Thoughts",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dimension Door",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Dimension Door",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Disguise Self",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Disguise Self",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Disintegrate",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Disintegrate",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dispel Evil and Good",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Dispel Evil and Good",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dispel Magic",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Dispel Magic",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dissonant Whispers",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Dissonant Whispers",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Divination spell, cast Divination",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Divination",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -32,6 +864,70 @@
     "useForCharacterCreation": false
   },
   {
+    "keys": "Divine Smite",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Divine Smite",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Divine Word",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Divine Word",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dominate Beast",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Dominate Beast",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dominate Monster",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Dominate Monster",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dominate Person",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Dominate Person",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dragon's Breath",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Dragon's Breath",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Drawmij's Instant Summons",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Drawmij's Instant Summons",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dream spell, cast Dream",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Dream",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Druidcraft",
     "value": "Allows the caster to predict the weather, make plants bloom, or create a harmless sensory effect like a puff of wind or the smell of a dead animal.",
     "type": "spell",
@@ -40,10 +936,202 @@
     "useForCharacterCreation": false
   },
   {
+    "keys": "Earthquake",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Earthquake",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Eldritch Blast",
     "value": "Casts a beam of pure energy at a creature, causing magical force damage.",
     "type": "spell",
-    "title": "Eldritch Blast",
+    "title": "Eldritch Eldritch Blast",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Elementalism",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Elementalism",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Elemental Weapon",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Elemental Weapon",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Enhance Ability",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Enhance Ability",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Enlarge spell, cast Enlarge",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Enlarge",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ensnaring Strike",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Ensnaring Strike",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Entangle spell, cast Entangle",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Entangle",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Enthrall",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Enthrall",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Etherealness",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Etherealness",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Evard's Black Tentacles",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Evard's Black Tentacles",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Expeditious Retreat",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Expeditious Retreat",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Eyebite",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Eyebite",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Fabricate spell, cast Fabricate",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Fabricate",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Faerie Fire",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Faerie Fire",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "False Life",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "False Life",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Fear spell, cast Fear",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Fear",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Feather Fall",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Feather Fall",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Feign Death",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Feign Death",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Find Familiar",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Find Familiar",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Find Steed",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Find Steed",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Find the Path",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Find the Path",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Find Traps",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Find Traps",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Finger of Death",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Finger of Death",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Fireball",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Fireball",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -56,10 +1144,602 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Healing Word",
+    "keys": "Fire Shield",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Fire Shield",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Fire Storm",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Fire Storm",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Flame Blade",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Flame Blade",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Flame Strike",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Flame Strike",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Flaming Sphere",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Flaming Sphere",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Flesh to Stone",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Flesh to Stone",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Fly spell, cast Fly",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Fly",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Fog Cloud",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Fog Cloud",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Forbiddance",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Forbiddance",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Forcecage",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Forcecage",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Foresight",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Foresight",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Fount of Moonlight",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Fount of Moonlight",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Freedom of Movement",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Freedom of Movement",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Friends",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Friends",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Gaseous Form",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Gaseous Form",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Gate spell, cast Gate",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Gate",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Geas",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Geas",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Gentle Repose",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Gentle Repose",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Giant Insect",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Giant Insect",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Glibness",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Glibness",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Globe of Invulnerability",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Globe of Invulnerability",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Glyph of Warding",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Glyph of Warding",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Goodberry spell, cast Goodberry",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Goodberry",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Grasping Vine",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Grasping Vine",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Grease",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Grease",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Greater Invisibility",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Greater Invisibility",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Greater Restoration",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Greater Restoration",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Guardian of Faith",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Guardian of Faith",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Guards and Wards",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Guards and Wards",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Guidance",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Guidance",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Guiding Bolt",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Guiding Bolt",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Gust of Wind",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Gust of Wind",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hail of Thorns",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Hail of Thorns",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hallow spell, cast Hallow",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Hallow",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hallucinatory Terrain",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Hallucinatory Terrain",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Harm spell, cast Harm",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Harm",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Haste spell, cast Haste",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Haste",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Heal spell, cast Heal",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Heal",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Healing Word spell, cast Healing Word",
     "value": "Heal a creature within range.",
     "type": "spell",
     "title": "Healing Word",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Heat Metal",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Heat Metal",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hellish Rebuke",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Hellish Rebuke",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Heroes' Feast",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Heroe's Feast",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Heroism spell, cast Heroism",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Heroism",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hex spell, cast Hex",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Hex",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hold Monster",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Hold Monster",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hold Person",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Hold Person",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Holy Aura",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Holy Aura",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hunger of Hadar",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Hunger of Hadar",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hunter's Mark",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Hunter's Mark",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hypnotic Pattern",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Hypnotic Pattern",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ice Knife",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Ice Knife",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ice Storm",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Ice Storm",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Identify spell, cast Identify",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Identify",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Illusory Script",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Illusory Script",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Imprisonment spell, cast Imprisonment",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Imprisonment",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Incendiary Cloud",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Incendiary Cloud",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Inflict Wounds",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Inflict Wounds",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Insect Plague",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Insect Plague",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Invisibility spell, cast Invisibility",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Invisibility",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Jallarzi's Storm of Radiance",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Jallarzi's Storm of Radiance",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Jump spell, cast Jump",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Jump",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Knock",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Knock",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Legend Lore",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Legend Lore",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Leomund's Secret Chest",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Leomund's Secret Chest",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Leomund's Tiny Hut",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Leomund's Tiny Hut",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Lesser Restoration",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Lesser Restoration",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Levitate spell, cast Levitate",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Levitate",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Light spell, cast Light",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Light",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Lightning Arrow",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Lightning Arrow",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Lightning Bolt",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Lightning Bolt",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Locate Animals or Plants",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Locate Animals or Plants",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Locate Creature",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Locate Creature",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Locate Object",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Locate Object",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Longstrider",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Longstrider",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mage Armor",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mage Armor",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -72,10 +1752,66 @@
     "useForCharacterCreation": false
   },
   {
+    "keys": "Magic Circle",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Magic Circle",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Magic Jar",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Magic Jar",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Magic Missile",
     "value": "Summon a number of darts comprised of pure magical force that can each target a creature that you can see within range, striking all at once.",
     "type": "spell",
     "title": "Magic Missile",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Magic Mouth",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Magic Mouth",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Magic Weapon",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Magic Weapon",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Major Image",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Major Image",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mass Cure Wounds",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mass Cure Wounds",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mass Heal",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mass Heal",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -88,10 +1824,450 @@
     "useForCharacterCreation": false
   },
   {
+    "keys": "Mass Suggestion",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mass Suggestion",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Maze spell, cast Maze",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Maze",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Meld into Stone",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Meld into Stone",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Melf's Acid Arrow",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Melf's Acid Arrow",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mending spell, cast Mending",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mending",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Message",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Message",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Meteor Storm",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Meteor Storm",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mind Blank",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mind Blank",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mind Sliver",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mind Sliver",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mind Spike",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mind Spike",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Minor Illusion",
     "value": "Creates an illusion of a sound or image of an object within range. The spell is broken if a physical interaction with the item reveals it to be a hoax.",
     "type": "spell",
     "title": "Minor Illusion",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mirage Arcane",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mirage Arcane",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mirror Image",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mirror Image",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mislead spell, cast Mislead",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mislead",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Misty Step",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Misty Step",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Modify Memory",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Modify Memory",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Moonbeam",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Moonbeam",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mordenkainen's Faithful Hound",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mordenkainen's Faithful Hound",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Modenkainen's Magnificent Mansion",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Modenkainen's Magnificent Mansion",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mordenkainen's Private Sanctum",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mordenkainen's Private Sanctum",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mordenkainen's Sword",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Mordenkainen's Sword",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Move Earth",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Move Earth",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Nondetection",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Nondetection",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Nystul's Magic Aura",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Nystul's Magic Aura",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Otiluke's Freezing Sphere",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Otiluke's Freezing Sphere",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Otiluke's Resilient Sphere",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Otiluke's Resilient Sphere",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Otto's Irresistible Dance",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Otto's Irresistible Dance",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Passwall",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Passwall",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Pass Without Trace",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Pass Without Trace",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Phantasmal Force",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Phantasmal Force",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Phantasmal Killer",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Phantasmal Killer",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Phantom Steed",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Phantom Steed",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Planar Ally",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Planar Ally",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Planar Binding",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Planar Binding",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Plane Shift",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Plane Shift",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Plant Growth",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Plant Growth",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Poison Spray",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Poison Spray",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Polymorph",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Polymorph",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Power Word Fortify",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Power Word Fortify",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Power Word Heal",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Power Word Heal",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Power Word Kill",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Power Word Kill",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Power Word Stun",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Power Word Stun",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Prayer of Healing",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Prayer of Healing",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Prestidigitation",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Prestidigitation",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Prismatic Spray",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Prismatic Spray",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Prismatic Wall",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Prismatic Wall",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Produce Flame",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Produce Flame",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Programmed Illusion",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Programmed Illusion",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Project Image",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Project Image",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Protection From Energy",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Protection From Energy",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Protection From Evil and Good",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Protection From Evil and Good",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Protection From Poison",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Protection From Poison",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Purify Food and Drink",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Purify Food and Drink",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Raise Dead",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Raise Dead",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rary's Telepathic Bond",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Rary's Telepathic Bond",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ray of Enfeeblement",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Ray of Enfeeblement",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -104,10 +2280,322 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Shield",
+    "keys": "Ray of Sickness",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Ray of Sickness",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Reduce spell, cast Reduce",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Reduce",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Regenerate spell, cast Regenerate",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Regenerate",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Reincarnate spell, cast Reincarnate",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Reincarnate",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Remove Curse",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Remove Curse",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Resistance spell, cast Resistance",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Resistance",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Resurrection spell, cast Resurrection",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Resurrection",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Reverse Gravity",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Reverse Gravity",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Revivify spell, cast Revivify",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Revivify",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rope Trick",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Rope Trick",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sacred Flame",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Sacred Flame",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sanctuary spell, cast Sanctuary",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Sanctuary",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Scorching Ray",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Scorching Ray",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Scrying",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Scrying",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Searing Smite",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Searing Smite",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "See Invisiblity",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "See Invisiblity",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Seeming spell, cast Seeming",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Seeming",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sending spell, cast Sending",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Sending",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sequester",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Sequester",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shapechange",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Shapechange",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shatter spell, cast Shatter",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Shatter",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shield spell, cast Shield",
     "value": "The shield spell creates an invisible barrier that protects the user from some physical damage.",
     "type": "spell",
     "title": "Shield",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shield of Faith",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Shield of Faith",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shillelagh",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Shillelagh",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shining Smite",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Shining Smite",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shocking Grasp",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Shocking Grasp",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Silence spell, cast Silence",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Silence",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Silent Image",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Silent Image",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Simulacrum",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Simulacrum",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sleep spell, cast Sleep",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Sleep",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sleet Storm",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Sleet Storm",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Slow spell, cast Slow",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Slow",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sorcerous Burst",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Sorcerous Burst",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Spare the Dying",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Spare the Dying",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Speak with Animals",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Speak with Animals",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Speak with Dead",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Speak with Dead",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Speak with Plants",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Speak with Plants",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Spider Climb",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Spider Climb",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Spike Growth",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Spike Growth",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Spirit Guardians",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Spirit Guardians",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -116,6 +2604,190 @@
     "value": "Creates a floating, spectral weapon that obeys the caster's commands. It can move independently and attack opponents. It can take the shape of any form of any melee weapon.",
     "type": "spell",
     "title": "Spiritual Weapon",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staggering Smite",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Staggering Smite",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Starry Wisp",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Starry Wisp",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Steel Wind Strike",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Steel Wind Strike",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stinking Cloud",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Stinking Cloud",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stone Shape",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Stone Shape",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stoneskin",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Stoneskin",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Storm of Vengeance",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Storm of Vengeance",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Suggestion spell, cast Suggestion",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Suggestion",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Abberation",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Summon Abberation",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Beast",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Summon Beast",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Celestial",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Summon Celestial",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Construct",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Summon Construct",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Dragon",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Summon Dragon",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Elemental",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Summon Elemental",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Fey",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Summon Fey",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Fiend",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Summon Fiend",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Undead",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Summon Undead",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sunbeam",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Sunbeam",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sunburst",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Sunburst",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Swift Quiver",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Swift Quiver",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Symbol spell, cast Symbol",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Symbol",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sympathy spell, cast Sympathy",
+    "value": "Spell causes the creature to be charmed and must move as close as possible to the caster.",
+    "type": "spell",
+    "title": "Sympathy",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Synaptic Static",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Synaptic Static",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -192,6 +2864,86 @@
     "useForCharacterCreation": false
   },
   {
+    "keys": "Tasha's Bubbling Cauldron",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Tasha's Bubbling Cauldron",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tasha's Hideous Laughter",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Tasha's Hideous Laughter",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Telekinesis spell, cast Telekinesis",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Telekinesis",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Telepathy spell, cast Telepathy",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Telepathy",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Teleport spell, cast Teleport",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Teleport",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Teleportation Circle",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Teleportation Circle",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tenser's Floating Disk",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Tenser's Floating Disk",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Thaumaturgy",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Thaumaturgy",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Thorn Whip",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Thorn Whip",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Thunderclap",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Thunderclap",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Thunderous Smite",
     "value": "Adds lightning damage to your attack and amplifies the attack's effectiveness.",
     "type": "spell",
@@ -208,6 +2960,102 @@
     "useForCharacterCreation": false
   },
   {
+    "keys": "Time Stop",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Time Stop",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Toll the Dead",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Toll the Dead",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tongues spell, cast Tongues",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Tongues",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Transport via Plants",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Transport via Plants",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tree Stride",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Tree Stride",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "True Polymorph",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "True Polymorph",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "True Resurrection",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "True Resurrection",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "True Seeing",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "True Seeing",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "True Strike",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "True Strike",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tsunami spell, cast Tsunami",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Tsunami",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Unseen Servant",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Unseen Servant",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Vampiric Touch",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Vampiric Touch",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Vicious Mockery",
     "value": "Insult the target with a barrage of abusive language and subtle enchantments. If it can hear you, it will receive psychic damage and will be at a disadvantage for the next attack.",
     "type": "spell",
@@ -216,10 +3064,162 @@
     "useForCharacterCreation": false
   },
   {
+    "keys": "Vitriolic Sphere",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Vitriolic Sphere",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wall of Fire",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Wall of Fire",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wall of Force",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Wall of Force",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wall of Ice",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Wall of Ice",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wall of Stone",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Wall of Stone",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wall of Thorns",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Wall of Thorns",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Warding Bond",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Warding Bond",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Water Breathing",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Water Breathing",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Water Walk",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Water Walk",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Web spell, cast Web",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Web",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Weird spell, cast Weird",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Weird",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wind Walk",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Wind Walk",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wind Wall",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Wind Wall",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wish",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Wish",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Witch Bolt",
     "value": "Creates a sustained arc of lightning between the caster and the target. It causes constant lightning damage, but requires the user to concentrate on the spell. The spell is broken when the caster is injured or loses concentration in any way.",
     "type": "spell",
     "title": "Witch Bolt",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Word of Radiance",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Word of Radiance",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Word of Recall",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Word of Recall",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wrathful Smite",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Wrathful Smite",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Yolande's Regal Presence",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Yolande's Regal Presence",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Zone of Truth",
+    "value": "Spelldescription",
+    "type": "spell",
+    "title": "Zone of Truth",
     "description": "",
     "useForCharacterCreation": false
   }
