@@ -777,7 +777,7 @@
   },
   {
     "keys": "Detect Magic",
-    "value": "Spelldescription",
+    "value": "Spell that reveals if there are magical effects around the caster in a thirty foot range.",
     "type": "spell",
     "title": "Detect Magic",
     "description": "",
@@ -785,7 +785,7 @@
   },
   {
     "keys": "Detect Poison and Disease",
-    "value": "Spelldescription",
+    "value": "Spell that detects if there are poisons or disease in the local area.",
     "type": "spell",
     "title": "Detect Poison and Disease",
     "description": "",
@@ -793,7 +793,7 @@
   },
   {
     "keys": "Detect Thoughts",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to sense creatures that have thoughts and allows the caster to read the thoughts of a single individual.",
     "type": "spell",
     "title": "Detect Thoughts",
     "description": "",
@@ -801,7 +801,7 @@
   },
   {
     "keys": "Dimension Door",
-    "value": "Spelldescription",
+    "value": "Spell that teleports the caster and one other willing target to a location in range.",
     "type": "spell",
     "title": "Dimension Door",
     "description": "",
@@ -809,7 +809,7 @@
   },
   {
     "keys": "Disguise Self",
-    "value": "Spelldescription",
+    "value": "Spell that causes the caster to appear to look like somebody else.",
     "type": "spell",
     "title": "Disguise Self",
     "description": "",
@@ -817,7 +817,7 @@
   },
   {
     "keys": "Disintegrate",
-    "value": "Spelldescription",
+    "value": "Spell that launches a green ray that causes incredible damage. If the attack kills, the target is distigrated into gray dust.",
     "type": "spell",
     "title": "Disintegrate",
     "description": "",
@@ -825,7 +825,7 @@
   },
   {
     "keys": "Dispel Evil and Good",
-    "value": "Spelldescription",
+    "value": "Spell that breaks charmed and frightened enchantments. Celestials, elementals, fey, fiends, and the undead can be dismissed back to their home planes.",
     "type": "spell",
     "title": "Dispel Evil and Good",
     "description": "",
@@ -833,7 +833,7 @@
   },
   {
     "keys": "Dispel Magic",
-    "value": "Spelldescription",
+    "value": "Spell that dispels a magical effect within 120 feet.",
     "type": "spell",
     "title": "Dispel Magic",
     "description": "",
@@ -841,7 +841,7 @@
   },
   {
     "keys": "Dissonant Whispers",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to hear a melody in their mind which causes psychic damage.",
     "type": "spell",
     "title": "Dissonant Whispers",
     "description": "",
@@ -849,7 +849,7 @@
   },
   {
     "keys": "Divination spell, cast Divination",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to ask a question of a god or god's servant.",
     "type": "spell",
     "title": "Divination",
     "description": "",
@@ -857,7 +857,7 @@
   },
   {
     "keys": "Divine Favor",
-    "value": "A prayer that calls on divinity and gives the caster divine radiance. Subsequent attacks will cause radiant damage.",
+    "value": "Spell that calls on divinity and gives the caster divine radiance. Subsequent attacks will cause radiant damage.",
     "type": "spell",
     "title": "Divine Favor",
     "description": "",
@@ -865,7 +865,7 @@
   },
   {
     "keys": "Divine Smite",
-    "value": "Spelldescription",
+    "value": "Spell that adds radiant damage to an attack.",
     "type": "spell",
     "title": "Divine Smite",
     "description": "",
@@ -873,7 +873,7 @@
   },
   {
     "keys": "Divine Word",
-    "value": "Spelldescription",
+    "value": "Spell that causes a random effect including the death of the target and blindness, deafness, stunned conditions",
     "type": "spell",
     "title": "Divine Word",
     "description": "",
@@ -881,7 +881,7 @@
   },
   {
     "keys": "Dominate Beast",
-    "value": "Spelldescription",
+    "value": "Spell that has a chance of controlling a beast and commanding it to do the caster's will.",
     "type": "spell",
     "title": "Dominate Beast",
     "description": "",
@@ -889,7 +889,7 @@
   },
   {
     "keys": "Dominate Monster",
-    "value": "Spelldescription",
+    "value": "Spell that has a chance of controlling a creature and commanding it to do the caster's will.",
     "type": "spell",
     "title": "Dominate Monster",
     "description": "",
@@ -897,7 +897,7 @@
   },
   {
     "keys": "Dominate Person",
-    "value": "Spelldescription",
+    "value": "Spell that has a chance of controlling a humonoid and commanding it to do the caster's will.",
     "type": "spell",
     "title": "Dominate Person",
     "description": "",
@@ -905,7 +905,7 @@
   },
   {
     "keys": "Dragon's Breath",
-    "value": "Spelldescription",
+    "value": "Spell that grants the target that the caster can touch the ability to breathe fire.",
     "type": "spell",
     "title": "Dragon's Breath",
     "description": "",
@@ -913,7 +913,7 @@
   },
   {
     "keys": "Drawmij's Instant Summons",
-    "value": "Spelldescription",
+    "value": "Spell that consumes an expensive saphire that will summon a marked object to the caster's hand.",
     "type": "spell",
     "title": "Drawmij's Instant Summons",
     "description": "",
@@ -921,7 +921,7 @@
   },
   {
     "keys": "Dream spell, cast Dream",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target and a designated dream messenger to enter a trance. They can enter the dreams of a target or make it a nightmare that causes psychic damage.",
     "type": "spell",
     "title": "Dream",
     "description": "",
@@ -929,7 +929,7 @@
   },
   {
     "keys": "Druidcraft",
-    "value": "Allows the caster to predict the weather, make plants bloom, or create a harmless sensory effect like a puff of wind or the smell of a dead animal.",
+    "value": "Spell that allows the caster to predict the weather, make plants bloom, or create a harmless sensory effect like a puff of wind or the smell of a dead animal.",
     "type": "spell",
     "title": "Druidcraft",
     "description": "",
@@ -937,7 +937,7 @@
   },
   {
     "keys": "Earthquake",
-    "value": "Spelldescription",
+    "value": "Spell that creates tremors and rips the ground apart. It topples structures and creates fissures where creatures can fall in.",
     "type": "spell",
     "title": "Earthquake",
     "description": "",
@@ -945,7 +945,7 @@
   },
   {
     "keys": "Eldritch Blast",
-    "value": "Casts a beam of pure energy at a creature, causing magical force damage.",
+    "value": "Spell that casts a beam of pure energy at a creature, causing magical force damage.",
     "type": "spell",
     "title": "Eldritch Eldritch Blast",
     "description": "",
@@ -953,7 +953,7 @@
   },
   {
     "keys": "Elementalism",
-    "value": "Spelldescription",
+    "value": "Spell that creates an elemental effect such as a breeze, dust, embers, mist. It can also shape elements into a figure that fits in a one foot cube.",
     "type": "spell",
     "title": "Elementalism",
     "description": "",
@@ -961,7 +961,7 @@
   },
   {
     "keys": "Elemental Weapon",
-    "value": "Spelldescription",
+    "value": "Spell that causes a weapon touched by the caster to cause magical damage: acid, cold, fire, lightning, or thunder.",
     "type": "spell",
     "title": "Elemental Weapon",
     "description": "",
@@ -969,7 +969,7 @@
   },
   {
     "keys": "Enhance Ability",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to have increased ability with Strength, Dexterity, Intelligence, Wisdom, or Charisma.",
     "type": "spell",
     "title": "Enhance Ability",
     "description": "",
@@ -977,7 +977,7 @@
   },
   {
     "keys": "Enlarge spell, cast Enlarge",
-    "value": "Spelldescription",
+    "value": "Spell that increases the size of the target making them harder to move and increases their damage.",
     "type": "spell",
     "title": "Enlarge",
     "description": "",
@@ -985,7 +985,7 @@
   },
   {
     "keys": "Ensnaring Strike",
-    "value": "Spelldescription",
+    "value": "Spell that creates grasping vines around the target when it is hit with an attack that restrains the target.",
     "type": "spell",
     "title": "Ensnaring Strike",
     "description": "",
@@ -993,7 +993,7 @@
   },
   {
     "keys": "Entangle spell, cast Entangle",
-    "value": "Spelldescription",
+    "value": "Spell that creates grasping plants on the ground. They are hard to traverse and any targets in the area are restrained.",
     "type": "spell",
     "title": "Entangle",
     "description": "",
@@ -1001,7 +1001,7 @@
   },
   {
     "keys": "Enthrall",
-    "value": "Spelldescription",
+    "value": "Spell that implements a distracting string of words. They cause targets unable to perceive things well.",
     "type": "spell",
     "title": "Enthrall",
     "description": "",
@@ -1009,7 +1009,7 @@
   },
   {
     "keys": "Etherealness",
-    "value": "Spelldescription",
+    "value": "Spell that causes the caster to enter the Ethereal Plane. The caster can move in any direction. When the spell is ended, they are brought back in their new location.",
     "type": "spell",
     "title": "Etherealness",
     "description": "",
@@ -1017,7 +1017,7 @@
   },
   {
     "keys": "Evard's Black Tentacles",
-    "value": "Spelldescription",
+    "value": "Spell that creates squirming tentacles in a twenty foot square. These restrain and damage enemies in its area.",
     "type": "spell",
     "title": "Evard's Black Tentacles",
     "description": "",
@@ -1025,7 +1025,7 @@
   },
   {
     "keys": "Expeditious Retreat",
-    "value": "Spelldescription",
+    "value": "Spell that can double the caster's dash distance.",
     "type": "spell",
     "title": "Expeditious Retreat",
     "description": "",
@@ -1033,7 +1033,7 @@
   },
   {
     "keys": "Eyebite",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to sleep, panic, or feel sick. The caster can continue to target other creatures until the spell ends.",
     "type": "spell",
     "title": "Eyebite",
     "description": "",
@@ -1041,7 +1041,7 @@
   },
   {
     "keys": "Fabricate spell, cast Fabricate",
-    "value": "Spelldescription",
+    "value": "Spell that can transform raw materials into a product such as ladders, ropes, clothes so long as they are not complicated.",
     "type": "spell",
     "title": "Fabricate",
     "description": "",
@@ -1049,7 +1049,7 @@
   },
   {
     "keys": "Faerie Fire",
-    "value": "Spelldescription",
+    "value": "Spell that creates a magical outline around any creatures in its area. They give off a dim light and cannot benefit from invisibility.",
     "type": "spell",
     "title": "Faerie Fire",
     "description": "",
@@ -1057,7 +1057,7 @@
   },
   {
     "keys": "False Life",
-    "value": "Spelldescription",
+    "value": "Adds temporary health to the target.",
     "type": "spell",
     "title": "False Life",
     "description": "",
@@ -1065,7 +1065,7 @@
   },
   {
     "keys": "Fear spell, cast Fear",
-    "value": "Spelldescription",
+    "value": "Spell that causes targets in a thirty foot cone to become frightened. They dash away at the sight of you.",
     "type": "spell",
     "title": "Fear",
     "description": "",
@@ -1073,7 +1073,7 @@
   },
   {
     "keys": "Feather Fall",
-    "value": "Spelldescription",
+    "value": "Reactionary spell that prevents a target from taking fall damage. They lightly fall to the ground.",
     "type": "spell",
     "title": "Feather Fall",
     "description": "",
@@ -1081,7 +1081,7 @@
   },
   {
     "keys": "Feign Death",
-    "value": "Spelldescription",
+    "value": "Spell that causes a willing target to appear dead to others for up to an hour. They have resistance to all damage.",
     "type": "spell",
     "title": "Feign Death",
     "description": "",
@@ -1089,7 +1089,7 @@
   },
   {
     "keys": "Find Familiar",
-    "value": "Spelldescription",
+    "value": "Spell that spawns a spirit animal that you have a telepathic connection to. It cannot attack, but can do other actions. Only one familiar at a time.",
     "type": "spell",
     "title": "Find Familiar",
     "description": "",
@@ -1097,7 +1097,7 @@
   },
   {
     "keys": "Find Steed",
-    "value": "Spelldescription",
+    "value": "Spawns a large, rideable spirit animal that can attack, heal others, teleport, frighten enemies, and move quickly.",
     "type": "spell",
     "title": "Find Steed",
     "description": "",
@@ -1105,7 +1105,7 @@
   },
   {
     "keys": "Find the Path",
-    "value": "Spelldescription",
+    "value": "Spell that magically finds the direct route to a location of the caster's choosing.",
     "type": "spell",
     "title": "Find the Path",
     "description": "",
@@ -1113,7 +1113,7 @@
   },
   {
     "keys": "Find Traps",
-    "value": "Spelldescription",
+    "value": "Spell that detects the presence of traps within the line of sight. It reveals that a trap is present, but not where it is.",
     "type": "spell",
     "title": "Find Traps",
     "description": "",
@@ -1121,7 +1121,7 @@
   },
   {
     "keys": "Finger of Death",
-    "value": "Spelldescription",
+    "value": "Spell that causes massive damage to a target that the caster can touch. If the touch kills, that target becomes a zombie.",
     "type": "spell",
     "title": "Finger of Death",
     "description": "",
@@ -1129,7 +1129,7 @@
   },
   {
     "keys": "Fireball",
-    "value": "Spelldescription",
+    "value": "Spell that creates a bright streak which explodes on collision with a target. It causes fire damage in a twenty foot radius.",
     "type": "spell",
     "title": "Fireball",
     "description": "",
@@ -1137,7 +1137,7 @@
   },
   {
     "keys": "Fire Bolt",
-    "value": "Summons a mote of fire and casts it at a creature within range. It causes a moderate amount of fire damage.",
+    "value": "Spell that summons a mote of fire and casts it at a creature within range. It causes a moderate amount of fire damage.",
     "type": "spell",
     "title": "Fire Bolt",
     "description": "",
