@@ -1145,7 +1145,7 @@
   },
   {
     "keys": "Fire Shield",
-    "value": "Spelldescription",
+    "value": "Spell that causes magical flames to protect the caster's body protecting from either cold or fire damage.",
     "type": "spell",
     "title": "Fire Shield",
     "description": "",
@@ -1153,7 +1153,7 @@
   },
   {
     "keys": "Fire Storm",
-    "value": "Spelldescription",
+    "value": "Spell that summons a fire storm that causes fire damage to creatures in an area of 100 feet.",
     "type": "spell",
     "title": "Fire Storm",
     "description": "",
@@ -1161,7 +1161,7 @@
   },
   {
     "keys": "Flame Blade",
-    "value": "Spelldescription",
+    "value": "Spell that creates a fire blade in the caster's hand. It allows melee attacks that cause fire damage.",
     "type": "spell",
     "title": "Flame Blade",
     "description": "",
@@ -1169,7 +1169,7 @@
   },
   {
     "keys": "Flame Strike",
-    "value": "Spelldescription",
+    "value": "Spell that summons a column of fire roaring down from above which causes radiant and fire damage.",
     "type": "spell",
     "title": "Flame Strike",
     "description": "",
@@ -1177,7 +1177,7 @@
   },
   {
     "keys": "Flaming Sphere",
-    "value": "Spelldescription",
+    "value": "Spell that summons a sphere that causes fire damage to any creatures next to it. The sphere can be commanded to move by the caster.",
     "type": "spell",
     "title": "Flaming Sphere",
     "description": "",
@@ -1185,7 +1185,7 @@
   },
   {
     "keys": "Flesh to Stone",
-    "value": "Spelldescription",
+    "value": "Spell that causes a target to turn to stone if they fail to will themselves away from its effects.",
     "type": "spell",
     "title": "Flesh to Stone",
     "description": "",
@@ -1193,7 +1193,7 @@
   },
   {
     "keys": "Fly spell, cast Fly",
-    "value": "Spelldescription",
+    "value": "Spell that allows the target to fly for a period of time.",
     "type": "spell",
     "title": "Fly",
     "description": "",
@@ -1201,7 +1201,7 @@
   },
   {
     "keys": "Fog Cloud",
-    "value": "Spelldescription",
+    "value": "Spell that creates a twentyh foot sphere of fog which obstructs view through it.",
     "type": "spell",
     "title": "Fog Cloud",
     "description": "",
@@ -1209,7 +1209,7 @@
   },
   {
     "keys": "Forbiddance",
-    "value": "Spelldescription",
+    "value": "Spell that prevents the magical use of telportation or portals within 40,000 square feet. It also damage aberrations, celestials, elementals, fey, fiends, and the undead.",
     "type": "spell",
     "title": "Forbiddance",
     "description": "",
@@ -1217,7 +1217,7 @@
   },
   {
     "keys": "Forcecage",
-    "value": "Spelldescription",
+    "value": "Spell that creates an invisible cube as a prison around a target.",
     "type": "spell",
     "title": "Forcecage",
     "description": "",
@@ -1225,7 +1225,7 @@
   },
   {
     "keys": "Foresight",
-    "value": "Spelldescription",
+    "value": "Spell that gives the target the ability to see into the immediate future, giving an advantage to attacks and defense.",
     "type": "spell",
     "title": "Foresight",
     "description": "",
@@ -1233,7 +1233,7 @@
   },
   {
     "keys": "Fount of Moonlight",
-    "value": "Spelldescription",
+    "value": "Spell that causes the caster to emit bright light which causes attacks to have extra radiant damage. The caster is also resistant to radiant damage.",
     "type": "spell",
     "title": "Fount of Moonlight",
     "description": "",
@@ -1241,7 +1241,7 @@
   },
   {
     "keys": "Freedom of Movement",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to be able to deftly move over difficult terrain.",
     "type": "spell",
     "title": "Freedom of Movement",
     "description": "",
@@ -1249,7 +1249,7 @@
   },
   {
     "keys": "Friends",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to be charmed. They are more likely to agree with the caster's requests, however they will know that they were charmed after the spell completes.",
     "type": "spell",
     "title": "Friends",
     "description": "",
@@ -1257,7 +1257,7 @@
   },
   {
     "keys": "Gaseous Form",
-    "value": "Spelldescription",
+    "value": "Spell that transforms the caster or a willing target into a gaseous form that can fly and has resistance to physical damage.",
     "type": "spell",
     "title": "Gaseous Form",
     "description": "",
@@ -1265,7 +1265,7 @@
   },
   {
     "keys": "Gate spell, cast Gate",
-    "value": "Spelldescription",
+    "value": "Spell that creates a portal that links a position the caster can see to another plane of existence. It can be used to summon a specific creature if its name is known.",
     "type": "spell",
     "title": "Gate",
     "description": "",
@@ -1273,7 +1273,7 @@
   },
   {
     "keys": "Geas",
-    "value": "Spelldescription",
+    "value": "Spell that charms a target and asks them to follow a verbal command.",
     "type": "spell",
     "title": "Geas",
     "description": "",
@@ -1281,7 +1281,7 @@
   },
   {
     "keys": "Gentle Repose",
-    "value": "Spelldescription",
+    "value": "Spell that prevents a corpse from becoming undead and makes it not decay.",
     "type": "spell",
     "title": "Gentle Repose",
     "description": "",
@@ -1289,7 +1289,7 @@
   },
   {
     "keys": "Giant Insect",
-    "value": "Spelldescription",
+    "value": "Spell that summons a giant centipede, spider, or wasp that follows your commands.",
     "type": "spell",
     "title": "Giant Insect",
     "description": "",
@@ -1297,7 +1297,7 @@
   },
   {
     "keys": "Glibness",
-    "value": "Spelldescription",
+    "value": "Spell that makes it appear that you are telling the truth even when magical means are used to detect lies.",
     "type": "spell",
     "title": "Glibness",
     "description": "",
@@ -1305,7 +1305,7 @@
   },
   {
     "keys": "Globe of Invulnerability",
-    "value": "Spelldescription",
+    "value": "Spell that creates an impenetrable shell that prevents spells from affecting any targets inside it.",
     "type": "spell",
     "title": "Globe of Invulnerability",
     "description": "",
@@ -1313,7 +1313,7 @@
   },
   {
     "keys": "Glyph of Warding",
-    "value": "Spelldescription",
+    "value": "Spell that allows you to inscribe a glyph that explodes or casts a spell based on a trigger specified by the caster.",
     "type": "spell",
     "title": "Glyph of Warding",
     "description": "",
@@ -1321,7 +1321,7 @@
   },
   {
     "keys": "Goodberry spell, cast Goodberry",
-    "value": "Spelldescription",
+    "value": "Spell that creates berries that provide enough nourishment for the entire day.",
     "type": "spell",
     "title": "Goodberry",
     "description": "",
@@ -1329,7 +1329,7 @@
   },
   {
     "keys": "Grasping Vine",
-    "value": "Spelldescription",
+    "value": "Spell that creates a magical vine that can do melee attacks and grapple enemies",
     "type": "spell",
     "title": "Grasping Vine",
     "description": "",
@@ -1337,7 +1337,7 @@
   },
   {
     "keys": "Grease",
-    "value": "Spelldescription",
+    "value": "Spell that covers the ground with a nonflammable grease that can cause creatures to fall over prone.",
     "type": "spell",
     "title": "Grease",
     "description": "",
@@ -1345,7 +1345,7 @@
   },
   {
     "keys": "Greater Invisibility",
-    "value": "Spelldescription",
+    "value": "Spell that allows a target that can be touched to become invisible. This invisibility is not disenchanted when the target takes actions.",
     "type": "spell",
     "title": "Greater Invisibility",
     "description": "",
@@ -1353,7 +1353,7 @@
   },
   {
     "keys": "Greater Restoration",
-    "value": "Spelldescription",
+    "value": "Spell that removes exhaustion, curses, reduction to health or ability, charmed and petrified conditions.",
     "type": "spell",
     "title": "Greater Restoration",
     "description": "",
@@ -1361,7 +1361,7 @@
   },
   {
     "keys": "Guardian of Faith",
-    "value": "Spelldescription",
+    "value": "Spell that summons a large, spectral guardian that hovers in a space. Any enemies that move within this space are attacked with radiant damage.",
     "type": "spell",
     "title": "Guardian of Faith",
     "description": "",
@@ -1369,7 +1369,7 @@
   },
   {
     "keys": "Guards and Wards",
-    "value": "Spelldescription",
+    "value": "Spell that that fills corridors with fog, doors with with arcane locks, stairs filled with spider webs, and another magical affect including gust, stinking cloud, dancing lights, suggestion, or magic mouth.",
     "type": "spell",
     "title": "Guards and Wards",
     "description": "",
@@ -1377,7 +1377,7 @@
   },
   {
     "keys": "Guidance",
-    "value": "Spelldescription",
+    "value": "Spell that adds a higher probability of success to any ability check.",
     "type": "spell",
     "title": "Guidance",
     "description": "",
@@ -1385,7 +1385,7 @@
   },
   {
     "keys": "Guiding Bolt",
-    "value": "Spelldescription",
+    "value": "Spell that casts a bolt of light at a creature that causes radiant damage. The next attack against this creature has advantage.",
     "type": "spell",
     "title": "Guiding Bolt",
     "description": "",
@@ -1393,7 +1393,7 @@
   },
   {
     "keys": "Gust of Wind",
-    "value": "Spelldescription",
+    "value": "Spell that creates a continuous line of strong wind that can push creatures.",
     "type": "spell",
     "title": "Gust of Wind",
     "description": "",
@@ -1401,7 +1401,7 @@
   },
   {
     "keys": "Hail of Thorns",
-    "value": "Spelldescription",
+    "value": "Spell that is triggered after hitting an enemy with a ranged attack. Targets within 5 feet take piercing damage from a rain of thorns.",
     "type": "spell",
     "title": "Hail of Thorns",
     "description": "",
@@ -1409,7 +1409,7 @@
   },
   {
     "keys": "Hallow spell, cast Hallow",
-    "value": "Spelldescription",
+    "value": "Spell that prevents a choice of aberration, celestial, elemental, fey, fiend, or undead from entering the space. It can also create courage, darkness, daylight, peaceful rest, extradimensional interference, fear, resistance, silence, tongues, or vulnerability.",
     "type": "spell",
     "title": "Hallow",
     "description": "",
@@ -1417,7 +1417,7 @@
   },
   {
     "keys": "Hallucinatory Terrain",
-    "value": "Spelldescription",
+    "value": "Spell that makes terrain look like other terrain such as swamps, hills, crevasses, and difficult/impassible terrain.",
     "type": "spell",
     "title": "Hallucinatory Terrain",
     "description": "",
@@ -1425,7 +1425,7 @@
   },
   {
     "keys": "Harm spell, cast Harm",
-    "value": "Spelldescription",
+    "value": "Spell that causes necrotic damage on a target that can be seen.",
     "type": "spell",
     "title": "Harm",
     "description": "",
@@ -1433,7 +1433,7 @@
   },
   {
     "keys": "Haste spell, cast Haste",
-    "value": "Spelldescription",
+    "value": "Spell that causes a willing target to gain additional defense, become more dextrous, and gains an additional action every turn. When it is dispelled, the target becomes lethargic and must take a turn to recover.",
     "type": "spell",
     "title": "Haste",
     "description": "",
@@ -1441,7 +1441,7 @@
   },
   {
     "keys": "Heal spell, cast Heal",
-    "value": "Spelldescription",
+    "value": "Spell that heals the target by a significant amount. They are also cured of blinded, deafened, and poisoned conditions.",
     "type": "spell",
     "title": "Heal",
     "description": "",
@@ -1449,7 +1449,7 @@
   },
   {
     "keys": "Healing Word spell, cast Healing Word",
-    "value": "Heal a creature within range.",
+    "value": "Spell that heals a creature within visible range.",
     "type": "spell",
     "title": "Healing Word",
     "description": "",
@@ -1457,7 +1457,7 @@
   },
   {
     "keys": "Heat Metal",
-    "value": "Spelldescription",
+    "value": "Spell that causes a metal object to heat up and cause fire damage to the creature utilizing it.",
     "type": "spell",
     "title": "Heat Metal",
     "description": "",
@@ -1465,7 +1465,7 @@
   },
   {
     "keys": "Hellish Rebuke",
-    "value": "Spelldescription",
+    "value": "Spell that is cast as a reaction to taking damage. The target takes fire damage from green flames.",
     "type": "spell",
     "title": "Hellish Rebuke",
     "description": "",
@@ -1473,7 +1473,7 @@
   },
   {
     "keys": "Heroes' Feast",
-    "value": "Spelldescription",
+    "value": "Spell that magically conjures a feast that allows anyone who eats from it to have resistance to poison damage and cannot be frightened or poisoned.",
     "type": "spell",
     "title": "Heroe's Feast",
     "description": "",
@@ -1481,7 +1481,7 @@
   },
   {
     "keys": "Heroism spell, cast Heroism",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to not be frightened. It also adds temporary health.",
     "type": "spell",
     "title": "Heroism",
     "description": "",
@@ -1489,7 +1489,7 @@
   },
   {
     "keys": "Hex spell, cast Hex",
-    "value": "Spelldescription",
+    "value": "Spell that causes necrotic damage whenever the target is hit by an attack. It also has a disadvantage in a specified ability.",
     "type": "spell",
     "title": "Hex",
     "description": "",
@@ -1497,7 +1497,7 @@
   },
   {
     "keys": "Hold Monster",
-    "value": "Spelldescription",
+    "value": "Spell that can paralyze a monster for a duration.",
     "type": "spell",
     "title": "Hold Monster",
     "description": "",
@@ -1505,7 +1505,7 @@
   },
   {
     "keys": "Hold Person",
-    "value": "Spelldescription",
+    "value": "Spell that can paralyze a person for a duration.",
     "type": "spell",
     "title": "Hold Person",
     "description": "",
@@ -1513,7 +1513,7 @@
   },
   {
     "keys": "Holy Aura",
-    "value": "Spelldescription",
+    "value": "Spell that creates an emanation where allies within it gain advantage. Any fiends or undead that attack may become blinded.",
     "type": "spell",
     "title": "Holy Aura",
     "description": "",
@@ -1521,7 +1521,7 @@
   },
   {
     "keys": "Hunger of Hadar",
-    "value": "Spelldescription",
+    "value": "Spell that creates an opening to another realm that is infested with unspeakable horrors. This darkness inflicts cold damage to anyone within in it and causes them to be blind.",
     "type": "spell",
     "title": "Hunger of Hadar",
     "description": "",
@@ -1529,7 +1529,7 @@
   },
   {
     "keys": "Hunter's Mark",
-    "value": "Spelldescription",
+    "value": "Spell that magically marks a creature. This causes extra force damage to the enemy when it is attacked by the caster and makes it easier to locate this creature.",
     "type": "spell",
     "title": "Hunter's Mark",
     "description": "",
@@ -1537,7 +1537,7 @@
   },
   {
     "keys": "Hypnotic Pattern",
-    "value": "Spelldescription",
+    "value": "Spell that creates a pattern of colors that charms and incapacitates creatures that can see it.",
     "type": "spell",
     "title": "Hypnotic Pattern",
     "description": "",
@@ -1545,7 +1545,7 @@
   },
   {
     "keys": "Ice Knife",
-    "value": "Spelldescription",
+    "value": "Spell that creates a shard of ice that is flinged at a target. The target takes piercing damage. The shard explodes and causes additional damage.",
     "type": "spell",
     "title": "Ice Knife",
     "description": "",
@@ -1553,7 +1553,7 @@
   },
   {
     "keys": "Ice Storm",
-    "value": "Spelldescription",
+    "value": "Spell that creates hail which causes bludgeoning damage to enemies.",
     "type": "spell",
     "title": "Ice Storm",
     "description": "",
@@ -1561,7 +1561,7 @@
   },
   {
     "keys": "Identify spell, cast Identify",
-    "value": "Spelldescription",
+    "value": "Spell that determines the nature of a magical object. It can also determine what spells are affecting a target.",
     "type": "spell",
     "title": "Identify",
     "description": "",
@@ -1569,7 +1569,7 @@
   },
   {
     "keys": "Illusory Script",
-    "value": "Spelldescription",
+    "value": "Spell that makes the caster's writing on any sort of writing material to appear non-sensical to others except whoever the caster has designated.",
     "type": "spell",
     "title": "Illusory Script",
     "description": "",
@@ -1577,7 +1577,7 @@
   },
   {
     "keys": "Imprisonment spell, cast Imprisonment",
-    "value": "Spelldescription",
+    "value": "Spell that creates magical restraints that hold a a target. The target can be buried, chained, or held in a demiplane/gemstone. It can also be put into a magical slumber.",
     "type": "spell",
     "title": "Imprisonment",
     "description": "",
@@ -1585,7 +1585,7 @@
   },
   {
     "keys": "Incendiary Cloud",
-    "value": "Spelldescription",
+    "value": "Spell that creates a swirling cloud of embers and smoke. It cannot be seen through and causes fire damage to creatures inside its space.",
     "type": "spell",
     "title": "Incendiary Cloud",
     "description": "",
@@ -1593,7 +1593,7 @@
   },
   {
     "keys": "Inflict Wounds",
-    "value": "Spelldescription",
+    "value": "Spell that causes minor necrotic damage.",
     "type": "spell",
     "title": "Inflict Wounds",
     "description": "",
@@ -1601,7 +1601,7 @@
   },
   {
     "keys": "Insect Plague",
-    "value": "Spelldescription",
+    "value": "Spell that creates a swarm of locusts that causes piercing damage to creatures that are in range.",
     "type": "spell",
     "title": "Insect Plague",
     "description": "",
@@ -1609,7 +1609,7 @@
   },
   {
     "keys": "Invisibility spell, cast Invisibility",
-    "value": "Spelldescription",
+    "value": "Spell that causes a willing target to become invisible. The spell ends if the target attacks or casts a spell.",
     "type": "spell",
     "title": "Invisibility",
     "description": "",
@@ -1617,7 +1617,7 @@
   },
   {
     "keys": "Jallarzi's Storm of Radiance",
-    "value": "Spelldescription",
+    "value": "Spell that creates a storm of thunder and flashing light. Creatures in this area are blinded and deafened and can't speak. They take radiant damage.",
     "type": "spell",
     "title": "Jallarzi's Storm of Radiance",
     "description": "",
@@ -1625,7 +1625,7 @@
   },
   {
     "keys": "Jump spell, cast Jump",
-    "value": "Spelldescription",
+    "value": "Spell that causes a willing target to be able to jump up to thirty feet.",
     "type": "spell",
     "title": "Jump",
     "description": "",
@@ -1633,7 +1633,7 @@
   },
   {
     "keys": "Knock",
-    "value": "Spelldescription",
+    "value": "Spell that unlocks any mundane or magical locks.",
     "type": "spell",
     "title": "Knock",
     "description": "",
@@ -1641,7 +1641,7 @@
   },
   {
     "keys": "Legend Lore",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to describe or name a popular person, place, or object. The caster then learns sinificant lore about that thing.",
     "type": "spell",
     "title": "Legend Lore",
     "description": "",
@@ -1649,7 +1649,7 @@
   },
   {
     "keys": "Leomund's Secret Chest",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to hide a chest in the ethereal plane. It can be recalled by touching the tiny replica of the chest.",
     "type": "spell",
     "title": "Leomund's Secret Chest",
     "description": "",
@@ -1657,7 +1657,7 @@
   },
   {
     "keys": "Leomund's Tiny Hut",
-    "value": "Spelldescription",
+    "value": "Spell that bars any creatures outside of its emanation from entering. Inside is dry and comfortable and can't be seen through from the outside.",
     "type": "spell",
     "title": "Leomund's Tiny Hut",
     "description": "",
@@ -1665,7 +1665,7 @@
   },
   {
     "keys": "Lesser Restoration",
-    "value": "Spelldescription",
+    "value": "Spell that ends blinded, deafened, paralyzed, or poisoned conditions.",
     "type": "spell",
     "title": "Lesser Restoration",
     "description": "",
@@ -1673,7 +1673,7 @@
   },
   {
     "keys": "Levitate spell, cast Levitate",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to rise up twenty feet and stay there. The caster can then make the target rise up by twenty feet each turn.",
     "type": "spell",
     "title": "Levitate",
     "description": "",
@@ -1681,7 +1681,7 @@
   },
   {
     "keys": "Light spell, cast Light",
-    "value": "Spelldescription",
+    "value": "Spell that causes an object to emit bright light in a twenty foot radius",
     "type": "spell",
     "title": "Light",
     "description": "",
@@ -1689,7 +1689,7 @@
   },
   {
     "keys": "Lightning Arrow",
-    "value": "Spelldescription",
+    "value": "Spell that transforms the ammunition of a ranged attack that just happened into a lightning bolt. It causes lightning damage.",
     "type": "spell",
     "title": "Lightning Arrow",
     "description": "",
@@ -1697,7 +1697,7 @@
   },
   {
     "keys": "Lightning Bolt",
-    "value": "Spelldescription",
+    "value": "Spell that blasts a line of lightning damage from the caster.",
     "type": "spell",
     "title": "Lightning Bolt",
     "description": "",
@@ -1705,7 +1705,7 @@
   },
   {
     "keys": "Locate Animals or Plants",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to describe a beast or plant. The caster then learns the direction and distance to the closest creature or plant of that kind.",
     "type": "spell",
     "title": "Locate Animals or Plants",
     "description": "",
@@ -1713,7 +1713,7 @@
   },
   {
     "keys": "Locate Creature",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to describe or name a creature. The caster then learns the location of the target or the closest creature that matches that description.",
     "type": "spell",
     "title": "Locate Creature",
     "description": "",
@@ -1721,7 +1721,7 @@
   },
   {
     "keys": "Locate Object",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to describe an object. The caster will sense the location of an object of that description if it's within one thousand feet.",
     "type": "spell",
     "title": "Locate Object",
     "description": "",
@@ -1729,7 +1729,7 @@
   },
   {
     "keys": "Longstrider",
-    "value": "Spelldescription",
+    "value": "Spell that increases the speed of a target that is touched.",
     "type": "spell",
     "title": "Longstrider",
     "description": "",
@@ -1737,7 +1737,7 @@
   },
   {
     "keys": "Mage Armor",
-    "value": "Spelldescription",
+    "value": "Spell that increases the defense of the touched target. This is only applicable if they are not already wearing armor.",
     "type": "spell",
     "title": "Mage Armor",
     "description": "",
@@ -1745,7 +1745,7 @@
   },
   {
     "keys": "Mage Hand",
-    "value": "Creates an ethereal hand within range that will obey the commands of its caster. It must remain within range or it will disappear.",
+    "value": "Spell that creates an ethereal hand within range that will obey the commands of its caster. It must remain within range or it will disappear.",
     "type": "spell",
     "title": "Mage Hand",
     "description": "",
@@ -1753,7 +1753,7 @@
   },
   {
     "keys": "Magic Circle",
-    "value": "Spelldescription",
+    "value": "Spell that creates a cylinder of magical energy. It may either block entry of creatures, the creatures inside are more susceptible to damage, or the creatures within cannot be frightened, charmed, or possessed.",
     "type": "spell",
     "title": "Magic Circle",
     "description": "",
@@ -1761,7 +1761,7 @@
   },
   {
     "keys": "Magic Jar",
-    "value": "Spelldescription",
+    "value": "Spell that sends the caster's soul into a a container, leaving the caster's body in a catatonic state. The caster can then attempt to posess a humanoid body within 100 feet or return to their body.",
     "type": "spell",
     "title": "Magic Jar",
     "description": "",
@@ -1769,7 +1769,7 @@
   },
   {
     "keys": "Magic Missile",
-    "value": "Summon a number of darts comprised of pure magical force that can each target a creature that you can see within range, striking all at once.",
+    "value": "Spell that summons a number of darts comprised of pure magical force that can each target a creature that the caster can see within range, striking all at once.",
     "type": "spell",
     "title": "Magic Missile",
     "description": "",
@@ -1777,7 +1777,7 @@
   },
   {
     "keys": "Magic Mouth",
-    "value": "Spelldescription",
+    "value": "Spell that implants a message into an object. When triggered, the mouth will speak the message.",
     "type": "spell",
     "title": "Magic Mouth",
     "description": "",
@@ -1785,7 +1785,7 @@
   },
   {
     "keys": "Magic Weapon",
-    "value": "Spelldescription",
+    "value": "Spell that enchants a nonmagical weapon into becoming magical. It has a bonus to accuracy and damage.",
     "type": "spell",
     "title": "Magic Weapon",
     "description": "",
@@ -1793,7 +1793,7 @@
   },
   {
     "keys": "Major Image",
-    "value": "Spelldescription",
+    "value": "Illusion spell that creates an image of an object, creature, or some visible phenomenon. It can be moved and appear naturally. Physical interaction will reveal that it is an illusion.",
     "type": "spell",
     "title": "Major Image",
     "description": "",
@@ -1801,7 +1801,7 @@
   },
   {
     "keys": "Mass Cure Wounds",
-    "value": "Spelldescription",
+    "value": "Spell that sends a wave of healing energy over six creatures.",
     "type": "spell",
     "title": "Mass Cure Wounds",
     "description": "",
@@ -1809,7 +1809,7 @@
   },
   {
     "keys": "Mass Heal",
-    "value": "Spelldescription",
+    "value": "Spell that sends a massive flood of healing energy into everyone around you.",
     "type": "spell",
     "title": "Mass Heal",
     "description": "",
@@ -1817,7 +1817,7 @@
   },
   {
     "keys": "Mass Healing Word",
-    "value": "Heals up to six creatures, including yourself, within a given range.",
+    "value": "Spell that heals up to six creatures, including the caster, within a given range.",
     "type": "spell",
     "title": "Mass Healing Word",
     "description": "",
@@ -1825,7 +1825,7 @@
   },
   {
     "keys": "Mass Suggestion",
-    "value": "Spelldescription",
+    "value": "Spell that causes up to twelve creatures to follow your command in 25 words or less.",
     "type": "spell",
     "title": "Mass Suggestion",
     "description": "",
@@ -1833,7 +1833,7 @@
   },
   {
     "keys": "Maze spell, cast Maze",
-    "value": "Spelldescription",
+    "value": "Spell that sends a creature into a demiplane that consists of a maze. They are forced to figure out how to escape it.",
     "type": "spell",
     "title": "Maze",
     "description": "",
@@ -1841,7 +1841,7 @@
   },
   {
     "keys": "Meld into Stone",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to meld into stone, making the caster undectable.",
     "type": "spell",
     "title": "Meld into Stone",
     "description": "",
@@ -1849,7 +1849,7 @@
   },
   {
     "keys": "Melf's Acid Arrow",
-    "value": "Spelldescription",
+    "value": "Spell that spawns an arrow made of acid that is launched at a target.",
     "type": "spell",
     "title": "Melf's Acid Arrow",
     "description": "",
@@ -1857,7 +1857,7 @@
   },
   {
     "keys": "Mending spell, cast Mending",
-    "value": "Spelldescription",
+    "value": "Spell that repairs a simple break or tear in an item.",
     "type": "spell",
     "title": "Mending",
     "description": "",
@@ -1865,7 +1865,7 @@
   },
   {
     "keys": "Message",
-    "value": "Spelldescription",
+    "value": "Spell that magically sends a whispered message to a target. The target can respond.",
     "type": "spell",
     "title": "Message",
     "description": "",
@@ -1873,7 +1873,7 @@
   },
   {
     "keys": "Meteor Storm",
-    "value": "Spelldescription",
+    "value": "Spell that sends explosive orbs down that cause fire and bludgeoning damage.",
     "type": "spell",
     "title": "Meteor Storm",
     "description": "",
@@ -1881,7 +1881,7 @@
   },
   {
     "keys": "Mind Blank",
-    "value": "Spelldescription",
+    "value": "Spell that grants the target immunity to psychic damage and cannot be charmed.",
     "type": "spell",
     "title": "Mind Blank",
     "description": "",
@@ -1889,7 +1889,7 @@
   },
   {
     "keys": "Mind Sliver",
-    "value": "Spelldescription",
+    "value": "Spell that causes psychic damage to the target and makes them more susceptible to failing anything that tests their abilities.",
     "type": "spell",
     "title": "Mind Sliver",
     "description": "",
@@ -1897,7 +1897,7 @@
   },
   {
     "keys": "Mind Spike",
-    "value": "Spelldescription",
+    "value": "Spell that sends a spike of psionic energy into a target, causing psychic damage. The target can then not be hidden from the caster.",
     "type": "spell",
     "title": "Mind Spike",
     "description": "",
@@ -1905,7 +1905,7 @@
   },
   {
     "keys": "Minor Illusion",
-    "value": "Creates an illusion of a sound or image of an object within range. The spell is broken if a physical interaction with the item reveals it to be a hoax.",
+    "value": "Spell that creates an illusion of a sound or image of an object within range. The spell is broken if a physical interaction with the item reveals it to be a hoax.",
     "type": "spell",
     "title": "Minor Illusion",
     "description": "",
@@ -1913,7 +1913,7 @@
   },
   {
     "keys": "Mirage Arcane",
-    "value": "Spelldescription",
+    "value": "Illusion spell that can change the environment/buildings to seem like some other kind of terrain or look. It will look, smell, and feel as if it was like the real thing.",
     "type": "spell",
     "title": "Mirage Arcane",
     "description": "",
@@ -1921,7 +1921,7 @@
   },
   {
     "keys": "Mirror Image",
-    "value": "Spelldescription",
+    "value": "Spell that creates three duplicates of the caster. These make it hard for an enemy to target the caster, each taking damage for the caster.",
     "type": "spell",
     "title": "Mirror Image",
     "description": "",
@@ -1929,7 +1929,7 @@
   },
   {
     "keys": "Mislead spell, cast Mislead",
-    "value": "Spelldescription",
+    "value": "Spell that causes the caster to be invisible while a duplicate illusionary stand in appears in your place. It can move and behave as if it was you for the duration of the spell.",
     "type": "spell",
     "title": "Mislead",
     "description": "",
@@ -1937,7 +1937,7 @@
   },
   {
     "keys": "Misty Step",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to teleport up to thirty feet away.",
     "type": "spell",
     "title": "Misty Step",
     "description": "",
@@ -1945,7 +1945,7 @@
   },
   {
     "keys": "Modify Memory",
-    "value": "Spelldescription",
+    "value": "Spell that can charm a target. The target is incapacitated and a memory it has can be modified.",
     "type": "spell",
     "title": "Modify Memory",
     "description": "",
@@ -1953,7 +1953,7 @@
   },
   {
     "keys": "Moonbeam",
-    "value": "Spelldescription",
+    "value": "Spell that shines a silvery beam of pale light in a cylinder at a specified point. It causes radiant damage.",
     "type": "spell",
     "title": "Moonbeam",
     "description": "",
@@ -1961,7 +1961,7 @@
   },
   {
     "keys": "Mordenkainen's Faithful Hound",
-    "value": "Spelldescription",
+    "value": "Spell that creates a watchdog that only the caster can see. It can bark and attack if a creature approaches without speaking a specified password.",
     "type": "spell",
     "title": "Mordenkainen's Faithful Hound",
     "description": "",
@@ -1969,7 +1969,7 @@
   },
   {
     "keys": "Modenkainen's Magnificent Mansion",
-    "value": "Spelldescription",
+    "value": "Spell that creates a magical door that allows the caster and whoever they specify to enter an extradimensional mansion of any design. There are near transparent servants that do your bidding.",
     "type": "spell",
     "title": "Modenkainen's Magnificent Mansion",
     "description": "",
@@ -1977,7 +1977,7 @@
   },
   {
     "keys": "Mordenkainen's Private Sanctum",
-    "value": "Spelldescription",
+    "value": "Spell that creates a space that sound can't pass through, appears dark and foggy, divination can't work inside of it, or teleporting doesn't work.",
     "type": "spell",
     "title": "Mordenkainen's Private Sanctum",
     "description": "",
@@ -1985,7 +1985,7 @@
   },
   {
     "keys": "Mordenkainen's Sword",
-    "value": "Spelldescription",
+    "value": "Spell that creates a hovering, spectral sword that can cause force damage on enemies that it attacks.",
     "type": "spell",
     "title": "Mordenkainen's Sword",
     "description": "",
@@ -1993,7 +1993,7 @@
   },
   {
     "keys": "Move Earth",
-    "value": "Spelldescription",
+    "value": "Spell that can reshape terrain. It can form pillars and shapes. Change elevation. The ground moves slowly enough that it can't be used to damage anyone.",
     "type": "spell",
     "title": "Move Earth",
     "description": "",
@@ -2001,7 +2001,7 @@
   },
   {
     "keys": "Nondetection",
-    "value": "Spelldescription",
+    "value": "Spell that hides the target from divination spells.",
     "type": "spell",
     "title": "Nondetection",
     "description": "",
@@ -2009,7 +2009,7 @@
   },
   {
     "keys": "Nystul's Magic Aura",
-    "value": "Spelldescription",
+    "value": "Spell that makes the target or an object react to spells and other magical effects as if it was of another type. It can make an object appear magical or nonmagical.",
     "type": "spell",
     "title": "Nystul's Magic Aura",
     "description": "",
@@ -2017,7 +2017,7 @@
   },
   {
     "keys": "Otiluke's Freezing Sphere",
-    "value": "Spelldescription",
+    "value": "Spell that creates a frigid globe that explodes with cold damage.",
     "type": "spell",
     "title": "Otiluke's Freezing Sphere",
     "description": "",
@@ -2025,7 +2025,7 @@
   },
   {
     "keys": "Otiluke's Resilient Sphere",
-    "value": "Spelldescription",
+    "value": "Spell that creates a shimmering sphere. Nothing can pass through or damage the sphere. Anything inside is imprisoned, but can roll the sphere to move.",
     "type": "spell",
     "title": "Otiluke's Resilient Sphere",
     "description": "",
@@ -2033,7 +2033,7 @@
   },
   {
     "keys": "Otto's Irresistible Dance",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to dance comically for a short time.",
     "type": "spell",
     "title": "Otto's Irresistible Dance",
     "description": "",
@@ -2041,7 +2041,7 @@
   },
   {
     "keys": "Passwall",
-    "value": "Spelldescription",
+    "value": "Spell that creates an opening on any specified wall, ceiling, or floor.",
     "type": "spell",
     "title": "Passwall",
     "description": "",
@@ -2049,7 +2049,7 @@
   },
   {
     "keys": "Pass Without Trace",
-    "value": "Spelldescription",
+    "value": "Spell that creates an emanation around the caster that causes their allies to be more undetectable.",
     "type": "spell",
     "title": "Pass Without Trace",
     "description": "",
@@ -2057,7 +2057,7 @@
   },
   {
     "keys": "Phantasmal Force",
-    "value": "Spelldescription",
+    "value": "Spell that creates an illusion in the mind of a target. The illusion seems real and the target can even take psychic damage from it.",
     "type": "spell",
     "title": "Phantasmal Force",
     "description": "",
@@ -2065,7 +2065,7 @@
   },
   {
     "keys": "Phantasmal Killer",
-    "value": "Spelldescription",
+    "value": "Spell that draws from the nightmares of a creature and causes psychic damage over a period of time.",
     "type": "spell",
     "title": "Phantasmal Killer",
     "description": "",
@@ -2073,7 +2073,7 @@
   },
   {
     "keys": "Phantom Steed",
-    "value": "Spelldescription",
+    "value": "Spell that creates a large horselike creature. It has a saddle and can be ridden.",
     "type": "spell",
     "title": "Phantom Steed",
     "description": "",
@@ -2081,7 +2081,7 @@
   },
   {
     "keys": "Planar Ally",
-    "value": "Spelldescription",
+    "value": "Spell that summons an otherworldly entity for aid. If it agrees, a celestial, elemental, or fiend ally is sent to aid the caster.",
     "type": "spell",
     "title": "Planar Ally",
     "description": "",
@@ -2089,7 +2089,7 @@
   },
   {
     "keys": "Planar Binding",
-    "value": "Spelldescription",
+    "value": "Spell that attempts to bind a celestial, elemental, fey, or fiend into your service. The spell takes time and the target must be bound.",
     "type": "spell",
     "title": "Planar Binding",
     "description": "",
@@ -2097,7 +2097,7 @@
   },
   {
     "keys": "Plane Shift",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster and allies to teleport to a different plane of existence.",
     "type": "spell",
     "title": "Plane Shift",
     "description": "",
@@ -2105,7 +2105,7 @@
   },
   {
     "keys": "Plant Growth",
-    "value": "Spelldescription",
+    "value": "Spell that causes plants to grow. The plants can be overgrown and become difficult to pass through. The plants in the local area yield twice the amount of food.",
     "type": "spell",
     "title": "Plant Growth",
     "description": "",
@@ -2113,7 +2113,7 @@
   },
   {
     "keys": "Poison Spray",
-    "value": "Spelldescription",
+    "value": "Spell that sprays a toxic mist that causes poison damage.",
     "type": "spell",
     "title": "Poison Spray",
     "description": "",
@@ -2121,7 +2121,7 @@
   },
   {
     "keys": "Polymorph",
-    "value": "Spelldescription",
+    "value": "Spell that transforms a target into a beast of some kind. Upon death, the target turns back to their original form.",
     "type": "spell",
     "title": "Polymorph",
     "description": "",
@@ -2129,7 +2129,7 @@
   },
   {
     "keys": "Power Word Fortify",
-    "value": "Spelldescription",
+    "value": "Spell that adds temporary health to specified targets.",
     "type": "spell",
     "title": "Power Word Fortify",
     "description": "",
@@ -2137,7 +2137,7 @@
   },
   {
     "keys": "Power Word Heal",
-    "value": "Spelldescription",
+    "value": "Spell that causes a wave of healing energy to wash over a given target. It clears any negative conditions it faces.",
     "type": "spell",
     "title": "Power Word Heal",
     "description": "",
@@ -2145,7 +2145,7 @@
   },
   {
     "keys": "Power Word Kill",
-    "value": "Spelldescription",
+    "value": "Spell that causes intense psychic damage and may even kill outright if the target is weak.",
     "type": "spell",
     "title": "Power Word Kill",
     "description": "",
@@ -2153,7 +2153,7 @@
   },
   {
     "keys": "Power Word Stun",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to be stunned.",
     "type": "spell",
     "title": "Power Word Stun",
     "description": "",
@@ -2161,7 +2161,7 @@
   },
   {
     "keys": "Prayer of Healing",
-    "value": "Spelldescription",
+    "value": "Spell that must take time to cast. Any targets within range are well rested and regain health points.",
     "type": "spell",
     "title": "Prayer of Healing",
     "description": "",
@@ -2169,7 +2169,7 @@
   },
   {
     "keys": "Prestidigitation",
-    "value": "Spelldescription",
+    "value": "Spell that creates a sensory effect, ignite/snuff a fire, cleans/soils, chill/warm/flavor nonliving material, mark, or create an illusionary trinket.",
     "type": "spell",
     "title": "Prestidigitation",
     "description": "",
@@ -2177,7 +2177,7 @@
   },
   {
     "keys": "Prismatic Spray",
-    "value": "Spelldescription",
+    "value": "Spell that creates an array of colored lights in a cone. Targets hit by the light accept a random effect including fire/acid/lightning/poison/cold damage, restraint, and blinding.",
     "type": "spell",
     "title": "Prismatic Spray",
     "description": "",
@@ -2193,7 +2193,7 @@
   },
   {
     "keys": "Produce Flame",
-    "value": "Spelldescription",
+    "value": "Spell that creates a flickering flame in the caster's hand. It emits dim light. It can be hurled to cause fire damage.",
     "type": "spell",
     "title": "Produce Flame",
     "description": "",
@@ -2201,7 +2201,7 @@
   },
   {
     "keys": "Programmed Illusion",
-    "value": "Spelldescription",
+    "value": "Spell that creates an illusion that activates if a trigger is activated. It performs a preprogrammed performance.",
     "type": "spell",
     "title": "Programmed Illusion",
     "description": "",
@@ -2209,7 +2209,7 @@
   },
   {
     "keys": "Project Image",
-    "value": "Spelldescription",
+    "value": "Spell that creates an intangible, illusory image of the caster. It moves, speaks, and behaves exactly in the way that the caster desires.",
     "type": "spell",
     "title": "Project Image",
     "description": "",
@@ -2217,7 +2217,7 @@
   },
   {
     "keys": "Protection From Energy",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to have resistance against a specified type of damage.",
     "type": "spell",
     "title": "Protection From Energy",
     "description": "",
@@ -2225,7 +2225,7 @@
   },
   {
     "keys": "Protection From Evil and Good",
-    "value": "Spelldescription",
+    "value": "Spell that protects the target from aberrations, celestials, elementals, fey, fiends, and the undead. The target cannot be possessed, charmed, or frightened.",
     "type": "spell",
     "title": "Protection From Evil and Good",
     "description": "",
@@ -2233,7 +2233,7 @@
   },
   {
     "keys": "Protection From Poison",
-    "value": "Spelldescription",
+    "value": "Spell that prevents the target from being poisoned.",
     "type": "spell",
     "title": "Protection From Poison",
     "description": "",
@@ -2241,7 +2241,7 @@
   },
   {
     "keys": "Purify Food and Drink",
-    "value": "Spelldescription",
+    "value": "Spell that removes poison from nonmagical food and drink.",
     "type": "spell",
     "title": "Purify Food and Drink",
     "description": "",
@@ -2249,7 +2249,7 @@
   },
   {
     "keys": "Raise Dead",
-    "value": "Spelldescription",
+    "value": "Spell that revives a dead creature if it wasn't undead. It doesn't restore missing body parts. The target is not well until it has time to rest.",
     "type": "spell",
     "title": "Raise Dead",
     "description": "",
@@ -2257,7 +2257,7 @@
   },
   {
     "keys": "Rary's Telepathic Bond",
-    "value": "Spelldescription",
+    "value": "Spell that creates a telepathic bond with up to eight creatures. They can communicate through telepathy no matter what language they speak over any distance.",
     "type": "spell",
     "title": "Rary's Telepathic Bond",
     "description": "",
@@ -2265,7 +2265,7 @@
   },
   {
     "keys": "Ray of Enfeeblement",
-    "value": "Spelldescription",
+    "value": "Spell that casts a beam of energy. Targets affected by the beam will be at a disadvantage when they try to attack and inflict less damage.",
     "type": "spell",
     "title": "Ray of Enfeeblement",
     "description": "",
@@ -2273,7 +2273,7 @@
   },
   {
     "keys": "Ray of Frost",
-    "value": "Casts a beam of blue-white light that causes cold damage on a given target within range. The target is then slowed for a short period of time.",
+    "value": "Spell that casts a beam of blue-white light that causes cold damage on a given target within range. The target is then slowed for a short period of time.",
     "type": "spell",
     "title": "Ray of Frost",
     "description": "",
@@ -2281,7 +2281,7 @@
   },
   {
     "keys": "Ray of Sickness",
-    "value": "Spelldescription",
+    "value": "Spell that casts a greenish ray that inflicts poison damage.",
     "type": "spell",
     "title": "Ray of Sickness",
     "description": "",
@@ -2289,7 +2289,7 @@
   },
   {
     "keys": "Reduce spell, cast Reduce",
-    "value": "Spelldescription",
+    "value": "Spell that decreases the size of the target making them easier to move and decreases their damage.",
     "type": "spell",
     "title": "Reduce",
     "description": "",
@@ -2297,7 +2297,7 @@
   },
   {
     "keys": "Regenerate spell, cast Regenerate",
-    "value": "Spelldescription",
+    "value": "Spell that heals a target and regrows any severed limbs.",
     "type": "spell",
     "title": "Regenerate",
     "description": "",
@@ -2305,7 +2305,7 @@
   },
   {
     "keys": "Reincarnate spell, cast Reincarnate",
-    "value": "Spelldescription",
+    "value": "Spell that can form a new body for a recently deceased humanoid (within 10 days). The new body is one of the following random species: aasimar, dragonborn, dwarf, elf, gnome, goliath, halfling, human, orc, or tiefling.",
     "type": "spell",
     "title": "Reincarnate",
     "description": "",
@@ -2313,7 +2313,7 @@
   },
   {
     "keys": "Remove Curse",
-    "value": "Spelldescription",
+    "value": "Spell that removes all curses from a target.",
     "type": "spell",
     "title": "Remove Curse",
     "description": "",
@@ -2321,7 +2321,7 @@
   },
   {
     "keys": "Resistance spell, cast Resistance",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to receive less damage from a specific type of damage.",
     "type": "spell",
     "title": "Resistance",
     "description": "",
@@ -2329,7 +2329,7 @@
   },
   {
     "keys": "Resurrection spell, cast Resurrection",
-    "value": "Spelldescription",
+    "value": "Spell that revives a dead creature. It cannot be an undead when it died. The target is not well until it has a long rest.",
     "type": "spell",
     "title": "Resurrection",
     "description": "",
@@ -2337,7 +2337,7 @@
   },
   {
     "keys": "Reverse Gravity",
-    "value": "Spelldescription",
+    "value": "Spell that reverses gravity within a fifty foot radius.",
     "type": "spell",
     "title": "Reverse Gravity",
     "description": "",
@@ -2345,7 +2345,7 @@
   },
   {
     "keys": "Revivify spell, cast Revivify",
-    "value": "Spelldescription",
+    "value": "Spell that can revive a creature that has died in the last minute. It does not restore missing body parts.",
     "type": "spell",
     "title": "Revivify",
     "description": "",
@@ -2353,7 +2353,7 @@
   },
   {
     "keys": "Rope Trick",
-    "value": "Spelldescription",
+    "value": "Spell that levitates an end of a rope. The rope leads to a portal that opens into extradimensional space. Creatures can climb into this space and become immune to spells and attacks.",
     "type": "spell",
     "title": "Rope Trick",
     "description": "",
@@ -2361,7 +2361,7 @@
   },
   {
     "keys": "Sacred Flame",
-    "value": "Spelldescription",
+    "value": "Spell that creates a flame-like radiance around a creature that the caster can see. The target takes radiant damage.",
     "type": "spell",
     "title": "Sacred Flame",
     "description": "",
@@ -2369,7 +2369,7 @@
   },
   {
     "keys": "Sanctuary spell, cast Sanctuary",
-    "value": "Spelldescription",
+    "value": "Spell that wards a creature within range. Any attacks or spells targeted against this creature can be redirected at another opponent or be nullified completely.",
     "type": "spell",
     "title": "Sanctuary",
     "description": "",
@@ -2377,7 +2377,7 @@
   },
   {
     "keys": "Scorching Ray",
-    "value": "Spelldescription",
+    "value": "Spell that shoots three friery rays at targets that cause fire damage.",
     "type": "spell",
     "title": "Scorching Ray",
     "description": "",
@@ -2385,7 +2385,7 @@
   },
   {
     "keys": "Scrying",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to see and hear any target on the same plane of existence. The effectiveness of the spell depends on how well the caster knows the target and if they have any personal affects of the target.",
     "type": "spell",
     "title": "Scrying",
     "description": "",
@@ -2393,7 +2393,7 @@
   },
   {
     "keys": "Searing Smite",
-    "value": "Spelldescription",
+    "value": "Spell that causes the caster's attack to have additional fire damage.",
     "type": "spell",
     "title": "Searing Smite",
     "description": "",
@@ -2401,7 +2401,7 @@
   },
   {
     "keys": "See Invisiblity",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to see invisible creatures and see into the ethereal plane.",
     "type": "spell",
     "title": "See Invisiblity",
     "description": "",
@@ -2409,7 +2409,7 @@
   },
   {
     "keys": "Seeming spell, cast Seeming",
-    "value": "Spelldescription",
+    "value": "Spell that changes the appearance of a number of creatures with illusion. The appearance must have the same basic arrangement of limbs, but can look like anything.",
     "type": "spell",
     "title": "Seeming",
     "description": "",
@@ -2417,7 +2417,7 @@
   },
   {
     "keys": "Sending spell, cast Sending",
-    "value": "Spelldescription",
+    "value": "Spell that sends a short message telepathically to a creature that the caster has met before.",
     "type": "spell",
     "title": "Sending",
     "description": "",
@@ -2425,7 +2425,7 @@
   },
   {
     "keys": "Sequester",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target or an object to become invisible and can't be targeted by divination, detected by magic, or viewed remotely. The target is made unconcious and doesn't age or need food. This lasts until a trigger is called.",
     "type": "spell",
     "title": "Sequester",
     "description": "",
@@ -2433,7 +2433,7 @@
   },
   {
     "keys": "Shapechange",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to shapeshift into another creature. The caster keeps their mind and the ability to talk.",
     "type": "spell",
     "title": "Shapechange",
     "description": "",
@@ -2441,7 +2441,7 @@
   },
   {
     "keys": "Shatter spell, cast Shatter",
-    "value": "Spelldescription",
+    "value": "Spell that creates a loud noise in a sphere. Creatures inside the sphere take thunder damage.",
     "type": "spell",
     "title": "Shatter",
     "description": "",
@@ -2449,7 +2449,7 @@
   },
   {
     "keys": "Shield spell, cast Shield",
-    "value": "The shield spell creates an invisible barrier that protects the user from some physical damage.",
+    "value": "Spell that creates an invisible barrier that protects the user from some physical damage.",
     "type": "spell",
     "title": "Shield",
     "description": "",
@@ -2457,7 +2457,7 @@
   },
   {
     "keys": "Shield of Faith",
-    "value": "Spelldescription",
+    "value": "Spell that creates a shimmering field which gives the target increased defense.",
     "type": "spell",
     "title": "Shield of Faith",
     "description": "",
@@ -2465,7 +2465,7 @@
   },
   {
     "keys": "Shillelagh",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to use their magic ability instead of strength to attack with a weapon.",
     "type": "spell",
     "title": "Shillelagh",
     "description": "",
@@ -2473,7 +2473,7 @@
   },
   {
     "keys": "Shining Smite",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to attack and add radiant damage to the blow.",
     "type": "spell",
     "title": "Shining Smite",
     "description": "",
@@ -2481,7 +2481,7 @@
   },
   {
     "keys": "Shocking Grasp",
-    "value": "Spelldescription",
+    "value": "Spell that causes lightning damage from the touch of the caster.",
     "type": "spell",
     "title": "Shocking Grasp",
     "description": "",
@@ -2489,7 +2489,7 @@
   },
   {
     "keys": "Silence spell, cast Silence",
-    "value": "Spelldescription",
+    "value": "Spell that creates a spherical space where no words can be spoken and no sounds can be heard. This prevents magic that requires speech.",
     "type": "spell",
     "title": "Silence",
     "description": "",
@@ -2497,7 +2497,7 @@
   },
   {
     "keys": "Silent Image",
-    "value": "Spelldescription",
+    "value": "Spell that creates an illusionary image. It can be moved, but it is not accompanied by an appropriate smell or sound.",
     "type": "spell",
     "title": "Silent Image",
     "description": "",
@@ -2505,7 +2505,7 @@
   },
   {
     "keys": "Simulacrum",
-    "value": "Spelldescription",
+    "value": "Spell that makes a copy of a creature out of ice or snow. It then follows the caster's commands and is functionally like the original. The spell consumes an expensive ruby.",
     "type": "spell",
     "title": "Simulacrum",
     "description": "",
@@ -2513,7 +2513,7 @@
   },
   {
     "keys": "Sleep spell, cast Sleep",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to become unconcious. The condition ends if the target is damaged or awoken by another creature.",
     "type": "spell",
     "title": "Sleep",
     "description": "",
@@ -2521,7 +2521,7 @@
   },
   {
     "keys": "Sleet Storm",
-    "value": "Spelldescription",
+    "value": "Spell that conjures sleet in the area of a cylinder. The terrain becomes difficult to navigate and creatures are knocked prone.",
     "type": "spell",
     "title": "Sleet Storm",
     "description": "",
@@ -2529,7 +2529,7 @@
   },
   {
     "keys": "Slow spell, cast Slow",
-    "value": "Spelldescription",
+    "value": "Spell that causes targets to move slower, resulting in targets being able to do less actions and be susceptible to attacks.",
     "type": "spell",
     "title": "Slow",
     "description": "",
@@ -2537,7 +2537,7 @@
   },
   {
     "keys": "Sorcerous Burst",
-    "value": "Spelldescription",
+    "value": "Spell that shoots energy at a creature. It takes damage of a type that the caster chooses. There is a chance that additional damage is added.",
     "type": "spell",
     "title": "Sorcerous Burst",
     "description": "",
@@ -2545,7 +2545,7 @@
   },
   {
     "keys": "Spare the Dying",
-    "value": "Spelldescription",
+    "value": "Spell that stabilizes a creature that is on death's door.",
     "type": "spell",
     "title": "Spare the Dying",
     "description": "",
@@ -2553,7 +2553,7 @@
   },
   {
     "keys": "Speak with Animals",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to communicate fully with beasts.",
     "type": "spell",
     "title": "Speak with Animals",
     "description": "",
@@ -2561,7 +2561,7 @@
   },
   {
     "keys": "Speak with Dead",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to ask up to five questions to a corpse which will animate and respond according to what it knew in life.",
     "type": "spell",
     "title": "Speak with Dead",
     "description": "",
@@ -2569,7 +2569,7 @@
   },
   {
     "keys": "Speak with Plants",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to ask simple questions to plants in a thirty foot range. The plants can also follow commands and even make impassible thicket easier to walk through.",
     "type": "spell",
     "title": "Speak with Plants",
     "description": "",
@@ -2577,7 +2577,7 @@
   },
   {
     "keys": "Spider Climb",
-    "value": "Spelldescription",
+    "value": "Spell that allows a willing target to be able to move accross walls and ceilings without using their hands.",
     "type": "spell",
     "title": "Spider Climb",
     "description": "",
@@ -2585,7 +2585,7 @@
   },
   {
     "keys": "Spike Growth",
-    "value": "Spelldescription",
+    "value": "Spell that sprouts spiky grow in a twenty foot range that is hard to traverse and causes piercing damage.",
     "type": "spell",
     "title": "Spike Growth",
     "description": "",
@@ -2593,7 +2593,7 @@
   },
   {
     "keys": "Spirit Guardians",
-    "value": "Spelldescription",
+    "value": "Spell that conjures good or evil spirits that slows and causes radiant or necrotic damage to any creatures that enter a fifteen foot range.",
     "type": "spell",
     "title": "Spirit Guardians",
     "description": "",
@@ -2601,7 +2601,7 @@
   },
   {
     "keys": "Spiritual Weapon",
-    "value": "Creates a floating, spectral weapon that obeys the caster's commands. It can move independently and attack opponents. It can take the shape of any form of any melee weapon.",
+    "value": "Spell that creates a floating, spectral weapon that obeys the caster's commands. It can move independently and attack opponents. It can take the shape of any form of any melee weapon.",
     "type": "spell",
     "title": "Spiritual Weapon",
     "description": "",
@@ -2609,7 +2609,7 @@
   },
   {
     "keys": "Staggering Smite",
-    "value": "Spelldescription",
+    "value": "Spell that adds additional psychic damage to an attack. It has a chance to stun an opponent.",
     "type": "spell",
     "title": "Staggering Smite",
     "description": "",
@@ -2617,7 +2617,7 @@
   },
   {
     "keys": "Starry Wisp",
-    "value": "Spelldescription",
+    "value": "Spell that launches a mote of light at a creature. It takes radiant damage and emits dim light.",
     "type": "spell",
     "title": "Starry Wisp",
     "description": "",
@@ -2625,7 +2625,7 @@
   },
   {
     "keys": "Steel Wind Strike",
-    "value": "Spelldescription",
+    "value": "Spell that makes the caster vanish and then strike like the wind against up to five opponents. They each take force damage. Then the caster is teleported next to one of the opponents.",
     "type": "spell",
     "title": "Steel Wind Strike",
     "description": "",
@@ -2633,7 +2633,7 @@
   },
   {
     "keys": "Stinking Cloud",
-    "value": "Spelldescription",
+    "value": "Spell that creates a nauseating gas around a point. It causes creatures to be poisoned and not be able to take action for a short time.",
     "type": "spell",
     "title": "Stinking Cloud",
     "description": "",
@@ -2641,7 +2641,7 @@
   },
   {
     "keys": "Stone Shape",
-    "value": "Spelldescription",
+    "value": "Spell that can transform stone into any shape including weapons, passage ways, doors, or simple locks.",
     "type": "spell",
     "title": "Stone Shape",
     "description": "",
@@ -2649,7 +2649,7 @@
   },
   {
     "keys": "Stoneskin",
-    "value": "Spelldescription",
+    "value": "Spell that transforms the target's skin so that it has resistance to bludgeoning, piercing, and slashing damage.",
     "type": "spell",
     "title": "Stoneskin",
     "description": "",
@@ -2657,137 +2657,9 @@
   },
   {
     "keys": "Storm of Vengeance",
-    "value": "Spelldescription",
+    "value": "Spell that creates a storm that causes thunder damage against creatures in its area. It progresses to rain acid, strike lightning, cast hailstones, and eventually blow freezing wind.",
     "type": "spell",
     "title": "Storm of Vengeance",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Suggestion spell, cast Suggestion",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Suggestion",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Summon Abberation",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Summon Abberation",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Summon Beast",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Summon Beast",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Summon Celestial",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Summon Celestial",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Summon Construct",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Summon Construct",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Summon Dragon",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Summon Dragon",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Summon Elemental",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Summon Elemental",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Summon Fey",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Summon Fey",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Summon Fiend",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Summon Fiend",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Summon Undead",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Summon Undead",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Sunbeam",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Sunbeam",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Sunburst",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Sunburst",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Swift Quiver",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Swift Quiver",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Symbol spell, cast Symbol",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Symbol",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Sympathy spell, cast Sympathy",
-    "value": "Spell causes the creature to be charmed and must move as close as possible to the caster.",
-    "type": "spell",
-    "title": "Sympathy",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Synaptic Static",
-    "value": "Spelldescription",
-    "type": "spell",
-    "title": "Synaptic Static",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -2864,8 +2736,136 @@
     "useForCharacterCreation": false
   },
   {
+    "keys": "Suggestion spell, cast Suggestion",
+    "value": "Spell that allows the caster to suggest a course of action that a creature will follow. It has to be short and achieveable.",
+    "type": "spell",
+    "title": "Suggestion",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Abberation",
+    "value": "Spell that allows the caster to summon an abberation that must follow the caster's commands.",
+    "type": "spell",
+    "title": "Summon Abberation",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Beast",
+    "value": "Spell that allows the caster to summon a beast that must follow the caster's commands.",
+    "type": "spell",
+    "title": "Summon Beast",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Celestial",
+    "value": "Spell that allows the caster to summon a celestial that must follow the caster's commands.",
+    "type": "spell",
+    "title": "Summon Celestial",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Construct",
+    "value": "Spell that creates a construct that must follow the caster's commands.",
+    "type": "spell",
+    "title": "Summon Construct",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Dragon",
+    "value": "Spell that allows the caster to summon a draconic spirit that must follow the caster's commands.",
+    "type": "spell",
+    "title": "Summon Dragon",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Elemental",
+    "value": "Spell that allows the caster to summon an elemental spirit that must follow the caster's commands.",
+    "type": "spell",
+    "title": "Summon Elemental",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Fey",
+    "value": "Spell that allows the caster to summon a fey spirit  that must follow the caster's commands.",
+    "type": "spell",
+    "title": "Summon Fey",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Fiend",
+    "value": "Spell that allows the caster to summon a fiend that must follow the caster's commands.",
+    "type": "spell",
+    "title": "Summon Fiend",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Summon Undead",
+    "value": "Spell that allows the caster to summon an undead spirit that must follow the caster's commands.",
+    "type": "spell",
+    "title": "Summon Undead",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sunbeam",
+    "value": "Spell that creates a beam of sunlight that blinds enemies and causes radiant damage. It can be summoned again while this spell is in effect. The caster has a light mote of brilliance while this spell is active.",
+    "type": "spell",
+    "title": "Sunbeam",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sunburst",
+    "value": "Spell that creates a brilliant blast of sunlight in a 60 foot radius. It blinds enemies and causes significant radiant damage.",
+    "type": "spell",
+    "title": "Sunburst",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Swift Quiver",
+    "value": "Spell that allows the caster to take additional attacks with a bow or crossbow.",
+    "type": "spell",
+    "title": "Swift Quiver",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Symbol spell, cast Symbol",
+    "value": "Spell that creates a harmful glyph that can be set off by a specified trigger as a trap. It can cause necrotic damage, cause targets to argue with themselves, frighten/incapacitate/sleep/stun them.",
+    "type": "spell",
+    "title": "Symbol",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sympathy spell, cast Sympathy",
+    "value": "Spell that causes the creature to be charmed and must move as close as possible to the caster.",
+    "type": "spell",
+    "title": "Sympathy",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Synaptic Static",
+    "value": "Spell that causes psychic damage. The target then has difficulty maintaining concentration.",
+    "type": "spell",
+    "title": "Synaptic Static",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Tasha's Bubbling Cauldron",
-    "value": "Spelldescription",
+    "value": "Spell that creates a cauldron. The caster can then reach in to receive a common or uncommon potion.",
     "type": "spell",
     "title": "Tasha's Bubbling Cauldron",
     "description": "",
@@ -2873,7 +2873,7 @@
   },
   {
     "keys": "Tasha's Hideous Laughter",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to go prone and laugh uncontrollably.",
     "type": "spell",
     "title": "Tasha's Hideous Laughter",
     "description": "",
@@ -2881,7 +2881,7 @@
   },
   {
     "keys": "Telekinesis spell, cast Telekinesis",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to move objects or creatures with their mind.",
     "type": "spell",
     "title": "Telekinesis",
     "description": "",
@@ -2889,7 +2889,7 @@
   },
   {
     "keys": "Telepathy spell, cast Telepathy",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to speak telepathically with willing targets of their choosing, instantly sending images, words, sounds, and other sensory messages.",
     "type": "spell",
     "title": "Telepathy",
     "description": "",
@@ -2897,7 +2897,7 @@
   },
   {
     "keys": "Teleport spell, cast Teleport",
-    "value": "Spelldescription",
+    "value": "Spell that instantly transports the caster and up to eight other creatures at once. The target location must be known by the caster or it may result in a mishap of some kind.",
     "type": "spell",
     "title": "Teleport",
     "description": "",
@@ -2905,7 +2905,7 @@
   },
   {
     "keys": "Teleportation Circle",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to draw a circle on the ground. This circle is linked with a permanent circle created in another location.",
     "type": "spell",
     "title": "Teleportation Circle",
     "description": "",
@@ -2913,7 +2913,7 @@
   },
   {
     "keys": "Tenser's Floating Disk",
-    "value": "Spelldescription",
+    "value": "Spell that creates a simple floating disc that can move creatures or objects. It follows the caster.",
     "type": "spell",
     "title": "Tenser's Floating Disk",
     "description": "",
@@ -2921,7 +2921,7 @@
   },
   {
     "keys": "Thaumaturgy",
-    "value": "Spelldescription",
+    "value": "Spell that causes the target to have altered eyes or a booming voice. It can also play with fire, open a door or window dramatically, create a sound, or cause harmless tremors.",
     "type": "spell",
     "title": "Thaumaturgy",
     "description": "",
@@ -2929,7 +2929,7 @@
   },
   {
     "keys": "Thorn Whip",
-    "value": "Spelldescription",
+    "value": "Spell that creates a vine-like whip that causes piercing damage.",
     "type": "spell",
     "title": "Thorn Whip",
     "description": "",
@@ -2937,7 +2937,7 @@
   },
   {
     "keys": "Thunderclap",
-    "value": "Spelldescription",
+    "value": "Spell that creates a loud boom that causes thunder damage that damages each creature within 5 feet.",
     "type": "spell",
     "title": "Thunderclap",
     "description": "",
@@ -2945,7 +2945,7 @@
   },
   {
     "keys": "Thunderous Smite",
-    "value": "Adds lightning damage to your attack and amplifies the attack's effectiveness.",
+    "value": "Spell that adds lightning damage to your attack and amplifies the attack's effectiveness.",
     "type": "spell",
     "title": "Thunderous Smite",
     "description": "",
@@ -2953,7 +2953,7 @@
   },
   {
     "keys": "Thunderwave",
-    "value": "Creates a wave of force that thrusts everything within a short range in front of you away. This can push friend and foe alike, causing them to topple over.",
+    "value": "Spell that creates a wave of force that thrusts everything within a short range in front of you away. This can push friend and foe alike, causing them to topple over.",
     "type": "spell",
     "title": "Thunderwave",
     "description": "",
@@ -2961,7 +2961,7 @@
   },
   {
     "keys": "Time Stop",
-    "value": "Spelldescription",
+    "value": "Spell that stops the flow of time for everyone except the caster. The caster can take any actions during this short period, however any actions that affect another creature end the time stop.",
     "type": "spell",
     "title": "Time Stop",
     "description": "",
@@ -2969,7 +2969,7 @@
   },
   {
     "keys": "Toll the Dead",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to point at a creature which will then hear the chime of a bell. It will take necrotic damage and more so if it is already damage.",
     "type": "spell",
     "title": "Toll the Dead",
     "description": "",
@@ -2977,7 +2977,7 @@
   },
   {
     "keys": "Tongues spell, cast Tongues",
-    "value": "Spelldescription",
+    "value": "Spell that grants a creature that the caster can touch the ability to understand all spoken or signed languages. They can also be understood by any creatures that know a language.",
     "type": "spell",
     "title": "Tongues",
     "description": "",
@@ -2985,7 +2985,7 @@
   },
   {
     "keys": "Transport via Plants",
-    "value": "Spelldescription",
+    "value": "Spell that allows creatures to enter a large plant and allow them to exit another plant elsewhere. The caster must have seen or touched this place before.",
     "type": "spell",
     "title": "Transport via Plants",
     "description": "",
@@ -2993,7 +2993,7 @@
   },
   {
     "keys": "Tree Stride",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to enter a tree and exit a similar one within 500 feet.",
     "type": "spell",
     "title": "Tree Stride",
     "description": "",
@@ -3001,7 +3001,7 @@
   },
   {
     "keys": "True Polymorph",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to select a target which will be transformed into another kind of creature. It can also transform objects into creatures and creatures into objects.",
     "type": "spell",
     "title": "True Polymorph",
     "description": "",
@@ -3009,7 +3009,7 @@
   },
   {
     "keys": "True Resurrection",
-    "value": "Spelldescription",
+    "value": "Spell that resurrects a creature that has been dead for no longer than 200 years. The spell fully heals, cures, and regrows missing limbs.",
     "type": "spell",
     "title": "True Resurrection",
     "description": "",
@@ -3017,7 +3017,7 @@
   },
   {
     "keys": "True Seeing",
-    "value": "Spelldescription",
+    "value": "Spell that gives the target true sight, which sees through illusion, darkness, and invisibility.",
     "type": "spell",
     "title": "True Seeing",
     "description": "",
@@ -3025,7 +3025,7 @@
   },
   {
     "keys": "True Strike",
-    "value": "Spelldescription",
+    "value": "Spell that allows the caster to attack with a weapon, but their accuracy and damage is based on their magical ability.",
     "type": "spell",
     "title": "True Strike",
     "description": "",
@@ -3033,7 +3033,7 @@
   },
   {
     "keys": "Tsunami spell, cast Tsunami",
-    "value": "Spelldescription",
+    "value": "Spell that creates a wall of water that can up to 300 feet tall. It causes significant bludgeoning damage.",
     "type": "spell",
     "title": "Tsunami",
     "description": "",
@@ -3041,7 +3041,7 @@
   },
   {
     "keys": "Unseen Servant",
-    "value": "Spelldescription",
+    "value": "Spell that creates an invisible force that performs simple tasks. It cannot attack or do any heavy lifting.",
     "type": "spell",
     "title": "Unseen Servant",
     "description": "",
@@ -3049,7 +3049,7 @@
   },
   {
     "keys": "Vampiric Touch",
-    "value": "Spelldescription",
+    "value": "Spell that causes necrotic damage. The caster regains half of the damage as health.",
     "type": "spell",
     "title": "Vampiric Touch",
     "description": "",
@@ -3057,7 +3057,7 @@
   },
   {
     "keys": "Vicious Mockery",
-    "value": "Insult the target with a barrage of abusive language and subtle enchantments. If it can hear you, it will receive psychic damage and will be at a disadvantage for the next attack.",
+    "value": "Spell that insults the target with a barrage of abusive language and subtle enchantments. If it can hear you, it will receive psychic damage and will be at a disadvantage for the next attack.",
     "type": "spell",
     "title": "Vicious Mockery",
     "description": "",
@@ -3065,7 +3065,7 @@
   },
   {
     "keys": "Vitriolic Sphere",
-    "value": "Spelldescription",
+    "value": "Spell that launches a ball of acid at an enemy, causing incredible acid damage.",
     "type": "spell",
     "title": "Vitriolic Sphere",
     "description": "",
@@ -3073,7 +3073,7 @@
   },
   {
     "keys": "Wall of Fire",
-    "value": "Spelldescription",
+    "value": "Spell that creates a wall of fire that damages any enemies moving through it from a single side.",
     "type": "spell",
     "title": "Wall of Fire",
     "description": "",
@@ -3081,7 +3081,7 @@
   },
   {
     "keys": "Wall of Force",
-    "value": "Spelldescription",
+    "value": "Spell that creates an invisible wall of force that prevents creatures, projectiles, and spells from passing through it. It can only be destroyed by the disintegrate spell.",
     "type": "spell",
     "title": "Wall of Force",
     "description": "",
@@ -3089,7 +3089,7 @@
   },
   {
     "keys": "Wall of Ice",
-    "value": "Spelldescription",
+    "value": "Spell that creates a wall of ice that causes significant cold damage to enemies that touch it initially. It can be destroyed, but leaves behind frigid air that continues to damage enemies.",
     "type": "spell",
     "title": "Wall of Ice",
     "description": "",
@@ -3097,7 +3097,7 @@
   },
   {
     "keys": "Wall of Stone",
-    "value": "Spelldescription",
+    "value": "Spell that creates a wall of stone that can also be shaped to imprison creatures.",
     "type": "spell",
     "title": "Wall of Stone",
     "description": "",
@@ -3105,7 +3105,7 @@
   },
   {
     "keys": "Wall of Thorns",
-    "value": "Spelldescription",
+    "value": "Spell that creates a wall of tangled brush. It causes piercing and slashing damage to creatures trying to pass through it. It is difficult to pass through.",
     "type": "spell",
     "title": "Wall of Thorns",
     "description": "",
@@ -3113,7 +3113,7 @@
   },
   {
     "keys": "Warding Bond",
-    "value": "Spelldescription",
+    "value": "Spell that creates a mystical connection between the caster and another creature. The creature has additional defense and resistance to all damage.",
     "type": "spell",
     "title": "Warding Bond",
     "description": "",
@@ -3121,7 +3121,7 @@
   },
   {
     "keys": "Water Breathing",
-    "value": "Spelldescription",
+    "value": "Spell that allows a number of creatures to be able to breath underwater for a time.",
     "type": "spell",
     "title": "Water Breathing",
     "description": "",
@@ -3129,7 +3129,7 @@
   },
   {
     "keys": "Water Walk",
-    "value": "Spelldescription",
+    "value": "Spell that allows a number of creatures to be able to walk over the surface of liquids harmlessly.",
     "type": "spell",
     "title": "Water Walk",
     "description": "",
@@ -3137,7 +3137,7 @@
   },
   {
     "keys": "Web spell, cast Web",
-    "value": "Spelldescription",
+    "value": "Spell that shoots a mass of webs at a point, causing the terrain to be difficult to pass through. Any creatures caught in the web are restrained.",
     "type": "spell",
     "title": "Web",
     "description": "",
@@ -3145,7 +3145,7 @@
   },
   {
     "keys": "Weird spell, cast Weird",
-    "value": "Spelldescription",
+    "value": "Spell that creates visions of terrible things in a target's mind. This affects targets within a 30 foot radius. They take extreme psychic damage and continues to take damage while they are frightened.",
     "type": "spell",
     "title": "Weird",
     "description": "",
@@ -3153,7 +3153,7 @@
   },
   {
     "keys": "Wind Walk",
-    "value": "Spelldescription",
+    "value": "Spell that allows a number of creatures transform into a gaseous form and traverse great distances with ease.",
     "type": "spell",
     "title": "Wind Walk",
     "description": "",
@@ -3161,7 +3161,7 @@
   },
   {
     "keys": "Wind Wall",
-    "value": "Spelldescription",
+    "value": "Spell that creates a vortex of wind in any shape that makes a continuous path. It causes bludgeoning damage to creatures and pushes light creatures and missiles away.",
     "type": "spell",
     "title": "Wind Wall",
     "description": "",
@@ -3169,7 +3169,7 @@
   },
   {
     "keys": "Wish",
-    "value": "Spelldescription",
+    "value": "Spell that grants a single wish to caster. This is typically in the form of another spell casted for free. However, it can be casted to do anything, but with a chance of weakening the caster or removing their ability to ever make another wish again.",
     "type": "spell",
     "title": "Wish",
     "description": "",
@@ -3177,7 +3177,7 @@
   },
   {
     "keys": "Witch Bolt",
-    "value": "Creates a sustained arc of lightning between the caster and the target. It causes constant lightning damage, but requires the user to concentrate on the spell. The spell is broken when the caster is injured or loses concentration in any way.",
+    "value": "Spell that creates a sustained arc of lightning between the caster and the target. It causes constant lightning damage, but requires the user to concentrate on the spell. The spell is broken when the caster is injured or loses concentration in any way.",
     "type": "spell",
     "title": "Witch Bolt",
     "description": "",
@@ -3185,7 +3185,7 @@
   },
   {
     "keys": "Word of Radiance",
-    "value": "Spelldescription",
+    "value": "Spell that creates a burning radiance that causes radiant damage.",
     "type": "spell",
     "title": "Word of Radiance",
     "description": "",
@@ -3193,7 +3193,7 @@
   },
   {
     "keys": "Word of Recall",
-    "value": "Spelldescription",
+    "value": "Spell that transports a number of creatures and the caster to a location previously designated as a sanctuary.",
     "type": "spell",
     "title": "Word of Recall",
     "description": "",
@@ -3201,7 +3201,7 @@
   },
   {
     "keys": "Wrathful Smite",
-    "value": "Spelldescription",
+    "value": "Spell that causes additional necrotic damage to an attack.",
     "type": "spell",
     "title": "Wrathful Smite",
     "description": "",
@@ -3209,7 +3209,7 @@
   },
   {
     "keys": "Yolande's Regal Presence",
-    "value": "Spelldescription",
+    "value": "Spell that causes psychic damage whenever a creature enters ten feet from the caster.",
     "type": "spell",
     "title": "Yolande's Regal Presence",
     "description": "",
@@ -3217,7 +3217,7 @@
   },
   {
     "keys": "Zone of Truth",
-    "value": "Spelldescription",
+    "value": "Spell that creates a range of fifteen feet that any creatures within cannot speak a deliberate lie.",
     "type": "spell",
     "title": "Zone of Truth",
     "description": "",
