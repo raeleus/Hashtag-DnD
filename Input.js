@@ -85,7 +85,7 @@ const repeatTurnSynonyms = ["repeatturn", "repeat"]
 const basicDeckSynonyms = ["basicdeck", "stragedybasicdeck"]
 const cardShopSynonyms = ["cardshop", "stragedyshop", "cardstore", "stragedystore"]
 const stragedySynonyms = ["stragedy", "playgame", "game", "startgame", "begingame", "playcards", "playstragedy", "startstragedy", "beginstragedy"]
-const lockpickSynonyms = ["lockpick", "lockpicking", "codebreaker", "pick", "hack", "mastermind"]
+const lockpickSynonyms = ["lockpick", "lockpicking", "codebreaker", "pick", "hack", "hacking", "mastermind"]
 const addCardSynonyms = ["addcard"]
 const helpSynonyms = ["help"]
 
