@@ -16,6 +16,9 @@ Create locations to travel to and view them in a map
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
+v. 0.5.0
+* Added descriptions for all DnD Player's Handbook spells to story cards.
+
 v. 0.4.0
 * Added Stragedy Trading Card Game
 
