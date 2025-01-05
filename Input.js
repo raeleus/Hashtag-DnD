@@ -85,6 +85,7 @@ const repeatTurnSynonyms = ["repeatturn", "repeat"]
 const basicDeckSynonyms = ["basicdeck", "stragedybasicdeck"]
 const cardShopSynonyms = ["cardshop", "stragedyshop", "cardstore", "stragedystore"]
 const stragedySynonyms = ["stragedy", "playgame", "game", "startgame", "begingame", "playcards", "playstragedy", "startstragedy", "beginstragedy"]
+const lockpickSynonyms = ["lockpick", "lockpicking", "codebreaker", "pick", "hack", "mastermind"]
 const addCardSynonyms = ["addcard"]
 const helpSynonyms = ["help"]
 
@@ -113,6 +114,12 @@ const modifier = (text) => {
   if (state.stragedyTurn != null) {
     text = handleStragedyTurn(text)
     if (state.stragedyTurn != null) return { text }
+    else text = rawText
+  }
+
+  if (state.lockpickingTurn != null) {
+    text = handleLockpickingTurn(text)
+    if (state.lockpickingTurn != null) return { text }
     else text = rawText
   }
 
@@ -244,7 +251,8 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, repeatTurnSynonyms, doRepeatTurn)
   if (text == null) text = processCommandSynonyms(command, commandName, basicDeckSynonyms, doBasicDeck)
   if (text == null) text = processCommandSynonyms(command, commandName, cardShopSynonyms, doCardShop)
-  if (text == null) text = processCommandSynonyms(command, commandName, stragedySynonyms, doStragedy)  
+  if (text == null) text = processCommandSynonyms(command, commandName, stragedySynonyms, doStragedy)
+  if (text == null) text = processCommandSynonyms(command, commandName, lockpickSynonyms, doLockpick)
   if (text == null) text = processCommandSynonyms(command, commandName, addCardSynonyms, doAddCard)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
@@ -1275,6 +1283,111 @@ function doSetupEnemy(command) {
   state.tempEnemy = createEnemy("enemy", 20, 10, 0, "2d6", 10)
   state.show = "setupEnemy"
   return " "
+}
+
+function doLockpick(command) {
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) {
+    arg0 = "easy"
+  }
+
+  state.lockpickingTurn = "intro"
+  state.lockpickingGuesses = 0
+  state.show = "lockpicking"
+
+  switch(arg0) {
+    case "impossible":
+      state.lockpickingSlots = 7
+      state.lockpickingGuessMax = 15
+      break
+    case "hard":
+      state.lockpickingSlots = 6
+      state.lockpickingGuessMax = 15
+      break
+    case "medium":
+      state.lockpickingSlots = 5
+      state.lockpickingGuessMax = 15
+      break
+    case "effortless":
+      state.lockpickingSlots = 4
+      state.lockpickingGuessMax = 15
+      break
+    case "automatic":
+      state.lockpickingSlots = 3
+      state.lockpickingGuessMax = 20
+      break
+    case "easy":
+    default:
+      state.lockpickingSlots = 4
+      state.lockpickingGuessMax = 12
+      break
+  }
+
+  state.lockpickingCombination = ""
+  for (let i = 0; i < state.lockpickingSlots; i++) {
+    state.lockpickingCombination += getRandomFromList("r", "y", "w", "g", "o", "b")
+  }
+  log(state.lockpickingCombination)
+
+  return " "
+}
+
+function handleLockpickingTurn(text) {
+  state.show = "lockpicking"
+
+  if (/^\s*>.*says? ".*/.test(text)) {
+    text = text.replace(/^\s*>.*says? "/, "")
+    text = text.replace(/"\s*$/, "")
+  } else if (/^\s*>\s.*/.test(text)) {
+    text = text.replace(/\s*> /, "")
+    for (var i = 0; i < info.characters.length; i++) {
+      var matchString = info.characters[i] == "" ? "You " : `${info.characters[i]} `
+      if (text.startsWith(matchString)) {
+        text = text.replace(matchString, "")
+        break
+      }
+    }
+    text = text.replace(/\.?\s*$/, "")
+  } else {
+    text = text.replace(/^\s+/, "")
+  }
+
+  text = text.toLowerCase()
+  if (text == "q") {
+    state.lockpickingTurn = "forfeit"
+    return text
+  }
+
+  switch (state.lockpickingTurn) {
+    case "intro":
+      state.lockpickingTurn = "game"
+    case "game":
+      state.lockpickingInput = text
+
+      state.lockpickingCorrect = 0
+      let combo = state.lockpickingCombination
+      for (var i = 0; i < state.lockpickingSlots; i++) {
+        let letter = text.substring(i, i + 1)
+        if (letter == state.lockpickingCombination.substring(i, i + 1)) state.lockpickingCorrect++
+        combo = combo.replace(letter, "")
+      }
+      state.lockpickingWrongPlace = state.lockpickingSlots - combo.length - state.lockpickingCorrect
+      
+      if (state.lockpickingInput.length == state.lockpickingSlots) state.lockpickingGuesses++
+
+      if (state.lockpickingCorrect == state.lockpickingSlots) state.lockpickingTurn = "win"
+      else if (state.lockpickingGuesses >= state.lockpickingGuessMax) state.lockpickingTurn = "lose"
+
+      return text
+    case "win":
+    case "lose":
+    case "forfeit":
+      state.show = null
+      state.lockpickingTurn = null
+      return text
+  }
+
+  return `\nUnexpected Mastermind state. Input text: ${text}`
 }
 
 function doBasicDeck(command) {

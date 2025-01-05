@@ -93,6 +93,9 @@ const modifier = (text) => {
     case "stragedyShop":
       text += handleStragedyShop()
       break
+    case "lockpicking":
+      text += handleLockpicking()
+      break
     case "bio":
       text += `*** ${possessiveName.toUpperCase()} BIO ***\n`
       text += `Class: ${character.className}\n`
@@ -523,6 +526,10 @@ const modifier = (text) => {
       text += "\n#stragedy (automatic|effortless|easy|medium|hard|impossible)"
       text += "\n    Initiates a game of Stragedy, a card game played against an AI opponent. Specifying a difficulty (default is easy) grants the opponent a corresponding deck. Please see the game manual on github for rules, tactics, and a complete tutorial: github.com/raeleus/Hashtag-DnD/"
 
+      text += "\n\n--Lockpicking Minigame--"
+      text += "\n#lockpick (automatic|effortless|easy|medium|hard|impossible)"
+      text += "\n    Initiates a lockpicking minigame similar to Mastermind where you have to guess the correct combination with a limited number of tries in order to defeat a lock. Specifying a difficulty (default is easy) sets the number of combinations and tries accordingly. Please see the game manual on github for rules, tactics, and a complete tutorial: github.com/raeleus/Hashtag-DnD/"
+
       text += "\n\n--Danger Zone--"
       text += "\n#reset"
       text += "\n    Removes all characters, locations, and notes. Changes all settings to their defaults. Use with caution!"
@@ -561,6 +568,45 @@ function mapReplace(map, x, y, character) {
   map = map.replaceAt(index, character)
 
   return map
+}
+
+function handleLockpicking() {
+  var character = getCharacter()
+  var haveWord = character.name == "You" ? "have" : "has"
+  var possessiveName = getPossessiveName(character.name)
+
+  var text = " "
+  switch (state.lockpickingTurn) {
+    case "intro":
+      text = `**Mastermind**
+Welcome to Mastermind! A minigame to stand in for lockpicking, hacking, and other tasks of skill.
+Please see the game manual on github for rules, tactics, and a complete tutorial:
+github.com/raeleus/Hashtag-DnD/
+You must solve the ${state.lockpickingSlots} color combination within ${state.lockpickingGuessMax} guesses!
+Colors: r (red), y (yellow), w (white), g (green), o (orange), b (blue)
+Enter your first guess below by typing the letter for each color. Type "q" to quit:
+`
+      break
+    case "game":
+      if (state.lockpickingInput.length != state.lockpickingSlots) text = `\nAn incorrect number of colors was input. Only type ${state.lockpickingSlots} letters!\n`
+      else text = `
+Correct: ${state.lockpickingCorrect}.    Wrong position: ${state.lockpickingWrongPlace}.    ${state.lockpickingGuessMax - state.lockpickingGuesses} ${state.lockpickingGuessMax - state.lockpickingGuesses == 1 ? "try" : "tries"} left.
+Colors: r (red), y (yellow), w (white), g (green), o (orange), b (blue)
+Enter your guess below by typing the letter for each color. Type "q" to quit:
+`
+      break
+    case "win":
+      text = `You solved the combination with ${state.lockpickingGuesses} ${state.lockpickingGuesses == 1 ? "guess" : "guesses"}!`
+      break
+    case "lose":
+      text = `After ${state.lockpickingGuesses} ${state.lockpickingGuesses == 1 ? "guess" : "guesses"}, you were unable to solve the combination...`
+      break
+    case "forfeit":
+      text = "You decided to give up on solving the combination."
+      break
+  }
+
+  return text
 }
 
 function handleStragedy() {
