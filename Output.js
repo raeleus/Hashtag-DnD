@@ -571,10 +571,6 @@ function mapReplace(map, x, y, character) {
 }
 
 function handleLockpicking() {
-  var character = getCharacter()
-  var haveWord = character.name == "You" ? "have" : "has"
-  var possessiveName = getPossessiveName(character.name)
-
   var text = " "
   switch (state.lockpickingTurn) {
     case "intro":
@@ -599,7 +595,8 @@ Enter your guess below by typing the letter for each color. Type "q" to quit:
       text = `You solved the combination with ${state.lockpickingGuesses} ${state.lockpickingGuesses == 1 ? "guess" : "guesses"}!`
       break
     case "lose":
-      text = `After ${state.lockpickingGuesses} ${state.lockpickingGuesses == 1 ? "guess" : "guesses"}, you were unable to solve the combination...`
+      text = `After ${state.lockpickingGuesses} ${state.lockpickingGuesses == 1 ? "guess" : "guesses"}, you were unable to solve the combination...
+The combination was ${state.lockpickingCombination}`
       break
     case "forfeit":
       text = "You decided to give up on solving the combination."

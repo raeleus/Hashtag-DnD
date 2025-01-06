@@ -84,6 +84,7 @@ const blockSynonyms = ["block", "parry", "nullify", "invalidate"]
 const repeatTurnSynonyms = ["repeatturn", "repeat"]
 const basicDeckSynonyms = ["basicdeck", "stragedybasicdeck"]
 const cardShopSynonyms = ["cardshop", "stragedyshop", "cardstore", "stragedystore"]
+const spellShopSynonyms = ["spellshop", "spellstore"]
 const stragedySynonyms = ["stragedy", "playgame", "game", "startgame", "begingame", "playcards", "playstragedy", "startstragedy", "beginstragedy"]
 const lockpickSynonyms = ["lockpick", "lockpicking", "codebreaker", "pick", "hack", "hacking", "mastermind"]
 const addCardSynonyms = ["addcard"]
@@ -1327,7 +1328,6 @@ function doLockpick(command) {
   for (let i = 0; i < state.lockpickingSlots; i++) {
     state.lockpickingCombination += getRandomFromList("r", "y", "w", "g", "o", "b")
   }
-  log(state.lockpickingCombination)
 
   return " "
 }
