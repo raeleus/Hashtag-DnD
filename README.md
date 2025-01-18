@@ -17,6 +17,8 @@ See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
 v. 0.5.0
+* Added Mastermind/Lockpicking Game
+* Added Spell Shop - Make sure to import the latest story cards: https://github.com/raeleus/Hashtag-DnD/blob/master/story-cards.json
 * Added descriptions for all DnD Player's Handbook spells to story cards.
 
 v. 0.4.0

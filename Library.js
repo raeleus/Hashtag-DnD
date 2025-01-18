@@ -20,6 +20,10 @@ function getRandomFromList(...choices) {
   return choices[getRandomInteger(0, choices.length - 1)]
 }
 
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function isAnumber(number) {
   return !isNaN(number)
 }
@@ -2848,7 +2852,11 @@ function getModifier(statValue) {
 }
 
 function findSpellCardIndex(name) {
-  return storyCards.findIndex((element) => element.type == "spell" && element.keys == name)
+  return storyCards.findIndex((element) => element.type == "spell" && element.title == name)
+}
+
+function findSpellCard(name) {
+  return storyCards[findSpellCardIndex(name)]
 }
 
 function stragedyCalculateScores() {
@@ -2939,7 +2947,6 @@ function stragedyCalculateScores() {
 }
 
 function stragedyEnemyTurn() {
-  log(`enemy turn: ${state.stragedyEnemyHand}`)
   state.stragedyEnemySkipTurn = false
   state.stragedyEnemyTurnText = ""
   if (state.stragedyPlayerScore > 30) {
@@ -3159,12 +3166,10 @@ function stragedyEnemyTurn() {
   }
 
   if (hand.length == 0) {
-    log("Enemy has no cards in hand")
     if (deck.length == 0) state.stragedyEnemyTurnText = stragedyEnemyRetire()
     else if (score > 30) state.stragedyEnemyTurnText = stragedyEnemyRetire()
     else state.stragedyEnemyTurnText = stragedyEnemyDrawCard()
   } else if (score > 30 && battlefield.length > 0) {
-    log("Enemy is going to bust")
     if (hasQueen && bestQueenCardToSave != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + bestQueenCardToSave)
     else if (hasPriest && bestPriestCardToSave != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "p" + bestPriestCardToSave)
     else if (hasJack && bestJackCardToSave != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "j" + bestJackCardToSave)
@@ -3172,7 +3177,6 @@ function stragedyEnemyTurn() {
     else if (kingCards.length > 0 && kingNumberedCardsInHand.length > 0) state.stragedyEnemyTurnText = stragedyPlayCard(false, kingNumberedCardsInHand[kingNumberedCardsInHand.length - 1])
     else state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else if (playerRetired && score < playerScore) {
-    log("Enemy is reacting to the player retiring while behind")
     if (hasJoker && playerScore < 30) state.stragedyEnemyTurnText = stragedyPlayCard(false, "?" + lowestNumberedBattlefieldCard)
     else if (hasQueen && bestQueenCardToBustPlayer != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + bestQueenCardToBustPlayer)
     else if (hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
@@ -3182,20 +3186,15 @@ function stragedyEnemyTurn() {
     else if (hasJoker && playerScore == 30) state.stragedyEnemyTurnText = stragedyPlayCard(false, "?" + lowestNumberedBattlefieldCard)
     else state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else if (playerRetired && score > playerScore && !hasJokerOnBattlefield) {
-    log("Enemy is reacting to the player retiring while ahead")
     state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else if (playerRetired && score == playerScore) {
-    log("Enemy is reacting to the player retiring while tied")
     if (highestNumberedHandCardToReach30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardToReach30)
     else state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else if (score - playerScore > 20 && !hasJokerOnBattlefield) {
-    log("Enemy has a significant lead")
     state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else if (deck.length > 0 && hand.length == 1) {
-    log("Enemy only has one card in hand")
     state.stragedyEnemyTurnText = stragedyEnemyDiscardCard()
   } else if (hasNumberedCards && (score < playerScore || score < 15)) {
-    log("Enemy is behind or needs to reach at least 15")
     if (score < 20 && highestNumberedHandCardToReach20 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardToReach20)
     else if (highestNumberedHandCardToReach30 != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, highestNumberedHandCardToReach30)
     else if (faceCardHandCount > 1 && hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
@@ -3207,13 +3206,10 @@ function stragedyEnemyTurn() {
     else if (hasKing && bestKingCardToBustPlayer != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCardToBustPlayer)
     else stragedyEnemyRandom()
   } else if (score >= playerScore && hasWitch) {
-    log("Enemy has lead and has a witch")
     state.stragedyEnemyTurnText = stragedyPlayCard(false, "w")
   } else if (score >= playerScore && hasBrigand) {
-    log("Enemy has lead and has a brigand")
     state.stragedyEnemyTurnText = stragedyPlayCard(false, "b")
   } else if (highestNumberedHandCardToReach20 == null && hand.length > 0) {
-    log("Enemy can't reach 20 and has cards in hand")
     if (score >= 20 && score < playerScore && faceCardHandCount > 1 && hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
     else if (score >= 20 && score < playerScore && faceCardHandCount > 1 && hasKing && bestKingCardToBustPlayer != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "k" + bestKingCardToBustPlayer)
     else if (score >= 20 && score < playerScore && faceCardHandCount > 1 && hasQueen && highestNumberedBattlefieldCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "q" + highestNumberedBattlefieldCard)
@@ -3224,7 +3220,6 @@ function stragedyEnemyTurn() {
     else if (hasAce && bestAceCard != null) state.stragedyEnemyTurnText = stragedyPlayCard(false, "a" + bestAceCard)
     else state.stragedyEnemyTurnText = stragedyEnemyRetire()
   } else {
-    log("Enemy has ran out of options and is doing random stuff")
     state.stragedyEnemyTurnText = stragedyEnemyRandom()
   }
   
@@ -3236,14 +3231,12 @@ function stragedyEnemyTurn() {
 }
 
 function stragedyEnemyDrawCard() {
-  log(`Enemy draw a card`)
   var card = state.stragedyEnemyDeck.pop()
   state.stragedyEnemyHand.push(card)
   return `\nThe opponent has drawn a card.\n`
 }
 
 function stragedyEnemyDiscardCard() {
-  log(`Enemy discard a card`)
   var hand = [...state.stragedyEnemyHand]
   var score = state.stragedyEnemyScore
 
@@ -3276,13 +3269,11 @@ function stragedyEnemyDiscardCard() {
 }
 
 function stragedyEnemyRetire() {
-  log(`Enemy retire`)
   state.stragedyEnemyRetired = true
   return `\nThe opponent has retired at ${state.stragedyEnemyScore} points.\n`
 }
 
 function stragedyEnemyRandom(punish) {
-  log(`Enemy random`)
   var hand = [...state.stragedyEnemyHand]
 
   if (hand.length == 0) {
@@ -3321,7 +3312,6 @@ function stragedyEnemyRandom(punish) {
 }
 
 function stragedyPlayerRandom(punish) {
-  log(`Player random`)
   var hand = [...state.stragedyPlayerHand]
 
   if (hand.length == 0) {
@@ -3358,7 +3348,6 @@ function stragedyPlayerRandom(punish) {
 }
 
 function stragedyPlayerTurn(text) {
-  log(`player turn`)
   if (text.startsWith("d") && state.stragedyPlayerHand.length > 0) {
     if (state.stragedyPlayerDeck.length == 0) return "\nYou cannot discard if you have 0 cards in your deck.\n"
 
@@ -3429,7 +3418,6 @@ function stragedyPlayerTurn(text) {
 }
 
 function stragedyPlayCard(player, text) {
-  log(`${player ? "Player" : "Enemy"} play card ${text}`)
   var character = getCharacter()
   if (player) {
     var battlefield = state.stragedyPlayerBattlefield
@@ -3614,6 +3602,10 @@ function stragedyCheckForWin() {
   else if (state.stragedyPlayerScore > state.stragedyEnemyScore) state.stragedyWinner = "player"
   else if (state.stragedyEnemyScore > state.stragedyPlayerScore) state.stragedyWinner = "enemy"
   else state.stragedyWinner = "tie"
+}
+
+function findSpellShopDeals(className, level, bought) {
+  return state.spellShopDeals.filter(element => element.className == className && element.level == level && (bought == null || element.bought == bought))
 }
 
 String.prototype.replaceAt = function(index, replacement) {

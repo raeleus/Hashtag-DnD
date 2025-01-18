@@ -118,6 +118,12 @@ const modifier = (text) => {
     else text = rawText
   }
 
+  if (state.spellShopStep != null) {
+    text = handleSpellShopStep(text)
+    if (state.spellShopStep != null) return { text }
+    else text = rawText
+  }
+
   if (state.lockpickingTurn != null) {
     text = handleLockpickingTurn(text)
     if (state.lockpickingTurn != null) return { text }
@@ -252,6 +258,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, repeatTurnSynonyms, doRepeatTurn)
   if (text == null) text = processCommandSynonyms(command, commandName, basicDeckSynonyms, doBasicDeck)
   if (text == null) text = processCommandSynonyms(command, commandName, cardShopSynonyms, doCardShop)
+  if (text == null) text = processCommandSynonyms(command, commandName, spellShopSynonyms, doSpellShop)
   if (text == null) text = processCommandSynonyms(command, commandName, stragedySynonyms, doStragedy)
   if (text == null) text = processCommandSynonyms(command, commandName, lockpickSynonyms, doLockpick)
   if (text == null) text = processCommandSynonyms(command, commandName, addCardSynonyms, doAddCard)
@@ -1416,6 +1423,186 @@ function doBasicDeck(command) {
   return `${toTitleCase(character.name)} ${takeWord} the Stragedy Basic Deck`
 }
 
+function doSpellShop(command) {
+  var character = getCharacter()
+
+  let arg0 = searchArgument(command, /bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard/gi)
+  if (arg0 == null) {
+    arg0 = character.className.toLowerCase()
+    if (/bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard/gi.test(arg0) == false) arg0 = "wizard"
+  }
+  state.spellShopClassName = arg0
+
+  let arg1 = searchArgument(command, /\d+/gi)
+  if (arg1 == null) {
+    let level = getLevel(character.experience)
+    switch (state.spellShopClassName) {
+      case "bard":
+      case "cleric":
+      case "druid":
+      case "sorcerer":
+      case "warlock":
+      case "wizard":
+        switch(level) {
+          case 1:
+          case 2:
+            arg1 = 1
+            break
+          case 3:
+          case 4:
+            arg1 = 2
+            break
+          case 5:
+          case 6:
+            arg1 = 3
+            break
+          case 7:
+          case 8:
+            arg1 = 4
+            break
+          case 9:
+          case 10:
+            arg1 = 5
+            break
+          case 11:
+          case 12:
+            arg1 = 6
+            break
+          case 13:
+          case 14:
+            arg1 = 7
+            break
+          case 15:
+          case 16:
+            arg1 = 8
+            break
+          default:
+            arg1 = 9
+            break
+        }
+        break
+      case "paladin":
+      case "ranger":
+        switch(level) {
+          case 1:
+          case 2:
+          case 3:
+          case 4:
+            arg1 = 1
+            break
+          case 5:
+          case 6:
+          case 7:
+          case 8:
+            arg1 = 2
+            break
+          case 9:
+          case 10:
+          case 11:
+          case 12:
+            arg1 = 3
+            break
+          case 13:
+          case 14:
+          case 15:
+          case 16:
+            arg1 = 4
+            break
+          default:
+            arg1 = 5
+            break
+        }
+        break
+      default:
+        arg1 = 1
+        break
+    }
+  }
+  arg1 = parseInt(arg1)
+  state.spellShopLevel = arg1
+
+  let arg2 = searchArgument(command, /free/gi)
+  state.spellShopIsFree = arg2 != null
+
+  let arg3 = searchArgument(command, /all/gi)
+  let all = arg3 != null
+  state.spellShopClearDeals = state.spellShopAll || state.spellShopAll != all
+  state.spellShopAll = all
+  log(`spell shop all:${state.spellShopAll}`)
+
+  state.spellShopStep = 0
+  state.show = "spellShop"
+  return " "
+}
+
+function handleSpellShopStep(text) {
+  state.show = "spellShop"
+
+  if (/^\s*>.*says? ".*/.test(text)) {
+    text = text.replace(/^\s*>.*says? "/, "")
+    text = text.replace(/"\s*$/, "")
+  } else if (/^\s*>\s.*/.test(text)) {
+    text = text.replace(/\s*> /, "")
+    for (var i = 0; i < info.characters.length; i++) {
+      var matchString = info.characters[i] == "" ? "You " : `${info.characters[i]} `
+      if (text.startsWith(matchString)) {
+        text = text.replace(matchString, "")
+        break
+      }
+    }
+    text = text.replace(/\.?\s*$/, "")
+  } else {
+    text = text.replace(/^\s+/, "")
+  }
+
+  if (text.toLowerCase() == "q") {
+    state.spellShopStep = 500
+    return text
+  }
+
+  switch (state.spellShopStep) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      if (isNaN(text)) return text
+      var index = parseInt(text) - 1
+      log(`index:${index}`)
+
+      let deals = findSpellShopDeals(state.spellShopClassName, state.spellShopLevel, false)
+      if (index < 0 || index >= deals.length) return text
+
+      let deal = deals[index]
+      log(`Deal name:${deal.name}`)
+
+      var character = getCharacter()
+      var goldIndex = character.inventory.findIndex(x => x.name.toLowerCase() == "gold")
+      var gold = goldIndex == -1 ? 0 : character.inventory[goldIndex].quantity
+      var found = character.spells.find((element) => element == deal.name) != undefined
+      log(`Found:${found}`)
+
+      if (deal.price > gold) {
+        state.spellShopStep = 2
+        return text
+      } else if (found) {
+        state.spellShopStep = 3
+        return text
+      }
+
+      doLearnSpell(`learnspell ${deal.name}`)
+      if (!state.spellShopIsFree) character.inventory[goldIndex].quantity -= deal.price
+      deal.bought = true
+
+      state.spellShopStep = 1
+      break
+    case 500:
+      state.show = null
+      state.spellShopStep = null
+      break
+  }
+  return text
+}
+
 function doCardShop(command) {
   state.stragedyShopStep = 0
   state.show = "stragedyShop"
@@ -1450,6 +1637,7 @@ function handleStragedyShopStep(text) {
   switch (state.stragedyShopStep) {
     case 0:
     case 1:
+    case 2:
       if (isNaN(text)) return text
       var index = parseInt(text) - 1
       if (index < 0 || index >= state.cardDeals.length) return text
@@ -2147,6 +2335,7 @@ function doRest(command) {
   state.enemies = []
   state.cardDeals = null
   state.cardPrices = null
+  state.spellShopDeals = null
 
   var healingFactor = 1
   var text

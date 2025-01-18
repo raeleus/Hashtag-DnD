@@ -96,6 +96,14 @@
     "useForCharacterCreation": false
   },
   {
+    "keys": "Antipathy/Sympathy",
+    "value": "Spell that causes a creature to be frightened must move as far away from the caster as possible or to be charmed and must move as close as possible to the caster.",
+    "type": "spell",
+    "title": "Antipathy/Sympathy",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Arcane Eye",
     "value": "Spell creates an invisible eye which allows the caster to see from that eye in every direction. The eye can be moved.",
     "type": "spell",
@@ -312,6 +320,14 @@
     "useForCharacterCreation": false
   },
   {
+    "keys": "Blindness/Deafness",
+    "value": "Spell that blinds or deafens the target.",
+    "type": "spell",
+    "title": "Blindness/Deafness",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Blink spell, cast Blink",
     "value": "Spell with a chance to cause the caster to enter the ethereal plane at the end of their turn, preventing them from being targeted by attacks.",
     "type": "spell",
@@ -328,10 +344,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Burning Hand",
+    "keys": "Burning Hands",
     "value": "Spell that causes flames to shoot from your hands causing damage in a cone in front of the caster.",
     "type": "spell",
-    "title": "Burning Hand",
+    "title": "Burning Hands",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -552,10 +568,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Conjure Minor Elemntals",
+    "keys": "Conjure Minor Elementals",
     "value": "Spell that summons elemental spirits that surround the caster in a range of fifteen feet. They cause acid, cold, fire, or lightning damage to enemies in this area.",
     "type": "spell",
-    "title": "Conjure Minor Elemntals",
+    "title": "Conjure Minor Elementals",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -633,9 +649,25 @@
   },
   {
     "keys": "Counterspell",
-    "value": "A spell that attempts to interrupt a spell casted by an opponent.",
+    "value": "Spell that attempts to interrupt a spell casted by an opponent.",
     "type": "spell",
     "title": "Counterspell",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Create Food and Water",
+    "value": "Spell that creates either 45 pounds of food or ten gallons of clean water.",
+    "type": "spell",
+    "title": "Enlarge",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Create Food",
+    "value": "Spell that creates 45 pounds of food. It is bland and spoils after 24 hours if uneaten.",
+    "type": "spell",
+    "title": "Create Food",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -768,10 +800,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Detect Good and Evil",
+    "keys": "Detect Evil and Good",
     "value": "Spell that allows the caster to sense celestials, elementals, fey, fiends, or undead and their location.",
     "type": "spell",
-    "title": "Detect Good and Evil",
+    "title": "Detect Evil and Good",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -947,7 +979,7 @@
     "keys": "Eldritch Blast",
     "value": "Spell that casts a beam of pure energy at a creature, causing magical force damage.",
     "type": "spell",
-    "title": "Eldritch Eldritch Blast",
+    "title": "Eldritch Blast",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -980,6 +1012,14 @@
     "value": "Spell that increases the size of the target making them harder to move and increases their damage.",
     "type": "spell",
     "title": "Enlarge",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Enlarge/Reduce",
+    "value": "Spell that increases or decreases the size of the target which affects how easy they are to move and the damage they output.",
+    "type": "spell",
+    "title": "Enlarge/Reduce",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -1475,7 +1515,7 @@
     "keys": "Heroes' Feast",
     "value": "Spell that magically conjures a feast that allows anyone who eats from it to have resistance to poison damage and cannot be frightened or poisoned.",
     "type": "spell",
-    "title": "Heroe's Feast",
+    "title": "Heroes' Feast",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -1872,10 +1912,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Meteor Storm",
+    "keys": "Meteor Swarm",
     "value": "Spell that sends explosive orbs down that cause fire and bludgeoning damage.",
     "type": "spell",
-    "title": "Meteor Storm",
+    "title": "Meteor Swarm",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -1968,10 +2008,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Modenkainen's Magnificent Mansion",
+    "keys": "Mordenkainen's Magnificent Mansion",
     "value": "Spell that creates a magical door that allows the caster and whoever they specify to enter an extradimensional mansion of any design. There are near transparent servants that do your bidding.",
     "type": "spell",
-    "title": "Modenkainen's Magnificent Mansion",
+    "title": "Mordenkainen's Magnificent Mansion",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -2048,10 +2088,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Pass Without Trace",
+    "keys": "Pass without Trace",
     "value": "Spell that creates an emanation around the caster that causes their allies to be more undetectable.",
     "type": "spell",
-    "title": "Pass Without Trace",
+    "title": "Pass without Trace",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -2185,7 +2225,7 @@
   },
   {
     "keys": "Prismatic Wall",
-    "value": "Spelldescription",
+    "value": "Spell that creates a shimmering, impassible plane of light forms. It is comprised of seven layers, red, orange, yellow, green, blue, indigo, and violet. Each layer has different magical properties must take a different type of damage to be destroyed.",
     "type": "spell",
     "title": "Prismatic Wall",
     "description": "",
@@ -2216,26 +2256,26 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Protection From Energy",
+    "keys": "Protection from Energy",
     "value": "Spell that causes the target to have resistance against a specified type of damage.",
     "type": "spell",
-    "title": "Protection From Energy",
+    "title": "Protection from Energy",
     "description": "",
     "useForCharacterCreation": false
   },
   {
-    "keys": "Protection From Evil and Good",
+    "keys": "Protection from Evil and Good",
     "value": "Spell that protects the target from aberrations, celestials, elementals, fey, fiends, and the undead. The target cannot be possessed, charmed, or frightened.",
     "type": "spell",
-    "title": "Protection From Evil and Good",
+    "title": "Protection from Evil and Good",
     "description": "",
     "useForCharacterCreation": false
   },
   {
-    "keys": "Protection From Poison",
+    "keys": "Protection from Poison",
     "value": "Spell that prevents the target from being poisoned.",
     "type": "spell",
-    "title": "Protection From Poison",
+    "title": "Protection from Poison",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -2400,10 +2440,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "See Invisiblity",
+    "keys": "See Invisibility",
     "value": "Spell that allows the caster to see invisible creatures and see into the ethereal plane.",
     "type": "spell",
-    "title": "See Invisiblity",
+    "title": "See Invisibility",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -2744,10 +2784,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Summon Abberation",
+    "keys": "Summon Aberration",
     "value": "Spell that allows the caster to summon an abberation that must follow the caster's commands.",
     "type": "spell",
-    "title": "Summon Abberation",
+    "title": "Summon Aberration",
     "description": "",
     "useForCharacterCreation": false
   },

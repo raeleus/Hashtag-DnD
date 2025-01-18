@@ -93,6 +93,8 @@ const modifier = (text) => {
     case "stragedyShop":
       text += handleStragedyShop()
       break
+    case "spellShop":
+      text += handleSpellShop()
     case "lockpicking":
       text += handleLockpicking()
       break
@@ -467,6 +469,8 @@ const modifier = (text) => {
       text += "\n    Removes all spells from the character's spellbook."
       text += "\n#spellbook"
       text += "\n    Shows the list of spells that the character has learned."
+      text += "\n#spellshop (bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard) (level) (free) (all)"
+      text += "\n    This opens the spell shop where characters can spend gold to purchase new spells. The selection is randomized based on the day and on the character's class and spell level. Full casters, such as bards, clerics, druids, sorcerers, warlocks, and wizards, have spell levels from 0-9. Half casters, such as paladins and rangers, have spell levels from 1-5. Include the argument \"free\" to not require gold to purchase the spell. Include the argument \"all\" to list all available spells for that level. Otherwise, the list is randomized and a selection of lower level spells are included."
 
       text += "\n\n--Combat--"
       text += "\n#setupenemy"
@@ -733,6 +737,343 @@ Type d to draw a card. ${!hasJokerOnBattlefield ? "Type r to retire. " : ""}Type
   return text
 }
 
+function spellShopPushDeal(items, name, price) {
+  state.spellShopDeals.push({
+    className: state.spellShopClassName,
+    level: state.spellShopLevel,
+    name: name,
+    price: price,
+    bought: false
+  })
+  if (!state.spellShopAll) items.splice(index, 1)
+}
+
+var spellShopSeed
+
+function spellShopSelectSpells(spells, price, numberOfSpells) {
+  if (numberOfSpells == null) numberOfSpells = 1
+
+  spellShopSeed += 100
+  index = Math.floor(getRandom(spellShopSeed) * spells.length)
+  if (state.spellShopAll) {
+    log(`Spells:${spells}`)
+    for (const spell of spells) {
+      log(`Spell:${spell}`)
+      spellShopPushDeal(spells, spell, price)
+    }
+    log(state.spellShopDeals)
+    return
+  }
+
+  for (let i = 0; i < numberOfSpells; i++) {
+    spellShopPushDeal(spells, spells[i], price)
+  }
+}
+
+function handleSpellShop() {
+  var character = getCharacter()
+  var goldIndex = character.inventory.findIndex(x => x.name.toLowerCase() == "gold")
+  var gold = goldIndex == -1 ? 0 : character.inventory[goldIndex].quantity
+  var text = " "
+  spellShopSeed = state.day
+
+  if (state.spellShopDeals == null || state.spellShopClearDeals) state.spellShopDeals = []
+
+  if (findSpellShopDeals(state.spellShopClassName, state.spellShopLevel).length == 0) switch(state.spellShopClassName) {
+    case "bard":
+      switch(state.spellShopLevel) {
+        case 9:
+          spellShopSelectSpells(["Foresight", "Power Word Heal", "Power Word Kill", "Prismatic Wall", "True Polymorph"], 50000)
+          if (state.spellShopAll) break
+        case 8:
+          spellShopSelectSpells(["Antipathy/Sympathy", "Befuddlement", "Dominate Monster", "Glibness", "Mind Blank", "Power Word Stun"], 25000)
+          if (state.spellShopAll) break
+        case 7:
+          spellShopSelectSpells(["Etherealness", "Forcecage", "Mirage Arcane", "Mordenkainen's Magnificent Mansion", "Mordenkainen's Sword", "Power Word Fortify", "Prismatic Spray", "Project Image", "Regenerate", "Resurrection", "Symbol", "Teleport"], 20000, state.spellShopLevel == 7 ? 2 : 1)
+          if (state.spellShopAll) break
+        case 6:
+          spellShopSelectSpells(["Eyebite", "Find the Path", "Guards and Wards", "Heroes' Feast", "Mass Suggestion", "Otto's Irresistible Dance", "Programmed Illusion", "True Seeing"], 10000, state.spellShopLevel == 6 ? 2 : 1)
+          if (state.spellShopAll) break
+        case 5:
+          spellShopSelectSpells(["Animate Objects", "Awaken", "Dominate Person", "Dream", "Dream", "Geas", "Greater Restoration", "Hold Monster", "Legend Lore", "Mass Cure Wounds", "Mislead", "Modify Memory", "Planar Binding", "Raise Dead", "Rary's Telepathic Bond", "Scrying", "Seeming", "Synaptic Static", "Teleportation Circle", "Yolande's Regal Presence"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 4:
+          spellShopSelectSpells(["Charm Monster", "Compulsion", "Confusion", "Dimension Door", "Fount of Moonlight", "Freedom of Movement", "Greater Invisibility", "Hallucinatory Terrain", "Locate Creature", "Phantasmal Killer", "Polymorph"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 3:
+          spellShopSelectSpells(["Bestow Curse", "Clairvoyance", "Dispel Magic", "Fear", "Feign Death", "Glyph of Warding", "Hypnotic Pattern", "Leomund's Tiny Hut", "Major Image", "Mass Healing Word", "Nondetection", "Plant Growth", "Sending", "Slow", "Speak with Dead", "Speak with Plants", "Stinking Cloud", "Tongues"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 2:
+          spellShopSelectSpells(["Aid", "Animal Messenger", "Blindness/Deafness", "Calm Emotions", "Cloud of Daggers", "Crown of Madness", "Detect Thoughts", "Enhance Ability", "Enlarge/Reduce", "Enthrall", "Heat Metal", "Hold Person", "Invisibility", "Knock", "Lesser Restoration", "Locate Animals or Plants", "Locate Object", "Magic Mouth", "Mirror Image", "Phantasmal Force", "See Invisibility", "Shater", "Silence", "Suggestion", "Zone of Truth"], 500, state.spellShopLevel == 2 ? 5 : 1)
+        case 1:
+          spellShopSelectSpells(["Animal Friendship", "Bane", "Charm Person", "Color Spray", "Command", "Comprehend Languages", "Cure Wounds", "Detect Magic", "Disguise Self", "Dissonant Whispers", "Faerie Fire", "Feather Fall", "Healing Word", "Heroism", "Identify", "Illusory Script", "Longstrider", "Silent Image", "Sleep", "Speak with Animals", "Tasha's Hideous Laughter", "Thunderwave", "Unseen Servant"], 250, state.spellShopLevel == 1 ? 5 : 1)
+        case 0:
+          spellShopSelectSpells(["Blade Ward", "Dancing Lights", "Friends", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion", "Prestidigitation", "Starry Wisp", "Thunderclap", "True Strike", "Vicious Mockery"], 50, state.spellShopLevel == 0 ? 3 : 1)
+      }
+      break
+    case "cleric":
+      switch(state.spellShopLevel) {
+        case 9:
+          spellShopSelectSpells(["Astral Projection", "Gate", "Mass Heal", "Power Word Heal", "True Resurrection"], 50000)
+          if (state.spellShopAll) break
+        case 8:
+          spellShopSelectSpells(["Antimagic Field", "Control Weather", "Earthquake", "Holy Aura", "Sunburst"], 25000)
+          if (state.spellShopAll) break
+        case 7:
+          spellShopSelectSpells(["Conjure Celestial", "Divine Word", "Etherealness", "Fire Storm", "Plane Shift", "Power Word Fortify", "Regenerate", "Resurrection", "Symbol"], 20000, state.spellShopLevel == 7 ? 2 : 1)
+          if (state.spellShopAll) break
+        case 6:
+          spellShopSelectSpells(["Blade Barrier", "Create Undead", "Find the Path", "Forbiddance", "Harm", "Heroes' Feast", "Planar Ally", "Sunbeam", "True Seeing", "Word of Recall"], 10000, state.spellShopLevel == 6 ? 2 : 1)
+          if (state.spellShopAll) break
+        case 5:
+          spellShopSelectSpells(["Circle of Power", "Commune", "Contagion", "Dispel Evil and Good", "Flame Strike", "Geas", "Greater Restoration", "Hallow", "Insect Plague", "Legend Lore", "Mass Cure Wounds", "Planar Binding", "Raise Dead", "Scrying", "Summon Celestial"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 4:
+          spellShopSelectSpells(["Aura of Life", "Aura of Purity", "Banishment", "Control Weather", "Death Ward", "Divination", "Freedom of Movement", "Guardian of Faith", "Locate Creature", "Stone Shape"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 3:
+          spellShopSelectSpells(["Animate Dead", "Aura of Vitality", "Beacon of Hope", "Bestow Curse", "Clairvoyance", "Create Food and Water", "Daylight", "Dispel Magic", "Feign Death", "Glyph of Warding", "Magic Circle", "Mass Healing Ward", "Meld into Stone", "Protection from Energy", "Remove Curse", "Revivify", "Sending", "Speak with Dead", "Spirit Guardians", "Tongues", "Water Walk"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 2:
+          spellShopSelectSpells(["Aid", "Augury", "Blindness/Deafness", "Calm Emotions", "Continual Flame", "Enhance Ability", "Find Traps", "Gentle Repose", "Hold Person", "Lesser Restoration", "Locate Object", "Prayer of Healing", "Protection from Poison", "Silence", "Spiritual Weapon", "Warding Bond", "Zone of Truth"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 1:
+          spellShopSelectSpells(["Bane", "Bless", "Command", "Create or Destroy Water", "Cure Wounds", "Detect Evil and Good", "Detect Magic", "Detect Poison and Disease", "Guiding Bolt", "Healing Word", "Inflict Wounds", "Protection from Evil and Good", "Purify Food and Drink", "Sanctuary", "Shield of Faith"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 0:
+          spellShopSelectSpells(["Guidance", "Light", "Mending", "Resistance", "Sacred Flame", "Spare the Dying", "Thaumaturgy", "Toll the Dead", "Word of Radiance"], 50, state.spellShopLevel == 0 ? 3 : 1)
+          break
+      }
+      break
+    case "druid":
+      switch(state.spellShopLevel) {
+        case 9:
+          spellShopSelectSpells(["Foresight", "Shapechange", "Storm of Vengeance", "True Resurrection"], 50000)
+          if (state.spellShopAll) break
+        case 8:
+          spellShopSelectSpells(["Animal Shapes", "Antipathy/Sympathy", "Befuddlement", "Control Weather", "Earthquake", "Incendiary Cloud", "Sunburst", "Tsunami"], 25000)
+          if (state.spellShopAll) break
+        case 7:
+          spellShopSelectSpells(["Fire Storm", "Mirage Arcane", "Plane Shift", "Regenerate", "Reverse Gravity", "Symbol"], 20000, state.spellShopLevel == 7 ? 2 : 1)
+          if (state.spellShopAll) break
+        case 6:
+          spellShopSelectSpells(["Conjure Fey", "Find the Path", "Flesh to Stone", "Heal", "Heroes' Feast", "Move Earth", "Sunbeam", "Transport via Plants", "Wall of Thorns", "Wind Walk"], 10000, state.spellShopLevel == 6 ? 2 : 1)
+          if (state.spellShopAll) break
+        case 5:
+          spellShopSelectSpells(["Antilife Shell", "Awaken", "Commune with Nature", "Cone of Cold", "Conjure Elemental", "Contagion", "Geas", "Greater Restoration", "Insect Plague", "Mass Cure Wounds", "Planar Binding", "Reincarnate", "Scrying", "Tree Stride", "Wall of Stone"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 4:
+          spellShopSelectSpells(["Blight", "Charm Monster", "Confusion", "Conjure Woodland Beings", "Control Water", "Divination", "Dominate Beast", "Fire Shield", "Fount of Moonlight", "Freedom of Movement", "Giant Insect", "Grasping Vine", "Hallucinatory Terrain", "Ice Storm", "Locate Creature", "Polymorph", "Stone Shape", "Stoneskin", "Summon Elemental", "Wall of Fire"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 3:
+          spellShopSelectSpells(["Aura of Vitality", "Call Lightning", "Conjure Animals", "Daylight", "Dispel Magic", "Elemental Weapon", "Feign Death", "Meld into Stone", "Plant Growth", "Protection from Energy", "Revivify", "Sleet Storm", "Speak with Plants", "Summon Fey", "Water Breathing", "Water Walk", "Wind Wall"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 2:
+          spellShopSelectSpells(["Aid", "Animal Messenger", "Augury", "Barkskin", "Beast Sense", "Continual Flame", "Darkvision", "Enhance Ability", "Enlarge/Reduce", "Find Traps", "Flame Blade", "Flaming Sphere", "Gust of Wind", "Heat Metal", "Hold Person", "Lesser Restoration", "Locate Animals or Plants", "Locate Object", "Moonbeam", "Pass without Trace", "Protection from Poison", "Spike Growth", "Summon Beast"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 1:
+          spellShopSelectSpells(["Animal Friendship", "Charm Person", "Create or Destroy Water", "Cure Wounds", "Detect Magic", "Detect Poison and Disease", "Entangle", "Faerie Fire", "Fog Cloud", "Goodberry", "Healing Word", "Ice Knife", "Jump", "Longstrider", "Protection from Evil and Good", "Purify Food and Drink", "Speak with Animals", "Thunderwave"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 0:
+          spellShopSelectSpells(["Druidcraft", "Elementalism", "Guidance", "Mending", "Message", "Poison Spray", "Produce Flame", "Resistance", "Shillelagh", "Spare the Dying", "Starry Wisp", "Thorn Whip", "Thunderclap"], 50, state.spellShopLevel == 0 ? 3 : 1)
+          if (state.spellShopAll) break
+          break
+      }
+      break
+    case "paladin":
+      switch(state.spellShopLevel) {
+        case 5:
+          spellShopSelectSpells(["Banishing Smite", "Circle of Power", "Destructive Wave", "Dispel Evil and Good", "Geas", "Greater Restoration", "Raise Dead", "Summon Celestial"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 4:
+          spellShopSelectSpells(["Aura of Life", "Aura of Purity", "Banishment", "Death Ward", "Locate Creature", "Staggering Smite"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 3:
+          spellShopSelectSpells(["Aura of Vitality", "Blinding Smite", "Create Food and Water", "Crusader's Mantle", "Daylight", "Dispel Magic", "Elemental Weapon", "Magic Circle", "Remove Curse", "Revivify"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 2:
+          spellShopSelectSpells(["Aid", "Find Steed", "Gentle Repose", "Lesser Restoration", "Locate Object", "Magic Weapon", "Prayer of Healing", "Protection from Poison", "Shining Smite", "Warding Bond", "Zone of Truth"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 1:
+          spellShopSelectSpells(["Bless", "Command", "Compelled Duel", "Cure Wounds", "Detect Evil and Good", "Detect Magic", "Detect Poison and Disease", "Divine Favor", "Divine Smite", "Heroism", "Protection from Evil and Good", "Purify Food and Drink", "Searing Smite", "Shield of Faith", "Thunderous Smite", "Wrathful Smite"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          if (state.spellShopAll) break
+          break
+      }
+      break
+    case "ranger":
+      switch(state.spellShopLevel) {
+        case 5:
+          spellShopSelectSpells(["Commune with Nature", "Conjure Volley", "Greater Restoration", "Steel Wind Strike", "Swift Quiver", "Tree Stride"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 4:
+          spellShopSelectSpells(["Conjure Woodland Beings", "Dominate Beast", "Freedom of Movement", "Grasping Vine", "Locate Creature", "Stoneskin", "Summon Elemental"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 3:
+          spellShopSelectSpells(["Conjure Animals", "Conjure Barrage", "Daylight", "Dispel Magic", "Elemental Weapon", "Lightning Arrow", "Meld into Stone", "Nondetection", "Plant Growth", "Protection from Energy", "Revivify", "Speak with Plants", "Summon Fey", "Water Breathing", "Water Walk", "Wind Wall"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 2:
+          spellShopSelectSpells(["Aid", "Animal Messenger", "Barkskin", "Beast Sense", "Cordon of Arrows", "Darkvision", "Enhance Ability", "Find Traps", "Gust of Wind", "Lesser Restoration", "Locate Animals or Plants", "Locate Object", "Magic Weapon", "Pass without Trace", "Protection from Poison", "Silence", "Spike Growth", "Summon Beast"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 1:
+          spellShopSelectSpells(["Alarm", "Animal Friendship", "Cure Wounds", "Detect Magic", "Detect Poison and Disease", "Ensnaring Strike", "Entangle", "Fog Cloud", "Goodberry", "Hail of Thorns", "Hunter's Mark", "Jump", "Longstrider", "Speak with Animals"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          if (state.spellShopAll) break
+          break
+      }
+      break
+    case "sorcerer":
+      switch(state.spellShopLevel) {
+        case 9:
+          spellShopSelectSpells(["Gate", "Meteor Swarm", "Power Word Kill", "Time Stop", "Wish"], 50000)
+          if (state.spellShopAll) break
+        case 8:
+          spellShopSelectSpells(["Demiplane", "Dominate Monster", "Earthquake", "Incendiary Cloud", "Power Word Stun", "Sunburst"], 25000)
+          if (state.spellShopAll) break
+        case 7:
+          spellShopSelectSpells(["Delayed Blast Fireball", "Etherealness", "Finger of Death", "Fire Storm", "Plane Shift", "Prismatic Spray", "Reverse Gravity", "Teleport"], 20000, state.spellShopLevel == 7 ? 2 : 1)
+          if (state.spellShopAll) break
+        case 6:
+          spellShopSelectSpells(["Arcane Gate", "Chain Lightning", "Circle of Death", "Disintegrate", "Eyebite", "Flesh to Stone", "Globe of Invulnerability", "Mass Suggestion", "Move Earth", "Otiluke's Freezing Sphere", "Sunbeam", "True Seeing"], 10000, state.spellShopLevel == 6 ? 2 : 1)
+          if (state.spellShopAll) break
+        case 5:
+          spellShopSelectSpells(["Animate Objects", "Bigby's Hand", "Cloudkill", "Cone of Cold", "Creation", "Dominate Person", "Hold Monster", "Insect Plague", "Seeming", "Synaptic Static", "Telekinesis", "Teleportation Circle", "Wall of Stone"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 4:
+          spellShopSelectSpells(["Banishment", "Blight", "Charm Monster", "Confusion", "Dimension Door", "Dominate Beast", "Fire Shield", "Greater Invisibility", "Ice Storm", "Polymorph", "Stoneskin", "Vitriolic Sphere", "Wall of Fire"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 3:
+          spellShopSelectSpells(["Blink", "Clairvoyance", "Counterspell", "Daylight", "Dispel Magic", "Fear", "Fireball", "Fly", "Gaseous Form", "Haste", "Hypnotic Pattern", "Lightning Bolt", "Major Image", "Protection from Energy", "Sleet Storm", "Slow", "Stinking Cloud", "Tongues", "Vampiric Touch", "Water Breathing", "Water Walk"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 2:
+          spellShopSelectSpells(["Alter Self", "Arcane Vigor", "Blindness/Deafness", "Blur", "Cloud of Daggers", "Crown of Madness", "Darkness", "Darkvision", "Detect Thoughts", "Dragon's Breath", "Enhance Ability", "Enlarge/Reduce", "Flame Blade", "Flaming Sphere", "Gust of Wind", "Hold Person", "Invisibility", "Knock", "Levitate", "Magic Weapon", "Mind Spike", "Mirror Image", "Misty Step", "Phantasmal Force", "Scorching Ray", "See Invisibility", "Shatter", "Spider Climb", "Suggestion", "Web"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 1:
+          spellShopSelectSpells(["Burning Hands", "Charm Person", "Chromatic Orb", "Color Spray", "Comprehend Languages", "Detect Magic", "Disguise Self", "Expeditious Retreat", "False Life", "Feather Fall", "Fog Cloud", "Grease", "Ice Knife", "Jump", "Mage Armor", "Magic Missile", "Ray of Sickness", "Shield", "Silent Image", "Sleep", "Thunderwave", "Witch Bolt"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 0:
+          spellShopSelectSpells(["Acid Splash", "Blade Ward", "Chill Touch", "Dancing Lights", "Elementalism", "Fire Bolt", "Friends", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion", "Poison Spray", "Prestidigitation", "Ray of Frost", "Shocking Grasp", "Sorcerous Burst", "Thunderclap", "True Strike"], 50, state.spellShopLevel == 0 ? 3 : 1)
+          if (state.spellShopAll) break
+          break
+      }
+      break
+    case "warlock":
+      log("warlock")
+      switch(state.spellShopLevel) {
+        case 9:
+          spellShopSelectSpells(["Astral Projection", "Dominate Person", "Foresight", "Gate", "Geas", "Greater Restoration", "Imprisonment", "Insect Plague", "Modify Memory", "Power Word Kill", "Seeming", "Summon Celestial", "Telekinesis", "True Polymorph", "Weird"], 50000)
+        case 8:
+          spellShopSelectSpells(["Befuddlement", "Demiplane", "Dominate Monster", "Glibness", "Power Word Stun"], 25000)
+          if (state.spellShopAll) break
+        case 7:
+          spellShopSelectSpells(["Dominate Beast", "Etherealness", "Finger of Death", "Fire Shield", "Forcecage", "Greater Invisibility", "Guardian of Faith", "Plane Shift", "Wall of Fire"], 20000, state.spellShopLevel == 7 ? 2 : 1)
+          if (state.spellShopAll) break
+        case 6:
+          spellShopSelectSpells(["Arcane Gate", "Circle of Death", "Create Undead", "Eyebite", "Summon Fiend", "Tasha's Bubbling Cauldron", "True Seeing"], 10000, state.spellShopLevel == 6 ? 2 : 1)
+          if (state.spellShopAll) break
+        case 5:
+          spellShopSelectSpells(["Blink", "Clairvoyance", "Confusion", "Contact Other Plane", "Daylight", "Dream", "Fireball", "Hold Monster", "Hunger of Hadar", "Jallarzi's Storm of Radiance", "Mislead", "Planar Binding", "Plant Growth", "Revivify", "Scrying", "Stinking Cloud", "Summon Aberration", "Synaptic Static", "Teleportation Circle"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 4:
+          spellShopSelectSpells(["Banishment", "Blight", "Charm Monster", "Dimension Door", "Hallucinatory Terrain", "Summon Aberration"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 3:
+          spellShopSelectSpells(["Counterspell", "Dispel Magic", "Fear", "Fly", "Gaseous Form", "Hunger of Hadar", "Hypnotic Pattern", "Magic Circle", "Major Image", "Remove Curse", "Summon Fey", "Summon Undead", "Tongues", "Vampiric Touch"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 2:
+          spellShopSelectSpells(["Cloud of Daggers", "Crown of Madness", "Darkness", "Enthrall", "Hold Person", "Invisibility", "Mind Spike", "Mirror Image", "Misty Step", "Ray of Enfeeblement", "Spider Climb", "Suggestion"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 1:
+          spellShopSelectSpells(["Armor of Agathys", "Arms of Hadar", "Bane", "Charm Person", "Comprehend Languages", "Detect Magic", "Expeditious Retreat", "Hellish Rebuke", "Hex", "Illusory Script", "Protection from Evil and Good", "Speak with Animals", "Tasha's Hideous Laughter", "Unseen Servant", "Witch Bolt"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 0:
+          spellShopSelectSpells(["Blade Ward", "Chill Touch", "Eldritch Blast", "Friends", "Mage Hand", "Mind Sliver", "Minor Illusion", "Poison Spray"], 50, state.spellShopLevel == 0 ? 3 : 1)
+          if (state.spellShopAll) break
+          break
+      }
+      break
+    case "wizard":
+      switch(state.spellShopLevel) {
+        case 9:
+          spellShopSelectSpells(["Astral Projection", "Foresight", "Gate", "Imprisonment", "Meteor Swarm", "Power Word Kill", "Prismatic Wall", "Shapechange", "Time Stop", "True Polymorph", "Weird", "Wish"], 50000)
+          if (state.spellShopAll) break
+        case 8:
+          spellShopSelectSpells(["Antimagic Field", "Antipathy/Sympathy", "Befuddlement", "Clone", "Control Weather", "Demiplane", "Dominate Monster", "Incendiary Cloud", "Maze", "Mind Blank", "Power Word Stun", "Sunburst", "Telepathy"], 25000)
+          if (state.spellShopAll) break
+        case 7:
+          spellShopSelectSpells(["Delayed Blast Fireball", "Etherealness", "Finger of Death", "Forcecage", "Mirage Arcane", "Mordenkainen's Magnificent Mansion", "Mordenkainen's Sword", "Plane Shift", "Prismatic Spray", "Project Image", "Reverse Gravity", "Sequester", "Simulacrum", "Symbol", "Teleport"], 20000, state.spellShopLevel == 7 ? 2 : 1)
+          if (state.spellShopAll) break
+        case 6:
+          spellShopSelectSpells(["Arcane Gate", "Chain Lightning", "Circle of Death", "Contingency", "Create Undead", "Disintegrate", "Drawmij's Instant Summons", "Eyebite", "Flesh to Stone", "Globe of Invulnerability", "Guards and Wards", "Magic Jar", "Mass Suggestion", "Move Earth", "Otiluke's Freezing Sphere", "Otto's Irresistible Dance", "Programmed Illusion", "Summon Fiend", "Sunbeam", "Tasha's Bubbling Cauldron", "True Seeing", "Wall of Ice"], 10000, state.spellShopLevel == 6 ? 2 : 1)
+          if (state.spellShopAll) break
+        case 5:
+          spellShopSelectSpells(["Animate Objects", "Bigby's Hand", "Circle of Power", "Cloudkill", "Cone of Cold", "Conjure Elemental", "Contact Other Plane", "Creation", "Dominate Person", "Dream", "Geas", "Hold Monster", "Jallarzi's Storm of Radiance", "Legend Lore", "Mislead", "Modify Memory", "Passwall", "Planar Binding", "Rary's Telepathic Bond", "Scrying", "Seeming", "Steel Wind Strike", "Summon Dragon", "Synaptic Static", "Telekinesis", "Teleportation Circle", "Wall of Force", "Wall of Stone", "Yolande's Regal Presence"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 4:
+          spellShopSelectSpells(["Arcane Eye", "Banishment", "Blight", "Charm Monster", "Confusion", "Conjure Minor Elementals", "Control Water", "Dimension Door", "Divination", "Evard's Black Tentacles", "Fabricate", "Fire Shield", "Greater Invisibility", "Hallucinatory Terrain", "Ice Storm", "Leomund's Secret Chest", "Locate Creature", "Mordenkainen's Faithful Hound", "Mordenkainen's Private Sanctum", "Otiluke's Resilient Sphere", "Phantasmal Killer", "Polymorph", "Stoneskin", "Summon Aberration", "Summon Construct", "Summon Elemental", "Vitriolic Sphere", "Wall of Fire"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          if (state.spellShopAll) break
+        case 3:
+          spellShopSelectSpells(["Animate Dead", "Bestow Curse", "Blink", "Clairvoyance", "Counterspell", "Dispel Magic", "Fear", "Feign Death", "Fireball", "Fly", "Gaseous Form", "Glyph of Warding", "Haste", "Hypnotic Pattern", "Leomund's Tiny Hut", "Lightning Bolt", "Magic Circle", "Major Image", "Nondetection", "Phantom Steed", "Protection from Energy", "Remove Curse", "Sending", "Sleet Storm", "Slow", "Speak with Dead", "Stinking Cloud", "Summon Fey", "Summon Undead", "Tongues", "Vampiric Touch", "Water Breathing"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 2:
+          spellShopSelectSpells(["Alter Self", "Arcane Lock", "Arcane Vigor", "Augury", "Blindness/Deafness", "Blur", "Cloud of Daggers", "Continual Flame", "Crown of Madness", "Darkness", "Darkvision", "Detect Thoughts", "Dragon's Breath", "Enhance Ability", "Enlarge/Reduce", "Flaming Sphere", "Gentle Repose", "Gust of Wind", "Hold Person", "Invisibility", "Knock", "Levitate", "Locate Object", "Magic Mouth", "Magic Weapon", "Melf's Acid Arrow", "Mind Spike", "Mirror Image", "Misty Step", "Nystul's Magic Aura", "Phantasmal Force", "Ray of Enfeeblement", "Rope Trick", "Scorching Ray", "See Invisibility", "Shatter", "Spider Climb", "Suggestion", "Web"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 1:
+          spellShopSelectSpells(["Alarm", "Burning Hands", "Charm Person", "Chromatic Orb", "Color Spray", "Comprehend Languages", "Detect Magic", "Disguise Self", "Expeditious Retreat", "False Life", "Feather Fall", "Find Familiar", "Fog Cloud", "Grease", "Ice Knife","Identify", "Illusory Script", "Jump", "Longstrider", "Mage Armor", "Magic Missile", "Protection from Evil and Good", "Ray of Sickness", "Shield", "Silent Image", "Sleep", "Tasha's Hideous Laughter", "Tenser's Floating Disk", "Thunderwave", "Unseen Servant", "Witch Bolt"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          if (state.spellShopAll) break
+        case 0:
+          spellShopSelectSpells(["Acid Splash", "Blade Ward", "Chill Touch", "Dancing Lights", "Elementalism", "Fire Bolt", "Friends", "Light", "Mage Hand", "Mending", "Message", "Mind Sliver", "Minor Illusion", "Poison Spray", "Prestidigitation", "Ray of Frost", "Shocking Grasp", "Thunderclap", "Toll the Dead", "True Strike"], 50, state.spellShopLevel == 0 ? 3 : 1)
+          if (state.spellShopAll) break
+          break
+      }
+      break
+  }
+
+  switch (state.spellShopStep) {
+    case 0:
+      text = `**Welcome to the Spell Shop**
+Deals change every day!`
+      break
+    case 1:
+      text = "Spell purchased!"
+      break
+    case 2:
+      text = "You do not have enough gold!"
+    case 3:
+      text = "You already know that spell!"
+  }
+
+  switch (state.spellShopStep) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      text += `
+Select a number from the list below to purchase a spell:
+
+`
+      let deals = findSpellShopDeals(state.spellShopClassName, state.spellShopLevel, false)
+      if (deals.length == 0) text += "There are no spells left for sale!\n"
+      for (var i = 0; i < deals.length; i++) {
+        let spellStoryCard = findSpellCard(deals[i].name)
+        let description = spellStoryCard == null ? "\nERROR: Story card is missing. You may import the latest story cards from the Hashtag DnD Github: https://github.com/raeleus/Hashtag-DnD/blob/master/story-cards.json\n\n" : `:\n${spellStoryCard.entry}\n\n`
+        let found = character.spells.find((element) => element == deals[i].name) != undefined
+        text += `${i + 1}. ${deals[i].name}${state.spellShopIsFree ? "" : ` for ${numberWithCommas(deals[i].price)} gold`}`
+        if (found) text += " (Already Known)"
+        text += description
+      }
+
+      text += `
+${state.spellShopIsFree ? "These spells come at no cost!" : `You have ${numberWithCommas(gold)} gold`}
+Enter the number or q to quit:
+`
+      break
+    case 500:
+      text = "Thank you for shopping at the Spell Shop!"
+      break
+  }
+
+  return text
+}
+
 function handleStragedyShop() {
   var character = getCharacter()
   var goldIndex = character.inventory.findIndex(x => x.name.toLowerCase() == "gold")
@@ -781,11 +1122,11 @@ Select a number from the list below to purchase a card:
 `
       if (state.cardDeals.length == 0) text += "There are no cards left for sale!\n"
       for (var i = 0; i < state.cardDeals.length; i++) {
-        text += `${i + 1}. Stragedy ${state.cardDeals[i]} Card for ${state.cardPrices[i]} gold\n`
+        text += `${i + 1}. Stragedy ${state.cardDeals[i]} Card for ${numberWithCommas(state.cardPrices[i])} gold\n`
       }
 
       text += `
-You have ${gold} gold
+You have ${numberWithCommas(gold)} gold
 Enter the number or q to quit:
 `
       break
