@@ -16,6 +16,9 @@ Create locations to travel to and view them in a map
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
+v. 0.5.1
+* 
+
 v. 0.5.0
 * Added Mastermind/Lockpicking Game
 * Added Spell Shop - Make sure to import the latest story cards: https://github.com/raeleus/Hashtag-DnD/blob/master/story-cards.json
