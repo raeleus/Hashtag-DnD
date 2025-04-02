@@ -1,5 +1,4533 @@
 [
   {
+    "keys": "Club",
+    "value": "A crude, light weapon held in one hand. It can slow the movement of an enemy with its bludgeoning damage.",
+    "type": "weapon",
+    "title": "Club",
+    "description": "1,1d4",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dagger",
+    "value": "A light weapon that can be wielded with precision or brute strength. It can be dual-wielded and thrown at short range to cause piercing damage.",
+    "type": "weapon",
+    "title": "Dagger",
+    "description": "2,1d4",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Greatclub",
+    "value": "A crude, two-handed weapon that is capable of pushing back enemies with bludgeoning damage.",
+    "type": "weapon",
+    "title": "Greatclub",
+    "description": "1,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Handaxe",
+    "value": "A light weapon that slashes opponents. It can be thrown at short range.",
+    "type": "weapon",
+    "title": "Handaxe",
+    "description": "5,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Javelin",
+    "value": "A medium-ranged thrown weapon that causes piercing damage which can slow enemies.",
+    "type": "weapon",
+    "title": "Javelin",
+    "description": "1,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Light Hammer",
+    "value": "A light, bludgeoning weapon that can also be thrown at short range.",
+    "type": "weapon",
+    "title": "Light Hammer",
+    "description": "1,1d4",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mace",
+    "value": "A simple melee weapon that can temporarily weaken the attack of the opponent with its bludgeoning damage.",
+    "type": "weapon",
+    "title": "Mace",
+    "description": "5,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Quarterstaff",
+    "value": "A versatile weapon that can topple opponents with its bludgeoning damage.",
+    "type": "weapon",
+    "title": "Quarterstaff",
+    "description": "1,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sickle",
+    "value": "A light, slashing weapon that can be dual-wielded.",
+    "type": "weapon",
+    "title": "Sickle",
+    "description": "1,1d4",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Spear",
+    "value": "A versatile, piercing weapon that can also be thrown at short range and temporarily weaken the attack of opponents.",
+    "type": "weapon",
+    "title": "Spear",
+    "description": "1,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dart",
+    "value": "A ranged weapon that can be wielded with precision or brute strength which gives you advantage on your next attack. Can be thrown a short range.",
+    "type": "weapon",
+    "title": "Dart",
+    "description": "1,1d4",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Light Crossbow",
+    "value": "A ranged weapon that fires piercing bolts at long range which can slow an opponent. It requires two hands to load and fire.",
+    "type": "weapon",
+    "title": "Light Crossbow",
+    "description": "25,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shortbow",
+    "value": "A ranged weapon that fire piercing arrows at long range which gives you advantage on your next attack. It requires two hands to fire.",
+    "type": "weapon",
+    "title": "Shortbow",
+    "description": "25,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sling",
+    "value": "A ranged, bludgeoning weapon that launches sling bullets at medium range. These slow the opponent",
+    "type": "weapon",
+    "title": "Sling",
+    "description": "1,1d4",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Battleaxe",
+    "value": "A versatile weapon that causes slashing damage. It's capable of toppling opponents.",
+    "type": "weapon",
+    "title": "Battleaxe",
+    "description": "10,1d10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Glaive",
+    "value": "A heavy melee weapon that requires two hands to wield slashing damage. It has long reach and guarantees some damage on its target.",
+    "type": "weapon",
+    "title": "Glaive",
+    "description": "20,1d10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Flail",
+    "value": "A capable melee weapon that can bludgeon opponents and temporarily weakens the attacks of opponents.",
+    "type": "weapon",
+    "title": "Flail",
+    "description": "10,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Greataxe",
+    "value": "A heavy, two-handed weapon that slashes an opponent and damages a nearby enemy for lesser damage.",
+    "type": "weapon",
+    "title": "Greataxe",
+    "description": "30,1d12",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Greatsword",
+    "value": "A heavy, two-handed weapon that deals slashing damage and guarantees some damage even if it misses.",
+    "type": "weapon",
+    "title": "Greatsword",
+    "description": "50,2d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Halberd",
+    "value": "A heavy, two-handed weapon with incredible reach that slashes an opponent and damages a nearby enemy for lesser damage.",
+    "type": "weapon",
+    "title": "Halberd",
+    "description": "20,1d10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Lance",
+    "value": "A heavy, twon-handed weapon with incredible reach that pierces an opponent and can topple them over.",
+    "type": "weapon",
+    "title": "Lance",
+    "description": "10,1d10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Longsword",
+    "value": "A versatile weapon that can temporarily weaken the attack of an opponent with slashing damage.",
+    "type": "weapon",
+    "title": "Longsword",
+    "description": "15,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Maul",
+    "value": "A heavy, two-handed weapon capable of bludgeoning enemies and toppling them over.",
+    "type": "weapon",
+    "title": "Maul",
+    "description": "10,2d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Morningstar",
+    "value": "A piercing weapon that can temporarily weaken the attack of an opponent.",
+    "type": "weapon",
+    "title": "Morningstar",
+    "description": "15,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Pike",
+    "value": "A heavy, two-handed weapon with incredible reach that pierces enemies and pushes them back.",
+    "type": "weapon",
+    "title": "Pike",
+    "description": "5,1d10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rapier",
+    "value": "A weapon that can be wielded with precision or brute strength and pierces enemies to give advantage on further attacks.",
+    "type": "weapon",
+    "title": "Rapier",
+    "description": "25,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Scimitar",
+    "value": "A light weapon that can be dual-wielded with precision or brute strength and slashes enemies.",
+    "type": "weapon",
+    "title": "Scimitar",
+    "description": "25,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shortsword",
+    "value": "A light weapon that can be wielded with precision or brute strength and pierces enemies to give advantage on further attacks.",
+    "type": "weapon",
+    "title": "Shortsword",
+    "description": "10,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Trident",
+    "value": "A versatile piercing weapon that can be thrown at short range to topple enemies.",
+    "type": "weapon",
+    "title": "Trident",
+    "description": "5,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Warhammer",
+    "value": "A versatile bludgeoning weapon that can push enemies.",
+    "type": "weapon",
+    "title": "Warhammer",
+    "description": "15,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "War Pick",
+    "value": "A versatile piercing weapon that can temporarily weaken an opponents attack.",
+    "type": "weapon",
+    "title": "War Pick",
+    "description": "5,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Whip",
+    "value": "A slashing weapon with incredible reach that can slow an enemy's approach.",
+    "type": "weapon",
+    "title": "Whip",
+    "description": "2,1d4",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Blowgun",
+    "value": "An unwieldly ranged weapon that can shoot a dart at a target to give advantage on the next attack.",
+    "type": "weapon",
+    "title": "Blowgun",
+    "description": "10,1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hand Crossbow",
+    "value": "A medium ranged weapon that can pierce enemies to give advantage on the next attack.",
+    "type": "weapon",
+    "title": "Hand Crossbow",
+    "description": "75,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Heavy Crossbow",
+    "value": "A two-handed long ranged weapon that can pierce enemies to push them back.",
+    "type": "weapon",
+    "title": "Heavy Crossbow",
+    "description": "50,1d10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Longbow",
+    "value": "A two-handed extreme long ranged weapon that can pierce enemies to slow them.",
+    "type": "weapon",
+    "title": "Longbow",
+    "description": "50,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Musket",
+    "value": "A powerful, two-handed medium ranged weapon that can slow enemies.",
+    "type": "weapon",
+    "title": "Musket",
+    "description": "500,1d12",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Pistol",
+    "value": "A powerful, short ranged weapon that can give the attacker advantage on their next strike.",
+    "type": "weapon",
+    "title": "Pistol",
+    "description": "250,1d10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Padded Armor",
+    "value": "A basic light armor that is not stealthy.",
+    "type": "armor",
+    "title": "Padded Armor",
+    "description": "5,11+d",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Leather Armor",
+    "value": "A basic light armor.",
+    "type": "armor",
+    "title": "Leather Armor",
+    "description": "10,11+d",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Studded Leather Armor",
+    "value": "An advanced light armor.",
+    "type": "armor",
+    "title": "Studded Leather Armor",
+    "description": "45,12+d",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hide Armor",
+    "value": "A basic medium armor that slightly restricts dodging.",
+    "type": "armor",
+    "title": "Hide Armor",
+    "description": "10,12+dmax2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Chain Shirt",
+    "value": "A moderate medium armor that slightly restricts dodging.",
+    "type": "armor",
+    "title": "Chain Shirt",
+    "description": "50,13+dmax2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Scale Mail",
+    "value": "An advanced medium armor that slightly restricts dodging and is not stealthy.",
+    "type": "armor",
+    "title": "Scale Mail",
+    "description": "50,14+dmax2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Breastplate",
+    "value": "An advanced medium armor that slightly restricts dodging.",
+    "type": "armor",
+    "title": "Breastplate",
+    "description": "400,14+dmax2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Half Plate Armor",
+    "value": "An excellent medium armor that slightly restricts dodging.",
+    "type": "armor",
+    "title": "Half Plate Armor",
+    "description": "750,15+dmax2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring Mail",
+    "value": "A basic heavy armor that restricts dodging and is not stealthy.",
+    "type": "armor",
+    "title": "Ring Mail",
+    "description": "30,14",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Chain Mail",
+    "value": "A moderate heavy armor that requires strength to wear, restricts dodging, and is not stealthy.",
+    "type": "armor",
+    "title": "Chain Mail",
+    "description": "75,16",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Splint Armor",
+    "value": "An advanced heavy armor that requires a lot of strengthh to wear, restricts dodging, and is not stealthy.",
+    "type": "armor",
+    "title": "Splint Armor",
+    "description": "200,17",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Plate Armor",
+    "value": "An excellent heavy armor that requires a lot of strength to wear, restricts dodging, and is not stealthy.",
+    "type": "armor",
+    "title": "Plate Armor",
+    "description": "1500,18",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shield",
+    "value": "Adds additional armor to the wearer.",
+    "type": "armor",
+    "title": "Shield",
+    "description": "10,+2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Alchemist's Supplies",
+    "value": "Can be used to identify a substance or start a fire. Could craft Alchhemist Fire, Component Pouch, Oil, Paper, or Perfume.",
+    "type": "item",
+    "title": "Alchemist's Supplies",
+    "description": "50",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Brewer's Supplies",
+    "value": "Can detect if a drink is poisoned and identify alcohol. It can craft antitoxin.",
+    "type": "item",
+    "title": "Brewer's Supplies",
+    "description": "20",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Calligrapher's Supplies",
+    "value": "Writes text that guards against forgery. It can craft ink and spell scrolls.",
+    "type": "item",
+    "title": "Calligrapher's Supplies",
+    "description": "10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Carpenter's Tools",
+    "value": "Seal a door or container and craft wooden weapons and equipment: club, greatclub, quarterstaff, barrel, chest, ladder, pole, portable ram, torch.",
+    "type": "item",
+    "title": "Carpenter's Tools",
+    "description": "8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cartographer's Tools",
+    "value": "Draft a map of a small area. Used to craft maps.",
+    "type": "item",
+    "title": "Cartographer's Tools",
+    "description": "15",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cobbler's Tools",
+    "value": "Modify footwear to give the wearer an advantage at acrobatics. Craft a climber's kit.",
+    "type": "item",
+    "title": "Cobbler's Tools",
+    "description": "5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cook's Utensils",
+    "value": "Improve food taste or detect poisoned food. Creates rations.",
+    "type": "item",
+    "title": "Cook's Utensils",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Glassblower's Tools",
+    "value": "Determine what was inside a glass object and craft glass bottle, magnifying glass, spyglass, and vial.",
+    "type": "item",
+    "title": "Glassblower's Tools",
+    "description": "30",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Jeweler's Tools",
+    "value": "Determine the value of a gem or craft an arcane/holyh focus.",
+    "type": "item",
+    "title": "Jeweler's Tools",
+    "description": "25",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Leatherworker's Tools",
+    "value": "Add a design to a leather item or craft a sling, whip, leather armors, backpack, bolt case, map/scroll case, parchment, pouch, quiver, waterskin.",
+    "type": "item",
+    "title": "Leatherworker's Tools",
+    "description": "5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mason's Tools",
+    "value": "Chisel a symbol or hole into stone. Create a block and tackle.",
+    "type": "item",
+    "title": "Mason's Tools",
+    "description": "10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Painter's Supplies",
+    "value": "Paint an image of something that has been seen or craft a druidic/holy focus.",
+    "type": "item",
+    "title": "Painter's Supplies",
+    "description": "10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potter's Tools",
+    "value": "Determine what was inside a pottery or create a jug/lamp.",
+    "type": "item",
+    "title": "Potter's Tools",
+    "description": "10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Smith's Tools",
+    "value": "Pry open a door or container. Create a metal melee weapon, medium/heavy armor, ball bearings, bucket, caltrops, chain, crowbar, bullets, grappling hook, iron pot, spikes.",
+    "type": "item",
+    "title": "Smith's Tools",
+    "description": "20",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tinker's Tools",
+    "value": "Assemble a tiny item made out of scrap or craft a musket, pistol, bell, lantern, flask, hunting trap, lock, manacles, mirror, shovel, signal whistle, tinderbox.",
+    "type": "item",
+    "title": "Tinker's Tools",
+    "description": "50",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Weaver's Tools",
+    "value": "Fix a tear in clothhing or sew a tiny design. Craft padded armor, basket, bedroll, blanket, fine clothes, net, robe, rope, sack, string, tent, traveler's clothes.",
+    "type": "item",
+    "title": "Weaver's Tools",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Woodcarver's Tools",
+    "value": "Carve a pattern into wood or craft a club, greatclub, quarterstaff, ranged weapons, arcane/druidic focuses, arrows, bolts, ink pen, needles.",
+    "type": "item",
+    "title": "Woodcarver's Tools",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Disguise Kit",
+    "value": "Apply makeup or craft a costume.",
+    "type": "item",
+    "title": "Disguise Kit",
+    "description": "25",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Forgery Kit",
+    "value": "Mimic up to 10 words of someone else's handwriting or duplicate a wax seal.",
+    "type": "item",
+    "title": "Forgery Kit",
+    "description": "15",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Gaming Set, Dice, Dragonchess, Playing Cards, Three-Dragon Ante",
+    "value": "Play a game to win or discern if someone is cheating.",
+    "type": "item",
+    "title": "Gaming Set",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Herbalism Kit",
+    "value": "Identify a plant or craft an antitoxin, candle, healer's kit, or a potion of healing.",
+    "type": "item",
+    "title": "Herbalism Kit",
+    "description": "5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Musical Instrument, Bagpipes, Drum, Dulcimer, Flute, Horn, Lute, Lyre, Pan Flute, Shawm, Viol",
+    "value": "Play a known tune or improvise a song.",
+    "type": "item",
+    "title": "Musiical Instrument",
+    "description": "6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Navigator's Tools",
+    "value": "Plot a course or determine position by stargazing.",
+    "type": "item",
+    "title": "Navigator's Tools",
+    "description": "25",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Poisoner's Kit",
+    "value": "Detect a poisoned object or craft a basic poison.",
+    "type": "item",
+    "title": "Poisoner's Kit",
+    "description": "50",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Thieves' Tools",
+    "value": "Pick a lock or disarm a trap.",
+    "type": "item",
+    "title": "Thieves' Tools",
+    "description": "25",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Acid",
+    "value": "A vial of acid that can be thrown at an object causing acid damage.",
+    "type": "item",
+    "title": "Acid",
+    "description": "25",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Alchemist's Fire",
+    "value": "Thrown bottle that will cause the target to take fire damage and begin to burn.",
+    "type": "item",
+    "title": "Alchemist's Fire",
+    "description": "50",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ammunition",
+    "value": "Arrows, bolts, bullets, or needles necessary for ranged weapons.",
+    "type": "item",
+    "title": "Ammunition",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Antitoxin",
+    "value": "Drinking the antitoxin will cure poisoned creatures and avoid becoming poisoned.",
+    "type": "item",
+    "title": "Antitoxin",
+    "description": "50",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Arcane Focus",
+    "value": "A crystal, orb, rod, staff, or wand that is needed to cast magic through.",
+    "type": "item",
+    "title": "Arcane Focus",
+    "description": "5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Backpack",
+    "value": "A carrying pack that can hold up to 30 pounds.",
+    "type": "item",
+    "title": "Backpack",
+    "description": "2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ball Bearings",
+    "value": "Metal balls that can be spread on the floor that can drop creatures prone when they step on them.",
+    "type": "item",
+    "title": "Ball Bearings",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Barrel",
+    "value": "Carries up to 40 gallons of liquid in 4 cubic feet.",
+    "type": "item",
+    "title": "Barrel",
+    "description": "2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Basket",
+    "value": "Carries up to 40 pounds within 2 cubic feet.",
+    "type": "item",
+    "title": "Basket",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bedroll",
+    "value": "Allows sleep during extreme cold.",
+    "type": "item",
+    "title": "Bedroll",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bell",
+    "value": "Ringing the bell produces a sound that can be heard up to 60 feet away.",
+    "type": "item",
+    "title": "Bell",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Blanket",
+    "value": "Helps mitigate extreme cold.",
+    "type": "item",
+    "title": "Blanket",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Block and Tackle",
+    "value": "Allows the user to hoist up to four times the weight they can normally lift.",
+    "type": "item",
+    "title": "Block and Tackle",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Book",
+    "value": "A fiction or non-fiction book. Non-fiction books can be consulted for additional information on a subject.",
+    "type": "item",
+    "title": "Book",
+    "description": "25",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Glass Bottle",
+    "value": "Can contain up to 1.5 pints of liquid.",
+    "type": "item",
+    "title": "Glass Bottle",
+    "description": "2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bucket",
+    "value": "Can hold up to half a cubic foot of contents.",
+    "type": "item",
+    "title": "Bucket",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Burglar's Pack",
+    "value": "Contains a backpack, ball bearings, a bell, 10 candles, a crowbar, a hooded lantern, 7 flasks of oil, 5 days of rations, a rope, a tinderbox, and a waterskin.",
+    "type": "item",
+    "title": "Burglar's Pack",
+    "description": "16",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Caltrops",
+    "value": "Can be spread out to cause piercing damage and slow down any creature that steps on it.",
+    "type": "item",
+    "title": "Caltrops",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Candle",
+    "value": "Sheds bright light for 5 feet and dim light for 5 feet past that.",
+    "type": "item",
+    "title": "Candle",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Crossbow Bolt Case",
+    "value": "Carries 20 bolts.",
+    "type": "item",
+    "title": "Crossbow Bolt Case",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Map Case",
+    "value": "Carries 10 sheets of paper or 5 sheets of parchment.",
+    "type": "item",
+    "title": "Map Case",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Scroll Case",
+    "value": "Carries 10 sheets of paper or 5 sheets of parchment.",
+    "type": "item",
+    "title": "Scroll Case",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Chain",
+    "value": "Can be wrapped around a creature to restrain it.",
+    "type": "item",
+    "title": "Chain",
+    "description": "5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Chest",
+    "value": "Holds up to 12 cubic feet of contents.",
+    "type": "item",
+    "title": "Chest",
+    "description": "5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Climber's Kit",
+    "value": "When utilized, the user will not fall more than 25 feet when climbing.",
+    "type": "item",
+    "title": "Climber's Kit",
+    "description": "25",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Fine Clothes",
+    "value": "Clothes made of expensive fabrics.",
+    "type": "item",
+    "title": "Fine Clothes",
+    "description": "15",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Traveler's Clothes",
+    "value": "Basic garments designed for travel.",
+    "type": "item",
+    "title": "Traveler's Clothes",
+    "description": "2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Component Pouch",
+    "value": "Contains all the basic components needed for spells.",
+    "type": "item",
+    "title": "Component Pouch",
+    "description": "25",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Costume",
+    "value": "Gives the wearer the ability to blend in or impersonate an individual.",
+    "type": "item",
+    "title": "Costume",
+    "description": "5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Crowbar",
+    "value": "Assists with tasks that require strength and leverage.",
+    "type": "item",
+    "title": "Crowbar",
+    "description": "2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Diplomat's Pack",
+    "value": "Contains chest, fine clothes, ink, 5 ink pens, lamp, 2 maps/scroll scases, 4 flasks of oil, 5 sheets of paper, 5 sheets of parchment, perfume, and tinderbox.",
+    "type": "item",
+    "title": "Diplomat's Pack",
+    "description": "39",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Druidic Focus",
+    "value": "A sprig of mistletoe, a wooden staff, or a yew wand necessary for casting nature spells.",
+    "type": "item",
+    "title": "Druidic Focus",
+    "description": "5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dungeoneer's Pack",
+    "value": "Contains backpack, caltrops, crowbar, 2 flasks of oil, 10 days of rations, rope, tinderbox, 10 torches, and a waterskin.",
+    "type": "item",
+    "title": "Dungeoneer's Pack",
+    "description": "12",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Entertainer's Pack",
+    "value": "Contains a backpack, bedroll, bell, bullseye lantern, 3 costumes, mirror, 8 flasks of oil, 9 days of rations, tinderbox, and waterskin.",
+    "type": "item",
+    "title": "Entertainer's Pack",
+    "description": "40",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Explorer's Pack",
+    "value": "Contains backpack, bedroll, 2 flasks of oil, 10 days of rations, rope, tinderbox, 10 torches, and waterskin.",
+    "type": "item",
+    "title": "Explorer's Pack",
+    "description": "10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Flask",
+    "value": "Holds up to 1 pint of liquid.",
+    "type": "item",
+    "title": "Flask",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Grappling Hook",
+    "value": "Thrown with a range of 50 feet, it can catch on a ledge and allow creatures to climb up it.",
+    "type": "item",
+    "title": "Grappling Hook",
+    "description": "2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Healer's Kit",
+    "value": "Can be used to stabilize on unconcious creature.",
+    "type": "item",
+    "title": "Healer's Kit",
+    "description": "5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Holy Symbol",
+    "value": "An amulet, emblem, or reliquary used to cast divine magic.",
+    "type": "item",
+    "title": "Holy Symbol",
+    "description": "10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Holy Water",
+    "value": "Throwing holy water on a target such as fiends or undead creatures will cause radiant damage.",
+    "type": "item",
+    "title": "Holy Water",
+    "description": "25",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hunting Trap",
+    "value": "Can be prepared to damage and ensare any creature that steps on it. They'll have to use their strength to escape or continue to suffer its effects.",
+    "type": "item",
+    "title": "Hunting Trap",
+    "description": "5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ink",
+    "value": "A bottle that provides enough ink to write about 500 pages.",
+    "type": "item",
+    "title": "Ink",
+    "description": "10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ink Pen",
+    "value": "A pen used to write or draw.",
+    "type": "item",
+    "title": "Ink Pen",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Jug",
+    "value": "Can contain up to 1 gallon of liquid.",
+    "type": "item",
+    "title": "Jug",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ladder",
+    "value": "Climbable up to 10 feet.",
+    "type": "item",
+    "title": "Ladder",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Lamp",
+    "value": "Burns oil to create bright light in a 15 foot radius and dim light for an additional 30 feet.",
+    "type": "item",
+    "title": "Lamp",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bullseye Lantern",
+    "value": "Burns oil to cast bright light in a 60 foot cone and dim light in an additional 60 feet.",
+    "type": "item",
+    "title": "Bullseye Lantern",
+    "description": "10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hooded Lantern",
+    "value": "Burns oil to cast bright light in a 30 foot radius and dim light for an additional 30 feet. The hood can be lowered to decrease the dim light to 5 feet.",
+    "type": "item",
+    "title": "Hooded Lantern",
+    "description": "5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Lock",
+    "value": "Must be unlocked with its matching key. It may also be picked with a thieve's tools.",
+    "type": "item",
+    "title": "Lock",
+    "description": "10",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Magnifying Glass",
+    "value": "Can appraise an item or inspect a highly detailed item. It can also be used to focus sunlight to cause a fire.",
+    "type": "item",
+    "title": "Magnifying Glass",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Manacles",
+    "value": "Can be used to restrain a creature.",
+    "type": "item",
+    "title": "Manacles",
+    "description": "2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Map",
+    "value": "Can be used to navigate easier in the area depicted in the map.",
+    "type": "item",
+    "title": "Map",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mirror",
+    "value": "Can be used to help apply cosmetics and also peek around corners and reflect light.",
+    "type": "item",
+    "title": "Mirror",
+    "description": "5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Net",
+    "value": "Can be thrown on a creature to restrain it.",
+    "type": "item",
+    "title": "Net",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Oil",
+    "value": "Used as fuel for lanterns for 6 hours. It can be doused onto a creature or space so that it can be lit on fire.",
+    "type": "item",
+    "title": "Oil",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Paper",
+    "value": "Can hold up to 250 handwritten words.",
+    "type": "item",
+    "title": "Paper",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Parchment",
+    "value": "Can hold up to 250 handwritten words.",
+    "type": "item",
+    "title": "Parchment",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Perfume",
+    "value": "The scent can increase the user's charisma for an hour.",
+    "type": "item",
+    "title": "Perfume",
+    "description": "5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Basic Poison",
+    "value": "Can be applied to a weapon to add extra poison damage.",
+    "type": "item",
+    "title": "Basic Poison",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Pole",
+    "value": "Can be used to touch something out of reach or use it to vault over something.",
+    "type": "item",
+    "title": "Pole",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Iron Pot",
+    "value": "Can hold up to 1 gallon of liquid for cooking.",
+    "type": "item",
+    "title": "Iron Pot",
+    "description": "2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Healing",
+    "value": "Heals a minor amount of health.",
+    "type": "item",
+    "title": "Potion of Healing",
+    "description": "50",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Greater Healing",
+    "value": "Heals a minor amount of health.",
+    "type": "item",
+    "title": "Potion of Healing",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Superior Healing",
+    "value": "Heals a minor amount of health.",
+    "type": "item",
+    "title": "Potion of Healing",
+    "description": "500",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Supreme Healing",
+    "value": "Heals a minor amount of health.",
+    "type": "item",
+    "title": "Potion of Healing",
+    "description": "5000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Pouch",
+    "value": "Holds up to 6 pounds within one-fifth of a cubic foot.",
+    "type": "item",
+    "title": "Pouch",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Priest's Pack",
+    "value": "Contains backpack, blanket, holy water, lamp, 7 days of rations, robe, and tinderbox",
+    "type": "item",
+    "title": "Priest's Pack",
+    "description": "33",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Quiver",
+    "value": "Holds up to 20 arrows.",
+    "type": "item",
+    "title": "Quiver",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Portable Ram",
+    "value": "Can break down doors.",
+    "type": "item",
+    "title": "Portable Ram",
+    "description": "4",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rations",
+    "value": "Travel-ready food like jerky, dried fruit, hardtack, and nuts.",
+    "type": "item",
+    "title": "Rations",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Robe",
+    "value": "Clothing typical of vocational or ceremonial significance.",
+    "type": "item",
+    "title": "Robe",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rope",
+    "value": "Can be tied in a knot around a creature or object.",
+    "type": "item",
+    "title": "Rope",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sack",
+    "value": "Holds 30 pounds withn 1 cubic foot.",
+    "type": "item",
+    "title": "Sack",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Scholar's Pack",
+    "value": "Contains backpack, book, ink, ink pen, lamp, 10 lasks of oil, 10 sheets of parchment, and Tinderbox.",
+    "type": "item",
+    "title": "Scholar's Pack",
+    "description": "40",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shovel",
+    "value": "Can dig a 5 foot hole in an hour.",
+    "type": "item",
+    "title": "Shovel",
+    "description": "2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Signal Whistle",
+    "value": "Produces sound that can be hear up to 600 feet away.",
+    "type": "item",
+    "title": "Signal Whistle",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Spell Scroll",
+    "value": "Contains the magic of a single spell that can be cast when it's read. It disinigrates if it is targeted at a creature.",
+    "type": "item",
+    "title": "Spell Scroll",
+    "description": "30",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Iron Spikes",
+    "value": "Can be hammered into the ground as a spike, used to jam a door shut, or tie a rope/chain to.",
+    "type": "item",
+    "title": "Iron Spikes",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Spyglass",
+    "value": "Magnifies objects viewed at a distance through it.",
+    "type": "item",
+    "title": "Spyglass",
+    "description": "1000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "String",
+    "value": "A ten foot length that could be tied in a knot.",
+    "type": "item",
+    "title": "String",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tent",
+    "value": "Can be used to house 2-3 creatures to sleep in.",
+    "type": "item",
+    "title": "Tent",
+    "description": "2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tinderbox",
+    "value": "Can be used to light a fire if the target has exposed fuel, otherwise it takes 1 minute to initiate a fire.",
+    "type": "item",
+    "title": "Tinderbox",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Torch",
+    "value": "Casts bright light in a 20 foot radius and dim light for an additional 20 feet. It burns for an hour. It can be used as a makeshift weapon causing fire damage.",
+    "type": "item",
+    "title": "Torch",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Vial",
+    "value": "Can hold up to 4 ounces of liquid.",
+    "type": "item",
+    "title": "Vial",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Waterskin",
+    "value": "Holds up to 4 pints of liquid.",
+    "type": "item",
+    "title": "Waterskin",
+    "description": "1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "of Gleaming",
+    "value": "An armor that never gets dirty.",
+    "type": "armor",
+    "title": "Armor of Gleaming",
+    "description": "100,18",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bead of Nourishment",
+    "value": "Dissolves on the tongue and provides enough nourishment for one day.",
+    "type": "item",
+    "title": "Bead of Nourishment",
+    "description": "50",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bead of Refreshment",
+    "value": "Dissolves into liquid, transforming it into cold drinking water.",
+    "type": "item",
+    "title": "Bead of Refreshment",
+    "description": "50",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Boots of False Tracks",
+    "value": "Leaves tracks of any kind of humanoid as choosen by the wearer.",
+    "type": "item",
+    "title": "Boots of False Tracks",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Candle of the Deep",
+    "value": "A candle that continues to work while underwater.",
+    "type": "item",
+    "title": "Candle of the Deep",
+    "description": "50",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cast-Off Armor",
+    "value": "Armor that can be removed instantly through magic.",
+    "type": "armor",
+    "title": "Cast-Off Armor",
+    "description": "100,17",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Charlatan's Die",
+    "value": "A six sided die where the number rolled can be chosen.",
+    "type": "item",
+    "title": "Charlatan's Die",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cloak of Billowing",
+    "value": "Can be commanded to billow dramatically.",
+    "type": "item",
+    "title": "Cloak of Billowing",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cloak of Many Fashions",
+    "value": "Can magically change style to anything desired but it must remain as a cloak.",
+    "type": "item",
+    "title": "Cloak of Many Fashions",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Clockwork Amulet",
+    "value": "Once per day, the ticking, geared amulet can be used to make any attack have basic accuracy.",
+    "type": "item",
+    "title": "Clockwork Amulet",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Clothes of Mending",
+    "value": "Automatically repairs itself as a result of normal wear and tear.",
+    "type": "item",
+    "title": "Clothes of Mending",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dark Shard Amulet",
+    "value": "Once per day, the amulet can be used to cast a warlock cantrip. It requires intelligence to wield.",
+    "type": "item",
+    "title": "Dark Shard Amulet",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dread Helm",
+    "value": "A fearsome helmet that disguises the wearer's face in shadow and turns their eyes glowing red.",
+    "type": "item",
+    "title": "Dread Helm",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ear Horn of Hearing",
+    "value": "Suppresses the deafened condition when held to the ear.",
+    "type": "item",
+    "title": "Ear Horn of Hearing",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Enduring Spellbook",
+    "value": "A spellbook that cannot be damaged by fire, water, or age.",
+    "type": "item",
+    "title": "Enduring Spellbook",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ersatz Eye",
+    "value": "Magical replacement for a missing eye that works as well as a real one.",
+    "type": "item",
+    "title": "Ersatz Eye",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hat of Vermin",
+    "value": "Can summmon a bat, frog, or rat. However, it is not under the control of the caster and only lasts an hour. It can be used 3 times a day.",
+    "type": "item",
+    "title": "Hat of Vermin",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hat of Wizardry",
+    "value": "Once per day, the hat can be used to cast a wizard cantrip. It requires intelligence to wield.",
+    "type": "item",
+    "title": "Hat of Wizardry",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Heward's Handy Spice Pouch",
+    "value": "Can be used up to 10 times to summon nonmagical seasoning at will. It regains some of its charges every day.",
+    "type": "item",
+    "title": "Heward's Handy Spice Pouch",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Horn of Silent Alarm",
+    "value": "When blown, only a single chosen creature will hear the sound of this horn within 600 feet. It can be used up to 4 times a day.",
+    "type": "item",
+    "title": "Horn of Silent Alarm",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Instrument of Illusions",
+    "value": "While being played, this instrument creates harmless, illusory effects around it.",
+    "type": "item",
+    "title": "Instrument of Illusions",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Instrument of Scribing",
+    "value": "While being played, this instrument can magically inscribe a few words into a surface or object. It fades after a day. It can be used 3 times per day.",
+    "type": "item",
+    "title": "Instrument of Scribing",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Lock of Trickery",
+    "value": "Otherwise like an ordinary lock, this device magically adjusts to thwart burglars and makes lockpicking much more difficult.",
+    "type": "item",
+    "title": "Lock of Trickery",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Moon-Touched Sword",
+    "value": "Creates bright light in a 15 foot radius and dim light for an additional 15 feet when unsheathed.",
+    "type": "weapon",
+    "title": "Moon-Touched Sword",
+    "description": "100,2d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mystery Key",
+    "value": "It has a small chance of unlocking any lock that it is inserted to. Once it does so, it disappears.",
+    "type": "item",
+    "title": "Mystery Key",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Orb of Direction",
+    "value": "Can be used to determine which way is magnetic north.",
+    "type": "item",
+    "title": "Orb of Direction",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Orb of Time",
+    "value": "Can be used to determine if its morning, afternoon, evening, or nighttime.",
+    "type": "item",
+    "title": "Orb of Time",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Perfume of Bewitching",
+    "value": "Magical perfume that enhances the ability to influence creatures nearby. It can be used only once.",
+    "type": "item",
+    "title": "Perfume of Bewitching",
+    "description": "50",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Pipe of Smoke Monsters",
+    "value": "Can be used to create a puff of smoke in the shape of any creature. It dissapates after a few seconds.",
+    "type": "item",
+    "title": "Pipe of Smoke Monsters",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Pole of Angling",
+    "value": "A basic pole that can be magically transformed into a fishing pole with a hook, line, and reel. It can be transformed back into a regular pole.",
+    "type": "item",
+    "title": "Pole of Angling",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Pole of Collapsing",
+    "value": "Can be transformed from a pole to a rod and back again.",
+    "type": "item",
+    "title": "Pole of Collapsing",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Climbing",
+    "value": "Gain the ability to climb surfaces with relative ease.",
+    "type": "item",
+    "title": "Potion of Climbing",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Comprehension",
+    "value": "When drank, it allows the caster to understand any language seen or heard. The caster must be touching the surface of a written word to understand it. It does not decode cipher.",
+    "type": "item",
+    "title": "Potion of Comprehension",
+    "description": "50",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Pot of Awakening",
+    "value": "Planting an ordinary shrub inside this pot will transform it into an Awakened Shrub that will obey your commands. The pot is broken when this happens.",
+    "type": "item",
+    "title": "Pot of Awakening",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Prosthetic Limb",
+    "value": "A magic item that can replace a lost limb. It functions identically to a normal limb.",
+    "type": "item",
+    "title": "Prosthetic Limb",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rival Coin",
+    "value": "When tossed, a target within 60 feet has a 50% chance of taking psychic damage. Otherwise, the tosser will recieve some psychic damage. It can be used once a day.",
+    "type": "item",
+    "title": "Rival Coin",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rope of Mending",
+    "value": "A 50 foot rope that can be cut up and be connected back together through magic.",
+    "type": "item",
+    "title": "Rope of Mending",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ruby of the War Mage",
+    "value": "Allows a weapon to be used as a spell-casting focus.",
+    "type": "item",
+    "title": "Ruby of the War Mage",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shield of Expression",
+    "value": "The shield bears a face which can be altered magically to have a different expression.",
+    "type": "armor",
+    "title": "Shield of Expression",
+    "description": "100,+2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Silvered Weapon",
+    "value": "Does additional damage to shape-shifted creatures.",
+    "type": "weapon",
+    "title": "Silvered Weapon",
+    "description": "10,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Smoldering Armor",
+    "value": "The armor has wisps of odorless smoke rise from it.",
+    "type": "armor",
+    "title": "Smoldering Armor",
+    "description": "100,17",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of Adornment",
+    "value": "Allows up to three small items to be held hovering at the tip of the staff.",
+    "type": "weapon",
+    "title": "Staff of Adornment",
+    "description": "100,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of Birdcalls",
+    "value": "Can imitate the sound of several types of birds. It can be used up to 10 times and recharges daily.",
+    "type": "weapon",
+    "title": "Staff of Birdcalls",
+    "description": "100,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of Flowers",
+    "value": "Can cause a flower to grow and bloom from a patch of earth or soil. It can be used up to 10 times and recharges daily.",
+    "type": "weapon",
+    "title": "Staff of Flowers",
+    "description": "100,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Talking Doll",
+    "value": "A doll that can be taught to speak up to 6 different short phrases. It will speak these based on conditions set by the owner.",
+    "type": "item",
+    "title": "Talking Doll",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tankard of Sobriety",
+    "value": "Drinking from this tankard prevents the drinker from getting drunk.",
+    "type": "item",
+    "title": "Tankard of Sobriety",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Veteran's Cane",
+    "value": "Can be transformed into a long sword and back again.",
+    "type": "item",
+    "title": "Veteran's Cane",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Walloping Ammunition",
+    "value": "When hit by this ammunition, the target may be knocked prone.",
+    "type": "item",
+    "title": "Walloping Ammunition",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Conducting",
+    "value": "While waving thhe wand around, the sound of orchestral music can be heard within 120 feet. It can be used up to 3 times per day.",
+    "type": "item",
+    "title": "Wand of Conducting",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Pyrotechnics",
+    "value": "Creates a harmless burst of multicolored light within 120 feet and a crackling noise within 300 feet. It can be used up to 7 times with recharges daily.",
+    "type": "item",
+    "title": "Wand of Pyrotechnics",
+    "description": "100",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Adamantine Armor",
+    "value": "Made of one of the hardest materials in existence, it prevents critical damage.",
+    "type": "armor",
+    "title": "Adamantine Armor",
+    "description": "400,18",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Adamantine Weapon",
+    "value": "Made of one of the hardest materials in existence, it causes critical damage against objects.",
+    "type": "weapon",
+    "title": "Adamantine Weapon",
+    "description": "400,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Alchemy Jug",
+    "value": "Can be used to magically produce a liquid of the user's choice (acid, poison, beer, honey, mayonnaise, oil, vinegar, water, salt water, wine). It can't produce a different kind of liquid until the next day.",
+    "type": "item",
+    "title": "Alchemy Jug",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ammunition +1",
+    "value": "Magical bonus damage and accuracy.",
+    "type": "item",
+    "title": "Ammunition +1",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Amulet of Proof against Detection and Location",
+    "value": "The wearer can not be targeted by divination spells.",
+    "type": "item",
+    "title": "Amulet of Proof against Detection and Location",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Baba Yaga's Dancing Broom",
+    "value": "Can be transformed into an animated broom that can follow commands.",
+    "type": "item",
+    "title": "Baba Yaga's Dancing Broom",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bag of Holding",
+    "value": "A magical container that can hold up to 500 pounds inside a 64 cubic foot space. The bag will only feel like it weighs 5 pounds. If it is damaged, it will explode in the astral plane, losing all contents.",
+    "type": "item",
+    "title": "Bag of Holding",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bag of Tricks",
+    "value": "Allows the user to pull out a fuzzy object that transforms into a creature that they can command (Weasel, rat, badger, boar, panther, giant badger, dire wolf, giant elk. It can be used up to three times per day.",
+    "type": "item",
+    "title": "Bag of Tricks",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Boots of Elvenkind",
+    "value": "The wearer makes no sound while taking steps with these boots. The wearer becomes really good at stealth.",
+    "type": "item",
+    "title": "Boots of Elvenkind",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Boots of Striding and Springing",
+    "value": "The wearer has greater speed and isn't hindered by carrying weight or wearing heavy armor. Can jump up to 30 feet with relative ease.",
+    "type": "item",
+    "title": "Boots of Striding and Springing",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Boots of the Winterlands",
+    "value": "Warm and snug boots that grant cold resistance to the user and they can walk through difficult terrain of ice and snow.",
+    "type": "item",
+    "title": "Boots of the Winterlands",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bracers of Archery",
+    "value": "Grants proficiency with the use of bows and increases their damage.",
+    "type": "item",
+    "title": "Bracers of Archery",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Brooch of Shielding",
+    "value": "Grants resistance to force damage and the magic missile spell has no effect on the user.",
+    "type": "item",
+    "title": "Brooch of Shielding",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Broom of Flying",
+    "value": "When commanded, the broom can be ridden in the air and fly up to 50 feet per 6 seconds.",
+    "type": "item",
+    "title": "Broom of Flying",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cap of Water Breathing",
+    "value": "Creates a bubble of air around the head of the user, allowing them to breathe normally while underwater.",
+    "type": "item",
+    "title": "Cap of Water Breathing",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Circlet of Blasting",
+    "value": "Allows casting Scorching Ray once a day.",
+    "type": "item",
+    "title": "Circlet of Blasting",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cloak of Elvenkind",
+    "value": "Makes the user harder to spot while stealthing.",
+    "type": "item",
+    "title": "Cloak of Elvenkind",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cloak of Protection",
+    "value": "Increases the defense of the person who dons this cloak.",
+    "type": "item",
+    "title": "Cloak of Protection",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cloak of the Manta Ray",
+    "value": "Allows the user to breathe underwater and swim at incredible speeds.",
+    "type": "item",
+    "title": "Cloak of the Manta Ray",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Decanter of Endless Water",
+    "value": "Can produce fresh or salt water at will. It can be a gallon, five gallons, or shoot out like a geyser. It can be aimed to knock enemies prone.",
+    "type": "item",
+    "title": "Decanter of Endless Water",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Deck of Illusions",
+    "value": "A magic deck of cards that can produce an illusion based on the depicted creature illustrated on a randomly drawn card. Touching the illusion reveals it to be a fake. Once used, the card can't be reused.",
+    "type": "item",
+    "title": "Deck of Illusions",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Driftglobe",
+    "value": "A floating orb that can be commanded to cast light. It can cast the spell Daylight once a day. It follows the user as they walk around.",
+    "type": "item",
+    "title": "Driftglobe",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dust of Disappearance",
+    "value": "When thrown in the air, it makes every creature within 10 feet invisible for several minutes.",
+    "type": "item",
+    "title": "Dust of Disappearance",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dust of Dryness",
+    "value": "A dust that can be poured on water which will transform up to a 15 foot cube of it into a marble-sized pellet. The pellet can then be thrown to release its water",
+    "type": "item",
+    "title": "Dust of Dryness",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dust of Sneezing and Choking",
+    "value": "A small container of powder that can be used once. Thrown in the air, it causes all creatures to sneeze uncontrollably in a 30 foot radius.",
+    "type": "item",
+    "title": "Dust of Sneezing and Choking",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Elemntal Gem",
+    "value": "A gem containing elemental energy which unleashes an elemental construct upon crushing it.",
+    "type": "item",
+    "title": "Elemntal Gem",
+    "description": "200",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Enspelled Armor Uncommon",
+    "value": "Allows the user to cast a basic spell up to 6 times. It slowly regains charges every day.",
+    "type": "armor",
+    "title": "Enspelled Armor Uncommon",
+    "description": "400,15+d2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Uncommon Enspelled Staff",
+    "value": "Allows the user to cast a basic spell up to 6 times. It slowly regains charges every day.",
+    "type": "weapon",
+    "title": "Uncommon Enspelled Staff",
+    "description": "400,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Enspelled Weapon Uncommon",
+    "value": "Allows the user to cast a basic spell up to 6 times. It slowly regains charges every day.",
+    "type": "weapon",
+    "title": "Enspelled Weapon Uncommon",
+    "description": "400,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Eversmoking Bottle",
+    "value": "Opening this bottle unleashes a cloud of smoke that grows up to a maximum of 120 feet wide. The smoke heavily obscures vision through it.",
+    "type": "item",
+    "title": "Eversmoking Bottle",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Eyes of Charming",
+    "value": "Lenses that can be worn over the eyes. They can be used to charm a person up to 3 times a day. It recharges completely every day.",
+    "type": "item",
+    "title": "Eyes of Charming",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Eyes of Minute Seeing",
+    "value": "Lenses that can be worn over the eyes. They grant the wearer Darkvision and better vision up to 1 foot.",
+    "type": "item",
+    "title": "Eyes of Minute Seeing",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Eyes of the Eagle",
+    "value": "Lenses that can be worn over the eyes. It grants the user the ability to see clearly over great distances and ",
+    "type": "item",
+    "title": "Eyes of the Eagle",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Silver Raven Figurine of Wondrous Power",
+    "value": "Transforms into a raven for up to 12 hours. It can only be used again after 2 days.",
+    "type": "item",
+    "title": "Silver Raven Figurine of Wondrous Power",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Gauntlets of Ogre Power",
+    "value": "Increases the strength of the user to the near peak of ability.",
+    "type": "item",
+    "title": "Gauntlets of Ogre Power",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Gem of Brightness",
+    "value": "Can be used to cast bright light, blind a creature, or blind all creatures in a cone. It has 50 charges which are expelled at a rate depending on the intensity of the light.",
+    "type": "item",
+    "title": "Gem of Brightness",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Gloves of Missile Snaring",
+    "value": "Mitigates the damage of ranged or thrown attacks at the user with the chance of catching the ammunition.",
+    "type": "item",
+    "title": "Gloves of Missile Snaring",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Gloves of Swimming and Climbing",
+    "value": "Increases the ability to swim and climb.",
+    "type": "item",
+    "title": "Gloves of Swimming and Climbing",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Gloves of Thievery",
+    "value": "Increases the sleight of hand ability. These gloves are invisible while they are worn.",
+    "type": "item",
+    "title": "Gloves of Thievery",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Goggles of Night",
+    "value": "Lenses that can be worn over the eyes. It allows the user to have dark vision to 60 feet.",
+    "type": "item",
+    "title": "Goggles of Night",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hag Eye",
+    "value": "Can be used to cast darkvision or see invisibility up to 3 times per day. It allows the hag who created the eye to see through it if they concentrate.",
+    "type": "item",
+    "title": "Hag Eye",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hat of Disguise",
+    "value": "Allows the user to cast the spell Disguise Self. It only has an effect while it's worn.",
+    "type": "item",
+    "title": "Hat of Disguise",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Headband of Intellect",
+    "value": "Grants the user an intelligence nearly at the peak of human ability.",
+    "type": "item",
+    "title": "Headband of Intellect",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Helm of Comprehending Languages",
+    "value": "Allows the user to cast the spell comprehend languages at will.",
+    "type": "item",
+    "title": "Helm of Comprehending Languages",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Helm of Telepathy",
+    "value": "Grants the user the ability to speak telepathically or cast detect thoughts or suggestion from the helm. Once a spell is used, it can't cast another spell until the next day.",
+    "type": "item",
+    "title": "Helm of Telepathy",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Immovable Rod",
+    "value": "Pressing a button on the rod fixes the rod firmly in space, allowing it to hold up to 8000 pounds of weight, defying gravity.",
+    "type": "item",
+    "title": "Immovable Rod",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Doss Lute",
+    "value": "A magical instrument that can cast fly, invisibility, levitate, protection from good and evil, animal friendship, protection from energy (fire damage), and protection from poison each once a day.",
+    "type": "item",
+    "title": "Doss Lute",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Fochlucan Bandore",
+    "value": "A magical instrument that can cast fly, invisibility, levitate, protection from good and evil, entangle, faerie fire, shillelagh, and speak with animals each once a day.",
+    "type": "item",
+    "title": "Fochlucan Bandore",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mac-Fuirmidh Cittern",
+    "value": "A magical instrument that can cast fly, invisibility, levitate, protection from good and evil, barkskin, cure wounds, and fog cloud each once a day.",
+    "type": "item",
+    "title": "Mac-Fuirmidh Cittern",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Javelin of Lightning",
+    "value": "Can deal lightning damage instead of piercing damage. It can also be transformed into a bolt of lightning that will damage enemies in a line.",
+    "type": "weapon",
+    "title": "Javelin of Lightning",
+    "description": "400,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Keoghtom's Ointment",
+    "value": "A thick aloe mixture that can heal and removes the poisoned condition.",
+    "type": "item",
+    "title": "Keoghtom's Ointment",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Lantern of Revealing",
+    "value": "Functions as a regular lantern and also reveals invisible creatures while they are in bright light.",
+    "type": "item",
+    "title": "Lantern of Revealing",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mariner's Armor",
+    "value": "Increases the ability to swim and automatically brings you back to life if submerged under water once per day.",
+    "type": "armor",
+    "title": "Mariner's Armor",
+    "description": "400,12+d2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Medallion of Thoughts",
+    "value": "Can be used to cast detect thoughts up to 5 times and recharges slowly each day.",
+    "type": "item",
+    "title": "Medallion of Thoughts",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Nature's Mantle",
+    "value": "Allows the user to blend into their surroundings and easily hide. It changes color and texture as needed. They can hide even if directly observed if they are lightly obscured.",
+    "type": "item",
+    "title": "Nature's Mantle",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Necklace of Adaptation",
+    "value": "Allows the user to breathe normally in any environment and is hard to poison.",
+    "type": "item",
+    "title": "Necklace of Adaptation",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Oil of Slipperiness",
+    "value": "Grants the effect of Freedom of Movement spell to the user if applied to the body. If poured on the ground, it has the effect of the grease spell.",
+    "type": "item",
+    "title": "Oil of Slipperiness",
+    "description": "200",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Pearl of Power",
+    "value": "Allows the user to regain a spell slot of level 3 or lower once a day.",
+    "type": "item",
+    "title": "Pearl of Power",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Periapt of Health",
+    "value": "Allows the user to heal a moderate amount once a day. It also helps prevent the poisoned condition.",
+    "type": "item",
+    "title": "Periapt of Health",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Periapt of Wound Closure",
+    "value": "Increases the chances of surviving death and increases the amount of health regained while resting.",
+    "type": "item",
+    "title": "Periapt of Wound Closure",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Philter of Love",
+    "value": "A liquid that causes a creature to be charmed by the next creature it sees after it is drunk.",
+    "type": "item",
+    "title": "Philter of Love",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Pipes of Haunting",
+    "value": "Playing these pipes creates an eerie, spellbinding tune that causes creatures that hear it a chance to become frightened for a minute.",
+    "type": "item",
+    "title": "Pipes of Haunting",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Pipes of the Sewers",
+    "value": "Whoever holds this is seen as indifferent by ordinary and giant rats unless harmed. Playing the pipes calls forth a swarm of rats that follows the users commands.",
+    "type": "item",
+    "title": "Pipes of the Sewers",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Animal Friendship",
+    "value": "When the potion is drunk, the user can cast animal friendship.",
+    "type": "item",
+    "title": "Potion of Animal Friendship",
+    "description": "200",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Fire Breath",
+    "value": "Allows the user to breathe out damaging fire at a target.",
+    "type": "item",
+    "title": "Potion of Fire Breath",
+    "description": "200",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Hill Giant Strength",
+    "value": "Drinking this potion grants the user strength that just surpasses normal human limits.",
+    "type": "item",
+    "title": "Potion of Hill Giant Strength",
+    "description": "200",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Growth",
+    "value": "Causes the drinker of this potion to receive the effect of the enlarge spell for 10 minutes.",
+    "type": "item",
+    "title": "Potion of Growth",
+    "description": "200",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Poison",
+    "value": "Looks like a potion of healing, but actually causes the drinker to become poisoned.",
+    "type": "item",
+    "title": "Potion of Poison",
+    "description": "200",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Puglism",
+    "value": "Drinking this potion causes the user to deal extra force damage when using unarmed strikes.",
+    "type": "item",
+    "title": "Potion of Puglism",
+    "description": "200",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Resistance",
+    "value": "Drinking this potion grants resistance to a specific type of damage for 1 hour.",
+    "type": "item",
+    "title": "Potion of Resistance",
+    "description": "200",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Water Breathing",
+    "value": "Allows the user to breathe underwater for 24 hours after drinking.",
+    "type": "item",
+    "title": "Potion of Water Breathing",
+    "description": "200",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Quaal's Feather Token of Anchor",
+    "value": "A feather shaped token that prevents a vessel from moving for 24 hours when the token is pressed against it. It can only be used once.",
+    "type": "item",
+    "title": "Quaal's Feather Token Uncommon",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Quaal's Feather Token of Fan",
+    "value": "Tossing the token into the air creates a strong wind that can push a ship or vessel to go an extra 5 miles per hour for 8 hours.",
+    "type": "item",
+    "title": "Quaal's Feather Token Uncommon",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Quaal's Feather Token of Tree",
+    "value": "Touching the token to unoccupied space on the ground outside causes a non-magical oak tree to grow instantly at that spot.",
+    "type": "item",
+    "title": "Quaal's Feather Token Uncommon",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Quiver of Ehlonna",
+    "value": "A quiver with 3 compartments that can hold ammunition in extradimensional space with no added weight. 60 arrows/bolts, 18 javelins, 6 staves/bows",
+    "type": "item",
+    "title": "Quiver of Ehlonna",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Jumping",
+    "value": "Allows the user to cast jump on themselves at will.",
+    "type": "item",
+    "title": "Ring of Jumping",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Mind Shielding",
+    "value": "Prevents the user from reading their thoughts, determining if they're lying, learning their alignment, or understanding their creature type. If they die while wearing the ring, the user's soul may enter it instead of going to the afterlife. It can then communicate to the next creature that wears it telepathically.",
+    "type": "item",
+    "title": "Ring of Mind Shielding",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Swimming",
+    "value": "Increases the swimming speed of the wearer to an incredible amount.",
+    "type": "item",
+    "title": "Ring of Swimming",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Warmth",
+    "value": "Reduces the amount of damage from cold attacks. The user is unharmed by temperatures of 0 degrees Fahrenheit or lower.",
+    "type": "item",
+    "title": "Ring of Warmth",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Water Walking",
+    "value": "Allows the user to cast water walk on themselves.",
+    "type": "item",
+    "title": "Ring of Water Walking",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Robe of Useful Items",
+    "value": "A robe with many patches of items sewn onto it. These patches can be removed which magically creates that item. It has patches of lanterns, daggers, mirrors, poles, ropes, sacks. It can have bags of gold, a silver coffer, an iron door, gems, a wooden ladder, riding horse, an open pit, healing potions, a rowboat, spell scrolls, mastiffs, a window, and a portable ram.",
+    "type": "item",
+    "title": "Robe of Useful Items",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rod of the Pact Keeper +1",
+    "value": "Gives a bonus to spell attacks and allows regaining a spell slot once a day.",
+    "type": "item",
+    "title": "Rod of the Pact Keeper +1",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rope of Climbing",
+    "value": "A rope that can be magically commanded to move and attach wherever desired within 60 feet.",
+    "type": "item",
+    "title": "Rope of Climbing",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Saddle of the Cavalier",
+    "value": "Magically protects the mount against direct attack and the user cannot be dismounted against their will.",
+    "type": "item",
+    "title": "Saddle of the Cavalier",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sending Stones",
+    "value": "Comes in pairs. Allows the user to cast sending to the user of the other stone. It can be used once a day.",
+    "type": "item",
+    "title": "Sending Stones",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sentinel Shield",
+    "value": "A magical shield emblazoned with an eye on its face. It makes the user more perceptive and have greater initiative.",
+    "type": "armor",
+    "title": "Sentinel Shield",
+    "description": "400,+2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shield +1",
+    "value": "A magically enhanced shield that makes the user harder to hit.",
+    "type": "armor",
+    "title": "Shield +1",
+    "description": "400,+3",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Slippers of Spider Climbining",
+    "value": "Allows the user to walk over walls and ceilings with relative ease. It doesn't work on surfaces of ice or oil.",
+    "type": "item",
+    "title": "Slippers of Spider Climbining",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of the Adder",
+    "value": "A staff that can transform into a snake. The user can command the snake to move and attack with piercing and poison damage.",
+    "type": "weapon",
+    "title": "Staff of the Adder",
+    "description": "400,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of the Python",
+    "value": "When thrown on the ground, it can be transformed into a giant constrictor snake. The user can command the snake to move or attack. It can be reverted back to staff form to regain its health.",
+    "type": "weapon",
+    "title": "Staff of the Python",
+    "description": "400,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stone of Good Luck",
+    "value": "The luck stone grants the user a bonus to their abilities and the chances of mitigating harmful effects.",
+    "type": "item",
+    "title": "Stone of Good Luck",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sword of Vengeance",
+    "value": "Magically enhanced to be better at landing attacks as well as damaging opponents. It's a cursed weapon possessed by an angry spirit. The user has disadvantage on attacks with other weapons and is compelled to strike back at a foe that causes damage until they or the user is struck down.",
+    "type": "weapon",
+    "title": "Sword of Vengeance",
+    "description": "400,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Trident of Fish Command",
+    "value": "Can be used to cast dominate beast on any swimming creature up to 3 times daily.",
+    "type": "weapon",
+    "title": "Trident of Fish Command",
+    "description": "400,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Magic Detection",
+    "value": "Can be used to cast detect magic up to three times daily.",
+    "type": "item",
+    "title": "Wand of Magic Detection",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Magic Missiles",
+    "value": "Grants the user up to 7 charges of magic missile. Up to three can be used at a time with a number of charges regained every day.",
+    "type": "item",
+    "title": "Wand of Magic Missiles",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Secrets",
+    "value": "Reveals the direction to a secret door or trap up to three times with some charges regained daily.",
+    "type": "item",
+    "title": "Wand of Secrets",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of the War Mage +1",
+    "value": "Grants the user additional chance to hit with magic spells. It ignores cover.",
+    "type": "item",
+    "title": "Wand of the War Mage +1",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Web",
+    "value": "Allows the user to cast web up to 7 times. It regains a number of charges daily. If the last charge is used, it has a chance of crumbling to dust and becoming unusable.",
+    "type": "item",
+    "title": "Wand of Web",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Weapon +1",
+    "value": "A weapon with a magically enhanced chance to hit and increased damage.",
+    "type": "weapon",
+    "title": "Weapon +1",
+    "description": "400,1d8+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Weapon of Warning",
+    "value": "Gives the user and their allies the ability to wake up instantly when combat is initiated. Each ally also has increased initiative.",
+    "type": "weapon",
+    "title": "Weapon of Warning",
+    "description": "400,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wind Fan",
+    "value": "Allows the user to cast a gust of wind. Each time it is used, it has a small chance of tearing and being able to be used again.",
+    "type": "item",
+    "title": "Wind Fan",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Winged Boots",
+    "value": "Allows the user to fly for an hour. When the hour elapses the user can still descend gracefully until they land onto the ground.",
+    "type": "item",
+    "title": "Winged Boots",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wraps of Unarmed Power +1",
+    "value": "Increases the accuracy and damage of unarmed strikes. They can cause force damage or normal damage.",
+    "type": "item",
+    "title": "Wraps of Unarmed Power +1",
+    "description": "400",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ammunition +2",
+    "value": "A bundle of ten pieces of magically enhanced ammunition. Has greater accuracy and deals additional damage.",
+    "type": "item",
+    "title": "Ammunition +2",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Amulet of Health",
+    "value": "Increases the constitution of the user to nearly the peak of human ability.",
+    "type": "item",
+    "title": "Amulet of Health",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Armor +1",
+    "value": "Magically enhanced armor that increases the user's ability to avoid damage.",
+    "type": "armor",
+    "title": "Armor +1",
+    "description": "4000,19",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Armor of Resistance",
+    "value": "Gives magical resistance to a specific type of damage.",
+    "type": "armor",
+    "title": "Armor of Resistance",
+    "description": "4000,17",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Armor of Vulnerability",
+    "value": "A cursed armor that gives resistance to one of bludgeoning, piercing, or slashing types of damage, but vulnerablility to the other two.",
+    "type": "armor",
+    "title": "Armor of Vulnerability",
+    "description": "4000,14+d2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Arrow-Catching Shield",
+    "value": "A shield that gives extra defense against ranged attacks. The user can also react to a nearby ally being targeted by a ranged attack and become the target.",
+    "type": "item",
+    "title": "Arrow-Catching Shield",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bag of Beans",
+    "value": "A pouch of a handful of magical beans that have various effects when planted. Create poisonous toadstools,geyser of drink, good/evil treant, mean talking statue, green campfire, shrieker fungi, transforming pink toads, bulette, fruit tree, nest of good/bad eggs, mummy lord, giant beanstalk",
+    "type": "item",
+    "title": "Bag of Beans",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Belt of Dwarvenkind",
+    "value": "A magical belt that allows the wearer to speak dwarvish, befriend dwarves easily, increases toughness, adds dark vision, and adds resilience to poison damage.",
+    "type": "item",
+    "title": "Belt of Dwarvenkind",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Belt of Hill Giant Strength",
+    "value": "Increases strength to just above peak human ability.",
+    "type": "item",
+    "title": "Belt of Hill Giant Strength",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Berserker Axe",
+    "value": "An axe with increased accuracy and damage and increases the user's overall health. It is cursed and the user is unwilling to part with it. Becoming damaged sends the user into beserker state.",
+    "type": "weapon",
+    "title": "Berserker Axe",
+    "description": "4000,1d12+1,+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Boots of Levitation",
+    "value": "Allows the user to cast levitate on themselves.",
+    "type": "item",
+    "title": "Boots of Levitation",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Boots of Speed",
+    "value": "Allows the user to double their speed and avoid opportunity attacks. Use up to 10 minutes before having to rest to recharge them.",
+    "type": "item",
+    "title": "Boots of Speed",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bowl of Commanding Water Elementals",
+    "value": "Creates a water elemental that follows the user's commands and lasts for an hour. Used once per day.",
+    "type": "item",
+    "title": "Bowl of Commanding Water Elementals",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bracers of Defense",
+    "value": "Increases the ability to dodge attacks when not wearing armor and not using a shield.",
+    "type": "item",
+    "title": "Bracers of Defense",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Brazier of Commanding Fire Elementals",
+    "value": "Creates a fire elemental that follows the user's commands and lasts for an hour. Used once per day.",
+    "type": "item",
+    "title": "Brazier of Commanding Fire Elementals",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cape of the Mountebank",
+    "value": "Smells like brimstone. Allows the user to cast dimension door once a day, leaving a cloud of smoke behind them. It lightly obscures view through it.",
+    "type": "item",
+    "title": "Cape of the Mountebank",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Censer of Controlling Air Elementals",
+    "value": "Creates an air elemental that follows the user's commands and lasts for an hour. Used once per day.",
+    "type": "item",
+    "title": "Censer of Controlling Air Elementals",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Chime of Opening",
+    "value": "A hollow metal tube that allows the user to cast knock. It makes a ringing tone of a chime when it works. It can be used up to 10 times.",
+    "type": "item",
+    "title": "Chime of Opening",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cloak of Displacement",
+    "value": "A magic cloak that makes the user appear to be standing close by to their location. This causes attackers to have disadvantage when attacking.",
+    "type": "item",
+    "title": "Cloak of Displacement",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cloak of the Bat",
+    "value": "Allows the user to fly a fair distance if they grip the edges of the cloak. It also allows the user to polymorph in to a bat. It only works in dim light or darkness.",
+    "type": "item",
+    "title": "Cloak of the Bat",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cube of Force",
+    "value": "A 6 sided cube that allows the user to cast an associated spell: mage armor, shield, leomund's tiny hut, mordenkainen's private sanctum, otiluke's resilient sphere, wall of force. The more powerful the spell, the more charges it uses. 10 charges, slowly charging per day.",
+    "type": "item",
+    "title": "Cube of Force",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cube of Summoning",
+    "value": "A jack in the box type of magic object that creates a tune when it's cranked. When the lid pops open, a creature is summoned: an aberration, beast, construct, dragon, elemental, fey.",
+    "type": "item",
+    "title": "Cube of Summoning",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Daern's Instant Fortress",
+    "value": "A statuette that, when placed on the ground, transforms into 30 foot high tower with an internal ramp/ladder/staircase with a trapdoor at the top. It is only vulnerable to siege equipment.",
+    "type": "item",
+    "title": "Daern's Instant Fortress",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dagger of Venom",
+    "value": "A dagger with increased accuracy and damage. It can be magically coated with poison once a day for additional damage.",
+    "type": "weapon",
+    "title": "Dagger of Venom",
+    "description": "4000,1d4+1,+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dimensional Shackles",
+    "value": "Shackles that prevent the bound creature from teleporting. Only the user and those they delegate can open the shackles. The bound creature can try to break free once every 30 days, but it's nearly impossible.",
+    "type": "item",
+    "title": "Dimensional Shackles",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dragon Slayer",
+    "value": "A weapon that has increased accuracy and damage. It deals even more damage when the target is a dragon.",
+    "type": "weapon",
+    "title": "Dragon Slayer",
+    "description": "4000,1d8+1,+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Elixir of Health",
+    "value": "A clear, red liquid with tiny bubbles of light that cures all magical contagions, blindness, deafened, paralyzed, and poisoned states when drunk. ",
+    "type": "item",
+    "title": "Elixir of Health",
+    "description": "2000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Elven Chain",
+    "value": "Increases the chance to avoid an attack and can be used by those who don't even know how to wear armor of this weight.",
+    "type": "item",
+    "title": "Elven Chain",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Enspelled Armor Rare",
+    "value": "Allows the user to cast a basic spell up to 6 times. It slowly regains charges every day.",
+    "type": "armor",
+    "title": "Enspelled Armor Rare",
+    "description": "4000,15+d2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rare Enspelled Staff",
+    "value": "Allows the user to cast a basic spell up to 6 times. It slowly regains charges every day.",
+    "type": "weapon",
+    "title": "Rare Enspelled Staff",
+    "description": "4000,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Enspelled Weapon Rare",
+    "value": "Allows the user to cast a basic spell up to 6 times. It slowly regains charges every day.",
+    "type": "weapon",
+    "title": "Enspelled Weapon Rare",
+    "description": "4000,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bronze Griffon Figurine of Wondrous Power",
+    "value": "A figurine that can be transformed into a griffon for up to 6 hours. Used once every 5 days.",
+    "type": "item",
+    "title": "Bronze Griffon Figurine of Wondrous Power",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ebony Fly Figurine of Wondrous Power",
+    "value": "Can be transformed into a giant fly and can be ridden as a mount for 12 hours. Used once every 12 days.",
+    "type": "item",
+    "title": "Ebony Fly Figurine of Wondrous Power",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Golden Lions Figurine of Wondrous Power",
+    "value": "A pair of lion figurines that can be transformed into one or two lions for 1 hour. Used once every 7 days.",
+    "type": "item",
+    "title": "Golden Lions Figurine of Wondrous Power",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ivory goats Figurine of Wondrous Power",
+    "value": "A set of three goat figurines that can be tranformed into three unique goats: goat of terror (giant goat that is frightening), goat of traveling (large goat for riding), goat of travail (giant goat).",
+    "type": "item",
+    "title": "Ivory goats Figurine of Wondrous Power",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Onyx Dog Figurine of Wondrous Power",
+    "value": "Can be transformed into a mastiff that speaks common for 6 hours. Used once every 7 days.",
+    "type": "item",
+    "title": "Onyx Dog Figurine of Wondrous Power",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Marble Elephant Figurine of Wondrous Power",
+    "value": "Can be transformed into an elephhant for 24 hours. Used once every 7 days.",
+    "type": "item",
+    "title": "Marble Elephant Figurine of Wondrous Power",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Serpentine Owl Figurine of Wondrous Power",
+    "value": "Can be transformed into a giant owl for 8 hours. It can communicate telepathically. It can be used once every 2 days.",
+    "type": "item",
+    "title": "Serpentine Owl Figurine of Wondrous Power",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Flame Tongue",
+    "value": "A weapon that can be commanded to ignite into flame. It deals extra fire damage when it lands a blow.",
+    "type": "weapon",
+    "title": "Flame Tongue",
+    "description": "4000,1d8+7",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Folding Boat",
+    "value": "A wooden box that can store things or fold out into a rowboat, keelboat, or back into a box.",
+    "type": "item",
+    "title": "Folding Boat",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Gem of Seeing",
+    "value": "Grants the user truesight for up to 120 feet when the gem is peered through for 10 minutes. It has 3 charges and regains charges slowly every day.",
+    "type": "item",
+    "title": "Gem of Seeing",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Giant Slayer",
+    "value": "A weapon with greater accuracy and damage. This weapon does additional damage to giants.",
+    "type": "weapon",
+    "title": "Giant Slayer",
+    "description": "4000,1d8+1,+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Glamoured Studded Leather",
+    "value": "Enchanted to provide additional protection against attacks. It can be made to look like a normal set of clothing of the user's choosing.",
+    "type": "armor",
+    "title": "Glamoured Studded Leather",
+    "description": "4000,12+d",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Helm of Teleportation",
+    "value": "Allows the user to cast teleport up to 3 times. It slowly regains charges every day.",
+    "type": "item",
+    "title": "Helm of Teleportation",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Heward's Handy Haversack",
+    "value": "Has pouches of extradimensional space holding a total of 700 pounds of material. When the reaches in, they can think of what they want to pull out.",
+    "type": "item",
+    "title": "Heward's Handy Haversack",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Horn of Blasting",
+    "value": "Blowing through this horn causes a thunderous blast in a 30 foot cone. The sound can be heard from 600 feet. It severely damages glass and crystal. Each time it is used, it has a small chance of explodinng, destroying the horn and damaging the user.",
+    "type": "item",
+    "title": "Horn of Blasting",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Silver Horn of Valhalla",
+    "value": "Blowing the horn summons 2 berserker warrior spirits for 1 hour that follow your commands. It can be used once every 7 days.",
+    "type": "item",
+    "title": "Silver Horn of Valhalla",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Brass Horn of Valhalla",
+    "value": "Blowing the horn summons 3 berserker warrior spirits for 1 hour that follow your commands only if you are proficient with simple weapons. It can be used once every 7 days.",
+    "type": "item",
+    "title": "Brass Horn of Valhalla",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Horseshoes of Speed",
+    "value": "Horseshoes that can be magically affixed to a horse by touching it. It increases the speed of the horse.",
+    "type": "item",
+    "title": "Horseshoes of Speed",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Canaith Mandolin",
+    "value": "A magical instrument that can cast fly, invisibility, levitate, protection from good and evil, cure wounds, dispel magic, protection from energy (lightning) each once a day.",
+    "type": "item",
+    "title": "Canaith Mandolin",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cli Lyre",
+    "value": "A magical instrument that can cast fly, invisibility, levitate, protection from good and evil, stone shape, wall of fire, wind wall each once a day.",
+    "type": "item",
+    "title": "Cli Lyre",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Awareness",
+    "value": "A magic stone tossed in the air that orbits the user's head and makes them have greater initiative and perception.",
+    "type": "item",
+    "title": "Ioun Stone of Awareness",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Protection",
+    "value": "A magic stone tossed in the air that orbits the user's head and grants the user the ability to dodge attacks a little better.",
+    "type": "item",
+    "title": "Ioun Stone of Protection",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Reserve",
+    "value": "A magic stone tossed in the air that orbits the user's head and can hold up to 4 levels of spells inside of it. It can be used to cast the spell(s) at a later time.",
+    "type": "item",
+    "title": "Ioun Stone of Reserve",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Sustenance",
+    "value": "A magic stone tossed in the air that orbits the user's head and negates the need of the user to eat or drink.",
+    "type": "item",
+    "title": "Ioun Stone of Sustenance",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Iron Bands of Bilarro",
+    "value": "A sphere, when thrown, opens up into a tangle of metal bands that will restrain the target. If the throw misses, the bands return into a small sphere.",
+    "type": "item",
+    "title": "Iron Bands of Bilarro",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mace of Disruption",
+    "value": "Fiends or an undead hit with this mace receive extra radiant damage. When such a target is close to being killed, it has a chance to simply be destroyed outright. If it doesn't, it is frightened. The mace emits bright light.",
+    "type": "weapon",
+    "title": "Mace of Disruption",
+    "description": "4000,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mace of Smiting",
+    "value": "Magically enchanted to be more accurate and damaging. It does additonal damage to constructs.",
+    "type": "weapon",
+    "title": "Mace of Smiting",
+    "description": "4000,1d6+1,+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mace of Terror",
+    "value": "The mace has 3 charges used to unleash a wave of terror. It has a chance of frightening opponents and driving them away from the user. It recharges slowly every day.",
+    "type": "weapon",
+    "title": "Mace of Terror",
+    "description": "4000,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mantle of Spell Resistance",
+    "value": "Grants the user resistance to spell effects.",
+    "type": "item",
+    "title": "Mantle of Spell Resistance",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Necklace of Fireballs",
+    "value": "The necklace has up to 9 beads attached to it. When a bead is thrown, it is detonated as a fireball on contact with a target or surface.",
+    "type": "item",
+    "title": "Necklace of Fireballs",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Necklace of Prayer Beads",
+    "value": "The necklace has up to 6 beads attached to it. Each colored bead has a spell effect: bless, cure wounds, greater restoration, shining smite, guardian of faith, wind walk. They can be used once a day and regain their use by the next dawn.",
+    "type": "item",
+    "title": "Necklace of Prayer Beads",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Oil of Etherealness",
+    "value": "If covered on a creature, the creature will have the effect of etherealness on them. The creature has to be medium or smaller.",
+    "type": "item",
+    "title": "Oil of Etherealness",
+    "description": "2000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Periapt of Proof against Poison",
+    "value": "Regains health once per day while this pendant is worn. It is harder to be poisoned while wearing this.",
+    "type": "item",
+    "title": "Periapt of Proof against Poison",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Portable Hole",
+    "value": "A fine black cloth folded like a hankerchief. It can fold out to a circular extra-dimensional hole 10 feet deep. If closed, any creatures inside will be trapped.",
+    "type": "item",
+    "title": "Portable Hole",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Clairvoyance",
+    "value": "When drunk, gives the user the effect of the clairvoyance spell.",
+    "type": "item",
+    "title": "Potion of Clairvoyance",
+    "description": "2000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Diminution",
+    "value": "The drinker gains the effect of the reduce spell for a few hours.",
+    "type": "item",
+    "title": "Potion of Diminution",
+    "description": "2000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Gaseous Form",
+    "value": "The drinker gains the effect of the gaseous form spell.",
+    "type": "item",
+    "title": "Potion of Gaseous Form",
+    "description": "2000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Frost Giant Strength",
+    "value": "Grants the drinker a strength greater than that of peak human ability for one hour.",
+    "type": "item",
+    "title": "Potion of Frost Giant Strength",
+    "description": "2000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Stone Giant Strength",
+    "value": "Grants the drinker a strength greater that that of peak human ability for one hour.",
+    "type": "item",
+    "title": "Potion of Stone Giant Strength",
+    "description": "2000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Fire Giant Strength",
+    "value": "Grants the drinker a strength significantly greater that that of peak human ability for one hour.",
+    "type": "item",
+    "title": "Potion of Fire Giant Strength",
+    "description": "2000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Heroism",
+    "value": "Gives the drinker an additional amount of temporary health. It also grants them the effect of the bless spell.",
+    "type": "item",
+    "title": "Potion of Heroism",
+    "description": "2000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Invisibility",
+    "value": "Gives the drinker the invisible condition for an hour. It ends early if they attack, deal damage, or cast a spell.",
+    "type": "item",
+    "title": "Potion of Invisibility",
+    "description": "2000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Invulnerability",
+    "value": "Gives the drinker resistance to all damage for 1 minute.",
+    "type": "item",
+    "title": "Potion of Invulnerability",
+    "description": "2000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Mind Reading",
+    "value": "Gives the drinker the effect of detect thoughts for 10 minutes.",
+    "type": "item",
+    "title": "Potion of Mind Reading",
+    "description": "2000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Quaal's Feather Token of Bird",
+    "value": "When thrown, spawns a bird like a Roc that can't attack. It can fly and carry a weight of 500 pounds at a max speed of 144 miles per day. It can carry 1000 pounds at half the speed. It disappears after the flight distance is complete.",
+    "type": "item",
+    "title": "Quaal's Feather Token of Bird",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Quaal's Feather Token of Swan Boat",
+    "value": "Touching a body of water with this feather creates a 50 foot long boat in the shape of a swan. It is self propelled and can be commanded to move and turn. It disappears after 24 hours.",
+    "type": "item",
+    "title": "Quaal's Feather Token of Swan Boat",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Quaal's Feather Token of Whip",
+    "value": "Thrown at a point within 10 feet creates a floating whip that can attack creatures with moderate force damage.",
+    "type": "item",
+    "title": "Quaal's Feather Token of Whip",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Animal Influence",
+    "value": "Can cast animal friendship, fear, or speak with animals. It has 3 charges which are regained slowly every day.",
+    "type": "item",
+    "title": "Ring of Animal Influence",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Evasion",
+    "value": "When the user would otherwise fail at evading an effect with dexterity, a charge can be used to automatically pass. Three charges that are regained slowly every day.",
+    "type": "item",
+    "title": "Ring of Evasion",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Feather Falling",
+    "value": "Whenever the user falls, they only fall at 60 feet per second and don't take fall damage.",
+    "type": "item",
+    "title": "Ring of Feather Falling",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Free Action",
+    "value": "Difficult terrain doesn't affect the wearer of this ring. They cannnot be affect by magic that slows them down, restrains, or paralyzes them.",
+    "type": "item",
+    "title": "Ring of Free Action",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Protection",
+    "value": "The wearer is harder to hit and is more likely succeed in evading effects of all kinds.",
+    "type": "item",
+    "title": "Ring of Protection",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Resistance",
+    "value": "Grants resistance to a specific type of damage.",
+    "type": "item",
+    "title": "Ring of Resistance",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Spell Storing",
+    "value": "Can store up to 5 levels of magic at a time. The user can then cast them at a later time.",
+    "type": "item",
+    "title": "Ring of Spell Storing",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of the Ram",
+    "value": "Can attack a target with force damage in the shape of a ram's head. It can also be used to break a nonmagical object that is not being worn. It has 3 charges that are regained slowly every day.",
+    "type": "item",
+    "title": "Ring of the Ram",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of X-ray Vision",
+    "value": "Grants the user x-ray vision within a range of 30 feet for one minute. Objects appear transparent and don't prevent light from traveling through them. Only lead or thicker substances can block it. Using it more than once a day causes exhaustion.",
+    "type": "item",
+    "title": "Ring of X-ray Vision",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Robe of Eyes",
+    "value": "A robe that grants added perception, darkvision, truesight for 120 feet. Casting light or daylight on the robe blinds the user for 1 minute.",
+    "type": "item",
+    "title": "Robe of Eyes",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rod of Rulership",
+    "value": "Has a high chance of charming a victim. If charmed, the target views you as a trusted leader for 8 hours. Used once per day.",
+    "type": "item",
+    "title": "Rod of Rulership",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rod of the Pact Keeper +2",
+    "value": "Gives a bonus to spell attacks and allows regaining a spell slot once a day.",
+    "type": "item",
+    "title": "Rod of the Pact Keeper +2",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rope of Entanglement",
+    "value": "A 30 foot long rope that can dart forward and entangle a target within 20 feet. It can escape with strength or dexterity.",
+    "type": "item",
+    "title": "Rope of Entanglement",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Scroll of Protection",
+    "value": "Protects the user from taking damage from a specific type of creature.",
+    "type": "item",
+    "title": "Scroll of Protection",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shield +2",
+    "value": "A magically enhanced shield that makes the user harder to hit.",
+    "type": "armor",
+    "title": "Shield +2",
+    "description": "400,+4",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shield of Missile Attraction",
+    "value": "Gives the user resistance to ranged attacks. It is cursed and makes any creature within 10 feet targeted with a ranged attack instead makes you the target.",
+    "type": "armor",
+    "title": "Shield of Missile Attraction",
+    "description": "4000,+2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of Charming",
+    "value": "Can be used to cast charm person, command, or comprehend at one charge. Reflect an enchantment spell back at the caster at one charge. It has 10 charges, recharging most charges each day. Once a day it can be used to resist an enchantment.",
+    "type": "weapon",
+    "title": "Staff of Charming",
+    "description": "4000,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of Swarming Insects",
+    "value": "Can be used to create a swarm of insects in a 30 foot emanation at one charge. It obscures vision. Cast giant insect at four charges, insect plague at 5 charges. It has 10 charges, recharging most charges each day.",
+    "type": "weapon",
+    "title": "Staff of Swarming Insects",
+    "description": "4000,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of the Woodlands",
+    "value": "If weilded by a druid, adds magical accuracy and damage to attacks. Spells are more likely to strike their target. It allows the user to cast animal friendship, awaken, barkskin, locate animals or plants, pass without trace, speak with animals, speak with plants, wall of thorns. The staff can be planted which it will grow into a tree. It can then be converted back. Each use uses a charge, 6 total. Regains slowly every day.",
+    "type": "weapon",
+    "title": "Staff of the Woodlands",
+    "description": "4000,1d6+1,+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of Withering",
+    "value": "Using a charge, the staff can deal extra necrotic damage with a chance of causing the target to be at a disadvantage for an hour. 3 charges slowly regained every day.",
+    "type": "weapon",
+    "title": "Staff of Withering",
+    "description": "4000,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stone of Controlling Earth Elementals",
+    "value": "Can be used to summon an earth elemental when touched to the ground within 30 feet. It obeys the user's commands",
+    "type": "item",
+    "title": "Stone of Controlling Earth Elementals",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sun Blade",
+    "value": "A sword hilt. When grasped, a blade of pure radiance emerges. It functions as a long sword with increased accuracy and damage. Deals additional damage to the undead. It emits bright light in 15 feet.",
+    "type": "weapon",
+    "title": "Sun Blade",
+    "description": "4000,1d8+1,+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sword of Life Stealing",
+    "value": "If the target is not undead or a construct, the sword deals extra necrotic damage. It gives this extra damage as temporary health to the user.",
+    "type": "weapon",
+    "title": "Sword of Life Stealing",
+    "description": "4000,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tentacle Rod",
+    "value": "Allows the user to direct three rubbery tentacles outward as an attack with psychic damage on hit and restraining the target. It continues to take damage until it breaks free.",
+    "type": "item",
+    "title": "Tentacle Rod",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Vicious Weapon",
+    "value": "Deals extra damage to any creature it hits.",
+    "type": "weapon",
+    "title": "Vicious Weapon",
+    "description": "4000,1d8+7",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Binding",
+    "value": "Can cast spells hold monster (5 charges) or hold person (2 charges). With 7 charges that are regained slowly every day.",
+    "type": "item",
+    "title": "Wand of Binding",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Enemy Detection",
+    "value": "Allows the user to use a charge to notice the direction of where the closest creature that is hostile to you is. With 7 charges that are regained slowly every day.",
+    "type": "item",
+    "title": "Wand of Enemy Detection",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Fear",
+    "value": "Can cast spells command (1 charge) and fear (3 charges). With 7 charges that are regained slowly every day.",
+    "type": "item",
+    "title": "Wand of Fear",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Fireballs",
+    "value": "Used to cast the spell fireball. With 7 charges that regained slowly every day, the user can upcast with up to three charges to increase the spell's level.",
+    "type": "item",
+    "title": "Wand of Fireballs",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Lightning Bolts",
+    "value": "Used to cast the spell Lightning Bolt. With 7 charges that regained slowly every day, the user can upcast with up to three charges to increase the spell's level.",
+    "type": "item",
+    "title": "Wand of Lightning Bolts",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Paralysis",
+    "value": "Fires a thin, blue ray that can cause the paralyzed condition on a target for one minute. The effect remains until the target breaks free. It has 7 charges which are regained slowly every day.",
+    "type": "item",
+    "title": "Wand of Paralysis",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Wonder",
+    "value": "Wand with 7 charges that can be used for various random effects: darkness, faerie fire, fireball, slow, stinking cloud, gust of wind, the user is stunned, the user takes psychic damage, butterflies, lightning bolt, enlarge/reduce, grass, make a rat/elephant/rhinoceros, an object disappears, leaves grow on the target, blinding, invisibility, a stream of gems, polymorph, restrained. Recharges slowly every day.",
+    "type": "item",
+    "title": "Wand of Wonder",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Weapon +2",
+    "value": "A weapon with greater accuracy and damage.",
+    "type": "weapon",
+    "title": "Weapon +2",
+    "description": "4000,1d8+2,+2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wings of Flying",
+    "value": "Can be transformed into wings while being worn. They last for 1 hour and allow the user to fly. The user falls if the wings disappear. It takes up to half a day to recharge again.",
+    "type": "item",
+    "title": "Wings of Flying",
+    "description": "4000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ammunition +3",
+    "value": "A bundle of ten pieces of magically enhanced ammunition. Has greater accuracy and deals additional damage.",
+    "type": "item",
+    "title": "Ammunition +3",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ammunition of Slaying",
+    "value": "Ammunition that does incredible damage to a specific type of enemy.",
+    "type": "item",
+    "title": "Ammunition of Slaying",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Amulet of the Planes",
+    "value": "Allows the user to plane shift to another known plane. There is a chance that it sends the user and others in 15 feet to a random location in a random plane.",
+    "type": "item",
+    "title": "Amulet of the Planes",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Animated Shield",
+    "value": "When activated, it leaps into the air and hovers to protect the user.",
+    "type": "armor",
+    "title": "Animated Shield",
+    "description": "40000,+2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Armor +2",
+    "value": "Magically enhanced armor that increases the user's ability to avoid damage.",
+    "type": "armor",
+    "title": "Armor +2",
+    "description": "40000,20",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bag of Devouring",
+    "value": "Like a bag of holding, but eats animal or vegetable matter when placed inside. There is a 50 percent chance when someone reaches inside that they are pulled into the bag. They need incredible strength to escape or become devoured by the bag.",
+    "type": "item",
+    "title": "Bag of Devouring",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Belt of Frost Giant Strength",
+    "value": "Increases strength to above peak human ability.",
+    "type": "item",
+    "title": "Belt of Frost Giant Strength",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Belt of Stone Giant Strength",
+    "value": "Increases strength to above peak human ability.",
+    "type": "item",
+    "title": "Belt of Stone Giant Strength",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Belt of Fire Giant Strength",
+    "value": "Increases strength to well above peak human ability.",
+    "type": "item",
+    "title": "Belt of Fire Giant Strength",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Candle of Invocation",
+    "value": "Provides dim light and gives advantage with all abilities to creatures within 30 feet. It allows clerics and druids to use level 1 spells without using spell slots. Burns for up to 4 hours. It can instead be used to cast gate to another plane of existence.",
+    "type": "item",
+    "title": "Candle of Invocation",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Carpet of Flying",
+    "value": "A command word activates the carpet allowing whoever/whatever is on top of it to fly and hover.",
+    "type": "item",
+    "title": "Carpet of Flying",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cauldron of Rebirth",
+    "value": "Allows the user to brew a healing potion once a day. Alternatively, it can be grown to size and have a dead body placed inside. After soaking is salt for 8 hours, the spell raise dead is cast upon it. This can only be done once every 7 days.",
+    "type": "item",
+    "title": "Cauldron of Rebirth",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cloak of Arachnida",
+    "value": "Grants the user poison resistance, spider climb, can't be caught in spider webs, and allows the casting of the web spell once a day.",
+    "type": "item",
+    "title": "Cloak of Arachnida",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Crystal Ball",
+    "value": "Allows the casting of the scrying spell.",
+    "type": "item",
+    "title": "Crystal Ball",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dancing Sword",
+    "value": "Tossing the weapon in the air activates its ability to hover and attack enemies up to four times. It then returns to the hand of the user.",
+    "type": "weapon",
+    "title": "Dancing Sword",
+    "description": "40000,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Demon Armor",
+    "value": "Gives the user increased ability to avoid attack and speak abyssal. It has clawed gauntlets that allows the user to make damaging unarmed slashing attacks. It is cursed and cannot be removed without a magical spell to undo it. Disadvantage against attacking demons and sustaining their magical effects.",
+    "type": "armor",
+    "title": "Demon Armor",
+    "description": "40000,19",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dragon Scale Mail",
+    "value": "Made from the scales of a dragon, it is harder to hit the wearer of such armor and added protection against breath attacks from dragons. It has resistance against the type of damage that the dragon scales came from. It allows the user to determine the direction of the closest dragon of this type within 30 miles.",
+    "type": "armor",
+    "title": "Dragon Scale Mail",
+    "description": "40000,19",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dwarven Plate",
+    "value": "The wearer is harder to hit. Any affect that will move the user against their will can be reduced to 10 feet.",
+    "type": "armor",
+    "title": "Dwarven Plate",
+    "description": "40000,20",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Dwarven Thrower",
+    "value": "A hammer with incredible accuracy and damage. Can be thrown up to 20-60 feet. It has extra damage upon impact from a throw and more so if the target is a giant. The hammer returns to the user's hand.",
+    "type": "weapon",
+    "title": "Dwarven Thrower",
+    "description": "40000,1d8+3,+3",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Efreeti Bottle",
+    "value": "When the stopper is removed, a cloud of thick smoke emerges. It disappears in a puff of fire and an efreeti appears. It may attack the user and disappear, obey your commands for an hour (reusable 3 times), or cast wish once",
+    "type": "item",
+    "title": "Efreeti Bottle",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Energy Longbow",
+    "value": "Magically accurate and does additional damage. It has no string. Making a firing motion with your arm creates a magical arrow of golden energy. The arrow emits bright light in 20 feet. Instead of dealing damage, it can try to restrain the target, teleport the target within 10 feet of you, or produce magical rungs of a ladder in a wall to be climbed.",
+    "type": "weapon",
+    "title": "Energy Longbow",
+    "description": "40000,1d8+1,+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Energy Shortbow",
+    "value": "Magically accurate and does additional damage. It has no string. Making a firing motion with your arm creates a magical arrow of golden energy. The arrow emits bright light in 20 feet. Instead of dealing damage, it can try to restrain the target, teleport the target within 10 feet of you, or produce magical rungs of a ladder in a wall to be climbed.",
+    "type": "weapon",
+    "title": "Energy Shortbow",
+    "description": "40000,1d6+1,+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Enspelled Armor Very Rare",
+    "value": "Allows the user to cast an advanced spell up to 6 times. It slowly regains charges every day.",
+    "type": "armor",
+    "title": "Enspelled Armor Very Rare",
+    "description": "40000,15+d2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Enspelled Weapon Very Rare",
+    "value": "Allows the user to cast an advanced spell up to 6 times. It slowly regains charges every day.",
+    "type": "weapon",
+    "title": "Enspelled Weapon Very Rare",
+    "description": "40000,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Executioner's Axe",
+    "value": "Magically conditioned to hit with more accuracy and damage. It deals exceptional damage to humanoids which is then added as extra health to the user.",
+    "type": "weapon",
+    "title": "Executioner's Axe",
+    "description": "40000,1d12+1,+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Obsidian Steed Figurine of Wondrous Power",
+    "value": "Can be transformed into a Nightmare for 24 hours. It only fights to defend itself. It has a small chance to disobey the users orders. If it is forced to be mounted at such a time, the nightmare reverts to figurine form and both it and the user are transported to hades. It can be used once per 5 days.",
+    "type": "item",
+    "title": "Obsidian Steed Figurine of Wondrous Power",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Frost Brand",
+    "value": "Causes the target to take extra cold damage. Fire has less of an effect on the user. When the temperature is freezing, it emits bright light for 10 feet. Once every hour, brandishing the weapon can be used to extinguish all flames within 30 feet.",
+    "type": "weapon",
+    "title": "Frost Brand",
+    "description": "40000,1d8+4",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hat of Many Spells",
+    "value": "Can be used to cast spells by grabbing the spell from within the hat. It can also be used to cast spells the user does not already know. It has a chance to fail causing one of the following effects: casts a random basic spell, or stuns the user, creates a swarm of butterflies, or pulls out a random non-magic item, a gem, or suffer magic sickness, petrified, a friendly creature, swarm of bats, a portal to another plane, or a magic item.",
+    "type": "item",
+    "title": "Hat of Many Spells",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Helm of Brilliance",
+    "value": "A helm adorned with diamonds, opals, and rubies. It emits a 30 foot dim light that damages the undead, causes a weapon to burst into flames that damage enemies, and grants the user resistance to fire damage. Removing a gem allows the user to cast a spell: daylight (opal), Fireball (fire opal), prismatic spray (diamond), or wall of fire (ruby).",
+    "type": "item",
+    "title": "Helm of Brilliance",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Bronze Horn of Valhalla",
+    "value": "Blowing the horn summons 4 berserker warrior spirits for 1 hour that follow your commands only if you are trained with all medium armor. It can be used once every 7 days.",
+    "type": "item",
+    "title": "Bronze Horn of Valhalla",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Horseshoes of a Zephyr",
+    "value": "Can be magically attached to the feet of a horse. This allows the horse to float 4 inches above the surface allowing them to traverse nonsolid or unstable surfaces. It leaves no tracks. It can travel 12 hours a day without exhaustion.",
+    "type": "item",
+    "title": "Horseshoes of a Zephyr",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Absorption",
+    "value": "A magic stone tossed in the air that orbits the user's head and can be used to cancel a spell cast by another creature. It can be used up to 20 times.",
+    "type": "item",
+    "title": "Ioun Stone of Absorption",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Agility",
+    "value": "A magic stone tossed in the air that orbits the user's head and increases the user's dexterity.",
+    "type": "item",
+    "title": "Ioun Stone of Agility",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Fortitude",
+    "value": "A magic stone tossed in the air that orbits the user's head and increases the user's constitution.",
+    "type": "item",
+    "title": "Ioun Stone of Fortitude",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Insight",
+    "value": "A magic stone tossed in the air that orbits the user's head and increases the user's wisdom.",
+    "type": "item",
+    "title": "Ioun Stone of Insight",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Intellect",
+    "value": "A magic stone tossed in the air that orbits the user's head and increases the user's intelligence.",
+    "type": "item",
+    "title": "Ioun Stone of Intellect",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Leadership",
+    "value": "A magic stone tossed in the air that orbits the user's head and increases the user's charisma.",
+    "type": "item",
+    "title": "Ioun Stone of Leadership",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Strength",
+    "value": "A magic stone tossed in the air that orbits the user's head and increases the user's strength.",
+    "type": "item",
+    "title": "Ioun Stone of Strength",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Lute of Thunderous Thumping",
+    "value": "Can be wielded as a club that inflicts thunder damage. A bard can use their charisma to determine how well they hit with this item, but must sing or hum while striking.",
+    "type": "item",
+    "title": "Lute of Thunderous Thumping",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Manual of Bodily Health",
+    "value": "A book of health and nutrition tips which will allow the user to increase their constitution slightly with a maximum beyond normal limits. It loses its magic afterwards. The user must spend 48 hours over a period of 6 days or fewer to gain the benefit.",
+    "type": "item",
+    "title": "Manual of Bodily Health",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Manual of Gainful Exercise",
+    "value": "A book describing fitness exercises which will allow the user to increase their strength slightly with a maximum beyond normal limits. The user must spend 48 hours over a period of 6 days or fewer to gain the benefit.",
+    "type": "item",
+    "title": "Manual of Gainful Exercise",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Manual of Golems",
+    "value": "Describes how to make a golem. It can only be deciphered by a spellcaster or takes psychic damage while reading it. With constant work the reader can make a clay golem in 30 days, flesh golem in 60 days, iron golem in 120 days, and stone goem in 90 days. The manual is consumed in fire to make the golem.",
+    "type": "item",
+    "title": "Manual of Golems",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Manual of Quickness of Action",
+    "value": "A book describing coordination and balance exercises which will allow the user to increase their dexterity slightly with a maximum beyond normal limits. The user must spend 48 hours over a period of 6 days or fewer to gain the benefit.",
+    "type": "item",
+    "title": "Manual of Quickness of Action",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Mirror of Life Trapping",
+    "value": "Once activated by a command word, any creature who sees its own reflection has a chance to be trapped in its extra dimensional cells. They can escape if they have spells that can send them to another plane. Otherwise, the mirror has to be broken in order to free them. The owner can name the creature or cell to call them into the image of the mirror to speak to them or release them.",
+    "type": "item",
+    "title": "Mirror of Life Trapping",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Nine Lives Stealer",
+    "value": "A weapon with increased accuracy and damage. When a critical hit is struck on a weakened foe, it can use a charge to kill them instantly. It can do this up to 9 times.",
+    "type": "item",
+    "title": "Nine Lives Stealer",
+    "description": "40000,1d8+2,+2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Nolzur's Marvelous Pigments",
+    "value": "Contains a brush and pigments that can be used to paint objects and surfaces within a 20 foot cube. The painting then becomes real. Drawing a door on a wall makes a real door. The items must not be worth more than 25 gold each.",
+    "type": "item",
+    "title": "Nolzur's Marvelous Pigments",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Oathbow",
+    "value": "The bow whispers the phrase \"Swift defeat to my enemies\" when an arrow is knocked. If the phrase \"Swift death tto you who haved wronged me\" is said, it allows the user to mark an enemy as a sworn enemy, giving them a greater chance to hit them and adds additonal damage. When they die, the sworn enemy can be switched to another enemy. All other weapons are at a disadvantage until the enemy is killed or 7 days has passed.",
+    "type": "weapon",
+    "title": "Oathbow",
+    "description": "40000,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Oil of Sharpness",
+    "value": "An oil that can coat a melee weapon or ammunition. It makes them have incredible accuracy and damage.",
+    "type": "item",
+    "title": "Oil of Sharpness",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Flying",
+    "value": "Allows the drinker to fly and hover for an hour.",
+    "type": "item",
+    "title": "Potion of Flying",
+    "description": "20000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Cloud Giant Strength",
+    "value": "Increases strength to incredible levels.",
+    "type": "item",
+    "title": "Potion of Cloud Giant Strength",
+    "description": "20000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Greater Invisibility",
+    "value": "Gives the drinker invisiblity for 1 hour.",
+    "type": "item",
+    "title": "Potion of Greater Invisibility",
+    "description": "20000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Longevity",
+    "value": "When drunk, the user's physical age is reduced by 7 to 12 years to a minimum of 13 years old. Each time it is drunk afterward, it has a chance to instead age the person by that amount.",
+    "type": "item",
+    "title": "Potion of Longevity",
+    "description": "20000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Speed",
+    "value": "Gives the drinker the effect of the haste spell without the effect of lethargy at the end of it.",
+    "type": "item",
+    "title": "Potion of Speed",
+    "description": "20000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Vitality",
+    "value": "When drunk, removes all exhaustion and poisoned states. Healing is at its maximum for the next 24 hours.",
+    "type": "item",
+    "title": "Potion of Vitality",
+    "description": "20000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Quarterstaff of the Acrobat",
+    "value": "A quarterstaff that is magically more accurate and damaging. It can emit dim light for 10 feet. It can extend to a 10 foot pole. The user is more acrobatic. It can deflect an attack once per short rest. It can be used as a thrown weapon and it will immediately return to the user's hand.",
+    "type": "weapon",
+    "title": "Quarterstaff of the Acrobat",
+    "description": "40000,1d6+2,+2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Regeneration",
+    "value": "Heals the user by a tiny amount every 10 minutes and even regrows lost limbs.",
+    "type": "item",
+    "title": "Ring of Regeneration",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Shooting Stars",
+    "value": "Casts dancing lights or light. It has 6 charges that can be used to cast faerie fire (1 charge), lightning spheres (2 charges), or shooting stars (1-3 charges)",
+    "type": "item",
+    "title": "Ring of Shooting Stars",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Telekenisis",
+    "value": "Allows the user to cast telekinesis.",
+    "type": "item",
+    "title": "Ring of Telekenisis",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Robe of Scintillating Colors",
+    "value": "Has 3 charges that can be used to activate a dazzling display of lights that creates a 30 foot range of bright light. It can stun enemies.",
+    "type": "item",
+    "title": "Robe of Scintillating Colors",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Robe of Stars",
+    "value": "It gives the user greater ability to avoid effects. It has six large stars that can be removed to cast magic missile. Some of the stars return every day. It allows the user to enter the astral plane and return at will.",
+    "type": "item",
+    "title": "Robe of Stars",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rod of Absorption",
+    "value": "Can absorb a spell attack targeted at the user. The spell is cancelled and the energy is stored in the rod. This energy can be used to cast a spell.",
+    "type": "item",
+    "title": "Rod of Absorption",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rod of Alertness",
+    "value": "Makes the user have greater perception and have more initiative. It can cast detect evil and good, detect magic, detect poison and disease, see invisibility. When planted in the ground, it gives extra protection to those in its glowing radius for 10 minutes once a day.",
+    "type": "item",
+    "title": "Rod of Alertness",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rod of Security",
+    "value": "Activating the rod transports the user and up to 199 other creatures to a demiplane in any form the user chooses (palace, tavern, garden, etc.). Each visitor regains health automatically. The effect lasts up to 200 days. The rod can't be used again until 10 days from then.",
+    "type": "item",
+    "title": "Rod of Security",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rod of the Pact Keeper +3",
+    "value": "Gives a bonus to spell attacks and allows regaining a spell slot once a day.",
+    "type": "item",
+    "title": "Rod of the Pact Keeper +3",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Scimitar of Speed",
+    "value": "Magically enhanced to be more accurate and damaging. It can make an additional attack every turn.",
+    "type": "weapon",
+    "title": "Scimitar of Speed",
+    "description": "40000,1d6+2,+2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shield +3",
+    "value": "Gives an incredible bonus to the user's ability to avoid attack.",
+    "type": "armor",
+    "title": "Shield +3",
+    "description": "40000,+5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Shield of the Cavalier",
+    "value": "Gives an additional bonus to avoiding attacks. It can be used to make a forceful bash that damages opponents and pushes them away or knocks it prone. It can also create a protective field that prevents attacks and enemies from entering the space around the user or an ally.",
+    "type": "armor",
+    "title": "Shield of the Cavalier",
+    "description": "40000,+4",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Spellguard Shield",
+    "value": "Gives advantage on defending against magical effects and spell attacks.",
+    "type": "armor",
+    "title": "Spellguard Shield",
+    "description": "40000,+2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Spirit Board",
+    "value": "A wooden board with letters and the words \"yes\", \"no\", \"weal\", \"woe\" written on it. It comes with a heart shaped planchette. It has three charges to cast the spells augury (1 charge) or commune (3 charges). The spirits of the dead answer by guiding the planchette. Recharges slowly every day.",
+    "type": "item",
+    "title": "Spirit Board",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of Fire",
+    "value": "Gives the user resistance to fire damage. It has 10 charges to cast the spells burning hands (1 charge), fireball (3 charges), wall of fire (4 charges). The staff regains charges quickly every day. Druid, sorcerer, warlock, or wizard only.",
+    "type": "weapon",
+    "title": "Staff of Fire",
+    "description": "40000,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of Frost",
+    "value": "Gives the user resistance to cold damage. It has 10 charges to cast the spells cone of cold (5 charges), fog cloud (1 charge), ice storm (4 charges), wall of ice (4 charges). The staff regains charges quickly every day. Druid, sorcerer, warlock, or wizard only.",
+    "type": "weapon",
+    "title": "Staff of Frost",
+    "description": "40000,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of Power",
+    "value": "Quarterstaff with extra damage and accuracy. It improves the ability to avoid being hit. With 20 charges it can cast cone of cold (5) fireball (5) globe of invulnerability (6) hold monster (5) levitate (2) lightning bolt (5) magic missile (1) ray of enfeeblement (1), wall of force (5). Breaking the staff creates an incredible explosion with a chance of transporting the user away to avoid injury. It regains charges quickly every day. Sorcerer, warlock, wizard only.",
+    "type": "weapon",
+    "title": "Staff of Power",
+    "description": "40000,1d6+2,+2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of Striking",
+    "value": "Quarterstaff with incredible accuracy and damage. With 10 charges, up to 3 can be used to give extra force damage. It quickly regains charges every day.",
+    "type": "weapon",
+    "title": "Staff of Striking",
+    "description": "40000,1d6+3,+3",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of Thunder and Lightning",
+    "value": "Strikes with magical accuracy and damage and hits with extra lightning damage or stuns the enemy once per day. It can create a lightning strike that does severe damage in a line once per day. It can defean creatures within 60 feet and cause thunder damage once per day.",
+    "type": "weapon",
+    "title": "Staff of Thunder and Lightning",
+    "description": "40000,1d6+9,+2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sword of Sharpness",
+    "value": "Inflicts maximum damage against objects. On a critical hit, this weapon does even more slashing damage and causes the target to be exhausted.",
+    "type": "weapon",
+    "title": "Sword of Sharpness",
+    "description": "40000,1d8",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Thunderous Greatclub",
+    "value": "Increases the strength of the user to 20. It deals extra thunder damage to creatures and extreme damage to objects. It can create a thunderclap creating a 30 foot cone of thunder damage. Once per day, can be struck on the ground to create a seismic disturbance, causing incredible damage to structures and knocking creatures prone. Creates a 30 foot dep fissure.",
+    "type": "weapon",
+    "title": "Thunderous Greatclub",
+    "description": "40000,1d8+5",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tome of Clear Thought",
+    "value": "A book of memory and logic exercises which will allow the user to increase their intelligence slightly with a maximum beyond normal limits. It loses its magic afterwards. The user must spend 48 hours over a period of 6 days or fewer to gain the benefit.",
+    "type": "item",
+    "title": "Tome of Clear Thought",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tome of Leadership and Influence",
+    "value": "A book with guidelines for influencing and charming others which will allow the user to increase their charisma slightly with a maximum beyond normal limits. It loses its magic afterwards. The user must spend 48 hours over a period of 6 days or fewer to gain the benefit.",
+    "type": "item",
+    "title": "Tome of Leadership and Influence",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tome of Understanding",
+    "value": "A book of intuition and insight exercises which will allow the user to increase their wisdom slightly with a maximum beyond normal limits. It loses its magic afterwards. The user must spend 48 hours over a period of 6 days or fewer to gain the benefit.",
+    "type": "item",
+    "title": "Tome of Understanding",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Polymorph",
+    "value": "It has 7 charges that can be used to cast polymorph. It regains these charges quickly every day.",
+    "type": "item",
+    "title": "Wand of Polymorph",
+    "description": "40000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Weapon +3",
+    "value": "A weapon with incredible accuracy and damage.",
+    "type": "weapon",
+    "title": "Weapon +3",
+    "description": "40000,1d8+3,+3",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Apparatus of Kwalish",
+    "value": "A large vehicle with various levers that control its movements. It has mechanical legs, claws, shutters, eyes that emit light, a hatch. It can grapple, attack, swim, walk.",
+    "type": "item",
+    "title": "Apparatus of Kwalish",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Armor +3",
+    "value": "Magically enhanced armor that causes the user to be incredibly hard to hit.",
+    "type": "armor",
+    "title": "Armor +3",
+    "description": "200000,21",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Armor of Invulnerability",
+    "value": "Resists bludgeoning, piercing, and slashing damage. Once a day, it can form a metal shell for 10 minutes that gives immunity to these damage types.",
+    "type": "armor",
+    "title": "Armor of Invulnerability",
+    "description": "200000,18",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Belt of Cloud Giant Strength",
+    "value": "Increases strength to near impossible levels.",
+    "type": "item",
+    "title": "Belt of Cloud Giant Strength",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Belt of Storm Giant Strength",
+    "value": "Increases strength to impossible levels.",
+    "type": "item",
+    "title": "Belt of Storm Giant Strength",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cloak of Invisibility",
+    "value": "The cloak has 3 charges which can be used to give the invisible condition for 1 hour. It regains the charges slowly each day.",
+    "type": "item",
+    "title": "Cloak of Invisibility",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Crystal Ball of Mind Reading",
+    "value": "Allows casting of the scrying spell. Allows the user to cast detect thoughts on targets within 30 feet of the spell's sensor.",
+    "type": "item",
+    "title": "Crystal Ball of Mind Reading",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Crystal Ball of Telepathy",
+    "value": "Allows casting of the scrying spell. Allows telepathic communication or cast suggestion with targets within 30 feet of the spell's sensor.",
+    "type": "item",
+    "title": "Crystal Ball of Telepathy",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Crystal Ball of True Seeing",
+    "value": "Allows casting of the scrying spell. Grants truesight with a range of 120 feet centered on the spell's sensor.",
+    "type": "item",
+    "title": "Crystal Ball of True Seeing",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Cubic Gate",
+    "value": "3 inch cube with each side keyed to a different plane. With 3 charges it can cast gate or plane shift to the associated plane pressed.",
+    "type": "item",
+    "title": "Cubic Gate",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Deck of Many Things",
+    "value": "A deck of cards that unleashes wonderful or terrible magical effects when randomly drawn: balance, comet, donjon, euryale, fates, flames, fool, gem, jester, key, knight, moon, puzzle, rogue, ruin, sage, skull, star, sun, talons, throne, void.",
+    "type": "item",
+    "title": "Deck of Many Things",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Defender",
+    "value": "Has incredible accuracy and damage. Instead, that bonus can be used to have a better chance of avoiding damage at the user's discretion.",
+    "type": "weapon",
+    "title": "Defender",
+    "description": "200000,1d8+3,+3",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Efreeti Chain",
+    "value": "Has incredible bonus to avoiding attacks. Has immunity to fire damage and the user can speak primordial. Allows the user to stand and walk across molten lava.",
+    "type": "armor",
+    "title": "Efreeti Chain",
+    "description": "200000,19",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Enspelled Armor Legendary",
+    "value": "Allows the user to cast a highly advanced spell up to 6 times. It slowly regains charges every day.",
+    "type": "armor",
+    "title": "Enspelled Armor Legendary",
+    "description": "200000,15+d2",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Legendary Enspelled Staff",
+    "value": "Allows the user to cast a highly advanced spell up to 6 times. It slowly regains charges every day.",
+    "type": "weapon",
+    "title": "Legendary Enspelled Staff",
+    "description": "200000,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Enspelled Weapon Legendary",
+    "value": "Allows the user to cast a highly advanced spell up to 6 times. It slowly regains charges every day.",
+    "type": "weapon",
+    "title": "Enspelled Weapon Legendary",
+    "description": "200000,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hammer of Thunderbolts",
+    "value": "Has enhanced damage and accuracy. With 5 charges, it can be thrown expending a charge to possibly stun all creatures within 30 feet of the target, then flies back to the user's hand. It has synergy with the belt of giant strength or gauntlets of ogre power. Critical hits on a giant can possibly kill it instantly. The strength bestowed increases by 4.",
+    "type": "weapon",
+    "title": "Hammer of Thunderbolts",
+    "description": "200000,1d8+1,+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Holy Avenger",
+    "value": "Must be used by a paladin, has incredible damage and accuracy. Deals extra radiant damage to the undead. Allies within 10 feet have extra protection against magical effects.",
+    "type": "weapon",
+    "title": "Holy Avenger",
+    "description": "200000,1d8+3,+3",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Greater Absorption",
+    "value": "A magic stone tossed in the air that orbits the user's head and can cancel a spell cast by a creature that can be seen by the user. It can only do this 20 times.",
+    "type": "item",
+    "title": "Ioun Stone of Greater Absorption",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Mastery",
+    "value": "A magic stone tossed in the air that orbits the user's head and increases the user's proficiency.",
+    "type": "item",
+    "title": "Ioun Stone of Mastery",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ioun Stone of Regeneration",
+    "value": "A magic stone tossed in the air that orbits the user's head and regain health every hour.",
+    "type": "item",
+    "title": "Ioun Stone of Regeneration",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Iron Flask",
+    "value": "If a creature is not native to the plane it's on, it can potentially be captured within this flask wihin 60 feet. Removing the stopper of the flask unleashes the creature. It obeys the user's commands for an hour. It may already contain a creature when discovered.",
+    "type": "item",
+    "title": "Iron Flask",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Iron Horn of Valhalla",
+    "value": "Blowing the horn summons 5 berserker warrior spirits for 1 hour that follow your commands only if you are proficient with all martial weapons. It can be used once every 7 days.",
+    "type": "item",
+    "title": "Iron Horn of Valhalla",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Luck Blade",
+    "value": "Has additional accuracy and damage. It also has added ability to avoid magical effects. It gives the user another chance when they would have otherwise failed a task. It can use this once per day. It can grant up to 3 wishes, one per day.",
+    "type": "weapon",
+    "title": "Luck Blade",
+    "description": "200000,1d8+1,+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Moonblade",
+    "value": "Weapon that chooses a wielder whose goals align with its own, otherwise cursing the user. Each potential rune on it gives a magical property: increased accuracy/damage, deals extra force damage, can be thrown, easier critical hits, flashes to cause blindness, can store spells, and can summon a shadowy elf. It has sentience and personality.",
+    "type": "weapon",
+    "title": "Moonblade",
+    "description": "200000,1d8+1,+1",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Plate Armor of Etherealness",
+    "value": "Can cast the etherealness spell once a day.",
+    "type": "armor",
+    "title": "Plate Armor of Etherealness",
+    "description": "200000,18",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Potion of Storm Giant Strength",
+    "value": "Increases strength to impossible levels.",
+    "type": "item",
+    "title": "Potion of Storm Giant Strength",
+    "description": "100000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Djinni Summoning",
+    "value": "Can summon a djinni for up to an hour. It obeys the user's commands. It can be summoned once a day unless it dies.",
+    "type": "item",
+    "title": "Ring of Djinni Summoning",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Elemental Command",
+    "value": "Linked to a single elemental force (air, earth, fire, water). Gives advantage against elementals of that type. It can potentially compell elementals of that type to follow your command. It has 5 charges used to cast elemental spells. It also has additional elemental properties.",
+    "type": "item",
+    "title": "Ring of Elemental Command",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Invisibility",
+    "value": "Can make the user invisible at will.",
+    "type": "item",
+    "title": "Ring of Invisibility",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Spell Turning",
+    "value": "Creates magical protection against spell effects. It can possibly reflect spells back at the user that casted them if they only target you.",
+    "type": "item",
+    "title": "Ring of Spell Turning",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Ring of Three Wishes",
+    "value": "Can cast up to three wishes where it will then cease to be magical.",
+    "type": "item",
+    "title": "Ring of Three Wishes",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Robe of the Archmagi",
+    "value": "Must be used by a sorcerer, warlock, or wizard. Gives magical armor, resists magical effects, and increases the difficulty of having the user's effects resisted.",
+    "type": "armor",
+    "title": "Robe of the Archmagi",
+    "description": "200000,15+d",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rod of Lordly Might",
+    "value": "Functions as a mace with incredible damage and accuracy and has a series of buttons that transform it: fiery blade, great axe, spear, climbing pole, battering ram, back to a mace that indicates magnetic north. It can drain life, paralyze its targets, or terrify them.",
+    "type": "weapon",
+    "title": "Rod of Lordly Might",
+    "description": "200000,1d8+3,+3",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Rod of Resurrection",
+    "value": "With 5 charges to cast heal (1 charge), or resurrection (5 charges). It slowly regains charges every day.",
+    "type": "item",
+    "title": "Rod of Resurrection",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Scarab of Protection",
+    "value": "It gives the user additional ability to avoid attacks, it has 12 charges to prevent the effects of necromancy, it has added ability to avoid spell effects.",
+    "type": "item",
+    "title": "Scarab of Protection",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Scroll of Titan Summoning",
+    "value": "Reading this scroll summons a titan in a position the user can see in 1 mile. It can be animal lord, blob of annihilation, colossus, elemental cataclysm, empyrean, kraken, or tarrasque. It is hostile to all creatures.",
+    "type": "item",
+    "title": "Scroll of Titan Summoning",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sovereign Glue",
+    "value": "Can form a permanent bond between two objects with one ounce of liquid. It is contained in a vial coated with oil of slipperiness. It takes a minute to cure. The bond can only be broken with universal solvent, oil of etherealness, or the wish spell. Contains up to 7 ounces.",
+    "type": "item",
+    "title": "Sovereign Glue",
+    "description": "100000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sphere of Annihilation",
+    "value": "Obliterates all matter that passes through it except artifacts. Causes extreme damage to larger objects or creatures that touch it. Only one who has exceptional arana ability has a chance of commanding it to move. Failure to control it causes it to move toward the person. Passing the sphere through a planar portal can possibly destroy it or send all creatures within 180 feet to a random plane.",
+    "type": "item",
+    "title": "Sphere of Annihilation",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Staff of the Magi",
+    "value": "Must be used by a sorcerer, warlock, or wizard. It has 50 charges that can be used to cast arcane lock, conjure elemental, detect magic, dispel magic. enlarge, reduce, fireball, flaming sphere4, ice storm, invisibility, knock, light, lightning bolt, mage hand, passwall, plane shift, protection from evil and good, telekinesis, wall of fire, web.  It has a chance of cancelling other creature's spells and absorbing its power. Absorbing too much power may make it explode.",
+    "type": "weapon",
+    "title": "Staff of the Magi",
+    "description": "200000,1d6",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sword of Answering",
+    "value": "Weapon has incredible accuracy and damage. If an enemy attacks the user, the user can achieve a free attack against that enemy. The special attack ignores immunity or resistance.",
+    "type": "weapon",
+    "title": "Sword of Answering",
+    "description": "200000,1d8+3,+3",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Talisman of Pure Good",
+    "value": "Must be used by a cleric or paladin. If a fiend or undead touches the talisman, they take incredible radiant damage and continue to take damage as long as they hold it. It increases the accuracy of spells. With 7 charges, it can open a fissure underneath a creature on the ground. If they fall in, they are destroyed forever. If not, they take psychic damage. Using the last charge destroys the talisman.",
+    "type": "item",
+    "title": "Talisman of Pure Good",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Talisman of the Sphere",
+    "value": "Gives the user advantage on arcana checks when attempting to control the sphere of annihilation. It allows movement of the sphere an additional distance based on the user's intelligence.",
+    "type": "item",
+    "title": "Talisman of the Sphere",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Talisman of Ultimate Evil",
+    "value": "Represents pure evil. Anyone holding it who is not a fiend or undead will take incredible damage until it releases it. It increases the accuracy of spells. It has 6 charges that can be used to open a flaming fissure underneath a target. If they fall in, they are destroyed forever. Otherwise they take psychic damage. Using the last charge destroys the talisman.",
+    "type": "item",
+    "title": "Talisman of Ultimate Evil",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Tome of the Stilled Tongue",
+    "value": "An evil book with a tongue pinned to the front. The first few pages are filled with indecipherable scrawls. Once a day, any spells written in the rest of the pages can be cast for free and with relative ease. Removing the tongue erases the spells. Cryptic messages are sometimes written on the page and are erased as soon as they are read.",
+    "type": "item",
+    "title": "Tome of the Stilled Tongue",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Universal Solvent",
+    "value": "A strong alcohol smelling milky liquid that contains up to 7 ounces of fluid. It instantly dissolves any adhesive including sovereign glue.",
+    "type": "item",
+    "title": "Universal Solvent",
+    "description": "100000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Well of Many Worlds",
+    "value": "Folded like a hankerchief, it can be unfolded and placed as a two way portal into another world or plane of existence. It can be closed but can't be used again until up to 8 hours later.",
+    "type": "item",
+    "title": "Well of Many Worlds",
+    "description": "200000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Axe of the Dwarvish Lords",
+    "value": "An artifact once known to bring peace to the dwarvish people. It has incredible damage and accuracy. Critical hits do additional slashing damage. Throwing the axe deals additional force damage and more so on giants. It returns to the user's hand. It grants darkvision, increases constitution, grants proficiency in brewing/masonry/smithing, immunity to poison, resistance to fire, destroy objects easily, teleport through stone once every 3 days. The user can summon an earth elemental once a day.",
+    "type": "weapon",
+    "title": "Axe of the Dwarvish Lords",
+    "description": "5000000,1d12+3,+3",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Blackrazor",
+    "value": "A great sword with incredible damage and accuracy. Hitting an undead harms the user and heals the undead. Cannot be charmed or frightened. Blindsight for 30 feet. Killing a creature grants the user additional health equal to that of the enemy slain. It is sentient and may choose to cast haste on the user. It demands the devouring of souls at least every 3 days or it will raise conflict with the user.",
+    "type": "weapon",
+    "title": "Blackrazor",
+    "description": "5000000,2d6+3,+3",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Book of Exalted Deeds",
+    "value": "A guide on what is true virtue. The user must read and study 80 hours to fully absorb its contents. Fiends and the undead are harmed by reading this book. It grants immunity to the charmed and frightened conditions. Resistance to psychic damage. Wisdom increases slightly. Spells are casted at one higher level. Emit bright light as a halo within 10 feet. This gives advantage when persuading people. Fiends and undead have trouble hitting the user. These benefits only last if the user strives to do good.",
+    "type": "item",
+    "title": "Book of Exalted Deeds",
+    "description": "5000000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Book of Vile Darkness",
+    "value": "Even reading the pages of this vile book invite doom. Whenever it is read by a creature other than an undead or fiend, there is a chance that they are transformed into a larva which can only be undone by the wish spell. Reading and studying it for a total of 80 hours unlocks its power and must be maintained by doing evil acts. It increases a user's ability by taking away from another. Immunity to exhaustion. Can cast animate dead, circle of death, dominate monster, finger of death. It's a reference for any aspect of evil. Reading words aloud damages the reader as well as other creatures in the area with psychic damage.",
+    "type": "item",
+    "title": "Book of Vile Darkness",
+    "description": "5000000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Demonomicon of Iggwilv",
+    "value": "An accounting of the abyss and demons. It contains demonic secrets and contains a part of the abyss that keeps it up to date. The first ten pages are blank which can be used to capture a fiend trapped in a magic circle spell once a day. Magic circle is cast at its highest level when used against fiends. Spells against fiends do the most damage possible. With 8 charges, it can cast magic circle, magic jar, planar ally, planar binding, plane shift to the abyss, summon fiend, tasha's hideous laughter. ",
+    "type": "item",
+    "title": "Demonomicon of Iggwilv",
+    "description": "5000000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Eye of Vecna",
+    "value": "An artifact which consists of what is left behind by the evil lich Vecna. It must be applied to the user's empty eye socket which can never be removed or the user will die. It grants true sight and has 8 charges to cast clairvoyance(2) crown of madness(1) disintegrate(4) dominate monster(5) eyebite (4). The charges are regained quickly every day but each spell has a chance of devouring the user's soul. xray vision for 1 minute.",
+    "type": "item",
+    "title": "Eye of Vecna",
+    "description": "5000000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Hand of Vecna",
+    "value": "An artifact which consists of what is left behind by the evil lich Vecna. It must be applied to the user's stump where the left hand was. It increases strength to the peak of human ability. Melee attacks and spells deal extra cold damage. It has 8 charges to cast finger of death(5) sleep(1) slow(2) teleport(3). It regains charges daily, but using such spells may cause it to cast suggest to make the user do an evil deed. It grants greater initiative, can reduce targets to slime, immunity to poison, and regenerates health. Can cast wish once every 30 days.",
+    "type": "item",
+    "title": "Hand of Vecna",
+    "description": "5000000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Orb of Dragonkind",
+    "value": "Forged to defeat dragons, the orb contains the essence of an evil dragon. The user must have incredible force of personality or be controlled by it. It has 7 charges that allows the user to cast cure wounds(4) daylight(1) death ward(2) detect magic(0) scrying(3). It recharges slowly daily. It can issue a telepathic call to chromatic dragons in 40 miles and it will compell them to come to the user.",
+    "type": "item",
+    "title": "Orb of Dragonkind",
+    "description": "5000000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Sword of Kas",
+    "value": "Once used to defeat the lich Vecna, it grants the user a bloodthirst that must be satiated within 1 minute of the weapon being drawn. If not, the user may take psychic damage or become dominated by the sword until the blood lust is satiated. It has incredible accuracy and damage. Critical hits deal extra damage to undead. It can cast call lightning, divine word, finger of death once a day. Grants greater initiative, could be used to give greater defense, resistance to necrotic damage. It's sentient and chaotic evil. However, its goal is to destroy Vecna and all his works.",
+    "type": "weapon",
+    "title": "Sword of Kas",
+    "description": "5000000,2d6+3",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wand of Orcus",
+    "value": "Crafted by Orcus, demon prince of the abyss. Trying to attune to the wand causes incredible necrotic damage or simply becomes a zombie. It can wielded as a mace with excellent accuracy and damage and deals extra necrotic damage. It provides additional ability to avoid attacks. It has 7 charges to cast spells: animate dead(1) blight(2) circle of death(3) finger of death(3) power word kill(4) speak with dead(1). It regains charges slowly every day. It can conjure 15 skeletons and 15 zombies once per day. It is sentient and desires to slay everything in the multiverse.",
+    "type": "item",
+    "title": "Wand of Orcus",
+    "description": "5000000",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Wave",
+    "value": "Has incredible accuracy and damage. The target takes extra necrotic damage on hit. It gives the user extra initiative and a buble of air to breathe while underwater. It has three charges to cast dominate beast on swimming creatures. It regains charges slowly every day. It can cast globe of invulnerability once every day. It's sentient and wants its users to embrace sea gods.",
+    "type": "weapon",
+    "title": "Wave",
+    "description": "5000000,1d8+3,+3",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Whelm",
+    "value": "A warhammer that has incredible damage and accuracy. It can be hurled to cause extra force damage and even more so against constructs, elementals, or giants. It flies back to the user's hand. Once a day, it can create a shock wave when struck on the ground causing creatures within 60 feet to be stunned. It alerts its user of secret or concealed doors within 30 feet. It can caast detect evil and good or locate object once a day. It is sentient and longs to returned to its dwarf clan.",
+    "type": "weapon",
+    "title": "Whelm",
+    "description": "5000000,1d8+3,+3",
+    "useForCharacterCreation": false
+  },
+  {
     "keys": "Acid Splash",
     "value": "Spell that creates a five foot acid bubble within fifty feet. It explodes, causing acid damage.",
     "type": "spell",
@@ -2704,78 +7232,6 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Stragedy",
-    "value": "A trading card game passed down through the generations. The magical cards are rare and have incredible value. Players use the cards to have friendly battles.",
-    "type": "item",
-    "title": "Stragedy Card Game",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Stragedy Ace",
-    "value": "Sends all cards that have the number that this card is played on to the discard pile.",
-    "type": "item",
-    "title": "Stragedy Ace Card",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Stragedy Jack",
-    "value": "Sends the targeted card back to the discard pile. The player can then draw a card from the discard pile and take another turn.",
-    "type": "item",
-    "title": "Stragedy Jack Card",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Stragedy Brigand",
-    "value": "Your opponent must discard 5 cards from their draw pile.",
-    "type": "item",
-    "title": "Stragedy Brigand Card",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Stragedy Joker",
-    "value": "Increases the total of the numbered card that this is placed on to get a score of 30. It cannot subtract points if you bust, however.",
-    "type": "item",
-    "title": "Stragedy Joker Card",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Stragedy King",
-    "value": "Doubles the value of the numbered card that this is played on both sides of the battlefield.",
-    "type": "item",
-    "title": "Stragedy King Card",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Stragedy Priest",
-    "value": "Prevents the numbered card that this is played on from causing you to bust. It subtracts down to 30.",
-    "type": "item",
-    "title": "Stragedy Priest Card",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Stragedy Queen",
-    "value": "Removes the value of the numbered card that this is played on and adds it to the opponent.",
-    "type": "item",
-    "title": "Stragedy Queen Card",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
-    "keys": "Stragedy Witch",
-    "value": "Forces the opponent to play a card directly from their draw pile or a random one chosen from their hand. If it can't be played, they must discard their hand.",
-    "type": "item",
-    "title": "Stragedy Witch Card",
-    "description": "",
-    "useForCharacterCreation": false
-  },
-  {
     "keys": "Suggestion spell, cast Suggestion",
     "value": "Spell that allows the caster to suggest a course of action that a creature will follow. It has to be short and achieveable.",
     "type": "spell",
@@ -3260,6 +7716,78 @@
     "value": "Spell that creates a range of fifteen feet that any creatures within cannot speak a deliberate lie.",
     "type": "spell",
     "title": "Zone of Truth",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy",
+    "value": "A trading card game passed down through the generations. The magical cards are rare and have incredible value. Players use the cards to have friendly battles.",
+    "type": "card",
+    "title": "Stragedy Card Game",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Ace",
+    "value": "Sends all cards that have the number that this card is played on to the discard pile.",
+    "type": "card",
+    "title": "Stragedy Ace Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Jack",
+    "value": "Sends the targeted card back to the discard pile. The player can then draw a card from the discard pile and take another turn.",
+    "type": "card",
+    "title": "Stragedy Jack Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Brigand",
+    "value": "Your opponent must discard 5 cards from their draw pile.",
+    "type": "card",
+    "title": "Stragedy Brigand Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Joker",
+    "value": "Increases the total of the numbered card that this is placed on to get a score of 30. It cannot subtract points if you bust, however.",
+    "type": "card",
+    "title": "Stragedy Joker Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy King",
+    "value": "Doubles the value of the numbered card that this is played on both sides of the battlefield.",
+    "type": "card",
+    "title": "Stragedy King Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Priest",
+    "value": "Prevents the numbered card that this is played on from causing you to bust. It subtracts down to 30.",
+    "type": "card",
+    "title": "Stragedy Priest Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Queen",
+    "value": "Removes the value of the numbered card that this is played on and adds it to the opponent.",
+    "type": "card",
+    "title": "Stragedy Queen Card",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "Stragedy Witch",
+    "value": "Forces the opponent to play a card directly from their draw pile or a random one chosen from their hand. If it can't be played, they must discard their hand.",
+    "type": "card",
+    "title": "Stragedy Witch Card",
     "description": "",
     "useForCharacterCreation": false
   }

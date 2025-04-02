@@ -85,6 +85,7 @@ const repeatTurnSynonyms = ["repeatturn", "repeat"]
 const basicDeckSynonyms = ["basicdeck", "stragedybasicdeck"]
 const cardShopSynonyms = ["cardshop", "stragedyshop", "cardstore", "stragedystore"]
 const spellShopSynonyms = ["spellshop", "spellstore"]
+const itemShopSynonyms = ["itemshop", "itemstore"]
 const stragedySynonyms = ["stragedy", "playgame", "game", "startgame", "begingame", "playcards", "playstragedy", "startstragedy", "beginstragedy"]
 const lockpickSynonyms = ["lockpick", "lockpicking", "codebreaker", "pick", "hack", "hacking", "mastermind"]
 const addCardSynonyms = ["addcard"]
@@ -121,6 +122,12 @@ const modifier = (text) => {
   if (state.spellShopStep != null) {
     text = handleSpellShopStep(text)
     if (state.spellShopStep != null) return { text }
+    else text = rawText
+  }
+
+  if (state.itemShopStep != null) {
+    text = handleItemShopStep(text)
+    if (state.itemShopStep != null) return { text }
     else text = rawText
   }
 
@@ -259,6 +266,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, basicDeckSynonyms, doBasicDeck)
   if (text == null) text = processCommandSynonyms(command, commandName, cardShopSynonyms, doCardShop)
   if (text == null) text = processCommandSynonyms(command, commandName, spellShopSynonyms, doSpellShop)
+  if (text == null) text = processCommandSynonyms(command, commandName, itemShopSynonyms, doItemShop)
   if (text == null) text = processCommandSynonyms(command, commandName, stragedySynonyms, doStragedy)
   if (text == null) text = processCommandSynonyms(command, commandName, lockpickSynonyms, doLockpick)
   if (text == null) text = processCommandSynonyms(command, commandName, addCardSynonyms, doAddCard)
@@ -1423,6 +1431,87 @@ function doBasicDeck(command) {
   return `${toTitleCase(character.name)} ${takeWord} the Stragedy Basic Deck`
 }
 
+function doItemShop(command) {
+  command = command.replace(/very rare/gi, "phenomenal")
+
+  state.itemShopCategoryName = searchArgument(command, /weapons|armor|tools|gear|common|uncommon|rare|phenomenal|legendary|artifact/gi)
+  if (state.itemShopCategoryName == null && searchArgument(command, /weapon/) != null) state.itemShopCategoryName = "weapons"
+  if (state.itemShopCategoryName == null) state.itemShopCategoryName = "common"
+
+  let arg1 = searchArgument(command, /free/gi)
+  state.itemShopIsFree = arg1 != null
+
+  let arg2 = searchArgument(command, /all/gi)
+  let all = arg2 != null
+  state.itemShopClearDeals = state.itemShopAll || state.itemShopAll != all
+  state.itemShopAll = all
+
+  state.itemShopStep = 0
+  state.show = "itemShop"
+  return " "
+}
+
+function handleItemShopStep(text) {
+  state.show = "itemShop"
+
+  if (/^\s*>.*says? ".*/.test(text)) {
+    text = text.replace(/^\s*>.*says? "/, "")
+    text = text.replace(/"\s*$/, "")
+  } else if (/^\s*>\s.*/.test(text)) {
+    text = text.replace(/\s*> /, "")
+    for (var i = 0; i < info.characters.length; i++) {
+      var matchString = info.characters[i] == "" ? "You " : `${info.characters[i]} `
+      if (text.startsWith(matchString)) {
+        text = text.replace(matchString, "")
+        break
+      }
+    }
+    text = text.replace(/\.?\s*$/, "")
+  } else {
+    text = text.replace(/^\s+/, "")
+  }
+
+  if (text.toLowerCase() == "q") {
+    state.itemShopStep = 500
+    return text
+  }
+
+  switch (state.itemShopStep) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      if (isNaN(text)) return text
+      var index = parseInt(text) - 1
+
+      let deals = findItemShopDeals(state.itemShopCategoryName, false)
+      if (index < 0 || index >= deals.length) return text
+
+      let deal = deals[index]
+
+      var character = getCharacter()
+      var goldIndex = character.inventory.findIndex(x => x.name.toLowerCase() == "gold")
+      var gold = goldIndex == -1 ? 0 : character.inventory[goldIndex].quantity
+
+      if (deal.price > gold) {
+        state.itemShopStep = 2
+        return text
+      }
+
+      doTake(`take ${deal.quantity} ${deal.name}`)
+      if (!state.itemShopIsFree) character.inventory[goldIndex].quantity -= deal.price
+      deal.bought = true
+
+      state.itemShopStep = 1
+      break
+    case 500:
+      state.show = null
+      state.itemShopStep = null
+      break
+  }
+  return text
+}
+
 function doSpellShop(command) {
   var character = getCharacter()
 
@@ -1528,7 +1617,6 @@ function doSpellShop(command) {
   let all = arg3 != null
   state.spellShopClearDeals = state.spellShopAll || state.spellShopAll != all
   state.spellShopAll = all
-  log(`spell shop all:${state.spellShopAll}`)
 
   state.spellShopStep = 0
   state.show = "spellShop"
@@ -1567,19 +1655,16 @@ function handleSpellShopStep(text) {
     case 3:
       if (isNaN(text)) return text
       var index = parseInt(text) - 1
-      log(`index:${index}`)
 
       let deals = findSpellShopDeals(state.spellShopClassName, state.spellShopLevel, false)
       if (index < 0 || index >= deals.length) return text
 
       let deal = deals[index]
-      log(`Deal name:${deal.name}`)
 
       var character = getCharacter()
       var goldIndex = character.inventory.findIndex(x => x.name.toLowerCase() == "gold")
       var gold = goldIndex == -1 ? 0 : character.inventory[goldIndex].quantity
       var found = character.spells.find((element) => element == deal.name) != undefined
-      log(`Found:${found}`)
 
       if (deal.price > gold) {
         state.spellShopStep = 2
@@ -2336,6 +2421,7 @@ function doRest(command) {
   state.cardDeals = null
   state.cardPrices = null
   state.spellShopDeals = null
+  state.itemShopDeals = null
 
   var healingFactor = 1
   var text

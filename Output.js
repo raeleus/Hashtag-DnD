@@ -95,6 +95,10 @@ const modifier = (text) => {
       break
     case "spellShop":
       text += handleSpellShop()
+      break
+    case "itemShop":
+      text += handleItemShop()
+      break
     case "lockpicking":
       text += handleLockpicking()
       break
@@ -459,6 +463,8 @@ const modifier = (text) => {
       text += "\n    Shows the items in the inventory of the character."
       text += "\n#clearinventory"
       text += "\n    Removes all items from the character's inventory."
+      text += "\n#itemshop (weapons|armor|tools|gear|common|uncommon|rare|very rare|legendary|artifact) (free) (all)"
+      text += "\n    This opens the items shop where characters can spend gold to purchase new equipment. The selection is randomized based on the day. Include the argument \"free\" to not require gold to purchase the item. Include the argument \"all\" to list all available items. Otherwise, the list is randomized and a selection of the item list is included."
 
       text += "\n\n--Spells--"
       text += "\n#learnspell spell"
@@ -737,6 +743,291 @@ Type d to draw a card. ${!hasJokerOnBattlefield ? "Type r to retire. " : ""}Type
   return text
 }
 
+const simpleMeleeWeapons = ["Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Dart"]
+const simpleRangedWeapons = ["Light Crossbow", "Shortbow", "Sling"]
+const martialMeleeWeapons = ["Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "Warhammer", "War Pick", "Whip"]
+const martialRangedWeapons = ["Blowgun", "Hand Crossbow", "Heavy Crossbow", "Longbow", "Musket", "Pistol"]
+const lightArmor = ["Padded Armor", "Leather Armor", "Studded Leather Armor"]
+const mediumArmor = ["Hide Armor", "Chain Shirt", "Scale Mail", "Breastplate", "Half Plate Armor"]
+const heavyArmor = ["Ring Mail", "Chain Mail", "Splint Armor", "Plate Armor"]
+const ammunition = ["Arrow", "Bolt", "Bullet", "Needle"]
+
+function itemShopPushDeal(items, name) {
+  let quantity = 1
+  let storyCardName = name
+  switch (name) {
+    case "Armor of Gleaming":
+      name = itemNameAddPrefix("of Gleaming", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Cast-Off Armor":
+      name = itemNameAddSuffix("Cast-Off", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Moon-Touched Sword":
+      name = itemNameAddSuffix("Moon-Touched", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+      break
+    case "Silvered Weapon":
+      name = itemNameAddSuffix("Silvered", ...simpleMeleeWeapons.concat(simpleRangedWeapons, martialMeleeWeapons, martialRangedWeapons))
+      break
+    case "Smoldering Armor":
+      name = itemNameAddSuffix("Smoldering", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Sylvan Talon":
+      name = itemNameAddSuffix("Sylvan Talon", "Dagger", "Rapier", "Scimitar", "Shortsword", "Sickle", "Spear")
+      break
+    case "Walloping Ammunition":
+      name = itemNameAddSuffix("Walloping", ...ammunition)
+      quantity = 10
+      break
+    case "Adamantine Armor":
+      name = itemNameAddSuffix("Adamantine", ...mediumArmor.concat(heavyArmor))
+      break
+    case "Adamantine Weapon":
+      name = itemNameAddSuffix("Adamantine", ...martialMeleeWeapons.concat(ammunition, simpleMeleeWeapons))
+      break
+    case "Ammunition +1":
+      name = itemNameAddPrefix("+1", ...ammunition)
+      break
+    case "Enspelled Armor Uncommon":
+      name = itemNameAddSuffix("Uncommon Enspelled", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Enspelled Weapon Uncommon":
+      name = itemNameAddSuffix("Uncommon Enspelled", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
+      break
+    case "Mariner's Armor":
+      name = itemNameAddSuffix("Mariner's", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Quaal's Feather Token Uncommon":
+      name = itemNameAddSuffix("Quaal's Feather Token of", "Anchor", "Fan", "Tree")
+      break
+    case "Sword of Vengeance":
+      name = itemNameAddPrefix("of Vengeance", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+      break
+    case "Weapon +1":
+      name = itemNameAddPrefix("+1", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
+      break
+    case "Weapon of Warning":
+      name = itemNameAddPrefix("of Warning", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
+      break
+    case "Ammunition +2":
+      name = itemNameAddPrefix("+2", ...ammunition)
+      break
+    case "Armor +1":
+      name = itemNameAddPrefix("+1", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Armor of Resistance":
+      name = itemNameAddPrefix("of Resistance", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Armor of Vulnerability":
+      name = itemNameAddPrefix("of Vulnerability", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Enspelled Armor Rare":
+      name = itemNameAddSuffix("Rare Enspelled", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Enspelled Weapon Rare":
+      name = itemNameAddSuffix("Rare Enspelled", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
+      break
+    case "Figurine of Wondrous Power Rare":
+      name = itemNameAddPrefix("Figurine of Wondrous Power", "Bronze Griffon", "Ebony Fly", "Golden Lions", "Ivory Goats", "Marble Elephant", "Onyx Dog", "Serpentine Owl")
+      break
+    case "Flame Tongue":
+      name = itemNameAddSuffix("Flame Tongue", ...simpleMeleeWeapons.concat(martialMeleeWeapons))
+      break
+    case "Giant Slayer":
+      name = itemNameAddSuffix("Giant Slayer", ...simpleMeleeWeapons.concat(martialMeleeWeapons))
+      break
+    case "Ioun Stone Rare":
+      name = itemNameAddSuffix("Ioun Stone of", "Awareness", "Protection", "Reserve", "Sustenance")
+      break
+    case "Quaal's Feather Token Rare":
+      name = itemNameAddSuffix("Quaal's Feather Token of", "Bird", "Swan Boat", "Whip")
+      break
+    case "Sword of Life Stealing":
+      name = itemNameAddPrefix("of Life Stealing", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+      break
+    case "Sword of Wounding":
+      name = itemNameAddPrefix("of Wounding", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+      break
+    case "Vicious Weapon":
+      name = itemNameAddSuffix("Vicious", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
+      break
+    case "Weapon +2":
+      name = itemNameAddPrefix("+2", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
+      break
+    case "Ammunition +3":
+      name = itemNameAddPrefix("+3", ...ammunition)
+      break
+    case "Ammunition of Slaying":
+      let type = getRandomFromList("Aberration", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Humonoid", "Fey", "Fiend", "Giant", "Monstrosity", "Ooze", "Plant", "Undead")
+      name = itemNameAddPrefix(`of ${type} Slaying`, ...ammunition)
+      break
+    case "Armor +2":
+      name = itemNameAddPrefix("+2", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Dancing Sword":
+      name = itemNameAddSuffix("Dancing", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+      break
+    case "Demon Armor":
+      name = itemNameAddPrefix("Demon", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Enspelled Armor Very Rare":
+      name = itemNameAddSuffix("Very Rare Enspelled", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Enspelled Weapon Very Rare":
+      name = itemNameAddSuffix("Very Rare Enspelled", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
+      break
+    case "Frost Brand":
+      name = itemNameAddSuffix("Frost Brand", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+      break
+    case "Ioun Stone Very Rare":
+      name = itemNameAddSuffix("Ioun Stone of", "Absorption", "Fortitude", "Insight", "Intellect", "Leadership", "Strength")
+      break
+    case "Sword of Sharpness":
+      name = itemNameAddPrefix("of Sharpness", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar")
+      break
+    case "Weapon +3":
+      name = itemNameAddPrefix("+3", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
+      break
+    case "Armor +3":
+      name = itemNameAddPrefix("+3", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Enspelled Armor Legendary":
+      name = itemNameAddSuffix("Very Rare Enspelled", ...lightArmor.concat(mediumArmor, heavyArmor))
+      break
+    case "Enspelled Weapon Legendary":
+      name = itemNameAddSuffix("Legendary Enspelled", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
+      break
+    case "Luck Blade":
+      name = itemNameAddPrefix("Luck Blade", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar", "Sickle", "Shortsword")
+      break
+    case "Moonblade":
+      name = itemNameAddPrefix("Moonblade", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+      break
+  }
+
+  state.itemShopDeals.push({
+    className: state.itemShopCategoryName,
+    name: name,
+    storyCardName: storyCardName,
+    price: 0,
+    quantity: quantity,
+    bought: false
+  })
+}
+
+function itemNameAddPrefix(name, ...prefixes) {
+  return getRandomFromList(...prefixes) + " " + name
+}
+
+function itemNameAddSuffix(name, ...suffixes) {
+  return name + " " + getRandomFromList(...suffixes)
+}
+
+var itemShopSeed
+
+function itemShopSelectItems(items, numberOfItems) {
+  if (numberOfItems == null) numberOfItems = 1
+
+  itemShopSeed += 100
+  if (state.itemShopAll) {
+    for (let i = 0; i < items.length; i++) {
+      log(items[i])
+      itemShopPushDeal(items, items[i])
+    }
+    return
+  }
+
+  shuffle(items, itemShopSeed)
+  for (let i = 0; i < numberOfItems; i++) {
+    itemShopPushDeal(items, items[i])
+  }
+}
+
+function handleItemShop() {
+  var character = getCharacter()
+  var goldIndex = character.inventory.findIndex(x => x.name.toLowerCase() == "gold")
+  var gold = goldIndex == -1 ? 0 : character.inventory[goldIndex].quantity
+  var text = " "
+  itemShopSeed = state.day
+
+  if (state.itemShopDeals == null || state.itemShopClearDeals) state.itemShopDeals = []
+
+  if (findItemShopDeals(state.itemShopCategoryName).length == 0) switch(state.itemShopCategoryName) {
+    case "weapons":
+      itemShopSelectItems(["Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Dart", "Light Crossbow", "Shortbow", "Sling", "Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "Warhammer", "Warhammer", "War Pick", "Whip", "Blowgun", "Hand Crossbow", "Heavy Crossbow", "Longbow", "Musket", "Pistol"], 5)
+      break
+    case "armor":
+      itemShopSelectItems(["Padded Armor", "Leather Armor", "Studded Leather Armor", "Hide Armor", "Chain Shirt", "Scale Mail", "Breastplate", "Half Plate Armor", "Ring Mail", "Chain Mail", "Splint Armor", "Plate Armor", "Shield"], 5)
+      break
+    case "tools":
+      itemShopSelectItems(["Alchemist's Supplies", "Brewer's Supplies", "Calligrapher's Supplies", "Carpenter's Tools", "Cartographer's Tools", "Cobbler's Tools", "Cook's Utensils", "Glassblower's Tools", "Jeweler's Tools", "Leatherworker's Tools", "Mason's Tools", "Painter's Supplies", "Potter's Tools", "Smith's Tools", "Tinker's Tools", "Weaver's Tools", "Woodcarver's Tools", "Disguise Kit", "Forgery Kit", "Gaming Set", "Herbalism Kit", "Musical Instrument", "Navigator's Tools", "Poisoner's Kit", "Thieves' Tools"], 5)
+      break
+    case "gear":
+      itemShopSelectItems(["Acid", "Alchemist's Fire", "Ammunition", "Antitoxin", "Arcane Focus", "Backpack", "Ball Bearings", "Barrel", "Basket", "Bedroll", "Bell", "Blanket", "Block and Tackle", "Book", "Glass Bottle", "Bucket", "Burglar's Pack", "Caltrops", "Candle", "Crossbow Bolt Case", "Map Case", "Scroll Case", "Chain", "Chest", "Climber's Kit", "Fine Clothes", "Traveler's Clothes", "Component Pouch", "Costume", "Crowbar", "Diplomat's Pack", "Druidic Focus", "Dungeoneer's Pack", "Entertainer's Pack", "Explorer's Pack", "Flask", "Grappling Hook", "Healer's Kit", "Holy Symbol", "Holy Water", "Hunting Trap", "Ink", "Ink Pen", "Jug", "Ladder", "Lamp", "Bullseye Lantern", "Hooded Lantern", "Lock", "Magnifying Glass", "Manacles", "Map", "Mirror", "Net", "Oil", "Paper", "Parchment", "Perfume", "Basic Poison", "Pole", "Iron Pot", "Potion of Healing", "Pouch", "Priest's Pack", "Quiver", "Portable Ram", "Rations", "Robe", "Rope", "Sack", "Scholar's Pack", "Shovel", "Signal Whistle", "Spell Scroll", "Iron Spikes", "Spyglass", "String", "Tent", "Tinderbox", "Torch", "Vial", "Waterskin"], 10)
+      break
+    case "common":
+      itemShopSelectItems(["Armor of Gleaming", "Bead of Nourishment", "Bead of Refreshment", "Boots of False Tracks", "Candle of the Deep", "Cast-Off Armor", "Charlatan's Die", "Cloak of Billowing", "Cloak of Many Fashions", "Clockwork Amulet", "Clothes of Mending", "Dark Shard Amulet", "Dread Helm", "Ear Horn of Hearing", "Enduring Spellbook", "Ersatz Eye", "Hat of Vermin", "Hat of Wizardry", "Heward's Handy Spice Pouch", "Horn of Silent Alarm", "Instrument of Illusions", "Instrument of Scribing", "Lock of Trickery", "Moon-Touched Sword", "Mystery Key", "Orb of Direction", "Orb of Time", "Perfume of Bewitching", "Pipe of Smoke Monsters", "Pole of Angling", "Pole of Collapsing", "Potion of Climbing", "Potion of Comprehension", "Pot of Awakening", "Prosthetic Limb", "Rival Coin", "Rope of Mending", "Ruby of the War Mage", "Shield of Expression", "Silvered Weapon", "Smoldering Armor", "Staff of Adornment", "Staff of Birdcalls", "Staff of Flowers", "Talking Doll", "Tankard of Sobriety", "Veteran's Cane", "Walloping Ammunition", "Wand of Conducting", "Wand of Pyrotechnics"], 5)
+      break
+    case "uncommon":
+      itemShopSelectItems(["Adamantine Armor", "Adamantine Weapon", "Alchemy Jug", "Ammunition +1", "Amulet of Proof against Detection and Location", "Baba Yaga's Dancing Broom", "Bag of Holding", "Bag of Tricks", "Boots of Elvenkind", "Boots of Striding and Springing", "Boots of the Winterlands", "Bracers of Archery", "Brooch of Shielding", "Broom of Flying", "Cap of Water Breathing", "Circlet of Blasting", "Cloak of Elvenkind", "Cloak of Protection", "Cloak of the Manta Ray", "Decanter of Endless Water", "Deck of Illusions", "Driftglobe", "Dust of Disappearance", "Dust of Dryness", "Dust of Sneezing and Choking", "Elemntal Gem", "Enspelled Armor Uncommon", "Uncommon Enspelled Staff", "Enspelled Weapon Uncommon", "Eversmoking Bottle", "Eyes of Charming", "Eyes of Minute Seeing", "Eyes of the Eagle", "Silver Raven Figurine of Wondrous Power", "Gauntlets of Ogre Power", "Gem of Brightness", "Gloves of Missile Snaring", "Gloves of Swimming and Climbing", "Gloves of Thievery", "Goggles of Night", "Hag Eye", "Hat of Disguise", "Headband of Intellect", "Helm of Comprehending Languages", "Helm of Telepathy", "Immovable Rod", "Doss Lute", "Fochlucan Bandore", "Mac-Fuirmidh Cittern", "Javelin of Lightning", "Keoghtom's Ointment", "Lantern of Revealing", "Mariner's Armor", "Medallion of Thoughts", "Nature's Mantle", "Necklace of Adaptation", "Oil of Slipperiness", "Pearl of Power", "Periapt of Health", "Periapt of Wound Closure", "Philter of Love", "Pipes of Haunting", "Pipes of the Sewers", "Potion of Animal Friendship", "Potion of Fire Breath", "Potion of Hill Giant Strength", "Potion of Growth", "Potion of Poison", "Potion of Puglism", "Potion of Resistance", "Potion of Water Breathing", "Quaal's Feather Token Uncommon", "Quiver of Ehlonna", "Ring of Jumping", "Ring of Mind Shielding", "Ring of Swimming", "Ring of Warmth", "Ring of Water Walking", "Robe of Useful Items", "Rod of the Pact Keeper +1", "Rope of Climbing", "Saddle of the Cavalier", "Sending Stones", "Sentinel Shield", "Shield +1", "Slippers of Spider Climbining", "Staff of the Adder", "Staff of the Python", "Stone of Good Luck", "Sword of Vengeance", "Trident of Fish Command", "Wand of Magic Detection", "Wand of Magic Missiles", "Wand of Secrets", "Wand of the War Mage +1", "Wand of Web", "Weapon +1", "Weapon of Warning", "Wind Fan", "Winged Boots", "Wraps of Unarmed Power +1"], 5)
+      break
+    case "rare":
+      itemShopSelectItems(["Ammunition +2", "Amulet of Health", "Armor +1", "Armor of Resistance", "Armor of Vulnerability", "Arrow-Catching Shield", "Bag of Beans", "Belt of Dwarvenkind", "Belt of Hill Giant Strength", "Berserker Axe", "Boots of Levitation", "Boots of Speed", "Bowl of Commanding Water Elementals", "Bracers of Defense", "Brazier of Commanding Fire Elementals", "Cape of the Mountebank", "Censer of Controlling Air Elementals", "Chime of Opening", "Cloak of Displacement", "Cloak of the Bat", "Cube of Force", "Cube of Summoning", "Daern's Instant Fortress", "Dagger of Venom", "Dimensional Shackles", "Dragon Slayer", "Elixir of Health", "Elven Chain", "Enspelled Armor Rare", "Rare Enspelled Staff", "Enspelled Weapon Rare", "Figurine of Wondrous Power Rare", "Flame Tongue", "Folding Boat", "Gem of Seeing", "Giant Slayer", "Glamoured Studded Leather", "Helm of Teleportation", "Heward's Handy Haversack", "Horn of Blasting", "Silver Horn of Valhalla", "Brass Horn of Valhalla", "Horseshoes of Speed", "Canaith Mandolin", "Cli Lyre", "Ioun Stone Rare", "Iron Bands of Bilarro", "Mace of Disruption", "Mace of Smiting", "Mace of Terror", "Mantle of Spell Resistance", "Necklace of Fireballs", "Necklace of Prayer Beads", "Oil of Etherealness", "Periapt of Proof against Poison", "Portable Hole", "Potion of Clairvoyance", "Potion of Diminution", "Potion of Gaseous Form", "Potion of Frost Giant Strength", "Potion of Stone Giant Strength", "Potion of Fire Giant Strength", "Potion of Heroism", "Potion of Invisibility", "Potion of Invulnerability", "Potion of Mind Reading", "Quaal's Feather Token Rare", "Ring of Animal Influence", "Ring of Evasion", "Ring of Feather Falling", "Ring of Free Action", "Ring of Protection", "Ring of Resistance", "Ring of Spell Storing", "Ring of the Ram", "Ring of X-ray Vision", "Robe of Eyes", "Rod of Rulership", "Rod of the Pact Keeper +2", "Rope of Entanglement", "Scroll of Protection", "Shield +2", "Shield of Missile Attraction", "Staff of Charming", "Staff of Swarming Insects", "Staff of the Woodlands", "Staff of Withering", "Stone of Controlling Earth Elementals", "Sun Blade", "Sword of Life Stealing", "Tentacle Rod", "Vicious Weapon", "Wand of Binding", "Wand of Enemy Detection", "Wand of Fear", "Wand of Fireballs", "Wand of Lightning Bolts", "Wand of Paralysis", "Wand of Wonder", "Weapon +2", "Wings of Flying"], 5)
+      break
+    case "phenomenal":
+      itemShopSelectItems(["Ammunition +3", "Ammunition of Slaying", "Amulet of the Planes", "Animated Shield", "Armor +2", "Bag of Devouring", "Belt of Frost Giant Strength", "Belt of Stone Giant Strength", "Belt of Fire Giant Strength", "Candle of Invocation", "Carpet of Flying", "Cauldron of Rebirth", "Cloak of Arachnida", "Crystal Ball", "Dancing Sword", "Demon Armor", "Dragon Scale Mail", "Dwarven Plate", "Dwarven Thrower", "Efreeti Bottle", "Energy Longbow", "Energy Shortbow", "Enspelled Armor Very Rare", "Enspelled Weapon Very Rare", "Executioner's Axe", "Obsidian Steed Figurine of Wondrous Power", "Frost Brand", "Hat of Many Spells", "Helm of Brilliance", "Bronze Horn of Valhalla", "Horseshoes of a Zephyr", "Ioun Stone Very Rare", "Lute of Thunderous Thumping", "Manual of Bodily Health", "Manual of Gainful Exercise", "Manual of Golems", "Manual of Quickness of Action", "Mirror of Life Trapping", "Nine Lives Stealer", "Nolzur's Marvelous Pigments", "Oathbow", "Oil of Sharpness", "Potion of Flying", "Potion of Cloud Giant Strength", "Potion of Greater Invisibility", "Potion of Longevity", "Potion of Speed", "Potion of Vitality", "Quarterstaff of the Acrobat", "Ring of Regeneration", "Ring of Shooting Stars", "Ring of Telekenisis", "Robe of Scintillating Colors", "Robe of Stars", "Rod of Absorption", "Rod of Alertness", "Rod of Security", "Rod of the Pact Keeper +3", "Scimitar of Speed", "Shield +3", "Shield of the Cavalier", "Spellguard Shield", "Spirit Board", "Staff of Fire", "Staff of Frost", "Staff of Power", "Staff of Striking", "Staff of Thunder and Lightning", "Sword of Sharpness", "Thunderous Greatclub", "Tome of Clear Thought", "Tome of Leadership and Influence", "Tome of Understanding", "Wand of Polymorph", "Weapon +3"], 5)
+      break
+    case "legendary":
+      itemShopSelectItems(["Apparatus of Kwalish", "Armor +3", "Armor of Invulnerability", "Belt of Cloud Giant Strength", "Belt of Storm Giant Strength", "Cloak of Invisibility", "Crystal Ball of Mind Reading", "Crystal Ball of Telepathy", "Crystal Ball of True Seeing", "Cubic Gate", "Deck of Many Things", "Defender", "Efreeti Chain", "Enspelled Armor Legendary", "Legendary Enspelled Staff", "Enspelled Weapon Legendary", "Hammer of Thunderbolts", "Holy Avenger", "Ioun Stone of Greater Absorption", "Ioun Stone of Mastery", "Ioun Stone of Regeneration", "Iron Flask", "Luck Blade", "Moonblade", "Plate Armor of Etherealness", "Potion of Storm Giant Strength", "Ring of Djinni Summoning", "Ring of Elemental Command", "Ring of Invisibility", "Ring of Spell Turning", "Ring of Three Wishes", "Robe of the Archmagi", "Rod of Lordly Might", "Rod of Resurrection", "Scarab of Protection", "Scroll of Titan Summoning", "Sovereign Glue", "Sphere of Annihilation", "Staff of the Magi", "Sword of Answering", "Talisman of Pure Good", "Talisman of the Sphere", "Talisman of Ultimate Evil", "Tome of the Stilled Tongue", "Universal Solvent", "Well of Many Worlds"], 200000)
+      break
+    case "artifact":
+        itemShopSelectItems(["Axe of the Dwarvish Lords", "Blackrazor", "Book of Exalted Deeds", "Book of Vile Darkness", "Demonomicon of Iggwilv", "Efreeti Chain", "Eye of Vecna", "Hand of Vecna", "Orb of Dragonkind", "Sword of Kas", "Wand of Orcus", "Wave", "Whelm"], 5)
+        break
+  }
+
+  switch (state.itemShopStep) {
+    case 0:
+      text = `**Welcome to the Item Shop**
+-${toTitleCase(state.itemShopCategoryName)}-
+Deals change every day!`
+      break
+    case 1:
+      text = "Item purchased!"
+      break
+    case 2:
+      text = "You do not have enough gold!"
+  }
+
+  switch (state.itemShopStep) {
+    case 0:
+    case 1:
+    case 2:
+      text += `
+Select a number from the list below to purchase an item:
+
+`
+      let deals = findItemShopDeals(state.itemShopCategoryName, false)
+      if (deals.length == 0) text += "There are no items left for sale!\n"
+      for (var i = 0; i < deals.length; i++) {
+        let itemStoryCard = findItemCard(deals[i].name, deals[i].storyCardName)
+        let description = itemStoryCard == null ? "\nERROR: Story card is missing. You may import the latest story cards from the Hashtag DnD Github: https://github.com/raeleus/Hashtag-DnD/blob/master/story-cards.json\n\n" : `:\n${itemStoryCard.entry}\n\n`
+        deals[i].price = itemStoryCard == null ? 0 : itemStoryCard.description.split(",")[0]
+        text += `${i + 1}. ${deals[i].name}${state.itemShopIsFree ? "" : ` for ${numberWithCommas(deals[i].price)} gold`}`
+        text += description
+      }
+
+      text += `
+${state.itemShopIsFree ? "These items come at no cost!" : `You have ${numberWithCommas(gold)} gold`}
+Enter the number or q to quit:
+`
+      break
+    case 500:
+      text = "Thank you for shopping at the Item Shop!"
+      break
+  }
+
+  return text
+}
+
 function spellShopPushDeal(items, name, price) {
   state.spellShopDeals.push({
     className: state.spellShopClassName,
@@ -756,12 +1047,9 @@ function spellShopSelectSpells(spells, price, numberOfSpells) {
   spellShopSeed += 100
   index = Math.floor(getRandom(spellShopSeed) * spells.length)
   if (state.spellShopAll) {
-    log(`Spells:${spells}`)
     for (const spell of spells) {
-      log(`Spell:${spell}`)
       spellShopPushDeal(spells, spell, price)
     }
-    log(state.spellShopDeals)
     return
   }
 
@@ -956,7 +1244,6 @@ function handleSpellShop() {
       }
       break
     case "warlock":
-      log("warlock")
       switch(state.spellShopLevel) {
         case 9:
           spellShopSelectSpells(["Astral Projection", "Dominate Person", "Foresight", "Gate", "Geas", "Greater Restoration", "Imprisonment", "Insect Plague", "Modify Memory", "Power Word Kill", "Seeming", "Summon Celestial", "Telekinesis", "True Polymorph", "Weird"], 50000)

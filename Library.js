@@ -2859,6 +2859,14 @@ function findSpellCard(name) {
   return storyCards[findSpellCardIndex(name)]
 }
 
+function findItemCardIndex(name, storyCardName) {
+  return storyCards.findIndex((element) => (element.type == "item" || element.type == "weapon" || element.type == "armor") && (element.title == name || element.title == storyCardName))
+}
+
+function findItemCard(name, storyCardName) {
+  return storyCards[findItemCardIndex(name, storyCardName)]
+}
+
 function stragedyCalculateScores() {
   state.stragedyEnemyScore = 0
   state.stragedyPlayerScore = 0
@@ -3602,6 +3610,10 @@ function stragedyCheckForWin() {
   else if (state.stragedyPlayerScore > state.stragedyEnemyScore) state.stragedyWinner = "player"
   else if (state.stragedyEnemyScore > state.stragedyPlayerScore) state.stragedyWinner = "enemy"
   else state.stragedyWinner = "tie"
+}
+
+function findItemShopDeals(className, bought) {
+  return state.itemShopDeals.filter(element => element.className == className && (bought == null || element.bought == bought))
 }
 
 function findSpellShopDeals(className, level, bought) {
