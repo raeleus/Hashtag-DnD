@@ -1006,6 +1006,8 @@ Select a number from the list below to purchase an item:
 
 `
       let deals = findItemShopDeals(state.itemShopCategoryName, false)
+      deals = deals.filter(item => !item.bought)
+
       if (deals.length == 0) text += "There are no items left for sale!\n"
       for (var i = 0; i < deals.length; i++) {
         let itemStoryCard = findItemCard(deals[i].name, deals[i].storyCardName)
