@@ -930,7 +930,6 @@ function itemShopSelectItems(items, numberOfItems) {
   itemShopSeed += 100
   if (state.itemShopAll) {
     for (let i = 0; i < items.length; i++) {
-      log(items[i])
       itemShopPushDeal(items, items[i])
     }
     return
