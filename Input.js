@@ -1440,9 +1440,9 @@ function doBasicDeck(command) {
 function doItemShop(command) {
   command = command.replace(/very rare/gi, "phenomenal")
 
-  state.itemShopCategoryName = searchArgument(command, /weapons|armor|tools|gear|common|uncommon|rare|phenomenal|legendary|artifact/gi)
+  state.itemShopCategoryName = searchArgument(command, /default|weapons|armor|tools|gear|common|uncommon|rare|phenomenal|legendary|artifact/gi)
   if (state.itemShopCategoryName == null && searchArgument(command, /weapon/) != null) state.itemShopCategoryName = "weapons"
-  if (state.itemShopCategoryName == null) state.itemShopCategoryName = "common"
+  if (state.itemShopCategoryName == null) state.itemShopCategoryName = "default"
 
   let arg1 = searchArgument(command, /free/gi)
   state.itemShopIsFree = arg1 != null
