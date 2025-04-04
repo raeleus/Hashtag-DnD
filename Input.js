@@ -29,6 +29,8 @@ const noteSynonyms = ["note", "takenote", "setnote", "createnote", "remember"]
 const clearNotesSynonyms = ["clearnotes"]
 const eraseNoteSynonyms = ["erasenote", "removenote", "deletenote", "cancelnote"]
 const takeSynonyms = ["take", "steal", "get", "grab", "receive", "loot"]
+const takeWeaponSynonyms = ["takeweapon", "stealweapon", "getweapon", "grabweapon", "receiveweapon", "lootweapon"]
+const takeArmorSynonyms = ["takearmor", "stealarmor", "getarmor", "grabarmor", "receivearmor", "lootarmor"]
 const buySynonyms = ["buy", "purchase", "barter", "trade", "swap", "exchange"]
 const sellSynonyms = ["sell"]
 const dropSynonyms = ["remove", "discard", "drop", "leave", "dispose", "toss", "throw", "throwaway", "trash", "donate", "eat", "consume", "use", "drink", "pay", "lose"]
@@ -89,6 +91,7 @@ const itemShopSynonyms = ["itemshop", "itemstore"]
 const stragedySynonyms = ["stragedy", "playgame", "game", "startgame", "begingame", "playcards", "playstragedy", "startstragedy", "beginstragedy"]
 const lockpickSynonyms = ["lockpick", "lockpicking", "codebreaker", "pick", "hack", "hacking", "mastermind"]
 const addCardSynonyms = ["addcard"]
+const equipSynonyms = ["equip", "arm", "wear"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -270,6 +273,9 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, stragedySynonyms, doStragedy)
   if (text == null) text = processCommandSynonyms(command, commandName, lockpickSynonyms, doLockpick)
   if (text == null) text = processCommandSynonyms(command, commandName, addCardSynonyms, doAddCard)
+  if (text == null) text = processCommandSynonyms(command, commandName, equipSynonyms, doEquip)
+  if (text == null) text = processCommandSynonyms(command, commandName, takeWeaponSynonyms, doTakeWeapon)
+  if (text == null) text = processCommandSynonyms(command, commandName, takeArmorSynonyms, doTakeArmor)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
   if (text == null) {
     var character = getCharacter()
@@ -1493,12 +1499,14 @@ function handleItemShopStep(text) {
       var goldIndex = character.inventory.findIndex(x => x.name.toLowerCase() == "gold")
       var gold = goldIndex == -1 ? 0 : character.inventory[goldIndex].quantity
 
-      if (deal.price > gold) {
+      if (!state.itemShopIsFree && deal.price > gold) {
         state.itemShopStep = 2
         return text
       }
 
-      doTake(`take ${deal.quantity} ${deal.name}`)
+      if ("damage" in deal) doTakeWeapon(`take ${deal.damage} ${deal.toHitBonus} ${deal.ability} ${deal.name}`)
+      else if ("ac" in deal) doTakeArmor(`take ${deal.ac} ${deal.name}`)
+      else doTake(`take ${deal.quantity} ${deal.name}`)
       if (!state.itemShopIsFree) character.inventory[goldIndex].quantity -= deal.price
       deal.bought = true
 
@@ -3414,9 +3422,162 @@ function doTake(command) {
   return text
 }
 
+function doTakeWeapon(command) {
+  var itemIndex = 3
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  var arg1 = getArgument(command, 1)
+  if (arg1 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+  if (isNaN(arg1)) {
+    state.show = "none"
+    return "\n[Error: Expected a number. See #help]\n"
+  }
+  arg1 = parseInt(arg1)
+
+  var arg2 = getArgument(command, 2)
+  if (arg2 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  var arg3 = getArgument(command, 3)
+  if (arg3 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  if (arg3 == "the") {
+    var tempArg = getArgument(command, 1)
+    if (tempArg != null && !isNaN(tempArg)) {
+      arg3 = tempArg
+      itemIndex++
+    }
+  }
+
+  const item = {
+    quantity: 1,
+    name: getArgumentRemainder(command, itemIndex).replace(/^((the)|(a)|(an))\s/, "").plural(true),
+    damageDice: arg0,
+    toHitBonus: arg1,
+    ability: arg2
+  }
+
+  var character = getCharacter()
+  var commandName = "take"
+  var commandNamePlural =  commandName.plural(character.name == "You") 
+  var haveWord = character.name == "You" ? "have" : "has"
+
+  var text = "\n"
+  text += `${character.name} ${commandNamePlural} ${item.name.toLowerCase().startsWith("the ") ? "" : "the "}${item.name}.\n`
+
+  var index = character.inventory.findIndex((element) => element.name.toLowerCase() == item.name.toLowerCase())
+  if (index == -1) {
+    character.inventory.push(item)
+  } else {
+    var existingItem = character.inventory[index]
+    existingItem.quantity = parseInt(existingItem.quantity) + parseInt(item.quantity)
+
+    let displayItemName = existingItem.name.plural(existingItem.quantity == 1)
+    text += `${character.name} now ${haveWord} ${existingItem.quantity} ${displayItemName}.\n`
+  }
+
+  return text
+}
+
+function doTakeArmor(command) {
+  var itemIndex = 1
+  var arg0 = getArgument(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  var arg1 = getArgument(command, 1)
+  if (arg1 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  const item = {
+    quantity: 1,
+    name: getArgumentRemainder(command, itemIndex).replace(/^((the)|(a)|(an))\s/, "").plural(true),
+    ac: arg0,
+  }
+
+  var character = getCharacter()
+  var commandName = "take"
+  var commandNamePlural =  commandName.plural(character.name == "You") 
+  var haveWord = character.name == "You" ? "have" : "has"
+
+  var text = "\n"
+  text += `${character.name} ${commandNamePlural} ${item.name.toLowerCase().startsWith("the ") ? "" : "the "}${item.name}.\n`
+
+  var index = character.inventory.findIndex((element) => element.name.toLowerCase() == item.name.toLowerCase())
+  if (index == -1) {
+    character.inventory.push(item)
+  } else {
+    var existingItem = character.inventory[index]
+    existingItem.quantity = parseInt(existingItem.quantity) + parseInt(item.quantity)
+
+    let displayItemName = existingItem.name.plural(existingItem.quantity == 1)
+    text += `${character.name} now ${haveWord} ${existingItem.quantity} ${displayItemName}.\n`
+  }
+
+  return text
+}
+
 function doMap(command) {
   state.show = "map"
   return " "
+}
+
+function doEquip(command) {
+  let character = getCharacter()
+  let arg0 = getArgument(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  var dontWord = character.name == "You" ? "don't" : "doesn't"
+
+  let itemName = getArgumentRemainder(command, 0)
+
+  let item = character.inventory.find((element) => element.name.toLowerCase() == itemName.toLowerCase())
+
+  if (item == null) return `${character.name} tried to equip ${toTitleCase(itemName)}, but ${dontWord} possess it`
+
+  let text = `\n${character.name} equipped the item ${toTitleCase(itemName)}!\n`
+  if ("damageDice" in item && "toHitBonus" in item) {
+    let abilityValue = character.stats.find((element) => element.name.toLowerCase() == item.ability)
+    let ability = abilityValue == null ? 10 : abilityValue.value
+    let abilityModifier = Math.ceil((ability - 10) / 2)
+
+    let damageBase = item.damageDice.replaceAll(/\+.*/gi, "")
+    let damageModifier = parseInt(item.damageDice.replaceAll(/.*\+/gi, "")) + abilityModifier
+    character.damage = `${damageBase}+${damageModifier}`
+    character.proficiency = abilityModifier
+    character.meleeStat = item.ability
+  } else if ("ac" in item) {
+    let dexterityStat = character.stats.find((element) => element.name.toLowerCase() == "dexterity")
+    let dexterity = dexterityStat == null ? 10 : dexterityStat.value
+    let ac = parseInt(item.ac.replaceAll(/(?<=.)\+.*/gi, ""))
+    let old = character.ac
+    if (/.*\+dmax2/i.test(item.ac)) character.ac = ac + Math.max(2, Math.ceil((dexterity - 10) / 2))
+    else if (/.*\+d/i.test(item.ac)) character.ac = ac + Math.ceil((dexterity - 10) / 2)
+    else if (/\+.*/i.test(item.ac)) character.ac += ac
+    else character.ac = ac
+  }
+  
+  text += "\n"
+  return text
 }
 
 function doDrop(command) {

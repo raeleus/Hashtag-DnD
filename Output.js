@@ -449,6 +449,12 @@ const modifier = (text) => {
       text += "\n\n--Inventory--"
       text += "\n#take (quantity) item"
       text += "\n    Adds the specified quantity of item to the character's inventory. If a quantity is omitted, it's assumed to be 1. The words the, a, and an are ignored. Quotes are not necessary."
+      text += "\n#takeweapon damage_dice hit_bonus ability weapon_name"
+      text += "\n    Allows a character to manually add a weapon to their inventory that is compatible with the #equip command. It is highly recommended to use #itemstore instead. damage_dice is the dice roll (e.g. 1d12+2) used to calculate the damage of the weapon. hit_bonus is a positive or negative number that modifies how accurate the weapon is. Ability is the base ability that is used in conjunction with the weapon. Typically, melee weapons use strength and ranged weapons use dexterity."
+      text += "\n#takearmor ac weapon_name"
+      text += "\n    Allows a character to manually add armor to their inventory that is compatible with the #equip command. It is highly recommended to use #itemstore instead. ac is the armor class or how hard the character is to hit. If you have an item that adds to the current armor class, precede the number with a plus sign (e.g. +2)."
+      text += "\n#equip weapon_or_armor_name"
+      text += "\n    Equips a weapon or armor and automatically changes the character's damage/weapon proficiency or armor class respectively. weapon_or_armor_name must be a weapon or type of armor purchased through #itemshop or added to the character inventory through #takeweapon or #takearmor. Shields should be equipped after equipping armor because shield AC is added to the total."
       text += "\n#buy (buy_quantity) buy_item (sell_quantity) sell_item"
       text += "\n    Adds the specified buy_quantity of the buy_item to the character's inventory and also removes the sell_quantity of sell_item. If quantities are omitted, they are assumed to be 1. Quotes are necessary for items with spaces in the name. The words for, with, the, a, and an are ignored."
       text += "\n#sell (sell_quantity) sell_item (buy_quantity) buy_item"
@@ -1011,7 +1017,14 @@ Select a number from the list below to purchase an item:
       for (var i = 0; i < deals.length; i++) {
         let itemStoryCard = findItemCard(deals[i].name, deals[i].storyCardName)
         let description = itemStoryCard == null ? "\nERROR: Story card is missing. You may import the latest story cards from the Hashtag DnD Github: https://github.com/raeleus/Hashtag-DnD/blob/master/story-cards.json\n\n" : `:\n${itemStoryCard.entry}\n\n`
-        deals[i].price = itemStoryCard == null ? 0 : itemStoryCard.description.split(",")[0]
+        deals[i].price = itemStoryCard == null ? 0 : parseInt(itemStoryCard.description.split(",")[0])
+        if (itemStoryCard.type == "weapon") {
+          deals[i].damage = itemStoryCard.description.split(",")[1]
+          deals[i].toHitBonus = itemStoryCard.description.split(",")[2]
+          deals[i].ability = itemStoryCard.description.split(",")[3]
+        } else if (itemStoryCard.type == "armor") {
+          deals[i].ac = itemStoryCard.description.split(",")[1]
+        }
         text += `${i + 1}. ${deals[i].name}${state.itemShopIsFree ? "" : ` for ${numberWithCommas(deals[i].price)} gold`}`
         text += description
       }

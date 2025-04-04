@@ -4,7 +4,7 @@
     "value": "A crude, light weapon held in one hand. It can slow the movement of an enemy with its bludgeoning damage.",
     "type": "weapon",
     "title": "Club",
-    "description": "1,1d4",
+    "description": "1,1d4,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -12,7 +12,7 @@
     "value": "A light weapon that can be wielded with precision or brute strength. It can be dual-wielded and thrown at short range to cause piercing damage.",
     "type": "weapon",
     "title": "Dagger",
-    "description": "2,1d4",
+    "description": "2,1d4,0,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -20,7 +20,7 @@
     "value": "A crude, two-handed weapon that is capable of pushing back enemies with bludgeoning damage.",
     "type": "weapon",
     "title": "Greatclub",
-    "description": "1,1d8",
+    "description": "1,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -28,7 +28,7 @@
     "value": "A light weapon that slashes opponents. It can be thrown at short range.",
     "type": "weapon",
     "title": "Handaxe",
-    "description": "5,1d6",
+    "description": "5,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -36,7 +36,7 @@
     "value": "A medium-ranged thrown weapon that causes piercing damage which can slow enemies.",
     "type": "weapon",
     "title": "Javelin",
-    "description": "1,1d6",
+    "description": "1,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -44,7 +44,7 @@
     "value": "A light, bludgeoning weapon that can also be thrown at short range.",
     "type": "weapon",
     "title": "Light Hammer",
-    "description": "1,1d4",
+    "description": "1,1d4,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -52,7 +52,7 @@
     "value": "A simple melee weapon that can temporarily weaken the attack of the opponent with its bludgeoning damage.",
     "type": "weapon",
     "title": "Mace",
-    "description": "5,1d6",
+    "description": "5,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -60,7 +60,7 @@
     "value": "A versatile weapon that can topple opponents with its bludgeoning damage.",
     "type": "weapon",
     "title": "Quarterstaff",
-    "description": "1,1d6",
+    "description": "1,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -68,7 +68,7 @@
     "value": "A light, slashing weapon that can be dual-wielded.",
     "type": "weapon",
     "title": "Sickle",
-    "description": "1,1d4",
+    "description": "1,1d4,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -76,7 +76,7 @@
     "value": "A versatile, piercing weapon that can also be thrown at short range and temporarily weaken the attack of opponents.",
     "type": "weapon",
     "title": "Spear",
-    "description": "1,1d6",
+    "description": "1,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -84,7 +84,7 @@
     "value": "A ranged weapon that can be wielded with precision or brute strength which gives you advantage on your next attack. Can be thrown a short range.",
     "type": "weapon",
     "title": "Dart",
-    "description": "1,1d4",
+    "description": "1,1d4,0,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -92,7 +92,7 @@
     "value": "A ranged weapon that fires piercing bolts at long range which can slow an opponent. It requires two hands to load and fire.",
     "type": "weapon",
     "title": "Light Crossbow",
-    "description": "25,1d8",
+    "description": "25,1d8,0,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -100,7 +100,7 @@
     "value": "A ranged weapon that fire piercing arrows at long range which gives you advantage on your next attack. It requires two hands to fire.",
     "type": "weapon",
     "title": "Shortbow",
-    "description": "25,1d6",
+    "description": "25,1d6,0,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -108,7 +108,7 @@
     "value": "A ranged, bludgeoning weapon that launches sling bullets at medium range. These slow the opponent",
     "type": "weapon",
     "title": "Sling",
-    "description": "1,1d4",
+    "description": "1,1d4,0,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -116,7 +116,7 @@
     "value": "A versatile weapon that causes slashing damage. It's capable of toppling opponents.",
     "type": "weapon",
     "title": "Battleaxe",
-    "description": "10,1d10",
+    "description": "10,1d10,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -124,7 +124,7 @@
     "value": "A heavy melee weapon that requires two hands to wield slashing damage. It has long reach and guarantees some damage on its target.",
     "type": "weapon",
     "title": "Glaive",
-    "description": "20,1d10",
+    "description": "20,1d10,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -132,7 +132,7 @@
     "value": "A capable melee weapon that can bludgeon opponents and temporarily weakens the attacks of opponents.",
     "type": "weapon",
     "title": "Flail",
-    "description": "10,1d8",
+    "description": "10,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -140,7 +140,7 @@
     "value": "A heavy, two-handed weapon that slashes an opponent and damages a nearby enemy for lesser damage.",
     "type": "weapon",
     "title": "Greataxe",
-    "description": "30,1d12",
+    "description": "30,1d12,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -148,7 +148,7 @@
     "value": "A heavy, two-handed weapon that deals slashing damage and guarantees some damage even if it misses.",
     "type": "weapon",
     "title": "Greatsword",
-    "description": "50,2d6",
+    "description": "50,2d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -156,7 +156,7 @@
     "value": "A heavy, two-handed weapon with incredible reach that slashes an opponent and damages a nearby enemy for lesser damage.",
     "type": "weapon",
     "title": "Halberd",
-    "description": "20,1d10",
+    "description": "20,1d10,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -164,7 +164,7 @@
     "value": "A heavy, twon-handed weapon with incredible reach that pierces an opponent and can topple them over.",
     "type": "weapon",
     "title": "Lance",
-    "description": "10,1d10",
+    "description": "10,1d10,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -172,7 +172,7 @@
     "value": "A versatile weapon that can temporarily weaken the attack of an opponent with slashing damage.",
     "type": "weapon",
     "title": "Longsword",
-    "description": "15,1d8",
+    "description": "15,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -180,7 +180,7 @@
     "value": "A heavy, two-handed weapon capable of bludgeoning enemies and toppling them over.",
     "type": "weapon",
     "title": "Maul",
-    "description": "10,2d6",
+    "description": "10,2d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -188,7 +188,7 @@
     "value": "A piercing weapon that can temporarily weaken the attack of an opponent.",
     "type": "weapon",
     "title": "Morningstar",
-    "description": "15,1d8",
+    "description": "15,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -196,7 +196,7 @@
     "value": "A heavy, two-handed weapon with incredible reach that pierces enemies and pushes them back.",
     "type": "weapon",
     "title": "Pike",
-    "description": "5,1d10",
+    "description": "5,1d10,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -204,7 +204,7 @@
     "value": "A weapon that can be wielded with precision or brute strength and pierces enemies to give advantage on further attacks.",
     "type": "weapon",
     "title": "Rapier",
-    "description": "25,1d8",
+    "description": "25,1d8,0,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -212,7 +212,7 @@
     "value": "A light weapon that can be dual-wielded with precision or brute strength and slashes enemies.",
     "type": "weapon",
     "title": "Scimitar",
-    "description": "25,1d6",
+    "description": "25,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -220,7 +220,7 @@
     "value": "A light weapon that can be wielded with precision or brute strength and pierces enemies to give advantage on further attacks.",
     "type": "weapon",
     "title": "Shortsword",
-    "description": "10,1d6",
+    "description": "10,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -228,7 +228,7 @@
     "value": "A versatile piercing weapon that can be thrown at short range to topple enemies.",
     "type": "weapon",
     "title": "Trident",
-    "description": "5,1d8",
+    "description": "5,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -236,7 +236,7 @@
     "value": "A versatile bludgeoning weapon that can push enemies.",
     "type": "weapon",
     "title": "Warhammer",
-    "description": "15,1d8",
+    "description": "15,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -244,7 +244,7 @@
     "value": "A versatile piercing weapon that can temporarily weaken an opponents attack.",
     "type": "weapon",
     "title": "War Pick",
-    "description": "5,1d8",
+    "description": "5,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -252,7 +252,7 @@
     "value": "A slashing weapon with incredible reach that can slow an enemy's approach.",
     "type": "weapon",
     "title": "Whip",
-    "description": "2,1d4",
+    "description": "2,1d4,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -260,7 +260,7 @@
     "value": "An unwieldly ranged weapon that can shoot a dart at a target to give advantage on the next attack.",
     "type": "weapon",
     "title": "Blowgun",
-    "description": "10,1",
+    "description": "10,1,0,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -268,7 +268,7 @@
     "value": "A medium ranged weapon that can pierce enemies to give advantage on the next attack.",
     "type": "weapon",
     "title": "Hand Crossbow",
-    "description": "75,1d6",
+    "description": "75,1d6,0,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -276,7 +276,7 @@
     "value": "A two-handed long ranged weapon that can pierce enemies to push them back.",
     "type": "weapon",
     "title": "Heavy Crossbow",
-    "description": "50,1d10",
+    "description": "50,1d10,0,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -284,7 +284,7 @@
     "value": "A two-handed extreme long ranged weapon that can pierce enemies to slow them.",
     "type": "weapon",
     "title": "Longbow",
-    "description": "50,1d8",
+    "description": "50,1d8,0,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -292,7 +292,7 @@
     "value": "A powerful, two-handed medium ranged weapon that can slow enemies.",
     "type": "weapon",
     "title": "Musket",
-    "description": "500,1d12",
+    "description": "500,1d12,0,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -300,7 +300,7 @@
     "value": "A powerful, short ranged weapon that can give the attacker advantage on their next strike.",
     "type": "weapon",
     "title": "Pistol",
-    "description": "250,1d10",
+    "description": "250,1d10,0,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -1476,7 +1476,7 @@
     "value": "Creates bright light in a 15 foot radius and dim light for an additional 15 feet when unsheathed.",
     "type": "weapon",
     "title": "Moon-Touched Sword",
-    "description": "100,2d6",
+    "description": "100,2d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -1604,7 +1604,7 @@
     "value": "Does additional damage to shape-shifted creatures.",
     "type": "weapon",
     "title": "Silvered Weapon",
-    "description": "10,1d8",
+    "description": "10,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -1620,7 +1620,7 @@
     "value": "Allows up to three small items to be held hovering at the tip of the staff.",
     "type": "weapon",
     "title": "Staff of Adornment",
-    "description": "100,1d6",
+    "description": "100,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -1628,7 +1628,7 @@
     "value": "Can imitate the sound of several types of birds. It can be used up to 10 times and recharges daily.",
     "type": "weapon",
     "title": "Staff of Birdcalls",
-    "description": "100,1d6",
+    "description": "100,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -1636,7 +1636,7 @@
     "value": "Can cause a flower to grow and bloom from a patch of earth or soil. It can be used up to 10 times and recharges daily.",
     "type": "weapon",
     "title": "Staff of Flowers",
-    "description": "100,1d6",
+    "description": "100,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -1700,7 +1700,7 @@
     "value": "Made of one of the hardest materials in existence, it causes critical damage against objects.",
     "type": "weapon",
     "title": "Adamantine Weapon",
-    "description": "400,1d8",
+    "description": "400,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -1908,7 +1908,7 @@
     "value": "Allows the user to cast a basic spell up to 6 times. It slowly regains charges every day.",
     "type": "weapon",
     "title": "Uncommon Enspelled Staff",
-    "description": "400,1d6",
+    "description": "400,1d6,strength",
     "useForCharacterCreation": false
   },
   {
@@ -1916,7 +1916,7 @@
     "value": "Allows the user to cast a basic spell up to 6 times. It slowly regains charges every day.",
     "type": "weapon",
     "title": "Enspelled Weapon Uncommon",
-    "description": "400,1d8",
+    "description": "400,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2084,7 +2084,7 @@
     "value": "Can deal lightning damage instead of piercing damage. It can also be transformed into a bolt of lightning that will damage enemies in a line.",
     "type": "weapon",
     "title": "Javelin of Lightning",
-    "description": "400,1d6",
+    "description": "400,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2396,7 +2396,7 @@
     "value": "A staff that can transform into a snake. The user can command the snake to move and attack with piercing and poison damage.",
     "type": "weapon",
     "title": "Staff of the Adder",
-    "description": "400,1d6",
+    "description": "400,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2404,7 +2404,7 @@
     "value": "When thrown on the ground, it can be transformed into a giant constrictor snake. The user can command the snake to move or attack. It can be reverted back to staff form to regain its health.",
     "type": "weapon",
     "title": "Staff of the Python",
-    "description": "400,1d6",
+    "description": "400,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2420,7 +2420,7 @@
     "value": "Magically enhanced to be better at landing attacks as well as damaging opponents. It's a cursed weapon possessed by an angry spirit. The user has disadvantage on attacks with other weapons and is compelled to strike back at a foe that causes damage until they or the user is struck down.",
     "type": "weapon",
     "title": "Sword of Vengeance",
-    "description": "400,1d8",
+    "description": "400,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2428,7 +2428,7 @@
     "value": "Can be used to cast dominate beast on any swimming creature up to 3 times daily.",
     "type": "weapon",
     "title": "Trident of Fish Command",
-    "description": "400,1d8",
+    "description": "400,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2476,7 +2476,7 @@
     "value": "A weapon with a magically enhanced chance to hit and increased damage.",
     "type": "weapon",
     "title": "Weapon +1",
-    "description": "400,1d8+1",
+    "description": "400,1d8+1,+1,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2484,7 +2484,7 @@
     "value": "Gives the user and their allies the ability to wake up instantly when combat is initiated. Each ally also has increased initiative.",
     "type": "weapon",
     "title": "Weapon of Warning",
-    "description": "400,1d8",
+    "description": "400,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2588,7 +2588,7 @@
     "value": "An axe with increased accuracy and damage and increases the user's overall health. It is cursed and the user is unwilling to part with it. Becoming damaged sends the user into beserker state.",
     "type": "weapon",
     "title": "Berserker Axe",
-    "description": "4000,1d12+1,+1",
+    "description": "4000,1d12+1,+1,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2700,7 +2700,7 @@
     "value": "A dagger with increased accuracy and damage. It can be magically coated with poison once a day for additional damage.",
     "type": "weapon",
     "title": "Dagger of Venom",
-    "description": "4000,1d4+1,+1",
+    "description": "4000,1d4+1,+1,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -2716,7 +2716,7 @@
     "value": "A weapon that has increased accuracy and damage. It deals even more damage when the target is a dragon.",
     "type": "weapon",
     "title": "Dragon Slayer",
-    "description": "4000,1d8+1,+1",
+    "description": "4000,1d8+1,+1,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2748,7 +2748,7 @@
     "value": "Allows the user to cast a basic spell up to 6 times. It slowly regains charges every day.",
     "type": "weapon",
     "title": "Rare Enspelled Staff",
-    "description": "4000,1d6",
+    "description": "4000,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2756,7 +2756,7 @@
     "value": "Allows the user to cast a basic spell up to 6 times. It slowly regains charges every day.",
     "type": "weapon",
     "title": "Enspelled Weapon Rare",
-    "description": "4000,1d8",
+    "description": "4000,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2820,7 +2820,7 @@
     "value": "A weapon that can be commanded to ignite into flame. It deals extra fire damage when it lands a blow.",
     "type": "weapon",
     "title": "Flame Tongue",
-    "description": "4000,1d8+7",
+    "description": "4000,1d8+7,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2844,7 +2844,7 @@
     "value": "A weapon with greater accuracy and damage. This weapon does additional damage to giants.",
     "type": "weapon",
     "title": "Giant Slayer",
-    "description": "4000,1d8+1,+1",
+    "description": "4000,1d8+1,+1,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2964,7 +2964,7 @@
     "value": "Fiends or an undead hit with this mace receive extra radiant damage. When such a target is close to being killed, it has a chance to simply be destroyed outright. If it doesn't, it is frightened. The mace emits bright light.",
     "type": "weapon",
     "title": "Mace of Disruption",
-    "description": "4000,1d6",
+    "description": "4000,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2972,7 +2972,7 @@
     "value": "Magically enchanted to be more accurate and damaging. It does additonal damage to constructs.",
     "type": "weapon",
     "title": "Mace of Smiting",
-    "description": "4000,1d6+1,+1",
+    "description": "4000,1d6+1,+1,strength",
     "useForCharacterCreation": false
   },
   {
@@ -2980,7 +2980,7 @@
     "value": "The mace has 3 charges used to unleash a wave of terror. It has a chance of frightening opponents and driving them away from the user. It recharges slowly every day.",
     "type": "weapon",
     "title": "Mace of Terror",
-    "description": "4000,1d6",
+    "description": "4000,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3268,7 +3268,7 @@
     "value": "Can be used to cast charm person, command, or comprehend at one charge. Reflect an enchantment spell back at the caster at one charge. It has 10 charges, recharging most charges each day. Once a day it can be used to resist an enchantment.",
     "type": "weapon",
     "title": "Staff of Charming",
-    "description": "4000,1d6",
+    "description": "4000,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3276,7 +3276,7 @@
     "value": "Can be used to create a swarm of insects in a 30 foot emanation at one charge. It obscures vision. Cast giant insect at four charges, insect plague at 5 charges. It has 10 charges, recharging most charges each day.",
     "type": "weapon",
     "title": "Staff of Swarming Insects",
-    "description": "4000,1d6",
+    "description": "4000,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3284,7 +3284,7 @@
     "value": "If weilded by a druid, adds magical accuracy and damage to attacks. Spells are more likely to strike their target. It allows the user to cast animal friendship, awaken, barkskin, locate animals or plants, pass without trace, speak with animals, speak with plants, wall of thorns. The staff can be planted which it will grow into a tree. It can then be converted back. Each use uses a charge, 6 total. Regains slowly every day.",
     "type": "weapon",
     "title": "Staff of the Woodlands",
-    "description": "4000,1d6+1,+1",
+    "description": "4000,1d6+1,+1,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3292,7 +3292,7 @@
     "value": "Using a charge, the staff can deal extra necrotic damage with a chance of causing the target to be at a disadvantage for an hour. 3 charges slowly regained every day.",
     "type": "weapon",
     "title": "Staff of Withering",
-    "description": "4000,1d6",
+    "description": "4000,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3308,7 +3308,7 @@
     "value": "A sword hilt. When grasped, a blade of pure radiance emerges. It functions as a long sword with increased accuracy and damage. Deals additional damage to the undead. It emits bright light in 15 feet.",
     "type": "weapon",
     "title": "Sun Blade",
-    "description": "4000,1d8+1,+1",
+    "description": "4000,1d8+1,+1,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3316,7 +3316,7 @@
     "value": "If the target is not undead or a construct, the sword deals extra necrotic damage. It gives this extra damage as temporary health to the user.",
     "type": "weapon",
     "title": "Sword of Life Stealing",
-    "description": "4000,1d8",
+    "description": "4000,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3332,7 +3332,7 @@
     "value": "Deals extra damage to any creature it hits.",
     "type": "weapon",
     "title": "Vicious Weapon",
-    "description": "4000,1d8+7",
+    "description": "4000,1d8+7,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3396,7 +3396,7 @@
     "value": "A weapon with greater accuracy and damage.",
     "type": "weapon",
     "title": "Weapon +2",
-    "description": "4000,1d8+2,+2",
+    "description": "4000,1d8+2,+2,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3524,7 +3524,7 @@
     "value": "Tossing the weapon in the air activates its ability to hover and attack enemies up to four times. It then returns to the hand of the user.",
     "type": "weapon",
     "title": "Dancing Sword",
-    "description": "40000,1d8",
+    "description": "40000,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3556,7 +3556,7 @@
     "value": "A hammer with incredible accuracy and damage. Can be thrown up to 20-60 feet. It has extra damage upon impact from a throw and more so if the target is a giant. The hammer returns to the user's hand.",
     "type": "weapon",
     "title": "Dwarven Thrower",
-    "description": "40000,1d8+3,+3",
+    "description": "40000,1d8+3,+3,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3572,7 +3572,7 @@
     "value": "Magically accurate and does additional damage. It has no string. Making a firing motion with your arm creates a magical arrow of golden energy. The arrow emits bright light in 20 feet. Instead of dealing damage, it can try to restrain the target, teleport the target within 10 feet of you, or produce magical rungs of a ladder in a wall to be climbed.",
     "type": "weapon",
     "title": "Energy Longbow",
-    "description": "40000,1d8+1,+1",
+    "description": "40000,1d8+1,+1,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -3580,7 +3580,7 @@
     "value": "Magically accurate and does additional damage. It has no string. Making a firing motion with your arm creates a magical arrow of golden energy. The arrow emits bright light in 20 feet. Instead of dealing damage, it can try to restrain the target, teleport the target within 10 feet of you, or produce magical rungs of a ladder in a wall to be climbed.",
     "type": "weapon",
     "title": "Energy Shortbow",
-    "description": "40000,1d6+1,+1",
+    "description": "40000,1d6+1,+1,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -3596,7 +3596,7 @@
     "value": "Allows the user to cast an advanced spell up to 6 times. It slowly regains charges every day.",
     "type": "weapon",
     "title": "Enspelled Weapon Very Rare",
-    "description": "40000,1d8",
+    "description": "40000,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3604,7 +3604,7 @@
     "value": "Magically conditioned to hit with more accuracy and damage. It deals exceptional damage to humanoids which is then added as extra health to the user.",
     "type": "weapon",
     "title": "Executioner's Axe",
-    "description": "40000,1d12+1,+1",
+    "description": "40000,1d12+1,+1,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3620,7 +3620,7 @@
     "value": "Causes the target to take extra cold damage. Fire has less of an effect on the user. When the temperature is freezing, it emits bright light for 10 feet. Once every hour, brandishing the weapon can be used to extinguish all flames within 30 feet.",
     "type": "weapon",
     "title": "Frost Brand",
-    "description": "40000,1d8+4",
+    "description": "40000,1d8+4,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3780,7 +3780,7 @@
     "value": "The bow whispers the phrase \"Swift defeat to my enemies\" when an arrow is knocked. If the phrase \"Swift death tto you who haved wronged me\" is said, it allows the user to mark an enemy as a sworn enemy, giving them a greater chance to hit them and adds additonal damage. When they die, the sworn enemy can be switched to another enemy. All other weapons are at a disadvantage until the enemy is killed or 7 days has passed.",
     "type": "weapon",
     "title": "Oathbow",
-    "description": "40000,1d8",
+    "description": "40000,1d8,0,dexterity",
     "useForCharacterCreation": false
   },
   {
@@ -3844,7 +3844,7 @@
     "value": "A quarterstaff that is magically more accurate and damaging. It can emit dim light for 10 feet. It can extend to a 10 foot pole. The user is more acrobatic. It can deflect an attack once per short rest. It can be used as a thrown weapon and it will immediately return to the user's hand.",
     "type": "weapon",
     "title": "Quarterstaff of the Acrobat",
-    "description": "40000,1d6+2,+2",
+    "description": "40000,1d6+2,+2,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3924,7 +3924,7 @@
     "value": "Magically enhanced to be more accurate and damaging. It can make an additional attack every turn.",
     "type": "weapon",
     "title": "Scimitar of Speed",
-    "description": "40000,1d6+2,+2",
+    "description": "40000,1d6+2,+2,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3964,7 +3964,7 @@
     "value": "Gives the user resistance to fire damage. It has 10 charges to cast the spells burning hands (1 charge), fireball (3 charges), wall of fire (4 charges). The staff regains charges quickly every day. Druid, sorcerer, warlock, or wizard only.",
     "type": "weapon",
     "title": "Staff of Fire",
-    "description": "40000,1d6",
+    "description": "40000,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3972,7 +3972,7 @@
     "value": "Gives the user resistance to cold damage. It has 10 charges to cast the spells cone of cold (5 charges), fog cloud (1 charge), ice storm (4 charges), wall of ice (4 charges). The staff regains charges quickly every day. Druid, sorcerer, warlock, or wizard only.",
     "type": "weapon",
     "title": "Staff of Frost",
-    "description": "40000,1d6",
+    "description": "40000,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3980,7 +3980,7 @@
     "value": "Quarterstaff with extra damage and accuracy. It improves the ability to avoid being hit. With 20 charges it can cast cone of cold (5) fireball (5) globe of invulnerability (6) hold monster (5) levitate (2) lightning bolt (5) magic missile (1) ray of enfeeblement (1), wall of force (5). Breaking the staff creates an incredible explosion with a chance of transporting the user away to avoid injury. It regains charges quickly every day. Sorcerer, warlock, wizard only.",
     "type": "weapon",
     "title": "Staff of Power",
-    "description": "40000,1d6+2,+2",
+    "description": "40000,1d6+2,+2,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3988,7 +3988,7 @@
     "value": "Quarterstaff with incredible accuracy and damage. With 10 charges, up to 3 can be used to give extra force damage. It quickly regains charges every day.",
     "type": "weapon",
     "title": "Staff of Striking",
-    "description": "40000,1d6+3,+3",
+    "description": "40000,1d6+3,+3,strength",
     "useForCharacterCreation": false
   },
   {
@@ -3996,7 +3996,7 @@
     "value": "Strikes with magical accuracy and damage and hits with extra lightning damage or stuns the enemy once per day. It can create a lightning strike that does severe damage in a line once per day. It can defean creatures within 60 feet and cause thunder damage once per day.",
     "type": "weapon",
     "title": "Staff of Thunder and Lightning",
-    "description": "40000,1d6+9,+2",
+    "description": "40000,1d6+9,+2,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4004,7 +4004,7 @@
     "value": "Inflicts maximum damage against objects. On a critical hit, this weapon does even more slashing damage and causes the target to be exhausted.",
     "type": "weapon",
     "title": "Sword of Sharpness",
-    "description": "40000,1d8",
+    "description": "40000,1d8,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4012,7 +4012,7 @@
     "value": "Increases the strength of the user to 20. It deals extra thunder damage to creatures and extreme damage to objects. It can create a thunderclap creating a 30 foot cone of thunder damage. Once per day, can be struck on the ground to create a seismic disturbance, causing incredible damage to structures and knocking creatures prone. Creates a 30 foot dep fissure.",
     "type": "weapon",
     "title": "Thunderous Greatclub",
-    "description": "40000,1d8+5",
+    "description": "40000,1d8+5,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4052,7 +4052,7 @@
     "value": "A weapon with incredible accuracy and damage.",
     "type": "weapon",
     "title": "Weapon +3",
-    "description": "40000,1d8+3,+3",
+    "description": "40000,1d8+3,+3,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4148,7 +4148,7 @@
     "value": "Has incredible accuracy and damage. Instead, that bonus can be used to have a better chance of avoiding damage at the user's discretion.",
     "type": "weapon",
     "title": "Defender",
-    "description": "200000,1d8+3,+3",
+    "description": "200000,1d8+3,+3,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4172,7 +4172,7 @@
     "value": "Allows the user to cast a highly advanced spell up to 6 times. It slowly regains charges every day.",
     "type": "weapon",
     "title": "Legendary Enspelled Staff",
-    "description": "200000,1d6",
+    "description": "200000,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4180,7 +4180,7 @@
     "value": "Allows the user to cast a highly advanced spell up to 6 times. It slowly regains charges every day.",
     "type": "weapon",
     "title": "Enspelled Weapon Legendary",
-    "description": "200000,1d6",
+    "description": "200000,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4188,7 +4188,7 @@
     "value": "Has enhanced damage and accuracy. With 5 charges, it can be thrown expending a charge to possibly stun all creatures within 30 feet of the target, then flies back to the user's hand. It has synergy with the belt of giant strength or gauntlets of ogre power. Critical hits on a giant can possibly kill it instantly. The strength bestowed increases by 4.",
     "type": "weapon",
     "title": "Hammer of Thunderbolts",
-    "description": "200000,1d8+1,+1",
+    "description": "200000,1d8+1,+1,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4196,7 +4196,7 @@
     "value": "Must be used by a paladin, has incredible damage and accuracy. Deals extra radiant damage to the undead. Allies within 10 feet have extra protection against magical effects.",
     "type": "weapon",
     "title": "Holy Avenger",
-    "description": "200000,1d8+3,+3",
+    "description": "200000,1d8+3,+3,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4244,7 +4244,7 @@
     "value": "Has additional accuracy and damage. It also has added ability to avoid magical effects. It gives the user another chance when they would have otherwise failed a task. It can use this once per day. It can grant up to 3 wishes, one per day.",
     "type": "weapon",
     "title": "Luck Blade",
-    "description": "200000,1d8+1,+1",
+    "description": "200000,1d8+1,+1,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4252,7 +4252,7 @@
     "value": "Weapon that chooses a wielder whose goals align with its own, otherwise cursing the user. Each potential rune on it gives a magical property: increased accuracy/damage, deals extra force damage, can be thrown, easier critical hits, flashes to cause blindness, can store spells, and can summon a shadowy elf. It has sentience and personality.",
     "type": "weapon",
     "title": "Moonblade",
-    "description": "200000,1d8+1,+1",
+    "description": "200000,1d8+1,+1,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4324,7 +4324,7 @@
     "value": "Functions as a mace with incredible damage and accuracy and has a series of buttons that transform it: fiery blade, great axe, spear, climbing pole, battering ram, back to a mace that indicates magnetic north. It can drain life, paralyze its targets, or terrify them.",
     "type": "weapon",
     "title": "Rod of Lordly Might",
-    "description": "200000,1d8+3,+3",
+    "description": "200000,1d8+3,+3,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4372,7 +4372,7 @@
     "value": "Must be used by a sorcerer, warlock, or wizard. It has 50 charges that can be used to cast arcane lock, conjure elemental, detect magic, dispel magic. enlarge, reduce, fireball, flaming sphere4, ice storm, invisibility, knock, light, lightning bolt, mage hand, passwall, plane shift, protection from evil and good, telekinesis, wall of fire, web.  It has a chance of cancelling other creature's spells and absorbing its power. Absorbing too much power may make it explode.",
     "type": "weapon",
     "title": "Staff of the Magi",
-    "description": "200000,1d6",
+    "description": "200000,1d6,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4380,7 +4380,7 @@
     "value": "Weapon has incredible accuracy and damage. If an enemy attacks the user, the user can achieve a free attack against that enemy. The special attack ignores immunity or resistance.",
     "type": "weapon",
     "title": "Sword of Answering",
-    "description": "200000,1d8+3,+3",
+    "description": "200000,1d8+3,+3,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4436,7 +4436,7 @@
     "value": "An artifact once known to bring peace to the dwarvish people. It has incredible damage and accuracy. Critical hits do additional slashing damage. Throwing the axe deals additional force damage and more so on giants. It returns to the user's hand. It grants darkvision, increases constitution, grants proficiency in brewing/masonry/smithing, immunity to poison, resistance to fire, destroy objects easily, teleport through stone once every 3 days. The user can summon an earth elemental once a day.",
     "type": "weapon",
     "title": "Axe of the Dwarvish Lords",
-    "description": "5000000,1d12+3,+3",
+    "description": "5000000,1d12+3,+3,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4444,7 +4444,7 @@
     "value": "A great sword with incredible damage and accuracy. Hitting an undead harms the user and heals the undead. Cannot be charmed or frightened. Blindsight for 30 feet. Killing a creature grants the user additional health equal to that of the enemy slain. It is sentient and may choose to cast haste on the user. It demands the devouring of souls at least every 3 days or it will raise conflict with the user.",
     "type": "weapon",
     "title": "Blackrazor",
-    "description": "5000000,2d6+3,+3",
+    "description": "5000000,2d6+3,+3,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4500,7 +4500,7 @@
     "value": "Once used to defeat the lich Vecna, it grants the user a bloodthirst that must be satiated within 1 minute of the weapon being drawn. If not, the user may take psychic damage or become dominated by the sword until the blood lust is satiated. It has incredible accuracy and damage. Critical hits deal extra damage to undead. It can cast call lightning, divine word, finger of death once a day. Grants greater initiative, could be used to give greater defense, resistance to necrotic damage. It's sentient and chaotic evil. However, its goal is to destroy Vecna and all his works.",
     "type": "weapon",
     "title": "Sword of Kas",
-    "description": "5000000,2d6+3",
+    "description": "5000000,2d6+3,0,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4516,7 +4516,7 @@
     "value": "Has incredible accuracy and damage. The target takes extra necrotic damage on hit. It gives the user extra initiative and a buble of air to breathe while underwater. It has three charges to cast dominate beast on swimming creatures. It regains charges slowly every day. It can cast globe of invulnerability once every day. It's sentient and wants its users to embrace sea gods.",
     "type": "weapon",
     "title": "Wave",
-    "description": "5000000,1d8+3,+3",
+    "description": "5000000,1d8+3,+3,strength",
     "useForCharacterCreation": false
   },
   {
@@ -4524,7 +4524,7 @@
     "value": "A warhammer that has incredible damage and accuracy. It can be hurled to cause extra force damage and even more so against constructs, elementals, or giants. It flies back to the user's hand. Once a day, it can create a shock wave when struck on the ground causing creatures within 60 feet to be stunned. It alerts its user of secret or concealed doors within 30 feet. It can caast detect evil and good or locate object once a day. It is sentient and longs to returned to its dwarf clan.",
     "type": "weapon",
     "title": "Whelm",
-    "description": "5000000,1d8+3,+3",
+    "description": "5000000,1d8+3,+3,strength",
     "useForCharacterCreation": false
   },
   {
