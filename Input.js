@@ -1914,6 +1914,24 @@ function doAddCard(command) {
     case "b":
     case "brigand":
       return doTake("take Stragedy Brigand Card")
+    case "2":
+      return doTake("take Stragedy 2 Card")
+    case "3":
+      return doTake("take Stragedy 3 Card")
+    case "4":
+      return doTake("take Stragedy 4 Card")
+    case "5":
+      return doTake("take Stragedy 5 Card")
+    case "6":
+      return doTake("take Stragedy 6 Card")
+    case "7":
+      return doTake("take Stragedy 7 Card")
+    case "8":
+      return doTake("take Stragedy 8 Card")
+    case "9":
+      return doTake("take Stragedy 9 Card")
+    case "10":
+      return doTake("take Stragedy 10 Card")
     case "common":
       return doTake(`take Stragedy ${getRandomFromList("2", "3", "4", "5", "6", "7", "8", "9")} Card`)
     case "rare":

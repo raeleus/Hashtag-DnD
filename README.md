@@ -22,6 +22,7 @@ v. 0.6.0
 * Added commands #takeweapon, #takearmor, and #equip to allow automatic stat changes when using gear
 * Added descriptions for all DnD Player's Handbook and Dungeon Master's Guide items to story cards
 * Fixed #spellshop not giving properly randomized spells
+* Fixed #addcard not giving out numbered cards and instead giving out random ones
 
 v. 0.5.0
 * Added Mastermind/Lockpicking Game
