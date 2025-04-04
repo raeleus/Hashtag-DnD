@@ -1094,7 +1094,6 @@ function spellShopPushDeal(items, name, price) {
     price: price,
     bought: false
   })
-  if (!state.spellShopAll) items.splice(index, 1)
 }
 
 var spellShopSeed
@@ -1111,6 +1110,7 @@ function spellShopSelectSpells(spells, price, numberOfSpells) {
     return
   }
 
+  shuffle(spells, spellShopSeed)
   for (let i = 0; i < numberOfSpells; i++) {
     spellShopPushDeal(spells, spells[i], price)
   }
