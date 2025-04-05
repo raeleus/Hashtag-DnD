@@ -92,6 +92,7 @@ const stragedySynonyms = ["stragedy", "playgame", "game", "startgame", "begingam
 const lockpickSynonyms = ["lockpick", "lockpicking", "codebreaker", "pick", "hack", "hacking", "mastermind"]
 const addCardSynonyms = ["addcard"]
 const equipSynonyms = ["equip", "arm", "wear"]
+const rewardSynonyms = ["reward"]
 const helpSynonyms = ["help"]
 
 const modifier = (text) => {
@@ -274,6 +275,7 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, lockpickSynonyms, doLockpick)
   if (text == null) text = processCommandSynonyms(command, commandName, addCardSynonyms, doAddCard)
   if (text == null) text = processCommandSynonyms(command, commandName, equipSynonyms, doEquip)
+  if (text == null) text = processCommandSynonyms(command, commandName, rewardSynonyms, doReward)
   if (text == null) text = processCommandSynonyms(command, commandName, takeWeaponSynonyms, doTakeWeapon)
   if (text == null) text = processCommandSynonyms(command, commandName, takeArmorSynonyms, doTakeArmor)
   if (text == null) text = processCommandSynonyms(command, commandName, helpSynonyms, doHelp)
@@ -1504,8 +1506,8 @@ function handleItemShopStep(text) {
         return text
       }
 
-      if ("damage" in deal) doTakeWeapon(`take ${deal.damage} ${deal.toHitBonus} ${deal.ability} ${deal.name}`)
-      else if ("ac" in deal) doTakeArmor(`take ${deal.ac} ${deal.name}`)
+      if ("damage" in deal) doTakeWeapon(`takeweapon ${deal.damage} ${deal.toHitBonus} ${deal.ability} ${deal.name}`)
+      else if ("ac" in deal) doTakeArmor(`takearmor ${deal.ac} ${deal.name}`)
       else doTake(`take ${deal.quantity} ${deal.name}`)
       if (!state.itemShopIsFree) character.inventory[goldIndex].quantity -= deal.price
       deal.bought = true
@@ -3551,6 +3553,66 @@ function doTakeArmor(command) {
   return text
 }
 
+function doReward(command) {
+  command = command.replace(/very rare/gi, "phenomenal")
+
+  let quantity = getArgument(command, 0)
+  if (quantity == null || isNaN(quantity)) quantity = 1
+  if (!isNaN(quantity)) quantity = parseInt(quantity)
+  if (quantity < 1) quantity = 1
+
+  let categoryName = searchArgument(command, /default|weapons|armor|tools|gear|common|uncommon|rare|phenomenal|legendary|artifact/gi)
+  if (categoryName == null && searchArgument(command, /weapon/) != null) categoryName = "weapons"
+  if (categoryName == null) categoryName = "default"
+
+  let loot = []
+  for (let i = 0; i < quantity; i++) {
+    const rand = Math.random()
+    categoryName = categoryName.toLowerCase()
+    let category
+
+    if (categoryName == "weapons" || categoryName == "default" && rand <= .125) category = weaponsList
+    else if (categoryName == "armor" || categoryName == "default" && rand <= .25) category = armorList
+    else if (categoryName == "tools" || categoryName == "default" && rand <= .375) category = toolsList
+    else if (categoryName == "gear" || categoryName == "default" && rand <= .50) category = gearList
+    else if (categoryName == "common" || categoryName == "default" && rand <= .70) category = commonList
+    else if (categoryName == "uncommon" || categoryName == "default" && rand <= .80) category = uncommonList
+    else if (categoryName == "rare" || categoryName == "default" && rand <= .88) category = rareList
+    else if (categoryName == "phenomenal" || categoryName == "default" && rand <= .94) category = phenomenalList
+    else if (categoryName == "legendary" || categoryName == "default" && rand <= .98) category = legendaryList
+    else if (categoryName == "artifact" || categoryName == "default" && rand > .98) category = artifactList
+    else category = commonList
+
+    let itemStoryCardName
+    shuffled = [...category].sort(() => 0.5 - Math.random());
+    itemStoryCardName = shuffled[0]
+
+    let itemName = itemShopConvertGenericName(itemStoryCardName)
+    loot.push(itemName)
+
+    let itemStoryCard = findItemCard(itemName, itemStoryCardName)
+
+    if (itemStoryCard != null && itemStoryCard.type == "weapon") doTakeWeapon(`takeweapon ${itemStoryCard.description.split(",")[1]} ${itemStoryCard.description.split(",")[2]} ${itemStoryCard.description.split(",")[3]} ${itemName}`)
+    else if (itemStoryCard != null && itemStoryCard.type == "armor") doTakeArmor(`takearmor ${itemStoryCard.description.split(",")[1]} ${itemName}`)
+    else doTake(`take ${itemName}`)
+  }
+
+  let text = "You have found"
+  if (loot.length == 1) {
+    let itemName = loot[0]
+    let aWord = ['a', 'e', 'i', 'o', 'u'].indexOf(itemName.charAt(0).toLowerCase()) !== -1 ? "an" : "a"
+    text += ` ${aWord} ${itemName}!`
+  } else {
+    text += ":"
+    loot.forEach(itemName => {
+      let aWord = ['a', 'e', 'i', 'o', 'u'].indexOf(itemName.charAt(0).toLowerCase()) !== -1 ? "an" : "a"
+      text += `\n${aWord} ${itemName},`
+    })
+  }
+
+  return text
+}
+
 function doMap(command) {
   state.show = "map"
   return " "
@@ -3587,7 +3649,6 @@ function doEquip(command) {
     let dexterityStat = character.stats.find((element) => element.name.toLowerCase() == "dexterity")
     let dexterity = dexterityStat == null ? 10 : dexterityStat.value
     let ac = parseInt(item.ac.replaceAll(/(?<=.)\+.*/gi, ""))
-    let old = character.ac
     if (/.*\+dmax2/i.test(item.ac)) character.ac = ac + Math.max(2, Math.ceil((dexterity - 10) / 2))
     else if (/.*\+d/i.test(item.ac)) character.ac = ac + Math.ceil((dexterity - 10) / 2)
     else if (/\+.*/i.test(item.ac)) character.ac += ac

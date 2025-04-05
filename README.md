@@ -20,6 +20,7 @@ Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 v. 0.6.0
 * Added Item Shop - Make sure to import the latest story cards: https://github.com/raeleus/Hashtag-DnD/blob/master/story-cards.json
 * Added commands #takeweapon, #takearmor, and #equip to allow automatic stat changes when using gear
+* Added command #reward for random loot dropping
 * Added descriptions for all DnD Player's Handbook and Dungeon Master's Guide items to story cards
 * Fixed #spellshop not giving properly randomized spells
 * Fixed #addcard not giving out numbered cards and instead giving out random ones
