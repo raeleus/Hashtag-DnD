@@ -553,7 +553,7 @@ const modifier = (text) => {
 
       text += "\n\n--Memory Minigame--"
       text += "\n#memory (automatic|effortless|easy|medium|hard|impossible)"
-      text += "\n    Initiates a memory minigame where you have to flip cards one at a time until you make a matching pair. You only have a set number of turns to finish the game. Specifying a difficulty (default is easy) sets the number of cards and maximum turns accordingly. Please see the game manual on github for rules, tactics, and a complete tutorial: github.com/raeleus/Hashtag-DnD/"
+      text += "\n    Initiates a memory minigame where you have to flip cards one at a time until you make a matching pair. You only have a set number of turns to finish the game. Specifying a difficulty (default is easy) sets the number of cards and maximum turns accordingly."
 
       text += "\n\n--Danger Zone--"
       text += "\n#reset"
