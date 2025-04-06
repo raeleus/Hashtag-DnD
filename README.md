@@ -18,6 +18,7 @@ See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
 v. 0.6.0
+* Added Memory/Matchmaking Game
 * Added Item Shop - Make sure to import the latest story cards: https://github.com/raeleus/Hashtag-DnD/blob/master/story-cards.json
 * Added commands #takeweapon, #takearmor, and #equip to allow automatic stat changes when using gear
 * Added command #reward for random loot dropping

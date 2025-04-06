@@ -102,6 +102,9 @@ const modifier = (text) => {
     case "lockpicking":
       text += handleLockpicking()
       break
+    case "memory":
+      text += handleMemory()
+      break
     case "bio":
       text += `*** ${possessiveName.toUpperCase()} BIO ***\n`
       text += `Class: ${character.className}\n`
@@ -548,6 +551,10 @@ const modifier = (text) => {
       text += "\n#lockpick (automatic|effortless|easy|medium|hard|impossible)"
       text += "\n    Initiates a lockpicking minigame similar to Mastermind where you have to guess the correct combination with a limited number of tries in order to defeat a lock. Specifying a difficulty (default is easy) sets the number of combinations and tries accordingly. Please see the game manual on github for rules, tactics, and a complete tutorial: github.com/raeleus/Hashtag-DnD/"
 
+      text += "\n\n--Memory Minigame--"
+      text += "\n#memory (automatic|effortless|easy|medium|hard|impossible)"
+      text += "\n    Initiates a memory minigame where you have to flip cards one at a time until you make a matching pair. You only have a set number of turns to finish the game. Specifying a difficulty (default is easy) sets the number of cards and maximum turns accordingly. Please see the game manual on github for rules, tactics, and a complete tutorial: github.com/raeleus/Hashtag-DnD/"
+
       text += "\n\n--Danger Zone--"
       text += "\n#reset"
       text += "\n    Removes all characters, locations, and notes. Changes all settings to their defaults. Use with caution!"
@@ -586,6 +593,79 @@ function mapReplace(map, x, y, character) {
   map = map.replaceAt(index, character)
 
   return map
+}
+
+function handleMemory() {
+  let text = " "
+  switch (state.memoryTurn) {
+    case "game":
+      text = `**Memory**
+Select a card from below by typing its number or type q to quit:
+
+`
+
+      let counter = 0
+      for (let y = 0; y < state.memoryHeight; y++) {
+        for (let x = 0; x < state.memoryWidth; x++) {
+          counter++
+          const solved = state.memorySolved[counter - 1] != null
+
+          let cardText = ""
+          if (solved) {
+            cardText = state.memoryCards[counter - 1]
+          } else {
+            cardText = counter
+          }
+
+          text += `${cardText.toString().length == 1 ? "  " : ""}${cardText}        `
+        }
+        text += "\n"
+      }
+
+      text += `
+
+It is turn ${state.memoryTurns} of ${state.memoryMaxTurns}`
+
+      break
+    case "win":
+      text = `You won the game in ${state.memoryTurns} out of ${state.memoryMaxTurns} turns!\n`
+
+      let counter1 = 0
+      for (let y = 0; y < state.memoryHeight; y++) {
+        for (let x = 0; x < state.memoryWidth; x++) {
+          counter1++
+          text += `${state.memoryCards[counter1 - 1]}        `
+        }
+        text += "\n"
+      }
+      break
+    case "lose":
+      text = `After ${state.memoryMaxTurns} turns, you were unable to complete the game.\n`
+
+      let counter2 = 0
+      for (let y = 0; y < state.memoryHeight; y++) {
+        for (let x = 0; x < state.memoryWidth; x++) {
+          counter2++
+          text += `${state.memoryCards[counter2 - 1]}        `
+        }
+        text += "\n"
+      }
+      break
+    case "forfeit":
+      text = "You decided to give up on finishing the game.\n"
+
+      let counter3 = 0
+      for (let y = 0; y < state.memoryHeight; y++) {
+        for (let x = 0; x < state.memoryWidth; x++) {
+          counter3++
+          text += `${state.memoryCards[counter3 - 1]}        `
+        }
+        text += "\n"
+      }
+      break
+  }
+
+  return text
 }
 
 function handleLockpicking() {
