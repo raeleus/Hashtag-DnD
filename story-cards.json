@@ -5187,7 +5187,7 @@
     "keys": "Create Food and Water",
     "value": "Spell that creates either 45 pounds of food or ten gallons of clean water.",
     "type": "spell",
-    "title": "Enlarge",
+    "title": "Create Food and Water",
     "description": "",
     "useForCharacterCreation": false
   },
