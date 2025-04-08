@@ -5769,7 +5769,7 @@
   },
   {
     "keys": "Fog Cloud",
-    "value": "Spell that creates a twentyh foot sphere of fog which obstructs view through it.",
+    "value": "Spell that creates a twenty foot sphere of fog which obstructs view through it.",
     "type": "spell",
     "title": "Fog Cloud",
     "description": "",
