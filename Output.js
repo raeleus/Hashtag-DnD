@@ -1036,99 +1036,99 @@ function handleSpellShop() {
     case "bard":
       switch(state.spellShopLevel) {
         case 9:
-          spellShopSelectSpells(["Foresight", "Power Word Heal", "Power Word Kill", "Prismatic Wall", "True Polymorph"], 50000)
+          spellShopSelectSpells(["Precog", "Command Prompt Heal", "Command Prompt Kill", "Laser Wall", "True Nanomorph"], 50000)
           if (state.spellShopAll) break
         case 8:
-          spellShopSelectSpells(["Antipathy/Sympathy", "Befuddlement", "Dominate Monster", "Glibness", "Mind Blank", "Power Word Stun"], 25000)
+          spellShopSelectSpells(["Psycho Fear", "Catfish", "Brain Stupor", "Sequencer", "Polygraph Mask", "Harden Security", "Command Prompt Stun"], 25000)
           if (state.spellShopAll) break
         case 7:
-          spellShopSelectSpells(["Etherealness", "Forcecage", "Mirage Arcane", "Mordenkainen's Magnificent Mansion", "Mordenkainen's Sword", "Power Word Fortify", "Prismatic Spray", "Project Image", "Regenerate", "Resurrection", "Symbol", "Teleport"], 20000, state.spellShopLevel == 7 ? 2 : 1)
+          spellShopSelectSpells(["Dimension Slip", "Gravity Box", "Holodeck", "Digital Palace", "Sword Construct", "Command Prompt Fortify", "Laser Projector", "Clone Image", "Healing Factor", "Data Recovery", "Marker", "Teleporter"], 20000, state.spellShopLevel == 7 ? 2 : 1)
           if (state.spellShopAll) break
         case 6:
-          spellShopSelectSpells(["Eyebite", "Find the Path", "Guards and Wards", "Heroes' Feast", "Mass Suggestion", "Otto's Irresistible Dance", "Programmed Illusion", "True Seeing"], 10000, state.spellShopLevel == 6 ? 2 : 1)
+          spellShopSelectSpells(["Sick Sight", "GPS", "Defense System", "Lab Meat", "Mass Telepathic Suggestion", "Upload Hysteria", "Boolean Hologram", "Thermal Imaging"], 10000, state.spellShopLevel == 6 ? 2 : 1)
           if (state.spellShopAll) break
         case 5:
-          spellShopSelectSpells(["Animate Objects", "Awaken", "Dominate Person", "Dream", "Dream", "Geas", "Greater Restoration", "Hold Monster", "Legend Lore", "Mass Cure Wounds", "Mislead", "Modify Memory", "Planar Binding", "Raise Dead", "Rary's Telepathic Bond", "Scrying", "Seeming", "Synaptic Static", "Teleportation Circle", "Yolande's Regal Presence"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          spellShopSelectSpells(["Molecular Puppet", "Command Robots", "Social Engineering", "Night Terror", "Mind Control Serum", "Superior Antigen", "Stasis Field", "Data Archives", "Mass Healing Booster", "Decoy Projection", "Reformat Memory", "Extraterrestrial Bond", "Undo Death", "Wireless Communication", "Hack Webcam", "Image Generator", "Neurology", "Transporter", "Psycho Emitter"], 5000, state.spellShopLevel == 5 ? 3 : 1)
           if (state.spellShopAll) break
         case 4:
-          spellShopSelectSpells(["Charm Monster", "Compulsion", "Confusion", "Dimension Door", "Fount of Moonlight", "Freedom of Movement", "Greater Invisibility", "Hallucinatory Terrain", "Locate Creature", "Phantasmal Killer", "Polymorph"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          spellShopSelectSpells(["Controller", "Force Strafe", "Crash Targeting System", "Transporter", "Shine Suit", "Axle Grease", "Null Zero Cloak", "Holographic Terrain", "Search Query Creature", "Cyber Assassin", "Nanomorph"], 2500, state.spellShopLevel == 4 ? 3 : 1)
           if (state.spellShopAll) break
         case 3:
-          spellShopSelectSpells(["Bestow Curse", "Clairvoyance", "Dispel Magic", "Fear", "Feign Death", "Glyph of Warding", "Hypnotic Pattern", "Leomund's Tiny Hut", "Major Image", "Mass Healing Word", "Nondetection", "Plant Growth", "Sending", "Slow", "Speak with Dead", "Speak with Plants", "Stinking Cloud", "Tongues"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          spellShopSelectSpells(["Borg Breaker", "Spy Wire", "EMP Spike", "Anxiety Wave", "Cryosleep", "Proximity Mine", "Interrupting Brain Waves", "Portable Shelter", "Hologram", "Healing Spray", "Radar Jammer", "Food Replicator", "Electronic Mail", "Degreaser", "Neuromancer", "Machine Code", "Trash Compacter", "Dual Lingo"], 1000, state.spellShopLevel == 3 ? 5 : 1)
           if (state.spellShopAll) break
         case 2:
-          spellShopSelectSpells(["Aid", "Animal Messenger", "Blindness/Deafness", "Calm Emotions", "Cloud of Daggers", "Crown of Madness", "Detect Thoughts", "Enhance Ability", "Enlarge/Reduce", "Enthrall", "Heat Metal", "Hold Person", "Invisibility", "Knock", "Lesser Restoration", "Locate Animals or Plants", "Locate Object", "Magic Mouth", "Mirror Image", "Phantasmal Force", "See Invisibility", "Shater", "Silence", "Suggestion", "Zone of Truth"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          spellShopSelectSpells(["Health Booster", "Drone Messenger", "Accute Miopia", "White Noise Generator", "Narco Nullifier", "Sharps", "Mind Slave", "Mind Scanner", "Ability Trainer", "Growth Hormone", "Miniturization Ray", "Data Wipe", "Conductive Metal", "Paralysis Mite", "Cloak", "Crack Code", "Antigen", "Search Query Drone", "Search Query Thing", "Recording", "Optical Illusion", "Cognitive Implant", "Night Vision", "Shater", "Noise Cancelling", "Inception", "Truth Serum"], 500, state.spellShopLevel == 2 ? 5 : 1)
         case 1:
-          spellShopSelectSpells(["Animal Friendship", "Bane", "Charm Person", "Color Spray", "Command", "Comprehend Languages", "Cure Wounds", "Detect Magic", "Disguise Self", "Dissonant Whispers", "Faerie Fire", "Feather Fall", "Healing Word", "Heroism", "Identify", "Illusory Script", "Longstrider", "Silent Image", "Sleep", "Speak with Animals", "Tasha's Hideous Laughter", "Thunderwave", "Unseen Servant"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          spellShopSelectSpells(["Drone Affect", "Trip Hammer", "Brain Backdoor", "Cone of Lights", "Mind Hack", "Universal Translator", "Organic Transplant", "Circuit Detector", "Holographic Mask", "Psychotic Break", "X-Ray", "Retro Rockets", "Healing Dart", "Liquid Courage", "Analyze", "Enciphered Text", "Hyperdrive", "Muted Graphic", "Sleep Pill", "Speak with Drones", "Meme", "Concussive Round", "Nano Servants"], 250, state.spellShopLevel == 1 ? 5 : 1)
         case 0:
-          spellShopSelectSpells(["Blade Ward", "Dancing Lights", "Friends", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion", "Prestidigitation", "Starry Wisp", "Thunderclap", "True Strike", "Vicious Mockery"], 50, state.spellShopLevel == 0 ? 3 : 1)
+          spellShopSelectSpells(["Danger Suit", "Glow Orb", "Friendship Protocol", "Bioluminescent Gel", "Spider Bot", "Micro Mend", "Text Message", "Minor Hologram", "Format", "EM Shot", "Concussive Round", "Auto Aim", "Laugh Track"], 50, state.spellShopLevel == 0 ? 3 : 1)
       }
       break
     case "cleric":
       switch(state.spellShopLevel) {
         case 9:
-          spellShopSelectSpells(["Astral Projection", "Gate", "Mass Heal", "Power Word Heal", "True Resurrection"], 50000)
+          spellShopSelectSpells(["Digital Self Image", "Interdimensional Gate", "Clinical Aid", "Command Prompt Heal", "Cellular Reconstruction"], 50000)
           if (state.spellShopAll) break
         case 8:
-          spellShopSelectSpells(["Antimagic Field", "Control Weather", "Earthquake", "Holy Aura", "Sunburst"], 25000)
+          spellShopSelectSpells(["EMP Generator", "Climate Control", "Aftershock", "5G Emitter", "Radio Blast"], 25000)
           if (state.spellShopAll) break
         case 7:
-          spellShopSelectSpells(["Conjure Celestial", "Divine Word", "Etherealness", "Fire Storm", "Plane Shift", "Power Word Fortify", "Regenerate", "Resurrection", "Symbol"], 20000, state.spellShopLevel == 7 ? 2 : 1)
+          spellShopSelectSpells(["Reaper Hologram", "Scramble Signal", "Dimension Slip", "Heisenberg Principle", "Extradimensional Shift", "Command Prompt Fortify", "Healing Factor", "Data Recovery", "Marker"], 20000, state.spellShopLevel == 7 ? 2 : 1)
           if (state.spellShopAll) break
         case 6:
-          spellShopSelectSpells(["Blade Barrier", "Create Undead", "Find the Path", "Forbiddance", "Harm", "Heroes' Feast", "Planar Ally", "Sunbeam", "True Seeing", "Word of Recall"], 10000, state.spellShopLevel == 6 ? 2 : 1)
+          spellShopSelectSpells(["Razor Wire", "Necro Soldier", "GPS", "Faraday Cage", "Virus", "Lab Meat", "First Contact", "Fiber Optic Beam", "Thermal Imaging", "Total Recall"], 10000, state.spellShopLevel == 6 ? 2 : 1)
           if (state.spellShopAll) break
         case 5:
-          spellShopSelectSpells(["Circle of Power", "Commune", "Contagion", "Dispel Evil and Good", "Flame Strike", "Geas", "Greater Restoration", "Hallow", "Insect Plague", "Legend Lore", "Mass Cure Wounds", "Planar Binding", "Raise Dead", "Scrying", "Summon Celestial"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          spellShopSelectSpells(["Defense Thumper", "Communion with AI", "Corruption", "EMP Blast", "Thermite Strike", "Mind Control Serum", "Superior Antigen", "Zone Denial", "Drone Plague", "Data Archives", "Mass Healing Booster", "Extraterrestrial Bond", "Undo Death", "Hack Webcam", "Summon Alien"], 5000, state.spellShopLevel == 5 ? 3 : 1)
           if (state.spellShopAll) break
         case 4:
-          spellShopSelectSpells(["Aura of Life", "Aura of Purity", "Banishment", "Control Weather", "Death Ward", "Divination", "Freedom of Movement", "Guardian of Faith", "Locate Creature", "Stone Shape"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          spellShopSelectSpells(["Antinecrotic Orb", "Radiation Shielding", "Phaseshift", "Climate Control", "Death's Cure", "Hint Model", "Axle Grease", "Sentry Turret", "Search Query Creature", "Magneto Shape"], 2500, state.spellShopLevel == 4 ? 3 : 1)
           if (state.spellShopAll) break
         case 3:
-          spellShopSelectSpells(["Animate Dead", "Aura of Vitality", "Beacon of Hope", "Bestow Curse", "Clairvoyance", "Create Food and Water", "Daylight", "Dispel Magic", "Feign Death", "Glyph of Warding", "Magic Circle", "Mass Healing Ward", "Meld into Stone", "Protection from Energy", "Remove Curse", "Revivify", "Sending", "Speak with Dead", "Spirit Guardians", "Tongues", "Water Walk"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          spellShopSelectSpells(["Nanonecrotic Command", "Bio Bot", "Juicer", "Borg Breaker", "Spy Wire", "Recycled Food and Drink", "Light Diffuser", "EMP Spike", "Cryosleep", "Proximity Mine", "Force Cage", "Mass Healing Ward", "Electronic Form", "Ablative Shielding", "Virus Removal", "Revivification Serum", "Electronic Mail", "Neuromancer", "Micro Machines", "Dual Lingo", "Hydrophobic Step"], 1000, state.spellShopLevel == 3 ? 5 : 1)
           if (state.spellShopAll) break
         case 2:
-          spellShopSelectSpells(["Aid", "Augury", "Blindness/Deafness", "Calm Emotions", "Continual Flame", "Enhance Ability", "Find Traps", "Gentle Repose", "Hold Person", "Lesser Restoration", "Locate Object", "Prayer of Healing", "Protection from Poison", "Silence", "Spiritual Weapon", "Warding Bond", "Zone of Truth"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          spellShopSelectSpells(["Health Booster", "Simulation", "Accute Miopia", "White Noise Generator", "Narco Nullifier", "Laser Light", "Ability Trainer", "Threat Detector", "Death Vaccine", "Paralysis Mite", "Antigen", "Search Query Thing", "Program of Healing", "Pop-Up Blocker", "Noise Cancelling", "Light Form Weapon", "Shield Link", "Truth Serum"], 500, state.spellShopLevel == 2 ? 5 : 1)
           if (state.spellShopAll) break
         case 1:
-          spellShopSelectSpells(["Bane", "Bless", "Command", "Create or Destroy Water", "Cure Wounds", "Detect Evil and Good", "Detect Magic", "Detect Poison and Disease", "Guiding Bolt", "Healing Word", "Inflict Wounds", "Protection from Evil and Good", "Purify Food and Drink", "Sanctuary", "Shield of Faith"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          spellShopSelectSpells(["Trip Hammer", "Boson", "Mind Hack", "Hydraulic Dam", "Evaporator", "Organic Transplant", "Motion Tracker", "Circuit Detector", "Geiger Counter", "Paint Target", "Healing Dart", "Tear Sutures", "Heuristic Protection", "Food Sanitizer", "Honeypot", "Echo Chamber"], 250, state.spellShopLevel == 1 ? 5 : 1)
           if (state.spellShopAll) break
         case 0:
-          spellShopSelectSpells(["Guidance", "Light", "Mending", "Resistance", "Sacred Flame", "Spare the Dying", "Thaumaturgy", "Toll the Dead", "Word of Radiance"], 50, state.spellShopLevel == 0 ? 3 : 1)
+          spellShopSelectSpells(["Telemetry", "Bioluminescent Gel", "Micro Mend", "Reactive Armor", "Fire Sale", "Triage Cell", "Audio Filter", "System Beep", "Night Light"], 50, state.spellShopLevel == 0 ? 3 : 1)
           break
       }
       break
     case "druid":
       switch(state.spellShopLevel) {
         case 9:
-          spellShopSelectSpells(["Foresight", "Shapechange", "Storm of Vengeance", "True Resurrection"], 50000)
+          spellShopSelectSpells(["Precog", "Gene Editor", "Static Storm", "Cellular Reconstruction"], 50000)
           if (state.spellShopAll) break
         case 8:
-          spellShopSelectSpells(["Animal Shapes", "Antipathy/Sympathy", "Befuddlement", "Control Weather", "Earthquake", "Incendiary Cloud", "Sunburst", "Tsunami"], 25000)
+          spellShopSelectSpells(["Nanotech Shapes", "Psycho Fear", "Catfish", "Brain Stupor", "Climate Control", "Aftershock", "Air Burst", "Radio Blast", "Tidal Lock"], 25000)
           if (state.spellShopAll) break
         case 7:
-          spellShopSelectSpells(["Fire Storm", "Mirage Arcane", "Plane Shift", "Regenerate", "Reverse Gravity", "Symbol"], 20000, state.spellShopLevel == 7 ? 2 : 1)
+          spellShopSelectSpells(["Heisenberg Principle", "Holodeck", "Extradimensional Shift", "Healing Factor", "Inverse Graviton", "Marker"], 20000, state.spellShopLevel == 7 ? 2 : 1)
           if (state.spellShopAll) break
         case 6:
-          spellShopSelectSpells(["Conjure Fey", "Find the Path", "Flesh to Stone", "Heal", "Heroes' Feast", "Move Earth", "Sunbeam", "Transport via Plants", "Wall of Thorns", "Wind Walk"], 10000, state.spellShopLevel == 6 ? 2 : 1)
+          spellShopSelectSpells(["Dark Dimensional", "GPS", "Medusa Cell", "Healing Gel", "Lab Meat", "Metal Working", "Fiber Optic Beam", "Transport via Computers", "Razor Wall", "Base Jumping"], 10000, state.spellShopLevel == 6 ? 2 : 1)
           if (state.spellShopAll) break
         case 5:
-          spellShopSelectSpells(["Antilife Shell", "Awaken", "Commune with Nature", "Cone of Cold", "Conjure Elemental", "Contagion", "Geas", "Greater Restoration", "Insect Plague", "Mass Cure Wounds", "Planar Binding", "Reincarnate", "Scrying", "Tree Stride", "Wall of Stone"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          spellShopSelectSpells(["Radiation Shielding", "Command Robots", "Event Log", "Snow Blaster", "Elemental Matrix", "Corruption", "Mind Control Serum", "Superior Antigen", "Drone Plague", "Mass Healing Booster", "Extraterrestrial Bond", "Brain Transplant", "Hack Webcam", "Electrical Wire Transmission", "Metal Wall"], 5000, state.spellShopLevel == 5 ? 3 : 1)
           if (state.spellShopAll) break
         case 4:
-          spellShopSelectSpells(["Blight", "Charm Monster", "Confusion", "Conjure Woodland Beings", "Control Water", "Divination", "Dominate Beast", "Fire Shield", "Fount of Moonlight", "Freedom of Movement", "Giant Insect", "Grasping Vine", "Hallucinatory Terrain", "Ice Storm", "Locate Creature", "Polymorph", "Stone Shape", "Stoneskin", "Summon Elemental", "Wall of Fire"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          spellShopSelectSpells(["Radioactive Decay", "Controller", "Crash Targeting System", "Conjure Helibots", "Hydraulic Dam", "Hint Model", "Drone Backdoor", "Heat Shield", "Shine Suit", "Axle Grease", "Insect Gigas", "Grasping Cord", "Holographic Terrain", "Cold Snap", "Search Query Creature", "Nanomorph", "Magneto Shape", "Kevlar Skin", "Summon Nanoswarm", "Firewall"], 2500, state.spellShopLevel == 4 ? 3 : 1)
           if (state.spellShopAll) break
         case 3:
-          spellShopSelectSpells(["Aura of Vitality", "Call Lightning", "Conjure Animals", "Daylight", "Dispel Magic", "Elemental Weapon", "Feign Death", "Meld into Stone", "Plant Growth", "Protection from Energy", "Revivify", "Sleet Storm", "Speak with Plants", "Summon Fey", "Water Breathing", "Water Walk", "Wind Wall"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          spellShopSelectSpells(["Bio Bot", "Static Striker", "Conjure Drones", "Light Diffuser", "EMP Spike", "Infuser Round", "Cryosleep", "Electronic Form", "Food Replicator", "Ablative Shielding", "Revivification Serum", "Air Conditioner", "Machine Code", "Summon Dimensional", "Respirator", "Hydrophobic Step", "Oxygen Canister"], 1000, state.spellShopLevel == 3 ? 5 : 1)
           if (state.spellShopAll) break
         case 2:
-          spellShopSelectSpells(["Aid", "Animal Messenger", "Augury", "Barkskin", "Beast Sense", "Continual Flame", "Darkvision", "Enhance Ability", "Enlarge/Reduce", "Find Traps", "Flame Blade", "Flaming Sphere", "Gust of Wind", "Heat Metal", "Hold Person", "Lesser Restoration", "Locate Animals or Plants", "Locate Object", "Moonbeam", "Pass without Trace", "Protection from Poison", "Spike Growth", "Summon Beast"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          spellShopSelectSpells(["Health Booster", "Drone Messenger", "Simulation", "Bulletproof", "Drone Sense", "Laser Light", "Nightvision", "Ability Trainer", "Growth Hormone", "Miniturization Ray", "Threat Detector", "Arc Welder", "Flame Graviton", "Industrial Fan", "Conductive Metal", "Paralysis Mite", "Antigen", "Search Query Drone", "Search Query Thing", "Fiber Optics", "Cloaking Field", "Pop-Up Blocker", "Spike Bumps", "Summon Drone"], 500, state.spellShopLevel == 2 ? 5 : 1)
           if (state.spellShopAll) break
         case 1:
-          spellShopSelectSpells(["Animal Friendship", "Charm Person", "Create or Destroy Water", "Cure Wounds", "Detect Magic", "Detect Poison and Disease", "Entangle", "Faerie Fire", "Fog Cloud", "Goodberry", "Healing Word", "Ice Knife", "Jump", "Longstrider", "Protection from Evil and Good", "Purify Food and Drink", "Speak with Animals", "Thunderwave"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          spellShopSelectSpells(["Drone Affect", "Brain Backdoor", "Hydraulic Dam", "Evaporator", "Organic Transplant", "Circuit Detector", "Geiger Counter", "Sticky Foam", "X-Ray", "Fog Generator", "MRE", "Healing Dart", "Freeze Grenade", "Jump Jets", "Hyperdrive", "Heuristic Protection", "Food Sanitizer", "Speak with Drones", "Concussive Round"], 250, state.spellShopLevel == 1 ? 5 : 1)
           if (state.spellShopAll) break
         case 0:
-          spellShopSelectSpells(["Druidcraft", "Elementalism", "Guidance", "Mending", "Message", "Poison Spray", "Produce Flame", "Resistance", "Shillelagh", "Spare the Dying", "Starry Wisp", "Thorn Whip", "Thunderclap"], 50, state.spellShopLevel == 0 ? 3 : 1)
+          spellShopSelectSpells(["Cybercraft", "Periodic Elements", "Telemetry", "Micro Mend", "Text Message", "Chemical Spray", "Lighter", "Reactive Armor", "Download Specs", "Triage Cell", "EM Shot", "Block-Chain", "Concussive Round"], 50, state.spellShopLevel == 0 ? 3 : 1)
           if (state.spellShopAll) break
           break
       }
@@ -1136,19 +1136,19 @@ function handleSpellShop() {
     case "paladin":
       switch(state.spellShopLevel) {
         case 5:
-          spellShopSelectSpells(["Banishing Smite", "Circle of Power", "Destructive Wave", "Dispel Evil and Good", "Geas", "Greater Restoration", "Raise Dead", "Summon Celestial"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          spellShopSelectSpells(["Banishing Graviton", "Defense Thumper", "Seismic Wave", "EMP Blast", "Mind Control Serum", "Superior Antigen", "Undo Death", "Summon Alien"], 5000, state.spellShopLevel == 5 ? 3 : 1)
           if (state.spellShopAll) break
         case 4:
-          spellShopSelectSpells(["Aura of Life", "Aura of Purity", "Banishment", "Death Ward", "Locate Creature", "Staggering Smite"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          spellShopSelectSpells(["Antinecrotic Orb", "Radiation Shielding", "Phaseshift", "Death's Cure", "Search Query Creature", "Syntax Error"], 2500, state.spellShopLevel == 4 ? 3 : 1)
           if (state.spellShopAll) break
         case 3:
-          spellShopSelectSpells(["Aura of Vitality", "Blinding Smite", "Create Food and Water", "Crusader's Mantle", "Daylight", "Dispel Magic", "Elemental Weapon", "Magic Circle", "Remove Curse", "Revivify"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          spellShopSelectSpells(["Bio Bot", "Blinding Graviton", "Recycled Food and Drink", "Light Emitting Diode", "Light Diffuser", "EMP Spike", "Infuser Round", "Force Cage", "Virus Removal", "Revivification Serum"], 1000, state.spellShopLevel == 3 ? 5 : 1)
           if (state.spellShopAll) break
         case 2:
-          spellShopSelectSpells(["Aid", "Find Steed", "Gentle Repose", "Lesser Restoration", "Locate Object", "Magic Weapon", "Prayer of Healing", "Protection from Poison", "Shining Smite", "Warding Bond", "Zone of Truth"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          spellShopSelectSpells(["Health Booster", "Jump Bike", "Death Vaccine", "Antigen", "Search Query Thing", "Weapon Mod", "Program of Healing", "Pop-Up Blocker", "Shiny Hack", "Shield Link", "Truth Serum"], 500, state.spellShopLevel == 2 ? 5 : 1)
           if (state.spellShopAll) break
         case 1:
-          spellShopSelectSpells(["Bless", "Command", "Compelled Duel", "Cure Wounds", "Detect Evil and Good", "Detect Magic", "Detect Poison and Disease", "Divine Favor", "Divine Smite", "Heroism", "Protection from Evil and Good", "Purify Food and Drink", "Searing Smite", "Shield of Faith", "Thunderous Smite", "Wrathful Smite"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          spellShopSelectSpells(["Boson", "Mind Hack", "Cellular Focus", "Organic Transplant", "Motion Tracker", "Circuit Detector", "Geiger Counter", "Technological Superiority", "Atomic Smite", "Liquid Courage", "Heuristic Protection", "Food Sanitizer", "Searing Hack", "Echo Chamber", "Electrical Hack", "Angry Emote"], 250, state.spellShopLevel == 1 ? 5 : 1)
           if (state.spellShopAll) break
           break
       }
@@ -1156,19 +1156,19 @@ function handleSpellShop() {
     case "ranger":
       switch(state.spellShopLevel) {
         case 5:
-          spellShopSelectSpells(["Commune with Nature", "Conjure Volley", "Greater Restoration", "Steel Wind Strike", "Swift Quiver", "Tree Stride"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          spellShopSelectSpells(["Commune with Nature", "Mortar", "Superior Antigen", "Blink Boots", "Quick Reload", "Electrical Wire Transmission"], 5000, state.spellShopLevel == 5 ? 3 : 1)
           if (state.spellShopAll) break
         case 4:
-          spellShopSelectSpells(["Conjure Woodland Beings", "Dominate Beast", "Freedom of Movement", "Grasping Vine", "Locate Creature", "Stoneskin", "Summon Elemental"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          spellShopSelectSpells(["Conjure Helibots", "Drone Backdoor", "Axle Grease", "Grasping Cord", "Search Query Creature", "Kevlar Skin", "Summon Nanoswarm"], 2500, state.spellShopLevel == 4 ? 3 : 1)
           if (state.spellShopAll) break
         case 3:
-          spellShopSelectSpells(["Conjure Animals", "Conjure Barrage", "Daylight", "Dispel Magic", "Elemental Weapon", "Lightning Arrow", "Meld into Stone", "Nondetection", "Plant Growth", "Protection from Energy", "Revivify", "Speak with Plants", "Summon Fey", "Water Breathing", "Water Walk", "Wind Wall"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          spellShopSelectSpells(["Conjure Drones", "Light Artillary", "Light Diffuser", "EMP Spike", "Infuser Round", "Charged Ammunition", "Electronic Form", "Radar Jammer", "Food Replicator", "Ablative Shielding", "Revivification Serum", "Machine Code", "Summon Dimensional", "Respirator", "Hydrophobic Step", "Oxygen Canister"], 1000, state.spellShopLevel == 3 ? 5 : 1)
           if (state.spellShopAll) break
         case 2:
-          spellShopSelectSpells(["Aid", "Animal Messenger", "Barkskin", "Beast Sense", "Cordon of Arrows", "Darkvision", "Enhance Ability", "Find Traps", "Gust of Wind", "Lesser Restoration", "Locate Animals or Plants", "Locate Object", "Magic Weapon", "Pass without Trace", "Protection from Poison", "Silence", "Spike Growth", "Summon Beast"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          spellShopSelectSpells(["Health Booster", "Drone Messenger", "Bulletproof", "Drone Sense", "Bouncing Betty", "Nightvision", "Ability Trainer", "Threat Detector", "Industrial Fan", "Antigen", "Search Query Drone", "Search Query Thing", "Weapon Mod", "Cloaking Field", "Pop-Up Blocker", "Noise Cancelling", "Spike Bumps", "Summon Drone"], 500, state.spellShopLevel == 2 ? 5 : 1)
           if (state.spellShopAll) break
         case 1:
-          spellShopSelectSpells(["Alarm", "Animal Friendship", "Cure Wounds", "Detect Magic", "Detect Poison and Disease", "Ensnaring Strike", "Entangle", "Fog Cloud", "Goodberry", "Hail of Thorns", "Hunter's Mark", "Jump", "Longstrider", "Speak with Animals"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          spellShopSelectSpells(["Proximity Alert", "Drone Affect", "Organic Transplant", "Circuit Detector", "Geiger Counter", "Tripwire", "Sticky Foam", "Fog Generator", "MRE", "Scrap Shower", "Tracker Tag", "Jump Jets", "Hyperdrive", "Speak with Drones"], 250, state.spellShopLevel == 1 ? 5 : 1)
           if (state.spellShopAll) break
           break
       }
@@ -1176,34 +1176,34 @@ function handleSpellShop() {
     case "sorcerer":
       switch(state.spellShopLevel) {
         case 9:
-          spellShopSelectSpells(["Gate", "Meteor Swarm", "Power Word Kill", "Time Stop", "Wish"], 50000)
+          spellShopSelectSpells(["Interdimensional Gate", "Artillery", "Command Prompt Kill", "Chrono Trigger", "AI Prompt"], 50000)
           if (state.spellShopAll) break
         case 8:
-          spellShopSelectSpells(["Demiplane", "Dominate Monster", "Earthquake", "Incendiary Cloud", "Power Word Stun", "Sunburst"], 25000)
+          spellShopSelectSpells(["Dimension Compressor", "Sequencer", "Aftershock", "Air Burst", "Command Prompt Stun", "Radio Blast"], 25000)
           if (state.spellShopAll) break
         case 7:
-          spellShopSelectSpells(["Delayed Blast Fireball", "Etherealness", "Finger of Death", "Fire Storm", "Plane Shift", "Prismatic Spray", "Reverse Gravity", "Teleport"], 20000, state.spellShopLevel == 7 ? 2 : 1)
+          spellShopSelectSpells(["Timebomb", "Dimension Slip", "Syringe of Death", "Heisenberg Principle", "Extradimensional Shift", "Laser Projector", "Inverse Graviton", "Teleporter"], 20000, state.spellShopLevel == 7 ? 2 : 1)
           if (state.spellShopAll) break
         case 6:
-          spellShopSelectSpells(["Arcane Gate", "Chain Lightning", "Circle of Death", "Disintegrate", "Eyebite", "Flesh to Stone", "Globe of Invulnerability", "Mass Suggestion", "Move Earth", "Otiluke's Freezing Sphere", "Sunbeam", "True Seeing"], 10000, state.spellShopLevel == 6 ? 2 : 1)
+          spellShopSelectSpells(["Wormhole", "Static Shock", "Nanite Bomb", "Rust", "Sick Sight", "Medusa Cell", "Force Field", "Mass Telepathic Suggestion", "Metal Working", "Cryonic Sphere", "Fiber Optic Beam", "Thermal Imaging"], 10000, state.spellShopLevel == 6 ? 2 : 1)
           if (state.spellShopAll) break
         case 5:
-          spellShopSelectSpells(["Animate Objects", "Bigby's Hand", "Cloudkill", "Cone of Cold", "Creation", "Dominate Person", "Hold Monster", "Insect Plague", "Seeming", "Synaptic Static", "Telekinesis", "Teleportation Circle", "Wall of Stone"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          spellShopSelectSpells(["Molecular Puppet", "Robotic Rover", "Carnivorous Cloud", "Snow Blaster", "Malleable Steel", "Social Engineering", "Stasis Field", "Drone Plague", "Image Generator", "Neurology", "Magnetic Attraction", "Transporter", "Metal Wall"], 5000, state.spellShopLevel == 5 ? 3 : 1)
           if (state.spellShopAll) break
         case 4:
-          spellShopSelectSpells(["Banishment", "Blight", "Charm Monster", "Confusion", "Dimension Door", "Dominate Beast", "Fire Shield", "Greater Invisibility", "Ice Storm", "Polymorph", "Stoneskin", "Vitriolic Sphere", "Wall of Fire"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          spellShopSelectSpells(["Phaseshift", "Radioactive Decay", "Controller", "Crash Targeting System", "Transporter", "Drone Backdoor", "Heat Shield", "Null Zero Cloak", "Cold Snap", "Nanomorph", "Kevlar Skin", "Anti-Material Round", "Firewall"], 2500, state.spellShopLevel == 4 ? 3 : 1)
           if (state.spellShopAll) break
         case 3:
-          spellShopSelectSpells(["Blink", "Clairvoyance", "Counterspell", "Daylight", "Dispel Magic", "Fear", "Fireball", "Fly", "Gaseous Form", "Haste", "Hypnotic Pattern", "Lightning Bolt", "Major Image", "Protection from Energy", "Sleet Storm", "Slow", "Stinking Cloud", "Tongues", "Vampiric Touch", "Water Breathing", "Water Walk"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          spellShopSelectSpells(["Encode", "Spy Wire", "Counter Hack", "Light Diffuser", "EMP Spike", "Anxiety Wave", "incendiary Rocket", "Anti-Gravity Driver", "Cloud Form", "Stim Pack", "Interrupting Brain Waves", "Tesla Coil", "Hologram", "Ablative Shielding", "Air Conditioner", "Degreaser", "Trash Compacter", "Dual Lingo", "Transfusion", "Respirator", "Hydrophobic Step"], 1000, state.spellShopLevel == 3 ? 5 : 1)
           if (state.spellShopAll) break
         case 2:
-          spellShopSelectSpells(["Alter Self", "Arcane Vigor", "Blindness/Deafness", "Blur", "Cloud of Daggers", "Crown of Madness", "Darkness", "Darkvision", "Detect Thoughts", "Dragon's Breath", "Enhance Ability", "Enlarge/Reduce", "Flame Blade", "Flaming Sphere", "Gust of Wind", "Hold Person", "Invisibility", "Knock", "Levitate", "Magic Weapon", "Mind Spike", "Mirror Image", "Misty Step", "Phantasmal Force", "Scorching Ray", "See Invisibility", "Shatter", "Spider Climb", "Suggestion", "Web"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          spellShopSelectSpells(["Augmentation", "Health Stim", "Accute Miopia", "White Noise Generator", "Focal Aperture", "Sharps", "Mind Slave", "Vertiblack Cloud", "Nightvision", "Mind Scanner", "Flamethrower", "Ability Trainer", "Growth Hormone", "Miniturization Ray", "Arc Welder", "Flame Graviton", "Industrial Fan", "Paralysis Mite", "Cloak", "Crack Code", "Antigravity Puck", "Weapon Mod", "Macro Virus", "Optical Illusion", "Electric Step", "Cognitive Implant", "Solar Panel", "Night Vision", "Hadron Collider", "Electro-Adhesion", "Inception", "Sticky Bomb"], 500, state.spellShopLevel == 2 ? 5 : 1)
           if (state.spellShopAll) break
         case 1:
-          spellShopSelectSpells(["Burning Hands", "Charm Person", "Chromatic Orb", "Color Spray", "Comprehend Languages", "Detect Magic", "Disguise Self", "Expeditious Retreat", "False Life", "Feather Fall", "Fog Cloud", "Grease", "Ice Knife", "Jump", "Mage Armor", "Magic Missile", "Ray of Sickness", "Shield", "Silent Image", "Sleep", "Thunderwave", "Witch Bolt"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          spellShopSelectSpells(["Thermite Spray", "Brain Backdoor", "Elemental Ball", "Cone of Lights", "Universal Translator", "Circuit Detector", "Holographic Mask", "Hyper Motivator", "Pain Inhibitor", "Retro Rockets", "Fog Generator", "Motor Oil", "Freeze Grenade", "Jump Jets", "Power Armor", "Seeker Missiles", "Dirty Bomb", "Malware Blocker", "Muted Graphic", "Sleep Pill", "Concussive Round", "Power Coupling"], 250, state.spellShopLevel == 1 ? 5 : 1)
           if (state.spellShopAll) break
         case 0:
-          spellShopSelectSpells(["Acid Splash", "Blade Ward", "Chill Touch", "Dancing Lights", "Elementalism", "Fire Bolt", "Friends", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion", "Poison Spray", "Prestidigitation", "Ray of Frost", "Shocking Grasp", "Sorcerous Burst", "Thunderclap", "True Strike"], 50, state.spellShopLevel == 0 ? 3 : 1)
+          spellShopSelectSpells(["Biotic Acid", "Danger Suit", "Nanonecrotic Touch", "Glow Orb", "Periodic Elements", "incendiary Sabot Round", "Friendship Protocol", "Bioluminescent Gel", "Spider Bot", "Micro Mend", "Text Message", "Minor Hologram", "Chemical Spray", "Format", "Cryo Blast", "Short Circuit", "Atomic Energy", "Concussive Round", "Auto Aim"], 50, state.spellShopLevel == 0 ? 3 : 1)
           if (state.spellShopAll) break
           break
       }
@@ -1211,33 +1211,33 @@ function handleSpellShop() {
     case "warlock":
       switch(state.spellShopLevel) {
         case 9:
-          spellShopSelectSpells(["Astral Projection", "Dominate Person", "Foresight", "Gate", "Geas", "Greater Restoration", "Imprisonment", "Insect Plague", "Modify Memory", "Power Word Kill", "Seeming", "Summon Celestial", "Telekinesis", "True Polymorph", "Weird"], 50000)
+          spellShopSelectSpells(["Digital Self Image", "Social Engineering", "Precog", "Interdimensional Gate", "Mind Control Serum", "Superior Antigen", "Force Shackles", "Drone Plague", "Reformat Memory", "Command Prompt Kill", "Image Generator", "Summon Alien", "Magnetic Attraction", "True Nanomorph", "Censorship"], 50000)
         case 8:
-          spellShopSelectSpells(["Befuddlement", "Demiplane", "Dominate Monster", "Glibness", "Power Word Stun"], 25000)
+          spellShopSelectSpells(["Brain Stupor", "Dimension Compressor", "Sequencer", "Polygraph Mask", "Command Prompt Stun"], 25000)
           if (state.spellShopAll) break
         case 7:
-          spellShopSelectSpells(["Dominate Beast", "Etherealness", "Finger of Death", "Fire Shield", "Forcecage", "Greater Invisibility", "Guardian of Faith", "Plane Shift", "Wall of Fire"], 20000, state.spellShopLevel == 7 ? 2 : 1)
+          spellShopSelectSpells(["Drone Backdoor", "Dimension Slip", "Syringe of Death", "Heat Shield", "Gravity Box", "Null Zero Cloak", "Sentry Turret", "Extradimensional Shift", "Firewall"], 20000, state.spellShopLevel == 7 ? 2 : 1)
           if (state.spellShopAll) break
         case 6:
-          spellShopSelectSpells(["Arcane Gate", "Circle of Death", "Create Undead", "Eyebite", "Summon Fiend", "Tasha's Bubbling Cauldron", "True Seeing"], 10000, state.spellShopLevel == 6 ? 2 : 1)
+          spellShopSelectSpells(["Wormhole", "Nanite Bomb", "Necro Soldier", "Sick Sight", "Summon Daemon Process", "Replicator", "Thermal Imaging"], 10000, state.spellShopLevel == 6 ? 2 : 1)
           if (state.spellShopAll) break
         case 5:
-          spellShopSelectSpells(["Blink", "Clairvoyance", "Confusion", "Contact Other Plane", "Daylight", "Dream", "Fireball", "Hold Monster", "Hunger of Hadar", "Jallarzi's Storm of Radiance", "Mislead", "Planar Binding", "Plant Growth", "Revivify", "Scrying", "Stinking Cloud", "Summon Aberration", "Synaptic Static", "Teleportation Circle"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          spellShopSelectSpells(["Encode", "Spy Wire", "Crash Targeting System", "Virtual Deity", "Light Diffuser", "Night Terror", "incendiary Rocket", "Stasis Field", "Absolute Zero", "Weather Wizard", "Decoy Projection", "Extraterrestrial Bond", "Food Replicator", "Revivification Serum", "Hack Webcam", "Trash Compacter", "Summon Gel Construct", "Neurology", "Transporter"], 5000, state.spellShopLevel == 5 ? 3 : 1)
           if (state.spellShopAll) break
         case 4:
-          spellShopSelectSpells(["Banishment", "Blight", "Charm Monster", "Dimension Door", "Hallucinatory Terrain", "Summon Aberration"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          spellShopSelectSpells(["Phaseshift", "Radioactive Decay", "Controller", "Transporter", "Holographic Terrain", "Summon Gel Construct"], 2500, state.spellShopLevel == 4 ? 3 : 1)
           if (state.spellShopAll) break
         case 3:
-          spellShopSelectSpells(["Counterspell", "Dispel Magic", "Fear", "Fly", "Gaseous Form", "Hunger of Hadar", "Hypnotic Pattern", "Magic Circle", "Major Image", "Remove Curse", "Summon Fey", "Summon Undead", "Tongues", "Vampiric Touch"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          spellShopSelectSpells(["Counter Hack", "EMP Spike", "Anxiety Wave", "Anti-Gravity Driver", "Cloud Form", "Absolute Zero", "Interrupting Brain Waves", "Force Cage", "Hologram", "Virus Removal", "Summon Dimensional", "Summon Necro", "Dual Lingo", "Transfusion"], 1000, state.spellShopLevel == 3 ? 5 : 1)
           if (state.spellShopAll) break
         case 2:
-          spellShopSelectSpells(["Cloud of Daggers", "Crown of Madness", "Darkness", "Enthrall", "Hold Person", "Invisibility", "Mind Spike", "Mirror Image", "Misty Step", "Ray of Enfeeblement", "Spider Climb", "Suggestion"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          spellShopSelectSpells(["Sharps", "Mind Slave", "Vertiblack Cloud", "Data Wipe", "Paralysis Mite", "Cloak", "Macro Virus", "Optical Illusion", "Electric Step", "Ray of Arthritis", "Electro-Adhesion", "Inception"], 500, state.spellShopLevel == 2 ? 5 : 1)
           if (state.spellShopAll) break
         case 1:
-          spellShopSelectSpells(["Armor of Agathys", "Arms of Hadar", "Bane", "Charm Person", "Comprehend Languages", "Detect Magic", "Expeditious Retreat", "Hellish Rebuke", "Hex", "Illusory Script", "Protection from Evil and Good", "Speak with Animals", "Tasha's Hideous Laughter", "Unseen Servant", "Witch Bolt"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          spellShopSelectSpells(["Coolant Armor", "Robotic Tentacles", "Trip Hammer", "Brain Backdoor", "Universal Translator", "Circuit Detector", "Hyper Motivator", "Counter Strike", "Worm", "Enciphered Text", "Heuristic Protection", "Speak with Drones", "Meme", "Nano Servants", "Power Coupling"], 250, state.spellShopLevel == 1 ? 5 : 1)
           if (state.spellShopAll) break
         case 0:
-          spellShopSelectSpells(["Blade Ward", "Chill Touch", "Eldritch Blast", "Friends", "Mage Hand", "Mind Sliver", "Minor Illusion", "Poison Spray"], 50, state.spellShopLevel == 0 ? 3 : 1)
+          spellShopSelectSpells(["Danger Suit", "Nanonecrotic Touch", "Energy Beam", "Friendship Protocol", "Spider Bot", "Compromise System", "Minor Hologram", "Chemical Spray"], 50, state.spellShopLevel == 0 ? 3 : 1)
           if (state.spellShopAll) break
           break
       }
@@ -1245,34 +1245,34 @@ function handleSpellShop() {
     case "wizard":
       switch(state.spellShopLevel) {
         case 9:
-          spellShopSelectSpells(["Astral Projection", "Foresight", "Gate", "Imprisonment", "Meteor Swarm", "Power Word Kill", "Prismatic Wall", "Shapechange", "Time Stop", "True Polymorph", "Weird", "Wish"], 50000)
+          spellShopSelectSpells(["Digital Self Image", "Precog", "Interdimensional Gate", "Force Shackles", "Artillery", "Command Prompt Kill", "Laser Wall", "Gene Editor", "Chrono Trigger", "True Nanomorph", "Censorship", "AI Prompt"], 50000)
           if (state.spellShopAll) break
         case 8:
-          spellShopSelectSpells(["Antimagic Field", "Antipathy/Sympathy", "Befuddlement", "Clone", "Control Weather", "Demiplane", "Dominate Monster", "Incendiary Cloud", "Maze", "Mind Blank", "Power Word Stun", "Sunburst", "Telepathy"], 25000)
+          spellShopSelectSpells(["EMP Generator", "Psycho Fear", "Catfish", "Brain Stupor", "Grow Clone", "Climate Control", "Dimension Compressor", "Sequencer", "Air Burst", "Infinite Loop", "Harden Security", "Command Prompt Stun", "Radio Blast", "Transponder"], 25000)
           if (state.spellShopAll) break
         case 7:
-          spellShopSelectSpells(["Delayed Blast Fireball", "Etherealness", "Finger of Death", "Forcecage", "Mirage Arcane", "Mordenkainen's Magnificent Mansion", "Mordenkainen's Sword", "Plane Shift", "Prismatic Spray", "Project Image", "Reverse Gravity", "Sequester", "Simulacrum", "Symbol", "Teleport"], 20000, state.spellShopLevel == 7 ? 2 : 1)
+          spellShopSelectSpells(["Timebomb", "Dimension Slip", "Syringe of Death", "Gravity Box", "Holodeck", "Digital Palace", "Sword Construct", "Extradimensional Shift", "Laser Projector", "Clone Image", "Inverse Graviton", "Time Shift", "Mecha Maker", "Marker", "Teleporter"], 20000, state.spellShopLevel == 7 ? 2 : 1)
           if (state.spellShopAll) break
         case 6:
-          spellShopSelectSpells(["Arcane Gate", "Chain Lightning", "Circle of Death", "Contingency", "Create Undead", "Disintegrate", "Drawmij's Instant Summons", "Eyebite", "Flesh to Stone", "Globe of Invulnerability", "Guards and Wards", "Magic Jar", "Mass Suggestion", "Move Earth", "Otiluke's Freezing Sphere", "Otto's Irresistible Dance", "Programmed Illusion", "Summon Fiend", "Sunbeam", "Tasha's Bubbling Cauldron", "True Seeing", "Wall of Ice"], 10000, state.spellShopLevel == 6 ? 2 : 1)
+          spellShopSelectSpells(["Wormhole", "Static Shock", "Nanite Bomb", "Boolean Trigger", "Necro Soldier", "Rust", "Item Warp", "Sick Sight", "Medusa Cell", "Force Field", "Defense System", "Body Jack", "Mass Telepathic Suggestion", "Metal Working", "Cryonic Sphere", "Upload Hysteria", "Boolean Hologram", "Summon Daemon Process", "Fiber Optic Beam", "Replicator", "Thermal Imaging", "Cold Fusion Wall"], 10000, state.spellShopLevel == 6 ? 2 : 1)
           if (state.spellShopAll) break
         case 5:
-          spellShopSelectSpells(["Animate Objects", "Bigby's Hand", "Circle of Power", "Cloudkill", "Cone of Cold", "Conjure Elemental", "Contact Other Plane", "Creation", "Dominate Person", "Dream", "Geas", "Hold Monster", "Jallarzi's Storm of Radiance", "Legend Lore", "Mislead", "Modify Memory", "Passwall", "Planar Binding", "Rary's Telepathic Bond", "Scrying", "Seeming", "Steel Wind Strike", "Summon Dragon", "Synaptic Static", "Telekinesis", "Teleportation Circle", "Wall of Force", "Wall of Stone", "Yolande's Regal Presence"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          spellShopSelectSpells(["Molecular Puppet", "Robotic Rover", "Defense Thumper", "Carnivorous Cloud", "Snow Blaster", "Elemental Matrix", "Virtual Deity", "Malleable Steel", "Social Engineering", "Night Terror", "Mind Control Serum", "Stasis Field", "Weather Wizard", "Data Archives", "Decoy Projection", "Reformat Memory", "Drill", "Extraterrestrial Bond", "Wireless Communication", "Hack Webcam", "Image Generator", "Blink Boots", "Summon Cyborg", "Neurology", "Magnetic Attraction", "Transporter", "Code Blocks", "Metal Wall", "Psycho Emitter"], 5000, state.spellShopLevel == 5 ? 3 : 1)
           if (state.spellShopAll) break
         case 4:
-          spellShopSelectSpells(["Arcane Eye", "Banishment", "Blight", "Charm Monster", "Confusion", "Conjure Minor Elementals", "Control Water", "Dimension Door", "Divination", "Evard's Black Tentacles", "Fabricate", "Fire Shield", "Greater Invisibility", "Hallucinatory Terrain", "Ice Storm", "Leomund's Secret Chest", "Locate Creature", "Mordenkainen's Faithful Hound", "Mordenkainen's Private Sanctum", "Otiluke's Resilient Sphere", "Phantasmal Killer", "Polymorph", "Stoneskin", "Summon Aberration", "Summon Construct", "Summon Elemental", "Vitriolic Sphere", "Wall of Fire"], 2500, state.spellShopLevel == 4 ? 3 : 1)
+          spellShopSelectSpells(["Stealth Drone", "Phaseshift", "Radioactive Decay", "Controller", "Crash Targeting System", "Tiny Robots", "Hydraulic Dam", "Transporter", "Hint Model", "Grey Goo", "Printer", "Heat Shield", "Null Zero Cloak", "Holographic Terrain", "Cold Snap", "Flat Space Compartment", "Search Query Creature", "Robo Dog", "Hermetic Seal", "Containment Field", "Cyber Assassin", "Nanomorph", "Kevlar Skin", "Summon Gel Construct", "Summon Robot", "Summon Nanoswarm", "Anti-Material Round", "Firewall"], 2500, state.spellShopLevel == 4 ? 3 : 1)
           if (state.spellShopAll) break
         case 3:
-          spellShopSelectSpells(["Animate Dead", "Bestow Curse", "Blink", "Clairvoyance", "Counterspell", "Dispel Magic", "Fear", "Feign Death", "Fireball", "Fly", "Gaseous Form", "Glyph of Warding", "Haste", "Hypnotic Pattern", "Leomund's Tiny Hut", "Lightning Bolt", "Magic Circle", "Major Image", "Nondetection", "Phantom Steed", "Protection from Energy", "Remove Curse", "Sending", "Sleet Storm", "Slow", "Speak with Dead", "Stinking Cloud", "Summon Fey", "Summon Undead", "Tongues", "Vampiric Touch", "Water Breathing"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          spellShopSelectSpells(["Nanonecrotic Command", "Borg Breaker", "Encode", "Spy Wire", "Counter Hack", "EMP Spike", "Anxiety Wave", "Cryosleep", "incendiary Rocket", "Anti-Gravity Driver", "Cloud Form", "Proximity Mine", "Stim Pack", "Interrupting Brain Waves", "Portable Shelter", "Tesla Coil", "Force Cage", "Hologram", "Radar Jammer", "Light Cycle", "Ablative Shielding", "Virus Removal", "Electronic Mail", "Air Conditioner", "Degreaser", "Neuromancer", "Trash Compacter", "Summon Dimensional", "Summon Necro", "Dual Lingo", "Transfusion", "Respirator"], 1000, state.spellShopLevel == 3 ? 5 : 1)
           if (state.spellShopAll) break
         case 2:
-          spellShopSelectSpells(["Alter Self", "Arcane Lock", "Arcane Vigor", "Augury", "Blindness/Deafness", "Blur", "Cloud of Daggers", "Continual Flame", "Crown of Madness", "Darkness", "Darkvision", "Detect Thoughts", "Dragon's Breath", "Enhance Ability", "Enlarge/Reduce", "Flaming Sphere", "Gentle Repose", "Gust of Wind", "Hold Person", "Invisibility", "Knock", "Levitate", "Locate Object", "Magic Mouth", "Magic Weapon", "Melf's Acid Arrow", "Mind Spike", "Mirror Image", "Misty Step", "Nystul's Magic Aura", "Phantasmal Force", "Ray of Enfeeblement", "Rope Trick", "Scorching Ray", "See Invisibility", "Shatter", "Spider Climb", "Suggestion", "Web"], 500, state.spellShopLevel == 2 ? 5 : 1)
+          spellShopSelectSpells(["Augmentation", "Cryptographic Lock", "Health Stim", "Simulation", "Accute Miopia", "White Noise Generator", "Focal Aperture", "Sharps", "Laser Light", "Mind Slave", "Vertiblack Cloud", "Nightvision", "Mind Scanner", "Flamethrower", "Ability Trainer", "Growth Hormone", "Miniturization Ray", "Flame Graviton", "Death Vaccine", "Industrial Fan", "Paralysis Mite", "Cloak", "Crack Code", "Antigravity Puck", "Search Query Thing", "Recording", "Weapon Mod", "Acid Shell", "Macro Virus", "Optical Illusion", "Electric Step", "Siphon Filter", "Cognitive Implant", "Ray of Arthritis", "Chain Link", "Solar Panel", "Night Vision", "Hadron Collider", "Electro-Adhesion", "Inception", "Sticky Bomb"], 500, state.spellShopLevel == 2 ? 5 : 1)
           if (state.spellShopAll) break
         case 1:
-          spellShopSelectSpells(["Alarm", "Burning Hands", "Charm Person", "Chromatic Orb", "Color Spray", "Comprehend Languages", "Detect Magic", "Disguise Self", "Expeditious Retreat", "False Life", "Feather Fall", "Find Familiar", "Fog Cloud", "Grease", "Ice Knife","Identify", "Illusory Script", "Jump", "Longstrider", "Mage Armor", "Magic Missile", "Protection from Evil and Good", "Ray of Sickness", "Shield", "Silent Image", "Sleep", "Tasha's Hideous Laughter", "Tenser's Floating Disk", "Thunderwave", "Unseen Servant", "Witch Bolt"], 250, state.spellShopLevel == 1 ? 5 : 1)
+          spellShopSelectSpells(["Proximity Alert", "Thermite Spray", "Brain Backdoor", "Elemental Ball", "Cone of Lights", "Universal Translator", "Circuit Detector", "Holographic Mask", "Hyper Motivator", "Pain Inhibitor", "Retro Rockets", "Find Robot Companion", "Fog Generator", "Motor Oil", "Freeze Grenade", "Analyze", "Enciphered Text", "Jump Jets", "Hyperdrive", "Power Armor", "Seeker Missiles", "Heuristic Protection", "Dirty Bomb", "Malware Blocker", "Muted Graphic", "Sleep Pill", "Meme", "Hover Board", "Concussive Round", "Nano Servants", "Power Coupling"], 250, state.spellShopLevel == 1 ? 5 : 1)
           if (state.spellShopAll) break
         case 0:
-          spellShopSelectSpells(["Acid Splash", "Blade Ward", "Chill Touch", "Dancing Lights", "Elementalism", "Fire Bolt", "Friends", "Light", "Mage Hand", "Mending", "Message", "Mind Sliver", "Minor Illusion", "Poison Spray", "Prestidigitation", "Ray of Frost", "Shocking Grasp", "Thunderclap", "Toll the Dead", "True Strike"], 50, state.spellShopLevel == 0 ? 3 : 1)
+          spellShopSelectSpells(["Biotic Acid", "Danger Suit", "Nanonecrotic Touch", "Glow Orb", "Periodic Elements", "incendiary Sabot Round", "Friendship Protocol", "Bioluminescent Gel", "Spider Bot", "Micro Mend", "Text Message", "Compromise System", "Minor Hologram", "Chemical Spray", "Format", "Cryo Blast", "Short Circuit", "Concussive Round", "System Beep", "Auto Aim"], 50, state.spellShopLevel == 0 ? 3 : 1)
           if (state.spellShopAll) break
           break
       }
