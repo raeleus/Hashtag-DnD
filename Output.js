@@ -1033,7 +1033,7 @@ function handleSpellShop() {
   if (state.spellShopDeals == null || state.spellShopClearDeals) state.spellShopDeals = []
 
   if (findSpellShopDeals(state.spellShopClassName, state.spellShopLevel).length == 0) switch(state.spellShopClassName) {
-    case "bard":
+    case "Officer":
       switch(state.spellShopLevel) {
         case 9:
           spellShopSelectSpells(["Precog", "Command Prompt Heal", "Command Prompt Kill", "Laser Wall", "True Nanomorph"], 50000)
@@ -1064,7 +1064,7 @@ function handleSpellShop() {
           spellShopSelectSpells(["Danger Suit", "Glow Orb", "Friendship Protocol", "Bioluminescent Gel", "Spider Bot", "Micro Mend", "Text Message", "Minor Hologram", "Format", "EM Shot", "Concussive Round", "Auto Aim", "Laugh Track"], 50, state.spellShopLevel == 0 ? 3 : 1)
       }
       break
-    case "cleric":
+    case "Medic":
       switch(state.spellShopLevel) {
         case 9:
           spellShopSelectSpells(["Digital Self Image", "Interdimensional Gate", "Clinical Aid", "Command Prompt Heal", "Cellular Reconstruction"], 50000)
@@ -1098,7 +1098,7 @@ function handleSpellShop() {
           break
       }
       break
-    case "druid":
+    case "Scientist":
       switch(state.spellShopLevel) {
         case 9:
           spellShopSelectSpells(["Precog", "Gene Editor", "Static Storm", "Cellular Reconstruction"], 50000)
@@ -1133,7 +1133,7 @@ function handleSpellShop() {
           break
       }
       break
-    case "paladin":
+    case "Marine":
       switch(state.spellShopLevel) {
         case 5:
           spellShopSelectSpells(["Banishing Graviton", "Defense Thumper", "Seismic Wave", "EMP Blast", "Mind Control Serum", "Superior Antigen", "Undo Death", "Summon Alien"], 5000, state.spellShopLevel == 5 ? 3 : 1)
@@ -1153,7 +1153,7 @@ function handleSpellShop() {
           break
       }
       break
-    case "ranger":
+    case "Sniper":
       switch(state.spellShopLevel) {
         case 5:
           spellShopSelectSpells(["Commune with Nature", "Mortar", "Superior Antigen", "Blink Boots", "Quick Reload", "Electrical Wire Transmission"], 5000, state.spellShopLevel == 5 ? 3 : 1)
@@ -1173,7 +1173,7 @@ function handleSpellShop() {
           break
       }
       break
-    case "sorcerer":
+    case "Mutate":
       switch(state.spellShopLevel) {
         case 9:
           spellShopSelectSpells(["Interdimensional Gate", "Artillery", "Command Prompt Kill", "Chrono Trigger", "AI Prompt"], 50000)
@@ -1194,7 +1194,7 @@ function handleSpellShop() {
           spellShopSelectSpells(["Phaseshift", "Radioactive Decay", "Controller", "Crash Targeting System", "Transporter", "Drone Backdoor", "Heat Shield", "Null Zero Cloak", "Cold Snap", "Nanomorph", "Kevlar Skin", "Anti-Material Round", "Firewall"], 2500, state.spellShopLevel == 4 ? 3 : 1)
           if (state.spellShopAll) break
         case 3:
-          spellShopSelectSpells(["Encode", "Spy Wire", "Counter Hack", "Light Diffuser", "EMP Spike", "Anxiety Wave", "incendiary Rocket", "Anti-Gravity Driver", "Cloud Form", "Stim Pack", "Interrupting Brain Waves", "Tesla Coil", "Hologram", "Ablative Shielding", "Air Conditioner", "Degreaser", "Trash Compacter", "Dual Lingo", "Transfusion", "Respirator", "Hydrophobic Step"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          spellShopSelectSpells(["Encode", "Spy Wire", "Counter Hack", "Light Diffuser", "EMP Spike", "Anxiety Wave", "Incendiary Rocket", "Anti-Gravity Driver", "Cloud Form", "Stim Pack", "Interrupting Brain Waves", "Tesla Coil", "Hologram", "Ablative Shielding", "Air Conditioner", "Degreaser", "Trash Compacter", "Dual Lingo", "Transfusion", "Respirator", "Hydrophobic Step"], 1000, state.spellShopLevel == 3 ? 5 : 1)
           if (state.spellShopAll) break
         case 2:
           spellShopSelectSpells(["Augmentation", "Health Stim", "Accute Miopia", "White Noise Generator", "Focal Aperture", "Sharps", "Mind Slave", "Vertiblack Cloud", "Nightvision", "Mind Scanner", "Flamethrower", "Ability Trainer", "Growth Hormone", "Miniturization Ray", "Arc Welder", "Flame Graviton", "Industrial Fan", "Paralysis Mite", "Cloak", "Crack Code", "Antigravity Puck", "Weapon Mod", "Macro Virus", "Optical Illusion", "Electric Step", "Cognitive Implant", "Solar Panel", "Night Vision", "Hadron Collider", "Electro-Adhesion", "Inception", "Sticky Bomb"], 500, state.spellShopLevel == 2 ? 5 : 1)
@@ -1203,12 +1203,12 @@ function handleSpellShop() {
           spellShopSelectSpells(["Thermite Spray", "Brain Backdoor", "Elemental Ball", "Cone of Lights", "Universal Translator", "Circuit Detector", "Holographic Mask", "Hyper Motivator", "Pain Inhibitor", "Retro Rockets", "Fog Generator", "Motor Oil", "Freeze Grenade", "Jump Jets", "Power Armor", "Seeker Missiles", "Dirty Bomb", "Malware Blocker", "Muted Graphic", "Sleep Pill", "Concussive Round", "Power Coupling"], 250, state.spellShopLevel == 1 ? 5 : 1)
           if (state.spellShopAll) break
         case 0:
-          spellShopSelectSpells(["Biotic Acid", "Danger Suit", "Nanonecrotic Touch", "Glow Orb", "Periodic Elements", "incendiary Sabot Round", "Friendship Protocol", "Bioluminescent Gel", "Spider Bot", "Micro Mend", "Text Message", "Minor Hologram", "Chemical Spray", "Format", "Cryo Blast", "Short Circuit", "Atomic Energy", "Concussive Round", "Auto Aim"], 50, state.spellShopLevel == 0 ? 3 : 1)
+          spellShopSelectSpells(["Biotic Acid", "Danger Suit", "Nanonecrotic Touch", "Glow Orb", "Periodic Elements", "Incendiary Sabot Round", "Friendship Protocol", "Bioluminescent Gel", "Spider Bot", "Micro Mend", "Text Message", "Minor Hologram", "Chemical Spray", "Format", "Cryo Blast", "Short Circuit", "Atomic Energy", "Concussive Round", "Auto Aim"], 50, state.spellShopLevel == 0 ? 3 : 1)
           if (state.spellShopAll) break
           break
       }
       break
-    case "warlock":
+    case "Robot":
       switch(state.spellShopLevel) {
         case 9:
           spellShopSelectSpells(["Digital Self Image", "Social Engineering", "Precog", "Interdimensional Gate", "Mind Control Serum", "Superior Antigen", "Force Shackles", "Drone Plague", "Reformat Memory", "Command Prompt Kill", "Image Generator", "Summon Alien", "Magnetic Attraction", "True Nanomorph", "Censorship"], 50000)
@@ -1222,7 +1222,7 @@ function handleSpellShop() {
           spellShopSelectSpells(["Wormhole", "Nanite Bomb", "Necro Soldier", "Sick Sight", "Summon Daemon Process", "Replicator", "Thermal Imaging"], 10000, state.spellShopLevel == 6 ? 2 : 1)
           if (state.spellShopAll) break
         case 5:
-          spellShopSelectSpells(["Encode", "Spy Wire", "Crash Targeting System", "Virtual Deity", "Light Diffuser", "Night Terror", "incendiary Rocket", "Stasis Field", "Absolute Zero", "Weather Wizard", "Decoy Projection", "Extraterrestrial Bond", "Food Replicator", "Revivification Serum", "Hack Webcam", "Trash Compacter", "Summon Gel Construct", "Neurology", "Transporter"], 5000, state.spellShopLevel == 5 ? 3 : 1)
+          spellShopSelectSpells(["Encode", "Spy Wire", "Crash Targeting System", "Virtual Deity", "Light Diffuser", "Night Terror", "Incendiary Rocket", "Stasis Field", "Absolute Zero", "Weather Wizard", "Decoy Projection", "Extraterrestrial Bond", "Food Replicator", "Revivification Serum", "Hack Webcam", "Trash Compacter", "Summon Gel Construct", "Neurology", "Transporter"], 5000, state.spellShopLevel == 5 ? 3 : 1)
           if (state.spellShopAll) break
         case 4:
           spellShopSelectSpells(["Phaseshift", "Radioactive Decay", "Controller", "Transporter", "Holographic Terrain", "Summon Gel Construct"], 2500, state.spellShopLevel == 4 ? 3 : 1)
@@ -1242,7 +1242,7 @@ function handleSpellShop() {
           break
       }
       break
-    case "wizard":
+    case "Hacker":
       switch(state.spellShopLevel) {
         case 9:
           spellShopSelectSpells(["Digital Self Image", "Precog", "Interdimensional Gate", "Force Shackles", "Artillery", "Command Prompt Kill", "Laser Wall", "Gene Editor", "Chrono Trigger", "True Nanomorph", "Censorship", "AI Prompt"], 50000)
@@ -1263,7 +1263,7 @@ function handleSpellShop() {
           spellShopSelectSpells(["Stealth Drone", "Phaseshift", "Radioactive Decay", "Controller", "Crash Targeting System", "Tiny Robots", "Hydraulic Dam", "Transporter", "Hint Model", "Grey Goo", "Printer", "Heat Shield", "Null Zero Cloak", "Holographic Terrain", "Cold Snap", "Flat Space Compartment", "Search Query Creature", "Robo Dog", "Hermetic Seal", "Containment Field", "Cyber Assassin", "Nanomorph", "Kevlar Skin", "Summon Gel Construct", "Summon Robot", "Summon Nanoswarm", "Anti-Material Round", "Firewall"], 2500, state.spellShopLevel == 4 ? 3 : 1)
           if (state.spellShopAll) break
         case 3:
-          spellShopSelectSpells(["Nanonecrotic Command", "Borg Breaker", "Encode", "Spy Wire", "Counter Hack", "EMP Spike", "Anxiety Wave", "Cryosleep", "incendiary Rocket", "Anti-Gravity Driver", "Cloud Form", "Proximity Mine", "Stim Pack", "Interrupting Brain Waves", "Portable Shelter", "Tesla Coil", "Force Cage", "Hologram", "Radar Jammer", "Light Cycle", "Ablative Shielding", "Virus Removal", "Electronic Mail", "Air Conditioner", "Degreaser", "Neuromancer", "Trash Compacter", "Summon Dimensional", "Summon Necro", "Dual Lingo", "Transfusion", "Respirator"], 1000, state.spellShopLevel == 3 ? 5 : 1)
+          spellShopSelectSpells(["Nanonecrotic Command", "Borg Breaker", "Encode", "Spy Wire", "Counter Hack", "EMP Spike", "Anxiety Wave", "Cryosleep", "Incendiary Rocket", "Anti-Gravity Driver", "Cloud Form", "Proximity Mine", "Stim Pack", "Interrupting Brain Waves", "Portable Shelter", "Tesla Coil", "Force Cage", "Hologram", "Radar Jammer", "Light Cycle", "Ablative Shielding", "Virus Removal", "Electronic Mail", "Air Conditioner", "Degreaser", "Neuromancer", "Trash Compacter", "Summon Dimensional", "Summon Necro", "Dual Lingo", "Transfusion", "Respirator"], 1000, state.spellShopLevel == 3 ? 5 : 1)
           if (state.spellShopAll) break
         case 2:
           spellShopSelectSpells(["Augmentation", "Cryptographic Lock", "Health Stim", "Simulation", "Accute Miopia", "White Noise Generator", "Focal Aperture", "Sharps", "Laser Light", "Mind Slave", "Vertiblack Cloud", "Nightvision", "Mind Scanner", "Flamethrower", "Ability Trainer", "Growth Hormone", "Miniturization Ray", "Flame Graviton", "Death Vaccine", "Industrial Fan", "Paralysis Mite", "Cloak", "Crack Code", "Antigravity Puck", "Search Query Thing", "Recording", "Weapon Mod", "Acid Shell", "Macro Virus", "Optical Illusion", "Electric Step", "Siphon Filter", "Cognitive Implant", "Ray of Arthritis", "Chain Link", "Solar Panel", "Night Vision", "Hadron Collider", "Electro-Adhesion", "Inception", "Sticky Bomb"], 500, state.spellShopLevel == 2 ? 5 : 1)
@@ -1272,7 +1272,7 @@ function handleSpellShop() {
           spellShopSelectSpells(["Proximity Alert", "Thermite Spray", "Brain Backdoor", "Elemental Ball", "Cone of Lights", "Universal Translator", "Circuit Detector", "Holographic Mask", "Hyper Motivator", "Pain Inhibitor", "Retro Rockets", "Find Robot Companion", "Fog Generator", "Motor Oil", "Freeze Grenade", "Analyze", "Enciphered Text", "Jump Jets", "Hyperdrive", "Power Armor", "Seeker Missiles", "Heuristic Protection", "Dirty Bomb", "Malware Blocker", "Muted Graphic", "Sleep Pill", "Meme", "Hover Board", "Concussive Round", "Nano Servants", "Power Coupling"], 250, state.spellShopLevel == 1 ? 5 : 1)
           if (state.spellShopAll) break
         case 0:
-          spellShopSelectSpells(["Biotic Acid", "Danger Suit", "Nanonecrotic Touch", "Glow Orb", "Periodic Elements", "incendiary Sabot Round", "Friendship Protocol", "Bioluminescent Gel", "Spider Bot", "Micro Mend", "Text Message", "Compromise System", "Minor Hologram", "Chemical Spray", "Format", "Cryo Blast", "Short Circuit", "Concussive Round", "System Beep", "Auto Aim"], 50, state.spellShopLevel == 0 ? 3 : 1)
+          spellShopSelectSpells(["Biotic Acid", "Danger Suit", "Nanonecrotic Touch", "Glow Orb", "Periodic Elements", "Incendiary Sabot Round", "Friendship Protocol", "Bioluminescent Gel", "Spider Bot", "Micro Mend", "Text Message", "Compromise System", "Minor Hologram", "Chemical Spray", "Format", "Cryo Blast", "Short Circuit", "Concussive Round", "System Beep", "Auto Aim"], 50, state.spellShopLevel == 0 ? 3 : 1)
           if (state.spellShopAll) break
           break
       }

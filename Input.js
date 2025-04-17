@@ -429,31 +429,31 @@ function handleCreateStep(text) {
 
         switch (parseInt(text)) {
           case 1:
-            state.tempCharacter.className = "Fighter"
+            state.tempCharacter.className = "Soldier"
             state.tempCharacter.stats = [{name: "Strength", value: 16}, {name: "Dexterity", value: 9}, {name: "Constitution", value: 15}, {name: "Intelligence", value: 11}, {name: "Wisdom", value: 13}, {name: "Charisma", value: 14}]
-            state.tempCharacter.inventory.push({name: "Greatsword", quantity: 1}, {name: "Javelin", quantity: 2})
+            state.tempCharacter.inventory.push({name: "Battle Rifle", quantity: 1}, {name: "Pistol", quantity: 1}, {name: "Mag", quantity: 6})
             state.tempCharacter.skills.find((element) => element.name == "Athletics").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "History").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Perception").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Persuasion").modifier = 2;
-            state.tempCharacter.summary = "A skilled melee warrior specializing in weapons and armor."
+            state.tempCharacter.summary = "A skilled warrior specializing in weapons and armor."
             break
           case 2:
-            state.tempCharacter.className = "Cleric"
+            state.tempCharacter.className = "Medic"
             state.tempCharacter.stats = [{name: "Strength", value: 14}, {name: "Dexterity", value: 12}, {name: "Constitution", value: 14}, {name: "Intelligence", value: 11}, {name: "Wisdom", value: 18}, {name: "Charisma", value: 14}]
-            state.tempCharacter.inventory.push({name: "Mace", quantity: 1}, {name: "Light Crossbow", quantity: 1}, {name: "Bolts", quantity: 10})
-            state.tempCharacter.spells = ["Spiritual Weapon", "Mass Healing Word"]
+            state.tempCharacter.inventory.push({name: "SMG", quantity: 1}, {name: "Pistol", quantity: 1}, {name: "Mag", quantity: 4})
+            state.tempCharacter.spells = ["Bioluminescent Gel", "Healing Dart"]
             state.tempCharacter.spellStat = "Wisdom"
             state.tempCharacter.skills.find((element) => element.name == "Insight").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Medicine").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Perception").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Religion").modifier = 2;
-            state.tempCharacter.summary = "A follower of a deity that can call on divine power."
+            state.tempCharacter.summary = "A healer specializing in medical equipment and amplifying abilities."
             break
           case 3:
-            state.tempCharacter.className = "Rogue"
+            state.tempCharacter.className = "Spec Ops"
             state.tempCharacter.stats = [{name: "Strength", value: 8}, {name: "Dexterity", value: 16}, {name: "Constitution", value: 12}, {name: "Intelligence", value: 13}, {name: "Wisdom", value: 10}, {name: "Charisma", value: 16}]
-            state.tempCharacter.inventory.push({name: "Shortsword", quantity: 1}, {name: "Dagger", quantity: 1}, {name: "Hand Crossbow", quantity: 1}, {name: "Bolts", quantity: 10})
+            state.tempCharacter.inventory.push({name: "SMG", quantity: 1}, {name: "Shotgun", quantity: 1}, {name: "Mag", quantity: 4})
             state.tempCharacter.skills.find((element) => element.name == "Acrobatics").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Deception").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Investigation").modifier = 2;
@@ -463,32 +463,32 @@ function handleCreateStep(text) {
             state.tempCharacter.summary = "An expert in stealth, subterfuge, and exploitation."
             break
           case 4:
-            state.tempCharacter.className = "Ranger"
+            state.tempCharacter.className = "Sniper"
             state.tempCharacter.stats = [{name: "Strength", value: 12}, {name: "Dexterity", value: 17}, {name: "Constitution", value: 13}, {name: "Intelligence", value: 10}, {name: "Wisdom", value: 15}, {name: "Charisma", value: 8}]
-            state.tempCharacter.inventory.push({name: "Shortsword", quantity: 1}, {name: "Longbow", quantity: 1}, {name: "Arrows", quantity: 20})
+            state.tempCharacter.inventory.push({name: "Sniper Rifle", quantity: 1}, {name: "Pistol", quantity: 1}, {name: "Mag", quantity: 3})
             state.tempCharacter.skills.find((element) => element.name == "Animal Handling").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Athletics").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Nature").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Perception").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Stealth").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Survival").modifier = 2;
-            state.tempCharacter.summary = "A talented hunter adept in tracking, survival, and animal handling."
+            state.tempCharacter.summary = "A tracker and survivalist specializing in long range weaponry."
             break
           case 5:
-            state.tempCharacter.className = "Barbarian"
+            state.tempCharacter.className = "Heavy Weapons"
             state.tempCharacter.stats = [{name: "Strength", value: 17}, {name: "Dexterity", value: 13}, {name: "Constitution", value: 15}, {name: "Intelligence", value: 8}, {name: "Wisdom", value: 12}, {name: "Charisma", value: 10}]
-            state.tempCharacter.inventory.push({name: "Greataxe", quantity: 1}, {name: "Javelin", quantity: 1})
+            state.tempCharacter.inventory.push({name: "Heavy Machine Gun", quantity: 1}, {name: "Grenade Launcher", quantity: 1}, {name: "Ammo Box", quantity: 1}, {name: "Grenade", quantity: 4})
             state.tempCharacter.skills.find((element) => element.name == "Animal Handling").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Athletics").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Intimidation").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Perception").modifier = 2;
-            state.tempCharacter.summary = "Combat expert focused on brute strength and raw fury."
+            state.tempCharacter.summary = "Combat expert experienced with explosives, heavy automatic weapons, and powered melee weapons."
             break
           case 6:
-            state.tempCharacter.className = "Bard"
+            state.tempCharacter.className = "Officer"
             state.tempCharacter.stats = [{name: "Strength", value: 8}, {name: "Dexterity", value: 15}, {name: "Constitution", value: 14}, {name: "Intelligence", value: 13}, {name: "Wisdom", value: 10}, {name: "Charisma", value: 15}]
-            state.tempCharacter.inventory.push({name: "Rapier", quantity: 1}, {name: "Lute", quantity: 1})
-            state.tempCharacter.spells = ["Vicious Mockery", "Charm Person", "Healing Word"]
+            state.tempCharacter.inventory.push({name: "Pistol", quantity: 1}, {name: "PDA", quantity: 1}, {name: "Mag", quantity: 2})
+            state.tempCharacter.spells = ["Minor Hologram", "Concussive Round", "Mind Hack"]
             state.tempCharacter.spellStat = "Charisma"
             state.tempCharacter.skills.find((element) => element.name == "Acrobatics").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Athletics").modifier = 2;
@@ -496,88 +496,88 @@ function handleCreateStep(text) {
             state.tempCharacter.skills.find((element) => element.name == "Perception").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Performance").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Sleight of Hand").modifier = 2;
-            state.tempCharacter.summary = "A musician that can transform song and word into magic."
+            state.tempCharacter.summary = "A psi ops officer skilled in command, negotiation, and fortifying their team."
             break
           case 7:
-            state.tempCharacter.className = "Druid"
+            state.tempCharacter.className = "Scientist"
             state.tempCharacter.stats = [{name: "Strength", value: 11}, {name: "Dexterity", value: 13}, {name: "Constitution", value: 16}, {name: "Intelligence", value: 14}, {name: "Wisdom", value: 16}, {name: "Charisma", value: 9}]
-            state.tempCharacter.spells = ["Druidcraft", "Animal Friendship", "Healing Word"]
+            state.tempCharacter.spells = ["Cybercraft", "Drone Affect", "Organic Transplant"]
             state.tempCharacter.spellStat = "Wisdom"
-            state.tempCharacter.inventory.push({name: "Quarterstaff", quantity: 1}, {name: "Small Knife", quantity: 1})
+            state.tempCharacter.inventory.push({name: "Pistol", quantity: 1}, {name: "Chemistry Kit", quantity: 1}, {name: "Mag", quantity: 2})
             state.tempCharacter.skills.find((element) => element.name == "Arcana").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "History").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Medicine").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Nature").modifier = 2;
-            state.tempCharacter.summary = "Commands the natural world to cast spells and harness its power."
+            state.tempCharacter.summary = "Commands the nanotech, biologic, and cybernetic sciences."
             break
           case 8:
-            state.tempCharacter.className = "Monk"
+            state.tempCharacter.className = "Cyborg"
             state.tempCharacter.stats = [{name: "Strength", value: 16}, {name: "Dexterity", value: 14}, {name: "Constitution", value: 14}, {name: "Intelligence", value: 8}, {name: "Wisdom", value: 17}, {name: "Charisma", value: 10}]
-            state.tempCharacter.inventory.push({name: "Dart", quantity: 5}, {name: "Shortsword", quantity: 1})
+            state.tempCharacter.inventory.push({name: "Energy Sword", quantity: 5}, {name: "Shuriken", quantity: 6})
             state.tempCharacter.skills.find((element) => element.name == "Athletics").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Deception").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Sleight of Hand").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Stealth").modifier = 2;
-            state.tempCharacter.summary = "A martial artist who has mastered melee and unarmed combat."
+            state.tempCharacter.summary = "A melee master augmenting their abilities with cybernetic implants and robotic limbs."
             break
           case 9:
-            state.tempCharacter.className = "Paladin"
+            state.tempCharacter.className = "Marine"
             state.tempCharacter.stats = [{name: "Strength", value: 16}, {name: "Dexterity", value: 9}, {name: "Constitution", value: 15}, {name: "Intelligence", value: 11}, {name: "Wisdom", value: 13}, {name: "Charisma", value: 14}]
-            state.tempCharacter.spells = ["Thunderous Smite", "Divine Favor", "Cure Wounds"]
+            state.tempCharacter.spells = ["Searing Hack", "Motion Tracker", "Heuristic Protection"]
             state.tempCharacter.spellStat = "Charisma"
-            state.tempCharacter.inventory.push({name: "Longsword", quantity: 1}, {name: "Javelin", quantity: 2})
+            state.tempCharacter.inventory.push({name: "Assault Rifle", quantity: 1}, {name: "SAM", quantity: 2}, {name: "Mag", quantity: 5})
             state.tempCharacter.skills.find((element) => element.name == "Athletics").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "History").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Insight").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Persuasion").modifier = 2;
-            state.tempCharacter.summary = "A virtuous holy warrior with expertise in armor and mysticism."
+            state.tempCharacter.summary = "A well-rounded combatant that supports their attacks with technological enhancements."
             break
           case 10:
-            state.tempCharacter.className = "Wizard"
+            state.tempCharacter.className = "Hacker"
             state.tempCharacter.stats = [{name: "Strength", value: 10}, {name: "Dexterity", value: 15}, {name: "Constitution", value: 14}, {name: "Intelligence", value: 16}, {name: "Wisdom", value: 12}, {name: "Charisma", value: 8}]
-            state.tempCharacter.inventory.push({name: "Quarterstaff", quantity: 1}, {name: "Spellbook", quantity: 1})
-            state.tempCharacter.spells = ["Fire Bolt", "Mage Hand", "Magic Missile"]
+            state.tempCharacter.inventory.push({name: "Pistol", quantity: 1}, {name: "Flashdrive", quantity: 1}, {name: "Mag", quantity: 2})
+            state.tempCharacter.spells = ["Compromise System", "Nano Servants", "Seeker Missiles"]
             state.tempCharacter.spellStat = "Intelligence"
             state.tempCharacter.skills.find((element) => element.name == "Arcana").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Insight").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Investigation").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Perception").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Religion").modifier = 2;
-            state.tempCharacter.summary = "An expert in magic ability who found their power through arcane knowledge."
+            state.tempCharacter.summary = "An expert in computer technology, artificial intelligence, and the digital plane."
             break
           case 11:
-            state.tempCharacter.className = "Sorcerer"
+            state.tempCharacter.className = "Mutate"
             state.tempCharacter.stats = [{name: "Strength", value: 8}, {name: "Dexterity", value: 16}, {name: "Constitution", value: 13}, {name: "Intelligence", value: 11}, {name: "Wisdom", value: 12}, {name: "Charisma", value: 15}]
-            state.tempCharacter.inventory.push({name: "Dagger", quantity: 1}, {name: "Bag of Holding", quantity: 1})
-            state.tempCharacter.spells = ["Ray of Frost", "Minor Illusion", "Shield"]
+            state.tempCharacter.inventory.push({name: "Pistol", quantity: 1}, {name: "Vitamin Bottle", quantity: 1}, {name: "Mag", quantity: 2})
+            state.tempCharacter.spells = ["Chemical Spray", "Jump Jets", "Holographic Mask"]
             state.tempCharacter.spellStat = "Charisma"
             state.tempCharacter.skills.find((element) => element.name == "Arcana").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Intimidation").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Perception").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Persuasion").modifier = 2;
-            state.tempCharacter.summary = "A masterful spellcaster deriving their power from an innate source."
+            state.tempCharacter.summary = "Genetically modified to control the forces of nanotech and biotics to achieve incredible power."
             break
           case 12:
-            state.tempCharacter.className = "Warlock"
+            state.tempCharacter.className = "Robot"
             state.tempCharacter.stats = [{name: "Strength", value: 9}, {name: "Dexterity", value: 13}, {name: "Constitution", value: 15}, {name: "Intelligence", value: 14}, {name: "Wisdom", value: 11}, {name: "Charisma", value: 16}]
-            state.tempCharacter.spells = ["Eldritch Blast", "Witch Bolt", "Thunderwave"]
+            state.tempCharacter.spells = ["Energy Beam", "Power Coupling", "Trip Hammer"]
             state.tempCharacter.spellStat = "Charisma"
-            state.tempCharacter.inventory.push({name: "Dagger", quantity: 1}, {name: "Orb", quantity: 1})
+            state.tempCharacter.inventory.push({name: "SMG", quantity: 1}, {name: "Data Core", quantity: 1}, {name: "Mag", quantity: 3})
             state.tempCharacter.skills.find((element) => element.name == "Arcana").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Deception").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "History").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Religion").modifier = 2;
-            state.tempCharacter.summary = "A magic user granted ability by a pact with a powerful patron."
+            state.tempCharacter.summary = "A robotic soldier that is granted enhanced abilities through instructions from an AI directive."
             break
           case 13:
-            state.tempCharacter.className = "Artificer"
+            state.tempCharacter.className = "Engineer"
             state.tempCharacter.stats = [{name: "Strength", value: 10}, {name: "Dexterity", value: 14}, {name: "Constitution", value: 14}, {name: "Intelligence", value: 17}, {name: "Wisdom", value: 12}, {name: "Charisma", value: 8}]
-            state.tempCharacter.inventory.push({name: "Shortsword", quantity: 1}, {name: "Hand Crossbow", quantity: 1}, {name: "Bolts", quantity: 20})
+            state.tempCharacter.inventory.push({name: "Pistol", quantity: 2}, {name: "Chemistry Kit", quantity: 1}, {name: "Mag", quantity: 4})
             state.tempCharacter.skills.find((element) => element.name == "Acrobatics").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Performance").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Persuasion").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Arcana").modifier = 2;
-            state.tempCharacter.summary = "An inventor and alchemist capable of imbuing objects with magic."
+            state.tempCharacter.summary = "An inventor and chemist capable of imbuing objects with technological power."
             break
         }
       }
