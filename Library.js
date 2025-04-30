@@ -1,13 +1,13 @@
-const weaponsList = ["Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Dart", "Light Crossbow", "Shortbow", "Sling", "Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "Warhammer", "Warhammer", "War Pick", "Whip", "Blowgun", "Hand Crossbow", "Heavy Crossbow", "Longbow", "Musket", "Pistol"]
-const armorList = ["Padded Armor", "Leather Armor", "Studded Leather Armor", "Hide Armor", "Chain Shirt", "Scale Mail", "Breastplate", "Half Plate Armor", "Ring Mail", "Chain Mail", "Splint Armor", "Plate Armor", "Shield"]
-const toolsList = ["Alchemist's Supplies", "Brewer's Supplies", "Calligrapher's Supplies", "Carpenter's Tools", "Cartographer's Tools", "Cobbler's Tools", "Cook's Utensils", "Glassblower's Tools", "Jeweler's Tools", "Leatherworker's Tools", "Mason's Tools", "Painter's Supplies", "Potter's Tools", "Smith's Tools", "Tinker's Tools", "Weaver's Tools", "Woodcarver's Tools", "Disguise Kit", "Forgery Kit", "Gaming Set", "Herbalism Kit", "Musical Instrument", "Navigator's Tools", "Poisoner's Kit", "Thieves' Tools"]
-const gearList = ["Acid", "Alchemist's Fire", "Ammunition", "Antitoxin", "Arcane Focus", "Backpack", "Ball Bearings", "Barrel", "Basket", "Bedroll", "Bell", "Blanket", "Block and Tackle", "Book", "Glass Bottle", "Bucket", "Burglar's Pack", "Caltrops", "Candle", "Crossbow Bolt Case", "Map Case", "Scroll Case", "Chain", "Chest", "Climber's Kit", "Fine Clothes", "Traveler's Clothes", "Component Pouch", "Costume", "Crowbar", "Diplomat's Pack", "Druidic Focus", "Dungeoneer's Pack", "Entertainer's Pack", "Explorer's Pack", "Flask", "Grappling Hook", "Healer's Kit", "Holy Symbol", "Holy Water", "Hunting Trap", "Ink", "Ink Pen", "Jug", "Ladder", "Lamp", "Bullseye Lantern", "Hooded Lantern", "Lock", "Magnifying Glass", "Manacles", "Map", "Mirror", "Net", "Oil", "Paper", "Parchment", "Perfume", "Basic Poison", "Pole", "Iron Pot", "Potion of Healing", "Pouch", "Priest's Pack", "Quiver", "Portable Ram", "Rations", "Robe", "Rope", "Sack", "Scholar's Pack", "Shovel", "Signal Whistle", "Spell Scroll", "Iron Spikes", "Spyglass", "String", "Tent", "Tinderbox", "Torch", "Vial", "Waterskin"]
-const commonList = ["Armor of Gleaming", "Bead of Nourishment", "Bead of Refreshment", "Boots of False Tracks", "Candle of the Deep", "Cast-Off Armor", "Charlatan's Die", "Cloak of Billowing", "Cloak of Many Fashions", "Clockwork Amulet", "Clothes of Mending", "Dark Shard Amulet", "Dread Helm", "Ear Horn of Hearing", "Enduring Spellbook", "Ersatz Eye", "Hat of Vermin", "Hat of Wizardry", "Heward's Handy Spice Pouch", "Horn of Silent Alarm", "Instrument of Illusions", "Instrument of Scribing", "Lock of Trickery", "Moon-Touched Sword", "Mystery Key", "Orb of Direction", "Orb of Time", "Perfume of Bewitching", "Pipe of Smoke Monsters", "Pole of Angling", "Pole of Collapsing", "Potion of Climbing", "Potion of Comprehension", "Pot of Awakening", "Prosthetic Limb", "Rival Coin", "Rope of Mending", "Ruby of the War Mage", "Shield of Expression", "Silvered Weapon", "Smoldering Armor", "Staff of Adornment", "Staff of Birdcalls", "Staff of Flowers", "Talking Doll", "Tankard of Sobriety", "Veteran's Cane", "Walloping Ammunition", "Wand of Conducting", "Wand of Pyrotechnics"]
-const uncommonList = ["Adamantine Armor", "Adamantine Weapon", "Alchemy Jug", "Ammunition +1", "Amulet of Proof against Detection and Location", "Baba Yaga's Dancing Broom", "Bag of Holding", "Bag of Tricks", "Boots of Elvenkind", "Boots of Striding and Springing", "Boots of the Winterlands", "Bracers of Archery", "Brooch of Shielding", "Broom of Flying", "Cap of Water Breathing", "Circlet of Blasting", "Cloak of Elvenkind", "Cloak of Protection", "Cloak of the Manta Ray", "Decanter of Endless Water", "Deck of Illusions", "Driftglobe", "Dust of Disappearance", "Dust of Dryness", "Dust of Sneezing and Choking", "Elemntal Gem", "Enspelled Armor Uncommon", "Uncommon Enspelled Staff", "Enspelled Weapon Uncommon", "Eversmoking Bottle", "Eyes of Charming", "Eyes of Minute Seeing", "Eyes of the Eagle", "Silver Raven Figurine of Wondrous Power", "Gauntlets of Ogre Power", "Gem of Brightness", "Gloves of Missile Snaring", "Gloves of Swimming and Climbing", "Gloves of Thievery", "Goggles of Night", "Hag Eye", "Hat of Disguise", "Headband of Intellect", "Helm of Comprehending Languages", "Helm of Telepathy", "Immovable Rod", "Doss Lute", "Fochlucan Bandore", "Mac-Fuirmidh Cittern", "Javelin of Lightning", "Keoghtom's Ointment", "Lantern of Revealing", "Mariner's Armor", "Medallion of Thoughts", "Nature's Mantle", "Necklace of Adaptation", "Oil of Slipperiness", "Pearl of Power", "Periapt of Health", "Periapt of Wound Closure", "Philter of Love", "Pipes of Haunting", "Pipes of the Sewers", "Potion of Animal Friendship", "Potion of Fire Breath", "Potion of Hill Giant Strength", "Potion of Growth", "Potion of Poison", "Potion of Puglism", "Potion of Resistance", "Potion of Water Breathing", "Quaal's Feather Token Uncommon", "Quiver of Ehlonna", "Ring of Jumping", "Ring of Mind Shielding", "Ring of Swimming", "Ring of Warmth", "Ring of Water Walking", "Robe of Useful Items", "Rod of the Pact Keeper +1", "Rope of Climbing", "Saddle of the Cavalier", "Sending Stones", "Sentinel Shield", "Shield +1", "Slippers of Spider Climbining", "Staff of the Adder", "Staff of the Python", "Stone of Good Luck", "Sword of Vengeance", "Trident of Fish Command", "Wand of Magic Detection", "Wand of Magic Missiles", "Wand of Secrets", "Wand of the War Mage +1", "Wand of Web", "Weapon +1", "Weapon of Warning", "Wind Fan", "Winged Boots", "Wraps of Unarmed Power +1"]
-const rareList = ["Ammunition +2", "Amulet of Health", "Armor +1", "Armor of Resistance", "Armor of Vulnerability", "Arrow-Catching Shield", "Bag of Beans", "Belt of Dwarvenkind", "Belt of Hill Giant Strength", "Berserker Axe", "Boots of Levitation", "Boots of Speed", "Bowl of Commanding Water Elementals", "Bracers of Defense", "Brazier of Commanding Fire Elementals", "Cape of the Mountebank", "Censer of Controlling Air Elementals", "Chime of Opening", "Cloak of Displacement", "Cloak of the Bat", "Cube of Force", "Cube of Summoning", "Daern's Instant Fortress", "Dagger of Venom", "Dimensional Shackles", "Dragon Slayer", "Elixir of Health", "Elven Chain", "Enspelled Armor Rare", "Rare Enspelled Staff", "Enspelled Weapon Rare", "Figurine of Wondrous Power Rare", "Flame Tongue", "Folding Boat", "Gem of Seeing", "Giant Slayer", "Glamoured Studded Leather", "Helm of Teleportation", "Heward's Handy Haversack", "Horn of Blasting", "Silver Horn of Valhalla", "Brass Horn of Valhalla", "Horseshoes of Speed", "Canaith Mandolin", "Cli Lyre", "Ioun Stone Rare", "Iron Bands of Bilarro", "Mace of Disruption", "Mace of Smiting", "Mace of Terror", "Mantle of Spell Resistance", "Necklace of Fireballs", "Necklace of Prayer Beads", "Oil of Etherealness", "Periapt of Proof against Poison", "Portable Hole", "Potion of Clairvoyance", "Potion of Diminution", "Potion of Gaseous Form", "Potion of Frost Giant Strength", "Potion of Stone Giant Strength", "Potion of Fire Giant Strength", "Potion of Heroism", "Potion of Invisibility", "Potion of Invulnerability", "Potion of Mind Reading", "Quaal's Feather Token Rare", "Ring of Animal Influence", "Ring of Evasion", "Ring of Feather Falling", "Ring of Free Action", "Ring of Protection", "Ring of Resistance", "Ring of Spell Storing", "Ring of the Ram", "Ring of X-ray Vision", "Robe of Eyes", "Rod of Rulership", "Rod of the Pact Keeper +2", "Rope of Entanglement", "Scroll of Protection", "Shield +2", "Shield of Missile Attraction", "Staff of Charming", "Staff of Swarming Insects", "Staff of the Woodlands", "Staff of Withering", "Stone of Controlling Earth Elementals", "Sun Blade", "Sword of Life Stealing", "Tentacle Rod", "Vicious Weapon", "Wand of Binding", "Wand of Enemy Detection", "Wand of Fear", "Wand of Fireballs", "Wand of Lightning Bolts", "Wand of Paralysis", "Wand of Wonder", "Weapon +2", "Wings of Flying"]
-const phenomenalList = ["Ammunition +3", "Ammunition of Slaying", "Amulet of the Planes", "Animated Shield", "Armor +2", "Bag of Devouring", "Belt of Frost Giant Strength", "Belt of Stone Giant Strength", "Belt of Fire Giant Strength", "Candle of Invocation", "Carpet of Flying", "Cauldron of Rebirth", "Cloak of Arachnida", "Crystal Ball", "Dancing Sword", "Demon Armor", "Dragon Scale Mail", "Dwarven Plate", "Dwarven Thrower", "Efreeti Bottle", "Energy Longbow", "Energy Shortbow", "Enspelled Armor Very Rare", "Enspelled Weapon Very Rare", "Executioner's Axe", "Obsidian Steed Figurine of Wondrous Power", "Frost Brand", "Hat of Many Spells", "Helm of Brilliance", "Bronze Horn of Valhalla", "Horseshoes of a Zephyr", "Ioun Stone Very Rare", "Lute of Thunderous Thumping", "Manual of Bodily Health", "Manual of Gainful Exercise", "Manual of Golems", "Manual of Quickness of Action", "Mirror of Life Trapping", "Nine Lives Stealer", "Nolzur's Marvelous Pigments", "Oathbow", "Oil of Sharpness", "Potion of Flying", "Potion of Cloud Giant Strength", "Potion of Greater Invisibility", "Potion of Longevity", "Potion of Speed", "Potion of Vitality", "Quarterstaff of the Acrobat", "Ring of Regeneration", "Ring of Shooting Stars", "Ring of Telekenisis", "Robe of Scintillating Colors", "Robe of Stars", "Rod of Absorption", "Rod of Alertness", "Rod of Security", "Rod of the Pact Keeper +3", "Scimitar of Speed", "Shield +3", "Shield of the Cavalier", "Spellguard Shield", "Spirit Board", "Staff of Fire", "Staff of Frost", "Staff of Power", "Staff of Striking", "Staff of Thunder and Lightning", "Sword of Sharpness", "Thunderous Greatclub", "Tome of Clear Thought", "Tome of Leadership and Influence", "Tome of Understanding", "Wand of Polymorph", "Weapon +3"]
-const legendaryList = ["Apparatus of Kwalish", "Armor +3", "Armor of Invulnerability", "Belt of Cloud Giant Strength", "Belt of Storm Giant Strength", "Cloak of Invisibility", "Crystal Ball of Mind Reading", "Crystal Ball of Telepathy", "Crystal Ball of True Seeing", "Cubic Gate", "Deck of Many Things", "Defender", "Efreeti Chain", "Enspelled Armor Legendary", "Legendary Enspelled Staff", "Enspelled Weapon Legendary", "Hammer of Thunderbolts", "Holy Avenger", "Ioun Stone of Greater Absorption", "Ioun Stone of Mastery", "Ioun Stone of Regeneration", "Iron Flask", "Luck Blade", "Moonblade", "Plate Armor of Etherealness", "Potion of Storm Giant Strength", "Ring of Djinni Summoning", "Ring of Elemental Command", "Ring of Invisibility", "Ring of Spell Turning", "Ring of Three Wishes", "Robe of the Archmagi", "Rod of Lordly Might", "Rod of Resurrection", "Scarab of Protection", "Scroll of Titan Summoning", "Sovereign Glue", "Sphere of Annihilation", "Staff of the Magi", "Sword of Answering", "Talisman of Pure Good", "Talisman of the Sphere", "Talisman of Ultimate Evil", "Tome of the Stilled Tongue", "Universal Solvent", "Well of Many Worlds"]
-const artifactList = ["Axe of the Dwarvish Lords", "Blackrazor", "Book of Exalted Deeds", "Book of Vile Darkness", "Demonomicon of Iggwilv", "Efreeti Chain", "Eye of Vecna", "Hand of Vecna", "Orb of Dragonkind", "Sword of Kas", "Wand of Orcus", "Wave", "Whelm"]
+const weaponsList = ["Assault Rifle", "Pistol", "SMG", "Battle Rifle", "Energy Sword", "Heavy Machine Gun", "Shotgun", "SAM", "Grenade Launcher", "Sniper Rifle", "Taser", "Chainsaw", "Dueling Pistol", "Stun Gun", "Revolver", "Plasma Whip", "Glaive", "Phase Rifle", "Minigun", "Rail Gun", "Plasma Cannon", "Chem Gun", "Charge Hammer", "Bullpup Rifle", "Auto Shotgun", "Tac Pistol", "Rocket Launcher", "Autogun", "Heavy Shotgun", "Warhammer", "Warhammer", "Heavy Pistol", "PDW", "Shuriken", "Power Gauntlets", "Modular Gun", "Silenced Pistol", "Shoulder Cannon", "Wrist Blade"]
+const armorList = ["Kevlar Vest", "Combat Armor", "Tech Armor", "Carbon Fiber Armor", "Deflection Suit", "Charge Armor", "Riot Gear", "Nexus Armor", "Nanotube Armor", "Biotic Mail", "Energetic Armor", "Power Armor", "Riot Shield"]
+const toolsList = ["Chemistry Kit", "Water Sampling Kit", "Smartphone", "Metal Working Tools", "Geographer's Tools", "Clothing Fabricator", "Food Dispenser", "Plastics Kit", "Gadget Tools", "Repair Kit", "Ship's Tools", "Camera Kit", "Drafting Tools", "Gun Kit", "Laptop", "Farming Equipment", "Ceramics Kit", "Medical Supplies", "Holographics Kit", "Game Station", "Centrifuge", "Speaker", "Satellite Linkup", "Nanite Kit", "Cryptographic Sequencer"]
+const gearList = ["Acidic Vial", "Grenade", "Mag", "Antitoxin", "Flashdrive", "Hydraulic Backpack", "Trip Mine", "Crate", "Messenger Bag", "Bedroll", "Tone Generator", "Blanket", "Hydraulic Winch", "Data Pad", "Vial", "Bucket", "Hacker's Pack", "Caltrops", "LED Nightlight", "Ammo Case", "GPS Kit", "PDA", "Chain", "Pod", "Climber's Kit", "Fine Clothes", "Traveler's Clothes", "Electronics Pouch", "Costume", "Crowbar", "Officer's Pack", "Tricorder", "Commando's Pack", "Breacher's Pack", "Pilot's Pack", "Flask", "Grapple Gun", "Medical Kit", "Data Core", "Purified Water", "Snare", "HUD", "Digipen", "Carton", "Ladder", "Flashlight", "Dazzler", "Spotlight", "Lock", "Scope", "Zip Ties", "GPS Data", "Webcam", "Net", "Fuel", "Byte", "Megabyte", "Pheremones", "Uranium Round", "Reacher Grabber", "Hot Plate", "Healing Syringe", "Satchel", "Analyst's Pack", "Ammo Belt", "Breaching Tool", "Rations", "Pajamas", "Rope", "Purse", "Scholar's Pack", "Shovel", "Signal Whistle", "Spell Pad", "Iron Spikes", "Telescope", "String", "Shelter", "Matches", "Butane Torch", "Vial", "Water Bottle"]
+const commonList = ["Anti-Microbial Armor", "Meal Capsule", "Life Straw", "Soleless Shoes", "Deep Sea Lantern", "Compact Armor", "Charlatan's Dice", "Billowing Cape", "Holographic Tuxedo", "Metronome of Averages", "Healing Fabric Clothing", "Dark Flashdrive", "Dread Trooper Helmet", "Hearing Aids", "Enduring Omnitool", "Bionic Eye", "Rodent Wand", "Chip of Robotics", "Seasoning Salt", "Subsonic Alarm", "Light Bending Instrument", "Embossing Instrument", "Magnetic Lock", "Light Gun", "Cryptographic Key", "Compass", "Digital Watch", "Ambergris", "Magic Cigar", "Aluminum Fishing Pole", "Telescoping Pole", "Climbing Serum", "Brain Fluid", "Hydroponic Grow Chamber", "Prosthetic Limb", "Brain Tick", "Magnetic Fibre Rope", "Data Card", "Riot Shield of Emote", "Silver Bullet", "Exhaust Armor", "Bling Stack", "Birdwatching Box", "Flower Gloves", "Tickle Doll", "Alcohol Filter", "Veteran's Energy Cane", "Concussive Ammunition", "Finger Tracking Conductor", "Lava Lamp", "Healing Syringe"]
+const uncommonList = ["Exo Armor", "Exo Weapon", "Liquid Replicator", "Mag +1", "Radio Jammer", "Roomba", "Flat Space Bag", "Magic Drone", "Noise Cancelling Boots", "Boots of Striding and Springing", "Ice Breaker Boots", "Compensator of Accuracy", "Brooch of Shielding", "Silver Surfboard", "Rebreather", "Laser Bracelet", "Stealth Suit", "Adaptive Armor Plating", "Scuba Suit", "Super Soaker", "Holographic Deck", "Hover Globe", "Chaff Grenade", "Hydrophilic Powder", "Cinnamon Powder", "Elemental Cointainment Field", "Digitized Armor Uncommon", "Uncommon Digitized Staff", "Digitized Weapon Uncommon", "Smoke Grenade", "Synaptic Lenses", "Telegraphic Goggles", "Binoculars", "Silver Raven Puck", "Hydraulic Arms", "Ultra Bright Flashlight", "Missile Dampening Field", "Robotic Exosuit", "Thievery Implant", "Night Vision Goggles", "Cyborg Eye", "Megamorphic Suit", "Intelligence Implant", "Closed Captioning HUD", "Psychic Implant", "Gravity Anchor", "Synthesizer Harp", "Digital Guitar", "Lightning Gun", "Javelin of Lightning", "Antidotic Lotion", "Black Light Flashlight", "Navy Armor", "Mind Reading Neutron", "Ghost Crystal", "Prosthetic Lung", "Graphite Ointment", "Lithium Battery", "Health Drip", "Antibiotics", "Purple Juice", "Audio Static", "Prefume of the Drones", "Nectar of Drone Friendship", "Underbarrel Flamethrower", "Strength Mod", "Growth Mod", "Compromised Syringe", "Boxing Simulator", "Damage Countermeasure", "Water Breathing Nanomachines", "Macro Uncommon", "Extradimensional Ammo Pouch", "Jetpack", "Tin Foil Hat", "Hydro-Adaptive Nanoband", "Thermo Resonance Band", "Aqua-Stabilizer Band", "Quantum Utility Belt", "Covenant Nexus +1", "Ascender Coil", "Synchron Mobility Plugin", "Quantum Relay Communicator", "Omni Tactical Barrier", "Riot Riot Shield +1", "Gecko Shoes", "Snake Cable", "Python for Dummies", "Memory Stick of Good Luck", "Revengerance Rifle", "SMG of Fish Sequencer", "Magic Wire", "Missile Pod", "Quantum Computer", "Reflex Sight", "Sticky Grenade", "Weapon +1", "Gun of Early Warning", "Fan Attachment", "Thruster Wings", "Striker Guantlets +1", "Greater Healing Syringe"]
+const rareList = ["Mag +2", "Health Bar", "Armor +1", "Harmonic Defense Suit", "Cracked Harmonic Defense Suit", "Robotic Arm Shield", "Nano Beans", "Belt of Robotkind", "Belt of Cyborg Strength", "Berserker Shotgun", "Hover Boots", "Accelerator Suit", "Laptop of Commanding Water Drones", "Auto Blockers", "PDA of Commanding Fire Drones", "Red Cape", "Smartphone of Controlling Air Droids", "Memory Card of Opening", "Cloak of Holograms", "Bat Wing", "Cube of Force", "Cube of Summoning", "Fortress Builder", "Energy Energy Dagger of Venom", "Digital Shackles", "Dragon Slayer Sniper Rifle", "Supplement of Health", "Block-Chain Armor", "Digitized Armor Rare", "Rare Digitized Staff", "Digitized Weapon Rare", "Puck", "Combustion Weapon", "RC Boat", "Lens of Seeing", "Sabot Shotgun", "Hardened Undercover Armor", "Teleporter Badge", "Compression Backpack", "Klaxon Siren", "Silver Whistle", "Brass Whistle", "Rims of Speed", "Drop Tables", "Synthesizer Array", "Headphones Rare", "Sphero", "Datastack of Disruption", "Datastack of Smiting", "Datastack of Terror", "Warding Smartwatch", "Smartwatch of Fireballs", "Prayer Ebook", "Lumen Grease", "Toxic Nullification Nexus", "Flat Space Hole", "Clairvoyance Implant", "Shrink Ray", "Steam Download", "Serum of Frost Zombie Strength", "Serum of Stone Zombie Strength", "Serum of Fire Zombie Strength", "Hero Cookies", "Cloaking Formula", "Invulnerability Injection", "Mind Reading Formula", "Macro Rare", "Ring of Drone Influence", "Ring of Uncertainy Principle", "Booster Boots", "Nanoscopic Fiber Leggings", "On-Board Diagnostics", "Cybernetic Resistence Pellets", "Spell Battery", "Ram Projector", "X-ray Goggles", "Dashboard of Vision", "Command Module", "Covenant Nexus +2", "Cable of Entanglement", "Cease and Desist Letter", "Riot Riot Shield +2", "Shield of Null Emitter", "Tech Stack of Charming", "Conduit Rod of Swarming Insects", "Vegetation Conduit", "Tech Stack of Withering", "Memory Card of Controlling Earth Holograms", "Battle Rifle of the Crying Sun", "Energy Weapon of Life Stealing", "Robot Tentacle Rod", "Explosive Weapon", "Binding SD Card", "Sonar Scanner", "SD Card of Fear", "Rocket Pod", "Lightning Rod", "Paralysis Stick", "Portable Harddrive of Wonder", "Weapon +2", "Wing Suit", "Superior Healing Syringe"]
+const phenomenalList = ["Mag +3", "Mag of Slaying", "3D Scanner", "Motion Graphic Shield", "Armor +2", "Junk Shredder", "Utility Belt of Frost Zombie Strength", "Utility Belt of Stone Zombie Strength", "Utility Belt of Fire Zombie Strength", "LED of Invocation", "Hovering Pallet", "Sleep Capsule of Rebirth", "Web Shooters", "Influencer Starter Kit", "Auto Turret", "Alien Armor", "Dragon Scale Mail", "Soldier Plate", "M4A1", "Hologram Cage", "AK-47", "G36", "Digitized Armor Very Rare", "Digitized Armor Very Rare", "Desert Eagle", "Obsidian Steed Puck", "Cold Gun", "Combat Helmet of Many Spells", "Helm of Brilliance", "Bronze Whistle", "Horseshoes of a Zephyr", "Headphones Very Rare", "Thunderous MP5", "PDF of Bodily Health", "PDF of Gainful Exercise", "PDF of Golems", "PDF of Quickness of Action", "Selfie Camera of Life Trapping", "FN Five-Seven", "Pantone Paints", "Glock 18", "Oil of Accuracy", "Serum of Gravity", "Serum of Cloud Zombie Strength", "Serum of Null Zero Cloak", "Serum of Longevity", "Syringe of Speed", "Syringe of Vitality", "Quartenion Baton of the Acrobat", "USB of Regeneration", "Dazzler Attachment", "Mind Mover Implant", "Bandana of Scintillating Colors", "Bandana of Stars", "Thumb Drive of Absorption", "Thumb Drive of Alertness", "Thumb Drive of Security", "Covenant Nexus +3", "Uzi of Speed", "Riot Shield +3", "Riot Shield of the Cavalier", "Virus Protection Shield", "Digital 8 Ball", "Rocket Launcher of Firewall", "Cryonics Staff", "Power Armor Weapons Platform", "Steyr Aug", "M60 Lightning", "Critical Mass Gun", "Mossberg 500", "PDF of Clear Thought", "PDF of Leadership and Influence", "PDF of Understanding", "Watch of Nanomorph", "Weapon +3", "Supreme Healing Syringe"]
+const legendaryList = ["Mecha Walker", "Armor +3", "Deathproof Ballistic Armor", "Belt of Cloud Zombie Strength", "Belt of Cloud Zombie Strength", "Enigma Generator", "Tablet of Spying", "Tablet of Telepathy", "Tablet of Thermal Imaging", "Rift Gate", "TCG of Many Things", "Super Shotgun", "Linked List Chain", "Digitized Armor Legendary", "Legendary Digitized Staff", "Digitized Weapon Legendary", "AWP of Thunderbolts", "Holy Colt 1911", "Headphones of Greater Absorption", "Headphones of Mastery", "Headphones of Regeneration", "Digital Hand Trap", "Luck Gun", "Colt Carbine", "Ceramic Armor of Etherealness", "Ceramic Armor of Etherealness", "Gamepad of Cyborg Summoning", "Gamepad of Hologram Command", "Gamepad of Cloak", "Gamepad of Counter Hack", "Gamepad of AI Wishes", "Robotic Shield Motivator", "Megamorphic Gun", "USB Stick of Resurrection", "Communicator Badge of Protection", "PDA of Titan Summoning", "JB Bond", "Black Hole", "USB Stick of the Sys Admin", "Die Katana", "Fidget of Pure Good", "Fidget of the Sphere", "Fidget of Ultimate Evil", "PDF of the Stilled Tongue", "Goo Be Gone", "Well of the Metaverse"]
+const artifactList = ["Accelerator Rifle", "Killer P90", "PDF of Exalted Deeds", "PDF of Vile Darkness", "Close Encounters PDF", "Efreeti Chain", "Eye of Echelon Zero", "Hand of Echelon Zero", "Dragon Battery", "Beretta 92FS", "Antenna of Hex Machina", "Glock 20C Marine", "AA-12 Shotgun"]
 
 function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -3623,144 +3623,144 @@ function stragedyCheckForWin() {
   else state.stragedyWinner = "tie"
 }
 
-const simpleMeleeWeapons = ["Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Dart"]
-const simpleRangedWeapons = ["Light Crossbow", "Shortbow", "Sling"]
-const martialMeleeWeapons = ["Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "Warhammer", "War Pick", "Whip"]
-const martialRangedWeapons = ["Blowgun", "Hand Crossbow", "Heavy Crossbow", "Longbow", "Musket", "Pistol"]
-const lightArmor = ["Padded Armor", "Leather Armor", "Studded Leather Armor"]
-const mediumArmor = ["Hide Armor", "Chain Shirt", "Scale Mail", "Breastplate", "Half Plate Armor"]
-const heavyArmor = ["Ring Mail", "Chain Mail", "Splint Armor", "Plate Armor"]
-const ammunition = ["Arrow", "Bolt", "Bullet", "Needle"]
+const simpleMeleeWeapons = ["Assault Rifle", "Pistol", "SMG", "Battle Rifle", "Energy Sword", "Heavy Machine Gun", "Shotgun", "SAM", "Grenade Launcher", "Sniper Rifle", "Taser"]
+const simpleRangedWeapons = ["Chainsaw", "Dueling Pistol", "Stun Gun"]
+const martialMeleeWeapons = ["Revolver", "Plasma Whip", "Force Knuckles", "Phase Rifle", "Minigun", "Rail Gun", "Plasma Cannon", "Chem Gun", "Charge Hammer", "Bullpup Rifle", "Auto Shotgun", "Tac Pistol", "Rocket Launcher", "Autogun", "Heavy Shotgun", "Warhammer", "Heavy Pistol", "PDW"]
+const martialRangedWeapons = ["Shuriken", "Power Gauntlets", "Modular Gun", "Silenced Pistol", "Shoulder Cannon", "Wrist Blade"]
+const lightArmor = ["Kevlar Vest", "Combat Armor", "Tech Armor"]
+const mediumArmor = ["Carbon Fiber Armor", "Deflection Suit", "Charge Armor", "Riot Gear", "Nexus Armor"]
+const heavyArmor = ["Nanotube Armor", "Biotic Mail", "Energetic Armor", "Power Armor"]
+const ammunition = ["Mag", "Shells"]
 
 function itemShopConvertGenericName(name) {
   switch (name) {
-    case "Armor of Gleaming":
-      name = itemShopNameAddPrefix("of Gleaming", ...lightArmor.concat(mediumArmor, heavyArmor))
+    case "Anti-Microbial Armor":
+      name = itemShopNameAddSuffix("Anti-Microbial", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
-    case "Cast-Off Armor":
-      name = itemShopNameAddSuffix("Cast-Off", ...lightArmor.concat(mediumArmor, heavyArmor))
+    case "Compact Armor":
+      name = itemShopNameAddSuffix("Compact", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
-    case "Moon-Touched Sword":
-      name = itemShopNameAddSuffix("Moon-Touched", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+    case "Light Gun":
+      name = itemShopNameAddSuffix("Light", "Force Knuckles", "Minigun", "Chem Gun", "Tac Pistol", "Rocket Launcher", "Autogun")
       break
-    case "Silvered Weapon":
-      name = itemShopNameAddSuffix("Silvered", ...simpleMeleeWeapons.concat(simpleRangedWeapons, martialMeleeWeapons, martialRangedWeapons))
+    case "Silver Bullet":
+      name = itemShopNameAddSuffix("Silver Bullet", ...simpleMeleeWeapons.concat(simpleRangedWeapons, martialMeleeWeapons, martialRangedWeapons))
       break
-    case "Smoldering Armor":
+    case "Exhaust Armor":
       name = itemShopNameAddSuffix("Smoldering", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
     case "Sylvan Talon":
-      name = itemShopNameAddSuffix("Sylvan Talon", "Dagger", "Rapier", "Scimitar", "Shortsword", "Sickle", "Spear")
+      name = itemShopNameAddSuffix("Sylvan Talon", "Wrist Blade", "Tac Pistol", "Rocket Launcher", "Autogun", "Grenade Launcher", "Sniper Rifle")
       break
-    case "Walloping Ammunition":
-      name = itemShopNameAddSuffix("Walloping", ...ammunition)
+    case "Concussive Ammunition":
+      name = itemShopNameAddSuffix("Concussive", ...ammunition)
       quantity = 10
       break
-    case "Adamantine Armor":
-      name = itemShopNameAddSuffix("Adamantine", ...mediumArmor.concat(heavyArmor))
+    case "Exo Armor":
+      name = itemShopNameAddSuffix("Exo", ...mediumArmor.concat(heavyArmor))
       break
-    case "Adamantine Weapon":
-      name = itemShopNameAddSuffix("Adamantine", ...martialMeleeWeapons.concat(ammunition, simpleMeleeWeapons))
+    case "Exo Weapon":
+      name = itemShopNameAddSuffix("Exo", ...martialMeleeWeapons.concat(ammunition, simpleMeleeWeapons))
       break
     case "Ammunition +1":
-      name = itemShopNameAddPrefix("+1", ...ammunition)
+      name = itemShopNameAddPrefix("+1", ...Mag)
       break
-    case "Enspelled Armor Uncommon":
+    case "Digitized Armor Uncommon":
       name = itemShopNameAddSuffix("Uncommon Enspelled", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
-    case "Enspelled Weapon Uncommon":
+    case "Digitized Weapon Uncommon":
       name = itemShopNameAddSuffix("Uncommon Enspelled", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
       break
-    case "Mariner's Armor":
-      name = itemShopNameAddSuffix("Mariner's", ...lightArmor.concat(mediumArmor, heavyArmor))
+    case "Navy Armor":
+      name = itemShopNameAddSuffix("Navy", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
-    case "Quaal's Feather Token Uncommon":
-      name = itemShopNameAddSuffix("Quaal's Feather Token of", "Anchor", "Fan", "Tree")
+    case "Macro Uncommon":
+      name = itemShopNameAddSuffix("Macro of", "Anchor", "Fan", "Tree")
       break
-    case "Sword of Vengeance":
-      name = itemShopNameAddPrefix("of Vengeance", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+    case "Revengerance Rifle":
+      name = itemShopNameAddPrefix("of Revengerance", "Force Knuckles", "Minigun", "Chem Gun", "Tac Pistol", "Rocket Launcher", "Autogun")
       break
     case "Weapon +1":
       name = itemShopNameAddPrefix("+1", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
       break
-    case "Weapon of Warning":
-      name = itemShopNameAddPrefix("of Warning", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
+    case "Gun of Early Warning":
+      name = itemShopNameAddPrefix("of Early Warning", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
       break
-    case "Ammunition +2":
+    case "Mag +2":
       name = itemShopNameAddPrefix("+2", ...ammunition)
       break
     case "Armor +1":
       name = itemShopNameAddPrefix("+1", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
-    case "Armor of Resistance":
-      name = itemShopNameAddPrefix("of Resistance", ...lightArmor.concat(mediumArmor, heavyArmor))
+    case "Harmonic Defense Suit":
+      name = itemShopNameAddSuffix("Harmonic Defense", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
-    case "Armor of Vulnerability":
+    case "Cracked Harmonic Defense Suit":
       name = itemShopNameAddPrefix("of Vulnerability", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
-    case "Enspelled Armor Rare":
-      name = itemShopNameAddSuffix("Rare Enspelled", ...lightArmor.concat(mediumArmor, heavyArmor))
+    case "Digitized Armor Rare":
+      name = itemShopNameAddSuffix("Rare Digitized", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
-    case "Enspelled Weapon Rare":
-      name = itemShopNameAddSuffix("Rare Enspelled", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
+    case "Digitized Weapon Rare":
+      name = itemShopNameAddSuffix("Rare Digitized", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
       break
-    case "Figurine of Wondrous Power Rare":
-      name = itemShopNameAddPrefix("Figurine of Wondrous Power", "Bronze Griffon", "Ebony Fly", "Golden Lions", "Ivory Goats", "Marble Elephant", "Onyx Dog", "Serpentine Owl")
+    case "Puck":
+      name = itemShopNameAddPrefix("Puck", "Bronze Griffon", "Ebony Fly", "Golden Lions", "Ivory Goats", "Marble Elephant", "Onyx Dog", "Serpentine Owl")
       break
-    case "Flame Tongue":
-      name = itemShopNameAddSuffix("Flame Tongue", ...simpleMeleeWeapons.concat(martialMeleeWeapons))
+    case "Combustion Weapon":
+      name = itemShopNameAddSuffix("Combustion", ...simpleMeleeWeapons.concat(martialMeleeWeapons))
       break
-    case "Giant Slayer":
-      name = itemShopNameAddSuffix("Giant Slayer", ...simpleMeleeWeapons.concat(martialMeleeWeapons))
+    case "Sabot Shotgun":
+      name = itemShopNameAddSuffix("Sabot", ...simpleMeleeWeapons.concat(martialMeleeWeapons))
       break
-    case "Ioun Stone Rare":
-      name = itemShopNameAddSuffix("Ioun Stone of", "Awareness", "Protection", "Reserve", "Sustenance")
+    case "Headphones Rare":
+      name = itemShopNameAddSuffix("Headphones of", "Awareness", "Protection", "Reserve", "Sustenance")
       break
-    case "Quaal's Feather Token Rare":
-      name = itemShopNameAddSuffix("Quaal's Feather Token of", "Bird", "Swan Boat", "Whip")
+    case "Macro Rare":
+      name = itemShopNameAddSuffix("Macro of", "Bird", "Swan Boat", "PDW")
       break
-    case "Sword of Life Stealing":
-      name = itemShopNameAddPrefix("of Life Stealing", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+    case "Energy Weapon of Life Stealing":
+      name = itemShopNameAddPrefix("of Life Stealing", "Force Knuckles", "Minigun", "Chem Gun", "Tac Pistol", "Rocket Launcher", "Autogun")
       break
     case "Sword of Wounding":
-      name = itemShopNameAddPrefix("of Wounding", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+      name = itemShopNameAddPrefix("of Wounding", "Force Knuckles", "Minigun", "Chem Gun", "Tac Pistol", "Rocket Launcher", "Autogun")
       break
-    case "Vicious Weapon":
+    case "Explosive Weapon":
       name = itemShopNameAddSuffix("Vicious", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
       break
     case "Weapon +2":
       name = itemShopNameAddPrefix("+2", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
       break
-    case "Ammunition +3":
+    case "Mag +3":
       name = itemShopNameAddPrefix("+3", ...ammunition)
       break
-    case "Ammunition of Slaying":
-      let type = getRandomFromList("Aberration", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Humonoid", "Fey", "Fiend", "Giant", "Monstrosity", "Ooze", "Plant", "Undead")
+    case "Mag of Slaying":
+      let type = getRandomFromList("Zombie", "Hologram", "Robot", "Cyborg", "Human", "Alien", "Drone")
       name = itemShopNameAddPrefix(`of ${type} Slaying`, ...ammunition)
       break
     case "Armor +2":
       name = itemShopNameAddPrefix("+2", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
-    case "Dancing Sword":
-      name = itemShopNameAddSuffix("Dancing", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+    case "Auto Turret":
+      name = itemShopNameAddSuffix("Auto Turret", "Minigun", "Chem Gun", "Tac Pistol", "Rocket Launcher", "Autogun")
       break
-    case "Demon Armor":
-      name = itemShopNameAddPrefix("Demon", ...lightArmor.concat(mediumArmor, heavyArmor))
+    case "Alien Armor":
+      name = itemShopNameAddPrefix("Alien", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
-    case "Enspelled Armor Very Rare":
-      name = itemShopNameAddSuffix("Very Rare Enspelled", ...lightArmor.concat(mediumArmor, heavyArmor))
+    case "Digitized Armor Very Rare":
+      name = itemShopNameAddSuffix("Very Rare Digitized", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
-    case "Enspelled Weapon Very Rare":
-      name = itemShopNameAddSuffix("Very Rare Enspelled", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
+    case "Digitized Armor Very Rare":
+      name = itemShopNameAddSuffix("Very Rare Digitized", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
       break
-    case "Frost Brand":
-      name = itemShopNameAddSuffix("Frost Brand", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+    case "Cold Gun":
+      name = itemShopNameAddSuffix("Cold", "Force Knuckles", "Minigun", "Chem Gun", "Tac Pistol", "Rocket Launcher", "Autogun")
       break
-    case "Ioun Stone Very Rare":
-      name = itemShopNameAddSuffix("Ioun Stone of", "Absorption", "Fortitude", "Insight", "Intellect", "Leadership", "Strength")
+    case "Headphones Very Rare":
+      name = itemShopNameAddSuffix("Headphones of", "Absorption", "Fortitude", "Insight", "Intellect", "Leadership", "Strength")
       break
-    case "Sword of Sharpness":
-      name = itemShopNameAddPrefix("of Sharpness", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar")
+    case "Critical Mass Gun":
+      name = itemShopNameAddSuffix("Critical Mass", "Force Knuckles", "Minigun", "Chem Gun", "Tac Pistol", "Rocket Launcher")
       break
     case "Weapon +3":
       name = itemShopNameAddPrefix("+3", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
@@ -3768,17 +3768,17 @@ function itemShopConvertGenericName(name) {
     case "Armor +3":
       name = itemShopNameAddPrefix("+3", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
-    case "Enspelled Armor Legendary":
-      name = itemShopNameAddSuffix("Very Rare Enspelled", ...lightArmor.concat(mediumArmor, heavyArmor))
+    case "Digitized Armor Legendary":
+      name = itemShopNameAddSuffix("Very Rare Digitized", ...lightArmor.concat(mediumArmor, heavyArmor))
       break
-    case "Enspelled Weapon Legendary":
-      name = itemShopNameAddSuffix("Legendary Enspelled", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
+    case "Digitized Weapon Legendary":
+      name = itemShopNameAddSuffix("Legendary Digitized", ...simpleMeleeWeapons.concat(martialMeleeWeapons, simpleRangedWeapons, martialRangedWeapons))
       break
-    case "Luck Blade":
-      name = itemShopNameAddPrefix("Luck Blade", "Glaive", "Greatsword", "Longsword", "Rapier", "Scimitar", "Sickle", "Shortsword")
+    case "Luck Gun":
+      name = itemShopNameAddPrefix("Lucky", "Force Knuckles", "Minigun", "Chem Gun", "Tac Pistol", "Rocket Launcher", "Grenade Launcher", "Autogun")
       break
     case "Moonblade":
-      name = itemShopNameAddPrefix("Moonblade", "Greatsword", "Longsword", "Rapier", "Scimitar", "Shortsword")
+      name = itemShopNameAddPrefix("Moonblade", "Minigun", "Chem Gun", "Tac Pistol", "Rocket Launcher", "Autogun")
       break
   }
   return name
@@ -3954,7 +3954,7 @@ var fantasyMaleNames = ["Alexander", "Thane", "Gabriel", "Orion", "Grayson", "Ce
 
 var scifiFemaleNames = ["Jala", "Clea", "Jocosa", "Artemis", "Serafina", "Sevyn", "Tesla", "Lux", "Nine", "Kiara", "Valentina", "Morticia", "Rio", "Xyleena", "Libby", "Valkyrie", "Panika", "Lara", "Fenglina", "Makiko", "Katja", "Paige", "Elie", "Lucie", "Samanta", "Hazel", "Helena", "Leia", "Luminara", "Katan", "Vala", "Inara", "Saffron", "Zoe", "Jayne", "Kaylee", "Maeve", "Kara", "Athena", "Cally", "Anastasia", "Pegi", "Alita", "Alkhema", "Arcena", "Ko", "Bodika", "Candi", "Chi", "Rae", "Cylla", "Daria", "Chalma", "Elita", "Eryx", "Eva", "Nova", "Celeste", "Guri", "Hexen", "Indigo", "Juli", "Katana", "Talia", "Lala", "Mika", "Miranda", "Nebula", "Six", "Sasha", "Silica", "Sky", "Strika", "Terra", "Yori", "Andromeda", "Astra", "Bellatrix", "Callista", "Cosima", "Delphine", "Electra", "Phantasy", "Farrah", "Geneva", "Haven", "Jade", "Juno", "Lillix", "Lynx", "Nya", "Oria", "Parris", "Priya", "Rue", "Clarity", "Bloom", "Decca", "Domonique", "Grazi", "Helvetica", "Cadence"]
 
-var scifiMaleNames = ["Ares", "Astro", "Macro", "Cadmus", "Cyno", "Fade", "Hack", "Hax", "Indigo", "Hinge", "Jarno", "Jax", "Knox", "Link", "Maxx", "Merrick", "Miles", "Mirari", "Niko", "Nano", "Oberon", "Onyx", "Orion", "Osso", "Paradox", "Pip", "Phoenix", "Radius", "Rexx", "Razlin", "Reznor", "Rian", "Roscoe", "Ryker", "Rush", "Riden", "Drake", "Frost", "Cassian", "Neyo", "Maverick", "Azriel", "Auryn", "Daggar", "Evyn", "Jace", "Jaron", "Loki", "Oren", "Ridley", "Sagan", "Silas","Solon", "Stellan", "Sorrel", "Seth", "Theron", "Zen", "Klay", "Blaze", "Xander", "Mace", "Dozer", "Eno", "Tip", "Ray", "Genesis", "Galac", "Eclipse", "Zev", "Zaid", "Wilder", "Sol", "Jupiter", "Mars", "Star", "Cosmo", "Aster", "Lazer", "Zeno", "Sirius", "Azra", "Atom", "Teague", "Rigel", "Cato", "Zhane", "Ace", "Rocket", "Kip", "Meter", "Starbuck", "Roman", "Fiat", "Kyron", "Nyx", "Rune", "Nero", "Quantum", "Nym", "Morphius", "Striker", "Bridger"]
+var scifiMaleNames = ["Ares", "Astro", "Macro", "Cadmus", "Cyno", "Fade", "Hack", "Hax", "Indigo", "Hinge", "Jarno", "Jax", "Knox", "Link", "Maxx", "Merrick", "Miles", "Mirari", "Niko", "Nano", "Oberon", "Onyx", "Orion", "Osso", "Paradox", "Pip", "Phoenix", "Radius", "Rexx", "Razlin", "Reznor", "Rian", "Roscoe", "Ryker", "Rush", "Riden", "Drake", "Frost", "Cassian", "Neyo", "Maverick", "Azriel", "Auryn", "Daggar", "Evyn", "Jace", "Jaron", "Loki", "Oren", "Ridley", "Sagan", "Silas","Solon", "Stellan", "Sorrel", "Seth", "Theron", "Zen", "Klay", "Blaze", "Xander", "Shotgun", "Dozer", "Eno", "Tip", "Ray", "Genesis", "Galac", "Eclipse", "Zev", "Zaid", "Wilder", "Sol", "Jupiter", "Mars", "Star", "Cosmo", "Aster", "Lazer", "Zeno", "Sirius", "Azra", "Atom", "Teague", "Rigel", "Cato", "Zhane", "Ace", "Rocket", "Kip", "Meter", "Starbuck", "Roman", "Fiat", "Kyron", "Nyx", "Rune", "Nero", "Quantum", "Nym", "Morphius", "Striker", "Bridger"]
 
 var modernFemaleNames = ["Olivia", "Emma", "Amelia", "Ella", "Isabella", "Mia", "Valerie", "Eliana", "Charlotte", "Mila", "Aria", "Luna", "Harper", "Grace", "Zoey", "Jemma", "Priscilla", "Scarlett", "Hazel", "Ellie", "Naya", "Nila", "Tamia", "Cecilia", "Arianna", "Abigail", "Riley", "Autumn", "Maya", "Madelyn", "Maria", "Melody", "Sophia", "Ava", "Luz", "Eleanor", "Ivy", "Freya", "Alice", "Violet", "Clara", "Daphne", "Evelyn", "Nora", "Lucy", "Poppy", "Rose", "Chloe", "Phoebe", "Elsie", "Cordelia", "Willow", "Daisy", "Thea", "Adeline", "Arabella", "Maisie", "Lola", "Olive", "Sienna", "Sierra", "Elena", "Sadie", "Sophie", "Julia", "Alexandra", "Jane", "Mira", "Talia", "Zara", "Vera", "Amara", "Cynthia", "Hannah", "Aurora", "Anya", "Erin", "Felicity", "Juno", "Yelena", "Naomi", "Caroline", "Miriam", "Veronica", "Molly", "June", "Nina", "Piper", "Helena", "Amari", "Everly", "Bonnie", "Alina", "Emilia", "Harriet", "Isabel", "Sofia", "Kayla", "Lena", "Megan", "Diana"]
 

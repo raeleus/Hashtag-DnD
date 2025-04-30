@@ -736,10 +736,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Hackers Pack",
+    "keys": "Hacker's Pack",
     "value": "Contains equipment used to hack computers, bypass digital locks, and manipulate the virtual plane.",
     "type": "item",
-    "title": "Hackers Pack",
+    "title": "Hacker's Pack",
     "description": "16",
     "useForCharacterCreation": false
   },
@@ -1336,10 +1336,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Charlatan's Dise",
+    "keys": "Charlatan's Dice",
     "value": "A six sided die where the number rolled can be chosen.",
     "type": "item",
-    "title": "Charlatan's Dise",
+    "title": "Charlatan's Dice",
     "description": "100",
     "useForCharacterCreation": false
   },
@@ -2816,10 +2816,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Combustion Revolver",
+    "keys": "Combustion",
     "value": "It deals extra fire damage when it lands a blow.",
     "type": "weapon",
-    "title": "Combustion Revolver",
+    "title": "Combustion Weapon",
     "description": "4000,1d8+7,0,strength",
     "useForCharacterCreation": false
   },
@@ -2841,7 +2841,7 @@
   },
   {
     "keys": "Sabot Shotgun",
-    "value": "A shotgun with greater accuracy and damage. This weapon does additional damage to large enemies.",
+    "value": "Weapon with an underbarrel sabot shotgun with greater accuracy and damage. This weapon does additional damage to large enemies.",
     "type": "weapon",
     "title": "Sabot Shotgun",
     "description": "4000,1d8+1,+1,strength",
@@ -3312,10 +3312,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Energy Sword of Life Stealing",
+    "keys": "Energy Weapon of Life Stealing",
     "value": "If the target is not a zombie or a hologram, the sword deals extra necrotic damage. It gives this extra damage as temporary health to the user.",
     "type": "weapon",
-    "title": "Energy Sword of Life Stealing",
+    "title": "Energy Weapon of Life Stealing",
     "description": "4000,1d8,0,strength",
     "useForCharacterCreation": false
   },
@@ -3616,10 +3616,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Cold M16",
+    "keys": "Cold Gun",
     "value": "Causes the target to take extra cold damage. Fire has less of an effect on the user. When the temperature is freezing, it emits bright light for 10 feet. Once every hour, brandishing the weapon can be used to extinguish all flames within 30 feet.",
     "type": "weapon",
-    "title": "Cold M16",
+    "title": "Cold Gun",
     "description": "40000,1d8+4,0,strength",
     "useForCharacterCreation": false
   },
@@ -4280,10 +4280,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "RinGamepadg of Hologram Command",
+    "keys": "Gamepad of Hologram Command",
     "value": "Linked to a single elemental force (air, earth, fire, water). Gives advantage against holograms of that type. It can potentially compell elementals of that type to follow your command. It has 5 charges used to cast elemental spells. It also has additional elemental properties.",
     "type": "item",
-    "title": "RinGamepadg of Hologram Command",
+    "title": "Gamepad of Hologram Command",
     "description": "200000",
     "useForCharacterCreation": false
   },
