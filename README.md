@@ -3,6 +3,10 @@ A Scenario script for AI Dungeon based on Hashtag DnD
 
 VTOL Knights is a futuristic/apocalyptic scripted AI Dungeon scenario that gives you a variety of tools to enhance your adventure!
 
+Survive high above the post apocalypse in this sci-fi military action-thriller! The VTOL Knights are the elite military force of the future. They are charged with the protectiion of Citadel 1: the flying fortress housing the last vestiges of humanity. With the advanced aircraft, the VTOL (Vertical Take-Off and Landing), they can strike anywhere in the surface world.
+
+With dwindling supplies, desperation is at an all time high. It is your mission to touch down on the ruined earth to find a way forward. But beware! The Nano-Necrotic Virus has transformed all surface-bound beings into bloodthirsty freaks. Navigate your strike team through perilous odds to salvation.
+
 Features:
 Fully working inventory system, loot drops, and item/spell shops<br>
 Hit points, turn-based battles, and a focus on strategic combat<br>
