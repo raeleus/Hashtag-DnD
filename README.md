@@ -1,5 +1,5 @@
 # VTOL Knights
-A Scenario script for AI Dungeon based on Hashtag DND
+A Scenario script for AI Dungeon based on Hashtag DnD
 
 VTOL Knights is a futuristic/apocalyptic scripted AI Dungeon scenario that gives you a variety of tools to enhance your adventure!
 
@@ -17,5 +17,5 @@ Minigames including Mastermind, Memory, and Stragedy, a fully developed trading 
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
-v. 0.0.1 (based on Hashtag DND 0.6.0)
+v. 0.0.1 (based on Hashtag DnD 0.6.0)
 * Initial release
