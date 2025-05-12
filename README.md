@@ -14,8 +14,14 @@ Personalized note system that does not take up context space<br>
 Create locations to travel to and view them in a map<br>
 Minigames including Mastermind, Memory, and Stragedy, a fully developed trading card game
 
+Changes from classic Hashtag DnD:
+A futuristic scenario with advanced technology in the post-apocalypse
+New weapons, classes, spells, encounters, and enemies!
+
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
+
+See the [original scenario here](https://github.com/raeleus/Hashtag-DnD).
 
 v. 0.0.1 (based on Hashtag DnD 0.6.0)
 * Initial release
