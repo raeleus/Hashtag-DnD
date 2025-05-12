@@ -4,8 +4,8 @@ A Scenario script for AI Dungeon
 Hashtag DnD is a scripted AI Dungeon scenario that gives you a variety of tools to enhance your adventure!
 
 Features:
-Fully working inventory system<br>
-Health points and a focus on strategic combat.<br>
+Fully working inventory system, loot drops, and item/spell shops<br>
+Hit points, turn-based battles, and a focus on strategic combat<br>
 Skill/Ability based gameplay guarantees a challenge at every turn<br>
 Advanced dice rolling syntax allows you to set the precise odds<br>
 Unlimited party size with each character having their own inventory, stats, and biographies<br>
