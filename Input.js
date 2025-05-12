@@ -1,4 +1,4 @@
-const version = "Hashtag DnD v0.6.0"
+const version = "VTOL Knights v0.0.1"
 const rollSynonyms = ["roll"]
 const createSynonyms = ["create", "generate", "start", "begin", "setup", "party", "member", "new"]
 const renameCharacterSynonyms = ["renamecharacter", "renameperson"]
