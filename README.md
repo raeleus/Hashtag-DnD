@@ -17,6 +17,8 @@ Minigames including Mastermind, Memory, and Stragedy, a fully developed trading 
 See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
+Hashtag-DnD has another new scenario! Check out the [VTOL-Knights Repository](https://github.com/raeleus/Hashtag-DnD/tree/VTOL-Knights)
+
 v. 0.6.0
 * Added Memory/Matchmaking Game
 * Added Item Shop - Make sure to import the latest story cards: https://github.com/raeleus/Hashtag-DnD/blob/master/story-cards.json
