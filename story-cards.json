@@ -7750,5 +7750,21 @@
     "title": "Stragedy Witch Card",
     "description": "",
     "useForCharacterCreation": false
+  },
+  {
+    "keys": "Nano-Necrotic Virus",
+    "value": "The Nano-Necrotic Virus is thought to be a super soldier serum that has mutated and transforms people into undead killing machines. The original intent may have been to create a stronger, faster soldier capable of healing his wounds rapidly. Instead, when the victim reaches brain death, the body continues to survive and is reduced to their most basic instincts of hunting and killing. The virus is transmitted by blood and saliva contact. Transformation could take days, making detection difficult and helps it spread like wild-fire.",
+    "type": "plot",
+    "title": "Nano-Necrotic Virus",
+    "description": "",
+    "useForCharacterCreation": false
+  },
+  {
+    "keys": "VTOL",
+    "value": "The VTOL, or Vertical Takeoff and Landing aircraft, uses anti-gravity plates instead of traditional rotors. These plates create a localized gravity field, allowing the VTOL to hover and maneuver with unmatched agility. Originally designed for military use, it now serves as a versatile transport for both civilians and soldiers. The anti-gravity plates also enable silent flight, making the VTOL an ideal choice for stealth missions. They are armed with machine guns, rocket pods, and a variety of onboard sensors. They are capable of autonomous flight.",
+    "type": "card",
+    "title": "VTOL",
+    "description": "",
+    "useForCharacterCreation": false
   }
 ]
