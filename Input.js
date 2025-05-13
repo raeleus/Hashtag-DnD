@@ -716,22 +716,22 @@ function handleSetupEnemyStep(text) {
             state.tempEnemy = createEnemy("Alien Whisper", calculateRoll("7d8+7"), 11, 4, "2d4+1", "d20+1", "Mind Lure")
             break
           case 3:
-            state.tempEnemy = createEnemy("Drone Chicken", calculateRoll("6d6+6"), 11, 1, "1d4+1", "d20+1", "Razor Bite1d4+1")
-            break
-          case 4:
             state.tempEnemy = createEnemy("Bear Drone", calculateRoll("3d8+6"), 11, 6, "2d4+2", "d20")
             break
-          case 5:
+          case 4:
             state.tempEnemy = createEnemy("Blood Sucker Zombie", calculateRoll("1d4"), 14, 2, "1d4+3", "d20+1", "Blood Drain2d4+6")
             break
-          case 6:
+          case 5:
             state.tempEnemy = createEnemy("Cyborg", calculateRoll("2d6"), 15, 3, "1d6+2", "d20+2")
             break
-          case 7:
+          case 6:
             state.tempEnemy = createEnemy("Cyborg Wolf", calculateRoll("5d10+10"), 14, 8, "2d6+3", "d20+2")
             break
-          case 8:
+          case 7:
             state.tempEnemy = createEnemy("Decayed Zombie", calculateRoll("2d8+4"), 13, 5, "1d6+2", "d20+2")
+            break
+          case 8:
+            state.tempEnemy = createEnemy("Drone Chicken", calculateRoll("6d6+6"), 11, 1, "1d4+1", "d20+1", "Razor Bite1d4+1")
             break
           case 9:
             state.tempEnemy = createEnemy("Drone Dog", calculateRoll("2d6"), 12, 2, "1d4+2", "d20+2")
