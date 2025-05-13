@@ -486,7 +486,7 @@ const modifier = (text) => {
       text += "\n    Removes all spells from the character's spellbook."
       text += "\n#spellbook"
       text += "\n    Shows the list of spells that the character has learned."
-      text += "\n#spellshop (bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard) (level) (free) (all)"
+      text += "\n#spellshop (officer|medic|scientist|marine|sniper|mutate|synth|hacker) (level) (free) (all)"
       text += "\n    This opens the spell shop where characters can spend gold to purchase new spells. The selection is randomized based on the day and on the character's class and spell level. Full casters, such as bards, clerics, druids, sorcerers, warlocks, and wizards, have spell levels from 0-9. Half casters, such as paladins and rangers, have spell levels from 1-5. Include the argument \"free\" to not require gold to purchase the spell. Include the argument \"all\" to list all available spells for that level. Otherwise, the list is randomized and a selection of lower level spells are included."
 
       text += "\n\n--Combat--"
@@ -1208,7 +1208,7 @@ function handleSpellShop() {
           break
       }
       break
-    case "Robot":
+    case "Synth":
       switch(state.spellShopLevel) {
         case 9:
           spellShopSelectSpells(["Digital Self Image", "Social Engineering", "Precog", "Interdimensional Gate", "Mind Control Serum", "Superior Antigen", "Force Shackles", "Drone Plague", "Reformat Memory", "Command Prompt Kill", "Image Generator", "Summon Alien", "Magnetic Attraction", "True Nanomorph", "Censorship"], 50000)
