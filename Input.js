@@ -710,229 +710,229 @@ function handleSetupEnemyStep(text) {
 
         switch (parseInt(value)) {
           case 1:
-            state.tempEnemy = createEnemy("Hologram", calculateRoll("6d8+6"), 18, 6, "1d6+2", "d20")
+            state.tempEnemy = createEnemy("Alien", calculateRoll("5d8"), 12, 3, "2d6+2", "d20+2")
             break
           case 2:
-            state.tempEnemy = createEnemy("Robotic Arm", calculateRoll("2d+6"), 9, -3, "1d4-1", "d20-1")
+            state.tempEnemy = createEnemy("Alien Whisper", calculateRoll("7d8+7"), 11, 4, "2d4+1", "d20+1", "Mind Lure")
             break
           case 3:
-            state.tempEnemy = createEnemy("Survivor", calculateRoll("5d8+10"), 11, 6, "1d6+2", "d20")
+            state.tempEnemy = createEnemy("Drone Chicken", calculateRoll("6d6+6"), 11, 1, "1d4+1", "d20+1", "Razor Bite1d4+1")
             break
           case 4:
             state.tempEnemy = createEnemy("Bear Drone", calculateRoll("3d8+6"), 11, 6, "2d4+2", "d20")
             break
           case 5:
-            state.tempEnemy = createEnemy("Zombie Child", calculateRoll("2d8+2"), 11, 4, "1d6+1", "d20")
-            break
-          case 6:
-            state.tempEnemy = createEnemy("Drone Chicken", calculateRoll("6d6+6"), 11, 1, "1d4+1", "d20+1", "Razor Bite1d4+1")
-            break
-          case 7:
-            state.tempEnemy = createEnemy("Robotic Snake", calculateRoll("2d10+2"), 12, 6, "1d8+2", "d20+2", "Venom Bite2d4+1")
-            break
-          case 8:
-            state.tempEnemy = createEnemy("Cyborg Wolf", calculateRoll("5d10+10"), 14, 8, "2d6+3", "d20+2")
-            break
-          case 9:
-            state.tempEnemy = createEnemy("Alien", calculateRoll("5d8"), 12, 3, "2d6+2", "d20+2")
-            break
-          case 10:
-            state.tempEnemy = createEnemy("Mecha Centipede", calculateRoll("1d6+1"), 13, 1, "1d4+2", "d20+2")
-            break
-          case 11:
-            state.tempEnemy = createEnemy("Drone Dog", calculateRoll("2d6"), 12, 2, "1d4+2", "d20+2")
-            break
-          case 12:
-            state.tempEnemy = createEnemy("Holographic Spider", calculateRoll("2d8+2"), 13, 4, "1d6+1", "d20+3", "Venom Bite1d6+8")
-            break
-          case 13:
-            state.tempEnemy = createEnemy("Robot", calculateRoll("5d8"), 15, 6, "1d8+2", "d20+1")
-            break
-          case 14:
-            state.tempEnemy = createEnemy("Cyborg", calculateRoll("2d6"), 15, 3, "1d6+2", "d20+2")
-            break
-          case 15:
-            state.tempEnemy = createEnemy("Alien Whisper", calculateRoll("7d8+7"), 11, 4, "2d4+1", "d20+1", "Mind Lure")
-            break
-          case 16:
-            state.tempEnemy = createEnemy("Zombie Killer", calculateRoll("2d8+2"), 18, 4, "1d8+1", "d20+1")
-            break
-          case 17:
-            state.tempEnemy = createEnemy("Hunter", calculateRoll("2d6-2"), 12, 2, "1d4+2", "d20+2")
-            break
-          case 18:
-            state.tempEnemy = createEnemy("Survivor", calculateRoll("2d8+6"), 13, 8, "1d12+3", "d20+1")
-            break
-          case 19:
-            state.tempEnemy = createEnemy("Hospitality Droid", calculateRoll("5d8"), 15, 4, "1d8+2", "d20+3")
-            break
-          case 20:
-            state.tempEnemy = createEnemy("Decayed Zombie", calculateRoll("2d8+4"), 13, 5, "1d6+2", "d20+2")
-            break
-          case 21:
             state.tempEnemy = createEnemy("Blood Sucker Zombie", calculateRoll("1d4"), 14, 2, "1d4+3", "d20+1", "Blood Drain2d4+6")
             break
-          case 22:
+          case 6:
+            state.tempEnemy = createEnemy("Cyborg", calculateRoll("2d6"), 15, 3, "1d6+2", "d20+2")
+            break
+          case 7:
+            state.tempEnemy = createEnemy("Cyborg Wolf", calculateRoll("5d10+10"), 14, 8, "2d6+3", "d20+2")
+            break
+          case 8:
+            state.tempEnemy = createEnemy("Decayed Zombie", calculateRoll("2d8+4"), 13, 5, "1d6+2", "d20+2")
+            break
+          case 9:
+            state.tempEnemy = createEnemy("Drone Dog", calculateRoll("2d6"), 12, 2, "1d4+2", "d20+2")
+            break
+          case 10:
+            state.tempEnemy = createEnemy("Hologram", calculateRoll("6d8+6"), 18, 6, "1d6+2", "d20")
+            break
+          case 11:
+            state.tempEnemy = createEnemy("Holographic Spider", calculateRoll("2d8+2"), 13, 4, "1d6+1", "d20+3", "Venom Bite1d6+8")
+            break
+          case 12:
             state.tempEnemy = createEnemy("Horse Drone", calculateRoll("3d10+3"), 11, 10, "2d6+4", "d20+1", "Charge")
             break
-          case 23:
-            state.tempEnemy = createEnemy("Predator Drone", calculateRoll("2d+2"), 13, 6, "2d4+2", "d20+2")
+          case 13:
+            state.tempEnemy = createEnemy("Hospitality Droid", calculateRoll("5d8"), 15, 4, "1d8+2", "d20+3")
             break
-          case 24:
+          case 14:
             state.tempEnemy = createEnemy("Half-Alien", calculateRoll("4d10+4"), 13, 8, "2d6+3", "d20+1")
             break
-          case 25:
+          case 15:
+            state.tempEnemy = createEnemy("Hunter", calculateRoll("2d6-2"), 12, 2, "1d4+2", "d20+2")
+            break
+          case 16:
+            state.tempEnemy = createEnemy("Mecha Centipede", calculateRoll("1d6+1"), 13, 1, "1d4+2", "d20+2")
+            break
+          case 17:
+            state.tempEnemy = createEnemy("Predator Drone", calculateRoll("2d+2"), 13, 6, "2d4+2", "d20+2")
+            break
+          case 18:
+            state.tempEnemy = createEnemy("Robot", calculateRoll("5d8"), 15, 6, "1d8+2", "d20+1")
+            break
+          case 19:
+            state.tempEnemy = createEnemy("Robotic Arm", calculateRoll("2d+6"), 9, -3, "1d4-1", "d20-1")
+            break
+          case 20:
+            state.tempEnemy = createEnemy("Robotic Snake", calculateRoll("2d10+2"), 12, 6, "1d8+2", "d20+2", "Venom Bite2d4+1")
+            break
+          case 21:
+            state.tempEnemy = createEnemy("Survivor", calculateRoll("5d8+10"), 11, 6, "1d6+2", "d20")
+            break
+          case 22:
+            state.tempEnemy = createEnemy("True Survivor", calculateRoll("2d8+6"), 13, 8, "1d12+3", "d20+1")
+            break
+          case 23:
             state.tempEnemy = createEnemy("Zombie", calculateRoll("3d8+9"), 8, 4, "1d6+1", "d20-2")
+            break
+          case 24:
+            state.tempEnemy = createEnemy("Zombie Child", calculateRoll("2d8+2"), 11, 4, "1d6+1", "d20")
+            break
+          case 25:
+            state.tempEnemy = createEnemy("Zombie Killer", calculateRoll("2d8+2"), 18, 4, "1d8+1", "d20+1")
             break
           case 26:
             state.tempEnemy = createEnemy("Air Hologram", calculateRoll("12d10+24"), 15, 8, "2d8+5", "d20+5", "Whirlwind3d8+2")
             break
           case 27:
-            state.tempEnemy = createEnemy("Stone Hologram", calculateRoll("8d8+16"), 15, 5, "2d6+3", "d20-1")
+            state.tempEnemy = createEnemy("Alien Hound", calculateRoll("7d8+14"), 15, 5, "1d8+3", "d20+1", "Atomic Breath6d6")
             break
           case 28:
-            state.tempEnemy = createEnemy("Rage Zombie", calculateRoll("9d8+27"), 13, 5, "1d12+3", "d20+1")
+            state.tempEnemy = createEnemy("Assassin Droid", calculateRoll("7d10+21"), 12, 6, "1d8+4", "d20+2")
             break
           case 29:
-            state.tempEnemy = createEnemy("Mud Zombie", calculateRoll("11d10+33"), 16, 6, "2d6+4", "d20", "Mud Slop")
+            state.tempEnemy = createEnemy("Bull Droid", calculateRoll("9d10+27"), 14, 6, "2d12+4", "d20")
             break
           case 30:
-            state.tempEnemy = createEnemy("Nanomorphic Zombie", calculateRoll("8d8+16"), 14, 6, "1d6+4", "d20+4", "Shapechange")
+            state.tempEnemy = createEnemy("Construction Bot", calculateRoll("7d10+21"), 11, 6, "2d8+4", "d20-1")
             break
           case 31:
-            state.tempEnemy = createEnemy("Scientist", calculateRoll("5d8+5"), 11, 4, "1d8", "d20+1", "Lighter3d6", "Bulletproof", "Sticky Foam")
-            break
-          case 32:
             state.tempEnemy = createEnemy("Earth Hologram", calculateRoll("12d10+60"), 17, 8, "2d8+5", "d20-1", "Earth Glide")
             break
-          case 33:
+          case 32:
             state.tempEnemy = createEnemy("Fire Hologram", calculateRoll("12d10+36"), 13, 6, "2d6+3", "d20+3", "Fire Form")
+            break
+          case 33:
+            state.tempEnemy = createEnemy("Giant Zombie", calculateRoll("10d12+40"), 13, 8, "3d8+5", "d20-1", "Throw Car3d10+5")
             break
           case 34:
             state.tempEnemy = createEnemy("Gorgon Bot", calculateRoll("12d8+48"), 19, 8, "2d12+5", "d20", "Petrifying Beam")
             break
           case 35:
-            state.tempEnemy = createEnemy("Hacker", calculateRoll("11d8+33"), 17, 6, "2d8+4", "d20+1", "Minor Hologram", "Data Wipe")
+            state.tempEnemy = createEnemy("Mud Zombie", calculateRoll("11d10+33"), 16, 6, "2d6+4", "d20", "Mud Slop")
             break
           case 36:
-            state.tempEnemy = createEnemy("Assassin Droid", calculateRoll("7d10+21"), 12, 6, "1d8+4", "d20+2")
+            state.tempEnemy = createEnemy("Hacker", calculateRoll("11d8+33"), 17, 6, "2d8+4", "d20+1", "Minor Hologram", "Data Wipe")
             break
           case 37:
-            state.tempEnemy = createEnemy("Alien Hound", calculateRoll("7d8+14"), 15, 5, "1d8+3", "d20+1", "Atomic Breath6d6")
+            state.tempEnemy = createEnemy("Juggernaut Zombie", calculateRoll("8d10+40"), 15, 7, "1d6+4", "d20+1")
             break
           case 38:
-            state.tempEnemy = createEnemy("Giant Zombie", calculateRoll("10d12+40"), 13, 8, "3d8+5", "d20-1", "Throw Car3d10+5")
-            break
-          case 39:
-            state.tempEnemy = createEnemy("Ripper Bot", calculateRoll("8d10+24"), 14, 5, "1d8+3", "d20+3")
-            break
-          case 40:
-            state.tempEnemy = createEnemy("Bull Droid", calculateRoll("9d10+27"), 14, 6, "2d12+4", "d20")
-            break
-          case 41:
             state.tempEnemy = createEnemy("Nano Cloud", calculateRoll("9d8+18"), 12, 5, "1d8+3", "d20+1", "Consume")
             break
+          case 39:
+            state.tempEnemy = createEnemy("Nano Vampire Spawn", calculateRoll("11d8+33"), 15, 6, "2d4+3", "d20+3", "Bite3d6+3")
+            break
+          case 40:
+            state.tempEnemy = createEnemy("Nanomorph Rat", calculateRoll("6d8+6"), 12, 4, "1d4+2", "d20+2")
+            break
+          case 41:
+            state.tempEnemy = createEnemy("Nanomorph Wolf", calculateRoll("9d8+18"), 12, 4, "18+2", "d20+1")
+            break
           case 42:
-            state.tempEnemy = createEnemy("Construction Bot", calculateRoll("7d10+21"), 11, 6, "2d8+4", "d20-1")
+            state.tempEnemy = createEnemy("Nanomorphic Zombie", calculateRoll("8d8+16"), 14, 6, "1d6+4", "d20+4", "Shapechange")
             break
           case 43:
-            state.tempEnemy = createEnemy("Tank Zombie", calculateRoll("7d10+21"), 13, 7, "1d10+5", "d20")
+            state.tempEnemy = createEnemy("Rage Zombie", calculateRoll("9d8+27"), 13, 5, "1d12+3", "d20+1")
             break
           case 44:
             state.tempEnemy = createEnemy("Red Mecha Dragon Wyrmling", calculateRoll("10d8+30"), 17, 6, "1d10+4", "d20")
             break
           case 45:
-            state.tempEnemy = createEnemy("Spectator Drone", calculateRoll("6d8+12"), 14, 1, "1d6-1", "d20+2", "Confusion Beam", "Paralyzing Beam", "Fear Beam", "Wounding Beam3d10")
+            state.tempEnemy = createEnemy("Ripper Bot", calculateRoll("8d10+24"), 14, 5, "1d8+3", "d20+3")
             break
           case 46:
-            state.tempEnemy = createEnemy("Juggernaut Zombie", calculateRoll("8d10+40"), 15, 7, "1d6+4", "d20+1")
+            state.tempEnemy = createEnemy("Scientist", calculateRoll("5d8+5"), 11, 4, "1d8", "d20+1", "Lighter3d6", "Bulletproof", "Sticky Foam")
             break
           case 47:
-            state.tempEnemy = createEnemy("Nanomorph Rat", calculateRoll("6d8+6"), 12, 4, "1d4+2", "d20+2")
+            state.tempEnemy = createEnemy("Spectator Drone", calculateRoll("6d8+12"), 14, 1, "1d6-1", "d20+2", "Confusion Beam", "Paralyzing Beam", "Fear Beam", "Wounding Beam3d10")
             break
           case 48:
-            state.tempEnemy = createEnemy("Nanomorph Wolf", calculateRoll("9d8+18"), 12, 4, "18+2", "d20+1")
+            state.tempEnemy = createEnemy("Stone Hologram", calculateRoll("8d8+16"), 15, 5, "2d6+3", "d20-1")
             break
           case 49:
-            state.tempEnemy = createEnemy("Nano Vampire Spawn", calculateRoll("11d8+33"), 15, 6, "2d4+3", "d20+3", "Bite3d6+3")
+            state.tempEnemy = createEnemy("Tank Zombie", calculateRoll("7d10+21"), 13, 7, "1d10+5", "d20")
             break
           case 50:
             state.tempEnemy = createEnemy("White Zombie", calculateRoll("6d8+18"), 14, 4, "1d8+2", "d20+1", "Life Sucker4d6+3")
             break
           case 51:
-            state.tempEnemy = createEnemy("Alien Lord", calculateRoll("18d10"), 17, 9, "6d6+15", "d20-1", "Mind Control", "Psycho Beam3d6")
+            state.tempEnemy = createEnemy("Alien Devil", calculateRoll("16d8+64"), 17, 8, "2d6+8", "d20+4")
             break
           case 52:
-            state.tempEnemy = createEnemy("Attack Drone", calculateRoll("12d8+24"), 15, 6, "2d6+6", "d20+3")
+            state.tempEnemy = createEnemy("Alien Lord", calculateRoll("18d10"), 17, 9, "6d6+15", "d20-1", "Mind Control", "Psycho Beam3d6")
             break
           case 53:
-            state.tempEnemy = createEnemy("Holographic Chimera", calculateRoll("12d10+48"), 14, 7, "2d6+4", "d20", "Flare7d8")
+            state.tempEnemy = createEnemy("Attack Drone", calculateRoll("12d8+24"), 15, 6, "2d6+6", "d20+3")
             break
           case 54:
             state.tempEnemy = createEnemy("Cloud Giant Zombie", calculateRoll("16d12+96"), 14, 12, "6d8+16", "d20", "Throw Car4d10+8", "Lightning Rod")
             break
           case 55:
-            state.tempEnemy = createEnemy("Robo Cyclops", calculateRoll("12d12+60"), 14, 9, "3d8+6", "d20")
-            break
-          case 56:
-            state.tempEnemy = createEnemy("Alien Devil", calculateRoll("16d8+64"), 17, 8, "2d6+8", "d20+4")
-            break
-          case 57:
-            state.tempEnemy = createEnemy("Zombie Rider", calculateRoll("13d10+52"), 19, 6, "3d8", "1d10+3", "Infected Bite2d8")
-            break
-          case 58:
             state.tempEnemy = createEnemy("Frost Giant Zombie", calculateRoll("12d12+60"), 15, 9, "6d12+12", "d20-1")
             break
-          case 59:
+          case 56:
+            state.tempEnemy = createEnemy("Holographic Chimera", calculateRoll("12d10+48"), 14, 7, "2d6+4", "d20", "Flare7d8")
+            break
+          case 57:
+            state.tempEnemy = createEnemy("Hunter Killer Drone", calculateRoll("12d12+60"), 16, 10, "6d6+12", "d20-1")
+            break
+          case 58:
             state.tempEnemy = createEnemy("Hydraulic Serpent", calculateRoll("15d12+75"), 15, 8, "3d10+15", "d20+1")
             break
-          case 60:
+          case 59:
             state.tempEnemy = createEnemy("Insane Scientist", calculateRoll("9d8"), 12, 5, "1d4+2", "d20+2", "Snow Blaster8d8", "Null Zero Cloak", "Incendiary Rocket8d6", "Malware Blocker")
+            break
+          case 60:
+            state.tempEnemy = createEnemy("Mecha Suit", calculateRoll("17d10+85"), 17, 10, "6d8+12", "d20-1")
             break
           case 61:
             state.tempEnemy = createEnemy("Medusa Droid", calculateRoll("17d8+51"), 15, 5, "1d6+2", "d20+2", "Petrifying Beam", "Snake Tentacle5d6")
             break
           case 62:
-            state.tempEnemy = createEnemy("Shield Hologram", calculateRoll("15d10+60"), 17, 7, "4d6+4", "d20-1", "Malware Blocker")
+            state.tempEnemy = createEnemy("Robo Cyclops", calculateRoll("12d12+60"), 14, 9, "3d8+6", "d20")
             break
           case 63:
             state.tempEnemy = createEnemy("Sentry Drone", calculateRoll("10d10+20"), 15, 7, "8d8+4", "d20+3", "Social Engineering", "Tesla Coil9d6")
             break
           case 64:
-            state.tempEnemy = createEnemy("Mecha Suit", calculateRoll("17d10+85"), 17, 10, "6d8+12", "d20-1")
+            state.tempEnemy = createEnemy("Shield Hologram", calculateRoll("15d10+60"), 17, 7, "4d6+4", "d20-1", "Malware Blocker")
             break
           case 65:
-            state.tempEnemy = createEnemy("Hunter Killer Drone", calculateRoll("12d12+60"), 16, 10, "6d6+12", "d20-1")
-            break
-          case 66:
             state.tempEnemy = createEnemy("Young Black Mecha Dragon", calculateRoll("15d10+45"), 18, 7, "4d6+8", "d20+2", "Acid Breath11d8")
             break
-          case 67:
+          case 66:
             state.tempEnemy = createEnemy("Young Blue Mecha Dragon", calculateRoll("16d10+64"), 18, 9, "12d6+10", "d20", "Lightning Breath10d10")
             break
-          case 68:
+          case 67:
             state.tempEnemy = createEnemy("Young Brass Mecha Dragon", calculateRoll("13d10+39"), 17, 7, "2d10+4", "d20", "Fire Breath12d6", "Sleep Breath")
             break
-          case 69:
+          case 68:
             state.tempEnemy = createEnemy("Young Bronze Mecha Dragon", calculateRoll("15d10+60"), 18, 8, "4d6+10", "d20+1", "Lightning Breath10d10", "Repulsion Breath")
             break
-          case 70:
+          case 69:
             state.tempEnemy = createEnemy("Young Copper Mecha Dragon", calculateRoll("14d10+42"), 17, 7, "4d6+8", "d20+1", "Acid Breath9d8", "Slowing Breath")
             break
-          case 71:
+          case 70:
             state.tempEnemy = createEnemy("Young Gold Mecha Dragon", calculateRoll("17d10+85"), 18, 10, "4d6+12", "d20+2", "Fire Breath10d10", "Weakening Breath")
             break
-          case 72:
+          case 71:
             state.tempEnemy = createEnemy("Young Green Mecha Dragon", calculateRoll("16d10+48"), 18, 7, "4d6+8", "d20+1", "Poison Breath12d6")
             break
-          case 73:
+          case 72:
             state.tempEnemy = createEnemy("Young Red Mecha Dragon", calculateRoll("17d10+85"), 18, 10, "4d6+12", "d20", "Fire Breath16d6")
             break
-          case 74:
+          case 73:
             state.tempEnemy = createEnemy("Young Silver Mecha Dragon", calculateRoll("16d10+8-"), 18, 10, "4d6+12", "d20", "Cold Breath12d8", "Paralyzing Breath")
             break
-          case 75:
+          case 74:
             state.tempEnemy = createEnemy("Young White Mecha Dragon", calculateRoll("14d10+56"), 17, 7, "2d10+4", "d20", "Cold Breath10d8", "Ice Walk")
+            break
+          case 75:
+            state.tempEnemy = createEnemy("Zombie Rider", calculateRoll("13d10+52"), 19, 6, "3d8", "1d10+3", "Infected Bite2d8")
             break
           case 76:
             state.tempEnemy = createEnemy("Adult Black Mecha Dragon", calculateRoll("17d12+85"), 19, 11, "6d6+18", "d20+2", "Acid Breath12d8", "Frightful Presence", "Wing Attack2d6+6")
@@ -947,79 +947,79 @@ function handleSetupEnemyStep(text) {
             state.tempEnemy = createEnemy("Adult Green Mecha Dragon", calculateRoll("18d12+90"), 19, 11, "6d6+18", "d20+1", "Poison Breath16d6")
             break
           case 80:
-            state.tempEnemy = createEnemy("Cybernetic Organism ", calculateRoll("10d12+20"), 17, 7, "2d10+4", "d20-2")
+            state.tempEnemy = createEnemy("Alien Inquisitor", calculateRoll("23d8+46"), 16, 10, "12d8+24", "d20+2", "Spectral Talon1d8+5")
             break
           case 81:
-            state.tempEnemy = createEnemy("Lead Scientist", calculateRoll("18d8+18"), 12, 4, "1d4+2", "d20+14", "Chrono Trigger", "Force Field", "Tesla Coil8d6", "Phaseshift", "Snow Blaster8d8", "Teleporter")
+            state.tempEnemy = createEnemy("Alien Worm", calculateRoll("15d20+90"), 18, 14, "6d6+18", "d20-2", "Tail Stinger12d6+19")
             break
           case 82:
-            state.tempEnemy = createEnemy("Drop Zone Turret", calculateRoll("16d12+64"), 17, 10, "5d10+12", "d20+3", "Lightning Turret12d10", "Suppressing Firew6d6", "Snap Shot2d10+6")
+            state.tempEnemy = createEnemy("Amalgam Soldier", calculateRoll("18d8+18"), 12, 6, "1d4+2", "d20+2", "Chrono Trigger", "Harden Security", "Snow Blaster8d8", "Tesla Coil8d6")
             break
           case 83:
-            state.tempEnemy = createEnemy("Hook Arm Zombie", calculateRoll("17d10+34"), 16, 8, "6d10+8", "d20+3", "Shadow Jump5d12+2", "Deadly Reach")
+            state.tempEnemy = createEnemy("Cybernetic Organism ", calculateRoll("10d12+20"), 17, 7, "2d10+4", "d20-2")
             break
           case 84:
             state.tempEnemy = createEnemy("Death Drone", calculateRoll("18d8+72"), 15, 10, "6d8+15", "d20+3", "Phantom Slice6d6")
             break
           case 85:
-            state.tempEnemy = createEnemy("Holographic Genie", calculateRoll("14d10+84"), 17, 9, "2d6+8", "d20+2")
-            break
-          case 86:
-            state.tempEnemy = createEnemy("Alien Inquisitor", calculateRoll("23d8+46"), 16, 10, "12d8+24", "d20+2", "Spectral Talon1d8+5")
-            break
-          case 87:
-            state.tempEnemy = createEnemy("Killer AI", calculateRoll("16d10+112"), 17, 10, "4d6+12", "d20+1", "Algorithm5d6")
-            break
-          case 88:
-            state.tempEnemy = createEnemy("Zombie Brain", calculateRoll("20d10+100"), 10, 7, "5d8+7", "d20", "Mind Blast5d10+5")
-            break
-          case 89:
-            state.tempEnemy = createEnemy("Jetpack Droid", calculateRoll("18d8+72"), 18, 8, "1d10+4", "d20+3")
-            break
-          case 90:
-            state.tempEnemy = createEnemy("Frozen Alien", calculateRoll("19d10+76"), 18, 10, "6d4+15", "d20+2", "Wall of Ice")
-            break
-          case 91:
-            state.tempEnemy = createEnemy("Flesh Mass", calculateRoll("10d12+50"), 18, 10, "6d10+10", "d20+1", "Regeneration")
-            break
-          case 92:
-            state.tempEnemy = createEnemy("Grey Cloud", calculateRoll("13d20+39"), 15, 10, "6d10+12", "d20", "LifeDrain3d10", "Nano Bomb5d8")
-            break
-          case 93:
-            state.tempEnemy = createEnemy("Zombie Lord", calculateRoll("13d8+39"), 17, 9, "3d6+4", "d20", "Paralysis Mite", "Noise Cancelling", "Virus14d6", "Incredible Stench", "Zombie Yell")
-            break
-          case 94:
-            state.tempEnemy = createEnemy("Alien Worm", calculateRoll("15d20+90"), 18, 14, "6d6+18", "d20-2", "Tail Stinger12d6+19")
-            break
-          case 95:
             state.tempEnemy = createEnemy("Drill Bot", calculateRoll("17d12+85"), 17, 11, "6d10+7", "d20+1", "Drill6d6")
             break
+          case 86:
+            state.tempEnemy = createEnemy("Drop Zone Turret", calculateRoll("16d12+64"), 17, 10, "5d10+12", "d20+3", "Lightning Turret12d10", "Suppressing Firew6d6", "Snap Shot2d10+6")
+            break
+          case 87:
+            state.tempEnemy = createEnemy("Flesh Mass", calculateRoll("10d12+50"), 18, 10, "6d10+10", "d20+1", "Regeneration")
+            break
+          case 88:
+            state.tempEnemy = createEnemy("Frozen Alien", calculateRoll("19d10+76"), 18, 10, "6d4+15", "d20+2", "Wall of Ice")
+            break
+          case 89:
+            state.tempEnemy = createEnemy("Giant Spider Drone", calculateRoll("15d10+5"), 23, 9, "3d12+12", "d20+8", "Silk Spit", "Silk Beam7d10")
+            break
+          case 90:
+            state.tempEnemy = createEnemy("Grey Cloud", calculateRoll("13d20+39"), 15, 10, "6d10+12", "d20", "LifeDrain3d10", "Nano Bomb5d8")
+            break
+          case 91:
+            state.tempEnemy = createEnemy("Holographic Genie", calculateRoll("14d10+84"), 17, 9, "2d6+8", "d20+2")
+            break
+          case 92:
+            state.tempEnemy = createEnemy("Hook Arm Zombie", calculateRoll("17d10+34"), 16, 8, "6d10+8", "d20+3", "Shadow Jump5d12+2", "Deadly Reach")
+            break
+          case 93:
+            state.tempEnemy = createEnemy("Jetpack Droid", calculateRoll("18d8+72"), 18, 8, "1d10+4", "d20+3")
+            break
+          case 94:
+            state.tempEnemy = createEnemy("Killer AI", calculateRoll("16d10+112"), 17, 10, "4d6+12", "d20+1", "Algorithm5d6")
+            break
+          case 95:
+            state.tempEnemy = createEnemy("Nano Vampire", calculateRoll("17d8+68"), 16, 9, "3d8+8", "d20+4", "Charm", "Nanomorph")
+            break
           case 96:
-            state.tempEnemy = createEnemy("Skull Alien", calculateRoll("15d8+45"), 18, 8, "24d6", "d20+3", "Skull Ray5d8+5")
+            state.tempEnemy = createEnemy("Lead Scientist", calculateRoll("18d8+18"), 12, 4, "1d4+2", "d20+14", "Chrono Trigger", "Force Field", "Tesla Coil8d6", "Phaseshift", "Snow Blaster8d8", "Teleporter")
             break
           case 97:
-            state.tempEnemy = createEnemy("Giant Spider Drone", calculateRoll("15d10+5"), 23, 9, "3d12+12", "d20+8", "Silk Spit", "Silk Beam7d10")
+            state.tempEnemy = createEnemy("Skull Alien", calculateRoll("15d8+45"), 18, 8, "24d6", "d20+3", "Skull Ray5d8+5")
             break
           case 98:
             state.tempEnemy = createEnemy("Storm Giant Zombie", calculateRoll("20d12+100"), 16, 14, "12d6+18", "d20+2", "Control Weather", "Lightning Strike12d8")
             break
           case 99:
-            state.tempEnemy = createEnemy("Nano Vampire", calculateRoll("17d8+68"), 16, 9, "3d8+8", "d20+4", "Charm", "Nanomorph")
+            state.tempEnemy = createEnemy("Zombie Brain", calculateRoll("20d10+100"), 10, 7, "5d8+7", "d20", "Mind Blast5d10+5")
             break
           case 100:
-            state.tempEnemy = createEnemy("Amalgam Soldier", calculateRoll("18d8+18"), 12, 6, "1d4+2", "d20+2", "Chrono Trigger", "Harden Security", "Snow Blaster8d8", "Tesla Coil8d6")
+            state.tempEnemy = createEnemy("Zombie Lord", calculateRoll("13d8+39"), 17, 9, "3d6+4", "d20", "Paralysis Mite", "Noise Cancelling", "Virus14d6", "Incredible Stench", "Zombie Yell")
             break
           case 101:
-            state.tempEnemy = createEnemy("Ancient Black Mecha Dragon", calculateRoll("21d20+147"), 22, 15, "6d10+24", "d20+2", "Acid Breath15d8", "Wing Attack2d6+8")
-            break
-          case 102:
             state.tempEnemy = createEnemy("Adult Blue Mecha Dragon", calculateRoll("18d12+108"), 19, 12, "6d10+21", "d20", "Lightning Breath12d10", "Wing Attack2d6+7")
             break
-          case 103:
+          case 102:
             state.tempEnemy = createEnemy("Adult Gold Mecha Dragon", calculateRoll("19d12+133"), 19, 12, "6d10+21", "d20+2", "Fire Breath 12d10", "Weakening Breath")
             break
-          case 104:
+          case 103:
             state.tempEnemy = createEnemy("Adult Silver Mecha Dragon", calculateRoll("18d12+126"), 19, 13, "6d10+24", "d20", "Cold Breath13d8", "Paralyzing Breath")
+            break
+          case 104:
+            state.tempEnemy = createEnemy("Ancient Black Mecha Dragon", calculateRoll("21d20+147"), 22, 15, "6d10+24", "d20+2", "Acid Breath15d8", "Wing Attack2d6+8")
             break
           case 105:
             state.tempEnemy = createEnemy("Ancient Gold Mecha Dragon", calculateRoll("28d20+252"), 22, 15, "6d10+24", "d20+2", "Fire Breath13d10", "Weakening Breath")
@@ -1031,133 +1031,133 @@ function handleSetupEnemyStep(text) {
             state.tempEnemy = createEnemy("Armored Beast Zombie", calculateRoll("19d10+95"), 17, 12, "4d10+12", "d20", "Thermite Strike8d6", "Roar", "Teleporter")
             break
           case 108:
-            state.tempEnemy = createEnemy("Cyborg Messiah", calculateRoll("18d10+90"), 18, 13, "4d8+27", "d20+3", "Awaken Mind", "Teleporter", "Regenerate", "Tear Sutures4d8+27", "Cloak")
-            break
-          case 109:
-            state.tempEnemy = createEnemy("Holographic Nightmare", calculateRoll("21d12+136"), 19, 14, "6d8+16", "d20+2", "Fire Sword5d6+8", "Teleporter")
-            break
-          case 110:
-            state.tempEnemy = createEnemy("King Zombie", calculateRoll("22d12+176"), 22, 17, "3d10+30", "d20+2", "Nano-necrotic Virus", "Stench Breath20d8", "Gouging Toss2d8", "Raise Lab")
-            break
-          case 111:
-            state.tempEnemy = createEnemy("Interdimensional Alien", calculateRoll("16d20+112"), 15, 14, "6d6+16", "d20", "Poison Jet4d6", "Nightmare Implant6d10")
-            break
-          case 112:
-            state.tempEnemy = createEnemy("Death Drone", calculateRoll("19d8+95"), 20, 11, "3d8+15", "d20+2", "Hellfire Rockets10d6", "Countermeasures", "Destructive Wave5d6")
-            break
-          case 113:
-            state.tempEnemy = createEnemy("Psycho Hologram", calculateRoll("32d12+256"), 22, 17, "6d12+18", "d20+2", "Interrupting Brain Waves", "Compromise System")
-            break
-          case 114:
-            state.tempEnemy = createEnemy("Giant Cyborg Turtle", calculateRoll("22d20+110"), 20, 13, "6d8+21", "d20", "Steam Breath15d6")
-            break
-          case 115:
-            state.tempEnemy = createEnemy("Spider Drone Queen", calculateRoll("35d8+105"), 17, 10, "2d6+8", "d20+4", "Hover", "Extradimensional Shift", "Interdimensional Gate", "Mind Control Serum5d10", "Sentry Turret", "Spider Tentacle3d6", "Summon Spider")
-            break
-          case 116:
-            state.tempEnemy = createEnemy("Mechanimator", calculateRoll("16d20+112"), 14, 13, "6d6+14", "d20-1", "Mecha Breath9d8")
-            break
-          case 117:
-            state.tempEnemy = createEnemy("Power Suit Alien", calculateRoll("27d20+189"), 18, 17, "9d6+30", "d20", "Lightning Strike12d10", "Doom Drop3d10", "Mind Push1d6")
-            break
-          case 118:
-            state.tempEnemy = createEnemy("Cyborg Golem", calculateRoll("20d10+100"), 20, 13, "6d8+14", "d20=1", "Poison Beam10d8", "Slam3d8+7")
-            break
-          case 119:
             state.tempEnemy = createEnemy("Beast Bot", calculateRoll("16d20+160"), 17, 16, "4d10+40", "d20+7", "Beast Wave6d10")
             break
+          case 109:
+            state.tempEnemy = createEnemy("Cyborg Golem", calculateRoll("20d10+100"), 20, 13, "6d8+14", "d20=1", "Poison Beam10d8", "Slam3d8+7")
+            break
+          case 110:
+            state.tempEnemy = createEnemy("Cyborg Messiah", calculateRoll("18d10+90"), 18, 13, "4d8+27", "d20+3", "Awaken Mind", "Teleporter", "Regenerate", "Tear Sutures4d8+27", "Cloak")
+            break
+          case 111:
+            state.tempEnemy = createEnemy("Death Drone", calculateRoll("19d8+95"), 20, 11, "3d8+15", "d20+2", "Hellfire Rockets10d6", "Countermeasures", "Destructive Wave5d6")
+            break
+          case 112:
+            state.tempEnemy = createEnemy("Exploder Droid", calculateRoll("18d10+144"), 21, 15, "8d6+16", "d20+6", "Flying Sword", "Searing Burst8d6", "Blinding Beam")
+            break
+          case 113:
+            state.tempEnemy = createEnemy("Giant Cyborg Turtle", calculateRoll("22d20+110"), 20, 13, "6d8+21", "d20", "Steam Breath15d6")
+            break
+          case 114:
+            state.tempEnemy = createEnemy("Holographic Nightmare", calculateRoll("21d12+136"), 19, 14, "6d8+16", "d20+2", "Fire Sword5d6+8", "Teleporter")
+            break
+          case 115:
+            state.tempEnemy = createEnemy("Interdimensional Alien", calculateRoll("16d20+112"), 15, 14, "6d6+16", "d20", "Poison Jet4d6", "Nightmare Implant6d10")
+            break
+          case 116:
+            state.tempEnemy = createEnemy("King Zombie", calculateRoll("22d12+176"), 22, 17, "3d10+30", "d20+2", "Nano-necrotic Virus", "Stench Breath20d8", "Gouging Toss2d8", "Raise Lab")
+            break
+          case 117:
+            state.tempEnemy = createEnemy("Magentic Cyborg", calculateRoll("16d10+112"), 19, 12, "4d6+7", "d20+5", "Magnet Blast4d10", "Command Prompt Kill")
+            break
+          case 118:
+            state.tempEnemy = createEnemy("Mechanimator", calculateRoll("16d20+112"), 14, 13, "6d6+14", "d20-1", "Mecha Breath9d8")
+            break
+          case 119:
+            state.tempEnemy = createEnemy("Power Suit Alien", calculateRoll("27d20+189"), 18, 17, "9d6+30", "d20", "Lightning Strike12d10", "Doom Drop3d10", "Mind Push1d6")
+            break
           case 120:
-              state.tempEnemy = createEnemy("Zombie God", calculateRoll("18d8+54"), 17, 12, "3d6", "Acid Shell4d4", "Incendiary Rocket8d6", "Transporter", "Nano-necrotic Command", "Cryo Blast3d8", "Interrupt Brains6d6", "Frightening Gaze", "Paralyzing Touch")
+            state.tempEnemy = createEnemy("Psycho Hologram", calculateRoll("32d12+256"), 22, 17, "6d12+18", "d20+2", "Interrupting Brain Waves", "Compromise System")
             break
           case 121:
-            state.tempEnemy = createEnemy("Magentic Cyborg", calculateRoll("16d10+112"), 19, 12, "4d6+7", "d20+5", "Magnet Blast4d10", "Command Prompt Kill")
+            state.tempEnemy = createEnemy("Queen of the Dead", calculateRoll("40d10+360"), 21, 16, "4d8+16", "d20+7", "Cryptic Beam8d10", "Laser Touch4d10", "Teleporter")
             break
           case 122:
             state.tempEnemy = createEnemy("Raeleus", calculateRoll("19d12+190"), 22, 17, "6d6+10", "d20+5", "Shotgun Blast6d10+10", "Auto Pistol10d6", "Canister Grenade4d10", "Stun Grenade", "Chaff Grenade")
             break
           case 123:
-            state.tempEnemy = createEnemy("Exploder Droid", calculateRoll("18d10+144"), 21, 15, "8d6+16", "d20+6", "Flying Sword", "Searing Burst8d6", "Blinding Beam")
+            state.tempEnemy = createEnemy("Spider Drone Queen", calculateRoll("35d8+105"), 17, 10, "2d6+8", "d20+4", "Hover", "Extradimensional Shift", "Interdimensional Gate", "Mind Control Serum5d10", "Sentry Turret", "Spider Tentacle3d6", "Summon Spider")
             break
           case 124:
             state.tempEnemy = createEnemy("Tyrano Bot", calculateRoll("33d20+330"), 25, 19, "20d8+50", "d20")
             break
           case 125:
-            state.tempEnemy = createEnemy("Queen of the Dead", calculateRoll("40d10+360"), 21, 16, "4d8+16", "d20+7", "Cryptic Beam8d10", "Laser Touch4d10", "Teleporter")
+            state.tempEnemy = createEnemy("Zombie God", calculateRoll("18d8+54"), 17, 12, "3d6", "Acid Shell4d4", "Incendiary Rocket8d6", "Transporter", "Nano-necrotic Command", "Cryo Blast3d8", "Interrupt Brains6d6", "Frightening Gaze", "Paralyzing Touch")
             break
           case 126:
-            state.tempEnemy = createEnemy("Civilian", calculateRoll("1d8"), 10, 2, "1d4", "d20")
+            state.tempEnemy = createEnemy("Arch Hacker", calculateRoll("18d8+18"), 12, 6, "1d4+2", "d20+2", "Chrono Trigger", "Harden Security", "Tesla Coil8d6", "Snow Blaster8d8", "Short Circuit1d8")
             break
           case 127:
-            state.tempEnemy = createEnemy("Raider", calculateRoll("2d8+2"), 12, 3, "1d6+1", "d20+1")
+            state.tempEnemy = createEnemy("Assassin", calculateRoll("12d8+24"), 15, 6, "2d6+6", "d20+3", "Stealth Strike6d6+6")
             break
           case 128:
-            state.tempEnemy = createEnemy("Soldier", calculateRoll("2d8+2"), 16, 3, "1d6+1", "d20+1")
+            state.tempEnemy = createEnemy("Atom Smasher", calculateRoll("12d8+12"), 12, 3, "1d6-1", "d20+2", "Static Shock10d8", "Cold Fusion Wall", "Counter Hack", "Hadron Collider3d8", "Seeker Missiles6d4+6")
             break
           case 129:
-            state.tempEnemy = createEnemy("Survivor", calculateRoll("2d8"), 12, 3, "1d6+1", "d20+1", "Rations")
+            state.tempEnemy = createEnemy("Civilian", calculateRoll("1d8"), 10, 2, "1d4", "d20")
             break
           case 130:
-            state.tempEnemy = createEnemy("Data Analyst", calculateRoll("2d8"), 10, 2, "1d4", "d20", "Fire Sale1d8", "Organic Transplant")
-            break
-          case 131:
-            state.tempEnemy = createEnemy("Scientist", calculateRoll("3d8"), 10, 4, "1d10+2", "d20", "Thermite Spray3d6")
-            break
-          case 132:
-            state.tempEnemy = createEnemy("Pilot", calculateRoll("3d8+3"), 10, 3, "1d6+2", "d20", "Dirty Bomb2d8", "Meme", "Cloak", "Cryo Blast2d8")//
-            break
-          case 133:
-            state.tempEnemy = createEnemy("Special Forces Soldier", calculateRoll("8d8+24"), 14, 5, "1d6+3", "d20+2", "Invade")
-            break
-          case 134:
-            state.tempEnemy = createEnemy("Ninja", calculateRoll("6d8"), 12, 4, "1d6+2", "d20+2", "Sneak Attack2d6+2")
-            break
-          case 135:
-            state.tempEnemy = createEnemy("Officer", calculateRoll("10d8+20"), 15, 5, "3d6+9", "d20+2")
-            break
-          case 136:
             state.tempEnemy = createEnemy("Commander", calculateRoll("8d8+8"), 15, 4, "1d6+2", "d20+2", "Charm Person", "Shatter3d8", "Thunderwave2d8", "Vicious Mockery1d4")
             break
-          case 137:
+          case 131:
+            state.tempEnemy = createEnemy("Data Analyst", calculateRoll("2d8"), 10, 2, "1d4", "d20", "Fire Sale1d8", "Organic Transplant")
+            break
+          case 132:
+            state.tempEnemy = createEnemy("General", calculateRoll("27d8+108"), 18, 9, "4d6+10", "d20+3", "Command Ally", "Frighten Foe")
+            break
+          case 133:
+            state.tempEnemy = createEnemy("Hacker", calculateRoll("9d8"), 12, 5, "1d4+2", "d20+2", "Null Zero Cloak", "Cold Snap4d6", "Incendiary Rocket8d6", "Seeker Missiles3d4+3")
+            break
+          case 134:
+            state.tempEnemy = createEnemy("Head Scientist", calculateRoll("24d8+24"), 16, 6, "1d6+2", "d20+2", "Heisenberg Principle7d10", "Fiber Optic Beam6d8", "Firewall", "Drone Sense", "Conjure Drones")
+            break
+          case 135:
             state.tempEnemy = createEnemy("Heavy Weapons Unit", calculateRoll("9d8+27"), 13, 5, "1d12+3", "d20+1")
+            break
+          case 136:
+            state.tempEnemy = createEnemy("Marine", calculateRoll("8d8+16"), 18, 5, "4d6+6", "d20", "Leadership")
+            break
+          case 137:
+            state.tempEnemy = createEnemy("Master Cracker", calculateRoll("22d8+44"), 18, 9, "6d6+15", "d20+2", "Adrenal Pump", "Spy Wire", "Mind Hack6d8+5")
             break
           case 138:
             state.tempEnemy = createEnemy("Medic", calculateRoll("5d8+5"), 13, 2, "1d6", "d20", "Spirit Guardians3d8", "Spiritual Weapon1d8", "Guiding Bolt4d6", "Cure Wounds")
             break
           case 139:
-            state.tempEnemy = createEnemy("Marine", calculateRoll("8d8+16"), 18, 5, "4d6+6", "d20", "Leadership")
-            break
-          case 140:
-            state.tempEnemy = createEnemy("Sniper", calculateRoll("10d8+30"), 16, 6, "2d8+8", "d20+4")
-            break
-          case 141:
-            state.tempEnemy = createEnemy("Specialist", calculateRoll("6d8+12"), 16, 6, "1d8+3", "d20+1")
-            break
-          case 142:
-            state.tempEnemy = createEnemy("Scout", calculateRoll("9d8"), 12, 5, "1d4+2", "d20+2", "Conjure Hologram", "Carnivorous Cloud5d8", "Sharps5d8", "Chemical Spray1d12")
-            break
-          case 143:
-            state.tempEnemy = createEnemy("Hacker", calculateRoll("9d8"), 12, 5, "1d4+2", "d20+2", "Null Zero Cloak", "Cold Snap4d6", "Incendiary Rocket8d6", "Seeker Missiles3d4+3")
-            break
-          case 144:
-            state.tempEnemy = createEnemy("Assassin", calculateRoll("12d8+24"), 15, 6, "2d6+6", "d20+3", "Stealth Strike6d6+6")
-            break
-          case 145:
-            state.tempEnemy = createEnemy("Atom Smasher", calculateRoll("12d8+12"), 12, 3, "1d6-1", "d20+2", "Static Shock10d8", "Cold Fusion Wall", "Counter Hack", "Hadron Collider3d8", "Seeker Missiles6d4+6")
-            break
-          case 146:
             state.tempEnemy = createEnemy("Nano Researcher", calculateRoll("12d8+12"), 12, 7, "2d4", "d20+2", "Nanite Bomb8d6", "Radioactive Decay8d8", "Carnivorouos Cloud5d8", "Nano-necrotic Command", "Nano-necrotic Touch1d8")
             break
+          case 140:
+            state.tempEnemy = createEnemy("Ninja", calculateRoll("6d8"), 12, 4, "1d6+2", "d20+2", "Sneak Attack2d6+2")
+            break
+          case 141:
+            state.tempEnemy = createEnemy("Officer", calculateRoll("10d8+20"), 15, 5, "3d6+9", "d20+2")
+            break
+          case 142:
+            state.tempEnemy = createEnemy("Pilot", calculateRoll("3d8+3"), 10, 3, "1d6+2", "d20", "Dirty Bomb2d8", "Meme", "Cloak", "Cryo Blast2d8")//
+            break
+          case 143:
+            state.tempEnemy = createEnemy("Raider", calculateRoll("2d8+2"), 12, 3, "1d6+1", "d20+1")
+            break
+          case 144:
+            state.tempEnemy = createEnemy("Scientist", calculateRoll("3d8"), 10, 4, "1d10+2", "d20", "Thermite Spray3d6")
+            break
+          case 145:
+            state.tempEnemy = createEnemy("Scout", calculateRoll("9d8"), 12, 5, "1d4+2", "d20+2", "Conjure Hologram", "Carnivorous Cloud5d8", "Sharps5d8", "Chemical Spray1d12")
+            break
+          case 146:
+            state.tempEnemy = createEnemy("Sniper", calculateRoll("10d8+30"), 16, 6, "2d8+8", "d20+4")
+            break
           case 147:
-            state.tempEnemy = createEnemy("Master Cracker", calculateRoll("22d8+44"), 18, 9, "6d6+15", "d20+2", "Adrenal Pump", "Spy Wire", "Mind Hack6d8+5")
+            state.tempEnemy = createEnemy("Soldier", calculateRoll("2d8+2"), 16, 3, "1d6+1", "d20+1")
             break
           case 148:
-            state.tempEnemy = createEnemy("General", calculateRoll("27d8+108"), 18, 9, "4d6+10", "d20+3", "Command Ally", "Frighten Foe")
+            state.tempEnemy = createEnemy("Special Forces Soldier", calculateRoll("8d8+24"), 14, 5, "1d6+3", "d20+2", "Invade")
             break
           case 149:
-            state.tempEnemy = createEnemy("Arch Hacker", calculateRoll("18d8+18"), 12, 6, "1d4+2", "d20+2", "Chrono Trigger", "Harden Security", "Tesla Coil8d6", "Snow Blaster8d8", "Short Circuit1d8")
+            state.tempEnemy = createEnemy("Specialist", calculateRoll("6d8+12"), 16, 6, "1d8+3", "d20+1")
             break
           case 150:
-            state.tempEnemy = createEnemy("Head Scientist", calculateRoll("24d8+24"), 16, 6, "1d6+2", "d20+2", "Heisenberg Principle7d10", "Fiber Optic Beam6d8", "Firewall", "Drone Sense", "Conjure Drones")
+            state.tempEnemy = createEnemy("Survivor", calculateRoll("2d8"), 12, 3, "1d6+1", "d20+1", "Rations")
             break
         }
 
