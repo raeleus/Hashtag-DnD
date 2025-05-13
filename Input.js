@@ -511,14 +511,14 @@ function handleCreateStep(text) {
             state.tempCharacter.summary = "Commands the nanotech, biologic, and cybernetic sciences."
             break
           case 8:
-            state.tempCharacter.className = "Cyborg"
+            state.tempCharacter.className = "Pilot"
             state.tempCharacter.stats = [{name: "Strength", value: 16}, {name: "Dexterity", value: 14}, {name: "Constitution", value: 14}, {name: "Intelligence", value: 8}, {name: "Wisdom", value: 17}, {name: "Charisma", value: 10}]
             state.tempCharacter.inventory.push({name: "Energy Sword", quantity: 5}, {name: "Shuriken", quantity: 6})
             state.tempCharacter.skills.find((element) => element.name == "Athletics").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Deception").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Sleight of Hand").modifier = 2;
             state.tempCharacter.skills.find((element) => element.name == "Stealth").modifier = 2;
-            state.tempCharacter.summary = "A melee master augmenting their abilities with cybernetic implants and robotic limbs."
+            state.tempCharacter.summary = "A skilled navigator augmenting their abilities with cybernetic implants and robotic suits used for melee combat."
             break
           case 9:
             state.tempCharacter.className = "Marine"
@@ -558,7 +558,7 @@ function handleCreateStep(text) {
             state.tempCharacter.summary = "Genetically modified to control the forces of nanotech and biotics to achieve incredible power."
             break
           case 12:
-            state.tempCharacter.className = "Robot"
+            state.tempCharacter.className = "Synth"
             state.tempCharacter.stats = [{name: "Strength", value: 9}, {name: "Dexterity", value: 13}, {name: "Constitution", value: 15}, {name: "Intelligence", value: 14}, {name: "Wisdom", value: 11}, {name: "Charisma", value: 16}]
             state.tempCharacter.spells = ["Energy Beam", "Power Coupling", "Trip Hammer"]
             state.tempCharacter.spellStat = "Charisma"
