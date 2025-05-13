@@ -936,7 +936,7 @@ function createEncounter(listName) {
           encounter.text = "A crashed escape pod is before you. You see that motion trackers are active, watching for unauthorized entry."
           break
         case 2:
-          encounter.text = "You've found notes from a rogue scientist that claim they were working on a cure for the nanonecrotic virus."
+          encounter.text = "You've found notes from a rogue scientist that claim they were working on a cure for the nano-necrotic virus."
           break
         case 3:
           encounter.text = "A radio transmitter of unknown origin is here. It's sending out some sort of code."
@@ -1651,7 +1651,7 @@ function createEncounter(listName) {
           ]
           break
         case 60:
-          encounter.text = "\"Stay back! I can't control it. I can't...\" His voice breaks off as the nanonecrotic virus overwhelms him, giving him beast like features. Attack!"
+          encounter.text = "\"Stay back! I can't control it. I can't...\" His voice breaks off as the nano-necrotic virus overwhelms him, giving him beast like features. Attack!"
           encounter.enemies = [
             createEnemy("Werezombie", calculateRoll("6d8+6"), 12, 4, "1d4+2", "d20+2")
           ]
@@ -2221,7 +2221,7 @@ function createEncounter(listName) {
           encounter.text = "A swarm of nanomachines are eating away at the face of a building. If you are careful, you can pass by without being turned into a puddle of gray mass."
           break
         case 10:
-          encounter.text = "Your limbs begin to lock up. An insatiable hunger sweeps over you. Your mind lusts for carnage. But you were so careful! There was no way that you were infected by the nanonecrotic virus. Or were you?"
+          encounter.text = "Your limbs begin to lock up. An insatiable hunger sweeps over you. Your mind lusts for carnage. But you were so careful! There was no way that you were infected by the nano-necrotic virus. Or were you?"
           break
         case 11:
           encounter.text = "Ambushed! Cyborg raiders have surrounded you. However, instead of killing you, they are here to make a bargain."
@@ -2380,7 +2380,7 @@ function createEncounter(listName) {
           ]
           break
         case 46:
-          encounter.text = "You have entered the realm of a powerful nanonecrotic vampire. Its coven is poised to strike!"
+          encounter.text = "You have entered the realm of a powerful nano-necrotic vampire. Its coven is poised to strike!"
           encounter.enemies = [
             createEnemy("Nano Vampire", calculateRoll("17d8+68"), 16, 9, "3d8+8", "d20+4", "Brain Backdoor", "Nanomorph"),
             createEnemy("Nano Vampire Spawn", calculateRoll("11d8+33"), 15, 6, "2d4+3", "d20+3", "Bite3d6+3"),
@@ -2490,7 +2490,7 @@ function createEncounter(listName) {
           encounter.text = "You hear it before you see it. Two great citadels, flying fortresses armed to the teeth, are battling in the distance. The very earth quakes from the devastation."
           break
         case 4:
-          encounter.text = "One of the recruits is sick with the nanonecrotic virus, but he was never bitten nor made contact with the enemy. Is the virus airborne now?"
+          encounter.text = "One of the recruits is sick with the nano-necrotic virus, but he was never bitten nor made contact with the enemy. Is the virus airborne now?"
           break
         case 5:
           encounter.text = "You find a mysterious package. Ancient but preserved by several layers of plastic wrap. It has the official logo of the science wing of the military. Under it, a label: \"The Cure\""
@@ -2693,7 +2693,7 @@ function createEncounter(listName) {
         case 51:
           encounter.text = "The zombie commander controls an incredible army of the dead. Strike now for the good of humanity!"
           encounter.enemies = [
-            createEnemy("Zombie Commander", calculateRoll("18d8+54"), 17, 12, "3d6", "Tech Shot4d4", "Missile Strike8d6", "Transporter", "Nanonecrotic Command", "Cryonic Beam3d8", "Radiation Zone6d6", "Dead Vision", "Disabling Injection")
+            createEnemy("Zombie Commander", calculateRoll("18d8+54"), 17, 12, "3d6", "Tech Shot4d4", "Missile Strike8d6", "Transporter", "Nano-necrotic Command", "Cryonic Beam3d8", "Radiation Zone6d6", "Dead Vision", "Disabling Injection")
           ]
           break
         case 52:

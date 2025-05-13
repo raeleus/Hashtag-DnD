@@ -4505,7 +4505,7 @@
   },
   {
     "keys": "Antenna of Hex Machina",
-    "value": "Crafted by Hex Machina, cyborg alien prince of the abyss. Trying to attune to the wand causes incredible necrotic damage or simply become a zombie. It can wielded as a rail gun with excellent accuracy and damage and deals extra necrotic damage. It provides additional ability to avoid attacks. It has 7 charges to cast spells: Nanonecrotic Command(1) radioactive decay(2) nanite bomb(3) syringe of death(3) command prompt kill(4) Neuromancer(1). It regains charges slowly every day. It can conjure 15 skeletons and 15 zombies once per day. It is sentient and desires to slay everything in the multiverse.",
+    "value": "Crafted by Hex Machina, cyborg alien prince of the abyss. Trying to attune to the wand causes incredible necrotic damage or simply become a zombie. It can wielded as a rail gun with excellent accuracy and damage and deals extra necrotic damage. It provides additional ability to avoid attacks. It has 7 charges to cast spells: Nano-necrotic Command(1) radioactive decay(2) nanite bomb(3) syringe of death(3) command prompt kill(4) Neuromancer(1). It regains charges slowly every day. It can conjure 15 skeletons and 15 zombies once per day. It is sentient and desires to slay everything in the multiverse.",
     "type": "item",
     "title": "Antenna of Hex Machina",
     "description": "5000000",
@@ -4584,10 +4584,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Nanonecrotic Command",
+    "keys": "Nano-necrotic Command",
     "value": "Spell that tranforms a dead corpse or pile of bones into an undead creature. This could be a zombie or skeleton, respectively.",
     "type": "spell",
-    "title": "Nanonecrotic Command",
+    "title": "Nano-necrotic Command",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -4904,10 +4904,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Nanonecrotic Touch",
+    "keys": "Nano-necrotic Touch",
     "value": "Spell casted when the caster takes a melee attack against a target. It causes necrotic damage.",
     "type": "spell",
-    "title": "Nanonecrotic Touch",
+    "title": "Nano-necrotic Touch",
     "description": "",
     "useForCharacterCreation": false
   },
@@ -5649,7 +5649,7 @@
   },
   {
     "keys": "Syringe of Death",
-    "value": "Spell that causes massive damage to a target that the caster can touch. If the touch kills, that target becomes a nanonecrotic zombie.",
+    "value": "Spell that causes massive damage to a target that the caster can touch. If the touch kills, that target becomes a nano-necrotic zombie.",
     "type": "spell",
     "title": "Syringe of Death",
     "description": "",

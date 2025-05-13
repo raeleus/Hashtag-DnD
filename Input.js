@@ -1037,7 +1037,7 @@ function handleSetupEnemyStep(text) {
             state.tempEnemy = createEnemy("Holographic Nightmare", calculateRoll("21d12+136"), 19, 14, "6d8+16", "d20+2", "Fire Sword5d6+8", "Teleporter")
             break
           case 110:
-            state.tempEnemy = createEnemy("King Zombie", calculateRoll("22d12+176"), 22, 17, "3d10+30", "d20+2", "Nanonecrotic Virus", "Stench Breath20d8", "Gouging Toss2d8", "Raise Lab")
+            state.tempEnemy = createEnemy("King Zombie", calculateRoll("22d12+176"), 22, 17, "3d10+30", "d20+2", "Nano-necrotic Virus", "Stench Breath20d8", "Gouging Toss2d8", "Raise Lab")
             break
           case 111:
             state.tempEnemy = createEnemy("Interdimensional Alien", calculateRoll("16d20+112"), 15, 14, "6d6+16", "d20", "Poison Jet4d6", "Nightmare Implant6d10")
@@ -1067,7 +1067,7 @@ function handleSetupEnemyStep(text) {
             state.tempEnemy = createEnemy("Beast Bot", calculateRoll("16d20+160"), 17, 16, "4d10+40", "d20+7", "Beast Wave6d10")
             break
           case 120:
-              state.tempEnemy = createEnemy("Zombie God", calculateRoll("18d8+54"), 17, 12, "3d6", "Acid Shell4d4", "Incendiary Rocket8d6", "Transporter", "Nanonecrotic Command", "Cryo Blast3d8", "Interrupt Brains6d6", "Frightening Gaze", "Paralyzing Touch")
+              state.tempEnemy = createEnemy("Zombie God", calculateRoll("18d8+54"), 17, 12, "3d6", "Acid Shell4d4", "Incendiary Rocket8d6", "Transporter", "Nano-necrotic Command", "Cryo Blast3d8", "Interrupt Brains6d6", "Frightening Gaze", "Paralyzing Touch")
             break
           case 121:
             state.tempEnemy = createEnemy("Magentic Cyborg", calculateRoll("16d10+112"), 19, 12, "4d6+7", "d20+5", "Magnet Blast4d10", "Command Prompt Kill")
@@ -1145,7 +1145,7 @@ function handleSetupEnemyStep(text) {
             state.tempEnemy = createEnemy("Atom Smasher", calculateRoll("12d8+12"), 12, 3, "1d6-1", "d20+2", "Static Shock10d8", "Cold Fusion Wall", "Counter Hack", "Hadron Collider3d8", "Seeker Missiles6d4+6")
             break
           case 146:
-            state.tempEnemy = createEnemy("Nano Researcher", calculateRoll("12d8+12"), 12, 7, "2d4", "d20+2", "Nanite Bomb8d6", "Radioactive Decay8d8", "Carnivorouos Cloud5d8", "Nanonecrotic Command", "Nanonecrotic Touch1d8")
+            state.tempEnemy = createEnemy("Nano Researcher", calculateRoll("12d8+12"), 12, 7, "2d4", "d20+2", "Nanite Bomb8d6", "Radioactive Decay8d8", "Carnivorouos Cloud5d8", "Nano-necrotic Command", "Nano-necrotic Touch1d8")
             break
           case 147:
             state.tempEnemy = createEnemy("Master Cracker", calculateRoll("22d8+44"), 18, 9, "6d6+15", "d20+2", "Adrenal Pump", "Spy Wire", "Mind Hack6d8+5")
