@@ -3425,7 +3425,7 @@
   },
   {
     "keys": "3D Scanner",
-    "value": "Allows the user to plane shift to the digital or alien plane. There is a chance that it sends the user and others in 15 feet to a random location.",
+    "value": "Allows the user to plane shift to the digital or interdimensional plane. There is a chance that it sends the user and others in 15 feet to a random location.",
     "type": "item",
     "title": "3D Scanner",
     "description": "40000",
@@ -3481,7 +3481,7 @@
   },
   {
     "keys": "LED of Invocation",
-    "value": "Provides dim light and gives advantage with all abilities to creatures within 30 feet. It allows medics and scientists to use level 1 spells without using spell slots. Burns for up to 4 hours. It can instead be used to cast gate to the digital or alien plane.",
+    "value": "Provides dim light and gives advantage with all abilities to creatures within 30 feet. It allows medics and scientists to use level 1 spells without using spell slots. Burns for up to 4 hours. It can instead be used to cast gate to the digital or interdimensional plane.",
     "type": "item",
     "title": "LED of Invocation",
     "description": "200000",
@@ -3881,7 +3881,7 @@
   },
   {
     "keys": "Bandana of Stars",
-    "value": "It gives the user greater ability to avoid effects. It has six large stars that can be removed to cast magic missile. Some of the stars return every day. It allows the user to enter the alien plane and return at will.",
+    "value": "It gives the user greater ability to avoid effects. It has six large stars that can be removed to cast magic missile. Some of the stars return every day. It allows the user to enter the interdimensional plane and return at will.",
     "type": "item",
     "title": "Bandana of Stars",
     "description": "40000",
@@ -4465,7 +4465,7 @@
   },
   {
     "keys": "Close Encounters PDF",
-    "value": "An accounting of the alien plane and aliens. It contains demonic secrets and contains a part of the alien plane that keeps it up to date. The first ten pages are blank which can be used to capture a alien trapped in a magic circle spell once a day. Magic circle is cast at its highest level when used against aliens. Spells against aliens do the most damage possible. With 8 charges, it can cast force cage, magic jar, body jack, extraterrestrial bond, extradimensional shift to the alien plane, summon daemon process, meme.",
+    "value": "An accounting of the interdimensional plane and aliens. It contains demonic secrets and contains a part of the interdimensional plane that keeps it up to date. The first ten pages are blank which can be used to capture a alien trapped in a magic circle spell once a day. Magic circle is cast at its highest level when used against aliens. Spells against aliens do the most damage possible. With 8 charges, it can cast force cage, magic jar, body jack, extraterrestrial bond, extradimensional shift to the interdimensional plane, summon daemon process, meme.",
     "type": "item",
     "title": "Close Encounters PDF",
     "description": "5000000",
@@ -5537,7 +5537,7 @@
   },
   {
     "keys": "Dimension Slip",
-    "value": "Spell that causes the caster to enter the digital or alien planes. The caster can move in any direction. When the spell is ended, they are brought back in their new location.",
+    "value": "Spell that causes the caster to enter the digital or interdimensional planes. The caster can move in any direction. When the spell is ended, they are brought back in their new location.",
     "type": "spell",
     "title": "Dimension Slip",
     "description": "",
@@ -6625,7 +6625,7 @@
   },
   {
     "keys": "Extradimensional Shift",
-    "value": "Spell that allows the caster and allies to teleport to a digital or alien plane of existence.",
+    "value": "Spell that allows the caster and allies to teleport to a digital or interdimensional plane of existence.",
     "type": "spell",
     "title": "Extradimensional Shift",
     "description": "",
