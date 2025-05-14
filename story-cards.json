@@ -1712,10 +1712,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Ammunition +1",
+    "keys": "Mag +1",
     "value": "Additional bonus damage and accuracy.",
     "type": "item",
-    "title": "Ammunition +1",
+    "title": "Mag +1",
     "description": "400",
     "useForCharacterCreation": false
   },
@@ -2512,10 +2512,10 @@
     "useForCharacterCreation": false
   },
   {
-    "keys": "Ammunition +2",
+    "keys": "Mag +2",
     "value": "Ten mags of enhanced ammunition. Has greater accuracy and deals additional damage.",
     "type": "item",
-    "title": "Ammunition +2",
+    "title": "Mag +2",
     "description": "4000",
     "useForCharacterCreation": false
   },
