@@ -939,7 +939,7 @@
     "keys": "HUD",
     "value": "A heads-up display that gives the user information about data scanned from the environment and other details gathered from its databases.",
     "type": "item",
-    "title": "Laaptop",
+    "title": "HUD",
     "description": "10",
     "useForCharacterCreation": false
   },
