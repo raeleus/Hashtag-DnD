@@ -87,6 +87,54 @@ const modifier = (text) => {
           break
       }
       break
+    case "setupAlly":
+      switch (state.setupAllyStep) {
+        case 0:
+          text += `***ALLY CREATION***\nWould you like to use a preset ally? (y/n/q to quit)\n`
+          break
+        case 1:
+          text += `What is the ally's name? This must be a unique name that has no duplicates in the current encounter. Typing the name of an existing ally will modify that ally's properties. Type q to quit.\n`
+          break
+        case 2:
+          text += `${!state.newAlly ? "Ally name already exists. You are now modifying the existing ally " + state.tempAlly.name + ". " : ""}What is the ally's health? This can be any positive integer or a dice roll (ie. 3d6+5). Type q to quit.${!state.newAlly ? " Type default to leave as current value " + state.tempAlly.health : ""}\n`
+          break
+        case 3:
+          text += `What is the ally's armor class (AC)? This can be any positive integer with 10 being easy and 20 being incredibly difficult. It can also be a dice roll (ie. 2d4+5). Type q to quit.${!state.newAlly ? " Type default to leave as current value " + state.tempAlly.ac : ""}\n`
+          break
+        case 4:
+          text += `What is the ally's hit modifier? This affects how accurate their attacks are. This can be any integer. 0 is normal accuracy. Type q to quit.${!state.newAlly ? " Type default to leave as current value " + state.tempAlly.hitModifier : ""}\n`
+          break
+        case 5:
+          text += `What is the ally's damage? This can be any positive integer or a dice roll (ie. 2d6+5). The dice roll is calculated at the time of each attack. Type q to quit.${!state.newAlly ? " Type default to leave as current value " + state.tempAlly.damage : ""}\n`
+          break
+        case 6:
+          text += `What is the ally's initiative? Initiative controls turn order. This can be any positive integer with higher numbers going first in battle. This can also be a dice roll (ie. 1d20+3). Type q to quit.${!state.newAlly ? " Type default to leave as current value " + state.tempAlly.initiative : ""}\n`
+          break
+        case 7:
+          text += `Enter the name of a spell that the ally knows. If it can target this spell at an enemy character, add a dice roll for the damage calculation after it (ie. Ray of Frost3d6+2). Type s to stop entering spells or type q to quit.${!state.newAlly ? " Type e to erase all current spells." : ""}\n`
+          break
+        case 8:
+          text += `Enter the name of another spell that the ally knows. If it can target this spell at an enemy character, add a dice roll for the damage calculation after it (ie. Ray of Frost3d6+2). Type s to stop entering spells or type q to quit.\n`
+          break
+        case 100:
+          text += `What ally preset will you choose?\nHeroes\n1. Fighter\n2. Cleric\n3. Rogue\n4. Ranger\n5. Barbarian\n6. Bard\n7. Druid\n8. Monk\n9. Paladin\n10. Wizard\n11. Sorcerer\n12. Warlock\n13. Artificer`
+          text += `\n\nHumanoid\n14. Commoner\n15. Bandit\n16. Guard\n17. Cultist\n18. Acolyte\n19. Apprentice\n20. Witch\n21. Buccaneer\n22. Spy\n123. Captain\n24. Bard\n25. Berserker\n26 Priest\n27. Knight\n28. Archer\n29. Warrior\n30. Conjurer\n31. Mage\n32. Assassin\n33. Evoker\n34. Necromancer\n35. Champion\n36. Warlord\n37. Archmage\n38. Archdruid`
+          text += `\n\nFamiliars\n39. Ape\n40. Badger\n41. Bat\n42. Black Bear\n43. Boar\n44. Brown Bear\n45. Camel\n46. Cat\n47. Constrictor Snake\n48. Crab\n49. Crocodile\n50. Dire Wolf\n51. Draft Horse\n52. Elephant\n53. Elk\n54. Frog\n55. Giant Badger\n56. Giant Crab\n57. Giant Goat\n58. Giant Seahorse\n59. Giant Spider\n60. Giant Weasel\n61. Goat\n62. Hawk\n63. Imp\n64. Lion\n65. Lizard\n66. Mastiff\n67. Mule\n68. Octopus\n69. Owl\n70. Panther\n71. Pony\n72. Pseudodragon\n73. Quasit\n74. Rat\n75. Raven\n76. Reef Shark\n77. Riding Horse\n78. Scorpion\n79. Skeleton\n80. Slaad Tadpole\n81. Sphinx of Wonder\n82. Spider\n83. Sprite\n84. Tiger\n85. Venomous Snake\n86. Warhorse\n87. Weasel\n88. Wolf\n89. Zombie`
+          text += `\n\nEnter the number or q to quit. If you want to rename the ally, add a space and type the name\n(ie. 25 Thuggish Zombie B)\n`
+          break
+        case 500:
+          var hashtag = `#addally "${state.tempAlly.name}" ${state.tempAlly.health} ${state.tempAlly.ac} ${state.tempAlly.hitModifier} ${state.tempAlly.damage} ${state.tempAlly.initiative}`
+          for (var spell of state.tempAlly.spells) {
+            hashtag += ` "${spell}"`
+          }
+
+          text += `${state.tempAlly.name} has been created.\nType #showallies to show the list of all allies.\nCopy and paste the following hashtag to create another identical ally like this:\n${hashtag}\n***********\n`
+          break;
+        case null:
+          text += `[Ally creation has been aborted!]\n`
+          break
+      }
+      break
     case "stragedy":
       text += handleStragedy()
       break
@@ -323,6 +371,20 @@ const modifier = (text) => {
 
       text += "******************\n\n"
       break
+    case "showAllies":
+      text += "*** ALLIES ***\n"
+
+      if (state.allies.length == 0) {
+        text += "There are no allies present here. Type #encounter to generate a scripted set or #addally to add your own\n"
+      } else {
+        var index = 0
+        for (var ally of state.allies) {
+          text += `${++index}. ${toTitleCase(ally.name)} (Health: ${ally.health} AC: ${ally.ac} Initiative: ${ally.initiative})\n`
+        }
+      }
+
+      text += "******************\n\n"
+      break
     case "initiative":
       text += "*** INITIATIVE ORDER ***\n"
 
@@ -499,7 +561,9 @@ const modifier = (text) => {
       text += "\n#addenemy name health ac hitModifier damage initiative spells"
       text += "\n    Adds the specified enemy to the list of enemies. health, ac, hitModifier, damage, and initiative can be numbers or dice rolls such as 3d6+5. Type the name in quotes if the name contains a space. The rest of the parameters can be a list of spells. Each spell must be typed in quotes if it has a space. If the spell does damage, write the name and damage roll in the following format: \"Ray of Frost5d10\""
       text += "\n#removeenemy name or index"
-      text += "\n    Removes the enemy as specified by the name or index. To delete multiple enemies, type the numbers with spaces or commas between them. This is safer than calling #removenote multiple times because the numbers shift as enemies are deleted. Quotes are not necessary."
+      text += "\n    Removes the enemy as specified by the name or index. To delete multiple enemies, type the numbers with spaces or commas between them. This is safer than calling #removeenemy multiple times because the numbers shift as enemies are deleted. Quotes are not necessary."
+      text += "\n#clearenemies"
+      text += "\n    Removes all enemies."
       text += "\n#initiative"
       text += "\n    Assigns initiative to all characters and enemies. This begins combat."
       text += "\n#turn"
@@ -510,6 +574,18 @@ const modifier = (text) => {
       text += "\n    Reverses the damage that has been inflicted in the last turn. This applies to damage on characters and enemies."
       text += "\n#flee (difficulty_class or automatic|effortless|easy|medium|hard|impossible)"
       text += "\n    Attempt to flee from combat. If the difficulty is not specified, the default difficulty will be used instead."
+
+      text += "\n\n--Allies--"
+      text += "\n#setupally"
+      text += "\nFollow prompts to create an ally from a template or completely from scratch. It will be added to the existing encounter if there is one already specified."
+      text += "\n#showallies"
+      text += "\n    Shows the list of current allies."
+      text += "\n#addally name health ac hitModifier damage initiative spells"
+      text += "\n    Adds the specified ally to the list of allies. health, ac, hitModifier, damage, and initiative can be numbers or dice rolls such as 3d6+5. Type the name in quotes if the name contains a space. The rest of the parameters can be a list of spells. Each spell must be typed in quotes if it has a space. If the spell does damage, write the name and damage roll in the following format: \"Ray of Frost5d10\""
+      text += "\n#removeally name or index"
+      text += "\n    Removes the ally as specified by the name or index. To delete multiple allies, type the numbers with spaces or commas between them. This is safer than calling #removeally multiple times because the numbers shift as allies are deleted. Quotes are not necessary."
+      text += "\n#clearallies"
+      text += "\n    Removes all allies."
 
       text += "\n\n--Locations--"
       text += "\n#createlocation [(x) (y) or (here|far) or (distance)] location_name"

@@ -19,6 +19,9 @@ Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
 Hashtag-DnD has another new scenario! Check out the [VTOL-Knights Repository](https://github.com/raeleus/Hashtag-DnD/tree/VTOL-Knights)
 
+v.0.7.0
+* Added allies which are NPC characters that fight alongside the characters in encounters
+
 v. 0.6.0
 * Added Memory/Matchmaking Game
 * Added Item Shop - Make sure to import the latest story cards: https://github.com/raeleus/Hashtag-DnD/blob/master/story-cards.json
