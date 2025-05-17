@@ -21,6 +21,7 @@ Hashtag-DnD has another new scenario! Check out the [VTOL-Knights Repository](ht
 
 v.0.7.0
 * Added allies which are NPC characters that fight alongside the characters in encounters
+* Fixed enemy spells showing the damage dice in the output text.
 
 v. 0.6.0
 * Added Memory/Matchmaking Game

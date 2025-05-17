@@ -376,9 +376,9 @@ function executeTurn(activeCharacter) {
       var diceMatches = spell.match(/(?<=^.*)\d*d\d+((\+|-)\d+)?$/gi)
       if (diceMatches == null) text += `${activeCharacterName} casts spell ${spell}!`
       else {
+        var spell = spell.substring(0, spell.length - diceMatches[0].length)
         if (hit) {
           var damage = calculateRoll(diceMatches[0])
-          var spell = spell.substring(0, spell.length - diceMatches[0].length)
           target.health = Math.max(target.health - damage, 0)
 
           text += `\n[Character AC: ${target.ac} Attack roll: ${attack}]\n`
@@ -419,9 +419,9 @@ function executeTurn(activeCharacter) {
       var diceMatches = spell.match(/(?<=^.*)\d*d\d+((\+|-)\d+)?$/gi)
       if (diceMatches == null) text += `${activeCharacterName} casts spell ${spell}!`
       else {
+        var spell = spell.substring(0, spell.length - diceMatches[0].length)
         if (hit) {
           var damage = calculateRoll(diceMatches[0])
-          var spell = spell.substring(0, spell.length - diceMatches[0].length)
           target.health = Math.max(target.health - damage, 0)
 
           text += `\n[Character AC: ${target.ac} Attack roll: ${attack}]\n`
