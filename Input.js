@@ -70,15 +70,20 @@ const showDaySynonyms = ["showday", "showdate", "day", "date"]
 const setDaySynonyms = ["setday", "setdate"]
 const encounterSynonyms = ["encounter", "startencounter"]
 const showEnemiesSynonyms = ["showenemies", "enemies"]
+const showAlliesSynonyms = ["showallies", "allies"]
 const addEnemySynonyms = ["addenemy"]
+const addAllySynonyms = ["addally"]
 const removeEnemySynonyms = ["removeenemy"]
+const removeAllySynonyms = ["removeally"]
 const clearEnemiesSynonyms = ["clearenemies", "resetenemies", "removeenemies"]
+const clearAlliesSynonyms = ["clearallies", "resetallies", "removeallies"]
 const initiativeSynonyms = ["initiative"]
 const setAcSynonyms = ["setac", "setarmorclass", "ac", "armorclass"]
 const turnSynonyms = ["turn", "doturn", "taketurn"]
 const fleeSynonyms = ["flee", "retreat", "runaway", "endcombat"]
 const versionSynonyms = ["version", "ver", "showversion"]
 const setupEnemySynonyms = ["setupenemy", "createenemy"]
+const setupAllySynonyms = ["setupally", "createally"]
 const setDamageSynonyms = ["setdamage"]
 const setProficiencySynonyms = ["setproficiency", "setweaponproficiency"]
 const healPartySynonyms = ["healparty", "healcharacters"]
@@ -109,6 +114,12 @@ const modifier = (text) => {
   if (state.setupEnemyStep != null) {
     text = handleSetupEnemyStep(text)
     if (state.setupEnemyStep != null) return { text }
+    else text = rawText
+  }
+
+  if (state.setupAllyStep != null) {
+    text = handleSetupAllyStep(text)
+    if (state.setupAllyStep != null) return { text }
     else text = rawText
   }
 
@@ -177,7 +188,7 @@ const modifier = (text) => {
       return { text }
     }
 
-    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, addEnemySynonyms, removeEnemySynonyms, clearEnemiesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, setupEnemySynonyms, healSynonyms, damageSynonyms, restSynonyms, addExperienceSynonyms, healPartySynonyms, blockSynonyms, repeatTurnSynonyms, lockpickSynonyms, memorySynonyms, resetSynonyms), function () {return true})
+    if (!found) found = processCommandSynonyms(command, commandName, helpSynonyms.concat(rollSynonyms, noteSynonyms, eraseNoteSynonyms, showNotesSynonyms, clearNotesSynonyms, showCharactersSynonyms, removeCharacterSynonyms, generateNameSynonyms, setDefaultDifficultySynonyms, showDefaultDifficultySynonyms, renameCharacterSynonyms, cloneCharacterSynonyms, createLocationSynonyms, showLocationsSynonyms, goToLocationSynonyms, removeLocationSynonyms, getLocationSynonyms, clearLocationsSynonyms, goNorthSynonyms, goSouthSynonyms, goEastSynonyms, goWestSynonyms, encounterSynonyms, showEnemiesSynonyms, showAlliesSynonyms, addEnemySynonyms, addAllySynonyms, removeEnemySynonyms, removeAllySynonyms, clearEnemiesSynonyms, clearAlliesSynonyms, initiativeSynonyms, turnSynonyms, fleeSynonyms, versionSynonyms, setupEnemySynonyms, setupAllySynonyms, healSynonyms, damageSynonyms, restSynonyms, addExperienceSynonyms, healPartySynonyms, blockSynonyms, repeatTurnSynonyms, lockpickSynonyms, memorySynonyms, resetSynonyms), function () {return true})
 
     if (found == null) {
       if (state.characterName == null) {
@@ -262,13 +273,18 @@ const modifier = (text) => {
   if (text == null) text = processCommandSynonyms(command, commandName, setAcSynonyms, doSetAc)
   if (text == null) text = processCommandSynonyms(command, commandName, encounterSynonyms, doEncounter)
   if (text == null) text = processCommandSynonyms(command, commandName, showEnemiesSynonyms, doShowEnemies)
+  if (text == null) text = processCommandSynonyms(command, commandName, showAlliesSynonyms, doShowAllies)
   if (text == null) text = processCommandSynonyms(command, commandName, removeEnemySynonyms, doRemoveEnemy)
+  if (text == null) text = processCommandSynonyms(command, commandName, removeAllySynonyms, doRemoveAlly)
   if (text == null) text = processCommandSynonyms(command, commandName, clearEnemiesSynonyms, doClearEnemies)
+    if (text == null) text = processCommandSynonyms(command, commandName, clearAlliesSynonyms, doClearAllies)
   if (text == null) text = processCommandSynonyms(command, commandName, addEnemySynonyms, doAddEnemy)
+  if (text == null) text = processCommandSynonyms(command, commandName, addAllySynonyms, doAddAlly)
   if (text == null) text = processCommandSynonyms(command, commandName, initiativeSynonyms, doInitiative)
   if (text == null) text = processCommandSynonyms(command, commandName, fleeSynonyms, doFlee)
   if (text == null) text = processCommandSynonyms(command, commandName, turnSynonyms, doTurn)
   if (text == null) text = processCommandSynonyms(command, commandName, setupEnemySynonyms, doSetupEnemy)
+  if (text == null) text = processCommandSynonyms(command, commandName, setupAllySynonyms, doSetupAlly)
   if (text == null) text = processCommandSynonyms(command, commandName, setDamageSynonyms, doSetDamage)
   if (text == null) text = processCommandSynonyms(command, commandName, setProficiencySynonyms, doSetProficiency)
   if (text == null) text = processCommandSynonyms(command, commandName, healPartySynonyms, doHealParty)
@@ -1186,6 +1202,435 @@ function handleSetupEnemyStep(text) {
   return text
 }
 
+function handleSetupAllyStep(text) {
+  state.show = "setupAlly"
+
+  if (/^\s*>.*says? ".*/.test(text)) {
+    text = text.replace(/^\s*>.*says? "/, "")
+    text = text.replace(/"\s*$/, "")
+  } else if (/^\s*>\s.*/.test(text)) {
+    text = text.replace(/\s*> /, "")
+    for (var i = 0; i < info.characters.length; i++) {
+      var matchString = info.characters[i] == "" ? "You " : `${info.characters[i]} `
+      if (text.startsWith(matchString)) {
+        text = text.replace(matchString, "")
+        break
+      }
+    }
+    text = text.replace(/\.?\s*$/, "")
+  } else {
+    text = text.replace(/^\s+/, "")
+  }
+
+  if (text.toLowerCase() == "q") {
+    state.setupAllyStep = null
+    return text
+  }
+
+  switch (state.setupAllyStep) {
+    case 0:
+      text = text.toLowerCase();
+      if (text.startsWith("y")) state.setupAllyStep = 100
+      else if (text.startsWith("n")) state.setupAllyStep++
+      break
+    case 1:
+      if (text.length > 0) {
+        state.tempAlly.name = text
+        state.setupAllyStep++
+
+        var allyMatches = state.allies.filter(x => x.name.toLowerCase() == state.tempAlly.name.toLowerCase() || x.name.toLowerCase() == `${state.tempAlly.name.toLowerCase()} a`)
+        if (allyMatches.length > 0) {
+          state.newAlly = false
+          state.tempAlly.health = allyMatches[0].health
+          state.tempAlly.ac = allyMatches[0].ac
+          state.tempAlly.hitModifier = allyMatches[0].hitModifier
+          state.tempAlly.damage = allyMatches[0].damage
+          state.tempAlly.initiative = allyMatches[0].initiative
+          state.tempAlly.spells = [...allyMatches[0].spells]
+        } else {
+          state.newAlly = true
+        }
+      }
+      return text
+    case 2:
+      if (text.length > 0) {
+        if (text.toLowerCase() == "default") {
+          state.setupAllyStep++
+        } else if (/^\d*d\d+((\+|-)\d+)?$/gi.test(text)) {
+          state.tempAlly.health = calculateRoll(text)
+          state.setupAllyStep++
+        } else if (!isNaN(text)) {
+          state.tempAlly.health = Math.max(0, parseInt(text))
+          state.setupAllyStep++
+        }
+      }
+      return text
+    case 3:
+      if (text.toLowerCase() == "default") {
+          state.setupAllyStep++
+      } else if (/^\d*d\d+((\+|-)\d+)?$/gi.test(text)) {
+        state.tempAlly.ac = calculateRoll(text)
+        state.setupAllyStep++
+      } else if (!isNaN(text)) {
+        state.tempAlly.ac = Math.max(0, parseInt(text))
+        state.setupAllyStep++
+      }
+      return text
+    case 4:
+      if (text.toLowerCase() == "default") {
+          state.setupAllyStep++
+      } else if (!isNaN(text)) {
+        state.tempAlly.hitModifier = Math.max(0, parseInt(text))
+        state.setupAllyStep++
+      }
+      return text
+    case 5:
+      if (text.toLowerCase() == "default") {
+          state.setupAllyStep++
+      } else if (/^\d*d\d+((\+|-)\d+)?$/gi.test(text)) {
+        state.tempAlly.damage = text
+        state.setupAllyStep++
+      } else if (!isNaN(text)) {
+        state.tempAlly.damage = Math.max(0, parseInt(text))
+        state.setupAllyStep++
+      }
+      return text
+    case 6:
+      if (text.toLowerCase() == "default") {
+          state.setupAllyStep++
+      } else if (/^\d*d\d+((\+|-)\d+)?$/gi.test(text)) {
+        state.tempAlly.initiative = calculateRoll(text)
+        state.setupAllyStep++
+      } else if (!isNaN(text)) {
+        state.tempAlly.initiative = Math.max(0, parseInt(text))
+        state.setupAllyStep++
+      }
+      return text
+    case 7:
+      if (text.toLowerCase() == "s") {
+        state.setupAllyStep = 500
+      } else if (text.toLowerCase() == "e") {
+        state.tempAlly.spells = []
+      } else if (text.length > 0) {
+        state.tempAlly.spells.push(text)
+        state.setupAllyStep++
+      }
+      return text
+    case 8:
+      if (text.toLowerCase() == "s") {
+        state.setupAllyStep = 500
+      }
+      else if (text.length > 0) {
+        state.tempAlly.spells.push(text)
+      }
+      return text
+    case 100:
+      if (/^\d+(\s.*)?$/gi.test(text)) {
+        state.setupAllyStep = 500
+        state.newAlly = true
+
+        var value = text.match(/^\d+/gi)[0]
+        var nameMatches = text.match(/(?<=\s).*/gi)
+
+        //name, health, ac, hitModifier, damage, initiative, ...spells
+        switch (parseInt(value)) {
+          case 1:
+            state.tempAlly = createAlly("Fighter", calculateRoll("1d6+12"), 18, 4, "1d8+4", "d20+2", "Javelin Throw1d6+4")
+            break
+          case 2:
+            state.tempAlly = createAlly("Cleric", calculateRoll("1d6+10"), 17, 3, "1d6+2", "d20", "Healing Word", "Sanctuary", "Guiding Bolt4d6")
+            break
+          case 3:
+            state.tempAlly = createAlly("Rogue", calculateRoll("1d6+10"), 15, 5, "2d6+3", "d20+5", "Sneak Attack3d6+3")
+            break
+          case 4:
+            state.tempAlly = createAlly("Ranger", calculateRoll("1d6+10"), 15, 4, "1d8+2", "d20+2", "Cure Wounds", "Hunter's Mark", "Ensaring Strike1d8+2")
+            break
+          case 5:
+            state.tempAlly = createAlly("Barbarian", calculateRoll("1d6+15"), 17, 3, "1d12+4", "d20+1", "Rage1d12+4")
+            break
+          case 6:
+            state.tempAlly = createAlly("Bard", calculateRoll("1d6+10"), 15, 3, "1d6", "d20", "Petrifying Bite1d4+1")
+            break
+          case 7:
+            state.tempAlly = createAlly("Druid", calculateRoll("1d6+10"), 16, 3, "1d6+1", "d20", "Poison Bite2d4+1")
+            break
+          case 8:
+            state.tempAlly = createAlly("Monk", calculateRoll("1d6+10"), 16, 5, "2d6+2", "d20+3", "Flurry of Blows 3d6+2")
+            break
+          case 9:
+            state.tempAlly = createAlly("Paladin", calculateRoll("1d6+10"), 16, 3, "1d8+2", "d20+1", "Searing Smite2d6+4")
+            break
+          case 10:
+            state.tempAlly = createAlly("Wizard", calculateRoll("1d6+8"), 14, 3, "1d6", "d20", "Ray of Frost1d8", "Mage Armor", "Ice Knife1d10+5")
+            break
+          case 11:
+            state.tempAlly = createAlly("Sorcerer", calculateRoll("1d6+8"), 14, 3, "1d6", "d20", "Sorcerous Burst1d8", "Chromatic Orb2d8", "Burning Hands1d10")
+            break
+          case 12:
+            state.tempAlly = createAlly("Warlock", calculateRoll("1d6+8"), 14, 3, "1d6", "d20", "Eldritch Blast1d8+5", "Chill Touch1d12", "Hex")
+            break
+          case 13:
+            state.tempAlly = createAlly("Artificer", calculateRoll("1d6+10"), 15, 3, "2d6", "d20+1", "Archanist's Fire2d6+5", "Acid Vial1d10")
+            break
+          case 14:
+            state.tempAlly = createAlly("Commoner", calculateRoll("1d8"), 10, 2, "1d4", "d20")
+            break
+          case 15:
+            state.tempAlly = createAlly("Bandit", calculateRoll("2d8+2"), 12, 3, "1d6+1", "d20+1")
+            break
+          case 16:
+            state.tempAlly = createAlly("Guard", calculateRoll("2d8+2"), 16, 3, "1d6+1", "d20+1")
+            break
+          case 17:
+            state.tempAlly = createAlly("Cultist", calculateRoll("2d8"), 12, 3, "1d6+1", "d20+1", "Dark Devotion")
+            break
+          case 18:
+            state.tempAlly = createAlly("Acolyte", calculateRoll("2d8"), 10, 2, "1d4", "d20", "Sacred Flame1d8", "Cure Wounds")
+            break
+          case 19:
+            state.tempAlly = createAlly("Apprentice", calculateRoll("3d8"), 10, 4, "1d10+2", "d20", "Burning Hands3d6")
+            break
+          case 20:
+            state.tempAlly = createAlly("Witch", calculateRoll("3d8+3"), 10, 3, "1d6+2", "d20", "Ray of Sickness2d8", "Tashas Hideous Laughter", "Invisibility", "Ray of Frost2d8")
+            break
+          case 21:
+            state.tempAlly = createAlly("Buccaneer", calculateRoll("8d8+24"), 14, 5, "1d6+3", "d20+2", "Invade")
+            break
+          case 22:
+            state.tempAlly = createAlly("Spy", calculateRoll("6d8"), 12, 4, "1d6+2", "d20+2", "Sneak Attack2d6+2")
+            break
+          case 23:
+            state.tempAlly = createAlly("Captain", calculateRoll("10d8+20"), 15, 5, "3d6+9", "initiative")
+            break
+          case 24:
+            state.tempAlly = createAlly("Charlatan", calculateRoll("8d8+8"), 15, 4, "1d6+2", "d20+2", "Charm Person", "Shatter3d8", "Thunderwave2d8", "Vicious Mockery1d4")
+            break
+          case 25:
+            state.tempAlly = createAlly("Berserker", calculateRoll("9d8+27"), 13, 5, "1d12+3", "d20+1")
+            break
+          case 26:
+            state.tempAlly = createAlly("Priest", calculateRoll("5d8+5"), 13, 2, "1d6", "d20", "Spirit Guardians3d8", "Spiritual Weapon1d8", "Guiding Bolt4d6", "Cure Wounds")
+            break
+          case 27:
+            state.tempAlly = createAlly("Knight", calculateRoll("8d8+16"), 18, 5, "4d6+6", "d20", "Leadership")
+            break
+          case 28:
+            state.tempAlly = createAlly("Archer", calculateRoll("10d8+30"), 16, 6, "2d8+8", "d20+4")
+            break
+          case 29:
+            state.tempAlly = createAlly("Warrior", calculateRoll("6d8+12"), 16, 6, "1d8+3", "d20+1")
+            break
+          case 30:
+            state.tempAlly = createAlly("Conjurer", calculateRoll("9d8"), 12, 5, "1d4+2", "d20+2", "Conjure Elemental", "Cloud Kill5d8", "Cloud of Daggers5d8", "Poison Spray1d12")
+            break
+          case 31:
+            state.tempAlly = createAlly("Mage", calculateRoll("9d8"), 12, 5, "1d4+2", "d20+2", "Greater Invisibility", "Ice Storm4d6", "Fireball8d6", "Magic Missile3d4+3")
+            break
+          case 32:
+            state.tempAlly = createAlly("Assassin", calculateRoll("12d8+24"), 15, 6, "2d6+6", "d20+3", "Sneak Attack6d6+6")
+            break
+          case 33:
+            state.tempAlly = createAlly("Evoker", calculateRoll("12d8+12"), 12, 3, "1d6-1", "d20+2", "Chain Lightning10d8", "Wall of Ice", "Counter Spell", "Shatter3d8", "Magic Missile6d4+6")
+            break
+          case 34:
+            state.tempAlly = createAlly("Necromancer", calculateRoll("12d8+12"), 12, 7, "2d4", "d20+2", "Circle of Death8d6", "Blight8d8", "Cloudkill5d8", "Animate Dead", "Chill Touch1d8")
+            break
+          case 35:
+            state.tempAlly = createAlly("Champion", calculateRoll("22d8+44"), 18, 9, "6d6+15", "d20+2", "Second Wind")
+            break
+          case 36:
+            state.tempAlly = createAlly("Warlord", calculateRoll("27d8+108"), 18, 9, "4d6+10", "d20+3", "Command Ally", "Frighten Foe")
+            break
+          case 37:
+            state.tempAlly = createAlly("Archmage", calculateRoll("18d8+18"), 12, 6, "1d4+2", "d20+2", "Time Stop", "Mind Blank", "Lightning Bolt8d6", "Cone of Cold8d8", "Shocking Grasp1d8")
+            break
+          case 38:
+            state.tempAlly = createAlly("Archdruid", calculateRoll("24d8+24"), 16, 6, "1d6+2", "d20+2", "Fire Storm7d10", "Sunbeam6d8", "Wall of Fire", "Beast Sense", "Conjure Animals")
+            break
+          case 39:
+            state.tempAlly = createAlly("Ape", calculateRoll("3d8+6"), 12, 5, "2d4+6", "d20+2", "Throw Rock2d6+3")
+            break
+          case 40:
+            state.tempAlly = createAlly("Badger", calculateRoll("1d4+3"), 11, 2, "1", "d20")
+            break
+          case 41:
+            state.tempAlly = createAlly("Bat", calculateRoll("1d4-1"), 12, 4, "1", "d20+2")
+            break
+          case 42:
+            state.tempAlly = createAlly("Black Bear", calculateRoll("3d8+6"), 11, 4, "2d6+4", "d20+1")
+            break
+          case 43:
+            state.tempAlly = createAlly("Boar", calculateRoll("2d8+4"), 11, 3, "1d6+1", "d20", "Gore2d6+1")
+            break
+          case 44:
+            state.tempAlly = createAlly("Brown Bear", calculateRoll("3d10+6"), 11, 5, "3d4+6", "d20+1", "Fire Storm7d10", "Sunbeam6d8", "Wall of Fire", "Beast Sense", "Conjure Animals")
+            break
+          case 45:
+            state.tempAlly = createAlly("Camel", calculateRoll("2d10+6"), 10, 4, "1d4+2", "d20-1")
+            break
+          case 46:
+            state.tempAlly = createAlly("Cat", calculateRoll("1d4"), 12, 4, "1", "d20+2")
+            break
+          case 47:
+            state.tempAlly = createAlly("Constrictor Snake", calculateRoll("2d10+2"), 13, 4, "1d8+2", "d20+2", "Constrict3d4")
+            break
+          case 48:
+            state.tempAlly = createAlly("Crab", calculateRoll("1d4+1"), 11, 2, "1", "d20")
+            break
+          case 49:
+            state.tempAlly = createAlly("Crocodile", calculateRoll("2d10+2"), 12, 4, "1d8+2", "d20")
+            break
+          case 50:
+            state.tempAlly = createAlly("Dire Wolf", calculateRoll("3d10+6"), 14, 5, "1d10+3", "d20+2")
+            break
+          case 51:
+            state.tempAlly = createAlly("Draft Horse", calculateRoll("2d10+4"), 10, 6, "1d4+4", "d20")
+            break
+          case 52:
+            state.tempAlly = createAlly("Elephant", calculateRoll("8d12+24"), 12, 8, "4d8+12", "d20-1", "Trample2d10+6")
+            break
+          case 53:
+            state.tempAlly = createAlly("Elk", calculateRoll("2d10+5"), 10, 5, "1d6+3", "d20")
+            break
+          case 54:
+            state.tempAlly = createAlly("Frog", calculateRoll("1d4-1"), 11, 3, "1", "d20+1")
+            break
+          case 55:
+            state.tempAlly = createAlly("Giant Badger", calculateRoll("2d8+6"), 13, 3, "2d4+1", "d20")
+            break
+          case 56:
+            state.tempAlly = createAlly("Giant Crab", calculateRoll("3d8"), 15, 3, "1d6+1", "d20+1")
+            break
+          case 57:
+            state.tempAlly = createAlly("Giant Goat", calculateRoll("3d10+3"), 11, 5, "1d6+3", "d20+1")
+            break
+          case 58:
+            state.tempAlly = createAlly("Giant Seahorse", calculateRoll("3d10"), 14, 4, "2d6+2", "d20+1", "Bubble Dash")
+            break
+          case 59:
+            state.tempAlly = createAlly("Giant Spider", calculateRoll("4d10+4"), 14, 5, "1d8+3", "d20+3", "Web")
+            break
+          case 60:
+            state.tempAlly = createAlly("Giant Weasel", calculateRoll("2d8"), 13, 5, "1d4+3", "d20+3")
+            break
+          case 61:
+            state.tempAlly = createAlly("Goat", calculateRoll("1d8"), 10, 2, "1", "d20")
+            break
+          case 62:
+            state.tempAlly = createAlly("Hawk", calculateRoll("1d4-1"), 13, 5, "1", "d20+3")
+            break
+          case 63:
+            state.tempAlly = createAlly("Imp", calculateRoll("6d4+6"), 13, 5, "3d6+3", "d20+3", "Invisibility")
+            break
+          case 64:
+            state.tempAlly = createAlly("Lion", calculateRoll("4d10"), 12, 5, "2d8+6", "d20+2", "Roar")
+            break
+          case 65:
+            state.tempAlly = createAlly("Lizard", calculateRoll("1d4"), 10, 2, "1", "d20")
+            break
+          case 66:
+            state.tempAlly = createAlly("Mastiff", calculateRoll("1d8+1"), 12, 3, "1d6+1", "d20+2")
+            break
+          case 67:
+            state.tempAlly = createAlly("Mule", calculateRoll("2d8+2"), 10, 4, "1d4+2", "d20")
+            break
+          case 68:
+            state.tempAlly = createAlly("Octopus", calculateRoll("1d6"), 12, 4, "1", "d20+2", "Ink Cloud")
+            break
+          case 69:
+            state.tempAlly = createAlly("Owl", calculateRoll("1"), 11, 3, "1", "d20+1")
+            break
+          case 70:
+            state.tempAlly = createAlly("Panther", calculateRoll("3d8"), 12, 4, "1d4+2", "d20+2")
+            break
+          case 71:
+            state.tempAlly = createAlly("Pony", calculateRoll("2d8+2"), 10, 4, "1d4+2", "d20")
+            break
+          case 72:
+            state.tempAlly = createAlly("Pseudodragon", calculateRoll("3d4+3"), 14, 4, "2d4+4", "d20+2", "String2d4+2")
+            break
+          case 73:
+            state.tempAlly = createAlly("Quasit", calculateRoll("10d4"), 13, 5, "1d4+3", "d20+3", "Shape Shift", "Scare", "Invisibility")
+            break
+          case 74:
+            state.tempAlly = createAlly("Rat", calculateRoll("1d4-1"), 10, 2, "1", "d20")
+            break
+          case 75:
+            state.tempAlly = createAlly("Raven", calculateRoll("1d4"), 12, 4, "1", "d20+2")
+            break
+          case 76:
+            state.tempAlly = createAlly("Reef Shark", calculateRoll("4d8+4"), 12, 4, "2d4+2")
+            break
+          case 77:
+            state.tempAlly = createAlly("Riding Horse", calculateRoll("2d10+2"), 11, 5, "1d8+3", "d20+1")
+            break
+          case 78:
+            state.tempAlly = createAlly("Scorpion", calculateRoll("1d4-1"), 13, 2, "1d6+1", "d20")
+            break
+          case 79:
+            state.tempAlly = createAlly("Skeleton", calculateRoll("2d8+4"), 13, 5, "1d6+3", "d20+3", "Shortbow1d6+3", "Sword1d6+3")
+            break
+          case 80:
+            state.tempAlly = createAlly("Slaad Tadpole", calculateRoll("3d4"), 12, 4, "1d6+2", "d20+2")
+            break
+          case 81:
+            state.tempAlly = createAlly("Sphinx of Wonder", calculateRoll("7d4+7"), 13, 5, "1d4+3", "d20+2")
+            break
+          case 82:
+            state.tempAlly = createAlly("Spider", calculateRoll("1d4-1"), 12, 4, "1", "d20+2")
+            break
+          case 83:
+            state.tempAlly = createAlly("Sprite", calculateRoll("4d4"), 15, 6, "1d4+4", "d20+4", "Enchanting Bow1d4", "Invisibility")
+            break
+          case 84:
+            state.tempAlly = createAlly("Tiger", calculateRoll("3d10+6"), 13, 5, "1d6+3", "d20+3")
+            break
+          case 85:
+            state.tempAlly = createAlly("Venomous Snake", calculateRoll("2d4"), 12, 4, "2d4+2", "d20+2")
+            break
+          case 86:
+            state.tempAlly = createAlly("Warhorse", calculateRoll("3d10+3"), 11, 6, "2d4+4", "d20+2")
+            break
+          case 87:
+            state.tempAlly = createAlly("Weasel", calculateRoll("1d4-1"), 13, 5, "1", "d20+3")
+            break
+          case 88:
+            state.tempAlly = createAlly("Wolf", calculateRoll("2d8+2"), 12, 4, "1d6+2", "d20+2")
+            break
+          case 89:
+            state.tempAlly = createAlly("Zombie", calculateRoll("2d8+6"), 8, 3, "1d6+1", "d20-2")
+            break
+        }
+
+        if (nameMatches != null) state.tempAlly.name = nameMatches[0]
+      }
+      return text
+    case 500:
+      state.show = null
+      state.setupAllyStep = null
+
+      var ally = createAlly(state.tempAlly.name, state.tempAlly.health, state.tempAlly.ac, state.tempAlly.hitModifier, state.tempAlly.damage, state.tempAlly.initiative)
+      ally.spells = [...state.tempAlly.spells]
+      
+      var allyMatches = state.allies.filter(x => x.name.toLowerCase() == ally.name.toLowerCase() || x.name.toLowerCase() == `${ally.name.toLowerCase()} a`)
+      if (state.newAlly && allyMatches.length > 0) {
+        ally.name = getUniqueName(ally.name)
+        if (ally.name.endsWith("A")) {
+          allyMatches[0].name = ally.name
+          ally.name = ally.name.substring(0, ally.name.length - 1) + "B"
+        }
+      } else if (!state.newAlly) {
+        let removeIndex = state.allies.indexOf(allyMatches[0])
+        state.allies.splice(removeIndex, 1)
+      }
+
+      state.allies.push(ally)
+      break
+  }
+  return text
+}
+
 function resetTempCharacterSkills() {
   state.tempCharacter.skills = [
     {name: "Acrobatics", stat: "Dexterity", modifier: 0},
@@ -1240,6 +1685,7 @@ function init() {
   }
 
   if (state.tempEnemy == null) state.tempEnemy = createEnemy("enemy", 10, 10, "2d6", 10)
+  if (state.tempAlly == null) state.tempAlly = createAlly("ally", 10, 10, "2d6", 10)
   if (state.characters == null) state.characters = []
   if (state.notes == null) state.notes = []
   if (state.locations == null) state.locations = []
@@ -1249,6 +1695,7 @@ function init() {
   if (state.defaultDifficulty == null) state.defaultDifficulty = 10
   if (state.day == null) state.day = 0
   if (state.enemies == null) state.enemies = []
+  if (state.allies == null) state.allies = []
   if (state.initiativeOrder == null) state.initiativeOrder = []
   state.show = null
   state.prefix = null
@@ -1314,6 +1761,13 @@ function doSetupEnemy(command) {
   state.setupEnemyStep = 0
   state.tempEnemy = createEnemy("enemy", 20, 10, 0, "2d6", 10)
   state.show = "setupEnemy"
+  return " "
+}
+
+function doSetupAlly(command) {
+  state.setupAllyStep = 0
+  state.tempAlly = createAlly("ally", 20, 10, 0, "2d6", 10)
+  state.show = "setupAlly"
   return " "
 }
 
@@ -2494,6 +2948,14 @@ function doHeal(command) {
       }
     }
 
+    for (var ally of state.allies) {
+      if (ally.name.toLowerCase() == arg1.toLowerCase()) {
+        ally.health = Math.max(0, ally.health + healing)
+        state.show = "none"
+        return `\n[${toTitleCase(ally.name)} has been healed for ${healing} hp to a total of ${ally.health}]\n`
+      }
+    }
+
     for (var character of state.characters) {
       if (character.name.toLowerCase() == arg1.toLowerCase()) {
         character.health += healing
@@ -2504,7 +2966,7 @@ function doHeal(command) {
     }
 
     state.show = "none"
-    return `\n[Error: Could not find an enemy or character matching the name ${arg1}. Type #enemies or #characters to see a list]`
+    return `\n[Error: Could not find an enemy, ally, or character matching the name ${arg1}. Type #enemies, #allies, or #characters to see a list]`
   }
 }
 
@@ -2568,6 +3030,14 @@ function doDamage(command) {
       }
     }
 
+    for (var ally of state.allies) {
+      if (ally.name.toLowerCase() == arg1.toLowerCase()) {
+        ally.health = Math.max(0, ally.health - damage)
+        state.show = "none"
+        return `\n[${toTitleCase(ally.name)} has been damaged for ${damage} hp with ${ally.health} remaining] ${ally.health == 0 ? " " + toTitleCase(ally.name) + " has been defeated!" : ""}\n`
+      }
+    }
+
     for (var character of state.characters) {
       if (character.name.toLowerCase() == arg1.toLowerCase()) {
         character.health = Math.max(0, character.health - damage)
@@ -2577,7 +3047,7 @@ function doDamage(command) {
     }
 
     state.show = "none"
-    return `\n[Error: Could not find an enemy matching the name ${arg1}. Type #enemies  or #characters to see a list]`
+    return `\n[Error: Could not find an enemy, ally, or character matching the name ${arg1}. Type #enemies, #allies, or #characters to see a list]`
   }
 }
 
@@ -2850,6 +3320,7 @@ function doAttack(command) {
   }
 
   var enemyString = ""
+  var allyString = ""
   if (state.initiativeOrder.length > 0) {
     var foundEnemy
 
@@ -2865,6 +3336,23 @@ function doAttack(command) {
       if (indexMatches != null) {
         foundEnemy = state.enemies[parseInt(indexMatches[0]) - 1]
         targetText = targetText.replace(/enemy\s*d+/gi, foundEnemy.name)
+      }
+    }
+
+    var foundAlly
+
+    if (foundEnemy == null) for (var ally of state.allies) {
+      if (targetText.toLowerCase().includes(ally.name.toLowerCase())) {
+        foundAlly = ally
+        break
+      }
+    }
+
+    if (foundAlly == null) {
+      var indexMatches = targetText.match(/(?<=ally\s*)\d+/gi)
+      if (indexMatches != null) {
+        foundAlly = state.allies[parseInt(indexMatches[0]) - 1]
+        targetText = targetText.replace(/ally\s*d+/gi, foundAlly.name)
       }
     }
 
@@ -2894,6 +3382,22 @@ function doAttack(command) {
         } else enemyString += ` ${toTitleCase(foundEnemy.name)} has ${foundEnemy.health} health remaining!`
       }
     }
+
+    if (foundAlly != null) {
+      if (usingDefaultDifficulty) targetRoll = foundAlly.ac
+      if (score == 20 || score + modifier >= targetRoll) {
+        if (score == 20) allyString += `\nCritical Damage: ${damage}\n`
+        else allyString += `\nDamage: ${damage}\n`
+
+        state.blockCharacter = foundAlly
+        state.blockPreviousHealth = foundAlly.health
+        foundAlly.health = Math.max(0, foundAlly.health - damage)
+        if (foundAlly.health == 0) {
+          allyString += ` ${toTitleCase(foundAlly.name)} has been defeated!`
+          
+        } else allyString += ` ${toTitleCase(foundAlly.name)} has ${foundAlly.health} health remaining!`
+      }
+    }
   }
 
   var dieText = advantageText == "advantage" || advantageText == "disadvantage" ? `${advantageText}(${die1},${die2})` : die1
@@ -2901,10 +3405,10 @@ function doAttack(command) {
   state.show = "prefix"
   
   if (targetRoll == 0) state.prefix = ""
-  else if (score == 20) state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}]\n`
-  else if (score == 1) state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}]\n`
-  else if (modifier != 0) state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= targetRoll ? "Success!" : "Failure!"}]\n`
-  else state.prefix = `\n[Enemy AC: ${targetRoll} Attack roll: ${dieText}. ${score >= targetRoll ? "Success!" : "Failure!"}]\n`
+  else if (score == 20) state.prefix = `\n[Target AC: ${targetRoll} Attack roll: ${dieText}]\n`
+  else if (score == 1) state.prefix = `\n[Target AC: ${targetRoll} Attack roll: ${dieText}]\n`
+  else if (modifier != 0) state.prefix = `\n[Target AC: ${targetRoll} Attack roll: ${dieText}${modifier > 0 ? "+" + modifier : modifier}=${score + modifier}. ${score + modifier >= targetRoll ? "Success!" : "Failure!"}]\n`
+  else state.prefix = `\n[Target AC: ${targetRoll} Attack roll: ${dieText}. ${score >= targetRoll ? "Success!" : "Failure!"}]\n`
 
   var text
   if (score + modifier >= targetRoll) text = `\n${toTitleCase(character.name)} successfully hit ${targetText}!`
@@ -2914,6 +3418,7 @@ function doAttack(command) {
   else if (score == 1) text += " Critical failure! The attack missed in a spectacular way!"
 
   if (enemyString != null) text += enemyString
+  if (allyString != null) text += allyString
 
   if (targetRoll > 0 && (score + modifier >= targetRoll || score == 20)) text += addXpToAll(Math.floor(state.autoXp * clamp(targetRoll, 1, 20) / 20))
   return text + "\n"
@@ -3252,6 +3757,11 @@ function doShowEnemies(command) {
   return " "
 }
 
+function doShowAllies(command) {
+  state.show = "showAllies"
+  return " "
+}
+
 function doRemoveEnemy(command) {
   var arg0 = getArgumentRemainder(command, 0)
   if (arg0 == null) {
@@ -3304,6 +3814,58 @@ function doRemoveEnemy(command) {
   return `\n[The enemy ${toTitleCase(enemy.name)} has been removed]\n`
 }
 
+function doRemoveAlly(command) {
+  var arg0 = getArgumentRemainder(command, 0)
+  if (arg0 == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  if (/\d+\D+(\d+\D*)+/gi.test(arg0)) {
+
+    var list = arg0.split(/\D+/)
+    list.sort(function(a, b) {
+      return b - a;
+    });
+
+    var text = "\n"
+    list.forEach(x => {
+      var num = parseInt(x) - 1
+      if (num >= state.allies.length) {
+        state.show = "none"
+        return `\n[Error: Ally ${x} does not exist. See #showallies]\n`
+      }
+
+      var ally = state.allies[num]
+      state.allies.splice(num, 1)
+      var index = state.initiativeOrder.indexOf(ally)
+      if (index >= 0) state.initiativeOrder.splice(index, 1)
+      text += `[The ally ${toTitleCase(ally.name)} has been removed]\n`
+    })
+
+    state.show = "none"
+    return text
+  }
+
+  var ally
+  if (isNaN(arg0)) arg0 = state.allies.findIndex(x => x.name.toLowerCase() == arg0.toLowerCase())
+  else arg0--
+
+  if (arg0 == -1) {
+    state.show = "none"
+    return "\n[Error: Ally not found. See #showallies]\n"
+  } else if (arg0 >= state.allies.length || arg0 < 0) {
+    state.show = "none"
+    return "\n[Error: Location number out of bounds. See #showallies]\n"
+  } else {
+    ally = state.allies[arg0]
+    state.allies.splice(arg0, 1)
+  }
+
+  state.show = "none"
+  return `\n[The ally ${toTitleCase(ally.name)} has been removed]\n`
+}
+
 function doClearEnemies(command) {
   var arg0 = getArgument(command, 0)
   if (arg0 != null) {
@@ -3315,6 +3877,19 @@ function doClearEnemies(command) {
 
   state.show = "none"
   return "\n[The enemies have been cleared]\n"
+}
+
+function doClearAllies(command) {
+  var arg0 = getArgument(command, 0)
+  if (arg0 != null) {
+    return doRemoveAlly(command)
+  }
+
+  state.allies = []
+  state.initiativeOrder = []
+
+  state.show = "none"
+  return "\n[The allies have been cleared]\n"
 }
 
 function doAddEnemy(command) {
@@ -3406,6 +3981,95 @@ function doAddEnemy(command) {
   return `[Enemy ${toTitleCase(enemy.name)} has been created]`
 }
 
+function doAddAlly(command) {
+  var name = getArgument(command, 0)
+  if (name == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  }
+
+  var health = getArgument(command, 1)
+  if (health == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  } else if (/^\d*d\d+((\+|-)\d+)?$/gi.test(health)) {
+    health = calculateRoll(health)
+  } else if (isNaN(health)) {
+    state.show = "none"
+    return "\n[Error: Expected a number. See #help]\n"
+  }
+  health = parseInt(health)
+
+  var ac = getArgument(command, 2)
+  if (ac == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  } else if (/^\d*d\d+((\+|-)\d+)?$/gi.test(ac)) {
+    ac = calculateRoll(ac)
+  } else if (isNaN(ac)) {
+    state.show = "none"
+    return "\n[Error: Expected a number. See #help]\n"
+  }
+  ac = parseInt(ac)
+
+  var hitModifier = getArgument(command, 3)
+  if (hitModifier == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  } else if (/^\d*d\d+((\+|-)\d+)?$/gi.test(hitModifier)) {
+    hitModifier = calculateRoll(hitModifier)
+  }  else if (isNaN(hitModifier)) {
+    state.show = "none"
+    return "\n[Error: Expected a number. See #help]\n"
+  }
+
+  var damage = getArgument(command, 4)
+  if (damage == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  } else if (isNaN(damage) && !/^\d*d\d+((\+|-)\d+)?$/gi.test(damage)) {
+    state.show = "none"
+    return "\n[Error: Expected a number. See #help]\n"
+  }
+
+  var initiative = getArgument(command, 5)
+  if (initiative == null) {
+    state.show = "none"
+    return "\n[Error: Not enough parameters. See #help]\n"
+  } else if (/^\d*d\d+((\+|-)\d+)?$/gi.test(initiative)) {
+    initiative = calculateRoll(initiative)
+  } else if (isNaN(initiative)) {
+    state.show = "none"
+    return "\n[Error: Expected a number. See #help]\n"
+  }
+  initiative = parseInt(initiative)
+
+  var spells = []
+  var spell = null
+  var index = 6
+  do {
+    spell = getArgument(command, index++)
+    if (spell != null) spells.push(spell)
+  } while (spell != null)
+  
+  var ally = createAlly(name, health, ac, hitModifier, damage, initiative)
+  ally.spells = spells
+
+  var allyMatches = state.allies.filter(x => x.name.toLowerCase() == ally.name.toLowerCase() || x.name.toLowerCase() == `${ally.name.toLowerCase()} a`)
+  if (allyMatches.length > 0) {
+    ally.name = getUniqueName(ally.name)
+    if (ally.name.endsWith("A")) {
+      allyMatches[0].name = ally.name
+      ally.name = ally.name.substring(0, ally.name.length - 1) + "B"
+    }
+  }
+
+  state.allies.push(ally)
+
+  state.show = "none"
+  return `[Ally ${toTitleCase(ally.name)} has been created]`
+}
+
 function doInitiative(command) {
   for (character of state.characters) {
     var stat = character.stats.find(element => element.name.toLowerCase() == "dexterity")
@@ -3416,6 +4080,11 @@ function doInitiative(command) {
   for (enemy of state.enemies) {
     if (isNaN(enemy.initiative)) enemy.calculatedInitiative = calculateRoll(enemy.initiative)
     else enemy.calculatedInitiative = enemy.initiative
+  }
+
+  for (ally of state.allies) {
+    if (isNaN(ally.initiative)) ally.calculatedInitiative = calculateRoll(ally.initiative)
+    else ally.calculatedInitiative = ally.initiative
   }
 
   if (state.enemies.length == 0) {
@@ -3479,6 +4148,15 @@ function doTurn(command) {
     if (index >= 0) state.initiativeOrder.splice(index, 1)
   }
 
+  var defeatedAllies = 0
+  for (var ally of state.allies) {
+    if (ally.health > 0) continue
+
+    defeatedAllies++
+    var index = state.initiativeOrder.findIndex(x => x.name.toLowerCase() == ally.name.toLowerCase())
+    if (index >= 0) state.initiativeOrder.splice(index, 1)
+  }
+
   var defeatedCharacters = 0
   for (var character of state.characters) {
     if (character.health > 0) continue
@@ -3519,6 +4197,7 @@ function doBlock(command) {
 
   var character = state.characters.find(x => x.name.toLowerCase() == state.blockCharacter.name.toLowerCase())
   if (character == null) character = state.enemies.find(x => x.name.toLowerCase() == state.blockCharacter.name.toLowerCase())
+  if (character == null) character = state.allies.find(x => x.name.toLowerCase() == state.blockCharacter.name.toLowerCase())
   if (character == null) {
     state.show = "none"
     return "\n[Error: Character no longer exists. See #help]\n"
@@ -4265,6 +4944,7 @@ function doCastSpell(command) {
   var roll = advantage == "advantage" ? Math.max(roll1, roll2) : advantage == "disadvantage" ? Math.min(roll1, roll2) : roll1
 
   var enemyString = ""
+  var allyString = ""
   if (targetText != null && state.initiativeOrder.length > 0) {
     var foundEnemy
 
@@ -4280,6 +4960,23 @@ function doCastSpell(command) {
       if (indexMatches != null) {
         foundEnemy = state.enemies[parseInt(indexMatches[0]) - 1]
         targetText = targetText.replace(/enemy\s*d+/gi, foundEnemy.name)
+      }
+    }
+
+    var foundAlly
+
+    if (foundEnemy == null) for (var ally of state.allies) {
+      if (targetText.toLowerCase().includes(ally.name.toLowerCase())) {
+        foundAlly = ally
+        break
+      }
+    }
+
+    if (foundAlly == null) {
+      var indexMatches = targetText.match(/(?<=ally\s*)\d+/gi)
+      if (indexMatches != null) {
+        foundAlly = state.allies[parseInt(indexMatches[0]) - 1]
+        targetText = targetText.replace(/ally\s*d+/gi, foundAlly.name)
       }
     }
 
@@ -4305,6 +5002,20 @@ function doCastSpell(command) {
         else enemyString += ` ${toTitleCase(foundEnemy.name)} has ${foundEnemy.health} health remaining!\n`
       }
     }
+
+    if (foundAlly != null) {
+      if (usingDefaultDifficulty) difficulty = foundAlly.ac
+      if (roll == 20 || roll + modifier >= difficulty) {
+        if (roll == 20) allyString += `\nCritical Damage: ${damage}\n`
+        else allyString += `\nDamage: ${damage}\n`
+
+        state.blockCharacter = foundAlly
+        state.blockPreviousHealth = foundAlly.health
+        foundAlly.health = Math.max(0, foundAlly.health - damage)
+        if (foundAlly.health == 0) allyString += ` ${toTitleCase(foundAlly.name)} has been defeated!\n`
+        else allyString += ` ${toTitleCase(foundAlly.name)} has ${foundAlly.health} health remaining!\n`
+      }
+    }
   }
 
   state.show = "prefix"
@@ -4322,6 +5033,7 @@ function doCastSpell(command) {
   else text += ` The spell ${targetText != null ? "misses" : "fails"}!`
 
   if (enemyString != null) text += enemyString
+  if (allyString != null) text += allyString
 
   if (difficulty > 0 && (roll + modifier >= difficulty || roll == 20)) text += addXpToAll(Math.floor(state.autoXp * clamp(difficulty, 1, 20) / 20))
   return `\n${text}\n`
@@ -4493,6 +5205,7 @@ function doReset(command) {
   state.locations = []
   state.location = null
   state.enemies = null
+  state.allies = null
   state.initiativeOrder = []
   state.x = null
   state.y = null

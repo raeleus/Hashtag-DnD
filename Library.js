@@ -344,10 +344,13 @@ function executeTurn(activeCharacter) {
   if (possessiveName == "Your") possessiveName = "your"
 
   if (activeCharacter.className != null) {
+    //player
     state.show = "none"
     return `\n[It is ${possessiveName} turn]\n`
-  } else {
+  } else if (activeCharacter.ally == false) {
+    //enemy
     var characters = state.characters.filter(x => x.health > 0)
+    characters.push(...state.allies.filter(x => x.health > 0))
     var target = characters[getRandomInteger(0, characters.length - 1)]
     var areWord = target.name == "You" ? "are" : "is"
     var targetNameAdjustedCase = target.name == "You" ? "you" : toTitleCase(target.name)
@@ -373,9 +376,52 @@ function executeTurn(activeCharacter) {
       var diceMatches = spell.match(/(?<=^.*)\d*d\d+((\+|-)\d+)?$/gi)
       if (diceMatches == null) text += `${activeCharacterName} casts spell ${spell}!`
       else {
+        var spell = spell.substring(0, spell.length - diceMatches[0].length)
         if (hit) {
           var damage = calculateRoll(diceMatches[0])
-          var spell = spell.substring(0, spell.length - diceMatches[0].length)
+          target.health = Math.max(target.health - damage, 0)
+
+          text += `\n[Character AC: ${target.ac} Attack roll: ${attack}]\n`
+
+          text += `${activeCharacterName} casts spell ${spell} at ${targetNameAdjustedCase} for ${damage} damage!`
+          
+          if (target.health == 0) text += ` ${toTitleCase(target.name)} ${areWord} unconscious!\n`
+          else text += ` ${toTitleCase(target.name)} ${areWord} at ${target.health} health.\n`
+        } else text += `${activeCharacterName} casts spell ${spell} at ${targetNameAdjustedCase} but misses!\n`
+      }
+    }
+    return text
+  } else {
+    //ally
+    var enemies = state.enemies.filter(x => x.health > 0)
+    var target = enemies[getRandomInteger(0, enemies.length - 1)]
+    var areWord = target.name == "You" ? "are" : "is"
+    var targetNameAdjustedCase = target.name == "You" ? "you" : toTitleCase(target.name)
+    var attack = calculateRoll(`1d20${activeCharacter.hitModifier > 0 ? "+" + activeCharacter.hitModifier : activeCharacter.hitModifier < 0 ? activeCharacter.hitModifier : ""}`)
+    var hit = attack >= target.ac
+
+    var text = `\n[It is ${possessiveName} turn]\n`
+    if (getRandomBoolean() || activeCharacter.spells.length == 0) {
+      if (hit) {
+        state.blockCharacter = target
+        state.blockPreviousHealth = target.health
+        var damage = isNaN(activeCharacter.damage) ? calculateRoll(activeCharacter.damage) : activeCharacter.damage
+        target.health = Math.max(target.health - damage, 0)
+
+        text += `\n[Enemy AC: ${target.ac} Attack roll: ${attack}]\n`
+
+        text += `${activeCharacterName} attacks ${targetNameAdjustedCase} for ${damage} damage!\n`
+        if (target.health == 0) text += ` ${toTitleCase(target.name)} ${areWord} unconscious! \n`
+        else text += ` ${toTitleCase(target.name)} ${areWord} at ${target.health} health.\n`
+      } else text += `${activeCharacterName} attacks ${targetNameAdjustedCase} but misses!\n`
+    } else {
+      var spell = activeCharacter.spells[getRandomInteger(0, activeCharacter.spells.length - 1)]
+      var diceMatches = spell.match(/(?<=^.*)\d*d\d+((\+|-)\d+)?$/gi)
+      if (diceMatches == null) text += `${activeCharacterName} casts spell ${spell}!`
+      else {
+        var spell = spell.substring(0, spell.length - diceMatches[0].length)
+        if (hit) {
+          var damage = calculateRoll(diceMatches[0])
           target.health = Math.max(target.health - damage, 0)
 
           text += `\n[Character AC: ${target.ac} Attack roll: ${attack}]\n`
@@ -2792,9 +2838,24 @@ function createEnemy(name, health, ac, hitModifier, damage, initiative, ...spell
     hitModifier: hitModifier,
     damage: damage,
     initiative: initiative,
-    spells: spells
+    spells: spells,
+    ally: false
   }
   return enemy
+}
+
+function createAlly(name, health, ac, hitModifier, damage, initiative, ...spells) {
+  var ally = {
+    name: name,
+    health: health,
+    ac: ac,
+    hitModifier: hitModifier,
+    damage: damage,
+    initiative: initiative,
+    spells: spells,
+    ally: true
+  }
+  return ally
 }
 
 function getUniqueName(name) {
@@ -2822,6 +2883,11 @@ function createInitiativeOrder() {
   for (var enemy of state.enemies) {
     if (enemy.health <= 0) continue
     state.initiativeOrder.push(enemy)
+  }
+
+  for (var ally of state.allies) {
+    if (ally.health <= 0) continue
+    state.initiativeOrder.push(ally)
   }
 
   state.initiativeOrder.sort(function(a, b) {
