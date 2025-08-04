@@ -318,6 +318,8 @@ const modifier = (text) => {
 
   if (state.flavorText != null) text += state.flavorText
 
+  text = AutoCards("input", text);
+
   return { text }
 }
 

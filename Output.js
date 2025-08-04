@@ -645,6 +645,8 @@ const modifier = (text) => {
   }
 
   state.show = null
+
+  text = AutoCards("output", text);
   return { text }
 }
 

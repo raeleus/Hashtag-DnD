@@ -18,8 +18,12 @@ See the [user guide here](https://github.com/raeleus/Hashtag-DnD/wiki).
 Watch the [tutorial video](https://youtu.be/E5TYU7rDaBQ).
 
 Hashtag-DnD has another new scenario! Check out the [VTOL-Knights Repository](https://github.com/raeleus/Hashtag-DnD/tree/VTOL-Knights)
+This script implements Auto-Cards by LewdLeah. See more details [on github](https://github.com/LewdLeah/Auto-Cards)
 
-v.0.7.0
+v. 0.8.0
+* Added Auto-Cards by LewdLeah. This feature is disabled by default. Activate it by changing the "Disabled" setting to "false" in the "Configure Auto-Cards" story card.
+
+v. 0.7.0
 * Added allies which are NPC characters that fight alongside the characters in encounters
 * Fixed enemy spells showing the damage dice in the output text.
 
