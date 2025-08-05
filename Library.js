@@ -4733,7 +4733,7 @@ function AutoCards(inHook, inText, inStop) {
                 // Pending Auto-Cards message(s)
                 pending: (function() {
                     if (DEFAULT_DO_AC !== false) {
-                        const startupMessage = "Auto-Cards is Disabled! You may now edit the \"Configure Auto-Cards\" story card to enable it";
+                        const startupMessage = "Enabled! You may now edit the \"Configure Auto-Cards\" story card";
                         logEvent(startupMessage);
                         return [startupMessage];
                     } else {
@@ -7522,7 +7522,7 @@ function AutoCards(inHook, inText, inStop) {
         function getConfigureCardEntry() {
             return prose(
                 "> Auto-Cards automatically creates and updates plot-relevant story cards while you play. You may configure the following settings by replacing \"false\" with \"true\" (and vice versa) or by adjusting numbers for the appropriate settings.",
-                "> Disable Auto-Cards: true",
+                "> Disable Auto-Cards: false",
                 "> Show detailed guide: false",
                 "> Delete all automatic story cards: false",
                 "> Reset all config settings and prompts: false",
