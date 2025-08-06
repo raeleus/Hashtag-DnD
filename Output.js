@@ -1,5 +1,8 @@
 const modifier = (text) => {
-  if (state.show == null) return { text }
+  if (state.show == null) {
+    text = AutoCards("output", text);
+    return { text }
+  }
 
   var character = getCharacter()
   var possessiveName = character == null ? null : getPossessiveName(character.name)
